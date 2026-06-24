@@ -423,7 +423,7 @@
         {% assign mode = forloop.index0 | modulo: 2 %}
         {% if mode != 0 %}
           <!-- This block is even -->
-          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+          <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.image.alt }}" width="{{ block.settings.image.width | default: 400 }}" height="{{ block.settings.image.height | default: 400 }}" loading="lazy">
           <div class="svg-point">{{ forloop.index0 | plus: 1 }}</div>
           <div class="timelinecontent">
             {{ block.settings.content }}
@@ -434,7 +434,7 @@
           <div class="timelinecontent">
             {{ block.settings.content }}
           </div>
-          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+          <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.image.alt }}" width="{{ block.settings.image.width | default: 400 }}" height="{{ block.settings.image.height | default: 400 }}" loading="lazy">
         {% endif %}
       </div>
     {% endfor %}
@@ -446,7 +446,7 @@
           <div class="slidecontent">
             {{ block.settings.content }}
           </div>
-          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+          <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.image.alt }}" width="{{ block.settings.image.width | default: 400 }}" height="{{ block.settings.image.height | default: 400 }}" loading="lazy">
         </div>
       {% endfor %}
     </div>

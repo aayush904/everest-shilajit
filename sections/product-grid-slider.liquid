@@ -1,4 +1,22 @@
 <style>
+  /* Reserve space before Slick initialises to prevent CLS */
+  #shopify-section-{{ section.id }} .product-slider:not(.slick-initialized) {
+    display: flex;
+    overflow: hidden;
+    min-height: 460px;
+  }
+  #shopify-section-{{ section.id }} .product-slider:not(.slick-initialized) .product-card {
+    flex: 0 0 25%;
+    min-width: 0;
+  }
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .product-slider:not(.slick-initialized) {
+      min-height: 320px;
+    }
+    #shopify-section-{{ section.id }} .product-slider:not(.slick-initialized) .product-card {
+      flex: 0 0 50%;
+    }
+  }
   #shopify-section-{{ section.id }} {
     {% if section.settings.background_on == 'main_section' %}
       {% if section.settings.background_type == 'color' and section.settings.background_color != blank %}
@@ -451,43 +469,39 @@
                 {% if product.images.size > 1 %}
                   <img
                     loading="lazy"
-
-                    src="{{ product.images.first.src | image_url }}"
+                    src="{{ product.images.first.src | image_url: width: 600 }}"
+                    srcset="{{ product.images.first.src | image_url: width: 400 }} 400w, {{ product.images.first.src | image_url: width: 600 }} 600w, {{ product.images.first.src | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     class="
                       w-full sm:max-h-[256px] h-auto object-contain object-center opacity-100 transition-opacity duration-300  aspect-square {{ ' ' }}
-                      {% comment %} {%- if section.settings.slider_type == '3' -%}
-                         mix-blend-multiply
-                      {%- endif -%} {% endcomment %}
                     "
                     alt="{{ product.images.first.src.alt | default: product.title }}"
-                    width="240"
-                    height="240"
+                    width="600"
+                    height="600"
                   >
                   <img
-                    src="{{ product.metafields.custom.hover_image | default: product.images.last.src  | image_url }}"
+                    loading="lazy"
+                    src="{{ product.metafields.custom.hover_image | default: product.images.last.src | image_url: width: 600 }}"
+                    srcset="{{ product.metafields.custom.hover_image | default: product.images.last.src | image_url: width: 400 }} 400w, {{ product.metafields.custom.hover_image | default: product.images.last.src | image_url: width: 600 }} 600w"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     class="
                       secondary-image w-full sm:max-h-[256px] h-auto  aspect-square sm:aspect-auto  absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100
-                      {% comment %} {%- if section.settings.slider_type == '3' -%}
-                         mix-blend-multiply
-                      {%- endif -%} {% endcomment %}
                     "
-                    width="240"
-                    height="240"
+                    width="600"
+                    height="600"
                     alt="{{ product.title }}"
                   >
                 {% else %}
                   <img
                     loading="lazy"
-
-                    src="{{ product.images.first.src | image_url }}"
+                    src="{{ product.images.first.src | image_url: width: 600 }}"
+                    srcset="{{ product.images.first.src | image_url: width: 400 }} 400w, {{ product.images.first.src | image_url: width: 600 }} 600w, {{ product.images.first.src | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     class="
                       primary-image w-full h-auto aspect-square
-                      {% comment %} {%- if section.settings.slider_type == '3' -%}
-                         mix-blend-multiply
-                      {%- endif -%} {% endcomment %}
                     "
-                    width="240"
-                    height="240"
+                    width="600"
+                    height="600"
                     alt="{{ product.images.first.src.alt | default:product.title }}"
                   >
                 {% endif %}
@@ -834,7 +848,9 @@
               <a href="{{ product.url }}" class="block relative">
                 {% if product.images.size > 1 %}
                   <img
-                    src="{{ product.images.first.src | image_url }}"
+                    src="{{ product.images.first.src | image_url: width: 600 }}"
+                    srcset="{{ product.images.first.src | image_url: width: 400 }} 400w, {{ product.images.first.src | image_url: width: 600 }} 600w, {{ product.images.first.src | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     class="
                       primary-image w-full h-auto aspect-square opacity-100 transition-opacity duration-300
                       {%- if section.settings.slider_type == '3' -%}
@@ -842,9 +858,9 @@
                       {%- endif -%}
                     "
                     alt="{{ product.title }}"
-                    width="240"
+                    width="600"
                     loading="lazy"
-                    height="240"
+                    height="600"
                   >
                   <!--
                     <img
@@ -863,15 +879,17 @@
                   -->
                 {% else %}
                   <img
-                    src="{{ product.images.first.src | image_url }}"
+                    src="{{ product.images.first.src | image_url: width: 600 }}"
+                    srcset="{{ product.images.first.src | image_url: width: 400 }} 400w, {{ product.images.first.src | image_url: width: 600 }} 600w, {{ product.images.first.src | image_url: width: 800 }} 800w"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     class="
                       primary-image w-full h-auto aspect-square
                       {%- if section.settings.slider_type == '3' -%}
                          mix-blend-multiply
                       {%- endif -%}
                     "
-                    width="240"
-                    height="240"
+                    width="600"
+                    height="600"
                     loading="lazy"
                     alt="{{ product.title }}"
                   >
