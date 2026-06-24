@@ -29,7 +29,8 @@
             section_id: "cart-cross-sell",
             horizontal_class: true,
             horizontal_quick_add: false,
-            hide_quick_add: true
+            hide_quick_add: true,
+            title_tag: "div"
           %}
           {%- assign slides_counter = slides_counter | plus: 1 -%}
 
@@ -209,7 +210,7 @@
   }
 
   .cart-xsell .card__badge,
-  .cart-xsell h3 a::after,
+  .cart-xsell .card__heading a::after,
   .cart-xsell .low-stock-indicator,
   .cart-xsell .card-attribute,
   .cart-xsell .card__inner .card__content {
@@ -249,7 +250,7 @@
     line-height:1.1;
   }
 
-  .cart-xsell h3 {
+  .cart-xsell .card__heading {
     font-size: 1.3rem;
     font-family: var(--font-body-family);
     font-weight: 700;
