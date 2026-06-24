@@ -150,9 +150,9 @@
             {% endif %}
 
             {{ block.settings.image
-              | image_url: width: block.settings.image.width
+              | image_url: width: 1200
               | image_tag:
-                widths: '320, 450, 600, 750, 980, 1080',
+                widths: '320, 450, 600, 750, 980, 1200',
                 class: img_class,
                 alt: image_alt,
                 width: block.settings.image.width,

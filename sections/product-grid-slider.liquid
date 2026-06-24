@@ -761,8 +761,6 @@
                   {% comment %} {%- if section.settings.slider_type == '1' -%} duration-500 -z-1 opacity-0 group-hover:z-1 group-hover:opacity-100 {%- endif -%} {% endcomment %}
                 "
               >
-                <script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
-
                 {%- assign product_form_id = 'product-form-' | append: product.variants.first.id -%}
                 <script
                   src="{{ 'product-form.js' | asset_url }}"
@@ -1042,8 +1040,6 @@
               {% else %}
                 <p class="product-price">{{ product.price | money }}</p>
               {% endif %}
-
-                <script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
 
                 {%- assign product_form_id = 'product-form-' | append: product.variants.first.id -%}
                 <script
