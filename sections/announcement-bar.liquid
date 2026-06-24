@@ -1,0 +1,256 @@
+{%- assign item_duration = 4 -%} {%- comment -%} seconds each item is visible {%- endcomment -%}
+{%- assign visible_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.settings.text != blank -%}
+    {%- assign visible_count = visible_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if visible_count == 0 -%}
+  {%- assign visible_count = 1 -%}
+{%- endif -%}
+{%- assign cycle_duration = visible_count | times: item_duration -%}
+
+
+{%- assign show_percent = 100 | divided_by: visible_count -%}
+{%- assign fade_in = show_percent | times: 16 | divided_by: 100 -%}      {%- comment -%} ~16% of show window for fade-in {%- endcomment -%}
+{%- assign fade_out_start = show_percent | times: 84 | divided_by: 100 -%} {%- comment -%} ~84% of show window fade-out begins {%- endcomment -%}
+
+<style>
+  /* Container */
+  .flip-announcement-container {
+    position: relative;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: clamp(32px,5vw,64px);
+  }
+
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    transform-origin: center center;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: flip-cycle {{ cycle_duration }}s cubic-bezier(.2,.9,.2,1) infinite;
+  }
+
+  .announcement-text{
+    font-size:clamp(14px,1.6vw,18px);
+  }
+
+
+  /* Keyframes: use computed percentages so the visible window scales with number of items */
+  @keyframes flip-cycle {
+    /* start off */
+    0%   { opacity: 0; transform: translate(-50%,-50%) rotateX(90deg); }
+
+    /* fade-in end at computed fade_in % of cycle */
+    {{ fade_in }}% {
+      opacity: 1;
+      transform: translate(-50%,-50%) rotateX(10deg);
+    }
+
+    /* fully in at a slightly later point (close to fade_in) */
+    {{ fade_in | plus: 2 }}% {
+      opacity: 1;
+      transform: translate(-50%,-50%) rotateX(0deg);
+    }
+
+    /* remain visible until fade_out_start % of cycle */
+    {{ fade_out_start }}% {
+      opacity: 1;
+      transform: translate(-50%,-50%) rotateX(0deg);
+    }
+
+    /* start fading/flipping away at show_percent% of cycle (end of this item's window) */
+    {{ show_percent }}% {
+      opacity: 0;
+      transform: translate(-50%,-50%) rotateX(-80deg);
+    }
+
+    /* remain hidden for rest of cycle */
+    100% { opacity: 0; transform: translate(-50%,-50%) rotateX(-80deg); }
+  }
+
+  /* pause on hover */
+  .flip-announcement-container:hover .flip-item {
+    animation-play-state: paused;
+    pointer-events: auto;
+  }
+
+  /* small responsive tweak */
+  @media (max-width:768px){
+    .flip-announcement-container { padding: 0.5rem; height: 50px; }
+    .flip-face {padding: 0.25rem 0.7rem; border-radius: 6px; }
+  }
+</style>
+
+<div
+  class="flip-announcement-container bg-[#4E2C25] font-sans announcement-bar color-{{ block.settings.color_scheme }} gradient"
+  role="region"
+  aria-label="{{ 'sections.header.announcement' | t }}"
+  {{ section.shopify_attributes }}
+  style="--item-duration: {{ item_duration }}s; --cycle-duration: {{ cycle_duration }}s;"
+  id="popupButton"
+>
+  {%- assign index = 0 -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'announcement' -%}
+        {% if index == 0 %}
+            <flip-inner class="flip-inner">
+          {% endif %}
+        {%- if block.settings.text != blank -%}
+          <div
+            class="flip-item"
+            style="animation-delay: -{{ index | times: item_duration }}s;"
+          >
+            {%- if block.settings.link != blank and section.settings.link_type == 'link' -%}
+              <a href="{{ block.settings.link }}" class="flip-face link link--text focus-inset">
+                <span class="font-sans announcement-text text-white">
+                  {{ block.settings.text | escape }}
+                </span>
+              </a>
+            {%- else -%}
+              <span class="flip-face font-sans text-white">
+                {{ block.settings.text | escape }}
+              </span>
+            {%- endif -%}
+          </div>
+          {%- assign index = index | plus: 1 -%}
+        {%- endif -%}
+    {%- endcase -%}
+    {% if foorloop.last and index > 0 %}
+      </flip-inner>
+    {% endif %}
+  {%- endfor -%}
+
+</div>
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'popup' -%}
+      <div id="portal">
+        {% render 'popup_coupone',
+          title: block.settings.title,
+          message: block.settings.message,
+          code: block.settings.code,
+          image: block.settings.image
+        %}
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "settings": [
+    {
+      "type": "select",
+      "label": "Select Link Type",
+      "id": "link_type",
+      "options": [
+        {
+          "value": "link",
+          "label": "Page Link"
+        },
+        {
+          "value": "popup",
+          "label": "Popup"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__1.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__2.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__3.label"
+            }
+          ],
+          "default": "center",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.label"
+        },
+
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    },
+    {
+      "type": "popup",
+      "name": "Popup",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Popup Image"
+        },
+        {
+          "type": "liquid",
+          "id": "title",
+          "label": "Popup Title"
+        },
+        {
+          "type": "liquid",
+          "id": "message",
+          "label": "Popup Message"
+        },
+        {
+          "type": "liquid",
+          "id": "code",
+          "label": "Coupon Code"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

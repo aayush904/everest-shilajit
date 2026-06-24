@@ -1,0 +1,271 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "A special 10% off on your first order!",
+            "text_alignment": "center",
+            "link": "shopify://collections"
+          }
+        },
+        "announcement_kP4Lrw": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "WELCOME10 | FREE SHIPPING 🌍",
+            "text_alignment": "center",
+            "link": "shopify://collections"
+          }
+        },
+        "announcement_LidHNA": {
+          "type": "announcement",
+          "settings": {
+            "text": "Fuel Your Body This Christmas | Flat 30% OFF",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "popup_3T4KHr": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/BLACKFRIDAY_Everest.webp",
+            "title": "<style>\n#shopify-section-{{section.id}} .popup-image{\nmax-height:100%;\n}\n#shopify-section-{{section.id}} .popup-image,#shopify-section-{{section.id}} .popup-image img{\npadding:0;\nmax-width:100%;\n}\n#shopify-section-{{section.id}} .popup-text{\nposition:absolute;\nwidth:100%;\nbottom:13.9%;\npadding:0;\n}\n#shopify-section-{{section.id}} .popup-text *:not(h3 *):not(h3){\ndisplay:none;\n}\n\n#shopify-section-{{section.id}} .popup-content{\nheight:auto;\nmin-height:auto;\nwidth:clamp(298px, 30vw, 55rem);\nmargin:0;\nheight:auto;\nmax-width:calc(100dvw - 32px);\n}\n\n#shopify-section-{{section.id}} .coupon_pop.popup-overlay{\nalign-items:center;\njustify-content:center;\n}\n\n#shopify-section-{{section.id}}  .close-button{\nbackground:transparent;\ncolor:#fff;\nmax-width:24px;\npadding:0;\n}\n#shopify-section-{{section.id}} .popup-text h3{\nmargin:0;\nwidth:100%;\nmargin-right:6px;\n}\n#shopify-section-{{section.id}} timer{\nwidth: 63%;\nmargin: auto;\njustify-content: space-between;\ndisplay: flex;\n}\n\n#shopify-section-{{section.id}}  box{\ncolor:#000;\nwidth: 21%;\nmargin-left:1%;\npadding-top:2%;\nfont-family:\"Lato\";\nfont-size:clamp(32px,3.8dvw, 56px);\nfont-weight:700;\naspect-ratio:7/10.5;\ndisplay:flex;\njustify-content:center;\nalign-items:center;\nfilter: drop-shadow(2px 4px 4px #00000080);\nposition:relative;\n}\n\n#shopify-section-{{section.id}}  box:before{\nfilter: drop-shadow(0px 0px 0px #00000001);\ncontent:attr(data-content);\nfont-size:clamp(8px,1dvw, 12px);\nposition:absolute;\ntop:5%;\nmargin-left:2px;\nwidth:100%;\ntext-align:center;\n}\n\n#shopify-section-{{section.id}}  box:nth-child(3){\nmargin-left:10px;\n}\n</style>\n<timer>\n  <box id=\"dh1\"></box><box id=\"dh2\"></box>\n  <box id=\"hm1\"></box><box id=\"hm2\"></box>\n</timer>",
+            "message": "<script>\n  var eventDate = new Date('2025-11-28T00:00:00-08:00');\n  function pad2(n) { return n.toString().padStart(2, '0'); }\n\n    function updateTimer() {\n    var now = new Date();\n    var diffMs = eventDate - now;\n    if (diffMs < 0) diffMs = 0;\n\n    var totalSec = Math.floor(diffMs / 1000);\n    var totalMin = Math.floor(totalSec / 60);\n    var totalHr  = Math.floor(totalMin / 60);\n    var totalDay = Math.floor(totalHr  / 24);\n\n    var dh1 = document.getElementById('dh1');\n    var dh2 = document.getElementById('dh2');\n    var hm1 = document.getElementById('hm1');\n    var hm2 = document.getElementById('hm2');\n    \n    const updateBoxes = (a,b,c,d,x,y) => {\n      dh1.textContent = a;\n      dh1.dataset.content = x;\n      \n      dh2.textContent = b;\n      dh2.dataset.content = x;\n      \n      hm1.textContent = c;\n      hm1.dataset.content = y;\n      \n      hm2.textContent = d;\n      hm2.dataset.content = y;\n    }\n    \n    if (totalDay > 0) {\n      var dayStr = pad2(totalDay);\n      var hrStr = pad2(totalHr % 24);\n      updateBoxes(dayStr[0], dayStr[1], hrStr[0], hrStr[1], \"Days\",\"Hours\");\n    } else if (totalHr > 0) {\n      var hrStr = pad2(totalHr);\n      var minStr = pad2(totalMin % 60);\n      updateBoxes(hrStr[0], hrStr[1], minStr[0], minStr[1], \"Hours\", \"Minutes\");\n    } else {\n      var minStr = pad2(totalMin);\n      var secStr = pad2(totalSec % 60);\n      updateBoxes(minStr[0], minStr[1], secStr[0], secStr[1], \"Minutes\", \"Seconds\");\n    }\n  }\n  setInterval(updateTimer, 1000);\n</script>",
+            "code": ""
+          }
+        },
+        "popup_jEFrdt": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_28702.webp",
+            "title": "<style>\n#shopify-section-{{section.id}} .popup-image{\nmax-height:100%;\n}\n\n#shopify-section-{{section.id}} .popup-image,#shopify-section-{{section.id}} .popup-image img{\npadding:0;\nmax-width:100%;\n}\n#shopify-section-{{section.id}} .popup-text{\nposition:absolute;\nwidth:100%;\nheight:100%;\ntop:0;\n}\n#shopify-section-{{section.id}} .popup-text *:not(h3 *):not(h3){\ndisplay:none;\n}\n\n#shopify-section-{{section.id}} .popup-content{\nheight:auto;\nmin-height:auto;\nwidth:clamp(298px, 30vw, 55rem);\nmargin:0;\nheight:auto;\nmax-width:calc(100dvw - 32px);\n}\n\n#shopify-section-{{section.id}} .coupon_pop.popup-overlay{\nalign-items:center;\njustify-content:center;\n}\n\n#shopify-section-{{section.id}}  .close-button{\nbackground:transparent;\ncolor:#fff;\nmax-width:24px;\npadding:0;\n}\n\n#shopify-section-{{section.id}} .bf-button{\nposition:absolute;\nbackground:transparent;\nwidth:100%;\nheight:100%;\ntop:0;\nleft:0;\nfont-size:0;\nborder-color:transparent;\n}\n</style>\n\n<a href=\"/collections/all\" class=\"button bf-button\">Shop Now</a>",
+            "message": "",
+            "code": ""
+          }
+        },
+        "popup_8Q7GkN": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "title": "<style>\n.coupon_pop.popup-overlay{\njustify-content:center;\nalign-items:center;\nbackground:#00000085;\nz-index:99999999;\n}\n\n#portal{\nz-index:9999;\nposition:fixed;\ntop:0;\nleft:0;\n}\n.close-button{\ncolor: #000 !important;\n    background: #fff !important;\n    z-index: 3 !important;\n    aspect-ratio: 1 / 1;\n    width: 24px;\n    height: 24px;\n    display: flex;\n    justify-content: center;\n    box-shadow: 0 12px 10px rgb(0 0 0 / 25%);\n    align-items: center;\n    border-radius: 50%\n}\n.popup-content {\n    min-height: auto !important;\n    min-width: 95%;\n    max-height: 95%;\n    height: auto;\n    aspect-ratio: 16 / 9;\n    max-width: 95% !important;\n    margin: 0 !important;\n}\n\n\n.popup-text{\npadding:0!important;\n}\n\n.pop-text{\nobject-fit:contain;\nmax-width:65.5%;\nheight:max-content;\n}\n#shopify-section-{{section.id}} .popup-content .flex.flex-col{\nwidth:100%;\n}\n#shopify-section-{{section.id}} p,#shopify-section-{{section.id}} h3,\n#shopify-section-{{section.id}} .popup-image, #shopify-section-{{section.id}} form{\ndisplay:none!important;}\n\n.popup-right{\n position:relative;\n gap:5%;\njustify-content:center;\nalign-items:center;\n}\n\n.popup-right,.popup-left{\nflex: 1 1 100%;\n}\n.pop-banner2{\nposition:absolute;\nobject-position: bottom right!important;\n}\n.pop-banner{\nmin-height:100%;\n}\n.pop-banner{\n object-fit:cover!important;\nobject-position:center;\nheight:100%;\nwidth:100%;\n}\n.popup-right .button{\n max-width: 65.5%;\n margin: 0 auto;\nborder-radius:52px;\nbackground:#fff;\ncolor:#000;\nborder:none;\nfont-weight:900;\nfont-size: clamp(18px,2.8vw,40px;)!important;\nletter-spacing:1px;\n}\n\n.pop-candle{\nbackground:transparent;\nposition: absolute;\nz-index:12;\nmax-width:18%;\nbottom:0%;\nleft:53%;\ntransform:translate(-50%,10%);\n  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.85));\n\n}\n.pop-star{\n    z-index: 12;\n    position: absolute;\n    width: 9%;\n    bottom: 50%;\n    left: 50%;\n    transform: translate(-50%, 25%);\n}\n\n.pop-leaf{\nz-index:12;\nwidth:30%;\nposition:absolute;\ntop:0;\nleft:50%;\ntransform:translate(-43%,-68%);\n  filter: drop-shadow(0 12px 10px rgb(63 48 32 / 85%));\n\n}\n\n@media(max-width:980px){\n.pop-leaf{\ntop:47%;\nleft:20%;\nz-index:1;\n}\n.pop-star{\n    bottom: 0%;\n    left: 7%;\n    transform: translate(-50%, -100%);\n}\n\n.pop-candle{\nleft:7%;\ndisplay: none;\nbottom:52%;}\n.popup-content {\naspect-ratio:8/16;\n}\n.pop-text,.popup-right .button{\nmax-width:62%;\n}\n.popup-left{\nmax-height:45%;\nz-index:2;\n}.popup-right{\nz-index:0;\nmax-height:55%;\n}\n}\n\n</style>",
+            "message": "<div class=\"flex w-full h-full md:flex-col sm:flex-col\">\n<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/Candle.webp?v=1765865530\" alt=\"candle\" class=\"pop-candle\" width=\"204\" height=\"235\">\n<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/star.webp?v=1765859821\" alt=\"start\" class=\"pop-star\" width=\"172\" height=\"184\">\n<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/leaf.webp?v=1765867461\" alt=\"Leaf\" class=\"pop-leaf\" width=\"172\" height=\"184\">\n\n<div class=\"popup-left\">\n<img \nclass=\"pop-banner\" src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/shilajitChristmas.webp?v=1765859138\" alt=\"Everest Shilajit Christmas banner\" width height>\n</div>\n\n<div class=\"popup-right flex-col flex\">\n<img \nclass=\"pop-banner z-0 pop-banner2\" src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/image_343.webp?v=1765859824\" alt=\"Everest Shilajit Christmas banner\" width=\"720\" height=\"1080\">\n<img class=\"pop-text relative mx-auto h-full contain z-10\" src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/christmas.svg?v=1765864277\">\n<a class=\"button bg-white relative z-10\" href=\"/collections/all\">\nClaim Your Shilajit</a>\n</div>\n</div>",
+            "code": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_kP4Lrw",
+        "announcement_LidHNA",
+        "popup_3T4KHr",
+        "popup_jEFrdt",
+        "popup_8Q7GkN"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "red {color: #fe3520;}",
+        ".message {margin-bottom: 24px;}",
+        ".coupon-code {margin-bottom: 16px;}",
+        "b {color: inherit;}",
+        "#popupButton {cursor: pointer;}"
+      ],
+      "settings": {
+        "link_type": "link"
+      }
+    },
+    "announcement_marquee_rF74UA": {
+      "type": "announcement-marquee",
+      "blocks": {
+        "announcement_FyRY98": {
+          "type": "announcement",
+          "settings": {
+            "text": "A special 10% off on your first order!",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "announcement_hbiQMm": {
+          "type": "announcement",
+          "settings": {
+            "text": "WELCOME10 | FREE SHIPPING 🌍",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "popup_7LCRym": {
+          "type": "popup",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "message": "",
+            "code": "{% render 'new-year-banner'%}\n<style>\n.popup-text.relative {\n    padding: 0!important;\n    display: block!important;\n    flex: unset!important;\nwidth:max-content!important;\n}\n\n.popup-image {\n    display: none!important;\n}\n\n.popup-content {\n    max-width: 1277px !important;\n    width: max-content !important;\n    height: auto !important;\n    max-height: max-content;\n    min-height: 10vh !important;\n}\n.popup-content .flex.flex-col, .popup-content h3 {\n    width: max-content !important;\n    display: block;\n    max-width: 90vw;\n}\n\ndiv#popupOverlay {\n    justify-content: center;\n    align-items: center;\n}\n\n.popup-image {\n    display: none!important;\n}\n\n#popupOverlay .close-button{\nbackground:transparent!important;\nbox-shadow:none!important;\nright:32px!important;\n20px!important;\n}\n#shopify-section-{{section.id}} form#contact_form {\n    display: none;\n}\n.coupon_pop.popup-overlay h3{\nmargin:0!important;\n}\n\n.message.blog-text{\nmargin:0!important;} \n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_FyRY98",
+        "announcement_hbiQMm",
+        "popup_7LCRym"
+      ],
+      "custom_css": [
+        "red {color: #fe3520;}",
+        ".message {margin-bottom: 24px;}",
+        ".coupon-code {margin-bottom: 16px;}",
+        "b {color: inherit;}",
+        "#popupButton {cursor: pointer;}"
+      ],
+      "name": "Announcement Marquee",
+      "settings": {
+        "link_type": "popup"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menuitems_with_icons_BKzpLV": {
+          "type": "menuitems-with-icons",
+          "disabled": true,
+          "settings": {
+            "menu-title-1": "About Us",
+            "icon-1": "shopify://shop_images/about.svg",
+            "excerpt-1": "Learn about out story, our mission statement and our values.",
+            "menu-title-2": "Contact Us",
+            "icon-2": "shopify://shop_images/call.svg",
+            "excerpt-2": "Contact US for any sort of queries or product details.",
+            "menu-title-3": "Blogs",
+            "icon-3": "shopify://shop_images/blog.svg",
+            "excerpt-3": "Explore our wide range of article on the topic of natural supplements.",
+            "menu-title-4": "Trace Minerals",
+            "icon-4": "shopify://shop_images/minerals.svg",
+            "excerpt-4": "Trace the essential minerals found in the Shilajit product.",
+            "menu-title-5": "Dosage & Usage",
+            "icon-5": "shopify://shop_images/drop.svg",
+            "excerpt-5": "Learn the dosage and usage guideline of Shilajit.",
+            "menu-title-6": "",
+            "icon-6": "shopify://shop_images/setting.svg",
+            "excerpt-6": "",
+            "menu-title-7": "",
+            "icon-7": "shopify://shop_images/faq.svg",
+            "excerpt-7": "Learn about out story, our mission statement and our values.",
+            "menu-title-8": "",
+            "excerpt-8": "",
+            "menu-title-9": "",
+            "excerpt-9": "",
+            "menu-title-10": "",
+            "excerpt-10": ""
+          }
+        },
+        "menuitems_with_icons_YBiNUT": {
+          "type": "menuitems-with-icons",
+          "disabled": true,
+          "settings": {
+            "menu-title-1": "Fulvic Acid",
+            "icon-1": "shopify://shop_images/setting.svg",
+            "excerpt-1": "Enter the 3rd level menu title same as the menu title in the navigation",
+            "menu-title-2": "FAQs",
+            "icon-2": "shopify://shop_images/faq.svg",
+            "excerpt-2": "Enter the 3rd level menu title same as the menu title in the navigation",
+            "menu-title-3": "",
+            "excerpt-3": "",
+            "menu-title-4": "",
+            "excerpt-4": "",
+            "menu-title-5": "",
+            "excerpt-5": "",
+            "menu-title-6": "",
+            "excerpt-6": "",
+            "menu-title-7": "",
+            "excerpt-7": "",
+            "menu-title-8": "",
+            "excerpt-8": "",
+            "menu-title-9": "",
+            "excerpt-9": "",
+            "menu-title-10": "",
+            "excerpt-10": ""
+          }
+        },
+        "megamenu_product_4Y9kyn": {
+          "type": "megamenu-product",
+          "settings": {
+            "menu-title": "Shop All",
+            "image-title": "Best Seller",
+            "collection": "best-seller"
+          }
+        },
+        "megamenu_images_7yzrkd": {
+          "type": "megamenu-images",
+          "settings": {
+            "menu-title": "Learn",
+            "image-title": "Gallery",
+            "image1": "shopify://shop_images/our-story.webp",
+            "title1": "Our Story",
+            "link1": "shopify://pages/about-us",
+            "image2": "shopify://shop_images/What_Is_Shilajit.webp",
+            "title2": "What is Everest Shilajit",
+            "link2": "shopify://pages/what-is-shilajit",
+            "image3": "shopify://shop_images/Blog_Image_095308c4-2273-4bcf-a43a-bcce82201f09.webp",
+            "title3": "Blogs",
+            "link3": "shopify://blogs/all"
+          }
+        },
+        "megamenu_image_q6TpEp": {
+          "type": "megamenu-image",
+          "settings": {
+            "menu-title": "Company",
+            "image": "shopify://shop_images/image_396.webp",
+            "link": "",
+            "image-size": "2"
+          }
+        }
+      },
+      "block_order": [
+        "menuitems_with_icons_BKzpLV",
+        "menuitems_with_icons_YBiNUT",
+        "megamenu_product_4Y9kyn",
+        "megamenu_images_7yzrkd",
+        "megamenu_image_q6TpEp"
+      ],
+      "custom_css": [
+        ".Resources {column-count: 3;}",
+        ".Resources li {break-inside: avoid;}",
+        "@media screen and (min-width: 1024px) {.header--middle-left.header--middle-left {grid-template-columns: auto 1fr auto; } .header--middle-left .header__inline-menu {margin: auto; }}",
+        "@media (max-width: 768px) {nav-slider .slider-track {margin: 0; } nav-slider .navslide {padding: 0 4px; }}"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu-2-0",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "always",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "announcement_marquee_rF74UA",
+    "header"
+  ]
+}

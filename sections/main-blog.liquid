@@ -1,0 +1,403 @@
+{% comment %} {{ 'component-article-card.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+      #shopify-section-{{ section.id }} {
+      --section-gap: clamp(56px, 5.75vw, 110px);
+      --heading-content-gap: clamp(24px, 2.35vw, 45px);
+      --publication-item-padding: clamp(18px, 2.1vw, 40px);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --text-muted: #A5A5A5;
+      --accent-gold: #E9BE5F;
+
+    }
+
+    #shopify-section-{{ section.id }}  {
+      padding: clamp(40px, 4.2vw, 8rem) 0;
+    }
+
+    #shopify-section-{{ section.id }} h1 {
+      margin-bottom: 0;
+      margin-top:0;
+    }
+
+    @media screen and (min-width: 768px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | divided_by: 10 }}rem;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 10 }}rem;
+      }
+    }
+
+      .breadcrumb {
+  flex-wrap:wrap;
+      margin-bottom: clamp(24px, 2.35vw, 45px);
+    }
+
+    .breadcrumb * {
+      font-size: clamp(12px, 0.732vw, 14px);
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+{%- endstyle -%}
+
+<style>
+  .skeleton-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6.5%;
+    font-family: Arial, sans-serif;
+  }
+
+  .skeleton-card {
+    background: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .skeleton-image {
+    height: 200px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .skeleton-content {
+    padding: 16px;
+  }
+
+  .skeleton-title {
+    height: 24px;
+    width: 80%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 12px;
+  }
+
+  .skeleton-date {
+    height: 16px;
+    width: 30%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 12px;
+  }
+
+  .skeleton-text {
+    height: 16px;
+    width: 100%;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 8px;
+  }
+
+  .skeleton-text:last-child {
+    width: 80%;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .tags {
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .tags::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tags a {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+</style>
+
+{%- paginate blog.articles by 6 -%}
+  <div
+    class="page-width breadcrumb"
+    style="display:flex; gap:8px; margin-bottom: 26px;"
+  >
+    <a href="{{ routes.root_url }}" style="font-size: clamp(12px, 0.732vw, 14px); opacity:0.5;">Home</a>
+    <span style="transform:rotate(-90deg); margin-left: 8px;">{% render 'icon-caret' %}</span>
+    <a href="{{ blogs['all'].url }}" style="font-size: clamp(12px, 0.732vw, 14px); opacity:0.5;">
+      {{- blogs.all.title -}}
+    </a>
+    <span style="transform:rotate(-90deg); margin-left: 8px;">{% render 'icon-caret' %}</span>
+    <span style="font-size: clamp(12px, 0.732vw, 14px);">{{ blog.title }}</span>
+  </div>
+  <div
+    class="flex sm:flex-col gap-[3.2rem] capitalize justify-between  sm:items-center items-end w-full mx-auto page-width"
+    style=" text-align: {{ section.settings.content_alignment }};"
+  >
+    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} inline">
+      {% if current_tags.size > 0 %}
+        {{ current_tags -}}
+      {%- else -%}
+        {{ blog.title | escape }}
+      {%- endif %}
+    </h1>
+    <div
+      {% comment %} id="search-icon" {% endcomment %}
+      class="hidden relative cursor-pointer border-b {% comment %}p-[1.1rem_2.4rem] pl-[7.4rem] border-[1.5px] border-black rounded-[28px] h-[4.8rem] w-max {% endcomment %}"
+    >
+      {% comment %}
+        <input
+          type="text"
+          id="search-query"
+          placeholder="Search blogs..."
+          class="text-[2rem] leading-none focus-visible:shadow-none p-0 border-none w-full h-full bg-transparent outline-none active:outline-none box shadow-[none!important]"
+        >
+      {% endcomment %}
+
+      <form action="/search" method="get" role="search" class="search search-modal__form">
+        <div class="field">
+          <button
+            class=" w-max mr-[1.2rem] relative shadow-none search__button field__button"
+            aria-label="Search"
+          >
+            <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                <use href="#icon-search">
+              </use>
+            </svg>
+          </button>
+          <input
+            style=" box-shadow: none!important; outline: none!important; "
+            class="search__input"
+            id="Search-In-Modal"
+            type="search"
+            name="q"
+            value=""
+            placeholder="Search for blogs"
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="predictive-search-results"
+            aria-controls="predictive-search-results"
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            autocorrect="off"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          >
+          {% comment %} <label class="field__label" for="Search-In-Modal">Search</label> {% endcomment %}
+          <input type="hidden" name="options[prefix]" value="last">
+          <button type="reset" class="hidden reset__button field__button hidden" aria-label="Clear search term">
+            <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon-reset">
+              </use>
+            </svg>
+          </button>
+        </div>
+        <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search="">
+          <div class="predictive-search__loading-state">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              class="spinner"
+              viewBox="0 0 66 66"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+      </form>
+    </div>
+  </div>
+  {% assign video_article_count = 0 %}
+  {% if blog.all_tags.size > 0 %}
+    <div style="margin-top:2.4rem" class="w-full page-width md:max-w-[116.6rem] sm:max-w-[116.6rem]">
+      <p style="font-size:1.6rem; margin-bottom:1rem; opacity: 0.6">Filter by tags:</p>
+      <div class=" tags overflow-x-auto flex capitalize text-[#666666] font-sans  mx-auto text-[1.2rem]  gap-[8px]">
+        {%- for tag in blog.all_tags -%}
+          <a
+            class="ac-card__tag inline-block min-w-max "
+            href="{{ blog.url | append: '/tagged/' | append: tag.handle }}"
+          >
+            {{- tag -}}
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  {% endif %}
+
+  {%- paginate blog.articles by 6 -%}
+    <div class="main-blog page-width section-{{ section.id }}-padding">
+      <div
+        id="blog-listing"
+        {% unless blog.metafields.custom.is_publication %}
+          class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}"
+        {% else %}
+          class="resources-hub__publication-table"
+        {% endunless %}
+      >
+        {%- for article in blog.articles -%}
+          {% unless blog.metafields.custom.is_publication %}
+            <div
+              class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% if blog.metafields.custom.is_video %}
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: false,
+                  style: 'video',
+                  video_counter: video_article_count
+                -%}
+                {% assign video_article_count = video_article_count | plus: 1 %}
+
+              {% else %}
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: true
+                -%}
+              {% endif %}
+            </div>
+          {% else %}
+            {%- render 'article-card', article: article, style: 'publication', show_date: section.settings.show_date -%}
+          {% endunless %}
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endif -%}
+    </div>
+  {%- endpaginate -%}
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "info": "Unit in rem 1rem = l0px",
+      "default": 14
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "info": "Unit in rem 1rem = l0px",
+      "default": 14
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,169 @@
+{%- assign custom_array = section.settings.categories | split: ',' -%}
+{% assign tagToSkip = articleTags | split: ',' %}
+<div class="sidebar md:hidden sm:hidden top-[13rem] max-h-max sticky md:static sm:static w-full max-w-[30%] md:max-w-full sm:max-w-full sm:mt-[2rem]">
+  {% comment %}
+    {% if request.page_type != 'article' %}
+      <script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+
+      <div
+        class="relative  sm:hidden md:hidden "
+      >
+        <form action="/search" method="get" role="search" class="search search-modal__form">
+          <div class="field">
+            <button
+              class=" w-max mr-[1.2rem] relative shadow-none search__button field__button"
+              aria-label="Search"
+            >
+              <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                  <use href="#icon-search">
+                </use>
+              </svg>
+            </button>
+            <input
+              style=" box-shadow: none!important; outline: none!important; "
+              class="search__input bg-transparent w-full"
+              id="Search-In-Modal"
+              type="search"
+              name="q"
+              value=""
+              placeholder="Search for blogs"
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results"
+              aria-controls="predictive-search-results"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            >
+            {% comment %} <label class="field__label" for="Search-In-Modal">Search</label> {% endcomment %}
+            <input type="hidden" name="options[prefix]" value="last">
+            <button type="reset" class="hidden reset__button field__button" aria-label="Clear search term">
+              <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                  <use xlink:href="#icon-reset">
+                </use>
+              </svg>
+            </button>
+          </div>
+          <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search="">
+            <div class="predictive-search__loading-state">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </div>
+
+          <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+        </form>
+      </div>
+
+      <hr class="sm:hidden md:hidden block h-[1px] mt-0 mb-[3rem]">
+    {% endif %}
+  {% endcomment %}
+  {% if settings.show_tags and request.page_type == 'article' %}
+    {% unless request.path contains '/blogs/press-media' %}
+      <div class="flex flex-col gap-[0] sm:hidden md:hidden">
+        <div class="pb-[22px] flex flex-col gap-[16px]">
+          <h3 class="m-0 font-sans font-semibold">Table of Content</h3>
+          <hr class="border-t h-[1px] w-full border-[#eee]">
+        </div>
+        <ul id="toc" class=" list-none  flex flex-col gap-[.8rem] font-sans "></ul>
+      </div>
+    {% endunless %}
+  {% endif %}
+
+  {% if settings.recent_posts_blog %}
+    <div class="flex flex-col gap-[24px]">
+      <h3 class="font-sans leading-none font-medium">{{ settings.recent_posts_title }}</h3>
+      {%- assign recent_posts_blog = settings.recent_posts_blog -%}
+      {%- for article in recent_posts_blog.articles limit: 3 -%}
+        {%- render 'article-card',
+          article: article,
+          media_height: settings.image_height,
+          media_aspect_ratio: article.image.aspect_ratio,
+          show_image: settings.show_image,
+          show_date: settings.show_date,
+          show_author: settings.show_author,
+          show_excerpt: false,
+          style: 'horizontal'
+        -%}
+      {%- endfor -%}
+    </div>
+    {% if settings.show_tags and request.page_type == 'blog' %}
+      {% if settings.most_read_blog != blank %}
+        <hr class="block h-[1px] my-[32px]">
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {% if settings.show_tags and request.page_type == 'blog' %}
+    <div class="flex flex-col gap-[24px]">
+      <h3 class="font-sans leading-none font-medium">{{ settings.tags_title }}</h3>
+      <div class=" tags overflow-x-auto flex flex-wrap capitalize text-[#666666] font-sans  mx-auto text-[1.2rem] w-full  gap-[6px]">
+        {% assign tagblogs = settings.skip_tags.handle | append: ',' | append: settings.skip_tags2.handle %}
+        {%- for category in custom_array -%}
+          {% if tagblogs contains category %}
+          {% else %}
+            {%- for tag in blogs[category].all_tags -%}
+              {% assign showtag = true %}
+              {% for skipTag in tagToSkip %}
+                {% if tag == skipTag %}
+                  {% assign showtag = false %}
+                {% endif %}
+              {% endfor %}
+              {% if showtag %}
+                <a
+                  class="inline-block min-w-max px-[2rem] py-[1rem] border border-black text-black"
+                  href="{{ blogs[category].url | append: '/tagged/' | append: tag.handle }}"
+                >
+                  {{- tag -}}
+                </a>
+              {% endif %}
+            {%- endfor -%}
+          {% endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+    <hr class="block h-[1px] my-[32px]">
+  {% endif %}
+
+  {% if settings.most_read_blog != blank %}
+    <div class="most-read-article">
+      <h3 class="font-sans leading-none font-medium mb-[24px]">Most Read Article</h3>
+      {%- assign most_read_blog = blogs[settings.most_read_blog] -%}
+      {%- if most_read_blog and most_read_blog.articles.size > 0 -%}
+        <div class="flex flex-col gap-[24px]">
+          {%- assign articles_shown = 0 -%}
+          {%- for article in most_read_blog.articles limit: 99999 -%}
+            {%- assign most_view = article.metafields.custom.most_view | default: 0 | plus: 0 -%}
+            {%- if most_view == 3 or most_view == 2 or most_view == 1 -%}
+              {%- if articles_shown < 3 -%}
+                <div class="{%- if most_view == 1 -%}order-1 {%- elsif most_view == 2 -%}order-2 {%- elsif most_view == 3 -%}order-3 {%- endif -%}">
+                  {%- render 'article-card',
+                    article: article,
+                    media_height: settings.image_height,
+                    media_aspect_ratio: article.image.aspect_ratio,
+                    show_image: settings.show_image,
+                    show_date: settings.show_date,
+                    show_author: settings.show_author,
+                    show_excerpt: false,
+                    style: 'horizontal'
+                  -%}
+                  {%- assign articles_shown = articles_shown | plus: 1 -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,126 @@
+<!-- Frequently Bought Together Section -->
+<div class="frequently-bought-products">
+  {% if section.settings.enable_section %}
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="products-list">
+      {% for product in collections[section.settings.collection].products %}
+        <div class="product-item">
+          <a href="{{ product.url }}">
+            <img
+              src="{{ product.featured_image | image_url | asset_img_url: 'medium' }}"
+              alt="{{ product.featured_image.alt | default: product.title }}"
+              width="300"
+              height="300"
+            >
+          </a>
+          <div class="product-info">
+            <a href="{{ product.url }}">
+              <h3>{{ product.title }}</h3>
+            </a>
+            <p>{{ product.price | money }}</p>
+            <form method="post" action="/cart/add">
+              <!-- Variant Selector -->
+              {% if product.variants.size > 1 %}
+                <label for="variant-{{ product.id }}">Choose a variant:</label>
+                <select name="id" id="variant-{{ product.id }}">
+                  {% for variant in product.variants %}
+                    <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                  {% endfor %}
+                </select>
+              {% else %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              {% endif %}
+
+              <!-- Quantity Selector -->
+              <label for="quantity-{{ product.id }}">Quantity:</label>
+              <input
+                type="number"
+                name="quantity"
+                id="quantity-{{ product.id }}"
+                value="1"
+                min="1"
+                class="quantity-selector"
+              >
+
+              <!-- Add to Cart Button -->
+              <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<!-- Add some CSS for better styling -->
+<style>
+  .frequently-bought-products {
+    margin-top: 30px;
+  }
+  .frequently-bought-products .products-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .frequently-bought-products .product-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+  }
+  .frequently-bought-products .product-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  .frequently-bought-products .product-info form {
+    margin-top: 10px;
+  }
+  .frequently-bought-products label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .frequently-bought-products .quantity-selector {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  .frequently-bought-products .add-to-cart-btn {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- Schema for Admin -->
+{% schema %}
+{
+  "name": "Frequently Bought",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Frequently Bought Together"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Frequently Bought ",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,378 @@
+{% comment %}
+  Renders an article card for a given blog with settings to either show the image or not.
+
+  Accepts:
+  - blog: {Object} Blog object
+  - article: {Object} Article object
+  - media_aspect_ratio: {String} The setting changes the aspect ratio of the article image, if shown
+  - media_height: {String} The setting changes the height of the article image. Overrides media_aspect_ratio.
+  - show_image: {String} The setting either show the article image or not. If it's not included it will show the image by default
+  - show_date: {String} The setting either show the article date or not. If it's not included it will not show the image by default
+  - show_author: {String} The setting either show the article author or not. If it's not included it will not show the author by default
+  - show_badge: {String} The setting either show the blog badge or not.
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+  - style: {String} The setting either shows the article card vertically or horizontally. Default: 'vertical' (optional)
+
+  Usage:
+  {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
+{% endcomment %}
+
+{%- if article and article != empty -%}
+  {%- liquid
+    assign ratio = 1
+    if media_aspect_ratio != null
+      assign ratio = media_aspect_ratio
+    endif
+  -%}
+
+  <style>
+    #shopify-section-{{section.id}}{
+      .card--standard .card__inner:before,.card--standard .card__inner:after {
+        content: none;
+      }
+
+      .card .card__inner .card__media,
+      .card .media {
+        position: static;
+        aspect-ratio:3/2;
+        height: max-content;
+      }
+      .card__media .media img.aspect-\[16\/9\] {
+        height: auto;
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        position: static;
+      }
+
+      .article-card__image {
+        max-height: max-content;
+        height:auto;
+        aspect-ratio:3/2;
+        width:100%;
+      }
+
+      .article-card__image img,
+      .article-card__image-wrapper{
+        position:static;
+        aspect-ratio:3/2;
+        min-height:0px;
+        max-height: max-content;
+        height:auto;
+      }
+    }
+
+    {% if style == 'video' %}
+      .article-card__image.media-video:before {
+        content: '';
+        display: inline-block;
+        width:4rem;
+        height:4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url({{ 'play-button.png' | asset_url }}) no-repeat center center;
+        transition: all 0.3s ease;
+        opacity: 0.95;
+        z-index: 2;
+      }
+      .article-card-wrapper:hover .article-card__image.media-video:before{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+    {% endif %}
+  </style>
+
+  <div
+    class="basmil  article-card-wrapper group card-wrapper underline-links-hover "
+    {% if style == 'video' %}
+      id="trigger-button" onclick="openModal(this)"
+      data-id="{{article.id}}"
+      data-article='{{ article.content }}'
+    {% endif %}
+  >
+    <a
+      href="{% if style == 'video' %}javascript:void(0){% else %}{{- article.url -}}{% endif %}"
+      class=" card article-card overflow-hidden card--{{ settings.blog_card_style }} {% if media_height and media_height != 'adapt' %} article-card__image--{{ media_height }}{% endif %} {% if article.image and show_image %} card--media{% else %} {% endif %} {% if settings.blog_card_style == 'card' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %} {% if settings.blog_card_style == 'card' and media_height == nil and article.image == empty or show_image == false %} ratio{% endif %} "
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%; {%- if style == 'horizontal' -%} display:grid; grid-template-columns: 0.6fr 1fr; gap: 1rem;{%- else -%} {%- if show_excerpt -%} margin-bottom:22px; {%- endif -%} {%- endif -%}"
+    >
+      <div
+        class="card__inner {% if settings.blog_card_style == 'standard' %} {% unless article.handle contains 'press-media' %} color-{{ settings.blog_card_color_scheme }} gradient{% endunless %}{% endif %}{% if article.image and show_image or settings.blog_card_style == 'standard' %} ratio{% endif %}"
+        style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      >
+        {%- if show_image == true -%}
+          <div class="article-card__image-wrapper card__media min-h-[34.8rem] h-[34.8rem]  {% if article.handle contains 'press-media' %}aspect-[311/400]{% else %}bg-grey{% endif %}">
+            <div
+              {% comment %} href="{{ article.url }}" {% endcomment %}
+              class="block {% if style == 'video' %} media-video {% endif %} article-card__image media media--hover-effect {% if article.handle contains 'press-media' %}bg-transparent aspect-[311/400]{% endif %}"
+              {% if section.settings.media_height == 'adapt' %}
+                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+              {% endif %}
+            >
+              {% if article.image and article.handle contains 'press-media' %}
+                                <img
+                  srcset="
+                    {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                  "
+                  src="{{ article.image.src | image_url: width: 533 }}"
+                  {% comment %} sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 768px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" {% endcomment %}
+                  alt="{{ article.image.src.alt | escape }}"
+                  class="motion-reduce aspect-[311/400] min-h-[34.8rem] h-[34.8rem] p-[0]"
+                  {% unless lazy_load == false %}
+                    loading="lazy"
+                  {% endunless %}
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
+                >
+              {% elsif article.image %}
+                <img
+                  srcset="
+                    {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                  "
+                  src="{{ article.image.src | image_url: width: 533 }}"
+                  {% comment %} sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 768px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" {% endcomment %}
+                  alt="{{ article.image.src.alt | escape }}"
+                  class="motion-reduce aspect-[16/9] min-h-[34.8rem] h-[34.8rem] p-[0]"
+                  {% unless lazy_load == false %}
+                    loading="lazy"
+                  {% endunless %}
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
+                >
+
+              {%  elsif style == 'video'%}
+
+                {%- assign video_id = article.content
+                  | replace: '"', "'"
+                  | split: "src='"
+                  | last
+                  | split: "'"
+                  | first
+                  | split: "/"
+                  | last
+                  | split: "?"
+                  | first
+                -%}
+                {% if video_id contains "/" %}
+                  {% assign video_id = video_id | split: "/" | last %}
+                {% endif %}
+
+                {% assign youtube_thumbnail = 'https://img.youtube.com/vi/' | append: video_id | append: '/hqdefault.jpg' %}
+
+                <img src="{{ youtube_thumbnail }}" 
+                  class="motion-reduce aspect-[464/348] min-h-[34.8rem] h-[34.8rem] p-[0]"
+                  {% unless lazy_load == false %}
+                    loading="lazy"
+                  {% endunless %}
+                  width="{{ settings.logo.width }}"
+                  height="{{ settings.logo.height }}"
+                  alt="YouTube Thumbnail">
+
+              {% else %}
+                <img
+                  srcset="
+                    {%- if settings.logo.src.width >= 165 -%}{{ settings.logo.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if settings.logo.src.width >= 360 -%}{{ settings.logo.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if settings.logo.src.width >= 533 -%}{{ settings.logo.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if settings.logo.src.width >= 720 -%}{{ settings.logo.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if settings.logo.src.width >= 1000 -%}{{ settings.logo.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if settings.logo.src.width >= 1500 -%}{{ settings.logo.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ settings.logo.src | image_url }} {{ settings.logo.src.width }}w
+                  "
+                  src="{{ settings.logo.src | image_url: width: 533 }}"
+                  {% comment %} sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 768px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)" {% endcomment %}
+                  alt="{{ settings.logo.src.alt | escape }}"
+                  class="motion-reduce aspect-[464/348] min-h-[34.8rem] h-[34.8rem] p-[0]"
+                  {% unless lazy_load == false %}
+                    loading="lazy"
+                  {% endunless %}
+                  width="{{ settings.logo.width }}"
+                  height="{{ settings.logo.height }}"
+                >
+              {% endif %}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="card__content">
+        <div
+          class="font-sans card__information p-0 justify-center gap-[0!important]"
+          {% if style == 'horizontal' %}
+            style="padding:0;"
+          {% endif %}
+        >
+          {%- if article.tags.size > 0 -%}
+            {%- for tag in article.tags -%}
+              {% if forloop.first %}
+                <div class="article-card__tags mb-[8px!important] flex flex-wrap gap-2">
+                  {% assign handle =  article.handle | split: '/' |last  %}
+                  <span
+                    onclick="event.preventDefault(); event.stopPropagation(); window.location.href='{{ article.url | split: handle | first }}tagged/{{ tag | handle }}'"
+                    class="article-tag text-[1.4rem] text-grey"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+
+          <div class="font-sans blog-text font-normal text-[#382E2A]">
+            <h3
+              title="{{ article.title | escape }}"
+              class="blog-heading font-sans m-0 mb-[8px!important] card__heading font-medium text-[#382E2A]"
+              style="display: -webkit-box;  -webkit-box-orient: vertical; overflow: hidden;{% if style == 'horizontal' %}-webkit-line-clamp: 2;{% else %}-webkit-line-clamp: 1;{% endif %}"
+            >
+              {{ article.title | escape }}
+            </h3>
+          </div>
+
+          {%- if show_excerpt -%}
+            {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
+              {% unless article.handle contains 'press-media' %}
+              <p class="line-clamp-2 mb-[8px!important] article-card__excerpt rte-width font-sans text-start blog-text font-normal text-[#382E2A]">
+                {%- if article.excerpt.size > 0 -%}
+                  {{ article.excerpt | strip_html | truncatewords: 30 }}
+                {%- else -%}
+                  {{ article.content | strip_html | truncatewords: 30 }}
+                {%- endif -%}
+              </p>
+            {% endunless %}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if show_author or show_date -%}
+            <div class="flex gap-[8px] justify-start items-center text-[#000]  text-[12px] font-sans">
+              {%- if show_author -%}
+                {{- article.author -}}
+                {{ ' | ' }}
+              {%- endif -%}
+              {%- if show_date -%}
+                {{- article.published_at | date: '%b %d, %Y' -}}
+              {%- endif -%}
+              {%- if article.content  -%}
+                {% unless article.handle contains 'press-media' %}
+                  {{ ' | ' }}
+                  {{ article.content | strip_html | split: ' ' | size | divided_by: 200.0 | ceil }} min read
+                {% endunless %}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+        {%- if show_badge -%}
+          <div class="card__badge {{ settings.badge_position }}">
+            <span class="badge color-background-1">{{ 'blogs.article.blog' | t }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    </a>
+  </div>
+
+  {% if style == 'video' %}
+    
+    {% if video_counter == 0 %}  
+    <div id="videoModal" class="modal-overlay" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="close-button" onclick="closeModal()" >&times;</button>
+        <div id="{{blog.id}}"></div>
+      </div>
+    </div>
+
+    <style>
+      iframe,
+      video,
+      .modal-content {
+        width: 90vw;
+        height: auto;
+        max-width: 900px;
+        aspect-ratio: 16 / 9;
+      }
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        max-height: 100vh !important;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        position: relative;
+        background: #000;
+        border-radius: 8px;
+        overflow: visible;
+      }
+
+      .close-button {
+        position: absolute;
+        top: -17px;
+        right: -17px;
+        aspect-ratio: 1 / 1;
+        width: 35px;
+        height: 35px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        z-index: 11;
+      }
+
+      .video-player {
+        width: 100%;
+        height: 500px;
+        border: none;
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .video-player {
+          height: 300px;
+        }
+      }
+    </style>
+    <script>
+      function openModal(e) {
+        document.getElementById('videoModal').classList.add('active');
+        document.getElementById("{{blog.id}}").innerHTML = e.dataset.article;
+      }
+      
+      function closeModal() {
+        document.getElementById('videoModal').classList.remove('active');
+        document.getElementById('{{ blog.id }}').innerHTML = '';
+      }
+
+      document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal());
+    </script>
+  {% endif %}
+  {% endif %}
+{%- endif -%}

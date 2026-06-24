@@ -1,0 +1,329 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "1761714959326ac100": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1a38253_hKykJE": {
+          "type": "ai_gen_block_1a38253",
+          "settings": {
+            "banner_image": "shopify://shop_images/image_392.webp",
+            "title": "Full Width Banner",
+            "title_color": "rgba(0,0,0,0)",
+            "banner_min_height_desktop": 500,
+            "title_size_desktop": 48,
+            "title_size_mobile": 32
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1a38253_hKykJE"
+      ],
+      "custom_css": [
+        ".ai-banner-image-wrapper,.ai-banner-image,.ai-banner {height: auto; min-height: 200px; object-position: center;}",
+        "@media (max-width: 768px) {.ai-banner-image-wrapper, .ai-banner-image, .ai-banner {aspect-ratio: 375/179; object-fit: cover; width: 100%; overflow: visible; }}"
+      ],
+      "settings": {}
+    },
+    "basmil_image_text_UhVHRw": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "image_ziKUbt": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/image_392.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "40rem"
+          }
+        },
+        "content_MgTqtQ": {
+          "type": "content",
+          "settings": {
+            "title": "Shilajit Star Program",
+            "subtitle": "",
+            "description": "<p>Paragraphs Here</p>",
+            "button_text": "Link Here",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ziKUbt",
+        "content_MgTqtQ"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".contentside {position: absolute; width: 0; height: 0; overflow: hidden;}",
+        "@media (max-width: 768px) {img {min-width: 180%; height: auto; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagetop",
+        "alignment": "contentstart",
+        "valignment": "top",
+        "gapimage": "5.3rem",
+        "content_width": "0%",
+        "padding": "0",
+        "margin": "0",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "116.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_BwVgpH": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_8yGmP3": {
+          "type": "content",
+          "settings": {
+            "title": "Hello <brown>Shilajit</brown> Star",
+            "subtitle": "",
+            "description": "<p>Come and Become a part of the Everest Shilajit Affiliated Program & Earn up to 15% Commission on Every Referral Purchases. </p><p>Refer others to try Shilajit and get paid. </p><p>It’s free to join, free to share, and offers you the opportunity to earn a healthy commission!</p>",
+            "button_text": "Be A Everest Shilajit Star",
+            "button_link": "https://everestshilajit.goaffpro.com/login",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_nbyq3b": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Layer_1.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "50%; max-width:70rem;"
+          }
+        }
+      },
+      "block_order": [
+        "content_8yGmP3",
+        "image_nbyq3b"
+      ],
+      "custom_css": [
+        ".button,.buttons-section {width: 100%;}",
+        "@media (max-width: 768px) {br {display: none; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "5%; justify-content:space-between;",
+        "content_width": "40.69%; width:586px;",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_GFhKCm": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_FfheLA": {
+          "type": "content",
+          "settings": {
+            "title": "This is how <brown>it works:</brown>",
+            "subtitle": "",
+            "description": "<p>Create your profile, and join us now. </p><p>Through your dashboard, you will get specific links that you can share with others via email, social networks, or as a link on your website. As an example, you can click on the instagram share icon and you can share the link with your friends with a couple of clicks.</p><p>It’s free and easy. Simply click on this link and sign up!</p>",
+            "button_text": "Join Now",
+            "button_link": "https://everestshilajit.goaffpro.com/create-account",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_riybmR": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Layer_2.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "50%; max-width:70rem; height: auto;"
+          }
+        }
+      },
+      "block_order": [
+        "content_FfheLA",
+        "image_riybmR"
+      ],
+      "custom_css": [
+        ".button,.buttons-section {width: 100%;}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagefirst",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "5%; justify-content:space-between;",
+        "content_width": "40.69%; width:586px",
+        "padding": "48px 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_PDNbCi": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_wdkhNz": {
+          "type": "content",
+          "settings": {
+            "title": "<brown>Earn up to 15%</brown> <br>commission",
+            "subtitle": "",
+            "description": "<p>Earn up to 15% commission with every referral. Yes, you heard us right.</p><p>Every purchase made using your referral qualifies you for earning a commission. Make money as someone uses your affiliate link to make purchases. Every month, you will get paid for all sales that you generate. And you can track your commissions right from your dashboard! We’ve had affiliates generate a significant amount of money simply by sharing a link</p><p><em><strong>Please note that commission from wholesale orders or from self referrals may not be granted.</strong></em></p>",
+            "button_text": "Be A Everest Shilajit Star",
+            "button_link": "https://everestshilajit.goaffpro.com/login",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_8U6Bcd": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/b694f9dc24_1.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "50%; max-width:70rem;"
+          }
+        }
+      },
+      "block_order": [
+        "content_wdkhNz",
+        "image_8U6Bcd"
+      ],
+      "custom_css": [
+        ".button,.buttons-section {width: 100%;}",
+        "@media (max-width: 768px) {br {display: none; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "5%; justify-content:space-between;",
+        "content_width": "40.69%; width:586px;",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_double_wQfaUd": {
+      "type": "basmil-image-text-double",
+      "blocks": {
+        "block_yQYdLP": {
+          "type": "block",
+          "settings": {
+            "content": "<p>According to the FDA guidelines, it is prohibited to mention cure, mitigation, or prevention of any medical conditions or diseases in public posts and advertising for Dietary Supplements.</p><p>Such claims may include (but are not limited to):</p><ul><li>bones problems, inflammation, arthritis, pain...</li><li>illness, health issues, viruses, bacteria, pathogens...</li><li>sexual libido, testosterone, erection, sperm...</li><li>anti-aging, longevity, age-related problems...</li><li>skin issues, scars, pimples, wrinkles, elasticity, dryness...</li><li>detox, heavy metals removal, hangover relief...</li><li>wounds, tissue regeneration, burn, healing...</li><li>memory, Alzheimer's, attention, any brain disorders...</li></ul><p>Please check the following publication for more in-depth info: </p><p><a href=\"https://www.fda.gov/food/food-labeling-nutrition/label-claims-conventional-foods-and-dietary-supplements\" target=\"_blank\" title=\"Label Claims for Conventional Foods and Dietary Supplements \">https://www.fda.gov/food/food-labeling-nutrition/label-claims-conventional-foods-and-dietary-supplements</a></p><p>Please avoid using the word health in general as well as treat, healing, prevent, mitigate, etc.</p>",
+            "image_type": "image",
+            "svg": ""
+          }
+        },
+        "block_WmeVGr": {
+          "type": "block",
+          "settings": {
+            "content": "<p>Those rules are not just about words but applied to the meaning of the sentence or article. If a message has an idea of describing the diseases or medical condition it is strictly prohibited. It is also prohibited to mention health-related issues in the connection to the product even if you cited someone else's article or research. It is also prohibited to have comments or feedback from 3rd parties that mention health-related issues as such comments shall be removed from the post or article.</p><p>If your article or sentence comply (using general terms not connected with a disease or condition such as wellness, wellbeing, metabolism, immunity, beauty in some cases are allowed) but still describe the health-related topics always include the FDA disclaimer:</p><p>\"Dietary Supplements are not intended to diagnose, treat, cure or prevent any disease. The statements made with this article (and any accompanying material) have not been evaluated by FDA and not intended to replace the attention or advice of a physician or other qualified health care professional.\"</p><p><em><strong>Failure to comply will result in your account suspension as well as any affiliation with our brand.</strong></em></p>",
+            "image_type": "image",
+            "svg": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_yQYdLP",
+        "block_WmeVGr"
+      ],
+      "custom_css": [
+        ".flag-container {height: auto;}",
+        "h2 {font-size: 5.4rem; text-align: center; max-width: 95rem; font-weight: 700 !important;}",
+        "a {color: #0055ff; text-underline-offset: 2px; text-decoration: underline;}"
+      ],
+      "name": "Basmil Image Text Double",
+      "settings": {
+        "heading": "Rules and Regulations for <brown>USA Product Advertisers</brown>",
+        "description": "",
+        "section_id": "",
+        "section_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1761714959326ac100",
+    "basmil_image_text_UhVHRw",
+    "basmil_image_text_BwVgpH",
+    "basmil_image_text_GFhKCm",
+    "basmil_image_text_PDNbCi",
+    "basmil_image_text_double_wQfaUd"
+  ]
+}

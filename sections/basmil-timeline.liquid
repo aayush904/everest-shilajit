@@ -1,0 +1,434 @@
+{% assign sections = section.settings %}
+
+<div
+  class="main-wrapper wrapper timeline-wrapper flex flex-col {{ section.settings.class }} items-center"
+  style="gap:{{ sections.gaptimeline }}"
+>
+  <div
+    class="contentside {{sections.alignment}} flex flex-col"
+  >
+    <h2 class="{{sections.alignment}}">{{ sections.title }}</h2>
+    {{ sections.description }}
+  </div>
+
+  <div class="timeline">
+    {% assign blocks = section.blocks %}
+    {% for block in blocks %}
+      {% assign order = forloop.index0 | modulo: 2 %}
+      <div class="timeline-step{{ ' ' }} {%- if order == 0 -%}right{%- else -%}  left   {%- endif -%}">
+        <div class="dot empty:block"></div>
+        <div class="content">
+          {{ block.settings.content }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+          #shopify-section-{{ section.id }} {
+          {% if sections.background_on == 'main_section' %}
+            {% if sections.background_type == 'color'  %}
+              background: {% if sections.background_gradient != blank%}{{sections.background_gradient}} {% else %} {{ sections.background_color }}
+            {% endif %};
+          {% elsif sections.background_type == 'image' and sections.background_image != blank %}
+              background:{% if sections.background_gradient != blank%}{{sections.background_gradient}},{% endif %}url('{{ sections.background_image | image_url }}') no-repeat {{' '}}{{ sections.background_position }};
+              background-size: {{ sections.background_size }};
+        {% endif %};
+      {% endif %};
+      }
+  #shopify-section-{{ section.id }} .contentside{
+    max-width:{{ sections.content_width }};
+  }
+        @media (max-width: 1167px) {
+        #shopify-section-{{ section.id }} .main-wrapper {
+          max-width: 100% !important;
+          margin: 0 auto!important;
+          width:100%!important;
+
+        }
+  #shopify-section-{{ section.id }} .contentside{
+    max-width:100%;
+  }
+        }
+
+      @media (max-width: 767px) {
+        #shopify-section-{{ section.id }} .main-wrapper {
+          padding-left: 0 16px 4rem 16px !important;
+          max-width: 100% !important;
+        }
+      }
+
+      #shopify-section-{{ section.id }} .wrapper{
+        width:{{ sections.width }};
+        min-height:{{ sections.height }};
+      margin:{{sections.margin}};
+      padding: {{sections.padding}};
+        {% if sections.background_on == 'content_part' %}
+        {% if sections.background_type == 'color' and sections.background_color %}
+          background: {{ sections.background_color }};
+        {% elsif sections.background_type == 'image' and sections.background_image %}
+          background: url('{{ sections.background_image  | image_url }}') no-repeat {{ sections.background_position }};
+          background-size: {{ sections.background_size }};
+        {% else %}
+        ''
+        {% endif %};
+      {% endif %};
+    }
+
+
+      @media(max-width:768px){
+    @media(max-width:768px){
+            #shopify-section-{{ section.id }} .wrapper.wrapper{
+            padding: {% render 'mobile_spacing'  padding: sections.padding %};
+          }
+    }
+      }
+
+
+    .timeline {
+      position: relative;
+      width: 100%;
+    }
+
+    .timeline::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: #e0af7e;
+      transform: translateX(-50%);
+    }
+
+    .timeline-step {
+      position: relative;
+      width: 50%;
+      margin-bottom:11rem;
+    }
+
+    .timeline-step .dot {
+      position: absolute;
+      top: 0px;
+      transform: translateY(25%);
+      width: 28px;
+      height: 28px;
+      background-color: #e0af7e;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-step.left {
+      left: 0;
+      text-align: left;
+      width: 50%;
+    }
+
+    .timeline-step:last-child{
+      margin-bottom:0!important;
+    }
+
+    .timeline-step.left .dot {
+      right: -14px;
+    }
+
+    .timeline-step.right {
+      left: 50%;
+      text-align: left;
+      width: 50%;
+    }
+
+    .timeline-step.right .dot {
+      left: -14px;
+    }
+
+    .timeline-step .content {
+      padding: 0 10px;
+      position: relative;
+    }
+
+    .timeline-step.left .content {
+      margin-right: 100px;
+    }
+
+    .timeline-step.right .content {
+      margin-left: 100px;
+    }
+    .content {
+      padding-right: 10rem;
+      padding-left: 10rem;
+      width: 80.84%;
+    }
+    .content h2 {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+
+    @media (max-width: 768px) {
+      .timeline {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .timeline::after {
+        left: 20px;
+      }
+
+      .timeline-step {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .timeline-step.left {
+        left: 0;
+        text-align: left;
+        width: 100%;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+      .timeline-step.right {
+        left: 0;
+        text-align: left;
+        width: 100%;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+
+      .timeline-step .dot {
+        left: 12px;
+        top: 0px;
+        transform: translateY(25%);
+        width: 16px;
+        height: 16px;
+        position: absolute;
+      }
+      .timeline-step.right .dot {
+        left: 12px;
+        top: 0px;
+      }
+
+      .timeline-step .content {
+        margin: 0 0 0 24px;
+        padding: 0 10px;
+        width: 100%;
+      }
+
+      .timeline-step.right .content {
+        margin: 0 0 0 24px;
+        padding: 0 10px;
+      }
+
+      .content h2 {
+        margin-top: 10px 0;
+      }
+
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Basmil Timeline",
+  "class": "basmil-timeline",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "gaptimeline",
+      "label": "Gap Between head and timeline"
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content Alignment",
+      "default": "contentstart",
+      "options": [
+        {
+          "value": "contentstart",
+          "label": "Left"
+        },
+        {
+          "value": "contentcenter",
+          "label": "Center"
+        },
+        {
+          "value": "contentend",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "content_width",
+      "label": "Content Width",
+      "default": "50%"
+    },
+    {
+      "type": "header",
+      "content": "Class/ID",
+      "info": "Enter the custom class or id for this section"
+    },
+    {
+      "type": "text",
+      "id": "class",
+      "label": "Section Class"
+    },
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Section ID"
+    },
+    {
+      "type": "header",
+      "content": "Margin/Padding"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Section Padding",
+      "default": "0 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Section Margin",
+      "default": "0 auto"
+    },
+    {
+      "type": "header",
+      "content": "Height/Width"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Max Width"
+    },
+    {
+      "type": "text",
+      "id": "height",
+      "label": "Min Height"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "eg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Choose Background on",
+      "default": "content_part",
+      "options": [
+        {
+          "value": "content_part",
+          "label": "Content Part"
+        },
+        {
+          "value": "main_section",
+          "label": "Main Section"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Add Timeline Item",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basmil Timeline"
+    }
+  ]
+}
+{% endschema %}

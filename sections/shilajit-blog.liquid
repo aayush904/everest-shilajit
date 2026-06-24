@@ -1,0 +1,331 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+  .tags {
+    scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .tags::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tags a {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .blog-articles__article.article,
+  .blog-articles__article.article * {
+    max-height: max-content;
+  }
+  .card:not(.ratio) {
+    align-items: center;
+  }
+  }
+</style>
+
+{% render 'keywords', schema: true %}
+<div class="main-blog page-width section-{{ section.id }}-padding flex md:flex-col sm:flex-col justify-between" style="border-bottom:1px solid rgba(var(--color-foreground),.2);">
+  <div
+    id="blog-listing"
+    class="blog-articles gap-[24px]  {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %} max-w-[66%] md:max-w-full sm:max-w-full grid-cols-[repeat(2,minmax(0,1fr))!important] sm:grid-cols-[repeat(1,minmax(0,1fr))!important]"
+  >
+    {%- assign custom_array = section.settings.categories | split: ',' -%}
+    {%- assign category_counter = 0 -%}
+    {% assign video_article_count = 0 %}
+    {%- for category in custom_array -%}
+      {%- assign category_counter = category_counter | plus: 1 -%}
+      {%- assign shilajit_blog = blogs[category] -%}
+      {%- assign shilajit_blog_counter = 0 -%}
+
+      {%- if shilajit_blog and shilajit_blog.articles.size > 0 -%}
+        <div
+          class="flex gap-[3.2rem] capitalize justify-between sm:items-center items-center w-full mx-auto col-span-2 sm:col-span-full"
+          style="margin-bottom:-8px; text-align: {{ section.settings.content_alignment }};"
+        >
+          <h2 class="title--primary text-[2.4rem]{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}  my-0 leading-none inline text-black">
+            {% if current_tags.size > 0 %}
+              {{ current_tags -}}
+            {%- else -%}
+              {{ shilajit_blog.title | escape }}
+            {%- endif %}
+          </h2>
+
+          <a
+            href="{{ shilajit_blog.url }}"
+            class="text-[16px] font-sans text-black hover:scale-[1.1] font-[500] flex gap-[0.5rem] items-center justify-center"
+          >
+            {{ 'sections.featured_blog.view_all' | t }}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-[1.8rem]">
+<path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          </a>
+        </div>
+        {% if category_counter == 1 %}
+          {% assign blog_limit = 6 %}
+        {% elsif category contains 'press' %}
+          {% assign blog_limit = 3 %}
+        {%- else -%}
+          {% assign blog_limit = 2 %}
+        {%- endif -%}
+        {% assign articleTags = '' %}
+        {% if blog_limit == 3 %}
+          <div
+            class="col-span-2 sm:col-span-full grid grid-cols-3 sm:grid-cols-[repeat(1,minmax(0,1fr))!important]"
+          >
+        {%- endif -%}
+        {%- for article in shilajit_blog.articles limit: blog_limit -%}
+          {%- assign shilajit_blog_counter = shilajit_blog_counter | plus: 1 -%}
+          {% assign articleTags = articleTags | append: ',' | append: article.tags[0] %}
+          <div
+            class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};  grid-template-columns: repeat(auto-fit, minmax(320px, 464px));"
+            {% endif %}
+          >
+            {% if shilajit_blog.metafields.custom.is_video %}
+              {%- render 'article-card',
+                article: article,
+                media_height: section.settings.image_height,
+                media_aspect_ratio: article.image.aspect_ratio,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: false,
+                style: 'video',
+                video_counter: video_article_count
+              -%}
+              {% assign video_article_count = video_article_count | plus: 1 %}
+
+            {% else %}
+              {% if shilajit_blog_counter > 2 and category_counter == 1 %}
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: false,
+                  style: 'horizontal'
+                -%}
+              {% elsif shilajit_blog_counter <= 2 and category_counter == 1 %}
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: true,
+                  style: 'vertical'
+                -%}
+              {% else %}
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: false,
+                  style: 'vertical'
+                -%}
+              {% endif %}
+            {% endif %}
+          </div>
+        {%- endfor -%}
+        {% if blog_limit == 3 %}
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        <p>No articles found for {{ category }} blog.</p>
+      {%- endif -%}
+      {% unless forloop.last %}
+      <hr class="block h-[1px] col-span-2 sm:col-span-1 my-[12px]">
+      {% endunless %}
+    {%- endfor -%}
+  </div>
+  {% render 'blog-sidebar', articleTags: articleTags %}
+</div>
+
+{% schema %}
+{
+  "name": "Shilajit Blog",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "categories",
+      "label": "Categories",
+      "info": "Write the blog categories seperated with comma(,) which exist in blogs. eg: news,shilajit"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "info": "Unit in rem 1rem = l0px",
+      "default": 14
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "info": "Unit in rem 1rem = l0px",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tags",
+      "name": "Tags",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tags_title",
+          "label": "Tags Title",
+          "info": "Write the title for tags section",
+          "default": "Popular Tags"
+        }
+      ]
+    },
+    {
+      "type": "recent_posts",
+      "name": "Recent Posts",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "recent_posts_title",
+          "label": "Recent Posts Title",
+          "info": "Write the title for recent posts section",
+          "default": "Recent Posts"
+        },
+        {
+          "type": "blog",
+          "id": "recent_posts_blog",
+          "label": "Blog",
+          "info": "Select the blog from which you want to show recent posts"
+        }
+      ]
+    },
+    {
+      "type": "most_read",
+      "name": "Most Read Article",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "most_read_title",
+          "label": "Most Read Title",
+          "info": "Write the title for most read section",
+          "default": "Most Read Articles"
+        },
+        {
+          "type": "blog",
+          "id": "most_read_blog",
+          "label": "Blog",
+          "info": "Select the blog from which you want to show most read articles"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,142 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "testimonial_slider_qNRmqr": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "testimonial_slide_iDPjnw": {
+          "type": "testimonial_slide",
+          "settings": {
+            "video": "shopify://files/videos/refreshing shilajit_2.mp4",
+            "product": "",
+            "rating_count": 5,
+            "review_text": "non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis.",
+            "person_name": "Nicolas Jhonson"
+          }
+        },
+        "testimonial_slide_L86PmE": {
+          "type": "testimonial_slide",
+          "settings": {
+            "video": "shopify://files/videos/refreshing shilajit_2.mp4",
+            "product": "",
+            "rating_count": 5,
+            "review_text": "non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis.",
+            "person_name": "Nicolas Jhonson"
+          }
+        },
+        "testimonial_slide_mPCrJg": {
+          "type": "testimonial_slide",
+          "settings": {
+            "video": "shopify://files/videos/refreshing shilajit_2.mp4",
+            "product": "",
+            "rating_count": 5,
+            "review_text": "non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis.",
+            "person_name": "Nicolas Jhonson"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_slide_iDPjnw",
+        "testimonial_slide_L86PmE",
+        "testimonial_slide_mPCrJg"
+      ],
+      "name": "Testimonials Slider",
+      "settings": {
+        "subtitle": "<meta name=\"robots\" content=\"noindex\">\n1,523+ Verified Reviews",
+        "title": "<p>Trusted by thousands</p>",
+        "caption": "<p>non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis.</p>"
+      }
+    },
+    "17599912378670010a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_text_6bBTbz": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "judge_me_reviews_review_widget_homepage_ztFpqd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "pure-himalayan-shilajit-resin",
+            "review_data": "real_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_text_6bBTbz",
+        "judge_me_reviews_review_widget_homepage_ztFpqd"
+      ],
+      "custom_css": [
+        ".shopify-block.shopify-app-block {display: block;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product_grid_slider_idkgAz": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        ".bg-white {background: #e4e4e4;}",
+        ".slick-dots {display: none;}",
+        ".button {margin-top: auto !important;}",
+        ".card-tagline {display: flex !important;}"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "section_description": "",
+        "product_collection": "frontpage",
+        "slider_grid": true,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 4,
+        "products_per_page": 99,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "4rem",
+        "iconbox_gap": "12px 1.2rem!important",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "32.22%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "advance_slider",
+        "custom_id": "",
+        "width": "100%; max-width:149.6rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style> \n.advance_slider{\n     .product-section-container{\n         overflow: visible;\n         &&:hover .slick-arrow{\n             opacity:1;\n        }\n    }\n     .product-info{\n         max-height: -webkit-fill-available;\nheight:100%;\njustify-content:start;\n    }\n\n     .card-tagline{\n         order:3;\n    }\n     .button-cart {\n         order:5;\nmargin-top: auto;\n    }\n     .prd-title{\n         order:2 \n    }\n     .prd-rating{\n         order:1;\n    }\n     .prd-price{\n         order:4;\n         *{\n             font-size:2.4rem;\n             font-weight:500;\n             letter-spacing: 0;\n             text-transform: lowercase;\n             color:#252525;\n        }\n         .original-price{\n             font-weight:300;\n             color:#25252580;\n        }\n    }\n.product-price{\ndisplay:flex;\ngap:1rem;\n}\n\n     .slick-arrow{\n         background:#68453D;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         border-radius:50%;\n         width: 4.8rem;\n         height:4.8rem;\n         z-index:1;\n         opacity:0.5;\n    }\n     .slick-prev{\n         left:0;\n         transform: translateX(-100%);\n         &&:before{\n             content:\"‹\";\nmargin-left: 4px;\n        }\n    }\n     .slick-next{\n         right:0;\n         transform: translateX(100%);\n         &&:before{\n             content:\"›\";\n             margin-left:8px;\n        }\n    }\n     .slick-prev:before, .slick-next:before{\n         font-family: sans-serif;\n         opacity:1;\n         width:20px;\n         height:20px;\nmargin-bottom:2px;\n    }\n.button span{\ncolor:#fff!important;}\n\n @media(max-width:1600px){\n     .slick-prev{\ntransform:translateX(-16px);\n}\n\n     .slick-next{\ntransform:translateX(16px);\n}\n}\n\n}\n @media(max-width:600px){\n     #shopify-section-template--19218853625993__product_grid_slider_67XwP3 {\n         && .product-slider {\n             grid-template-columns:1fr 1fr;\n        }\n         && .product-card.product-card.product-card{\n             margin:0!important;\n             *{\n                 text-align:start;\n                 letter-spacing:0;\n            }\n        }\n        tagline,.card-attr{\n         font-size:10px;\n        }\n        h3{\n         font-size:18px;\n         font-weight:600;\n        }\n        .product-price *{\n                 font-size: 14px;\n        }\n.rating-count span{\nfont-size:10px;\n}\n.button span{\nfont-size:12px;\ntext-transform: capitalize;\ntext-align: center!important;\n}\n      }\n\n    }\n</style> \n<script defer='defer'>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n  if (window.innerWidth > 600) return; // only run on mobile\n  if (typeof jQuery === \"undefined\" || !$.fn.slick) return;\n\n  function unslickWhenReady() {\n    const $slider = $('#shopify-section-template--19218853625993__product_grid_slider_67XwP3 .product-slider');\n    if ($slider.length && $slider.hasClass('slick-initialized')) {\n      $slider.slick('unslick');\n      return; // stop recursion once done\n    }\n    requestAnimationFrame(unslickWhenReady); // check again next frame\n  }\n\n  unslickWhenReady();\n});\n</script>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "testimonial_slider_qNRmqr",
+    "17599912378670010a",
+    "product_grid_slider_idkgAz"
+  ]
+}

@@ -1,0 +1,476 @@
+<div class="doubletextimage-wrapper {{ section.settings.section_class }}" id="{{ section.settings.section_id }}">
+  {% if section.settings.heading != blank or section.settings.description != blank %}
+    <div class="flex flex-col gap-[3.2rem] justify-center items-center">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="flag">
+    {% assign blocks = section.blocks %}
+    {% for block in blocks %}
+      {% assign order = forloop.index0 | modulo: 2 %}
+      {% if forloop.first or order == 0 %}
+        <div class="flag-content-wrapper">
+          <div class="flag-row">
+      {% endif %}
+
+            <div class="flag-container">
+              <div
+                class="flag-info"
+                {% if block.settings.svg != blank or block.settings.image != blank %}
+                {% else %}
+                  style="width:100%;"
+                {% endif %}
+              >
+                {{ block.settings.content | strip }}
+              </div>
+              {% if block.settings.svg != blank or block.settings.image != blank %}
+                <div class="flag-svg">
+                  {% if block.settings.image_type == 'image' %}
+                    <img
+                      src="{{ block.settings.image | image_url }}"
+                      width="{{ block.settings.image.width}}"
+                      height="{{ block.settings.image.height}}"
+                      alt="{{ block.settings.image.alt |  default: "flag"  }}"
+                    >
+                  {% else %}
+                    {{ block.settings.svg }}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+            {% assign order2 = forloop.index0 | modulo: 2 %}
+
+      {% if order2 == 1 or forloop.last %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% comment %}
+      <div class="flag-content-wrapper">
+        <div class="flag-row">
+          <div class="flag-container">
+            <div class="flag-info">
+              <h4>United State (US)</h4>
+              <ul>
+                <li>It’s not considered a controlled substance.</li>
+                <li>Mad honey can be legally ordered online and delivered across the country.</li>
+                <li>As of 2022, there are no federal laws specifically addressing mad honey.</li>
+                <li>It's currently legal in all 51 states.</li>
+              </ul>
+            </div>
+            <div class="flag-svg">
+              {% comment %} svg goes here {% endcomment %}
+            </div>
+          </div>
+          <div class="flag-container">
+            <div class="flag-info">
+              <h4>United Kingdom (UK)</h4>
+              <ul>
+                <li>Not classified as a controlled substance</li>
+                <li>Treated as a food product, subject to general food safety regulations</li>
+                <li>Can be imported and sold, but sellers must comply with food safety standards</li>
+              </ul>
+            </div>
+            <div class="flag-svg">
+              <svg viewBox="0 0 230 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10744_17655)">
+                <path d="M229.931 0.863281V144.831L229.862 144.9H0.207031V0.863281H229.931Z" fill="#2E4593"/>
+                <path d="M229.931 129.849V144.833L229.862 144.902H205.971L135.473 100.641L128.43 96.2219L120.075 91.0432L117.313 89.2479L108.82 83.9311L105.644 81.9287L103.02 80.3406L97.7033 76.9571L95.9771 75.9214L93.3532 74.2642L68.3577 58.521L57.1029 51.4779L0.207031 15.8485V0.864778L0.414176 0.519531L0.828466 0.864778H24.0978L95.9771 45.8849L103.02 50.3041L104.884 51.4779L116.208 58.521L117.313 59.2805L121.594 61.9734L128.43 66.2545L129.604 66.945L135.473 70.6737L141.273 74.2642L156.671 83.9311L167.994 91.0432L229.931 129.849Z" fill="#FCF5FF"/>
+                <path d="M229.931 144.418L230 144.971L214.602 144.902L135.473 95.2552L128.706 91.0432L128.43 90.8361L121.594 86.555L117.52 83.9311L109.994 79.2358L103.02 74.8857L102.053 74.2642L97.7033 71.5713L95.9771 70.4665L76.9888 58.521L65.7339 51.4779L0.207031 10.3936V0.519531H0.414176L0.828466 0.864778L81.6841 51.4779L92.8699 58.521L95.9771 60.4544L103.02 64.9426L105.644 66.5997L109.994 69.2927L117.934 74.2642L128.43 80.8239L129.604 81.5835L133.401 83.9311L135.473 85.2431L144.656 91.0432L229.931 144.418Z" fill="#F42525"/>
+                <path d="M229.931 3.6943V18.678L177.523 51.4764L166.268 58.5195L141.273 74.2627L135.473 77.8533L129.604 81.582L128.43 82.2725L125.737 83.9296L121.594 86.5535L117.313 89.2464L114.482 91.0417L103.02 98.2228L95.9771 102.642L28.5859 144.9H0.207031V132.678L66.6315 91.0417L77.8864 83.9296L93.3532 74.2627L95.9771 72.6746L97.7033 71.5698L103.02 68.1864L105.644 66.5983L117.313 59.279L118.418 58.5195L128.43 52.305L129.673 51.4764L135.473 47.8859L210.528 0.863281H228.136L229.931 3.6943Z" fill="#FCF5FF"/>
+                <path d="M229.309 4.45385L154.254 51.4764L142.999 58.5195L135.473 63.2839L129.604 66.9435L128.43 67.703L117.934 74.2627L109.994 79.2343L105.644 81.9272L103.02 83.6534L102.468 83.9296L95.9771 88.0726L91.2127 91.0417L5.38566 144.9H0.207031V138.133L75.3316 91.0417L86.5865 83.9296L95.9771 78.0604L97.7033 76.9557L102.053 74.2627L103.02 73.6413L109.994 69.2912L121.594 61.9719L127.049 58.5195L128.43 57.6909L135.473 53.2717L138.304 51.4764L219.09 0.863281H227.1H229.931V3.9705L229.309 4.45385Z" fill="#F42525"/>
+                <path d="M230 51.4766H0V90.9728H230V51.4766Z" fill="white"/>
+                <path d="M230 58.5195H0V83.9297H230V58.5195Z" fill="#F42525"/>
+                <path d="M128.429 0.863281H103.02V144.9H128.429V0.863281Z" fill="#CD002A"/>
+                <path d="M128.359 91.0417H135.402V144.9H95.9062V91.0417H102.949V51.4764H95.9062V0.863281H135.402V51.4764H128.359V91.0417Z" fill="white"/>
+                <path d="M128.498 0.863281H102.812V144.9H128.498V0.863281Z" fill="#F42525"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_10744_17655">
+                <rect width="230" height="144.451" fill="white" transform="translate(0 0.519531)"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flag-content-wrapper">
+        <div class="flag-row">
+          <div class="flag-container">
+            <div class="flag-info">
+              <h4>Canada</h4>
+              <ul>
+                <li>Legal to posses & consume.</li>
+                <li>Classified as a food product.</li>
+                <li>Regulated by the Canadian Food Inspection Agency (CFIA).</li>
+                <li>Must comply with safety standards for production, labeling, and sale.</li>
+              </ul>
+            </div>
+            <div class="flag-svg">
+              <svg viewBox="0 0 232 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10744_17677)">
+                <path d="M232 0.519531H0V145.982H232V0.519531Z" fill="#FF3B45"/>
+                <path d="M174.122 0.519531H58.4355V145.912H174.122V0.519531Z" fill="white"/>
+                <path d="M112.618 98.4226V124.154H117.081V97.6555L140.999 102.885L138.001 94.657L161.222 72.9702L154.876 71.8545L158.99 56.1647L145.532 58.7448L142.534 51.2834L130.191 63.6261L133.887 34.8266L125.31 38.5921L115.198 21.0195L105.506 39.3592L95.8127 33.7108L100.624 63.6261L87.5843 50.1677L86.4686 58.3961L72.5918 55.3976L77.1244 70.3204L70.0117 72.9702L92.3958 93.1229L89.0487 101.351L112.618 98.4226Z" fill="#FF3B45"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_10744_17677">
+                <rect width="232" height="145.462" fill="white" transform="translate(0 0.519531)"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="flag-container">
+            <div class="flag-info">
+              <h4>Australia</h4>
+              <ul>
+                <li>Not legally permitted.</li>
+                <li>Subject to strict biosecurity measures.</li>
+                <li>All honey products undergo inspection upon arrival</li>
+              </ul>
+            </div>
+            <div class="flag-svg">
+              <svg viewBox="0 0 232 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10747_17678)">
+                <path d="M232 0.519531H0V110.382H232V0.519531Z" fill="#004890"/>
+                <path d="M0 57.7958H12.4269L108.117 6.94696V0.519531H96.8226L0 51.6705V57.7958Z" fill="white"/>
+                <path d="M11.8647 0.519531H0V6.6365L96.2688 57.7958H108.117V51.36L11.8647 0.519531Z" fill="white"/>
+                <path d="M0 57.5711V57.7977H7.48468L52.0655 34.3032L48.0631 32.1719L0 57.5711Z" fill="#FE0000"/>
+                <path d="M99.8691 0.519531L55.8672 23.7623L59.8948 25.8852L108.059 0.519531H99.8691Z" fill="#FE0000"/>
+                <path d="M0 5.05062L28.2857 20.1375H37.3982L0.260118 0.519531H0V5.05062Z" fill="#FE0000"/>
+                <path d="M108.117 52.9695L80.1085 38.168H71.9609L108.117 57.2573V52.9695Z" fill="#FE0000"/>
+                <path d="M108.117 20.1375H63.1667V0.519531H44.9501V20.1375H0V38.1695H44.9501V57.7958H63.1667V38.1695H108.117V20.1375Z" fill="white"/>
+                <path d="M108.117 23.5195H0V34.7885H108.117V23.5195Z" fill="#FE0000"/>
+                <path d="M59.0561 0.519531H49.0625V57.7958H59.0561V0.519531Z" fill="#FE0000"/>
+                <path d="M56.865 69.8359L60.0115 81.4489L71.0624 76.6661L63.9469 86.3744L74.5698 92.0299L62.5456 92.5165L64.744 104.356L56.865 95.252L48.9859 104.356L51.1927 92.5165L39.1602 92.0299L49.783 86.3744L42.6676 76.6661L53.71 81.4489L56.865 69.8359Z" fill="white"/>
+                <path d="M137.527 26.707L139.323 33.3191L145.616 30.592L141.563 36.1216L147.605 39.3437L140.758 39.629L142.016 46.3585L137.527 41.1813L133.047 46.3585L134.288 39.629L127.441 39.3437L133.491 36.1216L129.447 30.592L135.732 33.3191L137.527 26.707Z" fill="white"/>
+                <path d="M167.187 82.9844L168.975 89.5964L175.268 86.8778L171.215 92.4074L177.265 95.6295L170.41 95.9064L171.668 102.636L167.187 97.4587L162.698 102.636L163.949 95.9064L157.102 95.6295L163.143 92.4074L159.099 86.8778L165.383 89.5964L167.187 82.9844Z" fill="white"/>
+                <path d="M166.625 4.77344L168.412 11.3939L174.705 8.66682L170.653 14.1964L176.702 17.4185L169.855 17.6954L171.106 24.4333L166.625 19.2561L162.136 24.4333L163.386 17.6954L156.539 17.4185L162.589 14.1964L158.536 8.66682L164.829 11.3939L166.625 4.77344Z" fill="white"/>
+                <path d="M198.679 21.6055L200.475 28.2259L206.768 25.4988L202.715 31.0285L208.756 34.2506L201.918 34.5275L203.168 41.2654L198.679 36.0882L194.19 41.2654L195.449 34.5275L188.602 34.2506L194.651 31.0285L190.59 25.4988L196.883 28.2259L198.679 21.6055Z" fill="white"/>
+                <path d="M177.728 52.5352L179.347 57.1837L184.264 57.2844L180.346 60.2548L181.772 64.9705L177.728 62.1595L173.692 64.9705L175.11 60.2548L171.191 57.2844L176.108 57.1837L177.728 52.5352Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_10747_17678">
+                <rect width="232" height="109.862" fill="white" transform="translate(0 0.519531)"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endcomment %}
+  </div>
+</div>
+
+{% stylesheet %}
+  /*.doubletextimage-wrapper  */
+  .doubletextimage-wrapper {
+    padding-top: 3.2rem;
+    padding: 0;
+  }
+  .doubletextimage-wrapper h1 {
+    color: rgba(190, 147, 95, 1);
+    padding-top: 8rem;
+    font-size: 4.8rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+  }
+  /* Flag container section */
+  .doubletextimage-wrapper .flag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .doubletextimage-wrapper .flag-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4.8rem;
+    width: 100%;
+    max-width: 144rem;
+    margin: auto;
+  }
+
+  .doubletextimage-wrapper .flag-content-wrapper {
+    width: 100%;
+    padding: 6rem 1.6rem;
+  }
+
+  .doubletextimage-wrapper .flag-content-wrapper:nth-child(2n) {
+    background-color: rgba(241, 229, 207, 1) !important;
+  }
+
+  .doubletextimage-wrapper .flag-row:nth-child(2n) .flag-info {
+    background-color: rgba(241, 229, 207, 1) !important;
+  }
+
+  .doubletextimage-wrapper .flag-row:nth-child(2n-1) .flag-info {
+    background-color: transparent !important;
+  }
+  .doubletextimage-wrapper .flag-container {
+    display: flex;
+    align-items: start;
+    text-align: justify;
+    gap: 2.4rem;
+    height: 35.3rem;
+    background-color: transparent;
+    position: relative;
+  }
+
+  .doubletextimage-wrapper .flag-info {
+    width: 50.28%;
+    background-color: transparent;
+  }
+
+  .doubletextimage-wrapper .flag-info h4 {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  .doubletextimage-wrapper .flag-info ul {
+    margin-top: 1.6rem;
+    list-style: disc;
+    margin-left: 1.25em;
+    padding-left: 0;
+    line-height: 1.5;
+  }
+
+  .doubletextimage-wrapper .flag-svg {
+    position: relative;
+    width: 46.26%;
+    height: 30.6rem;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .doubletextimage-wrapper .flag-svg svg {
+    width: 23rem;
+  }
+
+  @media (max-width: 1230px) {
+    .doubletextimage-wrapper .flag-container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: justify;
+      gap: 2.4rem;
+      height: auto;
+      padding: 1.6rem;
+    }
+    .doubletextimage-wrapper .flag-content-wrapper:nth-child(2n),
+    .doubletextimage-wrapper .flag-content-wrapper:nth-child(2n-1),
+    .doubletextimage-wrapper .flag-row:nth-child(2n),
+    .doubletextimage-wrapper .flag-row:nth-child(2n-1) {
+      background-color: transparent !important;
+    }
+    .doubletextimage-wrapper .flag-info {
+      justify-content: center;
+      flex: 2;
+      margin-top: 0;
+      font-size: 1.8rem;
+      line-height: 1.5;
+    }
+    .doubletextimage-wrapper .flag-info h3 {
+      text-align: center !important;
+      gap: 4.8rem;
+      font-family: 'Crimson Text', serif;
+    }
+    .doubletextimage-wrapper .flag-info ul {
+      text-align: left !important;
+    }
+    .doubletextimage-wrapper .flag-svg {
+      flex: 1;
+      font-size: 1.8rem;
+      width: 40rem;
+      height: 80rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 1) !important;
+      margin: 0 auto;
+    }
+    .doubletextimage-wrapper .flag-svg svg {
+      object-fit: contain;
+      object-position: center;
+      width: 45rem;
+      height: 35rem;
+      max-width: 50%;
+      max-height: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .doubletextimage-wrapper .banner .default-svg {
+      display: none;
+    }
+
+    .doubletextimage-wrapper .banner .mobile-svg {
+      display: block;
+    }
+
+    .doubletextimage-wrapper .doubletextimage-wrapper h1 {
+      font-size: 2.4rem !important;
+      padding-top: 2.4rem !important;
+    }
+
+    .doubletextimage-wrapper .flag-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .doubletextimage-wrapper .flag-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      height: auto;
+    }
+    .doubletextimage-wrapper .flag-svg {
+      order: -1;
+      width: 100%;
+      height: auto;
+      /* padding: 7.0rem 4.0rem 6.5rem 4.0rem; */
+      margin-top: 1.2rem;
+    }
+    .doubletextimage-wrapper .flag-info {
+      width: 100%;
+    }
+    .doubletextimage-wrapper .flag-info h3 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      text-align: left !important;
+      margin-bottom: 0.8rem !important;
+    }
+    .doubletextimage-wrapper .flag-info ul {
+      font-size: 1.2rem !important;
+      font-weight: 300;
+
+      font-family: 'Work Sans';
+
+      line-height: 1.408rem;
+      letter-spacing: 0.02em;
+      text-align: justified;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+    .doubletextimage-wrapper .flag-svg svg {
+      width: 71.42%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .doubletextimage-wrapper .flag-content-wrapper:nth-child(2n),
+    .doubletextimage-wrapper .flag-content-wrapper:nth-child(2n-1),
+    .doubletextimage-wrapper .flag-row:nth-child(2n),
+    .doubletextimage-wrapper .flag-row:nth-child(2n-1) {
+      background-color: transparent !important; /* Override with no background */
+    }
+
+    .text-section {
+      max-width: 100%;
+      text-align: left;
+      margin-top: 0;
+      order: 0;
+    }
+
+    .image-section {
+      order: -1;
+      width: 100%;
+      height: auto;
+    }
+    .doubletextimage-wrapper .flag-content-wrapper {
+      padding: 0 !important;
+    }
+    .doubletextimage-wrapper .flag-row {
+      gap: 0 !important;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Basmil Image Text Double",
+  "class": "basmil-image-text-double-container",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description"
+    },
+    {
+      "type": "header",
+      "content": "Class/ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_class",
+      "label": "Section Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Add images and text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "image_type",
+          "label": "Image Type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "svg",
+              "label": "SVG"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "svg",
+          "label": "SVG Code"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basmil Image Text Double"
+    }
+  ]
+}
+{% endschema %}

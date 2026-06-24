@@ -1,0 +1,59 @@
+{% assign new_padding = padding | replace: '0 ', '0px ' %}
+{% assign new_padding = padding | replace: '!important', '' %}
+{% assign last_letter = new_padding | slice: -1, 1 %}
+{% if last_letter == '0' %}
+  {% assign new_padding = new_padding | replace: ' 0', ' 0px' %}
+{% endif %}
+
+{% comment %}
+  {% assign array_rem = new_padding | split: 'rem' %}
+
+  {% for value in array_rem %}
+    {% if value contains 'px' %}
+      {% assign check_rem_value = value | slice: -2, 2 %}
+      {% assign px_values = value | split: 'px' %}
+      {% assign value_size = px_values | size %}
+
+      {{ value_size }}
+
+      {% if value_size == 1 and check_rem_value contains 'px' %}
+        {% assign px_first = value | split: 'px' | first | append: 'px' %}
+        {% render 'mobile_spacing_inner', value: px_first %}
+        {{ 'top ran' }}
+      {% elsif value_size != 1 %}
+        {% assign new_value_last_rem = value_size %}
+        {% unless value contains 'px' %}
+          {% assign new_value_last_rem = value | append: 'rem' %}
+
+        {% endunless %}
+        {% assign array_px = value | split: 'px' %}
+        {% for px in array_px %}
+          {% assign px_value = px | append: 'px' %}
+          {% render 'mobile_spacing_inner', value: px_value %}
+        {% endfor %}
+        {{ 'mid ran' }}
+
+      {% else %}
+
+        {% assign px_last = value | split: 'px' | last | append: 'rem' %}
+        {% render 'mobile_spacing_inner', value: px_last %}
+        {{ 'last ran' }}
+
+      {% endif %}
+    {% else %}
+      {% assign value_rem = value | append: 'rem' %}
+
+      {% render 'mobile_spacing_inner', value: value_rem %}
+    {% endif %}
+  {% endfor %}
+{% endcomment %}
+
+{% assign array_rem = new_padding | split: ' ' %}
+{% for value in array_rem %}
+  {% if value contains 'px' %}
+    {% render 'mobile_spacing_inner', value: value %}
+
+  {% else %}
+    {% render 'mobile_spacing_inner', value: value %}
+  {% endif %}
+{% endfor %}

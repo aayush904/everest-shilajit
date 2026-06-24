@@ -1,0 +1,157 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+
+  Usage:
+  {% render 'product-variant-options',
+  product: product,
+  option: option,
+  block: block
+  %}
+{% endcomment %}
+{%- liquid
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{% comment %}
+  {% liquid
+                                                                                                                                                                                                                                                                                                                  assign variantPrice = variant.price | money_with_currency | escape
+                                                                                                                                                                                                                                                                                                                  assign variantComparedAtPrice = variant.compare_at_price | money_with_currency | escape
+  %}
+{% endcomment %}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign option_disabled = true
+    assign variant_price = ''
+    assign variant_compared_at_price = ''
+    assign saving = ''
+
+    for option1_name in variants_option1_arr
+      case option.position
+        when 1
+          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = product.variants[forloop.index0].price | money
+            assign weight_in_text = product.variants[forloop.index0].metafields.custom.weight_in_text.value
+            assign variant_compared_at_price = product.variants[forloop.index0].compare_at_price | money
+            if product.variants[forloop.index0].compare_at_price > product.variants[forloop.index0].price
+              assign saving = product.variants[forloop.index0].compare_at_price | minus: product.variants[forloop.index0].price | times: 100 | divided_by: product.variants[forloop.index0].compare_at_price | round
+            endif
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = product.variants[forloop.index0].price | money
+            assign weight_in_text = product.variants[forloop.index0].metafields.custom.weight_in_text.value
+            assign variant_compared_at_price = product.variants[forloop.index0].compare_at_price | money
+            if product.variants[forloop.index0].compare_at_price > product.variants[forloop.index0].price
+              assign saving = product.variants[forloop.index0].compare_at_price | minus: product.variants[forloop.index0].price | times: 100 | divided_by: product.variants[forloop.index0].compare_at_price | round
+            endif
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+            assign variant_price = product.variants[forloop.index0].price | money
+            assign weight_in_text = product.variants[forloop.index0].metafields.custom.weight_in_text.value
+            assign variant_compared_at_price = product.variants[forloop.index0].compare_at_price | money
+            if product.variants[forloop.index0].compare_at_price > product.variants[forloop.index0].price
+              assign saving = product.variants[forloop.index0].compare_at_price | minus: product.variants[forloop.index0].price | times: 100 | divided_by: product.variants[forloop.index0].compare_at_price | round
+            endif
+          endif
+      endcase
+    endfor
+  -%}
+
+  {%- if block.settings.picker_type == 'button' or block == 'button' -%}
+    <input
+      type="radio"
+      id="{{ product.url }}{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      class="
+        variant-pill
+        {% if option_disabled %}
+         disabled
+        {% endif %}
+      "
+    >
+    <label
+      class="max-w-[16rem] w-full p-[0!important] flex flex-col justify-between  gap-[1.6rem] font-sans {% if block.settings.swatch_shape == "circle" %} rounded-[50%!important] {% elsif block.settings.swatch_shape == "none" %} bg-[transparent!important] {% endif %}"
+      for="{{ product.url }}{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    >
+      <svg
+        class="absolute hidden top-[0] right-[0] translate-x-1/2 -translate-y-[40%] bg-white xl:w-[2rem] xl:h-[2rem]"
+        width="17"
+        height="17"
+        viewBox="0 0 17 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M8.5 0C3.80457 0 0 3.80457 0 8.5C0 13.1954 3.80457 17 8.5 17C13.1954 17 17 13.1954 17 8.5C17 3.80457 13.1954 0 8.5 0ZM7.18822 11.5118C7.09014 11.6099 6.9512 11.6916 6.82861 11.6916C6.70601 11.6916 6.56707 11.6058 6.4649 11.5077L4.17644 9.21923L4.90385 8.49183L6.83269 10.4207L11.9327 5.28389L12.6478 6.02356L7.18822 11.5118Z" fill="#9E603E" />
+      </svg>
+
+      <div
+        class="option-wrapper overflow-hidden  flex flex-col justify-between  gap-[1.6rem] w-full h-full"
+        style="border-radius:var(--variant-pills-radius)"
+      >
+        <div class="flex flex-col gap-[1.2rem] p-[2rem] pb-[0!important] h-full justify-between">
+          <span class="m-0 font-sans text-[1.8rem]  font-bold tracking-tight  leading-none text-[#3B2D1F] ">
+            {{ value }}
+          </span>
+          <span class="text-[16px] sm:text-[12px] text-[#00000060]">{{ weight_in_text }}</span>
+          <span class="m-0 font-medium text-[1.6rem] sm:text-[12px] flex flex-nowrap gap-3 leading-none text-[#981515] font-sans">
+            {% if variant_price != '' %}
+              {{ variant_price }}
+            {% endif %}
+            <del class="text-grey font-normal">
+              {% if variant_compared_at_price != blank %}
+                {{ variant_compared_at_price }}
+              {% endif %}
+            </del>
+          </span>
+        </div>
+        <div
+          class="
+            text-center flex justify-center items-center savingprice bg-[#A68568] text-[1.6rem]
+            p-[1.2rem] sm:p-[8px] text-[#fff] leading-none font-medium font-sans
+          "
+        >
+          {% if saving != '' %}
+            Save {{ saving }}%
+          {% else %}
+            Save 0%
+          {% endif %}
+        </div>
+        <span class="font-sans visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      </div>
+    </label>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <option
+      class="font-sans"
+      value="{{ value | escape }}"
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}

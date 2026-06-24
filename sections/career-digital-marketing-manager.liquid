@@ -1,0 +1,366 @@
+{% schema %}
+{
+  "name": "career",
+  "class": "career-container",
+  "settings": [
+    {
+      "type": "text",
+      "id": "job_title",
+      "label": "Job Title",
+      "default": "Digital Marketing Manager"
+    },
+    {
+      "type": "richtext",
+      "id": "job_description",
+      "label": "Job Description"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location",
+      "default": "Ekantakuna, Lalitpur"
+    },
+    {
+      "type": "text",
+      "id": "employment_type",
+      "label": "Employment Type",
+      "default": "Full-time"
+    },
+    {
+      "type": "text",
+      "id": "experience",
+      "label": "Experience",
+      "default": "2+ years"
+    },
+    {
+      "type": "number",
+      "id": "vacancies",
+      "label": "No of Vacancies",
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "career"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .job-container {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.6rem;
+    position: relative;
+  }
+
+  .job-header {
+    margin-bottom: 30px;
+  }
+
+  .job-title {
+    font-size: 2.6rem;
+    color: #382e2a;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: left;
+    font-family: 'Lora';
+    margin-top: 6rem;
+  }
+
+  .job-description {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 3rem;
+    color: #382e2a;
+    max-width: 67.63%;
+  }
+
+  .job-content {
+    display: flex;
+    gap: 10px 15rem;
+    position: relative;
+    font-size: 1.6rem;
+    color: #382e2a;
+  }
+
+  .job-main {
+    flex: 1;
+    max-width: 67.63%;
+  }
+
+  .job-sidebar {
+    width: 10.76%;
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #382E2A;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    font-family: var(--font-body-family);
+  }
+
+  .job-list {
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
+    margin-left: 1.5em;
+  }
+  .ul {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    margin-left: 1.5em;
+    font-size: 16px;
+    font-family: 'Sans Serif Collection';
+  }
+  .job-list li {
+    margin-bottom: 1.5rem;
+    position: relative;
+    line-height: 2.4rem;
+  }
+
+  .job-info {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .info-item {
+    margin-bottom: 20px;
+  }
+
+  .info-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .info-value {
+    color: #666;
+    margin-top: 1.2rem;
+  }
+  .info-svg {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+  }
+
+  .social-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .social-links a:hover {
+    color: #333;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .job-content {
+      flex-direction: column;
+    }
+
+    .job-description {
+      max-width: 100%;
+    }
+
+    .job-main {
+      max-width: 100%;
+    }
+
+    .job-sidebar {
+      position: relative;
+      width: 100%;
+      /* margin-top: 30px; */
+    }
+  }
+</style>
+
+<div class="job-container">
+  <div class="job-header">
+    <h2 class="job-title">{{ section.settings.job_title }}</h2>
+    <div class="job-description">{{ section.settings.job_description }}</div>
+  </div>
+
+  <div class="job-content">
+    <div class="job-main">
+      {% for block in section.blocks %}
+        <div class="section">
+          <h2 class="section-title">{{ block.settings.title }}</h2>
+          {{ block.settings.description }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="job-sidebar">
+      <div class="job-info">
+        <div class="info-item">
+          <div class="info-label">Location:</div>
+          <div class="info-value">{{ section.settings.location }}</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Employment type:</div>
+          <div class="info-value">{{ section.settings.employment_type }}</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Experience:</div>
+          <div class="info-value">{{ section.settings.experience }}</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">No of vacancies:</div>
+          <div class="info-value">{{ section.settings.vacancies }}</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Share this job</div>
+          <div class="my-[3.2rem] justify-start" {{ block.shopify_attributes }}>
+            {% assign share_url = request.origin | append: page.url %}
+            <div class="social-share-buttons  flex gap-[1.2rem]">
+              <a
+                class="hover:scale-105"
+                href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | absolute_url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.1875"
+                    width="32"
+                    height="32"
+                    rx="6"
+                    fill="#3A2307"
+                    fill-opacity="0.8" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.3693 14.3333C9.39156 14.3333 9.1875 14.5252 9.1875 15.4444V17.1111C9.1875 18.0304 9.39156 18.2222 10.3693 18.2222H12.7329V24.8889C12.7329 25.8081 12.937 26 13.9148 26H16.2784C17.2562 26 17.4602 25.8081 17.4602 24.8889V18.2222H20.1142C20.8558 18.2222 21.0469 18.0867 21.2506 17.4164L21.7571 15.7497C22.106 14.6014 21.891 14.3333 20.6207 14.3333H17.4602V11.5556C17.4602 10.9419 17.9893 10.4444 18.642 10.4444H22.0057C22.9834 10.4444 23.1875 10.2526 23.1875 9.33333V7.11111C23.1875 6.19185 22.9834 6 22.0057 6H18.642C15.3785 6 12.7329 8.48731 12.7329 11.5556V14.3333H10.3693Z"
+                    stroke="white"
+                    stroke-opacity="0.9"
+                    stroke-width="1.5"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+
+              <a
+                class="hover:scale-105"
+                href="https://twitter.com/intent/tweet?url={{ share_url | absolute_url }}&text={{ article.title }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.1875"
+                    width="32"
+                    height="32"
+                    rx="6"
+                    fill="#3A2307"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M6.1875 22.5C7.95254 23.521 10.0018 24 12.1875 24C18.6683 24 23.9492 18.8625 24.1797 12.438L26.1875 8.5L22.8333 9C22.1282 8.37764 21.2019 8 20.1875 8C17.6151 8 15.6882 10.5173 16.3084 12.98C12.7553 13.2093 9.53617 11.0213 7.67443 8.10523C6.43897 12.3019 7.58379 17.3561 10.6875 20.4705C10.6875 21.647 7.6875 22.3488 6.1875 22.5Z"
+                    stroke="white"
+                    stroke-opacity="0.9"
+                    stroke-width="1.5"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+
+              <a
+                class="hover:scale-105"
+                href="https://pinterest.com/pin/create/button/?url={{ share_url | absolute_url }}&media={{ article.image | img_url: 'large' }}&description={{ article.title }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="0.1875"
+                    width="32"
+                    height="32"
+                    rx="6"
+                    fill="#3A2307"
+                    fill-opacity="0.8" />
+                  <path
+                    d="M16.1875 15L12.1875 25"
+                    stroke="white"
+                    stroke-opacity="0.9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M14.1612 20.5724C14.7806 20.8473 15.4662 21 16.1875 21C18.9489 21 21.1875 18.7614 21.1875 16C21.1875 13.2386 18.9489 11 16.1875 11C13.4261 11 11.1875 13.2386 11.1875 16C11.1875 16.9108 11.4312 17.7646 11.8567 18.5"
+                    stroke="white"
+                    stroke-opacity="0.9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M16.1875 26C21.7103 26 26.1875 21.5228 26.1875 16C26.1875 10.4772 21.7103 6 16.1875 6C10.6647 6 6.1875 10.4772 6.1875 16C6.1875 21.5228 10.6647 26 16.1875 26Z"
+                    stroke="white"
+                    stroke-opacity="0.9"
+                    stroke-width="1.5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

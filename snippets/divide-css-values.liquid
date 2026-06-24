@@ -1,0 +1,35 @@
+{% assign padding_values = css_values | split: ' ' %}
+{% assign new_padding_values = '' %}
+
+{% for value in padding_values %}
+  {% if value contains 'rem' %}
+    {% assign unit = 'rem' %}
+  {% elsif value contains 'px' %}
+    {% assign unit = 'px' %}
+  {% elsif value contains '%' %}
+    {% assign unit = '%' %}
+  {% elsif value contains 'em' %}
+    {% assign unit = 'em' %}
+  {% elsif value contains 'vw' %}
+    {% assign unit = 'vw' %}
+  {% elsif value contains 'vh' %}
+    {% assign unit = 'vh' %}
+  {% elsif value contains 'pt' %}
+    {% assign unit = 'pt' %}
+  {% elsif value contains 'cm' %}
+    {% assign unit = 'cm' %}
+  {% elsif value contains 'mm' %}
+    {% assign unit = 'mm' %}
+  {% elsif value contains 'in' %}
+    {% assign unit = 'in' %}
+  {% else %}
+    {% assign unit = '' %}
+  {% endif %}
+
+  {% assign number = value | remove: unit | plus: 0 %}
+  {% assign divided_number = number | divided_by: divisor %}
+  {% assign new_value = divided_number | append: unit %}
+  {% assign new_padding_values = new_padding_values | append: new_value | append: ' ' %}
+{% endfor %}
+
+{{ new_padding_values | strip }}

@@ -1,0 +1,336 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer" type="module"></script>
+
+<div class="section-{{ section.id }}">
+  <div class="container mx-auto px-4 pt-10 pb-20 lg:px-8 lg:pt-20 lg:pb-28">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+      <div class="product-image-slider">
+        <div id="product-image-slider" class="product-image-slider">
+          {% for image in product.images %}
+            <div class="product-image">
+              <img src="{{ image | img_url: '1000x1000' }}" width="{image.width}" height="{image.height}" alt="{{ image.alt | escape }}" loading="lazy">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="product-details">
+        <h1 class="product-title text-3xl font-bold mb-2">
+          {{ product.title | escape }}
+        </h1>
+        {%- if product.metafields.reviews.rating.value != blank -%}
+          <div class="rating font-sans mr-1.2rem">
+            {% liquid
+              assign rating_decimal = 0
+              assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+              if decimal >= 0.3 and decimal <= 0.7
+                assign rating_decimal = 0.5
+              elsif decimal > 0.7
+                assign rating_decimal = 1
+              endif
+            %}
+            <span
+              aria-hidden="true"
+              class="font-sans rating-star color-icon-{{ settings.accent_icons }}"
+              style="
+                --font-size: 2.4;
+                --color-icon: #FFB21C;
+                --rating: {{ product.metafields.reviews.rating.value.rating | floor }};
+                --rating-max: {{ product.metafields.reviews.rating.value.scale_max }};
+                --rating-decimal: {{ rating_decimal }};
+              "
+            ></span>
+            <p class="rating-text caption">
+              <span aria-hidden="true">
+                {{- product.metafields.reviews.rating.value }} /
+                {{ product.metafields.reviews.rating.value.scale_max -}}
+              </span>
+            </p>
+            <p class="rating-count caption font-sans">
+              <a href="#judgeme_product_reviews">
+                <span aria-hidden="true" class="text-1.2rem xl:text-1.6rem xxl:text-1.6rem font-sans">
+                  {{ product.metafields.reviews.rating_count }} Reviews
+                </span>
+              </a>
+              <span class="visually-hidden">
+                {{- product.metafields.reviews.rating_count }}
+                {{ 'accessibility.total_reviews' | t -}}
+              </span>
+            </p>
+          </div>
+        {%- endif %}
+        {% comment %}
+          <div class="variant-container">
+            {% for option in product.options %}
+              <div class="variant">
+                <div class="variant-label">{{ option.name }}</div>
+                <div class="variant-pills">
+                  {% for value in product.options_by_name[option.name] %}
+                    <div class="variant-pill" data-value="{{ value }}" data-option-name="{{ option.name }}">
+                      <span class="tick" style="position:absolute; right:0;top:0; translateY:-50%;"></span>
+                      <span class="title">{{ value }}</span>
+                      {% for variant in product.variants %}
+                        {% if variant.options contains option.name %}
+                          {% if variant.options[option.name] == value %}
+                            <span class="price-component">{{ variant.price | money }}</span>
+                            {% if variant.compare_at_price > variant.price %}
+                              <span class="bg-green">Save {{ variant.compare_at_price | minus: variant.price | money }}</span>
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endcomment %}
+
+        {% comment %}
+          {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+          {%- form 'product', product, id: product_form_installment_id -%}
+            <input type="text" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <input type="hidden" name="utf8" value="✓">
+            <input type="hidden" name="form_type" value="product">
+            <input type="hidden" name="product-id" value="{{product.id}}">
+            <input type="hidden" name="section-id" value="template--17561329369238__main">
+          {%- endform -%}
+        {% endcomment %}
+
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+        <div class="variant-picker-container">
+          {% render 'product-variant-picker', product: product, block: 'button', product_form_id: product_form_id %}
+        </div>
+        {% comment %}
+          <product-subscriptions class="subscription-plans">
+            <label for="subscription-plans">Subscription plans:</label>
+            <select id="subscription-plans" form="{{ product_form_id }}" class="w-full">
+              <option value="">One time purchase</option>
+            </select>
+            <input name="selling_plan" class="selected-selling-plan-id" type="hidden" value="">
+          </product-subscriptions>
+        {% endcomment %}
+        {%- if product.selling_plan_groups.size > 0 -%}
+          <div class="selllingPlanGroup  border-[#020403] opacity-[0px] p-[2.4rem] sm:p-[14px] rounded-md border-[0.5px] flex flex-col gap-8">
+            {% render 'selling-plans' %}
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'buy_buttons' -%}
+                  {%- render 'buy-buttons',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id,
+                    section_id: section.id,
+                    show_pickup_availability: true
+                  -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        {% endif %}
+
+        <div class="quantity-input">
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            form="{{ product_form_id }}"
+            value="1"
+            min="1"
+            class="w-full"
+          >
+        </div>
+        {%- render 'buy-buttons',
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: true
+        -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %}
+  <script>
+      var variantSellingPlanMap = {
+        {% for variant in product.variants %}
+          "{{ variant.id }}": [
+            {% assign first_allocation = true %}
+            {% for allocation in variant.selling_plan_allocations %}
+              {% unless first_allocation %}, {% endunless %}
+              {
+                  "id": "{{ allocation.selling_plan.id }}",
+                  "name": "{{ allocation.selling_plan.name }}",
+                  "price": "{{ allocation.price | money }}"
+              }
+              {% assign first_allocation = false %}
+            {% endfor %}
+          ]{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      };
+
+
+      const sectionId = "{{ section.id }}";
+      const variantPills = document.querySelectorAll('.variant-pill');
+      const subscriptionPlans = document.querySelector('#subscription-plans');
+      const addToCartButton = document.querySelector('#add-to-cart');
+      const buyNowButton = document.querySelector('#buy-now');
+      const quantityInput = document.querySelector('#quantity');
+      const variantIdElement = document.querySelector("input[name=id]");
+
+      let variantId =variantIdElement.value ;
+      let currentSubscriptionPlanId;
+      const selectedOptions = {};
+
+      variantPills.forEach((pill) => {
+          pill.addEventListener('change', () => {
+              const pills = pill.parentNode.children;
+              for (let i = 0; i < pills.length; i++) {
+                  pills[i].checked = false;
+              }
+              pill.checked = true;
+              variantIdElement.addEventListener('change', (e) => {
+                if (e.target && e.target.getAttribute('name') === 'id') {
+                  const variantId = e.target.value;
+                  {% comment %} updateVariantSelection(variantId); {% endcomment %}
+                }
+              });
+
+          });
+      });
+
+      // Run during first time load
+      {% comment %} updateVariantSelection(variantIdElement.value); {% endcomment %}
+  {% comment %}
+      function updateVariantSelection(variantId) {
+          getSelectedOptions();
+          const allocations = variantSellingPlanMap[variantId];
+          console.log(variantId,"Allocations:", allocations);
+          updateSubscriptionPlans(allocations);  {% endcomment %}
+
+      {% comment %} function getSelectedOptions() {
+        const activePills = document.querySelectorAll('.variant-pill:checked');
+        activePills.forEach((pill) => {
+          selectedOptions[pill.getAttribute('name')] = pill.value;
+        });
+      }
+
+      function getVariantIdFromOptions(options) {
+        const variants = {{ product.variants | json }};
+
+        for (let i = 0; i < variants.length; i++) {
+          let match = true;
+          for (const option in options) {
+              console.log( "Variants:", option,variants[i],variants[i].options[option], options[option]);
+            if (variants[i].options[option] !== options[option]) {
+              match = false;
+              {% comment %} break; {% endcomment %}
+            }
+          }
+          if (match) {
+            return variants[i].id;
+          }
+        }
+      } {% endcomment %}
+
+      {% comment %} function updateSubscriptionPlans(allocations) {
+        subscriptionPlans.innerHTML = '';
+        const option = document.createElement('option');
+        option.value = '';
+        option.text = 'One time purchase';
+        subscriptionPlans.appendChild(option);
+        if (allocations) {
+          allocations.forEach((allocation,index) => {
+              const option = document.createElement('option');
+            option.value = allocation.id;
+            option.text = `${allocation.name} - ${allocation.price}`;
+            subscriptionPlans.appendChild(option);
+          });
+        }
+      }
+
+      subscriptionPlans.addEventListener('change', (e) => {
+        currentSubscriptionPlanId = e.target.value;
+        document.querySelector('input[name="selling_plan"]').value = currentSubscriptionPlanId;
+        console.log(currentSubscriptionPlanId,document.querySelector('input[name="selling_plan"]'),document.querySelector('input[name="selling_plan"]').value);
+      });
+       {% endcomment %}
+      {% comment %} addToCartButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const form = document.getElementById({{product_form_id | json}});
+        const formData = new FormData(form);
+        const payload = {};
+        formData.forEach((value, key) => {
+        payload[key] = value;
+        });
+
+        const response = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+        const cartResponse = await response.json();
+        console.log('Item added to cart:', cartResponse);
+        // Optionally, update the cart UI here
+        } else {
+        console.error('Error adding item to cart:', response);
+        }
+      });
+       {% endcomment %}
+      {% comment %} buyNowButton.addEventListener('click', async () => {
+        const selectedVariantId = getVariantId();
+        const selectedSubscriptionPlanId = currentSubscriptionPlanId;
+        const quantity = parseInt(quantityInput.value);
+        const productName = document.querySelector(`.product-title`).textContent;
+        const productId = {{ product.id }};
+
+        const payload = {
+          'wild mint': productName,
+          quantity: quantity,
+          'form_type': 'product',
+          'utf8': '\u2713', // This is the UTF-8 character for the checkbox
+          id: selectedVariantId,
+          'product-id': productId,
+          'section-id': {{ section.id |json }},
+          selling_plan: selectedSubscriptionPlanId ? selectedSubscriptionPlanId : '',
+          sections: 'cart-drawer,cart-icon-bubble',
+          'sections_url': window.location.href.replace(window.location.origin, ''),
+        };
+
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            items: [{ id: selectedVariantId, quantity: quantity }],
+          }),
+        });
+
+        if (response.ok) {
+          const cartResponse = await response.json();
+          const checkoutUrl = `/checkout?return_to=/cart`;
+          window.location.href = checkoutUrl;
+        } else {
+          console.error('Error adding item to cart:', response);
+        }
+      }); {% endcomment %}
+  </script>
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Basmil Custom Product",
+  "class": "basmi-custom-product",
+  "settings": [],
+  "presets": [{ "name": "Basmil Custom Product" }]
+}
+{% endschema %}

@@ -1,0 +1,311 @@
+<style>
+  .form-distributors.form-container {
+    && h4 {
+      font-weight: 700;
+      color: #be935f;
+      line-height: 1.2 !important;
+      text-align: left;
+    }
+    && form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    && .input-group {
+      position: relative;
+    }
+
+    && input {
+      width: 100%;
+      font-weight: 500;
+      padding: 1.85rem 16px;
+      color: #000;
+      opacity: 0.8;
+      border: 2px solid #d9d9d9;
+      min-height: 1.2rem;
+      outline: none;
+      line-height: 1.22 !important;
+
+      ::placeholder {
+        color: #d9d9d9;
+      }
+    }
+
+    && input:focus {
+      border-color: #be935f;
+      box-shadow: none;
+    }
+
+    && .error-message {
+      color: #ef4444;
+      font-size: 0.5rem;
+      margin-top: -2px;
+      display: none;
+    }
+
+    && .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 0 !important;
+    }
+
+    && button {
+      margin-top: 0.8rem;
+      position: relative;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #be935f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    && button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    /* Message container styles */
+    .message {
+      padding: 12px 20px;
+      margin-top: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+    }
+    .message.success {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .message.error {
+      background-color: #f44336;
+      color: white;
+    }
+
+    /* Loading spinner */
+    .loading-spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #be935f;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 2s linear infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    /* @media(max-width: 768px){
+      button{
+        width: 38% !important;
+        padding: 10px 15px !important
+      }
+    } */
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+</style>
+<script src="https://www.google.com/recaptcha/api.js" async defer="defer"></script>
+
+<div class="form-distributors form-container font-sans">
+  <h4 class="font-sans text-tertiary">Form for Distributors</h4>
+
+  <form id="distributorForm" novalidate="">
+    <input type="hidden" name="api" value="distributor"> 
+
+    <div class="input-group product-option">
+      <input
+        class="product-option"
+        type="text"
+        id="companyName"
+        name="companyName"
+        placeholder="Company Name"
+        required=""
+      >
+      <p class="error-message" id="companyNameError">Company Name is required</p>
+    </div>
+
+    <div class="input-group">
+      <input
+        class="product-option"
+        type="text"
+        id="businessAddress"
+        name="businessAddress"
+        placeholder="Business Address"
+        required=""
+      >
+      <p class="error-message" id="businessAddressError">Business Address is required</p>
+    </div>
+
+    <div class="input-group">
+      <input class="product-option" type="text" id="country" name="country" placeholder="Country" required="">
+      <p class="error-message" id="countryError">Country is required</p>
+    </div>
+
+    <div class="grid">
+      <div class="input-group">
+        <input class="product-option" type="text" id="state" name="state" placeholder="State" required="">
+        <p class="error-message" id="stateError">State is required</p>
+      </div>
+
+      <div class="input-group">
+        <input class="product-option" type="text" id="zipCode" name="zipCode" placeholder="Zip Code" required="">
+        <p class="error-message" id="zipCodeError">Zip Code is required</p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input class="product-option" type="url" id="websiteurl" name="websiteUrl" placeholder="Website URL(Optional)" >
+      <p class="error-message" id="websiteUrlError">A valid URL is required</p>
+    </div>
+
+    <div class="input-group">
+      <input
+        class="product-option"
+        type="email"
+        id="emailAddress"
+        name="emailAddress"
+        placeholder="Email Address"
+        required=""
+      >
+      <p class="error-message" id="emailAddressError">A valid email is required</p>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LdZI5MqAAAAAFkTMtPCUB2JEs7hmKrlWW8AXYoV"></div>
+
+    <button type="submit" class="submit-button button">
+      Submit
+      <div class="loading-spinner" id="loadingSpinner"></div>
+    </button>
+
+    <!-- Message container -->
+    <div class="message" id="responseMessage"></div>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("distributorForm");
+  const responseMessage = document.getElementById("responseMessage");
+  const loadingSpinner = document.getElementById("loadingSpinner");
+  const submitButton = form.querySelector("button");
+
+  // Helper function to display error
+  const showError = (input, message) => {
+    const error = input.nextElementSibling;
+    input.parentElement.style.position = "relative";
+    error.style.fontSize = "1rem";
+    error.style.color = "#ef4444";
+    error.style.position = "absolute";
+    error.style.top = `${input.offsetHeight + 2}px`;
+    error.style.left = "0";
+    error.textContent = message;
+    error.style.display = "block";
+  };
+
+  // Helper function to hide error
+  const hideError = (input) => {
+    const error = input.nextElementSibling;
+    error.style.display = "none";
+  };
+
+  // Validation function
+  const validateField = (input) => {
+    if (!input.value.trim() && !input.name==="websiteUrl") {
+      showError(input, `${input.placeholder} is required`);
+    } else if (input.type === "email" && !/\S+@\S+\.\S+/.test(input.value)) {
+      showError(input, "A valid email is required");
+    } else if (input.type === "url" && !/^https?:\/\/.+\..+/.test(input.value) && input.value.trim()) {
+      showError(input, "A valid URL is required");
+    } else {
+      hideError(input);
+    }
+  };
+
+  // Add event listeners to all inputs
+  const inputs = form.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => validateField(input));
+    input.addEventListener("blur", () => validateField(input));
+  });
+
+  // Submit event
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const captchaResponse = grecaptcha.getResponse();
+    if (!captchaResponse) {
+      responseMessage.textContent = "Please complete the reCAPTCHA challenge.";
+      responseMessage.className = "message error";
+      responseMessage.style.display = "block";
+      throw new Error("Please complete the reCAPTCHA challenge.");
+      return;
+    }
+    const formData = new FormData(form);
+
+    let isValid = true;
+    inputs.forEach((input) => {
+      validateField(input);
+      if (input.nextElementSibling.style.display === "block") {
+        isValid = false;
+      }
+    });
+
+    if (!isValid) return;
+
+    const data = Object.fromEntries(formData.entries());
+
+    // Disable the submit button and show loading spinner
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Submitting... <div class="loading-spinner" id="loadingSpinner"></div>';
+    loadingSpinner.style.display = "inline-block";
+
+    // Send POST request
+    try {
+      const response = await fetch("https://api.medicinalmadhoney.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      // Hide loading spinner and enable button again
+      loadingSpinner.style.display = "none";
+      submitButton.innerHTML = 'Submit';
+      submitButton.disabled = false;
+
+      if (response.ok) {
+        responseMessage.textContent = "Form submitted successfully!";
+        responseMessage.className = "message success";
+      } else {
+        const errorData = await response.json();
+        responseMessage.textContent = `Error: ${errorData.message || "Failed to submit form."}`;
+        responseMessage.className = "message error";
+      }
+    } catch (error) {
+      // Hide loading spinner and enable button again
+      loadingSpinner.style.display = "none";
+      submitButton.innerHTML = 'Submit';
+      submitButton.disabled = false;
+      responseMessage.textContent = "An error occurred. Please try again later.";
+      responseMessage.className = "message error";
+    }
+
+    responseMessage.style.display = "block";
+
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+      responseMessage.style.display = "none";
+    }, 3000);
+
+  });
+});
+</script>

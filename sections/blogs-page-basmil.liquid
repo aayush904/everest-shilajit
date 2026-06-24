@@ -1,0 +1,224 @@
+<section class="bg-gray-50 font-sans">
+  <!-- Search Box -->
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold">Recent</h1>
+      <div class="relative">
+        <input
+          type="text"
+          id="search-query"
+          placeholder="Search blogs..."
+          class="pl-10 pr-4 py-2 border border-gray-300 rounded-full w-64"
+        >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 absolute left-3 top-3 text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Blog Articles -->
+    <div id="blog-listing">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% paginate blog.articles by 6 %}
+          {% for article in blog.articles %}
+            {% comment %}
+              <article class="bg-white rounded-lg overflow-hidden shadow-md">
+                      <img
+                        src="{{ article.image | img_url: 'large' }}"
+                        alt="{{ article.title }}"
+                        class="w-full h-48 object-cover"
+                        width="200"
+                        height="200">
+                      <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">{{ article.title | truncate: 60 }}</h2>
+                        <p class="text-gray-500 text-sm mb-4">Date: {{ article.published_at | date: "%b %d, %Y" }}</p>
+                        <p class="text-gray-600 mb-4">{{ article.excerpt | strip_html | truncatewords: 20 }}</p>
+                        <a href="{{ article.url }}" class="text-blue-600 hover:underline">Learn More →</a>
+                      </div>
+              </article>
+            {% endcomment %}
+            <article class="blog-card relative flex flex-col gap-10 w-full sm:items-center">
+              <a href="{{ article.url }}">
+                <img
+                  src="{{ article.image | image_url }}"
+                  alt="{{ article.image.alt |  default: article.title}}"
+                  class="blog-image"
+                  style="width: 100%; aspect-ratio: 16/9; object-fit: cover;"
+                   width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+                >
+              </a>
+              <div class="blog-content flex flex-col justify-between sm:items-center w-full h-full">
+                <div class="flex gap-6 flex-col font-sans font-medium tracking-[0.02em]">
+                  <a href="{{ article.url }}">
+                    <h3>{{ article.title }}</h3>
+                  </a>
+                  {% if article.published_at %}
+                    <p class="text-[#0000007d] m-0 text-[1.5rem] leading-[1.68rem] font-sans font-medium">
+                      Date: {{ article.published_at | date: '%b %d, %Y' }}
+                    </p>
+                  {% endif %}
+                  <p class="text-[#0000007d] font-sans text-[1.5rem] leading-[1.68rem]  font-medium">
+                    {{ article.excerpt }}
+                  </p>
+                </div>
+                <a
+                  class="text-[#0000007d] mt-16  font-sans text-2xl md:text-3xl sm:text-[2rem] leading-none font-medium tracking-[0.02em] capitalize flex gap-6 items-center text-justify"
+                  href="{{ article.url }}"
+                  class="read-more"
+                  >Learn More
+                  <b class="text-3xl">→</b>
+                  <svg
+                    width="16"
+                    height="8"
+                    viewBox="0 0 16 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M15.5287 4.03178C15.724 3.83651 15.724 3.51993 15.5287 3.32467L12.3467 0.142689C12.1515 -0.0525734 11.8349 -0.0525734 11.6396 0.142689C11.4443 0.337951 11.4443 0.654533 11.6396 0.849796L14.468 3.67822L11.6396 6.50665C11.4443 6.70191 11.4443 7.01849 11.6396 7.21376C11.8349 7.40902 12.1515 7.40902 12.3467 7.21376L15.5287 4.03178ZM0.359375 4.17822H15.1751V3.17822H0.359375L0.359375 4.17822Z" fill="black" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          {% endfor %}
+        {% endpaginate %}
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-12 flex justify-center" id="pagination">
+        {% if paginate.previous %}
+          <a
+            href="#"
+            class="pagination-link mx-2 px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100"
+            data-page="{{ paginate.previous.url }}"
+            >← Prev</a
+          >
+        {% endif %}
+        {% if paginate.next %}
+          <a
+            href="#"
+            class="pagination-link mx-2 px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100"
+            data-page="{{ paginate.next.url }}"
+            >Next →</a
+          >
+        {% endif %}
+      </div>
+    </div>
+  </main>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search-query');
+    const blogListing = document.getElementById('blog-listing');
+    const paginationContainer = document.getElementById('pagination');
+    const categories = document.querySelectorAll('.category-link');
+
+    // Search input event listener
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim();
+      if (query.length > 0) {
+        fetchBlogs({ search: query });
+      } else {
+        fetchBlogs(); // Fetch all if query is cleared
+      }
+    });
+
+    // Category click event listener
+    categories.forEach((category) => {
+      category.addEventListener('click', function (event) {
+        event.preventDefault();
+        const blogHandle = this.getAttribute('data-blog');
+        fetchBlogs({ blog: blogHandle });
+      });
+    });
+
+    // Pagination event listener
+    document.addEventListener('click', function (event) {
+      if (event.target.classList.contains('pagination-link')) {
+        event.preventDefault();
+        const page = event.target.getAttribute('data-page');
+        fetchBlogs({ page: page });
+      }
+    });
+
+    // Function to fetch blogs via AJAX
+    function fetchBlogs(params = {}) {
+      let url = window.location.pathname + '.json';
+      let queryParams = [];
+
+      if (params.search) {
+        queryParams.push('q=' + encodeURIComponent(params.search));
+      }
+
+      if (params.blog) {
+        queryParams.push('blog=' + encodeURIComponent(params.blog));
+      }
+
+      if (params.page) {
+        queryParams.push('page=' + encodeURIComponent(params.page));
+      }
+
+      if (queryParams.length > 0) {
+        url += '?' + queryParams.join('&');
+      }
+
+      fetch(url + '?view=json')
+        .then((response) => response.json())
+        .then((data) => {
+          renderBlogs(data);
+          renderPagination(data.pagination);
+        })
+        .catch((error) => {
+          console.error('Error fetching blogs:', error);
+        });
+    }
+
+    // Render blogs dynamically
+    function renderBlogs(data) {
+      const articles = data.articles;
+      blogListing.innerHTML = '';
+      articles.forEach((article) => {
+        const articleHTML = `
+                    <article class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <img src="${article.image}" alt="${article.title}"  width="{{ article.image.width }}" height="{{ article.image.height }}" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h2 class="text-xl font-semibold mb-2">${article.title}</h2>
+                            <p class="text-gray-500 text-sm mb-4">Date: ${article.published_at}</p>
+                            <p class="text-gray-600 mb-4">${article.excerpt}</p>
+                            <a href="${article.url}" class="text-blue-600 hover:underline">Learn More →</a>
+                        </div>
+                    </article>
+                `;
+        blogListing.innerHTML += articleHTML;
+      });
+    }
+
+    // Render pagination dynamically
+    function renderPagination(pagination) {
+      paginationContainer.innerHTML = '';
+
+      if (pagination.previous) {
+        paginationContainer.innerHTML += `
+                    <a href="#" class="pagination-link mx-2 px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100" data-page="${pagination.previous.url}">← Prev</a>
+                `;
+      }
+
+      if (pagination.next) {
+        paginationContainer.innerHTML += `
+                    <a href="#" class="pagination-link mx-2 px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-100" data-page="${pagination.next.url}">Next →</a>
+                `;
+      }
+    }
+  });
+</script>

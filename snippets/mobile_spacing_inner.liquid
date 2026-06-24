@@ -1,0 +1,14 @@
+{% assign padding_56 = '15rem,11.5rem,10rem,11rem,150px,115px,100px,110px' | split: ',' %}
+{% assign padding_40 = '4rem,8rem,8.5rem,40px,85px,80px,7rem,6.4rem,64px,70px' | split: ',' %}
+{% assign padding_10 = '1.6rem,16px' | split: ',' %}
+
+{%- assign value_trim = value | replace: ' ', '' -%}
+{% if padding_56 contains value_trim %}
+  {{- ' 56px' -}}
+{% elsif padding_40 contains value_trim %}
+  {{- ' 40px' -}}
+{% elsif padding_10 contains value_trim %}
+  {{- '16px' -}}
+{% else %}
+  {{ value }}
+{% endif %}

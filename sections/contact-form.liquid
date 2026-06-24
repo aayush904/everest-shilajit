@@ -1,0 +1,646 @@
+<style>
+#shopify-section-{{ section.id }} {
+.contact-us-top {
+    text-align: center;
+}
+
+
+.contact-text {
+    color: {{ settings.contact_text_color | default: '#382E2A' }};
+}
+
+.us-text {
+    color: {{ settings.us_text_color | default: '#9F5601' }};
+}
+
+.contact-us-main {
+    padding: 0 1.6rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(0,max-content));
+    gap: 4.8rem;
+}
+
+/* Left Section */
+.contact-us-main-left {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/-1;
+    grid-column: 1/2;
+}
+.contact-us-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.contact-us-info {
+    margin-top: 4.8rem;
+}
+
+.contact-us-info-intro h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+.contact-us-info-intro p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+}
+
+/* Social Section */
+.contact-us-info-socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    margin-top: 4.7rem !important;
+    position: relative;
+}
+
+.contact-us-info-socials .social {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+}
+
+.social:last-child {
+    margin-right: 0;
+}
+.social svg {
+    width: 4.1rem;
+    height: auto;
+    max-height: 4.1rem;
+}
+.socialdiv{
+    display: flex;
+    gap:8px;
+    flex-direction: column;
+}
+.social h3 {
+    font-size: 2rem;
+    color: {{ settings.social_text_color | default: '#3B2D1F' }};
+    margin: 0;
+}
+
+.social p {
+    font-size: 1.6rem;
+    color: {{ settings.social_desc_color | default: '#000' }};
+    margin: 0;
+    letter-spacing: 0px;
+}
+
+/* Right Section */
+.contact-us-main-right {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+}
+
+.form-container {
+    background-color: {{ settings.form_bg_color | default: '#F5EADD' }};
+    padding: 3.2rem;
+}
+
+.form-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: {{ settings.form_title_color | default: '#382E2A' }};
+    margin-bottom: 3.2rem;
+    font-family: "Lora";
+    line-height: 3.07rem;
+}
+
+.form-title .highlight {
+    color: {{ settings.form_highlight_color | default: '#9F5601' }};
+}
+
+.collaboration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2.4rem; 
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+label {
+    font-size: 1.6rem;
+    color: {{ settings.label_color | default: '#3B2D1F' }};
+}
+
+input, textarea {
+    font-size: 1.4rem;
+    font-family: "var(--font-body-family)", sans-serif;
+    padding: 1.2rem;
+    border: none;
+    border-bottom: 1px solid {{ settings.input_border_color | default: '#BE935F' }};
+    background-color: transparent;
+    outline: none;
+    color: {{ settings.input_text_color | default: '#3B2D1F' }};
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: {{ settings.input_focus_color | default: '#3B2D1F' }};
+}
+
+textarea {
+    resize: none;
+    min-height: 12rem;
+    border-bottom: 1px solid #D9CAB8;
+    border-radius: 0px;
+    box-shadow: none !important;
+  background: transparent;
+
+}
+
+.submit-button {
+    width: 23.41%;
+    height: auto;
+    max-height: 6rem;
+    background-color: {{ settings.submit_bg_color | default: '#68453D' }};
+    color: white;
+    padding: 1.2rem 2.4rem;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: {{ settings.submit_hover_color | default: '#BE935F' }};
+}
+.connect-us{
+    grid-row: 2/3;
+    gap: 0.8rem !important;
+}
+.connect-us .social-icons {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+.connect-us h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+    color: {{ settings.connect_text_color | default: '#3B2D1F' }};
+}
+
+.connect-us svg {
+    margin-right: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 2.9rem;
+    height: auto;
+    max-height: 2.9rem;
+}
+
+.connect-us svg:hover {
+    transform: translateY(-2px);
+}
+   .contact-us-form{
+      &&  .field__input{
+        background-color: transparent !important;
+        border: none;
+        border-bottom: 1px solid #D9CAB8;
+        border-radius: 0px;
+        box-shadow: none !important;
+      }
+
+    }
+@media screen and (max-width: 768px) {
+    .contact-us-top h1{
+        align-items: center;
+        margin-bottom: 0 !important;
+        margin: 0;
+        font-size: 2.6rem;
+    }
+    .contact-us-main {
+        gap: 4rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,max-content);
+    }
+    .contact-us-main-left{
+        grid-row: 2/3;
+    }
+    .contact-us-main-left,
+    .contact-us-main-right {
+        width: 100%;
+        grid-column: 1/2;
+    }
+
+    .contact-us-info-socials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+    .contact-us-info-socials{
+        margin-top: 3rem !important;
+    }
+    .submit-button{
+        display: block;
+        margin: 0 auto;
+        width: 88%;
+    }
+    .connect-us{
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    .contact-us-form{
+        margin-top: 2.5rem !important;
+
+    }
+    .contact-us-main {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    .contact-us-info {
+        margin-top: 2.5rem;
+    }
+    .contact-us-info-socials {
+        gap: 3.5rem;
+        margin-top: 3rem !important;
+    }
+    .form-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .contact-us-info-intro h1 {
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    
+    .contact-us-info-intro p {
+        font-size: 1.4rem;
+    }
+    .social h3 {
+        font-size: 1.6rem;
+    }
+    
+    .social p {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-us-info-socials {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        padding: 2rem;
+    }
+}
+}
+</style>
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+
+  <div class="contact page-width section-{{ section.id }}-padding contact-us-main">
+      <div class="contact-us-main-left">
+        <img class="contact-us-image" src="{{ section.settings.contact_us_image | image_url }}" width="{{section.settings.contact_us_image.width }}" height="{{section.settings.contact_us_image.height }}" alt="Contact Us Image" loading="lazy">
+        <div class="contact-us-info">
+          <div class="contact-us-info-intro">
+            <h2 class="text-border font-bold">{{ section.settings.mission_heading | default: 'Our Mission' }}</h2>
+            <p>{{ section.settings.mission_text | default: 'Morbi dui. Lorem Quisque elit. libero, Vestibulum dolor Nullam Nunc eget vehicula, Nunc nibh gravida sapien amet, in quis In Nullam odio Praesent viverra eget.' }}</p>
+          </div>
+  
+          <div class="contact-us-info-socials">
+            <a href="mailto:{{ section.settings.email_text | default: 'contact@medicinalmadhoney.com' }}" class="social">
+              <svg style="width:4.1rem" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20.5" cy="20.5" r="20.5" fill="#68453D"/>
+                <path d="M13 12H29C30.1 12 31 12.9 31 14V26C31 27.1 30.1 28 29 28H13C11.9 28 11 27.1 11 26V14C11 12.9 11.9 12 13 12Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M31 14L21 21L11 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+                
+                
+              <div class="socialdiv">
+                <h3>{{ section.settings.email_heading | default: 'Email' }}</h3>
+                <p class="font-sans">{{ section.settings.email_text | default: 'contact@medicinalmadhoney.com' }}</p>
+              </div>    
+            </a>
+  
+            <a href="tel:{{ section.settings.phone_text | default: '+977-9823875502' }}" class="social">
+              <svg style="width:4.1rem" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20.5" cy="20.5" r="20.5" fill="#68453D"/>
+                <path d="M30.8881 24.9201V27.9201C30.8892 28.1986 30.8322 28.4743 30.7206 28.7294C30.6091 28.9846 30.4454 29.2137 30.2402 29.402C30.035 29.5902 29.7927 29.7336 29.5289 29.8228C29.265 29.912 28.9855 29.9452 28.7081 29.9201C25.631 29.5857 22.6751 28.5342 20.0781 26.8501C17.6619 25.3148 15.6135 23.2663 14.0781 20.8501C12.3881 18.2413 11.3364 15.2711 11.0081 12.1801C10.9831 11.9036 11.016 11.6249 11.1046 11.3617C11.1932 11.0986 11.3357 10.8568 11.5229 10.6517C11.7101 10.4466 11.9379 10.2828 12.1919 10.1706C12.4459 10.0584 12.7205 10.0004 12.9981 10.0001H15.9981C16.4834 9.99532 16.9539 10.1672 17.3219 10.4836C17.6898 10.8001 17.9302 11.2395 17.9981 11.7201C18.1247 12.6802 18.3596 13.6228 18.6981 14.5301C18.8327 14.888 18.8618 15.277 18.782 15.651C18.7023 16.0249 18.517 16.3682 18.2481 16.6401L16.9781 17.9101C18.4017 20.4136 20.4746 22.4865 22.9781 23.9101L24.2481 22.6401C24.52 22.3712 24.8633 22.1859 25.2372 22.1062C25.6112 22.0264 26.0002 22.0556 26.3581 22.1901C27.2654 22.5286 28.2081 22.7635 29.1681 22.8901C29.6539 22.9586 30.0975 23.2033 30.4146 23.5776C30.7318 23.9519 30.9003 24.4297 30.8881 24.9201Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+              <div class="socialdiv">
+                <h3>{{ section.settings.phone_heading | default: 'Phone' }}</h3>
+                <p class="font-sans">{{ section.settings.phone_text | default: '+977-9823875502' }}</p>
+              </div>
+            </a>
+  
+            <a href="https://maps.google.com/?q={{ section.settings.address_text_1 | default: 'Bagdol Road, Lalitpur, 44700 Nepal' | url_encode }}" target="_blank" class="social">
+              <svg style="width:4.1rem" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20.5" cy="20.5" r="20.5" fill="#68453D"/>
+                <path d="M29.3636 18.1818C29.3636 24.5455 21.1818 30 21.1818 30C21.1818 30 13 24.5455 13 18.1818C13 16.0119 13.862 13.9308 15.3964 12.3964C16.9308 10.862 19.0119 10 21.1818 10C23.3518 10 25.4328 10.862 26.9672 12.3964C28.5016 13.9308 29.3636 16.0119 29.3636 18.1818Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.1804 20.9091C22.6866 20.9091 23.9077 19.6881 23.9077 18.1819C23.9077 16.6756 22.6866 15.4546 21.1804 15.4546C19.6742 15.4546 18.4531 16.6756 18.4531 18.1819C18.4531 19.6881 19.6742 20.9091 21.1804 20.9091Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+              <div class="socialdiv">
+                <h3>{{ section.settings.address_heading | default: 'Address' }}</h3>
+                <p class="font-sans">{{ section.settings.address_text_1 | default: 'Bagdol Road, Lalitpur, 44700 Nepal' }}</p>
+                <p class="font-sans">{{ section.settings.address_text_2 | default: 'Gould St Re R Sheridan, WY 82801, United States' }}</p>
+              </div>    
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="contact-us-main-right">
+        <div class="contact-us-form">
+          <div class="form-container">
+            <h2 class="form-title bolder-500">
+              {{ section.settings.form_title | default: "Let's" }} 
+              <brown class="highlight">{{ section.settings.form_title_highlight | default: 'Collaborate' }}</brown>
+            </h2>
+          {%- form 'contact', id: 'CollaborationForm', class: 'collaboration-form' -%}
+            <div class="form-row">
+              <div class="form-group">
+                <label class="bolder-500 font-sans"  for="CollaborationForm-firstname">First Name*</label>
+                <input 
+                  type="text" 
+                  id="CollaborationForm-firstname"
+                  class="field__input"
+                  name="contact[first_name]"
+                  value="{% if form.first_name %}{{ form.first_name }}{% endif %}"
+                  required
+                >
+              </div>
+              <div class="form-group">
+                <label class="bolder-500 font-sans" for="CollaborationForm-lastname">Last Name*</label>
+                <input 
+                  type="text" 
+                  id="CollaborationForm-lastname"
+                  class="field__input"
+                  name="contact[last_name]"
+                  value="{% if form.last_name %}{{ form.last_name }}{% endif %}"
+                  required
+                >
+              </div>
+            </div>
+          
+            <div class="form-row">
+              <div class="form-group">
+                <label class="bolder-500 font-sans" for="CollaborationForm-email">Work Email*</label>
+                <input
+                  type="email"
+                  id="CollaborationForm-email"
+                  class="field__input"
+                  name="contact[email]"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="CollaborationForm-email-error"
+                  {% endif %}
+                >
+              </div>
+              <div class="form-group">
+                <label class="bolder-500 font-sans" for="CollaborationForm-country">Country*</label>
+                <input 
+                  type="text" 
+                  id="CollaborationForm-country"
+                  class="field__input"
+                  name="contact[country]"
+                  value="{% if form.country %}{{ form.country }}{% endif %}"
+                  required
+                >
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label class="bolder-500 font-sans" for="CollaborationForm-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="CollaborationForm-phone"
+                class="field__input"
+                name="contact[phone]"
+                pattern="[0-9\-]*"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              >
+            </div>
+          
+            <div class="form-group">
+              <label class="bolder-500 font-sans" for="CollaborationForm-subject">Subject</label>
+              <input
+                type="text"
+                id="CollaborationForm-subject"
+                class="field__input"
+                name="contact[subject]"
+                value="{% if form.subject %}{{ form.subject }}{% endif %}"
+              >
+            </div>
+          
+            <div class="form-group">
+              <label class="bolder-500 font-sans" for="CollaborationForm-message">Message</label>
+              <textarea
+                rows="4"
+                id="CollaborationForm-message"
+                class="text-area field__input"
+                name="contact[message]"
+              >{% if form.message %}{{ form.message }}{% endif %}</textarea>
+            </div>
+          
+            {%- if form.posted_successfully? -%}
+              <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
+                {% render 'icon-success' %}
+                <p>Thank you for your message. We'll get back to you soon.</p>
+              </div>
+            {%- elsif form.errors -%}
+              <div class="form__message">
+                <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                  {% render 'icon-error' %}
+                  <p>There was an error sending your message. Please try again.</p>
+                </h2>
+              </div>
+              <ul class="form-status-list caption-large" role="list">
+                {%- for field in form.errors -%}
+                  <li>
+                    <a href="#CollaborationForm-{{ field }}" class="link">
+                      {{ form.errors.translated_fields[field] | capitalize }}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          
+            <button type="submit" class="submit-button">
+              Submit
+            </button>
+          {%- endform -%}
+          </div>
+        </div>
+      </div>
+      <div class="connect-us">
+        <h3>{{ section.settings.connect_heading }}</h3>
+        <div class="social-icons">
+          {% if section.settings.facebook_url != blank %}
+            <a href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
+              {% render 'icon-facebook' %}
+            </a>
+          {% endif %}
+      
+          {% if section.settings.instagram_url != blank %}
+            <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+              {% render 'icon-instagram' %}
+
+
+            </a>
+          {% endif %}
+      
+          {% if section.settings.tiktok_url != blank %}
+            <a href="{{ section.settings.tiktok_url }}" target="_blank" rel="noopener" aria-label="TikTok">
+              {% render 'icon-tiktok' %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "text",
+      "id": "connect_heading",
+      "label": "Connect Heading",
+      "default": "Connect us at"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+        "id": "contact_us_image",
+        "type": "image_picker",
+        "label": "Contact Us Section Image"
+    },
+    {
+      "type": "text",
+      "id": "mission_heading",
+      "label": "Mission Heading",
+      "default": "Our Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text",
+      "label": "Mission Text",
+      "default": "Morbi dui. Lorem Quisque elit. libero, Vestibulum dolor Nullam Nunc eget vehicula."
+    },
+    {
+      "type": "text",
+      "id": "email_heading",
+      "label": "Email Heading",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "email_text",
+      "label": "Email Address",
+      "default": "contact@medicinalmadhoney.com"
+    },
+    {
+      "type": "text",
+      "id": "phone_heading",
+      "label": "Phone Heading",
+      "default": "Phone"
+    },
+    {
+      "type": "text",
+      "id": "phone_text",
+      "label": "Phone Number",
+      "default": "+977-9823875502"
+    },
+    {
+      "type": "text",
+      "id": "address_heading",
+      "label": "Address Heading",
+      "default": "Address"
+    },
+    {
+      "type": "text",
+      "id": "address_text_1",
+      "label": "Address Line 1",
+      "default": "Bagdol Road, Lalitpur, 44700 Nepal"
+    },
+    {
+      "type": "text",
+      "id": "address_text_2",
+      "label": "Address Line 2",
+      "default": "Gould St Re R Sheridan, WY 82801, United States"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Let's"
+    },
+    {
+      "type": "text",
+      "id": "form_title_highlight",
+      "label": "Form Title Highlight",
+      "default": "Collaborate"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Contact form",
+      "label": "Heading"
+    },
+
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name"
+    }
+  ]
+}
+
+{% endschema %}

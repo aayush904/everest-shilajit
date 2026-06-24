@@ -1,0 +1,448 @@
+{% schema %}
+{
+  "name": "Products Variant List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select product"
+    },
+    {
+      "type": "checkbox",
+      "id": "varient_seperator",
+      "default": true,
+      "label": "Add seperator between Title and Variant",
+      "info": "if checked, adds | between product title and varient else writes the varient name at 1st followed by product title"
+    },
+    {
+      "type": "text",
+      "id": "Card_Button",
+      "label": "Card Button Title",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "select",
+      "id": "box_title_tag",
+      "label": "Select The Tag For Icon Box Title",
+      "default": "h3",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "content_iconbox_gap",
+      "label": "Gap Between Content and Icon Box",
+      "info": "eg: 5.3rem",
+      "default": "12rem"
+    },
+    {
+      "type": "text",
+      "id": "iconbox_gap",
+      "label": "Gap Between Icon Boxs",
+      "info": "eg: 5.3rem"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "icon_box_content_alignment",
+      "label": "Icon Box Content Alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "content_part_width",
+      "label": "Content Part Width"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Section Width"
+    },
+    {
+      "type": "text",
+      "id": "min_height",
+      "label": "Section Min Height"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "eg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Choose Background on",
+      "default": "content_part",
+      "options": [
+        {
+          "value": "content_part",
+          "label": "Content Part"
+        },
+        {
+          "value": "main_section",
+          "label": "Main Section"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color"
+    },
+    {
+      "type": "html",
+      "id": "iconbox_style",
+      "label": "Icon Box Style",
+      "default": "<style>.icon-box-section{}</style>"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product Variants",
+      "name": "Products Variant List",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
+
+{% assign product = all_products[section.settings.product] %}
+
+<style>
+    #shopify-section-{{ section.id }} {
+      {% if section.settings.background_on == 'main_section' %}
+        {% if section.settings.background_type == 'color' and section.settings.background_color != blank %}
+          background: {% if section.settings.background_gradient != blank%}
+              {{section.settings.background_gradient}}
+            {% else %}
+            {{ section.settings.background_color }}
+          {% endif %};
+        {% elsif section.settings.background_type == 'image' and section.settings.background_image != blank %}
+          background: url('{{ section.settings.background_image | image_url }}'){% if section.settings.background_gradient != blank %}
+            ,{{ section.settings.background_gradient }} {% endif %} no-repeat{{ section.settings.background_position }};
+          background-size: {{ section.settings.background_size }};
+        {% endif %};
+      {% endif %};
+      && p {
+        color: {{ section.settings.content_color }};
+      }
+
+      && h2,
+      h3 {
+        color: {{ section.settings.heading_color }};
+      }
+
+      && .product-section-container {
+        margin: 0 auto;
+        width: 100%;
+      }
+      && .product-grid {
+        display: grid;
+        gap: {{ section.settings.iconbox_gap }};
+      }
+      && .product-card {
+        position: relative;
+      }
+      && .product-card img {
+        width: 100%;
+        height: auto;
+      }
+      && .product-buttons {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+       && .product-card:hover .product-buttons {
+        opacity: 1;
+      }
+       && .product-card:hover .secondary-image {
+        opacity: 1;
+      };
+
+
+      /*
+
+     && .quickview:hover {
+     background-color: #100901;
+     color: #D4BE71;
+     }
+  */
+    }
+
+    @media (min-width: 0px) and (max-width: 420px) {
+      #shopify-section-{{ section.id }} .product-grid {
+        grid-template-columns: repeat(1, minmax(0, 75%)) !important;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+</style>
+{{ section.settings.iconbox_style }}
+
+<div
+  class=" wrapper flex flex-col mx-auto {{ section.settings.custom_class }}"
+  id="{{ section.settings.custom_id }}"
+  style="
+      max-width: {{ section.settings.width }};
+      width:100%;
+      min-height: {{ section.settings.min_height }};
+      padding: {{ section.settings.padding }};
+      margin: {{ section.settings.margin }};
+     {% if section.settings.background_on == 'content_part' %}
+        {% if section.settings.background_type == 'color' and section.settings.background_color %}
+          background: {{ section.settings.background_color }};
+        {% elsif section.settings.background_type == 'image' and section.settings.background_image %}
+          background: url('{{ section.settings.background_image  | image_url }}') no-repeat {{ section.settings.background_position }};
+          background-size: {{ section.settings.background_size }};
+        {% endif %};
+    {% endif %};
+      gap: {{ section.settings.content_iconbox_gap }};
+  "
+>
+  {% if section.settings.section_title or section.settings.section_description %}
+    <div class="contentPart flex flex-col gap-6 {% if section.settings.content_alignment  =='left' %} items-start text-left {% elsif  section.settings.content_alignment  =='center' %} items-center text-center {% else %} items-end text-right {% endif %}">
+      <h2>
+        {% if section.settings.section_title != blank %}
+          {{ section.settings.section_title }}
+        {% else %}
+          {{ product.title -}}
+        {%- endif %}
+      </h2>
+      {% if section.settings.section_description %}
+        <p>{{ section.settings.section_description }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="product-section-container mx-auto w-full overflow-hidden ">
+    <div class="product-grid grid grid-cols-3 sm:grid-cols-2">
+      {% if product %}
+        {%- for variant in product.variants -%}
+          <div
+            class="
+              product-card flex flex-col  relative group
+              {% if section.settings.icon_box_content_alignment  =='left' %} items-start text-left {% elsif  section.settings.icon_box_content_alignment  =='center' %} items-center text-center {% else %} items-end text-right {% endif %} sm:items-center sm:text-center
+            "
+          >
+            <div class="relative imageDiv mb-[2.5rem]">
+              <a href="{{ variant.url }}" class="block relative">
+                {% if variant.image %}
+                  <img
+                    src="{{ variant.image | image_url }}"
+                    class="primary-image w-full h-auto"
+                    width="240"
+                    height="240"
+                    alt="{{ variant.image.alt | default:variant.title }}"
+                  >
+                {% else %}
+                  <img
+                    src="{{ product.images.first.src | image_url }}"
+                    class="aspect-square primary-image w-full h-auto"
+                    width="240"
+                    height="240"
+                    alt="{{ product.images.first.src.alt | default:product.title }}"
+                  >
+                {% endif %}
+              </a>
+              {% comment %} <button class="quickview font-sans font-normal text-accent xl:text-[2rem] xxl:text-[2.4rem] bg-[#d4be7198] text-[#100901]  px-[3.2rem] py-[16px] hidden group-hover:block group-hover:opacity-100 opacity-0  group-hover:bottom-0 transition-all duration-500 absolute -bottom-0  w-full left-0  quick-view-button">Quick View</button> {% endcomment %}
+            </div>
+            <div class="product-info h-full mt-2 text-center flex flex-col justify-between items-center gap-[16px]">
+              <a href="{{ variant.url }}" class="block relative">
+                <h3
+                  title="{{ product.title }} | {{ variant.title }}"
+                  class="flex justify-center items gap-4 relative w-full leading-[2.88rem]  product-title before:absolute before:bottom-0 pb-[3.8px] before:left-1/2 before:-translate-x-1/2 before:w-[22.88%] before:h-[1px] before:bg-black font-serif"
+                >
+                  {% if section.settings.varient_seperator %}
+                    {% comment %}
+                      <product-title class="inline-block w-max max-w-[60%] text-ellipsis overflow-hidden whitespace-nowrap">{{ product.title }}</product-title>
+                      | {{ variant.title }}
+                    {% endcomment %}
+                    {{ product.title }}
+                    | {{ variant.title }}
+                  {% else %}
+                    {{ variant.title }}
+                    {{ product.title }}
+                  {% endif %}
+                </h3>
+              </a>
+              <p class="product-price">{{ variant.price | money }}</p>
+
+              {% if variant.requires_shipping or variant.taxable %}
+                <div>
+                  {% if variant.taxable %}
+                    <span class="tax-info">Tax included</span>
+                  {% endif %}
+
+                  {% if variant.requires_shipping and variant.taxable %}
+                    |
+                  {% endif %}
+                  {% if variant.requires_shipping %}
+                    <span class="shipping-info -mt-[0.8rem]">Free Shipping</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+              <div class="sm:opacity-100 md:opacity-100  w-full  transition-[opacity,background] duration-500 -z-1 opacity-0 group-hover:z-1 group-hover:opacity-100">
+                <script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
+
+                {%- assign product_form_id = 'product-form-' | append: product.variants.first.id -%}
+                <script
+                  src="{{ 'product-form.js' | asset_url }}"
+                  defer="defer"
+                  type="module"
+                ></script>
+
+                {%-
+                  render 'buy-buttons'
+                  , product: product
+                  , product_form_id: product_form_id
+                  , section_id: section.id
+                  , show_pickup_availability: true
+                  , button_lable: {{ section.settings.Card_Button }}
+                -%}
+              </div>
+              <style>
+                #{{product_form_id}} .product-form__submit {
+                  font-weight: 400;
+                }
+              </style>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>

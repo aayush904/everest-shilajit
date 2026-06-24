@@ -1,0 +1,150 @@
+{% comment %} Search Results Section {% endcomment %}
+<section class="search-page">
+  <!-- Search Form -->
+  <form action="/search" method="get" class="search-form">
+    <input type="text" name="q" value="{{ request.query.q }}" placeholder="Search for products or articles">
+    <input type="hidden" name="type" value="article,product">
+    <button type="submit">Search</button>
+  </form>
+
+  <h4>Blog Tags</h4>
+  {% assign blogs = blogs %}
+  <div class="blog-list">
+    {% for blog in blogs %}
+      <h2>{{ blog.title }}</h2>
+      <ul>
+        {% for article in blog.articles %}
+          <li>
+            <h3>
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h3>
+            <p>{{ article.excerpt | truncatewords: 20 }}</p>
+            <p>Published on: {{ article.published_at | date: '%B %d, %Y' }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+
+  <!-- </script> -->
+
+  {{ blogs.all.articles | json }}
+
+  {% comment %} Display search results for products and articles {% endcomment %}
+  {% if search.results.size > 0 or search_query == '*' %}
+    <div class="search-results">
+      <h2>Search Results for "{{ request.query.q }}"</h2>
+
+      <!-- Product Results -->
+      <div class="product-results">
+        <h3>Products</h3>
+        <ul>
+          {% if search_query == '*' %}
+            {% assign products = collections.all.products %}
+          {% else %}
+            {% assign products = search.results %}
+          {% endif %}
+          {% for result in products %}
+            {% if result.object_type == 'product' or search_query == '*' %}
+              <li>
+                <a href="{{ result.url }}">
+                  <img
+                    src="{{ result.featured_image | img_url: 'medium' }}"
+                    alt="{{ result.featured_image.alt | default:result.title }}"
+                    width="200"
+                    height="200"
+                  >
+                  <h4>{{ result.title }}</h4>
+                  <p>{{ result.price | money }}</p>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Article Results -->
+      <div class="article-results">
+        <h3>Blog Articles</h3>
+        <ul>
+          {% if search_query == '*' %}
+            {% assign articles = blogs.all.articles %}
+          {% else %}
+            {% assign articles = search.results %}
+          {% endif %}
+          {% for result in articles %}
+            {% if result.object_type == 'article' or search_query == '*' %}
+              <li>
+                <a href="{{ result.url }}">
+                  <h4>{{ result.title }}</h4>
+                  <p>{{ result.excerpt }}</p>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% else %}
+    <p>No results found for "{{ request.query.q }}".</p>
+  {% endif %}
+
+  {% comment %} Tag Filter Section {% endcomment %}
+  <div class="filters">
+    <h3>Filter by Tags</h3>
+
+    <!-- Product Tag Filters -->
+    <div class="product-filters">
+      <h4>Product Tags</h4>
+      <ul>
+        {% assign product_tags = shop.all_tags %}
+        {% for tag in product_tags %}
+          <li>
+            <a href="/search?q={{ request.query.q }}&filter=product_tag:{{ tag }}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Blog Tag Filters -->
+    <div class="article-filters">
+      <h4>Blog Tags</h4>
+
+      {% for article in blogs.all.articles %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.published_at }}</p>
+        <p>{{ article.author }}</p>
+        <p>{{ article.tags | join: ', ' }}</p>
+        <img
+          src="{{ article.image.src | image_url}}"
+          alt="{{ article.image.alt |  default: article.title  }}"
+          width=""
+          height=""
+        >
+      {% else %}
+        <p>No articles found.</p>
+      {% endfor %}
+
+      <ul>
+        {% assign article_tags = blog.all_tags %}
+        {% for tag in article_tags %}
+          <li>
+            <a href="/search?q={{ request.query.q }}&filter=article_tag:{{ tag }}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Second Search",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Second Search"
+    }
+  ]
+}
+{% endschema %}

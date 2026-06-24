@@ -1,0 +1,758 @@
+{% assign sections = section.settings %}
+<style>
+      #shopify-section-{{ section.id }} {
+        {% if sections.background_on == 'main_section' %}
+          {% if sections.background_type == 'color'  %}
+            background: {% if sections.background_gradient != blank%}{{sections.background_gradient}} {% else %} {{ sections.background_color }}
+          {% endif %};
+        {% elsif sections.background_type == 'image' and sections.background_image != blank %}
+            background:{% if sections.background_gradient != blank%}{{sections.background_gradient}},{% endif %}url('{{ sections.background_image | image_url }}') no-repeat {{' '}}{{ sections.background_position }};
+            background-size: {{ sections.background_size }};
+      {% endif %};
+    {% endif %};
+    }
+
+    @media (max-width: 1200px) {
+      #shopify-section-{{ section.id }} .main-wrapper {
+        max-width: 116.6rem !important;
+      }
+    }
+
+
+    #shopify-section-{{ section.id }} .main-wrapper {
+      max-width:{{ sections.width }};
+        min-height:{{ sections.minheight }};
+      margin:{{sections.margin}};
+      padding: {{sections.padding}};
+      {% if sections.background_on == 'content_part' %}
+        {% if sections.background_type == 'color' and sections.background_color %}
+          background: {{ sections.background_color }};
+        {% elsif sections.background_type == 'image' and sections.background_image %}
+          background: url('{{ sections.background_image  | image_url }}') no-repeat {{ sections.background_position }};
+          background-size: {{ sections.background_size }};
+
+        {% else %}
+        ''
+        {% endif %};
+      {% endif %};
+       gap:{{sections.navGap}};
+    }
+
+
+    .main-content{
+
+                  width:    100%;
+    }
+    @media(max-width:768px){
+      #shopify-section-{{ section.id }} .main-wrapper {
+        padding: {% render 'mobile_spacing'  padding: sections.padding %}!important;
+        max-width: 100% !important;
+      }
+  }
+</style>
+
+{{ section.settings.custom_html }}
+{% comment %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+
+    {% endcase %}
+  {% endfor %}
+{% endcomment %}
+<div
+  {% if sections.custom_id %}
+    id="{{ sections.custom_id }}"
+  {% endif %}
+  class="
+    main-wrapper relative wrapper
+    flex
+    flex-col justify-center
+    w-full {{ sections.custom_class }}
+    sm:justify-center
+  "
+>
+  {% if sections.isSlider == 'true' %}
+    <style>
+      .nav-btn.slick-arrow:hover svg {
+        cursor: pointer;
+        z-index: 2;
+        circle {
+          fill-opacity: 1;
+        }
+
+        path {
+          stroke: #fff;
+        }
+      }
+    </style>
+    {% assign is_extra_sections = true %}
+
+    {% for block in section.blocks %}
+      {%- if block.settings.did_you_know != blank
+        or block.settings.absorption_bioavailability != blank
+        or block.settings.dietary_sources != blank
+      -%}
+        {% assign is_extra_sections = true %}
+        {% break %}
+      {%- endif -%}
+    {% endfor %}
+    <div
+      class="prev nav-btn absolute z-[1] left-0   {{ " " }}  {%- if is_extra_sections -%}   top-1/4{%- else -%} top-1/2 {% endif %}"
+      style="transform:translate(0%,-50%)"
+    >
+      <svg style="width:4rem; height:auto;" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21" cy="21.2656" r="21" fill="#68453D" fill-opacity="0.2"/>
+        <path d="M24 27.2656L18 21.2656L24 15.2656" stroke="#68453D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  {% endif %}
+  <div
+    class="main-content z-0 relative flex flex-col"
+  >
+    {% for block in section.blocks %}
+      {% if sections.isSlider == 'true' %}
+        <slide>
+      {% endif %}
+
+      <div
+        id="{{ block.id }}"
+        class="
+          contain-wrapper
+          flex {{ sections.layout }} flex-nowrap
+
+          {% if sections.valignment == "top"  %}
+            items-start
+          {% elsif sections.valignment == "center" %}
+            items-center
+          {% else %}
+            items-end
+          {% endif %}
+          {% if block.settings.image != blank or block.settings.svg != blank  %}
+          justify-between
+          {% else %}
+          justify-center
+          {% endif %}
+          w-[100%] sm:gap-[4rem!important] md:gap-[2.5rem!important]  sm:justify-center sm:text-left sm:items-center sm:flex-col-reverse
+        "
+        style="
+                gap: {{sections.gapimage}};
+                  {% if sections.isSlider == 'true' %}
+            padding: 0 calc(1rem + 2.2%);
+                    {% else %}
+                padding-top:{{sections.gapsections}};
+          {% endif %}
+        "
+      >
+        {% if block.settings.title != '' and block.settings.description != '' %}
+          <div
+            class="
+              contentside flex {{sections.alignment}} gap-[3.2rem] flex-col items-start   md:p-6 sm:max-w-[100%!important] w-full max-content-width
+              {% comment %} md:max-w-[50%!important] {% endcomment %}
+            "
+            style="max-width:{{ sections.content_width }}; color:{{ sections.content_color }};"
+          >
+            {% comment %} content start here {% endcomment %}
+            {% if block.settings.title != '' %}
+              <h2
+                class="text-tertiary  -mb-[1.7rem] {{sections.alignment}}"
+                {% if section.settings.heading_color %}
+                  style="color: {{ section.settings.heading_color }};"
+                {% endif %}
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% endif %}
+
+            {% if block.settings.description != '' %}
+              <div class="{{sections.alignment}} ">{{ block.settings.description }}</div>
+            {% endif %}
+            {% if block.settings.button_text %}
+              <a
+                class=" {{sections.alignment}} button border-none  justify-center sm:text-center"
+                href="{{ block.settings.button_link }}"
+              >
+                {{- block.settings.button_text -}}
+              </a>
+            {% endif %}
+
+            {% comment %} content ends here {% endcomment %}
+          </div>
+        {% endif %}
+
+        {% comment %} image here {% endcomment %}
+        {% if block.settings.image != blank or block.settings.svg != blank %}
+          <style>
+            @media (max-width: 767px) {
+              #shopify-section-{{ section.id }} .main-wrapper .imagepart {
+                width: 95% !important;
+              }
+            }
+          </style>
+
+          {% if block.settings.image_type == 'image' %}
+            {% if block.settings.image != blank %}
+              <img
+                class="imagepart {{ sections.alignment }} object-contain sm:max-w-[100%]"
+                style="width:{{ block.settings.image_width }};"
+                src="{{ block.settings.image | image_url}}"
+                alt="{{ block.settings.image.alt |  default: block.settings.image_alt  }}"
+                width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              >
+            {% endif %}
+
+          {% elsif block.settings.image_type == 'svg' %}
+            {% if block.settings.svg != blank %}
+              {% if block.settings.svg contains '<svg' %}
+                {% assign svgwidth = '<svg class="imagepart h-auto  sm:max-w-[100%]" style="width: '
+                  | append: block.settings.image_width
+                  | append: ';"'
+                %}
+                {{ block.settings.svg | strip_newlines | replace: '<svg', svgwidth }}
+              {% else %}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  class="h-auto sm:max-w-[100%]"
+                  style="
+                    width: {{ block.settings.image_width }};
+                    {{block.settings.svg_style}}
+                  "
+                >
+                  <use xlink:href="{{'main.svg' | asset_url }}#{{block.settings.svg | strip_newlines | escape}}"></use>
+                </svg>
+              {% endif %}
+            {% endif %}
+          {% else %}
+            <div class="imagepart h-auto  sm:max-w-[100%]" style="width: {{ block.settings.image_width}}">
+              {{ block.settings.svg | strip_newlines }}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+      {% comment %} image end here {% endcomment %}
+      {% if block.settings.did_you_know != blank
+        or block.settings.absorption_bioavailability != blank
+        or block.settings.dietary_sources != blank
+      %}
+        <style>
+          .minerals-cards {
+            margin-top: 7rem;
+          }
+          .minerals-card {
+            background-color: #f4e7d9;
+            padding: 4rem 5rem;
+
+            ul li {
+              list-style-type: disc;
+            }
+
+            ol li {
+              list-style-type: number;
+            }
+          }
+
+          .minerals-card:first-child {
+            max-width: 100% !important;
+            position: relative;
+          }
+          .minerals-card:first-child * {
+            z-index: 1;
+            position: relative;
+          }
+
+          .minerals-card:first-child::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            bottom: 0;
+            opacity: 30%;
+            background-image: url(//sanoj333.myshopify.com/cdn/shop/t/3/assets/bg_of_mineralCards.webp?v=1791299…);
+            background-repeat: no-repeat;
+            background-size: 105%;
+            background-blend-mode: multiply;
+            background-position: center;
+          }
+
+          .minerals-card {
+            max-width: calc(50% - 1.6rem);
+            ol,
+            ul {
+              margin-left: 1.5em;
+            }
+          }
+          @media (max-width: 768px) {
+            .minerals-card {
+              padding: 2rem;
+            }
+
+            .minerals-cards {
+              margin-top: 20px;
+            }
+
+            .minerals-card {
+              max-width: 100%;
+            }
+          }
+        </style>
+        <div class="relative flex flex-wrap gap-[3.2rem] minerals-cards">
+          {% if block.settings.did_you_know != blank %}
+            <div class="w-full minerals-card">
+              {{ block.settings.did_you_know }}
+            </div>
+          {% endif %}
+          {% if block.settings.absorption_bioavailability != blank %}
+            <div class="w-1/2 minerals-card bio sm:w-full">
+              {{ block.settings.absorption_bioavailability }}
+            </div>
+          {% endif %}
+          {% if block.settings.dietary_sources != blank %}
+            <div class="w-1/2 minerals-card diet sm:w-full">
+              {{ block.settings.dietary_sources }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if sections.isSlider == 'true' %}
+        </slide>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% if sections.isSlider == 'true' %}
+    <div
+      class="next nav-btn absolute z-[1] right-0 {{ " " }} {%- if is_extra_sections -%}   top-1/4{%- else -%} top-1/2 {% endif %}"
+      style="transform:translate(0%,-50%)"
+    >
+      <svg style="width:4rem; height:auto;" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21" cy="21" r="21" transform="matrix(-1 0 0 1 42 0.265625)" fill="#68453D" fill-opacity="0.2"/>
+        <path d="M18 27.2656L24 21.2656L18 15.2656" stroke="#68453D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  {% endif %}
+</div>
+
+{% if sections.isSlider == 'true' %}
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('#shopify-section-{{ section.id }} .main-content').slick({
+        dots: true,
+        arrows: true,
+        prevArrow: $('#shopify-section-{{ section.id }} .prev'),
+        nextArrow: $('#shopify-section-{{ section.id }} .next'),
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+      });
+    });
+  </script>
+{% endif %}
+{% schema %}
+{
+  "name": "Basmil Image Text List",
+  "class": "basmilTextImageList",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "radio",
+      "id": "isSlider",
+      "label": "Show As Slider",
+      "options": [
+        {
+          "value": "true",
+          "label": "Yes"
+        },
+        {
+          "value": "false",
+          "label": "No"
+        }
+      ],
+      "default": "false"
+    },
+    {
+      "type": "header",
+      "content": "Image Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image Layout",
+      "default": "imagelast",
+      "options": [
+        {
+          "value": "imagefirst",
+          "label": "Left"
+        },
+        {
+          "value": "imagelast",
+          "label": "Right"
+        },
+        {
+          "value": "imagetop",
+          "label": "Top"
+        },
+        {
+          "value": "imagebottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content Alignment",
+      "default": "contentstart",
+      "options": [
+        {
+          "value": "contentstart",
+          "label": "Left"
+        },
+        {
+          "value": "contentcenter",
+          "label": "Center"
+        },
+        {
+          "value": "contentend",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "valignment",
+      "label": "Content Verticle Alignment",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "bottom"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "gapimage",
+      "label": "Content and Image Gap",
+      "default": "5.3rem"
+    },
+    {
+      "type": "text",
+      "id": "gapsections",
+      "label": "Gap between Sections",
+      "default": "5.3rem"
+    },
+    {
+      "type": "header",
+      "content": "Content Part Width"
+    },
+    {
+      "type": "text",
+      "id": "content_width",
+      "label": "Content Width",
+      "default": "50%"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "12rem 16px",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin",
+      "default": "0",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "header",
+      "content": "Custom Class/id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "header",
+      "content": "Section Width"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Width",
+      "default": "116.6rem",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Height"
+    },
+    {
+      "type": "text",
+      "id": "minheight",
+      "label": "Min Height",
+      "default": "auto",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "eg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Choose Background on",
+      "default": "content_part",
+      "options": [
+        {
+          "value": "content_part",
+          "label": "Content Part"
+        },
+        {
+          "value": "main_section",
+          "label": "Main Section"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color"
+    },
+    {
+      "type": "header",
+      "content": "Custom HTML"
+    },
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML/CSS/SCript"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Contents",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title Here"
+        },
+        {
+          "type": "header",
+          "content": "Paragraph"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Paragraphs Here</p>"
+        },
+        {
+          "type": "header",
+          "content": "Extra Content",
+          "info": "If you want to show extra content, fill the below fields. It especially for Trace minerals sections."
+        },
+        {
+          "type": "richtext",
+          "id": "did_you_know",
+          "label": "Did You Know"
+        },
+        {
+          "type": "richtext",
+          "id": "absorption_bioavailability",
+          "label": "Absorption & Bioavailability"
+        },
+        {
+          "type": "richtext",
+          "id": "dietary_sources",
+          "label": "Dietary Sources"
+        },
+        {
+          "type": "header",
+          "content": "Select Type",
+          "info": "Select the type of image you want to display"
+        },
+        {
+          "type": "select",
+          "id": "image_type",
+          "label": "Image Type",
+          "default": "image",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "svg",
+              "label": "SVG"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Image",
+          "info": "If you want to use an image, upload it here"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image Alt Text",
+          "default": "Everest Shilajit"
+        },
+        {
+          "type": "header",
+          "content": "SVG",
+          "info": "If you want to use an svg, Paste the code here"
+        },
+        {
+          "type": "html",
+          "id": "svg",
+          "label": "SVG/HTML Code"
+        },
+        {
+          "type": "header",
+          "content": "Image/SVG Min Width"
+        },
+        {
+          "type": "text",
+          "id": "image_width",
+          "label": "Min Width",
+          "default": "40rem",
+          "info": "Value in rem. 1rem = 10px"
+        },
+        {
+          "type": "textarea",
+          "id": "svg_style",
+          "label": "Style For SVG With Id",
+          "info": "eg: fill: #382E2A; stroke: #382E2A;"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basmil Image Text List"
+    }
+  ]
+}
+{% endschema %}

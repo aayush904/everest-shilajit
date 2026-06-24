@@ -1,0 +1,570 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "basmil_image_text_MKmyLX": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_LHiw7R": {
+          "type": "content",
+          "settings": {
+            "title": "Our <brown>Story</brown>",
+            "subtitle": "",
+            "description": "<p>Our journey started from the heart of the Himalayas, where the air is thin, and the spirit of resilience thrives. Our inspiration is drawn from the indomitable spirit of Sherpas and many high-altitude communities in the Himalayas, who have been using <a href=\"https://everestshilajit.com/pages/shilajit-complete-guide\" target=\"_blank\" title=\"shilajit\">shilajit</a> for centuries due to its believed benefits in promoting energy, endurance, and overall health. Genuine Shilajit takes millions of years to form and is only found trapped within rocky cliffs at very high altitudes and in remote regions of the Himalayas. </p><p>In 2016, exploring the breathtaking landscapes of Nepal, we collected the finest Shilajit from all the regions. Since then, we have been dedicated to relentless research, delving into the origins of Shilajit and fostering connections with tribes who have masterfully extracted this resin through generations. We work in collaboration with Sherpas and tribal communities of Solukhumbu, Dolpa and Darchula, where we meticulously sourced from carefully chosen harvesters and purified using advanced, precise methods to ensure both purity and potency. </p><p>We created Everest Shiljait to provide authentic shiljait and have continued to travel across nepal to search for the finest shilajit with unparalleled efficacy and integrity. We have partnered with renowned Ayurvedic doctors to create effective, genuine formulas and products using only the highest quality, ethically sourced from Nepal.</p><p>When it comes to <a href=\"https://everestshilajit.com\" target=\"_blank\" title=\"Shilajit Nepal\">shilajit, Nepal</a> is the only place to find the finest shilajit in the world!</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_QY6hHr": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/art_shilajit_hunt.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%!important; margin-top:-5%; z-index:-1;"
+          }
+        }
+      },
+      "block_order": [
+        "content_LHiw7R",
+        "image_QY6hHr"
+      ],
+      "custom_css": [
+        ".contentside {padding: 0 16px;}",
+        "h1,p {line-height: 1.28;}",
+        "@media (max-width: 768px) {h1 {width: 100%; } p:first-of-type {columns: 1; }}"
+      ],
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "4rem",
+        "content_width": "100%; max-width:127.6rem",
+        "padding": "11rem 0",
+        "margin": "0 auto",
+        "custom_class": "screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_jmyjmd": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_eLqhFN": {
+          "type": "content",
+          "settings": {
+            "title": "<p class=\"font-sans hidden\">ABOUT US</p>\nOur <brown>Source</brown>",
+            "subtitle": "",
+            "description": "<p>We personally source our Shiljait from a remote Himalayan region of Nepal, where there are the world's highest peaks, like Mount Everest, Dhaulagiri II, and Api Himal. The local community of these regions have been hand collecting raw shilajit from this region for centuries and has learned, through ancestral knowledge passed down to each generation, how to identify original gold grade shilajit. </p><p>The raw Shilajit originates at altitudes between 16,000 and 18,000 feet. <a href=\"https://everestshilajit.com/collections/all\" target=\"_blank\" title=\"pure himalayan shilajit\">Pure Himalayan Shilajit</a> from this particular region and altitude is highly prized by Ayurvedic specialists and is considered to possess the greatest healing power.</p><p>After collection, our Shilajit is purified with filtered spring water, and laboratory tested for safety. See our “Safety and Purity” section for links to our most recent lab tests.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_BRFGr4": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Coffee_Beans.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "47.77%"
+          }
+        }
+      },
+      "block_order": [
+        "content_eLqhFN",
+        "image_BRFGr4"
+      ],
+      "custom_css": [
+        "h2 span {font-weight: 500; font-size: 18px; line-height: 24px; margin-block-end: 10px;}",
+        ".contain-wrapper {gap: 16px !important;}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.77%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto; /** -16rem auto!important; z-index:2; **/",
+        "custom_class": "relative",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_YGJgwt": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_z4YcVE": {
+          "type": "content",
+          "settings": {
+            "title": "Supporting The <brown>Local Communities</brown>",
+            "subtitle": "OUR MISSION",
+            "description": "<p>Our support to the local communities goes beyond sourcing the raw shilajit, each jar of shilajit sold directly contributes to the livelihoods of the sourcing communities, creating a sustainable source of income and preserving the himalayan region environment.</p><p>Once dearly guarded by the Indigenous community, our shilajit is carefully harvested, bottled, and packed in Nepal, with perfection shining through every step, from the mountains. </p><p>With a mission to bring Nepali shilajit to the world, we are redefining the industry by introducing one of nature’s rarest and most meticulously harvested mineral sources. We respect their culture, traditions, and way of living.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_Gx9mKY": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/sherpas.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "47.77%"
+          }
+        }
+      },
+      "block_order": [
+        "content_z4YcVE",
+        "image_Gx9mKY"
+      ],
+      "custom_css": [
+        ".contentside {gap: 16px;}",
+        "h2 {line-height: 1.28; margin-bottom: 8px;}",
+        ".subtitle {margin-bottom: -10px !important;}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagefirst",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.77%",
+        "padding": "32px 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "#f4e7d9",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/bg-about.webp",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_3pFhta": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_QixhUn": {
+          "type": "content",
+          "settings": {
+            "title": "The Story Behind<brown> Everest Shilajit</brown>",
+            "subtitle": "FOUNDER",
+            "description": "<p>Growing up in Nepal, the Himalayas were more than just a backdrop to my life, they were a source of wonder, wisdom, and healing.</p><p>I have always believed in the healing power of nature. As a child, my fondest memories were of my father bringing raw shilajit to gift his friends as a souvenir from his home. Over the years, I developed a deep passion for strength training and endurance, but as a vegetarian, finding the right supplement was essential. Shilajit became my go-to fueling my energy, focus, and resilience.</p><p>During a trip to my hometown, Darchula, I discovered that the world's finest Shilajit was being exported and mislabeled as Indian origin. That moment hit my emotions and from that day I traveled deep into the Himalayas, connected with local harvesters, and learned everything I could do about sourcing and purifying Shilajit the right way with a mission to bring pure, authentic Himalayan Shilajit to the world.</p><p>Everest Shilajit is more than a brand; it’s a promise of quality, sustainability, and honoring ancestors' wisdom.</p><p>I hope it brings you the same strength and vitality it has given me.</p><p><strong>Pragya Mahara<br/></strong>Founder, Everest Shilajit</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_dHiJAe": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Everest_founder.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "47.77%"
+          }
+        }
+      },
+      "block_order": [
+        "content_QixhUn",
+        "image_dHiJAe"
+      ],
+      "custom_css": [
+        ".contentside {gap: 16px;}",
+        "h2 {line-height: 1.28; margin-bottom: 8px;}",
+        ".subtitle {margin-bottom: -10px !important;}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.77%",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_n8fAcT": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_rWE7ey": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"81\" viewbox=\"0 0 130 81\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M1.83384 80.0786L1 79.3716L11.3323 66.8822L17.2417 54.3746L23.3867 53.8127L27.8641 49.9154L36.8188 54.8459L42.1843 60.8641L50.9215 46.1269L55.9245 34H65.1693L69.5922 38.9849L73.562 39.0574L78.1844 52.0363L85.0545 47.142L88.8793 46.6888L91.417 44.3142L98.1602 45.1481L104.505 44.8943L110.36 51.8913L118.045 55.6979L118.136 55.8792L128.885 79.4985L127.907 79.9517L117.212 56.4954L109.598 52.6888L104.015 46L98.1059 46.2357L91.7977 45.4562L89.3687 47.7221L85.3264 48.2114L77.6406 53.7584L72.8007 40.1269L69.0847 40.0543L64.6798 35.0876H56.6496L51.9004 46.6164L42.3475 62.6949L36.0756 55.6435L27.991 51.2206L23.8218 54.8641L17.9487 55.4079L12.2387 67.4623L1.83384 80.0786Z\" fill=\"#68453D\"></path>\n<path d=\"M91.2365 79.9696L77.4238 53.1418L78.3846 52.6523L92.1973 79.4802L91.2365 79.9696Z\" fill=\"#68453D\"></path>\n<path d=\"M41.7393 61.4825L31.875 79.4121L32.8279 79.9364L42.6922 62.0067L41.7393 61.4825Z\" fill=\"#68453D\"></path>\n<path d=\"M71.552 80.1686L62.416 73.8967L65.6245 62.7668L62.4704 54.6278L68.8329 39.3105L69.848 39.7274L63.6305 54.646L66.7665 62.7123L63.6849 73.4436L72.1683 79.2804L71.552 80.1686Z\" fill=\"#68453D\"></path>\n<path d=\"M23.443 79.716H22.3554L22.4279 76.3989L27.2134 67.6799L22.2285 64.562L27.4128 50.3867L28.446 50.7674L23.5518 64.1088L28.6454 67.3173L23.443 76.7976V79.716Z\" fill=\"#68453D\"></path>\n<path d=\"M102.078 79.7162H100.99V75.0757L102.458 69.112L98.2168 57.112L98.3074 56.9126L103.764 45.2207L104.742 45.6739L99.395 57.1663L103.6 69.0575L102.06 75.2026L102.078 79.7162Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Sourced from Everest Region",
+            "icon_description": "We extracted our shilajit from the Himalayan mountains of Nepal between the altitudes of 16,000 – 18,000 feet where the terrain is rich in minerals and robust medicine. The sticky tar formed is a result of the breakdown of plants and minerals over time, and fulvic acid along with natural bioactive compounds are decomposed. The local people of the Himalayan regions harvest these at a rich high altitude containing over 85 trace minerals guaranteeing their maximum purity and effectiveness.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_EqwPUA": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"80\" viewbox=\"0 0 130 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M86.8159 58.23C86.5659 57.98 86.1459 57.98 85.8959 58.23L75.5359 68.59L71.8959 64.95C71.6459 64.7 71.2259 64.7 70.9759 64.95C70.7259 65.2 70.7259 65.62 70.9759 65.87L75.0759 69.97C75.2059 70.1 75.3659 70.16 75.5359 70.16C75.7059 70.16 75.8659 70.1 75.9959 69.97L81.8959 64.07C82.8059 66.15 82.6759 68.67 81.2559 70.77C80.3059 72.17 78.8259 73.17 77.1759 73.55C72.2159 74.66 67.8659 70.39 68.8359 65.45C69.3359 62.88 71.3359 60.77 73.8759 60.15C76.0559 59.62 78.2559 60.13 79.9059 61.46C80.1559 61.66 80.5259 61.66 80.7459 61.42L80.7859 61.38C81.0359 61.12 81.0259 60.69 80.7459 60.46C79.1159 59.14 77.0559 58.5 74.9159 58.67L70.0959 47.76V34.77H70.6859C71.0459 34.77 71.3359 34.48 71.3359 34.12V30.65C71.3359 30.29 71.0459 30 70.6859 30H54.3459C53.9859 30 53.6959 30.29 53.6959 30.65V34.12C53.6959 34.48 53.9859 34.77 54.3459 34.77H54.9359V38.28V44.36V47.76L42.2059 76.57C41.7759 77.54 42.0259 78.69 42.8959 79.41C43.3259 79.77 43.8859 79.93 44.4459 79.93H80.6459C81.7059 79.93 82.6559 79.24 82.9559 78.15C83.1059 77.61 83.0259 77.03 82.8059 76.52L81.1859 72.84C81.8359 72.24 82.3859 71.54 82.8059 70.76C84.1359 68.26 84.0659 65.42 82.8859 63.1L86.8359 59.15C87.0759 58.89 87.0759 58.48 86.8159 58.23ZM54.9859 31.3H70.0259V33.46H69.4359H67.2959H55.5659H54.9759V31.3H54.9859ZM56.1659 48.15C56.1859 48.06 56.2059 47.98 56.2259 47.89V44.35V38.27V34.76H67.3059H68.7959V47.88C68.8159 47.97 68.8359 48.06 68.8559 48.15L73.5959 58.87C72.4659 59.15 71.4259 59.67 70.5359 60.38H50.7859L56.1659 48.15ZM81.6259 77.09C81.7759 77.43 81.7459 77.81 81.5459 78.12C81.3459 78.43 81.0059 78.61 80.6359 78.61H44.3759C44.0059 78.61 43.6759 78.43 43.4659 78.12C43.2659 77.81 43.2359 77.43 43.3859 77.09L50.1959 61.68H69.2259C68.3559 62.75 67.7459 64.03 67.5159 65.42C66.5859 71.04 71.4159 75.85 77.0459 74.88C78.1559 74.69 79.2059 74.26 80.1259 73.65L81.6259 77.09Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Lab Tested &amp; Certified",
+            "icon_description": "We test every batch of Shilajit at the Nepal Government Labs, and an American, FDA registered, GMP certified, independent, third party laboratory. California’s Prop 65 is considered to be the toughest regulations available when it comes to heavy metal testing. The same goes for us, while many brands are focused on hasty, mass production, we spend 60 to 90 days preparing SHILAJIT at low heat. Through our minimal production, we sell a limited amount of a hundred jars every month.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_NdndCq": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"80\" viewbox=\"0 0 130 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M57.6891 34.982C58.2605 35.3853 58.5518 35.9679 58.5518 36.7074V37.3683L56.5464 37.4356V36.853C56.5464 36.1024 56.143 35.7326 55.3251 35.7326C54.9218 35.7326 54.6193 35.8222 54.4064 35.9791C54.2048 36.1471 54.1039 36.3937 54.1039 36.7186V42.0179C54.1039 42.6789 54.5073 43.0039 55.3027 43.0039C55.7061 43.0039 56.0086 42.9142 56.2102 42.735C56.4007 42.5557 56.5015 42.2644 56.5015 41.8835V40.2141H55.3251V38.8585H58.5518V42.0403C58.5518 42.7798 58.2605 43.3512 57.6891 43.7657C57.1177 44.169 56.3111 44.3707 55.2691 44.3707C54.2272 44.3707 53.4317 44.169 52.8715 43.7657C52.3113 43.3624 52.0312 42.7798 52.0312 42.0403V36.7074C52.0312 35.9679 52.3113 35.3965 52.8715 34.982C53.4317 34.5787 54.2384 34.377 55.2691 34.377C56.2999 34.377 57.1065 34.5675 57.6891 34.982Z\" fill=\"#68453D\"></path>\n<path d=\"M69.3291 44.2254H67.2452V37.4807H67.2004L65.475 42.8361H64.2426L62.5172 37.4807H62.4724V44.2254H60.5117V34.5117H63.2454L64.8812 39.7327H64.926L66.5393 34.5117H69.3515V44.2254H69.3291Z\" fill=\"#68453D\"></path>\n<path d=\"M77.1478 35.1386C77.7416 35.5644 78.0329 36.1694 78.0329 36.9648V37.7379C78.0329 38.5334 77.7416 39.1384 77.1478 39.5641C76.554 39.9899 75.7026 40.1915 74.571 40.1915H73.6523V44.2137H71.5684V34.5H74.571C75.7026 34.5 76.554 34.7129 77.1478 35.1386ZM73.6523 35.8669V38.8358H74.4925C74.9855 38.8358 75.3552 38.7351 75.5905 38.5446C75.8258 38.3541 75.949 38.0516 75.949 37.6371V37.0545C75.949 36.6512 75.8258 36.3487 75.5905 36.1582C75.3552 35.9677 74.9855 35.8669 74.4925 35.8669H73.6523Z\" fill=\"#68453D\"></path>\n<path d=\"M51.7168 49.6688C51.7168 48.6716 52.4787 47.9434 53.4982 47.9434C54.0136 47.9434 54.4729 48.1227 54.7754 48.47L54.4617 48.7725C54.204 48.4924 53.8903 48.3691 53.5206 48.3691C52.7587 48.3691 52.1986 48.9181 52.1986 49.6576C52.1986 50.4082 52.7587 50.946 53.5206 50.946C53.8903 50.946 54.204 50.8115 54.4617 50.5426L54.7754 50.8452C54.4729 51.1925 54.0136 51.3717 53.487 51.3717C52.4787 51.3829 51.7168 50.6659 51.7168 49.6688Z\" fill=\"#68453D\"></path>\n<path d=\"M57.9014 50.9349V51.3494H55.459V47.9883H57.8342V48.4028H55.9407V49.4335H57.6213V49.8369H55.9407V50.9237H57.9014V50.9349Z\" fill=\"#68453D\"></path>\n<path d=\"M60.9395 51.3494L60.2112 50.3186C60.144 50.3186 60.0768 50.3298 59.9983 50.3298H59.1693V51.3494H58.6875V47.9883H59.9983C60.8722 47.9883 61.3988 48.4252 61.3988 49.1647C61.3988 49.68 61.1299 50.061 60.6594 50.229L61.4548 51.3606H60.9395V51.3494ZM60.9171 49.1534C60.9171 48.6717 60.5921 48.4028 59.9759 48.4028H59.1581V49.9153H59.9759C60.6034 49.9153 60.9171 49.6352 60.9171 49.1534Z\" fill=\"#68453D\"></path>\n<path d=\"M62.7966 48.4028H61.6426V47.9883H64.4211V48.4028H63.2671V51.3494H62.7966V48.4028Z\" fill=\"#68453D\"></path>\n<path d=\"M64.9492 47.9883H65.431V51.3494H64.9492V47.9883Z\" fill=\"#68453D\"></path>\n<path d=\"M66.9212 48.4028V49.5792H68.6018V49.9937H66.9212V51.3494H66.4395V47.9883H68.8147V48.4028H66.9212Z\" fill=\"#68453D\"></path>\n<path d=\"M69.4961 47.9883H69.9778V51.3494H69.4961V47.9883Z\" fill=\"#68453D\"></path>\n<path d=\"M73.417 50.9349V51.3494H70.9746V47.9883H73.3498V48.4028H71.4564V49.4335H73.1369V49.8369H71.4564V50.9237H73.417V50.9349Z\" fill=\"#68453D\"></path>\n<path d=\"M74.2031 47.9883H75.6148C76.6904 47.9883 77.4298 48.6717 77.4298 49.6688C77.4298 50.666 76.6904 51.3494 75.6148 51.3494H74.2031V47.9883ZM75.5924 50.9349C76.4215 50.9349 76.9593 50.4307 76.9593 49.6688C76.9593 48.9182 76.4215 48.4028 75.5924 48.4028H74.6849V50.9237H75.5924V50.9349Z\" fill=\"#68453D\"></path>\n<path d=\"M64.9503 62.801C53.4553 62.801 44.1113 53.4459 44.1113 41.9621C44.1113 30.4782 53.4553 21.123 64.9503 21.123C76.4454 21.123 85.7893 30.4782 85.7893 41.9621C85.7893 53.4459 76.4454 62.801 64.9503 62.801ZM64.9503 22.0194C53.9482 22.0194 45.0076 30.9712 45.0076 41.9621C45.0076 52.9529 53.9594 61.9047 64.9503 61.9047C75.9524 61.9047 84.893 52.9529 84.893 41.9621C84.893 30.9712 75.9524 22.0194 64.9503 22.0194Z\" fill=\"#68453D\"></path>\n<path d=\"M64.95 78.8999C44.5816 78.8999 28 62.3296 28 41.95C28 21.5703 44.5704 5 64.95 5C85.3296 5 101.9 21.5703 101.9 41.95C101.9 62.3296 85.3184 78.8999 64.95 78.8999ZM64.95 5.9075C45.0745 5.9075 28.8963 22.0745 28.8963 41.9612C28.8963 61.8478 45.0633 78.0148 64.95 78.0148C84.8366 78.0148 101.004 61.8478 101.004 41.9612C101.004 22.0745 84.8254 5.9075 64.95 5.9075Z\" fill=\"#68453D\"></path>\n<path d=\"M37.9852 37.4129L37.8171 38.0851L36.3046 37.7042C36.0805 37.2224 36.0581 36.6286 36.1926 36.0908C36.4839 34.9144 37.5258 34.2422 38.6574 34.5223C39.789 34.8024 40.394 35.8779 40.1027 37.0655C39.9458 37.7042 39.5985 38.1859 39.1055 38.4436L38.7806 37.8946C39.1504 37.6705 39.3744 37.3568 39.4753 36.9535C39.6769 36.1468 39.2736 35.441 38.4781 35.2393C37.7051 35.0489 36.9992 35.4746 36.7976 36.2813C36.7304 36.5502 36.7191 36.8302 36.7976 37.1103L37.9852 37.4129Z\" fill=\"#68453D\"></path>\n<path d=\"M37.6354 38.8035C38.7894 38.8931 39.5848 39.8567 39.484 41.0667C39.3943 42.2767 38.4756 43.1057 37.3104 43.0161C36.1453 42.9265 35.361 41.9629 35.4618 40.7529C35.5515 39.5429 36.4702 38.7139 37.6354 38.8035ZM37.3665 42.2878C38.1619 42.3439 38.7894 41.8061 38.8454 41.0218C38.9014 40.2376 38.3748 39.5989 37.5793 39.5429C36.7839 39.4869 36.1565 40.0247 36.1005 40.8089C36.0332 41.5932 36.5598 42.2206 37.3665 42.2878Z\" fill=\"#68453D\"></path>\n<path d=\"M37.3128 43.5747C38.4667 43.4627 39.4079 44.2805 39.5199 45.4905C39.6319 46.7005 38.8701 47.6753 37.7161 47.7761C36.5621 47.8881 35.621 47.0702 35.509 45.8602C35.3857 44.6502 36.1588 43.6755 37.3128 43.5747ZM37.6377 47.0478C38.4331 46.9694 38.9485 46.3308 38.8813 45.5466C38.8029 44.7623 38.1755 44.2357 37.38 44.3029C36.5845 44.3813 36.0692 45.02 36.1364 45.8042C36.2148 46.5885 36.8422 47.1151 37.6377 47.0478Z\" fill=\"#68453D\"></path>\n<path d=\"M39.7854 48.0801L40.2448 49.7271C40.5809 50.9483 40.0543 52.0014 38.9227 52.3151C37.7912 52.6288 36.8052 52.0014 36.4691 50.769L36.0098 49.1109L39.7854 48.0801ZM37.0405 50.5786C37.2758 51.4188 37.9368 51.8222 38.7211 51.6093C39.5053 51.3964 39.8638 50.7018 39.6398 49.8615L39.3821 48.9428L36.794 49.6598L37.0405 50.5786Z\" fill=\"#68453D\"></path>\n<path d=\"M39.8645 58.6676L42.1276 57.3904L39.618 57.312L39.4611 57.0319L40.6823 54.8695L38.4416 56.1244L38.1055 55.5193L41.5226 53.6035L41.8139 54.1301L40.3014 56.7629L43.3152 56.8302L43.6065 57.3567L40.1894 59.2726L39.8645 58.6676Z\" fill=\"#68453D\"></path>\n<path d=\"M43.3735 61.8489L42.1299 60.3252L41.1776 60.5941L40.707 60.0115L44.8636 58.9023L45.3118 59.4625L43.3959 63.3166L42.9142 62.7228L43.3735 61.8489ZM43.6648 61.3L44.5275 59.6418L42.7349 60.1572L43.6648 61.3Z\" fill=\"#68453D\"></path>\n<path d=\"M49.2424 63.3167L46.632 66.2521L46.1838 65.8488L46.3295 62.4204L44.5593 64.4035L44.0215 63.9217L46.632 60.9863L47.0801 61.3896L46.9345 64.818L48.7047 62.835L49.2424 63.3167Z\" fill=\"#68453D\"></path>\n<path d=\"M48.6489 65.6347L49.8253 63.7637L50.4415 64.1558L49.2763 66.0044C48.8506 66.6879 48.9626 67.1697 49.5004 67.517C50.0382 67.8643 50.52 67.7522 50.9569 67.0688L52.1221 65.2202L52.7271 65.6011L51.5507 67.4722C50.9457 68.4357 50.0606 68.6149 49.1643 68.0435C48.2456 67.4721 48.0327 66.5983 48.6489 65.6347Z\" fill=\"#68453D\"></path>\n<path d=\"M53.881 66.8012L53.3992 67.8992L55.1358 68.6722L54.8893 69.2324L53.1527 68.4594L52.5477 69.8375L51.8867 69.5462L53.4776 65.9609L56.0993 67.1261L55.8528 67.6863L53.881 66.8012Z\" fill=\"#68453D\"></path>\n<path d=\"M58.0026 70.8111L56.1204 70.2734L55.5041 71.0352L54.7871 70.8335L57.5656 67.5508L58.2603 67.7525L58.8877 72.0099L58.1594 71.797L58.0026 70.8111ZM57.9242 70.1949L57.6889 68.3463L56.5125 69.7915L57.9242 70.1949Z\" fill=\"#68453D\"></path>\n<path d=\"M59.6172 70.14C59.7628 68.9748 60.76 68.2578 61.9588 68.4035C62.5974 68.4819 63.1016 68.7844 63.4153 69.255L62.8887 69.6359C62.6422 69.2998 62.3173 69.0981 61.9028 69.0421C61.0961 68.9413 60.4463 69.4342 60.3342 70.2297C60.2334 71.0251 60.7376 71.675 61.5442 71.7758C61.9476 71.8318 62.3173 71.7198 62.6422 71.4509L63.0567 71.9551C62.6422 72.336 62.0708 72.4928 61.4322 72.4032C60.2446 72.2576 59.4715 71.294 59.6172 70.14Z\" fill=\"#68453D\"></path>\n<path d=\"M64.7034 69.2539L63.4038 69.2763L63.3926 68.6601L66.7201 68.6152L66.7313 69.2314L65.4317 69.2539L65.4765 72.559L64.7482 72.5702L64.7034 69.2539Z\" fill=\"#68453D\"></path>\n<path d=\"M67.3157 70.8008L67.002 68.616L67.719 68.5152L68.0327 70.6775C68.1448 71.473 68.5593 71.7643 69.1867 71.6747C69.8141 71.5851 70.1166 71.1929 70.0046 70.3862L69.6909 68.2239L70.3967 68.123L70.7104 70.3078C70.8785 71.4394 70.3295 72.1452 69.2651 72.3021C68.212 72.4589 67.4837 71.9323 67.3157 70.8008Z\" fill=\"#68453D\"></path>\n<path d=\"M74.7531 70.9013L73.6439 70.0385C73.5991 70.0609 73.5543 70.0721 73.4982 70.0833L72.658 70.3522L72.9941 71.439L72.2994 71.6519L71.123 67.9098L72.6692 67.428C73.6551 67.1143 74.4169 67.428 74.6858 68.2571C74.8651 68.8285 74.7083 69.3327 74.2601 69.6912L75.5037 70.6547L74.7531 70.9013ZM72.8148 68.0442L71.9969 68.302L72.4675 69.792L73.2854 69.5344C73.8904 69.3439 74.1257 68.963 73.98 68.4924C73.8344 68.0219 73.431 67.8538 72.8148 68.0442Z\" fill=\"#68453D\"></path>\n<path d=\"M74.8223 66.6546L75.4945 66.3633L77.063 69.9597L76.3908 70.251L74.8223 66.6546Z\" fill=\"#68453D\"></path>\n<path d=\"M79.3263 64.291L81.2982 67.6746L80.7828 67.977L77.5785 66.7671L78.9118 69.0638L78.2844 69.4336L76.3125 66.05L76.8279 65.7475L80.0321 66.9575L78.6989 64.6608L79.3263 64.291Z\" fill=\"#68453D\"></path>\n<path d=\"M83.2552 63.5973L83.7818 63.1603L84.7789 64.3704C84.6781 64.8857 84.3419 65.3787 83.9162 65.7372C82.9751 66.5102 81.7427 66.4318 81.0032 65.5243C80.2526 64.6168 80.4094 63.3956 81.3617 62.6114C81.8659 62.1968 82.4261 62.0063 82.9863 62.096L82.9191 62.7346C82.4821 62.6898 82.1236 62.813 81.7987 63.0819C81.1489 63.6197 81.0593 64.4264 81.5746 65.0538C82.0788 65.67 82.9079 65.7372 83.5465 65.2106C83.7593 65.0314 83.9386 64.8185 84.0394 64.5384L83.2552 63.5973Z\" fill=\"#68453D\"></path>\n<path d=\"M87.223 58.398C87.8952 58.9358 87.9176 59.7649 87.279 60.5716L86.73 61.2662L87.6151 61.972L87.167 62.5434L84.0859 60.101L85.0943 58.835C85.7329 58.0283 86.5396 57.8491 87.223 58.398ZM86.7637 58.9694C86.3827 58.6669 85.9458 58.7454 85.5536 59.2495L85.0271 59.9217L86.2483 60.8965L86.7748 60.2243C87.167 59.7089 87.1446 59.2719 86.7637 58.9694Z\" fill=\"#68453D\"></path>\n<path d=\"M91.0655 56.8513L89.665 56.9745C89.6426 57.0194 89.6202 57.0642 89.5978 57.1091L89.1496 57.8709L90.1356 58.4422L89.7658 59.0697L86.3711 57.1091L87.1778 55.7086C87.6931 54.8123 88.4662 54.5209 89.2168 54.9579C89.7322 55.2492 89.9563 55.731 89.8667 56.3024L91.4352 56.1679L91.0655 56.8513ZM87.7043 56.0559L87.2786 56.7953L88.6343 57.5796L89.06 56.8401C89.3849 56.2911 89.2953 55.8542 88.8695 55.6077C88.4326 55.3612 88.0293 55.5069 87.7043 56.0559Z\" fill=\"#68453D\"></path>\n<path d=\"M91.9834 52.4719L91.2775 54.2981L91.9834 54.9928L91.7145 55.6986L88.6895 52.6288L88.9472 51.9565L93.2494 51.7324L92.9693 52.4383L91.9834 52.4719ZM91.3671 52.4831L89.4961 52.5503L90.8294 53.8612L91.3671 52.4831Z\" fill=\"#68453D\"></path>\n<path d=\"M91.4665 50.8028C90.3237 50.5451 89.6963 49.4919 89.9539 48.3155C90.0884 47.6881 90.4357 47.2064 90.9287 46.9375L91.2536 47.4977C90.8951 47.7106 90.671 48.0243 90.5814 48.4164C90.4021 49.2119 90.839 49.9065 91.6233 50.0858C92.4076 50.265 93.1022 49.8056 93.2703 49.0214C93.3599 48.618 93.2927 48.2483 93.0462 47.901L93.584 47.5425C93.9201 47.9906 94.0209 48.5732 93.8865 49.2006C93.6288 50.3546 92.6092 51.0493 91.4665 50.8028Z\" fill=\"#68453D\"></path>\n<path d=\"M91.0427 45.6255L90.9306 46.9251L90.3145 46.8691L90.5945 43.5527L91.2107 43.6087L91.0987 44.9084L94.3926 45.1773L94.3366 45.9056L91.0427 45.6255Z\" fill=\"#68453D\"></path>\n<path d=\"M90.5522 43.1495L90.541 42.4212L94.4623 42.3652L94.4735 43.0935L90.5522 43.1495Z\" fill=\"#68453D\"></path>\n<path d=\"M92.5325 41.5812C91.3673 41.7157 90.4262 40.9202 90.2806 39.7214C90.2021 39.0828 90.3702 38.5114 90.7511 38.0969L91.2441 38.5114C90.9752 38.8363 90.8632 39.1948 90.908 39.6094C90.9976 40.416 91.6362 40.9314 92.4429 40.8418C93.2496 40.7522 93.7425 40.0911 93.6529 39.2845C93.6081 38.8811 93.4176 38.545 93.0703 38.2985L93.4624 37.7832C93.933 38.0969 94.2243 38.6122 94.2915 39.262C94.4371 40.4496 93.6977 41.4356 92.5325 41.5812Z\" fill=\"#68453D\"></path>\n<path d=\"M92.4905 34.0299L93.0843 33.873L93.8349 36.7188L90.0368 37.7271L89.3086 34.9598L89.9024 34.803L90.4514 36.8645L91.4373 36.6068L90.9555 34.7805L91.5381 34.6237L92.0199 36.45L93.0619 36.1699L92.4905 34.0299Z\" fill=\"#68453D\"></path>\n<path d=\"M46.7904 20.563C45.9165 19.3866 46.1854 17.8742 47.3954 16.9779C48.034 16.5073 48.7623 16.3281 49.4457 16.4849L49.3001 17.2803C48.7847 17.1795 48.3141 17.2916 47.9108 17.6053C47.0929 18.2103 46.9249 19.2186 47.5299 20.0365C48.1349 20.8432 49.1432 20.9776 49.9611 20.3726C50.3756 20.0701 50.6109 19.6556 50.6669 19.129L51.4736 19.2298C51.4288 19.9244 51.0479 20.5631 50.398 21.0449C49.1992 21.9188 47.6643 21.7394 46.7904 20.563Z\" fill=\"#68453D\"></path>\n<path d=\"M55.5068 17.2128L55.8429 17.8963L52.5266 19.4985L50.3867 15.0842L53.6134 13.5156L53.9495 14.199L51.5519 15.3643L52.1121 16.507L54.2408 15.4763L54.5657 16.1485L52.437 17.1793L53.0308 18.4004L55.5068 17.2128Z\" fill=\"#68453D\"></path>\n<path d=\"M59.7088 16.798L58.3643 15.6665C58.3083 15.6889 58.2411 15.7113 58.1851 15.7225L57.1095 16.0138L57.4792 17.3919L56.5942 17.6271L55.3281 12.8879L57.2776 12.3614C58.5212 12.0253 59.4623 12.4622 59.7424 13.5041C59.9329 14.2212 59.7088 14.8486 59.1374 15.2743L60.6387 16.5404L59.7088 16.798ZM57.4456 13.1232L56.4149 13.4033L56.9191 15.2968L57.9498 15.0167C58.7229 14.815 59.0254 14.3557 58.8685 13.7507C58.7117 13.1457 58.2187 12.9104 57.4456 13.1232Z\" fill=\"#68453D\"></path>\n<path d=\"M61.9384 12.2945L60.325 12.4401L60.2578 11.6783L64.4032 11.3086L64.4704 12.0704L62.8571 12.2161L63.2156 16.3279L62.3081 16.4063L61.9384 12.2945Z\" fill=\"#68453D\"></path>\n<path d=\"M65.547 11.3652L66.4545 11.3988L66.2864 16.3061L65.3789 16.2725L65.547 11.3652Z\" fill=\"#68453D\"></path>\n<path d=\"M69.0417 12.4173L68.8064 13.885L71.1368 14.2658L71.0135 15.0277L68.6832 14.6468L68.3807 16.4954L67.4844 16.3498L68.2798 11.5098L71.809 12.0812L71.6858 12.8318L69.0417 12.4173Z\" fill=\"#68453D\"></path>\n<path d=\"M73.1422 12.5078L74.016 12.7655L72.6044 17.4599L71.7305 17.2022L73.1422 12.5078Z\" fill=\"#68453D\"></path>\n<path d=\"M77.398 18.6244L77.0843 19.319L73.7344 17.8066L75.7511 13.3474L79.0113 14.8263L78.6976 15.5209L76.2664 14.423L75.7398 15.5882L77.891 16.563L77.5773 17.2464L75.4261 16.2716L74.8659 17.504L77.398 18.6244Z\" fill=\"#68453D\"></path>\n<path d=\"M80.6372 15.7109L82.3738 16.9658C83.6622 17.8957 83.9647 19.3297 83.102 20.5173C82.2393 21.7049 80.7828 21.873 79.4944 20.9319L77.7578 19.677L80.6372 15.7109ZM79.9201 20.2932C80.8052 20.9318 81.7688 20.8087 82.3626 19.9908C82.9564 19.1617 82.7771 18.2093 81.892 17.5707L80.9285 16.8761L78.9566 19.5986L79.9201 20.2932Z\" fill=\"#68453D\"></path>\n<path d=\"M41.4773 26.0286L42.7993 25.334L42.5529 26.8129L43.6172 27.8548L42.1383 28.0677L41.4773 29.4122L40.8163 28.0677L39.3262 27.8548L40.4017 26.8129L40.1553 25.334L41.4773 26.0286Z\" fill=\"#68453D\"></path>\n<path d=\"M87.491 25.1556L88.813 24.4609L88.5553 25.9398L89.6309 26.9818L88.152 27.1947L87.491 28.5391L86.8299 27.1947L85.3398 26.9818L86.4154 25.9398L86.1577 24.4609L87.491 25.1556Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "GMP  Certified",
+            "icon_description": "We package and process our Shilajit in GMP-certified facilities where we pay special attention to our equipment, storage facilities, and the implementation of HACCP protocols.\nThese steps are integral for preserving the quality of our Shilajit and guaranteeing its safety throughout the production cycle. Air quality, temperature, and humidity are tightly controlled for optimal production environments. We guarantee that every jar of our Shilajit is protected in a sealed, food-grade, non-BPA leaching, non-reactive container upon arrival, making it safe and effective.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_Jh3KML": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"80\" viewbox=\"0 0 130 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M92.5909 12.2698C89.3509 9.03978 84.1109 9.04977 80.8909 12.2898C77.6609 15.5298 77.6709 20.7698 80.9109 23.9898C84.1509 27.2198 89.3909 27.2098 92.6109 23.9698C94.1609 22.4198 95.0209 20.3198 95.0209 18.1298C95.0309 15.9398 94.1509 13.8298 92.5909 12.2698Z\" fill=\"#68453D\"></path>\n<path d=\"M66.4692 73.4102C64.9392 73.4102 63.6992 74.6502 63.6992 76.1702C63.6992 77.7002 64.9392 78.9302 66.4592 78.9302C67.9792 78.9302 69.2192 77.6902 69.2192 76.1702C69.2292 74.6502 67.9892 73.4202 66.4692 73.4102Z\" fill=\"#68453D\"></path>\n<path d=\"M89.4909 39.3303C89.4909 37.8103 88.2609 36.5703 86.7309 36.5703C86.7309 36.5703 86.7309 36.5703 86.7209 36.5703C85.1909 36.5703 83.9609 37.8103 83.9609 39.3303C83.9609 40.8503 85.2009 42.0903 86.7209 42.0903C88.2409 42.0903 89.4909 40.8503 89.4909 39.3303Z\" fill=\"#68453D\"></path>\n<path d=\"M39.7409 37.4807C39.7409 35.9607 38.5109 34.7207 36.9809 34.7207C36.9809 34.7207 36.9809 34.7207 36.9709 34.7207C35.4409 34.7207 34.2109 35.9607 34.2109 37.4807C34.2109 39.0107 35.4509 40.2407 36.9709 40.2407C38.4909 40.2407 39.7409 39.0107 39.7409 37.4807Z\" fill=\"#68453D\"></path>\n<path d=\"M90.4201 54.99C89.4001 54.99 88.5801 55.82 88.5801 56.83C88.5801 57.84 89.4101 58.67 90.4201 58.67C91.4401 58.67 92.2601 57.84 92.2601 56.83C92.2601 55.81 91.4301 54.99 90.4201 54.99Z\" fill=\"#68453D\"></path>\n<path d=\"M43.1994 63.2793C42.1794 63.2793 41.3594 64.1093 41.3594 65.1193C41.3594 66.1293 42.1894 66.9593 43.1994 66.9593C44.2094 66.9593 45.0394 66.1293 45.0394 65.1193C45.0394 64.1093 44.2094 63.2793 43.1994 63.2793Z\" fill=\"#68453D\"></path>\n<path d=\"M65.5391 18.1291C66.0491 18.1291 66.4591 17.7191 66.4591 17.2091C66.4591 16.6991 66.0491 16.2891 65.5391 16.2891C65.0291 16.2891 64.6191 16.6991 64.6191 17.2091C64.6191 17.7191 65.0291 18.1291 65.5391 18.1291Z\" fill=\"#68453D\"></path>\n<path d=\"M45.4903 46.6994C46.0003 46.6994 46.4103 46.2894 46.4103 45.7794C46.4103 45.2694 46.0003 44.8594 45.4903 44.8594C44.9803 44.8594 44.5703 45.2694 44.5703 45.7794C44.5703 46.2794 44.9803 46.6994 45.4903 46.6994Z\" fill=\"#68453D\"></path>\n<path d=\"M78.4395 35.6408C78.9495 35.6408 79.3595 35.2308 79.3595 34.7208C79.3595 34.2108 78.9495 33.8008 78.4395 33.8008C77.9295 33.8008 77.5195 34.2108 77.5195 34.7208C77.5195 35.2308 77.9295 35.6408 78.4395 35.6408Z\" fill=\"#68453D\"></path>\n<path d=\"M98.7091 43.9297C98.1991 43.9297 97.7891 44.3397 97.7891 44.8497C97.7891 45.3597 98.1991 45.7697 98.7091 45.7697C99.2191 45.7697 99.6291 45.3597 99.6291 44.8497C99.6291 44.3497 99.2191 43.9297 98.7091 43.9297Z\" fill=\"#68453D\"></path>\n<path d=\"M77.5196 77.0996C77.0096 77.0996 76.5996 77.5096 76.5996 78.0196C76.5996 78.5296 77.0096 78.9396 77.5196 78.9396C78.0296 78.9396 78.4396 78.5296 78.4396 78.0196C78.4396 77.5096 78.0296 77.0996 77.5196 77.0996Z\" fill=\"#68453D\"></path>\n<path d=\"M31.92 54.99C31.41 54.99 31 55.4 31 55.91C31 56.42 31.41 56.83 31.92 56.83C32.43 56.83 32.84 56.42 32.84 55.91C32.84 55.4 32.43 54.99 31.92 54.99Z\" fill=\"#68453D\"></path>\n<path d=\"M33.2891 8C32.7791 8 32.3691 8.41001 32.3691 8.92001C32.3691 9.43001 32.7791 9.84003 33.2891 9.84003C33.7991 9.84003 34.2091 9.43001 34.2091 8.92001C34.2091 8.41001 33.7991 8 33.2891 8Z\" fill=\"#68453D\"></path>\n<path d=\"M48.9104 17.2591C46.3904 14.7391 42.3104 14.7391 39.7904 17.2591C37.2704 19.7791 37.2704 23.8591 39.7904 26.3791C42.3104 28.8991 46.3904 28.8991 48.9104 26.3791C50.1204 25.1691 50.8004 23.5291 50.8004 21.8191C50.8004 20.1091 50.1204 18.4691 48.9104 17.2591Z\" fill=\"#68453D\"></path>\n<path d=\"M61.6995 63.4405C60.2595 62.0005 57.9195 61.9905 56.4795 63.4305C55.0395 64.8705 55.0295 67.2105 56.4695 68.6505C57.9095 70.0905 60.2495 70.1005 61.6895 68.6605C62.3795 67.9705 62.7695 67.0305 62.7695 66.0505C62.7795 65.0705 62.3895 64.1305 61.6995 63.4405Z\" fill=\"#68453D\"></path>\n<path d=\"M79.1995 63.4405C77.7595 62.0005 75.4195 61.9905 73.9795 63.4305C72.5395 64.8705 72.5295 67.2105 73.9695 68.6505C75.4095 70.0905 77.7495 70.1005 79.1895 68.6605C79.8795 67.9705 80.2695 67.0305 80.2695 66.0505C80.2795 65.0705 79.8895 64.1305 79.1995 63.4405Z\" fill=\"#68453D\"></path>\n<path d=\"M63.0001 33.8992C64.2001 34.9592 64.7901 36.4292 64.7801 38.3092L64.7701 39.6992C64.7601 42.0192 63.7201 43.5292 61.6601 44.2392V44.3092C63.8701 45.1092 64.9701 46.8492 64.9601 49.5392L64.9501 51.3792C64.9401 53.2592 64.3001 54.7192 63.0401 55.7692C61.7801 56.8192 60.0401 57.3392 57.8201 57.3292C55.6001 57.3192 53.8701 56.7792 52.6101 55.7192C51.3601 54.6592 50.7401 53.1892 50.7501 51.3092L50.7601 49.4692C50.7701 46.7792 51.8901 45.0492 54.1101 44.2692V44.1992C52.0601 43.4692 51.0401 41.9492 51.0501 39.6292L51.0601 38.2392C51.0701 36.3592 51.6801 34.8992 52.8901 33.8492C54.1001 32.7992 55.7801 32.2792 57.9501 32.2892C60.1201 32.2992 61.8001 32.8392 63.0001 33.8992ZM55.8301 46.8192C55.3301 47.2992 55.0701 47.9992 55.0701 48.8992L55.0601 51.0892C55.0601 51.9892 55.3001 52.6892 55.8001 53.1792C56.3001 53.6692 56.9801 53.9192 57.8401 53.9192C58.7101 53.9192 59.3901 53.6792 59.8901 53.1992C60.3901 52.7192 60.6501 52.0192 60.6501 51.1192L60.6601 48.9292C60.6601 48.0292 60.4201 47.3292 59.9201 46.8392C59.4201 46.3492 58.7401 46.0992 57.8801 46.0992C57.0201 46.0992 56.3401 46.3392 55.8301 46.8192ZM56.0501 36.3692C55.6001 36.8192 55.3801 37.4592 55.3701 38.2992L55.3601 40.0692C55.3601 40.8992 55.5801 41.5492 56.0201 41.9992C56.4601 42.4492 57.0901 42.6792 57.9001 42.6892C58.7101 42.6892 59.3401 42.4692 59.7901 42.0192C60.2401 41.5692 60.4701 40.9292 60.4701 40.0892L60.4801 38.3192C60.4801 37.4892 60.2601 36.8392 59.8201 36.3892C59.3801 35.9392 58.7501 35.7092 57.9401 35.6992C57.1301 35.6992 56.5001 35.9192 56.0501 36.3692Z\" fill=\"#68453D\"></path>\n<path d=\"M69.3407 55.8488C68.1407 54.8088 67.5507 53.3788 67.5607 51.5488V50.6088L71.7007 50.4588V51.1188C71.6907 53.0488 72.5507 54.0088 74.2807 54.0188C75.1707 54.0188 75.8407 53.7788 76.2907 53.2988C76.7407 52.8088 76.9607 52.1187 76.9707 51.2188L76.9907 47.1188C76.9907 46.2188 76.7707 45.5187 76.3107 45.0287C75.8507 44.5387 75.1907 44.2888 74.3307 44.2888C73.6007 44.2888 73.0107 44.4588 72.5607 44.8188C72.1107 45.1788 71.8507 45.6788 71.7607 46.3288L71.7207 46.8188L67.7407 46.6588L68.7007 32.7188L80.3007 32.7787L80.2807 36.2588L72.4507 36.2188L72.0607 41.9588H72.1407C72.8707 41.2488 74.0007 40.8888 75.5107 40.8988C77.3207 40.9088 78.7407 41.4388 79.7607 42.4888C80.7807 43.5388 81.2907 45.0088 81.2807 46.9088L81.2607 51.4987C81.2507 53.3787 80.6407 54.8388 79.4307 55.8888C78.2207 56.9388 76.5307 57.4588 74.3707 57.4488C72.2107 57.4388 70.5407 56.8788 69.3407 55.8488Z\" fill=\"#68453D\"></path>\n<path d=\"M84.8902 24.4199H83.7402V32.9299H84.8902V24.4199Z\" fill=\"#68453D\"></path>\n<path d=\"M80.0703 28.0983V29.2483H88.5803V28.0983H80.0703Z\" fill=\"#68453D\"></path>\n<mask id=\"mask0_74_1535\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"78\" y=\"9\" width=\"17\" height=\"18\">\n<path d=\"M92.5694 12.2698C89.3294 9.03978 84.0894 9.04977 80.8694 12.2898C77.6394 15.5298 77.6494 20.7698 80.8894 23.9898C84.1294 27.2198 89.3694 27.2098 92.5894 23.9698C94.1394 22.4198 94.9994 20.3198 94.9994 18.1298C95.0094 15.9398 94.1294 13.8298 92.5694 12.2698Z\" fill=\"white\"></path>\n</mask>\n<g mask=\"url(#mask0_74_1535)\">\n<path d=\"M84.8805 24.4199H83.7305V32.9299H84.8805V24.4199Z\" fill=\"white\"></path>\n</g>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "85+ Traced Minerals",
+            "icon_description": "Shilajit contains 85+ trace minerals in their ionic form and hence are extremely bioavailable. The essential minerals Calcium, Magnesium, Potassium, Sodium, Phosphorus, and Sulfur are required for bone strength, contraction and relaxation of muscles, and energy production. It also has Iron, Zinc, Copper, Manganese, Chromium, Selenium, Molybdenum, Iodine, Cobalt, Boron, Fluoride, Vanadium, Nickel, and Silicon to support immunity, metabolism, thyroid, and cleansing functions.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_eAXfUc": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"80\" viewbox=\"0 0 130 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M85.1686 21.9894H66.6086V21.2593H85.1686C86.2486 21.2593 87.1286 20.3794 87.1286 19.2994C87.1286 18.2194 86.2486 17.3394 85.1686 17.3394H65.8086V16.6094H85.1686C86.6586 16.6094 87.8686 17.8193 87.8686 19.3093C87.8686 20.7993 86.6586 21.9894 85.1686 21.9894Z\" fill=\"#68453D\"></path>\n<path d=\"M89.5887 26.6495H71.4087V25.9196H89.5788C90.6588 25.9196 91.5387 25.0395 91.5387 23.9595C91.5387 22.8795 90.6588 21.9995 89.5788 21.9995H70.2188V21.2695H89.5887C91.0787 21.2695 92.2887 22.4795 92.2887 23.9695C92.2887 25.4595 91.0787 26.6495 89.5887 26.6495Z\" fill=\"#68453D\"></path>\n<path d=\"M85.1682 31.3507H72.3382V30.6207H85.1682C86.2482 30.6207 87.1282 29.7407 87.1282 28.6607C87.1282 27.5807 86.2482 26.7007 85.1682 26.7007H71.4082V25.9707H85.1682C86.6582 25.9707 87.8682 27.1807 87.8682 28.6707C87.8682 30.1607 86.6582 31.3507 85.1682 31.3507Z\" fill=\"#68453D\"></path>\n<path d=\"M55.4191 35.3105H44.3691V36.0406H55.4191V35.3105Z\" fill=\"#68453D\"></path>\n<path d=\"M80.4101 36.0499H70.5801V35.3199H80.4101C81.4901 35.3199 82.3701 34.4399 82.3701 33.3599C82.3701 32.2799 81.4901 31.3999 80.4101 31.3999H72.3401V30.6699H80.4101C81.9001 30.6699 83.1101 31.8799 83.1101 33.3699C83.1101 34.8599 81.8901 36.0499 80.4101 36.0499Z\" fill=\"#68453D\"></path>\n<path d=\"M43.7291 37.52H38.3691V36.79H43.7291C43.8791 36.79 43.9991 36.67 43.9991 36.52V16.75C43.9991 16.6 43.8791 16.48 43.7291 16.48H38.3691V15.75H43.7291C44.2891 15.75 44.7391 16.2 44.7391 16.76V36.53C44.7391 37.07 44.2791 37.52 43.7291 37.52Z\" fill=\"#68453D\"></path>\n<path d=\"M64.0794 21.17L63.5194 20.69C64.9094 19.06 65.6794 16.98 65.6794 14.84C65.6794 14.25 66.1594 13.77 66.7494 13.77H71.8694C74.1794 13.77 76.0794 11.98 76.2694 9.72H64.5694C60.1194 11.21 56.0894 13.82 52.9294 17.29L52.6294 17.62H44.3594V16.89H52.2994L52.3794 16.81C55.6394 13.24 59.7894 10.54 64.3794 9.01999L64.4994 9H77.0094V9.37C77.0094 12.21 74.6994 14.52 71.8594 14.52H66.7394C66.5594 14.52 66.4094 14.67 66.4094 14.85C66.4194 17.16 65.5894 19.41 64.0794 21.17Z\" fill=\"#68453D\"></path>\n<path d=\"M62.9895 39.9205C57.6295 39.9205 53.2695 35.5604 53.2695 30.2004C53.2695 24.8404 57.6295 20.4805 62.9895 20.4805C68.3495 20.4805 72.7095 24.8404 72.7095 30.2004C72.7095 35.5604 68.3495 39.9205 62.9895 39.9205ZM62.9895 21.2104C58.0295 21.2104 53.9995 25.2404 53.9995 30.2004C53.9995 35.1604 58.0295 39.1904 62.9895 39.1904C67.9495 39.1904 71.9795 35.1604 71.9795 30.2004C71.9795 25.2404 67.9495 21.2104 62.9895 21.2104Z\" fill=\"#68453D\"></path>\n<path d=\"M65.1198 33.5709C64.7898 33.9309 64.3298 34.1609 63.7498 34.2709V35.241H62.2898V34.301C61.4698 34.201 60.8198 33.9609 60.3398 33.5709L60.7798 32.5809C60.8898 32.6909 61.0598 32.8009 61.2598 32.9109C61.4598 33.0209 61.7098 33.1209 61.9698 33.2009C62.2398 33.2809 62.5098 33.3209 62.7898 33.3209C63.1298 33.3209 63.4098 33.2409 63.6498 33.0909C63.8798 32.9409 63.9998 32.7009 63.9998 32.3709C63.9998 32.1909 63.9298 32.0309 63.7898 31.9109C63.6498 31.7809 63.4898 31.681 63.2898 31.601C63.0898 31.521 62.8398 31.441 62.5298 31.351C62.1098 31.231 61.7398 31.0809 61.4298 30.9109C61.1198 30.7409 60.8698 30.5109 60.6698 30.2209C60.4698 29.9309 60.3798 29.5609 60.3798 29.1309C60.3798 28.8009 60.4498 28.501 60.5998 28.231C60.7498 27.961 60.9598 27.731 61.2498 27.541C61.5298 27.351 61.8798 27.2209 62.2798 27.1509V25.9609H63.7398V27.1509C64.0898 27.2209 64.3898 27.3209 64.6498 27.4509C64.9098 27.5809 65.0898 27.721 65.1998 27.851L64.7098 28.791C64.6598 28.721 64.5498 28.641 64.3898 28.541C64.2298 28.441 64.0298 28.3409 63.8098 28.2609C63.5898 28.1809 63.3598 28.1409 63.1398 28.1409C62.7898 28.1409 62.4998 28.2209 62.2698 28.3709C62.0398 28.5209 61.9198 28.7409 61.9198 29.0309C61.9198 29.3409 62.0498 29.571 62.3198 29.731C62.5798 29.891 62.9198 30.021 63.3198 30.111C63.9998 30.271 64.5498 30.5309 64.9798 30.8909C65.4098 31.2509 65.6198 31.7109 65.6198 32.2509C65.6198 32.7809 65.4498 33.2209 65.1198 33.5709Z\" fill=\"#4C312D\"></path>\n<path d=\"M64.4799 67.2809H45.1199C43.6299 67.2809 42.4199 66.0709 42.4199 64.5809C42.4199 63.0909 43.6299 61.8809 45.1199 61.8809H63.6799V62.6109H45.1199C44.0399 62.6109 43.1599 63.4909 43.1599 64.5709C43.1599 65.6509 44.0399 66.5309 45.1199 66.5309H64.4799V67.2809Z\" fill=\"#68453D\"></path>\n<path d=\"M60.07 62.6207H40.7C39.21 62.6207 38 61.4107 38 59.9207C38 58.4307 39.21 57.2207 40.7 57.2207H58.87V57.9507H40.7C39.62 57.9507 38.74 58.8307 38.74 59.9107C38.74 60.9907 39.62 61.8707 40.7 61.8707H60.07V62.6207Z\" fill=\"#68453D\"></path>\n<path d=\"M58.8799 57.9098H45.1199C43.6299 57.9098 42.4199 56.6998 42.4199 55.2098C42.4199 53.7198 43.6299 52.5098 45.1199 52.5098H57.9499V53.2398H45.1199C44.0399 53.2398 43.1599 54.1198 43.1599 55.1998C43.1599 56.2798 44.0399 57.1598 45.1199 57.1598H58.8799V57.9098Z\" fill=\"#68453D\"></path>\n<path d=\"M85.9191 47.8203H74.8691V48.5504H85.9191V47.8203Z\" fill=\"#68453D\"></path>\n<path d=\"M57.9497 53.2203H49.8797C48.3897 53.2203 47.1797 52.0103 47.1797 50.5203C47.1797 49.0303 48.3897 47.8203 49.8797 47.8203H59.7097V48.5504H49.8797C48.7997 48.5504 47.9097 49.4303 47.9097 50.5203C47.9097 51.6103 48.7897 52.4803 49.8797 52.4803H57.9497V53.2203Z\" fill=\"#68453D\"></path>\n<path d=\"M91.9208 68.1298H86.5608C86.0008 68.1298 85.5508 67.6798 85.5508 67.1198V47.3499C85.5508 46.7899 86.0008 46.3398 86.5608 46.3398H91.9208V47.0698H86.5608C86.4108 47.0698 86.2908 47.1898 86.2908 47.3398V67.1099C86.2908 67.2599 86.4108 67.3798 86.5608 67.3798H91.9208V68.1298Z\" fill=\"#68453D\"></path>\n<path d=\"M65.8395 74.8792H53.2695V74.5092C53.2695 71.6692 55.5795 69.3593 58.4195 69.3593H63.5395C63.7195 69.3593 63.8695 69.2092 63.8695 69.0292C63.8695 66.7092 64.6995 64.4592 66.2095 62.6992L66.7695 63.1792C65.3795 64.8092 64.6095 66.8892 64.6095 69.0292C64.6095 69.6192 64.1295 70.0992 63.5395 70.0992H58.4195C56.1095 70.0992 54.2095 71.8892 54.0195 74.1492H65.7295C70.1795 72.6592 74.1995 70.0492 77.3695 66.5792L77.6695 66.2492H85.9395V66.9792H77.9995L77.9195 67.0592C74.6595 70.6292 70.5095 73.3292 65.9195 74.8492L65.8395 74.8792Z\" fill=\"#68453D\"></path>\n<path d=\"M63.4792 41.1992C66.1092 40.4692 69.0492 40.9592 71.2892 42.5092C72.2892 43.1992 73.1592 44.0892 74.2092 44.6992C74.4692 44.8492 74.7492 44.9792 75.0392 45.0892C77.3892 45.9492 79.2492 47.8792 79.8092 50.3292C79.8092 50.3492 79.8192 50.3692 79.8192 50.3892C80.2392 52.2592 80.1792 54.3092 79.2592 55.9992C78.2092 57.9192 76.2292 59.0992 74.2892 60.1392C71.8792 61.4292 69.4292 62.6492 66.9592 63.8092C65.4192 64.5392 63.7792 65.2592 62.0892 65.0892C59.9492 64.8792 58.1892 63.2592 57.0392 61.4392C52.8892 54.8892 55.3292 43.4792 63.4792 41.1992Z\" fill=\"#4C312D\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Fair Trade Community",
+            "icon_description": "At Everest Shilajit, we believe in ethical sourcing and sustainable trade practices that support the Himalayan communities. Our commitment to Fair Trade ensures that the hardworking himalayan harvesters receive fair wages, safe working conditions, and community support. By working directly with local collectors, we preserve traditional knowledge while promoting environmental conservation. Each purchase supports education, healthcare, and sustainable livelihoods in the region, fostering a stronger, self-sufficient community.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_qMzNdU": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"80\" viewbox=\"0 0 130 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M97.2129 36.1476C96.4429 34.9576 95.5129 33.9177 94.4529 33.0477C93.4029 32.1977 92.2529 31.5377 91.0229 31.0777C88.8029 30.2577 86.4229 30.1577 84.1529 30.7877C82.9629 31.1177 81.8129 31.6477 80.7329 32.3577C79.6029 33.0977 78.5429 34.0477 77.5829 35.1677C77.4229 35.3577 77.2029 35.4576 76.9729 35.4576C76.7329 35.4576 76.5129 35.3577 76.3629 35.1677C75.4029 34.0477 74.3429 33.1077 73.2129 32.3577C72.1329 31.6477 70.9829 31.1177 69.7929 30.7877C67.5229 30.1577 65.1429 30.2577 62.9229 31.0777C61.6929 31.5277 60.5429 32.1877 59.4929 33.0477C58.4329 33.9077 57.5029 34.9576 56.7329 36.1476C55.4729 38.0776 54.6729 40.3577 54.3629 42.8277C53.6129 41.3177 53.2229 39.6377 53.2229 37.9177C53.2229 35.8777 52.6229 33.9777 51.4929 32.4177C53.2829 30.9077 55.2229 28.8476 56.9929 26.5576C59.1529 23.7576 60.8929 20.8777 61.8829 18.4477C62.6229 16.6177 63.2629 14.2476 62.1129 13.2776C61.7629 12.9876 61.3029 12.8677 60.7429 12.9377C58.4729 13.1877 54.5629 16.4177 50.9429 21.0177C51.0029 20.7877 51.0529 20.5476 51.1029 20.3076C51.8729 16.8176 52.2329 13.4377 52.1029 10.7977C52.0029 8.81765 51.5829 6.37766 50.1229 6.03766C49.6929 5.93766 49.2429 6.03765 48.7729 6.32765C47.5429 7.09765 46.4429 9.09766 45.7429 10.6277C44.7429 12.8177 43.8729 15.5277 43.2229 18.4477C42.7629 20.5477 42.4429 22.5877 42.3029 24.5077C42.1729 26.1877 42.1729 27.7076 42.3129 28.9576C42.2929 28.9576 42.2729 28.9677 42.2529 28.9677C40.4829 29.4077 38.8829 30.4276 37.6429 31.9276L31.9629 38.7477C31.4329 39.3876 31.1029 40.1577 31.0229 40.9777C30.9429 41.7377 31.0729 42.5077 31.4029 43.2177C31.7229 43.8876 32.2029 44.4576 32.7929 44.8676C33.4329 45.2976 34.1829 45.5276 34.9729 45.5276H39.0129V53.4477C39.0129 55.9477 40.1929 58.2977 42.1729 59.7277L46.0429 62.5377V64.5276C46.0429 65.3577 45.4029 66.0276 44.6029 66.0276C43.1229 66.0276 41.9229 67.2677 41.9229 68.7877C41.9229 70.3077 43.1229 71.5477 44.6029 71.5477H48.4929C50.6929 71.5477 52.4929 69.6977 52.4929 67.4177V67.2076C53.3429 67.8176 54.7629 68.8277 55.3229 69.2177V69.6677C55.3229 70.6777 56.1229 71.4977 57.1029 71.4977C57.1029 71.4977 76.9329 71.4977 76.9929 71.4977C77.5129 71.4977 78.0329 71.4177 78.5329 71.2677C81.4129 70.3677 84.1629 69.0877 86.7029 67.4477C89.2729 65.7877 91.5429 63.8176 93.4529 61.5876C95.4429 59.2776 96.9829 56.7377 98.0529 54.0477C99.1829 51.2077 99.7529 48.2277 99.7529 45.1977C99.7229 41.8077 98.8529 38.6776 97.2129 36.1476ZM56.7129 16.0777C58.9729 14.1777 60.2529 13.7877 60.8129 13.7277C61.1429 13.6877 61.4029 13.7476 61.5829 13.8876C61.9229 14.1776 61.9529 14.7976 61.9129 15.2776C61.8529 16.0276 61.5829 17.0177 61.1229 18.1277C60.1629 20.4977 58.4629 23.3176 56.3429 26.0576C54.6129 28.2976 52.7229 30.3177 50.9829 31.7877C49.9829 30.6377 48.7129 29.7777 47.2629 29.2477C47.1129 29.1977 46.9629 29.1477 46.8129 29.0977C47.8129 26.8677 49.4029 24.3076 51.3129 21.8376C53.0729 19.5476 54.9429 17.5577 56.7129 16.0777ZM44.0029 18.6077C44.6329 15.7377 45.4929 13.0977 46.4629 10.9477C47.7129 8.20766 48.7029 7.29766 49.1829 6.98766C49.4629 6.81766 49.7129 6.74765 49.9229 6.79765C50.3429 6.89765 50.6329 7.44765 50.7929 7.88765C51.0529 8.58765 51.2229 9.59766 51.2829 10.8077C51.4129 13.3777 51.0629 16.6777 50.3029 20.1077C50.1029 21.0177 49.9029 21.7976 49.6429 22.7076C48.1129 24.8376 46.8529 26.9777 46.0129 28.8877C45.0429 28.6877 44.0529 28.6577 43.0829 28.7977C42.8229 26.1877 43.1629 22.4277 44.0029 18.6077ZM33.2329 44.1877C32.7629 43.8677 32.3729 43.4076 32.1229 42.8676C31.5529 41.6576 31.7329 40.2777 32.5729 39.2677L38.2529 32.4477C39.3829 31.0877 40.8329 30.1577 42.4429 29.7577C43.0529 29.6077 43.6629 29.5276 44.2929 29.5276C45.2029 29.5276 46.1229 29.6877 47.0129 30.0077C48.5629 30.5677 49.8929 31.5677 50.8529 32.8877C51.8829 34.3077 52.4329 36.0477 52.4329 37.9177C52.4329 39.7377 51.7529 41.4477 50.5129 42.7277C49.2829 44.0077 47.6329 44.7177 45.8929 44.7177H39.4229H34.9829C34.3329 44.7177 33.7329 44.5277 33.2329 44.1877ZM52.4729 66.2177V55.7776C52.4729 55.5576 52.2929 55.3777 52.0729 55.3777C51.8529 55.3777 51.6729 55.5576 51.6729 55.7776V67.4177C51.6729 69.2477 50.2429 70.7377 48.4829 70.7377H44.5929C43.5629 70.7377 42.7229 69.8577 42.7229 68.7877C42.7229 67.7177 43.5629 66.8376 44.5929 66.8376C45.8329 66.8376 46.8329 65.7976 46.8329 64.5276V62.3477C46.8329 62.3477 46.8329 62.3377 46.8329 62.3277V51.1877C46.8329 50.9677 46.6529 50.7877 46.4329 50.7877C46.2129 50.7877 46.0329 50.9677 46.0329 51.1877V61.5276L42.6429 59.0677C40.8729 57.7877 39.8129 55.6777 39.8129 53.4377V45.5177H45.8729C46.8629 45.5177 47.8329 45.3177 48.7429 44.9177C49.6229 44.5377 50.4029 43.9877 51.0829 43.2877C51.8129 42.5277 52.3729 41.6377 52.7429 40.6577C53.0429 41.9277 53.5529 43.1477 54.2529 44.2477C54.2429 44.5577 54.2329 44.8676 54.2329 45.1776C54.2329 48.2076 54.8029 51.1876 55.9329 54.0276C57.0029 56.7176 58.5429 59.2477 60.5329 61.5677C61.6329 62.8477 62.8529 64.0477 64.1829 65.1577H59.2529C57.3929 65.1577 55.8329 66.4977 55.4229 68.2977C54.6929 67.8077 53.4329 66.9076 52.4729 66.2177ZM56.1129 69.6677C56.1129 69.6677 56.1129 69.0977 56.1129 69.0377V69.0276C56.2129 67.3276 57.5729 65.9777 59.2229 65.9777H65.1729C65.8429 66.4877 66.5429 66.9777 67.2529 67.4377C69.2929 68.7577 71.4629 69.8477 73.7329 70.6877H57.0729C56.5429 70.6877 56.1129 70.2277 56.1129 69.6677ZM92.8129 61.0576C90.9529 63.2276 88.7429 65.1477 86.2429 66.7577C83.7629 68.3577 81.0829 69.6077 78.2729 70.4877C77.4229 70.7477 76.5229 70.7477 75.6729 70.4877C72.8629 69.6177 70.1729 68.3577 67.7029 66.7577C65.2029 65.1377 62.9829 63.2176 61.1329 61.0576C57.1429 56.4076 55.0329 50.9177 55.0329 45.1877C55.0329 41.9677 55.8629 38.9877 57.4229 36.5777C58.1529 35.4577 59.0229 34.4777 60.0229 33.6677C61.0029 32.8777 62.0729 32.2576 63.2229 31.8376C65.2829 31.0776 67.4929 30.9877 69.5929 31.5677C70.7029 31.8777 71.7729 32.3676 72.7829 33.0276C73.8529 33.7276 74.8529 34.6277 75.7629 35.6877C76.0729 36.0477 76.5229 36.2577 76.9929 36.2577C77.4629 36.2577 77.9129 36.0477 78.2229 35.6877C79.1329 34.6277 80.1329 33.7276 81.2029 33.0276C82.2129 32.3676 83.2829 31.8677 84.3929 31.5677C86.5029 30.9777 88.7029 31.0776 90.7629 31.8376C91.9029 32.2576 92.9829 32.8777 93.9629 33.6677C94.9529 34.4777 95.8329 35.4577 96.5629 36.5777C98.1229 38.9777 98.9529 41.9577 98.9529 45.1877C98.9229 50.9177 96.8029 56.4076 92.8129 61.0576Z\" fill=\"#68453D\"></path>\n<path d=\"M77.1023 63.1971C75.2223 62.5571 73.3923 61.6771 71.6623 60.5771C69.8423 59.4171 68.2223 58.0771 66.8523 56.5871C65.3823 54.9771 64.2323 53.2371 63.4323 51.3971C62.5723 49.4071 62.1323 47.3171 62.1323 45.1871C62.1323 40.9071 64.5323 38.5971 66.7923 38.5971C68.0323 38.5971 69.2823 39.2971 70.4123 40.6171C70.5623 40.7871 70.8123 40.8071 70.9823 40.6571C71.1523 40.5071 71.1723 40.2571 71.0223 40.0871C69.7323 38.5771 68.2723 37.7871 66.7923 37.7871C64.1423 37.7871 61.3223 40.3871 61.3223 45.1871C61.3223 47.4271 61.7823 49.6271 62.6923 51.7171C63.5223 53.6371 64.7223 55.4571 66.2523 57.1271C67.6723 58.6671 69.3423 60.0571 71.2223 61.2571C73.0023 62.3871 74.8923 63.2971 76.8323 63.9571C76.8723 63.9671 76.9223 63.9771 76.9623 63.9771C77.1323 63.9771 77.2823 63.8671 77.3423 63.7071C77.4223 63.4971 77.3123 63.2671 77.1023 63.1971Z\" fill=\"#68453D\"></path>\n<path d=\"M45.1837 36.5667C45.7857 36.5667 46.2738 36.0787 46.2738 35.4767C46.2738 34.8747 45.7857 34.3867 45.1837 34.3867C44.5818 34.3867 44.0938 34.8747 44.0938 35.4767C44.0938 36.0787 44.5818 36.5667 45.1837 36.5667Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Vegan &amp; Cruelty Free",
+            "icon_description": "We are dedicated to being your go-to vegan supplement brand that offers 100% cruelty-free products. We are proud to offer you a product that is 100% vegan and cruelty-free for humans, plants and animals. Our Shilajit is naturally derived from the himalayan regions, with no animal products at all, and without any harm caused to animals. With ethical and sustainable practices, providing you with a product not only pure but one that aligns with your values. A product you can trust, made with integrity.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_rWE7ey",
+        "icon_box_EqwPUA",
+        "icon_box_NdndCq",
+        "icon_box_Jh3KML",
+        "icon_box_eAXfUc",
+        "icon_box_qMzNdU"
+      ],
+      "custom_css": [
+        "svg {width: 22.81%;}",
+        "h3 {margin-top: 1.9rem; margin-bottom: 1.5rem; -webkit-text-stroke: 0.4px;}",
+        ".icon-box-section.insec {background-position: right 55% !important; background-size: 17% !important;}",
+        "@media (max-width: 768px) {svg {width: 120px !important; } .icon-box-section.insec {background: none !important; } .iconbox-wrapper, .wrapper {gap: 24px !important; } test.iconbox, test.iconbox * {text-align: start; align-items: start; } h3 {margin: 15px 0; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "Here’s why <brown> we’re different </brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "6.4rem",
+        "iconbox_gap": "7.2rem",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "47.07%",
+        "padding": "0 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:127.7rem",
+        "min_height": "auto",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/bg-about.webp",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "contain",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "icon_box_Ebr7k6": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_hth6Jp": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg style=\"width:12rem\" viewbox=\"0 0 120 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M50.1233 49.1131C50.9993 49.7314 51.4459 50.6246 51.4459 51.7582V52.7716L48.3713 52.8747V51.9815C48.3713 50.8307 47.753 50.2639 46.4991 50.2639C45.8807 50.2639 45.417 50.4013 45.0906 50.6418C44.7815 50.8994 44.6269 51.2773 44.6269 51.7754V59.8999C44.6269 60.9133 45.2452 61.4114 46.4647 61.4114C47.0831 61.4114 47.5469 61.274 47.856 60.9992C48.148 60.7243 48.3026 60.2777 48.3026 59.6937V57.1345H46.4991V55.0561H51.4459V59.9342C51.4459 61.0679 50.9993 61.9439 50.1233 62.5794C49.2473 63.1978 48.0106 63.5069 46.4132 63.5069C44.8158 63.5069 43.5963 63.1978 42.7375 62.5794C41.8786 61.9611 41.4492 61.0679 41.4492 59.9342V51.7582C41.4492 50.6246 41.8786 49.7486 42.7375 49.1131C43.5963 48.4947 44.833 48.1855 46.4132 48.1855C47.9934 48.1855 49.2302 48.4947 50.1233 49.1131Z\" fill=\"#68453D\"></path>\n<path d=\"M67.9734 63.2836H64.7957V52.9434H64.727L62.0818 61.1537H60.1924L57.5472 52.9434H57.4785V63.2836H54.4727V48.3916H58.6637L61.1715 56.3958H61.2402L63.7136 48.3916H68.0249V63.2836H67.9734Z\" fill=\"#68453D\"></path>\n<path d=\"M79.9601 49.3536C80.8705 50.0063 81.3171 50.9338 81.3171 52.1534V53.3385C81.3171 54.5581 80.8705 55.4856 79.9601 56.1383C79.0498 56.791 77.7444 57.1002 76.0095 57.1002H74.6011V63.2665H71.4062V48.3745H76.0095C77.7444 48.3917 79.0498 48.7181 79.9601 49.3536ZM74.6011 50.47V55.0218H75.8893C76.6451 55.0218 77.2119 54.8672 77.5726 54.5752C77.9333 54.2832 78.1222 53.8195 78.1222 53.184V52.2907C78.1222 51.6724 77.9333 51.2086 77.5726 50.9166C77.2119 50.6246 76.6451 50.47 75.8893 50.47H74.6011Z\" fill=\"#68453D\"></path>\n<path d=\"M40.9688 71.6315C40.9688 70.1028 42.1367 68.9863 43.6998 68.9863C44.4899 68.9863 45.1942 69.2612 45.6579 69.7936L45.177 70.2574C44.7819 69.828 44.301 69.639 43.7342 69.639C42.5662 69.639 41.7073 70.4807 41.7073 71.6143C41.7073 72.7651 42.5662 73.5897 43.7342 73.5897C44.301 73.5897 44.7819 73.3835 45.177 72.9713L45.6579 73.435C45.1942 73.9675 44.4899 74.2423 43.6826 74.2423C42.1367 74.2767 40.9688 73.1602 40.9688 71.6315Z\" fill=\"#68453D\"></path>\n<path d=\"M50.471 73.5731V74.2086H46.7266V69.0557H50.368V69.6912H47.4652V71.2714H50.0416V71.8898H47.4652V73.5559H50.471V73.5731Z\" fill=\"#68453D\"></path>\n<path d=\"M55.097 74.2086L53.9805 72.6283C53.8775 72.6283 53.7744 72.6455 53.6542 72.6455H52.3831V74.2086H51.6445V69.0557H53.6542C54.9939 69.0557 55.8012 69.7255 55.8012 70.8592C55.8012 71.6493 55.389 72.2333 54.6676 72.491L55.8871 74.2258H55.097V74.2086ZM55.0798 70.8592C55.0798 70.1206 54.5817 69.7084 53.637 69.7084H52.3831V72.0272H53.637C54.5817 72.0272 55.0798 71.5978 55.0798 70.8592Z\" fill=\"#68453D\"></path>\n<path d=\"M57.9567 69.6912H56.1875V69.0557H60.4473V69.6912H58.6781V74.2086H57.9567V69.6912Z\" fill=\"#68453D\"></path>\n<path d=\"M61.2539 69.0557H61.9925V74.2086H61.2539V69.0557Z\" fill=\"#68453D\"></path>\n<path d=\"M64.2777 69.6912V71.4947H66.8541V72.1303H64.2777V74.2086H63.5391V69.0557H67.1805V69.6912H64.2777Z\" fill=\"#68453D\"></path>\n<path d=\"M68.2344 69.0557H68.973V74.2086H68.2344V69.0557Z\" fill=\"#68453D\"></path>\n<path d=\"M74.2523 73.5731V74.2086H70.5078V69.0557H74.1492V69.6912H71.2464V71.2714H73.8229V71.8898H71.2464V73.5559H74.2523V73.5731Z\" fill=\"#68453D\"></path>\n<path d=\"M75.4414 69.0557H77.6056C79.2546 69.0557 80.3882 70.1034 80.3882 71.6321C80.3882 73.1608 79.2546 74.2086 77.6056 74.2086H75.4414V69.0557ZM77.5713 73.5731C78.8423 73.5731 79.6668 72.8001 79.6668 71.6321C79.6668 70.4813 78.8423 69.6912 77.5713 69.6912H76.18V73.5559H77.5713V73.5731Z\" fill=\"#68453D\"></path>\n<path d=\"M61.249 91.7622C43.626 91.7622 29.3008 77.4198 29.3008 59.8139C29.3008 42.2081 43.626 27.8657 61.249 27.8657C78.872 27.8657 93.1972 42.2081 93.1972 59.8139C93.1972 77.4198 78.872 91.7622 61.249 91.7622ZM61.249 29.2399C44.3817 29.2399 30.6749 42.9638 30.6749 59.8139C30.6749 76.6641 44.3989 90.3881 61.249 90.3881C78.1163 90.3881 91.8231 76.6641 91.8231 59.8139C91.8231 42.9638 78.1163 29.2399 61.249 29.2399Z\" fill=\"#68453D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M61.2474 92.3621C43.2928 92.3621 28.6992 77.7509 28.6992 59.8138C28.6992 41.8768 43.2928 27.2656 61.2474 27.2656C79.2021 27.2656 93.7956 41.8768 93.7956 59.8138C93.7956 77.7509 79.2021 92.3621 61.2474 92.3621ZM61.2474 29.8398C44.7117 29.8398 31.2733 43.2949 31.2733 59.8138C31.2733 76.3326 44.7287 89.788 61.2474 89.788C77.7831 89.788 91.2215 76.3328 91.2215 59.8138C91.2215 43.2949 77.7831 29.8398 61.2474 29.8398ZM29.2992 59.8138C29.2992 77.4197 43.6244 91.7621 61.2474 91.7621C78.8705 91.7621 93.1956 77.4197 93.1956 59.8138C93.1956 42.208 78.8705 27.8656 61.2474 27.8656C43.6244 27.8656 29.2992 42.208 29.2992 59.8138ZM30.6733 59.8138C30.6733 42.9637 44.3802 29.2398 61.2474 29.2398C78.1147 29.2398 91.8215 42.9637 91.8215 59.8138C91.8215 76.664 78.1147 90.388 61.2474 90.388C44.3973 90.388 30.6733 76.664 30.6733 59.8138Z\" fill=\"#68453D\"></path>\n<path d=\"M61.2495 116.462C30.0227 116.462 4.60156 91.0584 4.60156 59.8144C4.60156 28.5704 30.0055 3.1665 61.2495 3.1665C92.4935 3.1665 117.897 28.5704 117.897 59.8144C117.897 91.0584 92.4935 116.462 61.2495 116.462ZM61.2495 4.5406C30.7785 4.5406 5.97568 29.3262 5.97568 59.8144C5.97568 90.3026 30.7613 115.088 61.2495 115.088C91.7377 115.088 116.523 90.3026 116.523 59.8144C116.523 29.3262 91.7206 4.5406 61.2495 4.5406Z\" fill=\"#68453D\"></path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M61.248 117.062C29.6899 117.062 4 91.3898 4 59.8143C4 28.239 29.6726 2.56641 61.248 2.56641C92.8233 2.56641 118.496 28.239 118.496 59.8143C118.496 91.3897 92.8233 117.062 61.248 117.062ZM61.248 5.1405C31.1082 5.1405 6.57412 29.6576 6.57412 59.8143C6.57412 89.9712 31.0911 114.488 61.248 114.488C91.4048 114.488 115.922 89.9712 115.922 59.8143C115.922 29.6576 91.3878 5.1405 61.248 5.1405ZM4.6 59.8143C4.6 91.0583 30.0212 116.462 61.248 116.462C92.4919 116.462 117.896 91.0583 117.896 59.8143C117.896 28.5704 92.4919 3.16641 61.248 3.16641C30.004 3.16641 4.6 28.5704 4.6 59.8143ZM5.97412 59.8143C5.97412 29.3261 30.7769 4.5405 61.248 4.5405C91.719 4.5405 116.522 29.3261 116.522 59.8143C116.522 90.3025 91.7362 115.088 61.248 115.088C30.7597 115.088 5.97412 90.3025 5.97412 59.8143Z\" fill=\"#68453D\"></path>\n<path d=\"M19.8953 52.8415L19.6377 53.8721L17.3188 53.2881C16.9753 52.5495 16.941 51.6392 17.1471 50.8147C17.5937 49.0112 19.1911 47.9806 20.9259 48.41C22.6607 48.8394 23.5882 50.4884 23.1417 52.3091C22.9012 53.2881 22.3687 54.0267 21.6129 54.4218L21.1148 53.5801C21.6817 53.2366 22.0252 52.7556 22.1798 52.1373C22.4889 50.9006 21.8706 49.8185 20.6511 49.5093C19.4659 49.2173 18.3838 49.87 18.0746 51.1067C17.9715 51.5189 17.9544 51.9484 18.0746 52.3778L19.8953 52.8415Z\" fill=\"#68453D\"></path>\n<path d=\"M19.369 54.9711C21.1382 55.1085 22.3577 56.5857 22.2031 58.4408C22.0657 60.2958 20.6573 61.5669 18.8709 61.4295C17.0846 61.292 15.8822 59.8149 16.0368 57.9598C16.1742 56.1048 17.5827 54.8337 19.369 54.9711ZM18.9568 60.313C20.1763 60.3989 21.1382 59.5744 21.2241 58.372C21.31 57.1697 20.5027 56.1906 19.2831 56.1047C18.0636 56.0189 17.1017 56.8433 17.0159 58.0457C16.9128 59.248 17.7373 60.2271 18.9568 60.313Z\" fill=\"#68453D\"></path>\n<path d=\"M18.8759 62.2882C20.6451 62.1164 22.0879 63.3703 22.2596 65.2253C22.4314 67.0804 21.2634 68.5748 19.4942 68.7293C17.7251 68.9011 16.2822 67.6472 16.1105 65.7922C15.9387 63.9543 17.1067 62.4599 18.8759 62.2882ZM19.3912 67.6129C20.6107 67.4926 21.4008 66.5136 21.2978 65.3112C21.1775 64.1089 20.2156 63.3016 18.9961 63.4046C17.7766 63.5249 16.9865 64.5039 17.0895 65.7063C17.1926 66.9086 18.1545 67.7331 19.3912 67.6129Z\" fill=\"#68453D\"></path>\n<path d=\"M22.6635 69.21L23.3677 71.7349C23.883 73.6071 23.0757 75.2217 21.3409 75.7027C19.6061 76.1836 18.0945 75.2217 17.5792 73.3323L16.875 70.7902L22.6635 69.21ZM18.4552 73.0403C18.8159 74.3286 19.8294 74.9469 21.0317 74.6205C22.2341 74.2942 22.7837 73.2292 22.4402 71.941L22.0451 70.5325L18.0774 71.6318L18.4552 73.0403Z\" fill=\"#68453D\"></path>\n<path d=\"M22.7865 85.4244L26.2562 83.4663L22.4087 83.346L22.1682 82.9166L24.0404 79.6016L20.6051 81.5253L20.0898 80.5978L25.3287 77.6606L25.7753 78.4679L23.4564 82.5044L28.0769 82.6075L28.5407 83.3976L23.3018 86.3347L22.7865 85.4244Z\" fill=\"#68453D\"></path>\n<path d=\"M28.1622 90.3206L26.2556 87.9846L24.7956 88.3969L24.0742 87.5037L30.4467 85.8032L31.1337 86.662L28.1966 92.5708L27.458 91.6604L28.1622 90.3206ZM28.6088 89.479L29.9314 86.9369L27.1832 87.727L28.6088 89.479Z\" fill=\"#68453D\"></path>\n<path d=\"M37.1605 92.5541L33.1584 97.0543L32.4713 96.436L32.6946 91.18L29.9807 94.2202L29.1562 93.4817L33.1584 88.9814L33.8454 89.5998L33.6221 94.8558L36.336 91.8156L37.1605 92.5541Z\" fill=\"#68453D\"></path>\n<path d=\"M36.248 96.1092L38.0515 93.2407L38.9962 93.8419L37.2098 96.676C36.5571 97.7238 36.7289 98.4624 37.5534 98.9948C38.3778 99.5273 39.1164 99.3556 39.7863 98.3078L41.5727 95.4737L42.5002 96.0577L40.6967 98.9262C39.7691 100.403 38.4122 100.678 37.0381 99.8021C35.6296 98.9261 35.3204 97.5864 36.248 96.1092Z\" fill=\"#68453D\"></path>\n<path d=\"M44.2762 97.9118L43.5376 99.5951L46.1999 100.78L45.822 101.639L43.1597 100.454L42.2322 102.567L41.2188 102.12L43.6578 96.6235L47.6771 98.4099L47.2992 99.2687L44.2762 97.9118Z\" fill=\"#68453D\"></path>\n<path d=\"M50.5976 104.061L47.712 103.236L46.7673 104.404L45.668 104.095L49.9277 99.0625L50.9927 99.3717L51.9546 105.899L50.8381 105.572L50.5976 104.061ZM50.4946 103.116L50.1338 100.282L48.3303 102.498L50.4946 103.116Z\" fill=\"#68453D\"></path>\n<path d=\"M53.0657 103.013C53.289 101.227 54.8177 100.128 56.6556 100.351C57.6346 100.471 58.4076 100.935 58.8885 101.656L58.0812 102.24C57.7033 101.725 57.2052 101.416 56.5697 101.33C55.333 101.175 54.3368 101.931 54.165 103.151C54.0104 104.37 54.7833 105.366 56.0201 105.521C56.6384 105.607 57.2052 105.435 57.7033 105.023L58.3389 105.796C57.7033 106.38 56.8273 106.62 55.8483 106.483C54.0448 106.26 52.8424 104.8 53.0657 103.013Z\" fill=\"#68453D\"></path>\n<path d=\"M60.8729 101.657L58.8805 101.691L58.8633 100.746L63.9647 100.678L63.9819 101.622L61.9894 101.657L62.0581 106.724L60.9416 106.741L60.8729 101.657Z\" fill=\"#68453D\"></path>\n<path d=\"M64.8677 104.027L64.3867 100.678L65.486 100.523L65.967 103.838C66.1387 105.058 66.7742 105.504 67.7361 105.367C68.698 105.229 69.1618 104.628 68.99 103.392L68.5091 100.076L69.5912 99.9219L70.0721 103.271C70.3298 105.006 69.4881 106.088 67.8564 106.329C66.2418 106.569 65.1253 105.762 64.8677 104.027Z\" fill=\"#68453D\"></path>\n<path d=\"M76.2722 104.199L74.5717 102.876C74.503 102.911 74.4343 102.928 74.3484 102.945L73.0602 103.357L73.5755 105.023L72.5106 105.35L70.707 99.6127L73.0774 98.874C74.5889 98.3931 75.7569 98.8741 76.1691 100.145C76.444 101.021 76.2035 101.794 75.5164 102.344L77.423 103.821L76.2722 104.199ZM73.3007 99.8016L72.0468 100.197L72.7682 102.481L74.0221 102.086C74.9496 101.794 75.3103 101.21 75.087 100.489C74.8637 99.7844 74.2454 99.5096 73.3007 99.8016Z\" fill=\"#68453D\"></path>\n<path d=\"M76.3984 97.6717L77.429 97.2251L79.8337 102.739L78.8031 103.185L76.3984 97.6717Z\" fill=\"#68453D\"></path>\n<path d=\"M83.2806 94.0474L86.3037 99.2347L85.5136 99.6984L80.6011 97.8434L82.6451 101.365L81.6832 101.931L78.6602 96.7441L79.4503 96.2803L84.3627 98.1354L82.3187 94.6142L83.2806 94.0474Z\" fill=\"#68453D\"></path>\n<path d=\"M89.3119 92.9824L90.1192 92.3126L91.6479 94.1676C91.4933 94.9577 90.978 95.7135 90.3253 96.2632C88.8825 97.4483 86.993 97.3281 85.8594 95.9368C84.7086 94.5455 84.949 92.6733 86.409 91.4709C87.182 90.8354 88.0408 90.5434 88.8996 90.6808L88.7966 91.6599C88.1267 91.5912 87.577 91.7801 87.0789 92.1923C86.0827 93.0168 85.9453 94.2535 86.7354 95.2154C87.5083 96.1601 88.7794 96.2631 89.7584 95.4559C90.0848 95.181 90.3596 94.8547 90.5142 94.4253L89.3119 92.9824Z\" fill=\"#68453D\"></path>\n<path d=\"M95.3914 85.0126C96.422 85.8371 96.4564 87.1082 95.4773 88.3449L94.6357 89.4098L95.9926 90.4919L95.3056 91.3679L90.582 87.6234L92.1279 85.6825C93.107 84.4458 94.3437 84.1882 95.3914 85.0126ZM94.6872 85.8886C94.1032 85.4248 93.4333 85.5451 92.8321 86.318L92.0249 87.3486L93.8971 88.843L94.7044 87.8124C95.3056 87.0395 95.2884 86.3695 94.6872 85.8886Z\" fill=\"#68453D\"></path>\n<path d=\"M101.283 82.6593L99.1358 82.8482C99.1015 82.9169 99.0671 82.9856 99.0328 83.0543L98.3457 84.2223L99.8572 85.0983L99.2904 86.0602L94.0859 83.0543L95.3226 80.9073C96.1128 79.5331 97.2979 79.0866 98.4488 79.7565C99.2389 80.2031 99.5824 80.9416 99.445 81.8176L101.85 81.6115L101.283 82.6593ZM96.1299 81.4226L95.4772 82.5562L97.5556 83.7586L98.2083 82.6249C98.7064 81.7833 98.569 81.1134 97.9163 80.7355C97.2636 80.3576 96.6281 80.5809 96.1299 81.4226Z\" fill=\"#68453D\"></path>\n<path d=\"M102.706 75.9266L101.624 78.7264L102.706 79.7913L102.294 80.8734L97.6562 76.1671L98.0513 75.1365L104.647 74.793L104.218 75.8751L102.706 75.9266ZM101.744 75.961L98.8758 76.064L100.92 78.0737L101.744 75.961Z\" fill=\"#68453D\"></path>\n<path d=\"M101.907 73.3673C100.155 72.9722 99.193 71.3577 99.5881 69.5541C99.7942 68.5922 100.327 67.8536 101.082 67.4414L101.581 68.3002C101.031 68.6266 100.687 69.1075 100.55 69.7087C100.275 70.9282 100.945 71.9932 102.147 72.268C103.35 72.5428 104.415 71.8386 104.672 70.6363C104.81 70.0179 104.707 69.4511 104.329 68.9186L105.153 68.3689C105.669 69.056 105.823 69.9492 105.617 70.911C105.222 72.6974 103.659 73.7624 101.907 73.3673Z\" fill=\"#68453D\"></path>\n<path d=\"M101.253 65.4325L101.081 67.425L100.137 67.3391L100.566 62.2549L101.511 62.3407L101.339 64.3332L106.389 64.7454L106.303 65.8619L101.253 65.4325Z\" fill=\"#68453D\"></path>\n<path d=\"M100.513 61.6354L100.496 60.519L106.508 60.4331L106.525 61.5496L100.513 61.6354Z\" fill=\"#68453D\"></path>\n<path d=\"M103.536 59.231C101.75 59.4371 100.307 58.2176 100.084 56.3797C99.9634 55.4006 100.221 54.5247 100.805 53.8891L101.561 54.5247C101.149 55.0228 100.977 55.5724 101.045 56.2079C101.183 57.4446 102.162 58.2348 103.399 58.0973C104.635 57.9599 105.391 56.9465 105.254 55.7098C105.185 55.0915 104.893 54.5762 104.361 54.1983L104.962 53.4082C105.683 53.8891 106.13 54.6792 106.233 55.6755C106.456 57.4962 105.322 59.0249 103.536 59.231Z\" fill=\"#68453D\"></path>\n<path d=\"M103.468 47.6541L104.378 47.4136L105.529 51.7764L99.7063 53.3223L98.5898 49.0797L99.5002 48.8392L100.342 51.9997L101.853 51.6046L101.115 48.8049L102.008 48.5644L102.747 51.3642L104.344 50.9348L103.468 47.6541Z\" fill=\"#68453D\"></path>\n<path d=\"M33.4233 27.0077C32.0836 25.2041 32.4958 22.8854 34.3509 21.5112C35.3299 20.7898 36.4464 20.515 37.4942 20.7555L37.2709 21.975C36.4807 21.8204 35.7593 21.9922 35.141 22.4731C33.8871 23.4006 33.6295 24.9465 34.557 26.2004C35.4845 27.4371 37.0304 27.6432 38.2843 26.7157C38.9198 26.2519 39.2805 25.6164 39.3664 24.8091L40.6031 24.9637C40.5344 26.0286 39.9504 27.0077 38.9542 27.7463C37.0991 29.1032 34.7459 28.8112 33.4233 27.0077Z\" fill=\"#68453D\"></path>\n<path d=\"M46.7676 21.8899L47.2829 22.9377L42.1987 25.3939L38.918 18.6264L43.8648 16.2217L44.3801 17.2695L40.7043 19.0558L41.5631 20.8078L44.8267 19.2276L45.3248 20.2582L42.0613 21.8384L42.9716 23.7106L46.7676 21.8899Z\" fill=\"#68453D\"></path>\n<path d=\"M53.2043 21.2363L51.1431 19.5015C51.0572 19.5358 50.9542 19.5702 50.8683 19.5874L49.2193 20.0339L49.7862 22.1467L48.4292 22.5074L46.4883 15.2417L49.477 14.4345C51.3836 13.9192 52.8264 14.589 53.2558 16.1864C53.5478 17.2857 53.2043 18.2476 52.3283 18.9003L54.6299 20.8412L53.2043 21.2363ZM49.7346 15.6024L48.1544 16.0318L48.9273 18.9347L50.5076 18.5053C51.6927 18.1961 52.1565 17.4918 51.916 16.5643C51.6756 15.654 50.9198 15.2933 49.7346 15.6024Z\" fill=\"#68453D\"></path>\n<path d=\"M56.6273 14.3318L54.1538 14.5551L54.0508 13.3871L60.4061 12.8203L60.5091 13.9883L58.0357 14.2116L58.5854 20.5153L57.1941 20.6356L56.6273 14.3318Z\" fill=\"#68453D\"></path>\n<path d=\"M62.1639 12.9058L63.5552 12.9573L63.2975 20.4806L61.9062 20.4291L62.1639 12.9058Z\" fill=\"#68453D\"></path>\n<path d=\"M67.5164 14.5206L67.1557 16.7707L70.7284 17.3547L70.5395 18.5227L66.9668 17.9387L66.503 20.7728L65.1289 20.5495L66.3313 13.1465L71.7418 14.0224L71.5529 15.1733L67.5164 14.5206Z\" fill=\"#68453D\"></path>\n<path d=\"M73.8049 14.6577L75.1446 15.0528L72.9804 22.2497L71.6406 21.8547L73.8049 14.6577Z\" fill=\"#68453D\"></path>\n<path d=\"M80.3276 24.0364L79.8467 25.1014L74.7109 22.7825L77.8027 15.9463L82.801 18.2136L82.3201 19.2785L78.5928 17.5953L77.7855 19.3816L81.0834 20.876L80.6025 21.9237L77.3046 20.4294L76.4458 22.3188L80.3276 24.0364Z\" fill=\"#68453D\"></path>\n<path d=\"M85.2933 19.5879L87.9556 21.5116C89.9309 22.9373 90.3947 25.1358 89.0721 26.9566C87.7495 28.7773 85.5165 29.0349 83.5413 27.5921L80.8789 25.6683L85.2933 19.5879ZM84.194 26.5959C85.5509 27.5749 87.0281 27.386 87.9384 26.1321C88.8488 24.8611 88.574 23.4011 87.217 22.422L85.7398 21.3571L82.7168 25.5309L84.194 26.5959Z\" fill=\"#68453D\"></path>\n<path d=\"M25.269 35.3896L27.2958 34.3247L26.9179 36.592L28.5497 38.1894L26.2824 38.5158L25.269 40.577L24.2556 38.5158L21.9883 38.1894L23.62 36.592L23.2422 34.3247L25.269 35.3896Z\" fill=\"#68453D\"></path>\n<path d=\"M95.8018 34.067L97.8286 32.9849L97.4507 35.2522L99.0825 36.8496L96.8152 37.1931L95.8018 39.2371L94.7884 37.1931L92.5039 36.8496L94.1528 35.2522L93.775 32.9849L95.8018 34.067Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "",
+            "icon_description": "GMP <br>\nCertified",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_bqeWa9": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg style=\"width:12rem\" viewbox=\"0 0 120 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M110.36 66.5933C109.841 66.0745 108.969 66.0745 108.45 66.5933L86.9471 88.0963L79.392 80.5412C78.8731 80.0223 78.0014 80.0223 77.4825 80.5412C76.9636 81.0601 76.9636 81.9318 77.4825 82.4507L85.9924 90.9605C86.2622 91.2303 86.5943 91.3549 86.9471 91.3549C87.3 91.3549 87.6321 91.2303 87.9019 90.9605L100.148 78.7147C102.037 83.0319 101.767 88.2623 98.8194 92.621C96.8476 95.5268 93.7757 97.6023 90.3511 98.3911C80.0562 100.695 71.0275 91.8323 73.0408 81.579C74.0786 76.2448 78.2297 71.8653 83.5017 70.5784C88.0264 69.4784 92.5927 70.5369 96.0174 73.2974C96.5363 73.7125 97.3042 73.7126 97.7608 73.2144L97.8439 73.1314C98.3628 72.5917 98.342 71.6992 97.7608 71.2219C94.3777 68.4821 90.102 67.1538 85.6603 67.5066L75.656 44.8621V17.9005H76.8806C77.6278 17.9005 78.2297 17.2986 78.2297 16.5514V9.34912C78.2297 8.60192 77.6278 8 76.8806 8H42.945C42.1978 8 41.5959 8.60192 41.5959 9.34912V16.5514C41.5959 17.2986 42.1978 17.9005 42.945 17.9005H44.1696V25.1857V37.8052V44.8621L17.7476 104.659C16.8551 106.673 17.374 109.06 19.1798 110.554C20.0723 111.301 21.2346 111.633 22.3969 111.633H97.5325C99.7326 111.633 101.704 110.201 102.327 107.939C102.638 106.818 102.472 105.614 102.016 104.556L98.6533 96.9174C100.002 95.6721 101.144 94.2192 102.016 92.6002C104.776 87.4113 104.631 81.5167 102.182 76.7014L110.38 68.5029C110.899 67.984 110.899 67.1122 110.36 66.5933ZM44.2942 10.6982H75.5107V15.1815H74.2861H69.8444H45.5187H44.2942V10.6982ZM46.7641 45.6923C46.8056 45.5055 46.8471 45.3395 46.8886 45.1527V37.8052V25.1857V17.9005H69.8859H72.9785V45.1319C73.02 45.3187 73.0616 45.5055 73.1031 45.6923L82.9413 67.9425C80.5959 68.5236 78.4373 69.6029 76.59 71.0766H35.5352L46.7641 45.6923ZM99.6081 105.759C99.9194 106.465 99.8572 107.254 99.442 107.897C99.0269 108.541 98.3212 108.914 97.5533 108.914H22.2724C21.5044 108.914 20.8195 108.541 20.3836 107.897C19.9685 107.254 19.9062 106.465 20.2175 105.759L34.3522 73.7748H73.8503C72.0445 75.9957 70.7784 78.6524 70.3011 81.5375C68.3708 93.2022 78.3958 103.186 90.0812 101.172C92.3851 100.778 94.5645 99.8855 96.474 98.6194L99.6081 105.759Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "",
+            "icon_description": "Lab Tested <br> &amp; Certified",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_UANrKk": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg style=\"width:12rem\" viewbox=\"0 0 120 121\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M93.9273 26.2801H62.4747V25.0279H93.9273C95.7575 25.0279 97.2488 23.5185 97.2488 21.666C97.2488 19.8136 95.7575 18.3041 93.9273 18.3041H61.119V17.052H93.9273C96.4523 17.052 98.5028 19.1274 98.5028 21.6831C98.5028 24.2388 96.4523 26.2801 93.9273 26.2801Z\" fill=\"#68453D\"></path>\n<path d=\"M101.424 34.2734H70.6159V33.0213H101.408C103.238 33.0213 104.729 31.5119 104.729 29.6594C104.729 27.8069 103.238 26.2975 101.408 26.2975H68.5992V25.0453H101.424C103.949 25.0453 106 27.1208 106 29.6766C106 32.2323 103.949 34.2734 101.424 34.2734Z\" fill=\"#68453D\"></path>\n<path d=\"M93.93 42.3371H72.1877V41.0849H93.93C95.7602 41.0849 97.2515 39.5756 97.2515 37.7231C97.2515 35.8706 95.7602 34.3612 93.93 34.3612H70.6117V33.1091H93.93C96.455 33.1091 98.5055 35.1845 98.5055 37.7403C98.5055 40.296 96.455 42.3371 93.93 42.3371Z\" fill=\"#68453D\"></path>\n<path d=\"M43.516 49.1293H24.7902V50.3815H43.516V49.1293Z\" fill=\"#68453D\"></path>\n<path d=\"M85.8666 50.3975H69.2083V49.1453H85.8666C87.6968 49.1453 89.1881 47.6359 89.1881 45.7835C89.1881 43.931 87.6968 42.4215 85.8666 42.4215H72.1908V41.1694H85.8666C88.3916 41.1694 90.4421 43.2448 90.4421 45.8005C90.4421 48.3563 88.3747 50.3975 85.8666 50.3975Z\" fill=\"#68453D\"></path>\n<path d=\"M23.7055 52.9195H14.6222V51.6674H23.7055C23.9597 51.6674 24.163 51.4615 24.163 51.2042V17.2936C24.163 17.0363 23.9597 16.8305 23.7055 16.8305H14.6222V15.5783H23.7055C24.6545 15.5783 25.4171 16.3502 25.4171 17.3108V51.2214C25.4171 52.1476 24.6375 52.9195 23.7055 52.9195Z\" fill=\"#68453D\"></path>\n<path d=\"M58.1886 24.8747L57.2396 24.0513C59.5952 21.2554 60.9 17.6877 60.9 14.0171C60.9 13.0051 61.7135 12.1817 62.7133 12.1817H71.3899C75.3045 12.1817 78.5243 9.11146 78.8463 5.23498H59.019C51.4778 7.79071 44.6484 12.2675 39.2933 18.2195L38.785 18.7854H24.7703V17.5333H38.2257L38.3613 17.3961C43.8858 11.2726 50.9186 6.64147 58.697 4.03429L58.9004 4H80.1003V4.63464C80.1003 9.50596 76.1857 13.4682 71.3729 13.4682H62.6964C62.3913 13.4682 62.1371 13.7255 62.1371 14.0342C62.1541 17.9965 60.7475 21.8558 58.1886 24.8747Z\" fill=\"#68453D\"></path>\n<path d=\"M56.3417 57.0365C47.2584 57.0365 39.8698 49.5579 39.8698 40.3641C39.8698 31.1704 47.2584 23.6919 56.3417 23.6919C65.425 23.6919 72.8136 31.1704 72.8136 40.3641C72.8136 49.5579 65.425 57.0365 56.3417 57.0365ZM56.3417 24.944C47.9362 24.944 41.1068 31.8565 41.1068 40.3641C41.1068 48.8718 47.9362 55.7843 56.3417 55.7843C64.7471 55.7843 71.5765 48.8718 71.5765 40.3641C71.5765 31.8565 64.7471 24.944 56.3417 24.944Z\" fill=\"#68453D\"></path>\n<path d=\"M59.9584 46.1454C59.3992 46.7629 58.6197 47.1574 57.6368 47.3461V49.0099H55.1626V47.3976C53.773 47.2261 52.6715 46.8143 51.858 46.1454L52.6037 44.4473C52.7901 44.636 53.0782 44.8247 53.4171 45.0134C53.756 45.202 54.1797 45.3735 54.6203 45.5107C55.0779 45.648 55.5354 45.7166 56.0099 45.7166C56.5861 45.7166 57.0606 45.5794 57.4673 45.3221C57.8571 45.0648 58.0604 44.6531 58.0604 44.087C58.0604 43.7783 57.9418 43.5039 57.7045 43.2981C57.4673 43.0751 57.1962 42.9036 56.8572 42.7664C56.5183 42.6292 56.0946 42.4919 55.5693 42.3376C54.8575 42.1317 54.2305 41.8744 53.7052 41.5828C53.1799 41.2913 52.7562 40.8967 52.4173 40.3993C52.0783 39.9019 51.9258 39.2672 51.9258 38.5296C51.9258 37.9636 52.0444 37.4491 52.2986 36.986C52.5528 36.5229 52.9087 36.1283 53.4002 35.8024C53.8747 35.4765 54.4678 35.2535 55.1456 35.1335V33.0923H57.6198V35.1335C58.2129 35.2535 58.7213 35.425 59.1619 35.648C59.6025 35.871 59.9076 36.1112 60.094 36.3342L59.2636 37.9465C59.1789 37.8264 58.9925 37.6892 58.7213 37.5177C58.4502 37.3462 58.1113 37.1746 57.7384 37.0374C57.3656 36.9002 56.9758 36.8316 56.603 36.8316C56.0099 36.8316 55.5185 36.9687 55.1287 37.226C54.7389 37.4833 54.5356 37.8607 54.5356 38.3582C54.5356 38.8899 54.7559 39.2844 55.2134 39.5589C55.654 39.8333 56.2302 40.0563 56.9081 40.2107C58.0604 40.4851 58.9925 40.931 59.7212 41.5485C60.4499 42.166 60.8057 42.955 60.8057 43.8812C60.8057 44.7903 60.5177 45.545 59.9584 46.1454Z\" fill=\"#4C312D\"></path>\n<path d=\"M58.8773 103.967H26.0691C23.544 103.967 21.4935 101.891 21.4935 99.3357C21.4935 96.78 23.544 94.7045 26.0691 94.7045H57.5216V95.9567H26.0691C24.2389 95.9567 22.7476 97.4661 22.7476 99.3186C22.7476 101.171 24.2389 102.681 26.0691 102.681H58.8773V103.967Z\" fill=\"#68453D\"></path>\n<path d=\"M51.4007 95.9735H18.5755C16.0505 95.9735 14 93.8981 14 91.3424C14 88.7867 16.0505 86.7112 18.5755 86.7112H49.3672V87.9633H18.5755C16.7453 87.9633 15.254 89.4727 15.254 91.3252C15.254 93.1777 16.7453 94.6871 18.5755 94.6871H51.4007V95.9735Z\" fill=\"#68453D\"></path>\n<path d=\"M49.3873 87.8932H26.0691C23.544 87.8932 21.4935 85.8177 21.4935 83.2619C21.4935 80.7062 23.544 78.6307 26.0691 78.6307H47.8113V79.8829H26.0691C24.2389 79.8829 22.7476 81.3923 22.7476 83.2448C22.7476 85.0972 24.2389 86.6067 26.0691 86.6067H49.3873V87.8932Z\" fill=\"#68453D\"></path>\n<path d=\"M95.2025 70.5871H76.4767V71.8393H95.2025V70.5871Z\" fill=\"#68453D\"></path>\n<path d=\"M47.8076 79.8495H34.1318C31.6068 79.8495 29.5563 77.774 29.5563 75.2183C29.5563 72.6626 31.6068 70.5871 34.1318 70.5871H50.7901V71.8393H34.1318C32.3016 71.8393 30.7934 73.3487 30.7934 75.2183C30.7934 77.0879 32.2846 78.5802 34.1318 78.5802H47.8076V79.8495Z\" fill=\"#68453D\"></path>\n<path d=\"M105.376 105.423H96.2931C95.3441 105.423 94.5815 104.651 94.5815 103.691V69.7802C94.5815 68.8196 95.3441 68.0477 96.2931 68.0477H105.376V69.2998H96.2931C96.0389 69.2998 95.8356 69.5057 95.8356 69.763V103.674C95.8356 103.931 96.0389 104.137 96.2931 104.137H105.376V105.423Z\" fill=\"#68453D\"></path>\n<path d=\"M61.178 117H39.8763V116.365C39.8763 111.494 43.791 107.532 48.6037 107.532H57.2803C57.5854 107.532 57.8395 107.275 57.8395 106.966C57.8395 102.986 59.2461 99.1271 61.805 96.1082L62.754 96.9315C60.3985 99.7274 59.0936 103.295 59.0936 106.966C59.0936 107.978 58.2802 108.801 57.2803 108.801H48.6037C44.6891 108.801 41.4693 111.871 41.1473 115.748H60.9916C68.5327 113.192 75.3452 108.715 80.7172 102.763L81.2256 102.197H95.2403V103.45H81.7848L81.6493 103.587C76.1247 109.71 69.092 114.341 61.3136 116.949L61.178 117Z\" fill=\"#68453D\"></path>\n<path d=\"M57.1782 59.2302C61.6351 57.9781 66.6174 58.8186 70.4134 61.4772C72.108 62.6607 73.5824 64.1873 75.3617 65.2336C75.8023 65.4909 76.2768 65.7139 76.7683 65.9026C80.7507 67.3777 83.9027 70.6881 84.8517 74.8905C84.8517 74.9248 84.8687 74.9591 84.8687 74.9934C85.5804 78.2009 85.4787 81.7172 83.9197 84.616C82.1403 87.9093 78.7849 89.9333 75.4973 91.7171C71.4132 93.9298 67.2613 96.0224 63.0756 98.0121C60.4658 99.2642 57.6866 100.499 54.8227 100.208C51.1961 99.8475 48.2136 97.0687 46.2647 93.947C39.232 82.712 43.3669 63.141 57.1782 59.2302Z\" fill=\"#4C312D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "",
+            "icon_description": "Fair Trade <br> Community",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_XQ8E4U": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg style=\"width:12rem\" viewbox=\"0 0 120 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<mask id=\"path-1-outside-1_32_4755\" maskunits=\"userSpaceOnUse\" x=\"4.7666\" y=\"6.91553\" width=\"111\" height=\"106\" fill=\"black\">\n<rect fill=\"white\" x=\"4.7666\" y=\"6.91553\" width=\"111\" height=\"106\"></rect>\n<path d=\"M110.638 55.6735C109.419 53.789 107.946 52.1421 106.267 50.7643C104.604 49.4183 102.783 48.3731 100.835 47.6446C97.3198 46.3461 93.5508 46.1877 89.956 47.1854C88.0715 47.708 86.2504 48.5473 84.5401 49.6717C82.7506 50.8435 81.072 52.348 79.5517 54.1216C79.2983 54.4225 78.9499 54.5808 78.5857 54.5808C78.2056 54.5808 77.8572 54.4225 77.6197 54.1216C76.0994 52.348 74.4208 50.8594 72.6313 49.6717C70.921 48.5473 69.0999 47.708 67.2154 47.1854C63.6206 46.1877 59.8516 46.3461 56.336 47.6446C54.3881 48.3573 52.567 49.4024 50.9042 50.7643C49.2255 52.1263 47.7528 53.789 46.5334 55.6735C44.538 58.7299 43.2712 62.3405 42.7802 66.2521C41.5925 63.8608 40.9749 61.2003 40.9749 58.4765C40.9749 55.246 40.0248 52.2371 38.2353 49.7667C41.0699 47.3754 44.1421 44.1132 46.9451 40.4867C50.3657 36.0526 53.1212 31.4918 54.689 27.6436C55.8609 24.7456 56.8744 20.9924 55.0532 19.4563C54.499 18.9971 53.7705 18.8071 52.8678 18.9021C49.273 19.298 43.0811 24.4131 37.3485 31.6977C37.4435 31.3334 37.5226 30.9534 37.6018 30.5733C38.8212 25.0465 39.3913 19.6939 39.1854 15.5132C39.0271 12.3776 38.362 8.51359 36.0499 7.97516C35.3689 7.8168 34.6563 7.97516 33.912 8.43441C31.9642 9.65379 30.2222 12.821 29.1137 15.2439C27.5301 18.712 26.1523 23.0036 25.123 27.6278C24.3945 30.9534 23.8878 34.1839 23.666 37.2245C23.4602 39.8849 23.4602 42.292 23.6819 44.2715C23.6502 44.2715 23.6185 44.2874 23.5869 44.2874C20.7839 44.9842 18.2501 46.5994 16.2864 48.9749L7.2915 59.7751C6.45219 60.7886 5.9296 62.008 5.80291 63.3065C5.67622 64.5101 5.88209 65.7295 6.40468 66.8538C6.91144 67.9149 7.67157 68.8175 8.6059 69.4668C9.61941 70.1477 10.8071 70.512 12.0582 70.512H18.456V83.0542C18.456 87.0132 20.3246 90.7347 23.4602 92.9993L29.5888 97.4492V100.601C29.5888 101.915 28.5752 102.976 27.3084 102.976C24.9646 102.976 23.0643 104.94 23.0643 107.347C23.0643 109.754 24.9646 111.718 27.3084 111.718H33.4686C36.9525 111.718 39.803 108.788 39.803 105.177V104.845C41.1491 105.811 43.3978 107.41 44.2847 108.028V108.74C44.2847 110.34 45.5516 111.638 47.1035 111.638C47.1035 111.638 78.5065 111.638 78.6015 111.638C79.425 111.638 80.2485 111.512 81.0403 111.274C85.6011 109.849 89.956 107.822 93.9784 105.225C98.0483 102.596 101.643 99.4762 104.668 95.9448C107.819 92.2866 110.258 88.2643 111.952 84.0043C113.742 79.5069 114.645 74.7877 114.645 69.9894C114.629 64.6368 113.235 59.6801 110.638 55.6735ZM46.5176 23.8905C50.0965 20.8816 52.1235 20.264 53.0104 20.169C53.533 20.1056 53.9447 20.2006 54.2298 20.4223C54.7682 20.8816 54.8157 21.8634 54.7523 22.6236C54.6573 23.8113 54.2297 25.3791 53.5013 27.1369C51.981 30.89 49.2889 35.3558 45.9316 39.6949C43.192 43.2422 40.199 46.4411 37.4435 48.769C35.8599 46.9478 33.8487 45.5859 31.5524 44.7466C31.3149 44.6674 31.0773 44.5883 30.8398 44.5091C32.4234 40.9776 34.9414 36.9236 37.9661 33.0121C40.7374 29.4014 43.7146 26.25 46.5176 23.8905ZM26.374 27.897C27.3717 23.352 28.7336 19.1713 30.2697 15.7665C32.2492 11.4274 33.817 9.98635 34.5771 9.49543C35.0205 9.22622 35.4164 9.11536 35.749 9.19454C36.4141 9.3529 36.8734 10.2239 37.1267 10.9207C37.5385 12.0292 37.8077 13.6287 37.9027 15.5448C38.1086 19.6147 37.5543 24.8406 36.3508 30.2724C36.0341 31.7135 35.7173 32.9487 35.3056 34.3898C32.8827 37.7629 30.8873 41.1518 29.5571 44.1765C28.021 43.8598 26.4532 43.8123 24.9171 44.034C24.5054 39.9166 25.0438 33.9464 26.374 27.897ZM9.31853 68.4216C8.57423 67.9149 7.95662 67.1864 7.56072 66.3312C6.65806 64.4151 6.94311 62.2297 8.27334 60.6302L17.2683 49.83C19.0577 47.6763 21.354 46.2035 23.9036 45.5701C24.8696 45.3326 25.8356 45.2059 26.8333 45.2059C28.2744 45.2059 29.7313 45.4592 31.1407 45.966C33.5953 46.8528 35.7015 48.4364 37.2218 50.5268C38.8529 52.7755 39.7239 55.531 39.7239 58.4924C39.7239 61.3745 38.647 64.0825 36.6833 66.1095C34.7355 68.1366 32.1225 69.2609 29.367 69.2609H19.0894H12.0582C11.0605 69.2451 10.1103 68.96 9.31853 68.4216ZM39.7872 103.293V86.7757C39.7872 86.4273 39.5022 86.1422 39.1538 86.1422C38.8054 86.1422 38.5203 86.4273 38.5203 86.7757V105.209C38.5203 108.107 36.2558 110.466 33.4686 110.466H27.2925C25.6614 110.466 24.3312 109.073 24.3312 107.378C24.3312 105.684 25.6614 104.29 27.2925 104.29C29.2562 104.29 30.8398 102.643 30.8398 100.632V97.18C30.8398 97.18 30.8398 97.1642 30.8398 97.1483V79.5069C30.8398 79.1585 30.5548 78.8735 30.2064 78.8735C29.858 78.8735 29.5729 79.1585 29.5729 79.5069V95.8814L24.2045 91.9858C21.4015 89.9587 19.7229 86.6173 19.7229 83.07V70.5278H29.3195C30.8873 70.5278 32.4234 70.2111 33.8645 69.5776C35.2581 68.9759 36.4933 68.1049 37.5702 66.9964C38.7262 65.7928 39.613 64.3834 40.199 62.8315C40.674 64.8427 41.4817 66.7747 42.5902 68.5166C42.5744 69.0075 42.5585 69.4985 42.5585 69.9894C42.5585 74.7877 43.4612 79.5069 45.2507 84.0043C46.9451 88.2643 49.3839 92.2708 52.5353 95.9448C54.2773 97.9718 56.2093 99.8721 58.3155 101.63H50.5083C47.5627 101.63 45.0923 103.752 44.443 106.602C43.3028 105.827 41.3075 104.385 39.7872 103.293ZM45.5516 108.756C45.5516 108.756 45.5516 107.854 45.5516 107.759V107.743C45.7099 105.051 47.8636 102.913 50.4766 102.913H59.8991C60.9601 103.72 62.0686 104.496 63.193 105.225C66.4236 107.315 69.86 109.041 73.4548 110.371H47.0877C46.2483 110.371 45.5516 109.659 45.5516 108.756ZM103.67 95.1213C100.725 98.5577 97.2248 101.598 93.2658 104.148C89.3384 106.682 85.0943 108.661 80.6444 110.055C79.2983 110.466 77.8731 110.466 76.527 110.055C72.077 108.677 67.8171 106.682 63.9056 104.148C59.9466 101.582 56.431 98.5419 53.5013 95.1213C47.1827 87.7575 43.8413 79.0635 43.8413 69.9894C43.8413 64.8902 45.1557 60.171 47.6261 56.3545C48.7821 54.5808 50.1599 53.0289 51.7435 51.7462C53.2954 50.4951 54.9899 49.5133 56.811 48.8482C60.0733 47.6446 63.5731 47.5021 66.8986 48.4206C68.6565 48.9115 70.3509 49.6875 71.9504 50.7327C73.6448 51.8412 75.2284 53.2665 76.6695 54.9451C77.1604 55.5152 77.8731 55.8477 78.6174 55.8477C79.3617 55.8477 80.0743 55.5152 80.5652 54.9451C82.0063 53.2665 83.5899 51.8412 85.2844 50.7327C86.8838 49.6875 88.5783 48.8957 90.3361 48.4206C93.6775 47.4863 97.1615 47.6446 100.424 48.8482C102.229 49.5133 103.939 50.4951 105.491 51.7462C107.059 53.0289 108.453 54.5808 109.609 56.3545C112.079 60.1552 113.393 64.8743 113.393 69.9894C113.346 79.0635 110.005 87.7575 103.67 95.1213Z\"></path>\n</mask>\n<path d=\"M110.638 55.6735C109.419 53.789 107.946 52.1421 106.267 50.7643C104.604 49.4183 102.783 48.3731 100.835 47.6446C97.3198 46.3461 93.5508 46.1877 89.956 47.1854C88.0715 47.708 86.2504 48.5473 84.5401 49.6717C82.7506 50.8435 81.072 52.348 79.5517 54.1216C79.2983 54.4225 78.9499 54.5808 78.5857 54.5808C78.2056 54.5808 77.8572 54.4225 77.6197 54.1216C76.0994 52.348 74.4208 50.8594 72.6313 49.6717C70.921 48.5473 69.0999 47.708 67.2154 47.1854C63.6206 46.1877 59.8516 46.3461 56.336 47.6446C54.3881 48.3573 52.567 49.4024 50.9042 50.7643C49.2255 52.1263 47.7528 53.789 46.5334 55.6735C44.538 58.7299 43.2712 62.3405 42.7802 66.2521C41.5925 63.8608 40.9749 61.2003 40.9749 58.4765C40.9749 55.246 40.0248 52.2371 38.2353 49.7667C41.0699 47.3754 44.1421 44.1132 46.9451 40.4867C50.3657 36.0526 53.1212 31.4918 54.689 27.6436C55.8609 24.7456 56.8744 20.9924 55.0532 19.4563C54.499 18.9971 53.7705 18.8071 52.8678 18.9021C49.273 19.298 43.0811 24.4131 37.3485 31.6977C37.4435 31.3334 37.5226 30.9534 37.6018 30.5733C38.8212 25.0465 39.3913 19.6939 39.1854 15.5132C39.0271 12.3776 38.362 8.51359 36.0499 7.97516C35.3689 7.8168 34.6563 7.97516 33.912 8.43441C31.9642 9.65379 30.2222 12.821 29.1137 15.2439C27.5301 18.712 26.1523 23.0036 25.123 27.6278C24.3945 30.9534 23.8878 34.1839 23.666 37.2245C23.4602 39.8849 23.4602 42.292 23.6819 44.2715C23.6502 44.2715 23.6185 44.2874 23.5869 44.2874C20.7839 44.9842 18.2501 46.5994 16.2864 48.9749L7.2915 59.7751C6.45219 60.7886 5.9296 62.008 5.80291 63.3065C5.67622 64.5101 5.88209 65.7295 6.40468 66.8538C6.91144 67.9149 7.67157 68.8175 8.6059 69.4668C9.61941 70.1477 10.8071 70.512 12.0582 70.512H18.456V83.0542C18.456 87.0132 20.3246 90.7347 23.4602 92.9993L29.5888 97.4492V100.601C29.5888 101.915 28.5752 102.976 27.3084 102.976C24.9646 102.976 23.0643 104.94 23.0643 107.347C23.0643 109.754 24.9646 111.718 27.3084 111.718H33.4686C36.9525 111.718 39.803 108.788 39.803 105.177V104.845C41.1491 105.811 43.3978 107.41 44.2847 108.028V108.74C44.2847 110.34 45.5516 111.638 47.1035 111.638C47.1035 111.638 78.5065 111.638 78.6015 111.638C79.425 111.638 80.2485 111.512 81.0403 111.274C85.6011 109.849 89.956 107.822 93.9784 105.225C98.0483 102.596 101.643 99.4762 104.668 95.9448C107.819 92.2866 110.258 88.2643 111.952 84.0043C113.742 79.5069 114.645 74.7877 114.645 69.9894C114.629 64.6368 113.235 59.6801 110.638 55.6735ZM46.5176 23.8905C50.0965 20.8816 52.1235 20.264 53.0104 20.169C53.533 20.1056 53.9447 20.2006 54.2298 20.4223C54.7682 20.8816 54.8157 21.8634 54.7523 22.6236C54.6573 23.8113 54.2297 25.3791 53.5013 27.1369C51.981 30.89 49.2889 35.3558 45.9316 39.6949C43.192 43.2422 40.199 46.4411 37.4435 48.769C35.8599 46.9478 33.8487 45.5859 31.5524 44.7466C31.3149 44.6674 31.0773 44.5883 30.8398 44.5091C32.4234 40.9776 34.9414 36.9236 37.9661 33.0121C40.7374 29.4014 43.7146 26.25 46.5176 23.8905ZM26.374 27.897C27.3717 23.352 28.7336 19.1713 30.2697 15.7665C32.2492 11.4274 33.817 9.98635 34.5771 9.49543C35.0205 9.22622 35.4164 9.11536 35.749 9.19454C36.4141 9.3529 36.8734 10.2239 37.1267 10.9207C37.5385 12.0292 37.8077 13.6287 37.9027 15.5448C38.1086 19.6147 37.5543 24.8406 36.3508 30.2724C36.0341 31.7135 35.7173 32.9487 35.3056 34.3898C32.8827 37.7629 30.8873 41.1518 29.5571 44.1765C28.021 43.8598 26.4532 43.8123 24.9171 44.034C24.5054 39.9166 25.0438 33.9464 26.374 27.897ZM9.31853 68.4216C8.57423 67.9149 7.95662 67.1864 7.56072 66.3312C6.65806 64.4151 6.94311 62.2297 8.27334 60.6302L17.2683 49.83C19.0577 47.6763 21.354 46.2035 23.9036 45.5701C24.8696 45.3326 25.8356 45.2059 26.8333 45.2059C28.2744 45.2059 29.7313 45.4592 31.1407 45.966C33.5953 46.8528 35.7015 48.4364 37.2218 50.5268C38.8529 52.7755 39.7239 55.531 39.7239 58.4924C39.7239 61.3745 38.647 64.0825 36.6833 66.1095C34.7355 68.1366 32.1225 69.2609 29.367 69.2609H19.0894H12.0582C11.0605 69.2451 10.1103 68.96 9.31853 68.4216ZM39.7872 103.293V86.7757C39.7872 86.4273 39.5022 86.1422 39.1538 86.1422C38.8054 86.1422 38.5203 86.4273 38.5203 86.7757V105.209C38.5203 108.107 36.2558 110.466 33.4686 110.466H27.2925C25.6614 110.466 24.3312 109.073 24.3312 107.378C24.3312 105.684 25.6614 104.29 27.2925 104.29C29.2562 104.29 30.8398 102.643 30.8398 100.632V97.18C30.8398 97.18 30.8398 97.1642 30.8398 97.1483V79.5069C30.8398 79.1585 30.5548 78.8735 30.2064 78.8735C29.858 78.8735 29.5729 79.1585 29.5729 79.5069V95.8814L24.2045 91.9858C21.4015 89.9587 19.7229 86.6173 19.7229 83.07V70.5278H29.3195C30.8873 70.5278 32.4234 70.2111 33.8645 69.5776C35.2581 68.9759 36.4933 68.1049 37.5702 66.9964C38.7262 65.7928 39.613 64.3834 40.199 62.8315C40.674 64.8427 41.4817 66.7747 42.5902 68.5166C42.5744 69.0075 42.5585 69.4985 42.5585 69.9894C42.5585 74.7877 43.4612 79.5069 45.2507 84.0043C46.9451 88.2643 49.3839 92.2708 52.5353 95.9448C54.2773 97.9718 56.2093 99.8721 58.3155 101.63H50.5083C47.5627 101.63 45.0923 103.752 44.443 106.602C43.3028 105.827 41.3075 104.385 39.7872 103.293ZM45.5516 108.756C45.5516 108.756 45.5516 107.854 45.5516 107.759V107.743C45.7099 105.051 47.8636 102.913 50.4766 102.913H59.8991C60.9601 103.72 62.0686 104.496 63.193 105.225C66.4236 107.315 69.86 109.041 73.4548 110.371H47.0877C46.2483 110.371 45.5516 109.659 45.5516 108.756ZM103.67 95.1213C100.725 98.5577 97.2248 101.598 93.2658 104.148C89.3384 106.682 85.0943 108.661 80.6444 110.055C79.2983 110.466 77.8731 110.466 76.527 110.055C72.077 108.677 67.8171 106.682 63.9056 104.148C59.9466 101.582 56.431 98.5419 53.5013 95.1213C47.1827 87.7575 43.8413 79.0635 43.8413 69.9894C43.8413 64.8902 45.1557 60.171 47.6261 56.3545C48.7821 54.5808 50.1599 53.0289 51.7435 51.7462C53.2954 50.4951 54.9899 49.5133 56.811 48.8482C60.0733 47.6446 63.5731 47.5021 66.8986 48.4206C68.6565 48.9115 70.3509 49.6875 71.9504 50.7327C73.6448 51.8412 75.2284 53.2665 76.6695 54.9451C77.1604 55.5152 77.8731 55.8477 78.6174 55.8477C79.3617 55.8477 80.0743 55.5152 80.5652 54.9451C82.0063 53.2665 83.5899 51.8412 85.2844 50.7327C86.8838 49.6875 88.5783 48.8957 90.3361 48.4206C93.6775 47.4863 97.1615 47.6446 100.424 48.8482C102.229 49.5133 103.939 50.4951 105.491 51.7462C107.059 53.0289 108.453 54.5808 109.609 56.3545C112.079 60.1552 113.393 64.8743 113.393 69.9894C113.346 79.0635 110.005 87.7575 103.67 95.1213Z\" fill=\"#68453D\"></path>\n<path d=\"M110.638 55.6735C109.419 53.789 107.946 52.1421 106.267 50.7643C104.604 49.4183 102.783 48.3731 100.835 47.6446C97.3198 46.3461 93.5508 46.1877 89.956 47.1854C88.0715 47.708 86.2504 48.5473 84.5401 49.6717C82.7506 50.8435 81.072 52.348 79.5517 54.1216C79.2983 54.4225 78.9499 54.5808 78.5857 54.5808C78.2056 54.5808 77.8572 54.4225 77.6197 54.1216C76.0994 52.348 74.4208 50.8594 72.6313 49.6717C70.921 48.5473 69.0999 47.708 67.2154 47.1854C63.6206 46.1877 59.8516 46.3461 56.336 47.6446C54.3881 48.3573 52.567 49.4024 50.9042 50.7643C49.2255 52.1263 47.7528 53.789 46.5334 55.6735C44.538 58.7299 43.2712 62.3405 42.7802 66.2521C41.5925 63.8608 40.9749 61.2003 40.9749 58.4765C40.9749 55.246 40.0248 52.2371 38.2353 49.7667C41.0699 47.3754 44.1421 44.1132 46.9451 40.4867C50.3657 36.0526 53.1212 31.4918 54.689 27.6436C55.8609 24.7456 56.8744 20.9924 55.0532 19.4563C54.499 18.9971 53.7705 18.8071 52.8678 18.9021C49.273 19.298 43.0811 24.4131 37.3485 31.6977C37.4435 31.3334 37.5226 30.9534 37.6018 30.5733C38.8212 25.0465 39.3913 19.6939 39.1854 15.5132C39.0271 12.3776 38.362 8.51359 36.0499 7.97516C35.3689 7.8168 34.6563 7.97516 33.912 8.43441C31.9642 9.65379 30.2222 12.821 29.1137 15.2439C27.5301 18.712 26.1523 23.0036 25.123 27.6278C24.3945 30.9534 23.8878 34.1839 23.666 37.2245C23.4602 39.8849 23.4602 42.292 23.6819 44.2715C23.6502 44.2715 23.6185 44.2874 23.5869 44.2874C20.7839 44.9842 18.2501 46.5994 16.2864 48.9749L7.2915 59.7751C6.45219 60.7886 5.9296 62.008 5.80291 63.3065C5.67622 64.5101 5.88209 65.7295 6.40468 66.8538C6.91144 67.9149 7.67157 68.8175 8.6059 69.4668C9.61941 70.1477 10.8071 70.512 12.0582 70.512H18.456V83.0542C18.456 87.0132 20.3246 90.7347 23.4602 92.9993L29.5888 97.4492V100.601C29.5888 101.915 28.5752 102.976 27.3084 102.976C24.9646 102.976 23.0643 104.94 23.0643 107.347C23.0643 109.754 24.9646 111.718 27.3084 111.718H33.4686C36.9525 111.718 39.803 108.788 39.803 105.177V104.845C41.1491 105.811 43.3978 107.41 44.2847 108.028V108.74C44.2847 110.34 45.5516 111.638 47.1035 111.638C47.1035 111.638 78.5065 111.638 78.6015 111.638C79.425 111.638 80.2485 111.512 81.0403 111.274C85.6011 109.849 89.956 107.822 93.9784 105.225C98.0483 102.596 101.643 99.4762 104.668 95.9448C107.819 92.2866 110.258 88.2643 111.952 84.0043C113.742 79.5069 114.645 74.7877 114.645 69.9894C114.629 64.6368 113.235 59.6801 110.638 55.6735ZM46.5176 23.8905C50.0965 20.8816 52.1235 20.264 53.0104 20.169C53.533 20.1056 53.9447 20.2006 54.2298 20.4223C54.7682 20.8816 54.8157 21.8634 54.7523 22.6236C54.6573 23.8113 54.2297 25.3791 53.5013 27.1369C51.981 30.89 49.2889 35.3558 45.9316 39.6949C43.192 43.2422 40.199 46.4411 37.4435 48.769C35.8599 46.9478 33.8487 45.5859 31.5524 44.7466C31.3149 44.6674 31.0773 44.5883 30.8398 44.5091C32.4234 40.9776 34.9414 36.9236 37.9661 33.0121C40.7374 29.4014 43.7146 26.25 46.5176 23.8905ZM26.374 27.897C27.3717 23.352 28.7336 19.1713 30.2697 15.7665C32.2492 11.4274 33.817 9.98635 34.5771 9.49543C35.0205 9.22622 35.4164 9.11536 35.749 9.19454C36.4141 9.3529 36.8734 10.2239 37.1267 10.9207C37.5385 12.0292 37.8077 13.6287 37.9027 15.5448C38.1086 19.6147 37.5543 24.8406 36.3508 30.2724C36.0341 31.7135 35.7173 32.9487 35.3056 34.3898C32.8827 37.7629 30.8873 41.1518 29.5571 44.1765C28.021 43.8598 26.4532 43.8123 24.9171 44.034C24.5054 39.9166 25.0438 33.9464 26.374 27.897ZM9.31853 68.4216C8.57423 67.9149 7.95662 67.1864 7.56072 66.3312C6.65806 64.4151 6.94311 62.2297 8.27334 60.6302L17.2683 49.83C19.0577 47.6763 21.354 46.2035 23.9036 45.5701C24.8696 45.3326 25.8356 45.2059 26.8333 45.2059C28.2744 45.2059 29.7313 45.4592 31.1407 45.966C33.5953 46.8528 35.7015 48.4364 37.2218 50.5268C38.8529 52.7755 39.7239 55.531 39.7239 58.4924C39.7239 61.3745 38.647 64.0825 36.6833 66.1095C34.7355 68.1366 32.1225 69.2609 29.367 69.2609H19.0894H12.0582C11.0605 69.2451 10.1103 68.96 9.31853 68.4216ZM39.7872 103.293V86.7757C39.7872 86.4273 39.5022 86.1422 39.1538 86.1422C38.8054 86.1422 38.5203 86.4273 38.5203 86.7757V105.209C38.5203 108.107 36.2558 110.466 33.4686 110.466H27.2925C25.6614 110.466 24.3312 109.073 24.3312 107.378C24.3312 105.684 25.6614 104.29 27.2925 104.29C29.2562 104.29 30.8398 102.643 30.8398 100.632V97.18C30.8398 97.18 30.8398 97.1642 30.8398 97.1483V79.5069C30.8398 79.1585 30.5548 78.8735 30.2064 78.8735C29.858 78.8735 29.5729 79.1585 29.5729 79.5069V95.8814L24.2045 91.9858C21.4015 89.9587 19.7229 86.6173 19.7229 83.07V70.5278H29.3195C30.8873 70.5278 32.4234 70.2111 33.8645 69.5776C35.2581 68.9759 36.4933 68.1049 37.5702 66.9964C38.7262 65.7928 39.613 64.3834 40.199 62.8315C40.674 64.8427 41.4817 66.7747 42.5902 68.5166C42.5744 69.0075 42.5585 69.4985 42.5585 69.9894C42.5585 74.7877 43.4612 79.5069 45.2507 84.0043C46.9451 88.2643 49.3839 92.2708 52.5353 95.9448C54.2773 97.9718 56.2093 99.8721 58.3155 101.63H50.5083C47.5627 101.63 45.0923 103.752 44.443 106.602C43.3028 105.827 41.3075 104.385 39.7872 103.293ZM45.5516 108.756C45.5516 108.756 45.5516 107.854 45.5516 107.759V107.743C45.7099 105.051 47.8636 102.913 50.4766 102.913H59.8991C60.9601 103.72 62.0686 104.496 63.193 105.225C66.4236 107.315 69.86 109.041 73.4548 110.371H47.0877C46.2483 110.371 45.5516 109.659 45.5516 108.756ZM103.67 95.1213C100.725 98.5577 97.2248 101.598 93.2658 104.148C89.3384 106.682 85.0943 108.661 80.6444 110.055C79.2983 110.466 77.8731 110.466 76.527 110.055C72.077 108.677 67.8171 106.682 63.9056 104.148C59.9466 101.582 56.431 98.5419 53.5013 95.1213C47.1827 87.7575 43.8413 79.0635 43.8413 69.9894C43.8413 64.8902 45.1557 60.171 47.6261 56.3545C48.7821 54.5808 50.1599 53.0289 51.7435 51.7462C53.2954 50.4951 54.9899 49.5133 56.811 48.8482C60.0733 47.6446 63.5731 47.5021 66.8986 48.4206C68.6565 48.9115 70.3509 49.6875 71.9504 50.7327C73.6448 51.8412 75.2284 53.2665 76.6695 54.9451C77.1604 55.5152 77.8731 55.8477 78.6174 55.8477C79.3617 55.8477 80.0743 55.5152 80.5652 54.9451C82.0063 53.2665 83.5899 51.8412 85.2844 50.7327C86.8838 49.6875 88.5783 48.8957 90.3361 48.4206C93.6775 47.4863 97.1615 47.6446 100.424 48.8482C102.229 49.5133 103.939 50.4951 105.491 51.7462C107.059 53.0289 108.453 54.5808 109.609 56.3545C112.079 60.1552 113.393 64.8743 113.393 69.9894C113.346 79.0635 110.005 87.7575 103.67 95.1213Z\" stroke=\"#68453D\" mask=\"url(#path-1-outside-1_32_4755)\"></path>\n<path d=\"M68.0049 62.9152L68.0049 62.9152L68.0074 62.918C68.3329 63.287 68.8864 63.3356 69.2629 63.0034C69.6313 62.6783 69.6803 62.126 69.3497 61.7495C67.2764 59.3232 64.9009 58.021 62.4622 58.021C58.0857 58.021 53.5498 62.2962 53.5498 69.9897C53.5498 73.5717 54.2855 77.0895 55.74 80.4302C57.0664 83.4985 58.9827 86.4037 61.4227 89.0669L61.4232 89.0675C63.6873 91.5229 66.3487 93.7378 69.3431 95.6491L69.3436 95.6494C72.1768 97.4481 75.1857 98.8972 78.2752 99.9488C78.372 99.987 78.466 100.012 78.5833 100.012C78.9632 100.012 79.2899 99.7666 79.4192 99.4218L79.4195 99.4219L79.4233 99.4098C79.5722 98.9418 79.3409 98.4315 78.8692 98.2737C75.9116 97.2668 73.0318 95.8821 70.3087 94.1507C67.4435 92.3245 64.8952 90.2163 62.7416 87.8741C60.4305 85.3429 58.6253 82.6104 57.3705 79.7243C56.0219 76.6035 55.3325 73.3276 55.3325 69.9897C55.3325 63.2928 59.0722 59.8037 62.4622 59.8037C64.3266 59.8037 66.2428 60.8568 68.0049 62.9152Z\" fill=\"#68453D\" stroke=\"#68453D\" stroke-width=\"0.5\"></path>\n<path d=\"M28.2408 56.6046C29.3322 56.6046 30.2169 55.7199 30.2169 54.6285C30.2169 53.5371 29.3322 52.6523 28.2408 52.6523C27.1494 52.6523 26.2646 53.5371 26.2646 54.6285C26.2646 55.7199 27.1494 56.6046 28.2408 56.6046Z\" fill=\"#68453D\" stroke=\"#68453D\" stroke-width=\"0.5\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "",
+            "icon_description": "Vegan &amp;<br>Cruelty Free",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_hth6Jp",
+        "icon_box_bqeWa9",
+        "icon_box_UANrKk",
+        "icon_box_XQ8E4U"
+      ],
+      "custom_css": [
+        ".iconbox-wrapper {flex-wrap: nowrap; justify-content: start;}",
+        "svg {width: 12rem !important; padding: 0 2rem; aspect-ratio: square; height: auto !important; margin-bottom: 16px;}",
+        "@media (max-width: 768px) {.iconbox-wrapper {gap: 32px !important; } p {font-size: 12px; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "Tried, Tested <brown>&amp; Certified </brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "6.4rem",
+        "iconbox_gap": "6.4rem",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "15rem",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:max-content",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "icon_box_nYfkz3": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_ee8c37": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/Comm_1.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_m47wPT": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/Comm_2.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_J4Vqbf": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/Comm_3.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_ee8c37",
+        "icon_box_m47wPT",
+        "icon_box_J4Vqbf"
+      ],
+      "custom_css": [
+        "img {width: 101%; margin: 0; max-width: 101%;}",
+        ".iconbox-wrapper {flex-wrap: nowrap; justify-content: start;}",
+        ".iconbox {gap: 0;}",
+        ".contentPart {max-width: 70.26%; margin: 0 auto;}",
+        "@media (max-width: 768px) {.wrapper.wrapper.wrapper {gap: 24px !important; } img {min-width: 100%; min-height: 100%; object-fit: contain; object-position: right; } .contentPart {max-width: 100%; padding: 0 16px; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "Community",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "5.4rem!important",
+        "iconbox_gap": "0!important",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "33.33%!important",
+        "padding": "0 0 10rem 0",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#3b2d1f",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "basmil_image_text_MKmyLX",
+    "basmil_image_text_jmyjmd",
+    "basmil_image_text_YGJgwt",
+    "basmil_image_text_3pFhta",
+    "icon_box_n8fAcT",
+    "icon_box_Ebr7k6",
+    "icon_box_nYfkz3"
+  ]
+}

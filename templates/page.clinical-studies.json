@@ -1,0 +1,391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "basmil_image_text_pYKmwm": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_G9P8jr": {
+          "type": "content",
+          "settings": {
+            "title": "Clinical Studies on Shilajit",
+            "subtitle": "",
+            "description": "<p>Shop traditional resin to convenient liquid extracts and natural Everest Shilajit blends, each product is ethically sourced and rigorously tested for purity!</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_De9kjR": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Everest_Shilajit_2d5bef79-c930-448b-92d7-ad6aad5e33d8.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_G9P8jr",
+        "image_De9kjR"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h1 {letter-spacing: 0;}",
+        ".basmilTextImage {margin: 0 20px;}",
+        "brown {color: #ffff;}",
+        ".button {color: #fff; border: none; background: #68453d; width: 46rem; max-width: 100%;}",
+        ".contentside {position: absolute; top: 50%; transform: translateY(-50%);}",
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; padding: 0 16px; } .basmilTextImage {margin: 0; } .contentside {position: static; transform: none; } .imagepart {object-fit: cover; aspect-ratio: 359/300; border-radius: 16px; } h1, p {color: #382e2a !important; } brown {color: #9f5601; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "5.3rem",
+        "content_width": "97rem",
+        "padding": "0",
+        "margin": "20px 0 0 0!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "table_basmil_CVqicF": {
+      "type": "table-basmil",
+      "blocks": {
+        "heading_6Die3K": {
+          "type": "heading",
+          "settings": {
+            "table_heading": "Year"
+          }
+        },
+        "content_qGgi7U": {
+          "type": "content",
+          "settings": {
+            "table_content": "2011",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_E8Ca3X": {
+          "type": "content",
+          "settings": {
+            "table_content": "2012",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_YtgWfh": {
+          "type": "content",
+          "settings": {
+            "table_content": "2015",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_twWKQp": {
+          "type": "content",
+          "settings": {
+            "table_content": "2018",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_6AQBqr": {
+          "type": "content",
+          "settings": {
+            "table_content": "2019",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_gRcGb9": {
+          "type": "content",
+          "settings": {
+            "table_content": "2022",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_LbKbRk": {
+          "type": "content",
+          "settings": {
+            "table_content": "2022",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_efcHCL": {
+          "type": "content",
+          "settings": {
+            "table_content": "2023",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_fNMHkU": {
+          "type": "content",
+          "settings": {
+            "table_content": "2024",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "heading_EbyRhT": {
+          "type": "heading",
+          "settings": {
+            "table_heading": "Dose"
+          }
+        },
+        "content_FryCUR": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_J8dEGg": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_g7UDxg": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_bdmpUE": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_eMLmxe": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_BzkgtT": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_zxtD6k": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_WBRKr8": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_WcHtVY": {
+          "type": "content",
+          "settings": {
+            "table_content": "-",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "heading_jQfKxq": {
+          "type": "heading",
+          "settings": {
+            "table_heading": "Title"
+          }
+        },
+        "content_hkpJVL": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Traditional medicine</tag> <tag>Antioxidant activity</tag> </tags>\n<p>Review on shilajit used in traditional Indian medicine</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/21530631/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_8TMbkz": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Dietary supplement</tag> \n<tag>Alzheimer’s</tag> </tags>\n<p>\nShilajit: a natural phytocomplex with potential procognitive activity\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/22482077/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_zjTAqC": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Clinical study</tag> \n<tag>Testosterone</tag> </tags>\n<p>\nClinical evaluation of purified Shilajit on testosterone levels in healthy volunteers\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/26395129/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_9eJVET": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Animal study</tag> \n<tag>Fertility</tag> </tags>\n<p>\nProfertility effects of Shilajit on cadmium-induced infertility in male mice\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/29947420/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_7L77QT": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Clinical study</tag> \n<tag>Muscular strength</tag>\n<tag>Fatigue</tag>\n</tags>\n<p>\nThe effects of Shilajit supplementation on fatigue-induced decreases in muscular strength and serum hydroxyproline levels\n</p>\n<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6364418/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_B6kck3": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Clinical study</tag> \n<tag>Postmenopause</tag>\n<tag>Osteopenia</tag>\n</tags>\n<p>\nShilajit extract reduces oxidative stress, inflammation, and bone loss to dose-dependently preserve bone mineral density in postmenopausal women with osteopenia: A randomized, double-blind, placebo-controlled trial\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/35933897/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_3b8R9z": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Ayurvedic activity</tag> \n<tag>NAFLD</tag>\n</tags>\n<p>\nProtective Roles of Shilajit in Modulating Resistin, Adiponectin, and Cytokines in Rats with Non-alcoholic Fatty Liver Disease\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/35258780/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_663mLx": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Animal study</tag> \n<tag>Neuroprotective effect</tag>\n</tags>\n<p>\nInvestigation of Neuroprotective Effect of Shilajit Extract in Experimental Head Trauma Model Created in Rats\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/37846531/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        },
+        "content_P3Ph69": {
+          "type": "content",
+          "settings": {
+            "table_content": "<div>\n<tags>\n<tag>Animal study</tag> \n<tag>Germ cell</tag>\n</tags>\n<p>\nShilajit mitigates chemotherapeutic drug-induced testicular toxicity: Study on testicular germ cell dynamics, steroidogenesis modulation, and Nrf-2/Keap-1 signaling\n</p>\n<a href=\"https://pubmed.ncbi.nlm.nih.gov/39121783/\">Learn More →</a>\n</div>",
+            "table_content_url": "",
+            "table_content_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Die3K",
+        "content_qGgi7U",
+        "content_E8Ca3X",
+        "content_YtgWfh",
+        "content_twWKQp",
+        "content_6AQBqr",
+        "content_gRcGb9",
+        "content_LbKbRk",
+        "content_efcHCL",
+        "content_fNMHkU",
+        "heading_EbyRhT",
+        "content_FryCUR",
+        "content_J8dEGg",
+        "content_g7UDxg",
+        "content_bdmpUE",
+        "content_eMLmxe",
+        "content_BzkgtT",
+        "content_zxtD6k",
+        "content_WBRKr8",
+        "content_WcHtVY",
+        "heading_jQfKxq",
+        "content_hkpJVL",
+        "content_8TMbkz",
+        "content_zjTAqC",
+        "content_9eJVET",
+        "content_7L77QT",
+        "content_B6kck3",
+        "content_3b8R9z",
+        "content_663mLx",
+        "content_P3Ph69"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 8px;}",
+        "tags {display: flex; flex-wrap: wrap; overflow: auto; cursor: grab; user-select: none; scrollbar-width: none; gap: 8px; width: 100%; max-width: calc(100vw - 52px);}",
+        "tag {padding: 7px 2.4rem; border: 1px solid #68453d; border-radius: 12rem; color: #68453d; font-size: 2rem; white-space: nowrap;}",
+        "td,th {max-width: 22rem;}",
+        "a,strong {display: block; min-width: 100%; margin-bottom: -1.2rem;}",
+        "td:last-of-type,th:last-of-type {flex-wrap: wrap; gap: 2.4rem; max-width: -webkit-fill-available;}"
+      ],
+      "name": "Table Basmil",
+      "settings": {
+        "main_heading": "<brown>Scientific Studies </brown> on Shilajit",
+        "main_content": "<p>Shilajit is not just another typical supplement-it’s darker, richer, more potent, straight from the Himalayas and whatnot. It’s fully loaded with 85+ minerals from the Himalayan soil and different bioactive compounds, products of microbial. </p><p>Only found in the high-altitude regions of the Himalayas, Shilajit is a tar-like blackish resin oozing out from the crevices of the rocks. Ayurveda recognizes it as a destroyer of weakness and conqueror of mountains, a superfood used for over &gt;3000 years.</p>",
+        "alignment": "center",
+        "valignment": "top",
+        "content_part_width": "122.8rem",
+        "section_padding": "11rem 16px",
+        "section_margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "section_width": "142.4rem; && td {  padding: 3.2rem 1.2rem;  border: none;  border-top: 2px solid #382e2a4d; } && th {  font-size:3.2rem; padding: 0 1.2rem 3.2rem 1.2rem;  border: none;  background: transparent; font-family: var(--font-heading-family);}",
+        "section_min_height": "",
+        "background_type": "color",
+        "background_on": "content",
+        "background_color": "",
+        "content_color": "#000000",
+        "background_position": "center",
+        "background_size": "cover",
+        "custom_liquid": "<style>\n#shopify-section-{{section.id}}{\ntable{\nmargin-top:6rem;\n}\n\ntd div{display:flex;flex-wrap:wrap;gap:2.4rem;\na{color:#9F5601!important;}\n}\n\n@media (max-width: 768px) { \n.table-wrapper{\noverflow:hidden;\n}\ntable{\ndisplay:flex;\nflex-direction:column;}\nth{\ndisplay:none;\n} \ntag {\n  padding: 5px 10px!important;\n  font-size:12px!important;\n\n}\ntd{\n border-top:none!important;\ndisplay:flex;\npadding:0!important;\nmin-width:100%;\njustify-content:space-between;\n\n\n*{\nmax-width:max-content; \n}\n}\n\ntd:before{\nfont-size:20px;\nfont-weight:700;\nfont-family: var(--font-heading-family);\n\n}\ntr:has(td){\ndisplay:flex;\nflex-direction:column;\n border-top:1px solid grey;\ngap:12px ;\npadding:24px 12px!important;\n}\ntd:nth-child(1)::before {    content: \"Year\";  }  td:nth-child(2)::before {    content: \"Dose\";  }  }\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "basmil_image_text_pYKmwm",
+    "table_basmil_CVqicF"
+  ]
+}

@@ -1,0 +1,325 @@
+<div
+  class="flex items-center justify-center min-h-screen"
+  style="
+    max-width: {{ section.settings.max_width }};
+    margin: {{ section.settings.margin }};
+    padding: {{ section.settings.padding }};
+    {% case section.settings.background_type %}
+      {% when 'color' %}
+        background-color: {{ section.settings.background_color }};
+      {% when 'gradient' %}
+        background-image: {{ section.settings.background_gradient }};
+      {% when 'image' %}
+        background-image: url({{ section.settings.background_image | image_url: width: 1500 }});
+        background-size: cover;
+        background-repeat: no-repeat;
+    {% endcase %}
+  "
+>
+  {% capture textImageContents %}
+  {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+            <{{ block.settings.heading_tag }} class="mb-4  font-bold text-[#b08c5a] 
+              {% case block.settings.heading_tag %}
+                {% when 'h1' %}
+                  text-h1
+                {% when 'h2' %}
+                  text-h2
+                {% when 'h3' %}
+                  text-h3
+                {% when 'h4' %}
+                  text-h4
+                {% when 'h5' %}
+                  text-h5
+                {% when 'h6' %}
+                  text-h6
+              {% endcase %}
+              ">{{ block.settings.heading }}</{{ block.settings.heading_tag }}>
+        {% when 'description' %}
+            <p class="mb-6 text-base text-[#333]">{{ block.settings.description }}</p>
+        {% when 'button' %}
+            <a
+              href="{{ block.settings.button_link }}"
+              class="px-12 py-6 text-accent font-semibold inline text-center text-black bg-[#f8f6ef] border border-black"
+            >
+              {{ block.settings.button_text }}
+            </a>
+        {% when 'image' %}
+          <div class="flex-1">
+            {%- if block.settings.image != blank -%}
+              {%- if block.settings.image_behavior == 'ambient' -%}
+                {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+                {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
+                  (min-width: 768px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
+                {%- endcapture -%}
+              {%- else -%}
+                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                  (min-width: 768px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
+              {%- endif -%}
+              {{
+                block.settings.image
+                | image_url: width: 1500
+                | image_tag: loading: 'lazy', sizes: sizes, widths: widths
+              }}
+            {%- endif -%}
+          </div>
+      {% endcase %}
+  {% endfor %}
+
+    {% endcapture %}
+
+  {% capture textImageImg %}
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'image' %}
+          <div class="flex-1">
+            {%- if block.settings.image != blank -%}
+              {%- if block.settings.image_behavior == 'ambient' -%}
+                {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+                {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
+                  (min-width: 768px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
+                {%- endcapture -%}
+              {%- else -%}
+                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                  (min-width: 768px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
+              {%- endif -%}
+              {{
+                block.settings.image
+                | image_url: width: 1500
+                | image_tag: loading: 'lazy', sizes: sizes, widths: widths
+              }}
+            {%- endif -%}
+          </div>
+      {% endcase %}
+    {% endfor %}
+    {% endcapture %}
+  <section class="flex items-center justify-center w-full px-6 py-12 md:flex-row">
+    <div class="flex flex-col">
+      {{ textImageContents }}
+    </div>
+    {{ textImageImg }}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Text Image",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Max Width",
+      "default": "1200px",
+      "info": "Set the maximum width for the section (e.g., '1200px')."
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin",
+      "default": "0 auto",
+      "info": "Set the margin for the section (e.g., '0 auto')."
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "50px",
+      "info": "Set the padding for the section (e.g., '50px')."
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f6ef"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "default": "linear-gradient(45deg, #f3ec78, #af4261)",
+      "info": "Define the gradient (e.g., 'linear-gradient(45deg, #f3ec78, #af4261)')"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "What is Everest Shilajit?"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading Tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h2"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Everest Shilajit, known as deli bal is a rare and potent honey produced by bees that collect nectar primarily from the flowers of certain rhododendron species, particularly Rhododendron ponticum and wildflowers from Nepal. For thousands of years, the Gurung natives, with their age-old honey-hunting traditions, have avidly celebrated this honey for its healing and recreational medicinal purposes."
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Try Everest Shilajit"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image Alt Text",
+          "default": "Everest Shilajit"
+        },
+        {
+          "type": "select",
+          "id": "image_behavior",
+          "label": "Image Behavior",
+          "options": [
+            {
+              "value": "ambient",
+              "label": "Ambient"
+            },
+            {
+              "value": "default",
+              "label": "Default"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Image",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "heading": "What is Everest Shilajit?"
+          }
+        },
+        {
+          "type": "description",
+          "settings": {
+            "description": "Everest Shilajit, known as deli bal is a rare and potent honey produced by bees that collect nectar primarily from the flowers of certain rhododendron species, particularly Rhododendron ponticum and wildflowers from Nepal. For thousands of years, the Gurung natives, with their age-old honey-hunting traditions, have avidly celebrated this honey for its healing and recreational medicinal purposes."
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "button_text": "Try Everest Shilajit",
+            "button_link": "#"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "image_alt": "Everest Shilajit",
+            "image_behavior": "default"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

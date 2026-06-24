@@ -1,0 +1,820 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_list_PxAdp6": {
+      "type": "basmil-image-text-list",
+      "blocks": {
+        "content_3bYXwh": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "svg",
+            "image_alt": "Everest Shilajit",
+            "svg": "<svg class=\"left\" style=\"max-width:11.87%;\" viewbox=\"0 0 163 268\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M13.813 38.4718C14.6752 50.1775 12.956 61.9664 8.69441 72.9212C4.13823 84.6474 -3.91988 95.2453 -3.5706 108.352C-3.231 120.501 0.760238 131.946 -0.0503539 144.249C-0.369908 149.125 -1.14385 153.838 -2.33409 158.412C8.2331 141.36 19.9243 125.017 32.6803 109.514C16.7429 95.2769 13.2649 70.7508 24.9874 52.6493C39.7987 29.7769 68.2147 21.9624 85.2226 1.2913C86.9984 -0.874265 90.066 1.25359 89.6832 3.65447C87.9733 14.5916 85.8973 25.9217 80.0768 35.5463C73.7841 45.959 63.5861 52.4871 54.7862 60.5397C45.8551 68.7213 41.012 77.5009 40.6582 89.7069C40.5448 93.4437 40.4926 97.1658 39.9987 100.858C50.1381 89.1495 60.8817 77.957 72.2166 67.3354C75.8391 63.947 79.5248 60.6601 83.2697 57.4302C92.2396 23.5386 127.257 7.1631 159.148 0.0943887C161.605 -0.4518 163.114 2.15506 161.65 4.10308C150.823 18.5907 139.94 34.0062 127.144 46.8082C115.872 58.0956 99.6657 64.9419 83.6958 65.272C71.2205 76.8166 59.2922 88.9364 48.118 101.737C59.8856 94.1827 72.0817 87.2774 85.3748 82.8835C93.8718 80.0725 102.6 78.5741 111.526 78.0333C121.262 77.4337 131.012 77.4598 140.428 74.6154C143.433 73.7039 145.611 78.1732 142.741 79.7527C121.883 91.2402 104.844 108.735 83.1828 118.82C68.8581 125.479 47.3648 129.656 35.72 116.571C24.1871 130.982 13.5181 146.099 3.81679 161.788C15.9795 152.154 32.0336 147.776 47.3463 144.848C58.9631 142.629 70.7443 140.823 81.8766 136.697C94.2058 132.152 105.195 124.707 116.041 117.446C118.628 115.714 121.528 118.816 120.303 121.414C107.761 148.111 77.8297 157.717 55.7454 174.435C45.2332 182.381 35.132 189.366 21.5215 189.633C11.4161 189.829 1.57585 186.757 -6.39059 180.66C-6.75869 180.936 -7.15846 181.162 -7.58353 181.31C-11.713 188.822 -15.6628 196.433 -19.3506 204.163C-23.4281 212.7 -27.2331 221.372 -30.7421 230.142C-18.8651 216.245 -5.24848 205.022 13.8275 201.908C24.3275 200.197 34.8795 199.511 45.0386 196.086C56.2044 192.314 66.624 186.141 75.1344 177.964C77.3688 175.818 81.4171 178.273 79.7506 181.217C73.4677 192.399 66.9691 203.763 57.0632 212.153C51.7125 216.69 45.6021 219.822 39.4534 223.118C32.8881 226.651 27.2691 230.909 21.5525 235.651C12.5142 243.171 2.39136 248.501 -9.41066 249.896C-18.1469 250.93 -28.5473 250.087 -34.913 243.578C-35.2366 243.663 -35.5515 243.648 -35.8707 243.588C-38.3823 250.49 -40.7185 257.447 -42.8793 264.459C-44.2364 268.878 -51.2599 267.268 -49.8859 262.839C-47.2714 254.368 -44.399 245.972 -41.2857 237.661C-47.2781 236.724 -53.549 235.114 -58.8974 232.647C-64.5733 230.032 -68.3912 225.27 -71.8408 220.232C-75.6557 214.645 -79.4766 208.711 -80.9608 201.999C-82.2849 196.034 -81.7147 189.826 -80.3562 183.903C-77.3695 170.829 -71.1599 158.776 -67.0552 146.063C-65.0579 139.881 -64.105 133.647 -62.8391 127.311C-61.6964 121.569 -59.7362 116.609 -54.7207 113.268C-52.0997 111.515 -49.0521 114.666 -50.361 117.315C-59.1723 135.222 -41.5378 154.439 -41.8212 172.711C-41.9701 182.721 -44.8224 192.28 -43.6564 202.362C-42.6686 210.841 -40.0336 219.02 -37.1512 227.068C-30.1566 209.754 -22.0904 192.877 -13.0186 176.594C-24.679 153.085 -36.0907 128.127 -33.1334 101.254C-31.756 88.6916 -26.8577 77.363 -19.0476 67.4604C-10.4141 56.5035 0.492232 47.6065 9.15318 36.6559C10.6665 34.7481 13.6523 36.2926 13.813 38.4718Z\" fill=\"white\"></path>\n<path d=\"M13.813 38.4718C14.6752 50.1775 12.956 61.9664 8.69441 72.9212C4.13823 84.6474 -3.91988 95.2453 -3.5706 108.352C-3.231 120.501 0.760238 131.946 -0.0503539 144.249C-0.369908 149.125 -1.14385 153.838 -2.33409 158.412C8.2331 141.36 19.9243 125.017 32.6803 109.514C16.7429 95.2769 13.2649 70.7508 24.9874 52.6493C39.7987 29.7769 68.2147 21.9624 85.2226 1.2913C86.9984 -0.874265 90.066 1.25359 89.6832 3.65447C87.9733 14.5916 85.8973 25.9217 80.0768 35.5463C73.7841 45.959 63.5861 52.4871 54.7862 60.5397C45.8551 68.7213 41.012 77.5009 40.6582 89.7069C40.5448 93.4437 40.4926 97.1658 39.9987 100.858C50.1381 89.1495 60.8817 77.957 72.2166 67.3354C75.8391 63.947 79.5248 60.6601 83.2697 57.4302C92.2396 23.5386 127.257 7.1631 159.148 0.0943887C161.605 -0.4518 163.114 2.15506 161.65 4.10308C150.823 18.5907 139.94 34.0062 127.144 46.8082C115.872 58.0956 99.6657 64.9419 83.6958 65.272C71.2205 76.8166 59.2922 88.9364 48.118 101.737C59.8856 94.1827 72.0817 87.2774 85.3748 82.8835C93.8718 80.0725 102.6 78.5741 111.526 78.0333C121.262 77.4337 131.012 77.4598 140.428 74.6154C143.433 73.7039 145.611 78.1732 142.741 79.7527C121.883 91.2402 104.844 108.735 83.1828 118.82C68.8581 125.479 47.3648 129.656 35.72 116.571C24.1871 130.982 13.5181 146.099 3.81679 161.788C15.9795 152.154 32.0336 147.776 47.3463 144.848C58.9631 142.629 70.7443 140.823 81.8766 136.697C94.2058 132.152 105.195 124.707 116.041 117.446C118.628 115.714 121.528 118.816 120.303 121.414C107.761 148.111 77.8297 157.717 55.7454 174.435C45.2332 182.381 35.132 189.366 21.5215 189.633C11.4161 189.829 1.57585 186.757 -6.39059 180.66C-6.75869 180.936 -7.15846 181.162 -7.58353 181.31C-11.713 188.822 -15.6628 196.433 -19.3506 204.163C-23.4281 212.7 -27.2331 221.372 -30.7421 230.142C-18.8651 216.245 -5.24848 205.022 13.8275 201.908C24.3275 200.197 34.8795 199.511 45.0386 196.086C56.2044 192.314 66.624 186.141 75.1344 177.964C77.3688 175.818 81.4171 178.273 79.7506 181.217C73.4677 192.399 66.9691 203.763 57.0632 212.153C51.7125 216.69 45.6021 219.822 39.4534 223.118C32.8881 226.651 27.2691 230.909 21.5525 235.651C12.5142 243.171 2.39136 248.501 -9.41066 249.896C-18.1469 250.93 -28.5473 250.087 -34.913 243.578C-35.2366 243.663 -35.5515 243.648 -35.8707 243.588C-38.3823 250.49 -40.7185 257.447 -42.8793 264.459C-44.2364 268.878 -51.2599 267.268 -49.8859 262.839C-47.2714 254.368 -44.399 245.972 -41.2857 237.661C-47.2781 236.724 -53.549 235.114 -58.8974 232.647C-64.5733 230.032 -68.3912 225.27 -71.8408 220.232C-75.6557 214.645 -79.4766 208.711 -80.9608 201.999C-82.2849 196.034 -81.7147 189.826 -80.3562 183.903C-77.3695 170.829 -71.1599 158.776 -67.0552 146.063C-65.0579 139.881 -64.105 133.647 -62.8391 127.311C-61.6964 121.569 -59.7362 116.609 -54.7207 113.268C-52.0997 111.515 -49.0521 114.666 -50.361 117.315C-59.1723 135.222 -41.5378 154.439 -41.8212 172.711C-41.9701 182.721 -44.8224 192.28 -43.6564 202.362C-42.6686 210.841 -40.0336 219.02 -37.1512 227.068C-30.1566 209.754 -22.0904 192.877 -13.0186 176.594C-24.679 153.085 -36.0907 128.127 -33.1334 101.254C-31.756 88.6916 -26.8577 77.363 -19.0476 67.4604C-10.4141 56.5035 0.492232 47.6065 9.15318 36.6559C10.6665 34.7481 13.6523 36.2926 13.813 38.4718Z\" fill=\"#EAB39B\"></path>\n</svg>",
+            "image_width": "100%; max-width:16rem!important;",
+            "svg_style": ""
+          }
+        },
+        "content_M7AXxQ": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "html",
+            "image_alt": "Everest Shilajit",
+            "svg": "<h1>\nFrequently<brown> Asked Questions</brown> \n</h1>\n<style>\nh1{\ntext-align:center;\n}\n</style>",
+            "image_width": "40%",
+            "svg_style": ""
+          }
+        },
+        "content_99gU8d": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "svg",
+            "image_alt": "Everest Shilajit",
+            "svg": "<svg class=\"right\" width=\"114\" height=\"141\" viewbox=\"0 0 114 141\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M113.714 76.8094C127.162 83.3279 140.988 90.1841 150.681 101.552C153.8 105.208 156.342 110.972 153.005 114.43C150.165 117.371 145.278 116.178 141.464 114.688C125.295 108.388 109.821 100.339 95.3603 90.7207C105.213 103.479 113.218 118.623 113.019 134.74C112.98 137.204 112.106 140.344 109.662 140.503C108.55 140.583 107.537 139.947 106.643 139.311C93.6123 130.129 86.4414 114.906 79.8268 100.399C77.602 116.616 67.0345 131.441 52.4544 138.854C50.5674 139.828 48.2632 140.662 46.3761 139.649C43.8336 138.297 43.8733 134.66 44.4692 131.858C47.4091 118.126 55.2553 106.003 63.0816 94.3377C48.2831 102.525 31.4981 107.096 14.594 107.533C9.92601 107.653 4.82103 107.295 1.38458 104.115C0.709215 103.499 0.113295 102.724 0.013976 101.81C-0.164798 100.121 1.40447 98.8091 2.83467 97.8751C20.9306 85.9909 41.5095 77.8826 62.8433 74.2259C50.1503 72.4969 39.245 64.4085 29.9488 55.6047C24.1287 50.0998 18.5271 43.959 15.905 36.4071C15.4879 35.1948 15.1304 33.8832 15.3687 32.6113C15.9448 29.4515 19.7388 27.9809 22.9567 28.0007C28.9159 28.0405 34.3983 31.0413 39.5629 34.0025C51.6202 40.9183 63.7967 48.2516 72.795 58.844C60.5987 43.4621 58.4534 20.8066 67.5113 3.37777C68.0476 2.36423 68.6236 1.33082 69.577 0.675004C71.5833 -0.716123 74.5033 0.198046 76.1321 2.00651C77.761 3.83485 78.3966 6.29914 78.9925 8.66405C83.3229 25.8345 87.6532 43.0647 89.7786 60.6525C95.837 45.4296 109.364 33.764 124.838 28.4379C128.871 27.0468 134.035 26.3512 136.776 29.6105C139.577 32.9293 137.889 37.997 135.743 41.753C127.401 56.4592 115.363 63.6533 101.498 72.0796C104.1 74.365 110.238 75.1202 113.714 76.8094Z\" fill=\"#EAB39B\"></path>\n</svg>",
+            "image_width": "11.4rem; max-width: 11.4rem!important;",
+            "svg_style": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_3bYXwh",
+        "content_M7AXxQ",
+        "content_99gU8d"
+      ],
+      "custom_css": [
+        ".basmilTextImageList {overflow: hidden;}",
+        ".main-content {width: 100%; flex-direction: row; justify-content: center !important;}",
+        ".contain-wrapper {z-index: 1;}",
+        ".contain-wrapper:not(:nth-child(2)) {position: absolute; z-index: 0;}",
+        ".contain-wrapper:nth-child(3) {right: 0; bottom: 25%; width: max-content; max-width: 6.4%;}",
+        ".contain-wrapper:nth-child(1) {top: 15%; left: 0; width: max-content; max-width: 5%;}",
+        "@media (max-width: 768px) {.contain-wrapper:nth-child(3) {bottom: 0%; width: 14%; } .contain-wrapper:nth-child(1) {top: 2.5%; width: 15%; }}"
+      ],
+      "settings": {
+        "isSlider": "false",
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "0",
+        "gapsections": "0",
+        "content_width": "50%",
+        "padding": "15rem 0!important",
+        "margin": "0",
+        "custom_class": "screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "image",
+        "background_color": "#f7f6f1",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/Banner_BG.webp",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "custom_html": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "faq_fFAwqm": {
+      "type": "faq",
+      "blocks": {
+        "text_XEPM9x": {
+          "type": "text",
+          "settings": {
+            "question": "What is Shilajit?",
+            "answer": "<p><a href=\"https://everestshilajit.com/pages/shilajit-complete-guide\" target=\"_blank\" title=\"shilajit\">Shilajit</a> is a natural substance found in high-altitude mountain regions like the Himalayas. Packed with minerals, it has been used in traditional medicine for boosting health and vitality</p>"
+          }
+        },
+        "text_bJtL4k": {
+          "type": "text",
+          "settings": {
+            "question": "What is in Shilajit?",
+            "answer": "<p>Shilajit contains over 85 minerals, including <a href=\"https://everestshilajit.com/pages/fulvic-and-humic-acids\" target=\"_blank\" title=\"fulvic acid vs humic acid\">fulvic acid</a>, humic acid, and trace elements that nourish the body and support holistic wellness.</p>"
+          }
+        },
+        "text_cU9Bya": {
+          "type": "text",
+          "settings": {
+            "question": "What is Shilajit made of?",
+            "answer": "<p>It is formed from plant matter and minerals that have decomposed over thousands of years, creating a resin-like substance found in cracks of rocks in high-altitude mountain ranges.</p>"
+          }
+        },
+        "text_B7TK9g": {
+          "type": "text",
+          "settings": {
+            "question": "Where does Shilajit come from?",
+            "answer": "<p>It is primarily found in the Himalayas of Nepal, especially in regions like Darchula, Solukhumbu, Dolpa, Mugu, and Jajarkot, as well as some areas of the Tibetan Plateau.</p>"
+          }
+        },
+        "text_UzHYFV": {
+          "type": "text",
+          "settings": {
+            "question": "What is Himalayan Shilajit?",
+            "answer": "<p><a href=\"https://everestshilajit.com/\" target=\"_blank\" title=\"buy pure himalayan shilajit\">Himalayan Shilajit</a> refers to the version sourced from the Himalayas, renowned for its high quality and potent mineral content, which supports a variety of health benefits.</p>"
+          }
+        },
+        "text_6JXXi9": {
+          "type": "text",
+          "settings": {
+            "question": "How to pronounce Shilajit?",
+            "answer": "<p>Shilajit is pronounced as \"shee-lah-jeet.\" The emphasis is on the first syllable.</p>"
+          }
+        },
+        "text_3UNgd6": {
+          "type": "text",
+          "settings": {
+            "question": "Where to buy Shilajit?",
+            "answer": "<p>It can be purchased from reputable health stores, trusted online marketplaces, or directly from brands that offer high-quality, organic Shilajit. For the best quality, you can also buy directly from <a href=\"https://everestshilajit.com/\" target=\"_blank\" title=\"buy shilajit from nepal\"><strong>Everest Shilajit</strong></a> for purity and authenticity.</p>"
+          }
+        },
+        "text_YjkEjC": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit legit?",
+            "answer": "<p>Yes, Shilajit is legit. It has been used in traditional medicine for centuries, and scientific studies support its benefits for energy, health, and overall well-being.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_XEPM9x",
+        "text_bJtL4k",
+        "text_cU9Bya",
+        "text_B7TK9g",
+        "text_UzHYFV",
+        "text_6JXXi9",
+        "text_3UNgd6",
+        "text_YjkEjC"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "General Information",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_VjjJNf": {
+      "type": "faq",
+      "blocks": {
+        "text_yqTn6U": {
+          "type": "text",
+          "settings": {
+            "question": "What is Shilajit used for?",
+            "answer": "<p>To improve energy levels, enhance physical performance, boost immunity, and increase mental clarity, making it a holistic health tonic.</p>"
+          }
+        },
+        "text_pGBkQJ": {
+          "type": "text",
+          "settings": {
+            "question": "What does Shilajit do?",
+            "answer": "<p>Shilajit absorbs the body with <a href=\"https://everestshilajit.com/pages/trace-minerals\" target=\"_blank\" title=\"trace minerals\">minerals</a> and nutrients. It supports energy levels, enhances stamina, boosts the immune system, and aids in mental focus, helping improve both physical and mental health.</p>"
+          }
+        },
+        "text_enPCQQ": {
+          "type": "text",
+          "settings": {
+            "question": "What is Shilajit good for?",
+            "answer": "<p>It’s excellent for boosting energy, improving brain function, enhancing strength, supporting immune health, and promoting overall vitality.</p>"
+          }
+        },
+        "text_PQqgFE": {
+          "type": "text",
+          "settings": {
+            "question": "What are the benefits of Shilajit?",
+            "answer": "<p>Provides  increased energy, enhanced mental clarity, improved physical endurance, stronger immunity, healthy aging, and balanced hormones.</p>"
+          }
+        },
+        "text_fF8p4m": {
+          "type": "text",
+          "settings": {
+            "question": "What does Shilajit do to the body?",
+            "answer": "<p>It supplies the body with essential minerals, helping to improve energy, stamina, immune health, and mental clarity, ensuring the body functions optimally.</p>"
+          }
+        },
+        "text_HGzy9H": {
+          "type": "text",
+          "settings": {
+            "question": "What does Shilajit do for men?",
+            "answer": "<p>Shilajit supports male health by improving energy, stamina, and muscle strength. It can also enhance fertility, hormone balance, and overall vitality, helping men maintain peak performance physically and mentally.</p>"
+          }
+        },
+        "text_aMAg68": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit good for women?",
+            "answer": "<p>Yes, Shilajit is good for women. It helps enhance energy, support hormonal balance, improve skin health, boost immunity, and promote overall vitality, making it a great supplement for women’s health.</p>"
+          }
+        },
+        "text_rHBt9L": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit help with weight loss?",
+            "answer": "<p>While not a direct weight-loss solution, it may aid in weight management by increasing metabolism, reducing fatigue, and improving energy. A healthy diet and exercise should accompany it.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_yqTn6U",
+        "text_pGBkQJ",
+        "text_enPCQQ",
+        "text_PQqgFE",
+        "text_fF8p4m",
+        "text_HGzy9H",
+        "text_aMAg68",
+        "text_rHBt9L"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Benefits &amp; Uses",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_gAbckM": {
+      "type": "faq",
+      "blocks": {
+        "text_zexbBK": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit work?",
+            "answer": "<p>Yes, it effectively provides essential minerals and nutrients, enhancing energy, vitality, and overall health. Regular use helps boost performance, mental clarity, and immunity.</p>"
+          }
+        },
+        "text_fXBNUV": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit actually work?",
+            "answer": "<p>Yes, it replenishes the body with vital nutrients and supports wellness. It has been trusted for centuries to enhance vitality and promote well-being.</p>"
+          }
+        },
+        "text_3GLWdD": {
+          "type": "text",
+          "settings": {
+            "question": "How long does it take for Shilajit to work?",
+            "answer": "<p>Shilajit may take a few days to a couple of weeks to show noticeable effects, depending on the individual's body. Consistent use is key for best results, especially for energy and overall health.</p>"
+          }
+        },
+        "text_Jf8kzW": {
+          "type": "text",
+          "settings": {
+            "question": "How fast does Shilajit work?",
+            "answer": "<p>The effects may vary while consuming shilajit, but many report feeling more energetic and focused within a few days of regular use. The full benefits typically appear after consistent use over a few weeks.</p>"
+          }
+        },
+        "text_c9CUXT": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit safe?",
+            "answer": "<p>Shilajit is generally considered safe when taken in recommended amounts. However, it is important to use high-quality Shilajit and consult a healthcare provider if you have specific health concerns.</p>"
+          }
+        },
+        "text_6XqVBq": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit good for you?",
+            "answer": "<p>Yes, Shilajit is good for overall health. It provides essential minerals, enhances energy, supports cognitive function, and boosts the immune system, promoting physical and mental well-being.</p>"
+          }
+        },
+        "text_LjwNGM": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit FDA approved?",
+            "answer": "<p>Shilajit is not FDA-approved as a drug, but it is considered safe as a dietary supplement when sourced from reputable brands that ensure its purity and authenticity.</p>"
+          }
+        },
+        "text_7tLyYE": {
+          "type": "text",
+          "settings": {
+            "question": "Can you take Shilajit while pregnant?",
+            "answer": "<p>It’s recommended to avoid taking Shilajit during pregnancy unless advised by a healthcare professional, as its effects on pregnancy and fetal development are not fully researched.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_zexbBK",
+        "text_fXBNUV",
+        "text_3GLWdD",
+        "text_Jf8kzW",
+        "text_c9CUXT",
+        "text_6XqVBq",
+        "text_LjwNGM",
+        "text_7tLyYE"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Effectiveness &amp; Safety",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_CB89AQ": {
+      "type": "faq",
+      "blocks": {
+        "text_P4C463": {
+          "type": "text",
+          "settings": {
+            "question": "How to take Shilajit?",
+            "answer": "<p>It can be taken by dissolving a small amount (typically a pea-sized portion) in warm water, milk, or tea, or consumed directly under the tongue.</p>"
+          }
+        },
+        "text_LYztza": {
+          "type": "text",
+          "settings": {
+            "question": "How to consume Shilajit?",
+            "answer": "<p>The best method is to dissolve it in a liquid such as warm water, milk, or tea for easy consumption. It can also be taken directly under the tongue.</p>"
+          }
+        },
+        "text_V8rxt4": {
+          "type": "text",
+          "settings": {
+            "question": "How much Shilajit per day?",
+            "answer": "<p>The recommended daily dose is about 300–500 mg. Start with a smaller dose and adjust as needed, based on individual response.</p>"
+          }
+        },
+        "text_9TiMNM": {
+          "type": "text",
+          "settings": {
+            "question": "How many mg of Shilajit per day?",
+            "answer": "<p>Typically, 350–500 mg per day is ideal. Always follow the <a href=\"https://everestshilajit.com/pages/dosage-and-usage\" target=\"_blank\" title=\"shilajit dose\">dosage</a> instructions provided with the product. </p>"
+          }
+        },
+        "text_P89yW3": {
+          "type": "text",
+          "settings": {
+            "question": "When is the best time to take Shilajit?",
+            "answer": "<p>For best results, take Shilajit in the morning on an empty stomach. Alternatively, you can take it later in the day, but ensure it's at least 3-4 hours after a meal.</p>"
+          }
+        },
+        "text_eELUpi": {
+          "type": "text",
+          "settings": {
+            "question": "Can I take Shilajit before bed?",
+            "answer": "<p>While it can be taken before bed, its energizing effects may interfere with sleep for some people, so it's best consumed earlier in the day.</p>"
+          }
+        },
+        "text_HrNMrx": {
+          "type": "text",
+          "settings": {
+            "question": "Can you take too much Shilajit?",
+            "answer": "<p>Taking too much can cause unwanted side effects. Stick to the recommended dose to avoid issues, and consult a healthcare provider if unsure.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_P4C463",
+        "text_LYztza",
+        "text_V8rxt4",
+        "text_9TiMNM",
+        "text_P89yW3",
+        "text_eELUpi",
+        "text_HrNMrx"
+      ],
+      "custom_css": [
+        "h2 span {color: #9f5601;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Consumption &amp; Dosage",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_qRkVwd": {
+      "type": "faq",
+      "blocks": {
+        "text_RJY6bN": {
+          "type": "text",
+          "settings": {
+            "question": "What are the 85 minerals in Shilajit?",
+            "answer": "<p>Shilajit contains over 85 minerals, including calcium, magnesium, zinc, potassium, copper, and iron, all of which are essential for the body’s health.</p>"
+          }
+        },
+        "text_bm3e3w": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit have magnesium?",
+            "answer": "<p>Yes, it contains magnesium, which supports muscle function, bone health, and energy production, with 20 to 30 mg per 100 grams.</p>"
+          }
+        },
+        "text_Tf4LdC": {
+          "type": "text",
+          "settings": {
+            "question": "What are the active compounds in Shilajit?",
+            "answer": "<p>Active compounds include 7% fulvic acid, 10% humic acid, and 85+ trace minerals for accelerated nutrient absorption and support various bodily functions.</p>"
+          }
+        },
+        "text_eeDVEn": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit contain fulvic acid?",
+            "answer": "<p>Shilajit contains 7% fulvic acid. </p>"
+          }
+        },
+        "text_jWkMqf": {
+          "type": "text",
+          "settings": {
+            "question": "Is Shilajit a mineral or an herb?",
+            "answer": "<p>It’s a mineral-rich substance, not an herb, formed from decomposed plant matter and minerals over thousands of years.</p>"
+          }
+        },
+        "text_PGrYDm": {
+          "type": "text",
+          "settings": {
+            "question": "How is Shilajit purified?",
+            "answer": "<p>Shilajit is purified through a filtration process to remove impurities, toxins, and heavy metals, ensuring its safety for consumption.</p>"
+          }
+        },
+        "text_gnePrQ": {
+          "type": "text",
+          "settings": {
+            "question": "What is the difference between raw and purified Shilajit?",
+            "answer": "<p>Raw Shilajit may contain impurities and toxins, while purified Shilajit has undergone a cleaning process to ensure safety and potency.</p>"
+          }
+        },
+        "text_MDagCg": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit contain heavy metals?",
+            "answer": "<p>High-quality Shilajit is purified to remove heavy metals. It’s essential to buy from trusted sources that test for purity and safety.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_RJY6bN",
+        "text_bm3e3w",
+        "text_Tf4LdC",
+        "text_eeDVEn",
+        "text_jWkMqf",
+        "text_PGrYDm",
+        "text_gnePrQ",
+        "text_MDagCg"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Ingredients &amp; Composition",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_LQmFBw": {
+      "type": "faq",
+      "blocks": {
+        "text_7WBRRn": {
+          "type": "text",
+          "settings": {
+            "question": "Can I take Shilajit and Berberine together?",
+            "answer": "<p>Yes, they can be taken together. Both offer different health benefits, but it’s best to consult a healthcare professional before combining supplements.</p>"
+          }
+        },
+        "text_zVQFDw": {
+          "type": "text",
+          "settings": {
+            "question": "Can I take sea moss and Shilajit together?",
+            "answer": "<p>Yes, they can complement each other. Both support health, with sea moss providing iodine and Shilajit offering essential minerals.</p>"
+          }
+        },
+        "text_pJHYj9": {
+          "type": "text",
+          "settings": {
+            "question": "Which is better, Ashwagandha or Shilajit?",
+            "answer": "<p>Both supplements have their strengths. Ashwagandha is great for stress relief, while Shilajit boosts energy and vitality. They can be taken together for optimal results.</p>"
+          }
+        },
+        "text_34MYVw": {
+          "type": "text",
+          "settings": {
+            "question": "Can you put Shilajit in coffee?",
+            "answer": "<p>Yes, Shilajit can be mixed with coffee. It dissolves easily and can enhance energy and mental focus.</p>"
+          }
+        },
+        "text_3dbR4z": {
+          "type": "text",
+          "settings": {
+            "question": "Can Shilajit be mixed with honey?",
+            "answer": "<p>Yes, it can be mixed with honey to mask the taste and add natural sweetness. <strong>Shilajit+Everest Shilajit(can link the shop page)</strong> is also a powerful combination for the peak mental and physcial performance.</p>"
+          }
+        },
+        "text_LBTpG8": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit interact with medications?",
+            "answer": "<p>It may interact with certain medications, particularly those related to blood pressure or blood sugar. Consult a healthcare provider before combining with medications.</p>"
+          }
+        },
+        "text_398Vyb": {
+          "type": "text",
+          "settings": {
+            "question": "Can Shilajit be combined with pre-workout supplements?",
+            "answer": "<p>Yes, it can be combined with pre-workout supplements. It may enhance energy and endurance. Always check with a healthcare provider if unsure.</p>"
+          }
+        },
+        "text_4BQitd": {
+          "type": "text",
+          "settings": {
+            "question": "Is it safe to take Shilajit with herbal teas?",
+            "answer": "<p>Absolutely yes!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_7WBRRn",
+        "text_zVQFDw",
+        "text_pJHYj9",
+        "text_34MYVw",
+        "text_3dbR4z",
+        "text_LBTpG8",
+        "text_398Vyb",
+        "text_4BQitd"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Shilajit &amp; Other Supplements",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "faq_GHPDPf": {
+      "type": "faq",
+      "blocks": {
+        "text_KbgnfQ": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit increase testosterone?",
+            "answer": "<p>Yes, Shilajit may boost testosterone levels by up to 20% (according to some studies).</p>"
+          }
+        },
+        "text_6zV6Qd": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit increase testosterone in females?",
+            "answer": "<p>It does not significantly raise testosterone in women but may support  hormonal balance.</p>"
+          }
+        },
+        "text_MTMfyP": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit lower blood pressure?",
+            "answer": "<p>It may help regulate blood pressure, but those with low blood pressure should use it with caution, as it can cause a further drop.</p>"
+          }
+        },
+        "text_d7U3Qf": {
+          "type": "text",
+          "settings": {
+            "question": "What does Shilajit taste like?",
+            "answer": "<p>It has a strong, earthy, and slightly bitter taste with a resinous texture</p>"
+          }
+        },
+        "text_LW98cL": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit improve brain function?",
+            "answer": "<p>It contains fulvic acid, which may help reduce oxidative stress and support cognitive function.</p>"
+          }
+        },
+        "text_rphh4t": {
+          "type": "text",
+          "settings": {
+            "question": "Does Shilajit support muscle recovery?",
+            "answer": "<p>Yes, its minerals and antioxidants can aid in reducing fatigue and muscle inflammation, helping recovery after exercise.</p>"
+          }
+        },
+        "text_WhHPaW": {
+          "type": "text",
+          "settings": {
+            "question": "Can Shilajit improve sleep quality?",
+            "answer": "<p>Some studies suggest it may help reduce stress and promote relaxation, indirectly supporting better sleep.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KbgnfQ",
+        "text_6zV6Qd",
+        "text_MTMfyP",
+        "text_d7U3Qf",
+        "text_LW98cL",
+        "text_rphh4t",
+        "text_WhHPaW"
+      ],
+      "custom_css": [
+        "h2 span {color: #000;}",
+        ".faq-wrapper .w-full:not(.border-t) {columns: 2 35rem; column-gap: 7.9%;}",
+        ".faq-wrapper .w-full .w-full {break-inside: avoid;}",
+        "@media (max-width: 768px) {h2 {text-align: center; }}"
+      ],
+      "settings": {
+        "show_schema": false,
+        "heading": "Special Properties &amp; Effects",
+        "description": "",
+        "content_alignment": "Left",
+        "content_part_width": "86.52%",
+        "faq_width": "86.52%",
+        "gap_between_sections": "2.4rem",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "127.8rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "custom_liquid_H4izWy": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "* {display: none;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script type=\"application/ld+json\">\n    {\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"FAQPage\",\n    \"mainEntity\": [\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit is a natural substance found in high-altitude mountain regions like the Himalayas. Packed with minerals, it has been used in traditional medicine for boosting health and vitality\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is in Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit contains over 85 minerals, including fulvic acid, humic acid, and trace elements that nourish the body and support holistic wellness.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is Shilajit made of?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It is formed from plant matter and minerals that have decomposed over thousands of years, creating a resin-like substance found in cracks of rocks in high-altitude mountain ranges.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Where does Shilajit come from?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It is primarily found in the Himalayas of Nepal, especially in regions like Darchula, Solukhumbu, Dolpa, Mugu, and Jajarkot, as well as some areas of the Tibetan Plateau.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is Himalayan Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Himalayan Shilajit refers to the version sourced from the Himalayas, renowned for its high quality and potent mineral content, which supports a variety of health benefits.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How to pronounce Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit is pronounced as 'shee-lah-jeet.' The emphasis is on the first syllable.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Where to buy Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It can be purchased from reputable health stores, trusted online marketplaces, or directly from brands that offer high-quality, organic Shilajit. For the best quality, you can also buy directly from Everest Shilajit for purity and authenticity.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit legit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, Shilajit is legit. It has been used in traditional medicine for centuries, and scientific studies support its benefits for energy, health, and overall well-being.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is Shilajit used for?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"To improve energy levels, enhance physical performance, boost immunity, and increase mental clarity, making it a holistic health tonic.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What does Shilajit do?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit absorbs the body with minerals and nutrients. It supports energy levels, enhances stamina, boosts the immune system, and aids in mental focus, helping improve both physical and mental health.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is Shilajit good for?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It’s excellent for boosting energy, improving brain function, enhancing strength, supporting immune health, and promoting overall vitality.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What are the benefits of Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Provides&nbsp; increased energy, enhanced mental clarity, improved physical endurance, stronger immunity, healthy aging, and balanced hormones.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What does Shilajit do to the body?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It supplies the body with essential minerals, helping to improve energy, stamina, immune health, and mental clarity, ensuring the body functions optimally.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What does Shilajit do for men?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit supports male health by improving energy, stamina, and muscle strength. It can also enhance fertility, hormone balance, and overall vitality, helping men maintain peak performance physically and mentally.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit good for women?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, Shilajit is good for women. It helps enhance energy, support hormonal balance, improve skin health, boost immunity, and promote overall vitality, making it a great supplement for women’s health.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit help with weight loss?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"While not a direct weight-loss solution, it may aid in weight management by increasing metabolism, reducing fatigue, and improving energy. A healthy diet and exercise should accompany it.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit work?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, it effectively provides essential minerals and nutrients, enhancing energy, vitality, and overall health. Regular use helps boost performance, mental clarity, and immunity.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit actually work?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, it replenishes the body with vital nutrients and supports wellness. It has been trusted for centuries to enhance vitality and promote well-being.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How long does it take for Shilajit to work?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit may take a few days to a couple of weeks to show noticeable effects, depending on the individual's body. Consistent use is key for best results, especially for energy and overall health.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How fast does Shilajit work?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"The effects may vary while consuming shilajit, but many report feeling more energetic and focused within a few days of regular use. The full benefits typically appear after consistent use over a few weeks.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit safe?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit is generally considered safe when taken in recommended amounts. However, it is important to use high-quality Shilajit and consult a healthcare provider if you have specific health concerns.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit good for you?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, Shilajit is good for overall health. It provides essential minerals, enhances energy, supports cognitive function, and boosts the immune system, promoting physical and mental well-being.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit FDA approved?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit is not FDA-approved as a drug, but it is considered safe as a dietary supplement when sourced from reputable brands that ensure its purity and authenticity.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can you take Shilajit while pregnant?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It’s recommended to avoid taking Shilajit during pregnancy unless advised by a healthcare professional, as its effects on pregnancy and fetal development are not fully researched.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How to take Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It can be taken by dissolving a small amount (typically a pea-sized portion) in warm water, milk, or tea, or consumed directly under the tongue.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How to consume Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"The best method is to dissolve it in a liquid such as warm water, milk, or tea for easy consumption. It can also be taken directly under the tongue.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How much Shilajit per day?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"The recommended daily dose is about 300–500 mg. Start with a smaller dose and adjust as needed, based on individual response.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How many mg of Shilajit per day?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Typically, 350–500 mg per day is ideal. Always follow the dosage instructions provided with the product.&nbsp;\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"When is the best time to take Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"For best results, take Shilajit in the morning on an empty stomach. Alternatively, you can take it later in the day, but ensure it's at least 3-4 hours after a meal.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can I take Shilajit before bed?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"While it can be taken before bed, its energizing effects may interfere with sleep for some people, so it's best consumed earlier in the day.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can you take too much Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Taking too much can cause unwanted side effects. Stick to the recommended dose to avoid issues, and consult a healthcare provider if unsure.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What are the 85 minerals in Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit contains over 85 minerals, including calcium, magnesium, zinc, potassium, copper, and iron, all of which are essential for the body’s health.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit have magnesium?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, it contains magnesium, which supports muscle function, bone health, and energy production, with 20 to 30 mg per 100 grams.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What are the active compounds in Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Active compounds include 7% fulvic acid, 10% humic acid, and 85+ trace minerals for accelerated nutrient absorption and support various bodily functions.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit contain fulvic acid?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit contains 7% fulvic acid.&nbsp;\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is Shilajit a mineral or an herb?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It’s a mineral-rich substance, not an herb, formed from decomposed plant matter and minerals over thousands of years.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"How is Shilajit purified?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Shilajit is purified through a filtration process to remove impurities, toxins, and heavy metals, ensuring its safety for consumption.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What is the difference between raw and purified Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Raw Shilajit may contain impurities and toxins, while purified Shilajit has undergone a cleaning process to ensure safety and potency.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit contain heavy metals?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"High-quality Shilajit is purified to remove heavy metals. It’s essential to buy from trusted sources that test for purity and safety.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can I take Shilajit and Berberine together?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, they can be taken together. Both offer different health benefits, but it’s best to consult a healthcare professional before combining supplements.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can I take sea moss and Shilajit together?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, they can complement each other. Both support health, with sea moss providing iodine and Shilajit offering essential minerals.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Which is better, Ashwagandha or Shilajit?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Both supplements have their strengths. Ashwagandha is great for stress relief, while Shilajit boosts energy and vitality. They can be taken together for optimal results.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can you put Shilajit in coffee?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, Shilajit can be mixed with coffee. It dissolves easily and can enhance energy and mental focus.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can Shilajit be mixed with honey?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, it can be mixed with honey to mask the taste and add natural sweetness. Shilajit+Everest Shilajit(can link the shop page) is also a powerful combination for the peak mental and physcial performance.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit interact with medications?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It may interact with certain medications, particularly those related to blood pressure or blood sugar. Consult a healthcare provider before combining with medications.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can Shilajit be combined with pre-workout supplements?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, it can be combined with pre-workout supplements. It may enhance energy and endurance. Always check with a healthcare provider if unsure.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Is it safe to take Shilajit with herbal teas?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Absolutely yes!\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit increase testosterone?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, Shilajit may boost testosterone levels by up to 20% (according to some studies).\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit increase testosterone in females?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It does not significantly raise testosterone in women but may support&nbsp; hormonal balance.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit lower blood pressure?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It may help regulate blood pressure, but those with low blood pressure should use it with caution, as it can cause a further drop.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"What does Shilajit taste like?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It has a strong, earthy, and slightly bitter taste with a resinous texture\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit improve brain function?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"It contains fulvic acid, which may help reduce oxidative stress and support cognitive function.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Does Shilajit support muscle recovery?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Yes, its minerals and antioxidants can aid in reducing fatigue and muscle inflammation, helping recovery after exercise.\"\n        }\n      },\n      \n      {\n        \"@type\": \"Question\",\n        \"name\": \"Can Shilajit improve sleep quality?\",\n        \"acceptedAnswer\": {\n          \"@type\": \"Answer\",\n          \"text\": \"Some studies suggest it may help reduce stress and promote relaxation, indirectly supporting better sleep.\"\n        }\n      }\n    ]\n  }\n</script>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_list_PxAdp6",
+    "main",
+    "faq_fFAwqm",
+    "faq_VjjJNf",
+    "faq_gAbckM",
+    "faq_CB89AQ",
+    "faq_qRkVwd",
+    "faq_LQmFBw",
+    "faq_GHPDPf",
+    "custom_liquid_H4izWy"
+  ]
+}

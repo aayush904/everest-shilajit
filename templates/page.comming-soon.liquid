@@ -1,0 +1,302 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  main{
+  background:#000!important;
+  }
+
+          #tour-page {
+              margin: 0 auto!important;
+              padding: 2rem!important;
+              min-height: 100vh!important;
+              display: flex!important;
+              background-color: #000!important;
+              flex-direction: column!important;
+              justify-content: space-between!important;
+          }
+
+          #tour-page header {
+              text-align: center!important;
+              margin-bottom: 3rem!important;
+          }
+
+          #tour-page h1 {
+              font-size: 3rem!important;
+              margin-bottom: 0.5rem!important;
+              text-align: center!important;
+              text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1)!important;
+          }
+
+          #tour-page header p {
+              font-size: 1.2rem!important;
+              opacity: 0.8!important;
+          }
+
+          #tour-page  main-container {
+              display: flex!important;
+              flex-direction: column!important;
+              align-items: center!important;
+              gap: 3rem!important;
+          }
+
+          #tour-page #coming-soon, #tour-page #signup {
+              background-color: rgba(255, 255, 255, 0.1)!important;
+              backdrop-filter: blur(10px)!important;
+              padding: 2rem!important;
+              border-radius: 10px!important;
+              width: 100%!important;
+              max-width: 600px!important;
+          }
+
+          #tour-page h2 {
+              text-align: center!important;
+              margin-bottom: 1.5rem!important;
+              text-align: center!important;
+              font-size: 1.8rem!important;
+          }
+
+          #tour-page #coming-soon {
+              text-align: center;
+          }
+
+          #tour-page #animated-text {
+              font-size: 2rem;
+              font-weight: bold;
+              margin-top: 1rem;
+              color:#fff;
+              animation: pulse 2s infinite;
+          }
+
+          @keyframes pulse {
+              0% {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+              50% {
+                  opacity: 0.7;
+                  transform: scale(1.05);
+              }
+              100% {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+          }
+
+          #tour-page #dots {
+              display: inline-block;
+              width: 150px;
+              text-align: left;
+          }
+
+          #tour-page #dots::after {
+              content: '...';
+              display: inline-block;
+              {% comment %} animation: dots 1.5s steps(4, end) infinite; {% endcomment %}
+              width: 0;
+              overflow: hidden;
+              vertical-align: bottom;
+          }
+
+          @keyframes dots {
+              to {
+                  width: 150px;
+              }
+          }
+
+          #tour-page form {
+              display: flex!important;
+              gap: 1rem!important;
+              margin-top: 1rem!important;
+          }
+
+          #tour-page input[type="email"] {
+              flex-grow: 1!important;
+              padding: 0.8rem!important;
+              border: none!important;
+              border-radius: 5px!important;
+              font-size: 1rem!important;
+              background-color: rgba(255, 255, 255, 0.1)!important;
+              color: #ffffff!important;
+          }
+
+          #tour-page input[type="email"]::placeholder {
+              color: rgba(255, 255, 255, 0.5)!important;
+          }
+
+          #tour-page button {
+              padding: 0.8rem 1.5rem!important;
+              background-color: #ffa500!important;
+              color: #382E2A!important;
+              border: none!important;
+              border-radius: 5px!important;
+              font-size: 1rem!important;
+              cursor: pointer!important;
+              transition: background-color 0.3s ease!important;
+          }
+
+          #tour-page button:hover {
+              background-color: #ff8c00!important;
+          }
+
+          #message {
+              margin-top: 1rem!important;
+              text-align: center!important;
+          }
+
+          #tour-page footer {
+              text-align: center!important;
+              opacity: 0.7!important;
+              font-size: 0.9rem!important;
+          }
+
+          @media (max-width: 768px) {
+              #tour-page container {
+                  padding: 1rem!important;
+              }
+
+              #tour-page h1 {
+                  font-size: 2.5rem!important;
+              }
+
+              #tour-page header p {
+                  font-size: 1rem!important;
+              }
+
+              #tour-page h2 {
+                  font-size: 1.5rem!important;
+              }
+
+              #tour-page #coming-soon, #tour-page #signup {
+                  padding: 1.5rem!important;
+              }
+
+              #tour-page #animated-text {
+                  font-size: 1.8rem!important;
+              }
+
+              #tour-page form {
+                  flex-direction: column!important;
+              }
+
+              #tour-page input[type="email"], button {
+                  width: 100%!important;
+              }
+          }
+
+          @media (max-width: 480px) {
+              #tour-page h1 {
+                  font-size: 2rem!important;
+              }
+
+             #tour-page #coming-soon,#tour-page #signup {
+                  padding: 1rem!important;
+              }
+
+             #tour-page #animated-text {
+                  font-size: 1.5rem!important;
+              }
+          }
+</style>
+<div id="tour-page">
+  <header>
+    <!-- <h1>Everest Shilajit</h1> -->
+    <!-- <p>An unforgettable expedition awaits</p> -->
+  </header>
+  <main-container>
+    <section id="coming-soon">
+      <h1>COMING SOON</h1>
+      <div id="animated-text">Adventure Awaits</div>
+    </section>
+
+    <section id="signup">
+        <h2>Be the first to know when we launch</h2>
+  
+        {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="newsletter-form__field-wrapper">
+            <div class="field">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="field__input border-[#E5CD87!important] border-[2px] bg-transparent h-[60px!important]"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                style="border:2px solid #E5CD87; width:100%; max-width:100%;"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="ContactFooter-error"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="ContactFooter-success"
+                {% endif %}
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+              <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                {{ 'newsletter.label' | t }}
+              </label>
+              <button
+                type="submit"
+                class="newsletter-form__button field__button text-black"
+                name="commit"
+                id="Subscribe"
+                aria-label="{{ 'newsletter.button_label' | t }}"
+              >
+                <svg width="17" height="11" viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5.85156H16M16 5.85156L11.5 1.35156M16 5.85156L11.5 10.3516" stroke="#3B2D1F" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            {%- if form.errors -%}
+              <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if form.posted_successfully? -%}
+            <h3
+              class="newsletter-form__message newsletter-form__message--success form__message"
+              id="ContactFooter-success"
+              tabindex="-1"
+              autofocus
+            >
+              {% render 'icon-success' -%}
+              {{- 'newsletter.success' | t }}
+            </h3>
+          {%- endif -%}
+        {%- endform -%}
+      </section>
+  </main-container>
+  <footer class="flex justify-center items-center py-[60px]">
+  </footer>
+</div>
+{% comment %}
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('email-form');
+          const messageElement = document.getElementById('message');
+          form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              const email = document.getElementById('email').value;
+
+              // Here you would typically send the email to your server
+              // For this example, we'll just show a success message
+              messageElement.textContent = `Thank you! ${email} has been added to our notification list.`;
+              messageElement.style.color = '#4CAF50';
+              form.reset();
+
+              // Clear the message after 5 seconds
+              setTimeout(() => {
+                  messageElement.textContent = '';
+              }, 5000);
+          });
+      });
+  </script>
+{% endcomment %}

@@ -1,0 +1,296 @@
+{% assign sections = section.settings %}
+<style>
+    #shopify-section-{{ section.id }}  input::-webkit-outer-spin-button,
+    #shopify-section-{{ section.id }} input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} input[type=number] {
+      -moz-appearance: textfield;
+  }
+
+  #shopify-section-{{ section.id }} input{
+    border:none!important;
+    outline:none!important;
+    box-shadow:none!important;
+
+  }
+
+
+  .input-variant:checked + div{
+    color: white;
+  }
+</style>
+<div
+  class="main-wrapper relative py-[7.8rem] px-[16px] overflow-visible"
+  style="
+    background-image:
+      {% if sections.background_type == 'svg' %}
+    none
+     {% else %}
+      url('{{ sections.background_image | image_url }}')
+    {% endif %};
+    background-color: {{ sections.background_color }};
+  "
+>
+  {% if sections.background_type == 'svg' %}
+    <div class="background-svg max-w-full h-full w-full absolute top-0 left-0 z-0">
+      {{ sections.background_svg | raw }}
+    </div>
+  {% endif %}
+
+  <div class="flex max-w-[84.33%] md:max-w-[116.6rem] m-auto sm:max-w-[116.6rem] z-[1] relative xxl:max-w-[160rem] flex-col items-center">
+    <div class="text-center w-[86.36%] ">
+      <h2 class="font-semibold">{{ section.settings.title }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+    {% if section.settings.product_collection %}
+      {% assign selected_collection = collections[section.settings.product_collection] %}
+      <div id="multiproduct-form" class="flex flex-col gap-[2.4rem] px-[4%]">
+        <div class="grid grid-cols-3 sm:grid-cols-2  w-full justify-between pt-[5.4rem] gap-[6rem_7.2%] sm:flex-wrap sm:justify-around  items-stretch ">
+          {% for product in selected_collection.products %}
+            <div class="multiproduct-card flex flex-col w-full items-center gap-[3.2rem] h-full">
+              <a href="{{ product.url }}">
+                <img
+                  src="{{ product.featured_image | image_url }}"
+                  alt="{{ product.featured_image.alt | default:product.title }}"
+                  width="{{ product.featured_image.width }}"
+                  height="{{ product.featured_image.height }}"
+                  class="h-[27.2rem] w-full object-contain object-center"
+                >
+              </a>
+              <div class="flex flex-col gap-[16px] items-stretch w-full text-center h-full justify-between select-none">
+                <a href="{{ product.url }}">
+                  <h3 class="multiproduct-title">{{ product.title }}</h3>
+                </a>
+
+                <!-- Product Options -->
+                {% if product.options_with_values.size > 0 %}
+                  {% for option in product.options_with_values %}
+                    {% if option.values.size > 1 %}
+                      <div>
+                        <p class="hidden">{{ option.name }}</p>
+                        <div class="multiproduct-option-values flex flex-wrap text-center justify-center gap-[0.8rem] mb-[0.8rem]">
+                          {% for value in option.values %}
+                            {% assign variant = product.variants | where: 'option1', value | first %}
+                            <label
+                              class="
+                                h-max cursor-pointer group text-base text-primary hover:text-white font-sans relative
+                                {% comment %} mb-[0.8rem] {% endcomment %}
+                                border-[#E0AF7E]  border-[0.5px] last-of-type:border-r
+                              "
+                            >
+                              <input
+                                class="hidden input-variant"
+                                type="radio"
+                                name="product[{{ option.name }}]"
+                                value="{% if variant %}{{ variant.id }}{% endif %}"
+                                {% if forloop.first %}
+                                  checked
+                                {% endif %}
+                              >
+                              <div class="px-[16px] py-[0.8rem]">{{ value }}</div>
+                            </label>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% else %}
+                      {% assign default_variant = product.variants | first %}
+                      <input
+                        type="radio"
+                        style="display: none!important"
+                        class="hidden input-variant"
+                        checked
+                        name="options[{{ option.name }}]"
+                        value="{{ default_variant.id }}"
+                      >
+                    {% endif %}
+                  {% endfor %}
+                  {% comment %} Quantity input -/+ buttons {% endcomment %}
+                {% endif %}
+                <div class="quantity before:bg-[transparent!important] flex gap-[4.6rem] justify-center py-[0.8rem] border-primary border w-full p-5 font-semibold items-center select-none">
+                  <minus class="quantity_minus cursor-pointer">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.83594 8H13.1693" stroke="#E0AF7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </minus>
+                  <input
+                    type="number"
+                    name="quantity[{{ option.name }}]"
+                    value="1"
+                    min="0"
+                    class="quantity_input w-max bg-transparent font-sans text-primary text-center max-w-10"
+                  >
+                  <plus class="quantity_plus cursor-pointer">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.5 3.33203V12.6654" stroke="#E0AF7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M3.83594 8H13.1693" stroke="#E0AF7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </plus>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div id="multiple_submit" class="button w-full block font-semibold">ADD TO CART</div>
+      </div>
+    {% endif %}
+  </div>
+  <div class="flex justify-center items-center"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const quantityInput = document.querySelectorAll('.quantity_input');
+    const quantityMinus = document.querySelectorAll('.quantity_minus');
+    const quantityPlus = document.querySelectorAll('.quantity_plus');
+    quantityMinus.forEach((minus) => {
+      minus.addEventListener('click', () => {
+        if (minus.nextElementSibling.value > 0) {
+          minus.nextElementSibling.value = parseInt(minus.nextElementSibling.value) - 1;
+        }
+      });
+    });
+
+    quantityPlus.forEach((plus) => {
+      plus.addEventListener('click', () => {
+        plus.previousElementSibling.value = parseInt(plus.previousElementSibling.value) + 1;
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButton = document.querySelector('#multiple_submit');
+
+    addToCartButton.addEventListener('click', () => {
+      const productCards = document.querySelectorAll('#multiproduct-form .multiproduct-card');
+      const itemsToAdd = [];
+
+      productCards.forEach((card) => {
+        const selectedOption = card.querySelector('.input-variant:checked');
+        {% comment %} const selectedOption = card.querySelector(`input[name="${selectedOptionElement}"]`); {% endcomment %}
+        const quantityInput = card.querySelector('.quantity_input');
+
+        if (selectedOption && quantityInput) {
+          const variantId = selectedOption.value;
+          const quantity = parseInt(quantityInput.value, 10);
+
+          // Ensure quantity is greater than 0
+          if (quantity > 0) {
+            itemsToAdd.push({
+              id: variantId,
+              quantity: quantity,
+            });
+            console.log(variantId, quantity);
+          }
+        }
+      });
+
+      if (itemsToAdd.length > 0) {
+        addToCart(itemsToAdd);
+        console.log(itemsToAdd)
+      } else {
+        alert('Please select items and quantities before adding to the cart.');
+      }
+    });
+
+    const addToCart = (items) => {
+      const cartApiUrl = '/cart/add.js'; // Shopify cart API endpoint
+
+      fetch(cartApiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: items, // Pass the array of items
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to add items to cart');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Items added to cart:', data);
+          window.location.href = '{{ shop.url }}/cart';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Failed to add items to cart. Please try again.');
+        });
+    };
+
+  });
+</script>
+{% schema %}
+{
+  "name": "Multiple Products Cart",
+  "class": "index-section limited-mad-honey dark",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Title Here"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Description Here</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Button Title",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "collection",
+      "id": "product_collection",
+      "label": "Collection"
+    },
+    {
+      "type": "radio",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "svg", "label": "SVG" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Upload the background image to use if 'Image' is selected as the background type."
+    },
+    {
+      "type": "textarea",
+      "id": "background_svg",
+      "label": "Background SVG Code",
+      "info": "Paste the SVG code for the background if 'SVG' is selected as the background type."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Multiple Products Cart",
+      "category": "Multiple Products Cart"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,456 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_variant_list_basmil_3UDV4b": {
+      "type": "product-variant-list-basmil",
+      "disabled": true,
+      "settings": {
+        "section_title": "",
+        "section_description": "",
+        "product": "medicinal-mad-honey",
+        "varient_seperator": true,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "12rem",
+        "iconbox_gap": "",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "",
+        "margin": "",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "basmil_image_text_iWnrnE": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_DmPPjp": {
+          "type": "content",
+          "settings": {
+            "title": "ALL PRODUCTS",
+            "subtitle": "",
+            "description": "<p>Shop traditional resin to convenient liquid extracts and natural Everest Shilajit blends, each product is ethically sourced and rigorously tested for purity!</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_DmPPjp"
+      ],
+      "disabled": true,
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "top",
+        "gapimage": "5.3rem",
+        "content_width": "100%",
+        "padding": "5.6rem  16px 6rem  16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "148.8rem!important; width:calc(100% - 32px)!important",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "product_grid_slider_DrH3nH": {
+      "type": "product-grid-slider",
+      "disabled": true,
+      "custom_css": [
+        ".bg-white {background: #e4e4e4;}",
+        ".slick-dots {display: none;}",
+        ".button {margin-top: auto !important;}",
+        ".card-tagline {display: flex !important;}"
+      ],
+      "settings": {
+        "section_title": "",
+        "section_description": "",
+        "product_collection": "frontpage",
+        "slider_grid": false,
+        "slider_type": "1",
+        "product_price": true,
+        "products_per_row": 3,
+        "products_per_page": 99,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "4rem",
+        "iconbox_gap": "12px 1.2rem!important",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "32.22%",
+        "padding": "0 0 2.4rem 0",
+        "margin": "0 auto",
+        "custom_class": "advance_slider",
+        "custom_id": "",
+        "width": "100%; max-width:149.6rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style> \n.advance_slider{\n     .product-section-container{\n         overflow: visible;\n         &&:hover .slick-arrow{\n             opacity:1;\n        }\n    }\n     .product-info{\n         max-height: -webkit-fill-available;\nheight:100%;\njustify-content:start;\n    }\n\n     .card-tagline{\n         order:3;\n    }\n     .button-cart {\n         order:5;\nmargin-top: auto;\n    }\n     .prd-title{\n         order:2 \n    }\n     .prd-rating{\n         order:1;\n    }\n     .prd-price{\n         order:4;\n         *{\n             font-size:2.4rem;\n             font-weight:500;\n             letter-spacing: 0;\n             text-transform: lowercase;\n             color:#252525;\n        }\n         .original-price{\n             font-weight:300;\n             color:#25252580;\n        }\n    }\n.product-price{\ndisplay:flex;\ngap:1rem;\n}\n\n     .slick-arrow{\n         background:#68453D;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         border-radius:50%;\n         width: 4.8rem;\n         height:4.8rem;\n         z-index:1;\n         opacity:0.5;\n    }\n     .slick-prev{\n         left:0;\n         transform: translateX(-100%);\n         &&:before{\n             content:\"‹\";\nmargin-left: 4px;\n        }\n    }\n     .slick-next{\n         right:0;\n         transform: translateX(100%);\n         &&:before{\n             content:\"›\";\n             margin-left:8px;\n        }\n    }\n     .slick-prev:before, .slick-next:before{\n         font-family: sans-serif;\n         opacity:1;\n         width:20px;\n         height:20px;\nmargin-bottom:2px;\n    }\n.button span{\ncolor:#fff!important;}\n\n @media(max-width:1600px){\n     .slick-prev{\ntransform:translateX(-16px);\n}\n\n     .slick-next{\ntransform:translateX(16px);\n}\n}\n\n}\n @media(max-width:600px){\n     #shopify-section-template--19218853625993__product_grid_slider_67XwP3 {\n         && .product-slider {\n             grid-template-columns:1fr 1fr;\n        }\n         && .product-card.product-card.product-card{\n             margin:0!important;\n             *{\n                 text-align:start;\n                 letter-spacing:0;\n            }\n        }\n        tagline,.card-attr{\n         font-size:10px;\n        }\n        h3{\n         font-size:18px;\n         font-weight:600;\n        }\n        .product-price *{\n                 font-size: 14px;\n        }\n.rating-count span{\nfont-size:10px;\n}\n.button span{\nfont-size:12px;\ntext-transform: capitalize;\ntext-align: center!important;\n}\n      }\n\n    }\n</style> \n<script defer> document.addEventListener(\"DOMContentLoaded\", function() {\n         if (window.innerWidth <= 600) {\n             $('#shopify-section-template--19218853625993__product_grid_slider_67XwP3 .product-slider').slick('unslick');\n        }\n  });\n     </script>"
+      }
+    },
+    "basmil_image_text_GBQFET": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_mYWxRz": {
+          "type": "content",
+          "settings": {
+            "title": "All Shilajit Product",
+            "subtitle": "<style>\n#shopify-section-{{section.id}} {\n.imagepart{\n  max-height:80vh;\n  min-width:100%;\nobject-position:center;\nobject-fit:cover;\naspect-ratio:1800/720;\nfilter:brightness(70%;);\n    -webkit-filter: brightness(70%);\n}\n.contain-wrapper{\nborder-radius:8px;\nover-flow:hidden;\nposition:relative;\n\n}\n.contain-wrapper:before {\n  content: none;\n  width:100%;\n  height: 100%;\n  background: #0000007a;\n  top:0;\n\n  left:0;  \nposition: absolute;\n}}\n</style>",
+            "description": "<p>Shop traditional resin to convenient liquid extracts and natural Everest Shilajit blends, each product is ethically sourced and rigorously tested for purity!</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_7xxQnc": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Everest_Shilajit.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_mYWxRz",
+        "image_7xxQnc"
+      ],
+      "custom_css": [
+        ".imagepart,img {aspect-ratio: 8/3; object-fit: cover; width: 100%;}",
+        ".contentside {position: absolute; top: 50%; z-index: 1; transform: translateY(-50%);}",
+        ".contain-wrapper {border-radius: 8px; overflow: hidden;}",
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } .basmilTextImage {margin: 0; } .imagepart, img {object-fit: cover; aspect-ratio: 359/300; } h1, p {transform: scale(0.8); margin-bottom: -15px; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "5.3rem",
+        "content_width": "97rem;",
+        "padding": "1.6rem 1.6rem 0 1.6rem",
+        "margin": "0 auto 7rem auto!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "product_grid_slider_kLwLBz": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        ".bg-white {background: #e4e4e4;}",
+        ".slick-dots {display: none;}",
+        ".button {margin-top: auto !important;}",
+        ".card-tagline {display: flex !important;}"
+      ],
+      "settings": {
+        "section_title": "Shop Shilajit <brown>Supplement</brown>",
+        "section_description": "Natural supplement for your daily needs.",
+        "product_collection": "frontpage",
+        "slider_grid": false,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 3,
+        "products_per_page": 99,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "4rem",
+        "iconbox_gap": "12px 1.2rem!important",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "32.22%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "advance_slider",
+        "custom_id": "",
+        "width": "100%; max-width:149.6rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style> \n.advance_slider{\n     .product-section-container{\n         overflow: visible;\n         &&:hover .slick-arrow{\n             opacity:1;\n        }\n    }\n     .product-info{\n         max-height: -webkit-fill-available;\nheight:100%;\njustify-content:start;\n    }\n\n     .card-tagline{\n         order:3;\n    }\n     .button-cart {\n         order:5;\nmargin-top: auto;\n    }\n     .prd-title{\n         order:2 \n    }\n     .prd-rating{\n         order:1;\n    }\n     .prd-price{\n         order:4;\n         *{\n             font-size:2.4rem;\n             font-weight:500;\n             letter-spacing: 0;\n             text-transform: lowercase;\n             color:#252525;\n        }\n         .original-price{\n             font-weight:300;\n             color:#25252580;\n        }\n    }\n.product-price{\ndisplay:flex;\ngap:1rem;\n}\n\n     .slick-arrow{\n         background:#68453D;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         border-radius:50%;\n         width: 4.8rem;\n         height:4.8rem;\n         z-index:1;\n         opacity:0.5;\n    }\n     .slick-prev{\n         left:0;\n         transform: translateX(-100%);\n         &&:before{\n             content:\"‹\";\nmargin-left: 4px;\n        }\n    }\n     .slick-next{\n         right:0;\n         transform: translateX(100%);\n         &&:before{\n             content:\"›\";\n             margin-left:8px;\n        }\n    }\n     .slick-prev:before, .slick-next:before{\n         font-family: sans-serif;\n         opacity:1;\n         width:20px;\n         height:20px;\nmargin-bottom:2px;\n    }\n.button span{\ncolor:#fff!important;}\n\n @media(max-width:1600px){\n     .slick-prev{\ntransform:translateX(-16px);\n}\n\n     .slick-next{\ntransform:translateX(16px);\n}\n}\n\n}\n @media(max-width:600px){\n     #shopify-section-template--19218825674889__product_grid_slider_kLwLBz {\n         && .product-slider {\n             grid-template-columns:1fr 1fr!important;\n        }\n         && .product-card.product-card.product-card{\n              margin:0!important;\n             *{\n                 text-align:start;\n                 letter-spacing:0;\n            }\n        }\n        tagline,.card-attr{\n         font-size:10px;\n        }\n        h3{\n         font-size:18px;\n         font-weight:600;\n        }\n        .product-price *{\n                 font-size: 14px;\n        }\n.rating-count span{\nfont-size:10px;\n}\n.button span{\nfont-size:12px;\ntext-transform: capitalize;\ntext-align: center!important;\n}\n      }\n\n    }\n</style>"
+      }
+    },
+    "product_grid_slider_FrmcBR": {
+      "type": "product-grid-slider",
+      "disabled": true,
+      "custom_css": [
+        ".product-card {width: 58vw !important; max-width: 46.4rem !important; margin: 0 !important;}",
+        ".wght-tag {display: none;}",
+        ".silck-arrow {display: none !important;}",
+        ".product-slider {grid-template-columns: 1fr 1fr 1fr !important; justify-content: start;}",
+        "@media (max-width: 768px) {h2 brown {display: block; }}"
+      ],
+      "settings": {
+        "section_title": "<brown>Bundles for</brown> Your Need",
+        "section_description": "Give the gift of health supplements with pure Himalayan Shilajit. Whether for strength and vitality in men or balance and wellness in women, our Shilajit bundles are a natural way to support a healthier lifestyle! ",
+        "product_collection": "bundle",
+        "slider_grid": false,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 3,
+        "products_per_page": 3,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "40px",
+        "iconbox_gap": "2.4rem!important",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "scroll-slider",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem;",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": ""
+      }
+    },
+    "basmil_image_text_znaD83": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "image_aAtLTU": {
+          "type": "image",
+          "settings": {
+            "image_type": "svg",
+            "image_alt": "Everest Shilajit",
+            "svg": "<svg style=\"width:11.5rem; margin-right:auto;\" viewbox=\"0 0 155 141\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M113.714 76.8094C127.162 83.3279 140.988 90.1841 150.681 101.552C153.8 105.208 156.342 110.972 153.005 114.43C150.165 117.371 145.278 116.178 141.464 114.688C125.295 108.388 109.821 100.339 95.3603 90.7207C105.213 103.479 113.218 118.623 113.019 134.74C112.98 137.204 112.106 140.344 109.662 140.503C108.55 140.583 107.537 139.947 106.643 139.311C93.6123 130.129 86.4414 114.906 79.8268 100.399C77.602 116.616 67.0345 131.441 52.4544 138.854C50.5674 139.828 48.2632 140.662 46.3761 139.649C43.8336 138.297 43.8733 134.66 44.4692 131.858C47.4091 118.126 55.2553 106.003 63.0816 94.3377C48.2831 102.525 31.4981 107.096 14.594 107.533C9.92601 107.653 4.82103 107.295 1.38458 104.115C0.709215 103.499 0.113295 102.724 0.013976 101.81C-0.164798 100.121 1.40447 98.8091 2.83467 97.8751C20.9306 85.9909 41.5095 77.8826 62.8433 74.2259C50.1503 72.4969 39.245 64.4085 29.9488 55.6047C24.1287 50.0998 18.5271 43.959 15.905 36.4071C15.4879 35.1948 15.1304 33.8832 15.3687 32.6113C15.9448 29.4515 19.7388 27.9809 22.9567 28.0007C28.9159 28.0405 34.3983 31.0413 39.5629 34.0025C51.6202 40.9183 63.7967 48.2516 72.795 58.844C60.5987 43.4621 58.4534 20.8066 67.5113 3.37777C68.0476 2.36423 68.6236 1.33082 69.577 0.675004C71.5833 -0.716123 74.5033 0.198046 76.1321 2.00651C77.761 3.83485 78.3966 6.29914 78.9925 8.66405C83.3229 25.8345 87.6532 43.0647 89.7786 60.6525C95.837 45.4296 109.364 33.764 124.838 28.4379C128.871 27.0468 134.035 26.3512 136.776 29.6105C139.577 32.9293 137.889 37.997 135.743 41.753C127.401 56.4592 115.363 63.6533 101.498 72.0796C104.1 74.365 110.238 75.1202 113.714 76.8094Z\" fill=\"#EAB39B\"></path>\n</svg>",
+            "image_width": "15.4rem"
+          }
+        }
+      },
+      "block_order": [
+        "image_aAtLTU"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".basmilTextImage {z-index: 4; height: 0;}",
+        "svg {transform: translate(-35%, -90%);}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagefirst",
+        "alignment": "contentstart",
+        "valignment": "top",
+        "gapimage": "0",
+        "content_width": "0",
+        "padding": "0 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem; z-index:9;",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "single_product_showcase_AaWH3M": {
+      "type": "single-product-showcase",
+      "disabled": true,
+      "custom_css": [
+        "svg {display: none;}",
+        "h2 {font-weight: 700;}",
+        ".wrapper {border-radius: 38px; overflow: hidden; margin-bottom: 11rem;}",
+        ".gap-\\[13\\.85\\%\\] {gap: 24px 5.4% !important; justify-content: center;}",
+        ".max-w-\\[36\\.73\\%\\] {max-width: 47%;}",
+        "button {}",
+        "@media (max-width: 768px) {.max-w-\\[36\\.73\\%\\] {max-width: 100%; } .wrapper {margin-bottom: 48px; }}"
+      ],
+      "settings": {
+        "section_title": "<brown>Save 30%</brown> on <br> bundles of Shilajit",
+        "selected_product": "shilajit-bundle",
+        "section_info": "The Ultimate Energy Duo with resin, liquid and honey blend ! For a limited time, enjoy 30% off on all bundles! This offers is valid for all customer.",
+        "image_layout": "right",
+        "content_alignment": "left",
+        "content_part_width": "34%",
+        "section_padding": "10rem 6.7%",
+        "section_margin": "0 auto",
+        "border_radius": "0",
+        "border": "none",
+        "border_color": "rgba(0,0,0,0)",
+        "custom_class": "",
+        "custom_id": "",
+        "section_width": "calc(100% - 32px)!important; max-width:147.2rem!important",
+        "section_min_height": 50,
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/Group_28560.webp",
+        "background_on": "content_part",
+        "background_position": "top",
+        "background_size": "cover"
+      }
+    },
+    "basmil_image_text_hDdmDM": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_RaXiMr": {
+          "type": "content",
+          "settings": {
+            "title": "<brown>Save 30% </brown>on\nbundles of Shilajit",
+            "subtitle": "",
+            "description": "<p>The Ultimate Energy Duo with resin, liquid and honey blend ! For a limited time, enjoy 30% off on all bundles! This offers is valid for all customer.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_43pK9r": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/All_shilajit_product.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "40rem"
+          }
+        }
+      },
+      "block_order": [
+        "content_RaXiMr",
+        "image_43pK9r"
+      ],
+      "disabled": true,
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "top",
+        "gapimage": "5.3rem",
+        "content_width": "50%",
+        "padding": "12rem 16px",
+        "margin": "0",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "116.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "product_variant_list_basmil_3UDV4b",
+    "basmil_image_text_iWnrnE",
+    "product_grid_slider_DrH3nH",
+    "basmil_image_text_GBQFET",
+    "product_grid_slider_kLwLBz",
+    "product_grid_slider_FrmcBR",
+    "basmil_image_text_znaD83",
+    "single_product_showcase_AaWH3M",
+    "basmil_image_text_hDdmDM"
+  ]
+}

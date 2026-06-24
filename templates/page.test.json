@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "basmil_image_text_HNV4mH": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_3RQqp7": {
+          "type": "content",
+          "settings": {
+            "title": "viverra In leo. est. commodo nisl. id",
+            "subtitle": "Link Here\n<style>\n#shopify-section-{{section.id}} {\npadding:16px;\n\n.main-wrapper{\n background: #F5F2EC;\n border-radius:16px;\n}\n.text-tertiary{\norder:-1;\n}\n.subtitle{\norder:0;\nbackground:#9F5601;\npadding:4px 14px;\nborder-radius:6px;\ncolor:#fff;\n}\n\n.contain-wrapper {\n  gap: clamp(8px,1.2vw,32px) 0 !important;\n  min-height: 310px;\n  padding-left: 16px;\n}\nh1 {\n  letter-spacing: -1px;\n  line-height: 1.28;\n}\n}\n@media (max-width: 768px) {\n#shopify-section-{{section.id}} {\npadding:16px;\n\n  .contain-wrapper {\n    flex-direction: column-reverse;\n  }\n  img {\n    border-radius: 12px;\n    max-width: 100%;\n    min-height: auto !important;\n    height: auto;\n  }\n  .contentside {\n    padding: 16px 16px 24px 16px !important;\n  }\n  .contain-wrapper {\n    padding: 0 !important;\n  }\n}\n}\n@media (max-width: 480px) {\n#shopify-section-{{section.id}} {\npadding:0;\n\nimg{\nborder-radius:0;\n}\n.main-wrapper{\nborder-radius:0;\n}\n}\n}\n</style>",
+            "description": "<p>The morning is the ideal time to shape your day. How we choose to kickstart our mornings can set the tone for the entire day. Morning rituals have long been celebrated for their ability of an</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_QhTYzp": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Mask_group_3f7a9f1f-264b-47d0-a3b9-1f8a71e3acf3.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "50%; object-fit: cover; object-position: center; min-height:100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_3RQqp7",
+        "image_QhTYzp"
+      ],
+      "custom_css": [],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "0",
+        "content_width": "50%; max-width: calc(var(--page-width)/2); margin-left: auto; padding-right: clamp(2.4px,5vw,9rem)",
+        "padding": "0",
+        "margin": "0",
+        "custom_class": "screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "basmil_image_text_HNV4mH"
+  ]
+}

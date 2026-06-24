@@ -1,0 +1,373 @@
+<style>
+  .coupon_pop.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3a230733;
+    display: none;
+    justify-content: right;
+    align-items: end;
+    z-index: 999999;
+
+    &&.show {
+      display: flex;
+      opacity: 1;
+      /* Fade-in effect when shown */
+    }
+
+    && .popup-content {
+      position: relative;
+      display: flex;
+      padding: 0px;
+      width: 100%;
+      max-width: 44.4rem;
+      margin: 16px;
+      min-height: 75rem;
+      border-radius: 16px;
+      background-color: #f5f4f0;
+      transform: translateY(-3.125rem);
+      transition: transform 0.5s ease;
+      animation: slideIn 0.5s forwards ease;
+      overflow: hidden;
+    }
+    && .popup-text {
+      flex: 1;
+      padding: 3.7rem 4rem 5.2rem 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    && .close-button {
+      position: absolute;
+      right: 16px;
+      z-index: 1;
+      top: 16px;
+      background: none;
+      border: none;
+      font-size: 3rem;
+      cursor: pointer;
+      color: #1f2e1d;
+    }
+
+    && h2 {
+      font-weight: 700;
+      color: #fee0ad;
+      margin-bottom: 1.5rem;
+    }
+
+    && h3 {
+      margin-bottom: 2.4rem;
+    }
+
+    && h2 red {
+      color: #fe3520;
+    }
+
+    && .message {
+      font-weight: 400;
+      color: #737373;
+      margin-bottom: 1.5rem;
+    }
+
+    && .message-bold {
+      font-weight: 700;
+      line-height: 1.4625rem;
+      color: #737373;
+    }
+
+    && .coupon-code {
+      border: 0.0625rem dashed #fee0ad;
+      padding: 1.37rem 0.5rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 35.8rem;
+    }
+
+    && .coupon-code p {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 3rem;
+      margin: 0;
+      color: #fe3520;
+    }
+
+    && .popup-image {
+      width: 100%;
+      display: block;
+      margin: auto;
+      background: #f2ede1;
+      padding: 8rem 4rem 4.8rem 4rem;
+    }
+    && .popup-image img {
+      width: 100%;
+      max-width: 74.5%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      margin: auto;
+    }
+
+    && .newsletter-form__field-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    && .field__input {
+      padding: 1.65rem 1.6rem !important;
+    }
+    && .field:after,
+    .field:before {
+      content: none !important;
+    }
+    && .newsletter-form__button {
+      position: static;
+      width: 100%;
+      border-radius: 48px;
+      border: 1px solid #3a2307;
+      padding: 12px;
+      margin-top: 3.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .coupon_pop.popup-overlay {
+      && .popup-content {
+        width: 95%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .coupon_pop.popup-overlay {
+      && .popup-content {
+        width: 95%;
+      }
+
+      && .popup-image img {
+        max-width: 85.5%;
+      }
+
+      && .popup-text {
+        padding: 3.7rem 2rem 5.2rem 2rem;
+      }
+
+      && .close-button {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-3.125rem);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      filter: brightness(0.8) contrast(1);
+    }
+    50% {
+      filter: brightness(1.8) contrast(1.5);
+    }
+    100% {
+      filter: brightness(0.8) contrast(1);
+    }
+  }
+
+  .christmas-lights {
+    display: block;
+    /* or inline-block depending on usage */
+    width: auto;
+    /* Adjust to your preferred size */
+    animation: glow 1.5s infinite;
+  }
+</style>
+<div id="popupOverlay" class="popup-overlay coupon_pop font-serif ">
+  <div class="popup-content ">
+    <button id="closeButton" class="close-button">&times;</button>
+    <div class="flex flex-col">
+      <div class="popup-image">
+        <img
+          src="{{image | image_url }}"
+          alt="{{ image }}"
+          width=""
+          height=""
+        >
+      </div>
+      <div class="popup-text relative">
+        <h3 class="font-serif">
+          {{ title }}
+          {{ code }}
+        </h3>
+
+        <!-- <button id="copyButton" class="copy-button">Copy Code</button> -->
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="newsletter-form__field-wrapper">
+            <div class="field">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="field__input"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="Newsletter-error--{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="Newsletter-success--{{ section.id }}"
+                {% endif %}
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+              <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                {{ 'newsletter.label' | t }}
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="newsletter-form__button field__button"
+              name="commit"
+              id="Subscribe"
+              aria-label="{{ 'newsletter.button_label' | t }}"
+            >
+              Sign Up
+            </button>
+            {%- if form.errors -%}
+              <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if form.posted_successfully? -%}
+            <h3
+              class="newsletter-form__message newsletter-form__message--success form__message"
+              id="Newsletter-success--{{ section.id }}"
+              tabindex="-1"
+              autofocus
+            >
+              {% render 'icon-success' -%}
+              {{- 'newsletter.success' | t }}
+            </h3>
+          {%- endif -%}
+        {% endform %}
+        <p class="message blog-text font-sans">
+          {{ message }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupContent = document.querySelector('.popup-content');
+    const popupButton = document.getElementById('popupButton');
+    const closeButton = document.getElementById('closeButton');
+    // const copyButton = document.getElementById('copyButton');
+    const POPUP_KEY = 'popupCount';
+    const POPUP_EXPIRY_KEY = 'popupExpiry';
+    const POPUP_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    const MAX_POPUP_COUNT = 2; // Maximum popups allowed in 24 hours
+
+    let popupShown = false;
+
+    function showPopup() {
+      popupOverlay.style.display = 'flex';
+      popupOverlay.classList.add('show');
+      popupShown = true;
+
+      // Update popup count and timestamp
+      const popupCount = parseInt(localStorage.getItem(POPUP_KEY), 10) || 0;
+      localStorage.setItem(POPUP_KEY, popupCount + 1);
+
+      const expiryTime = localStorage.getItem(POPUP_EXPIRY);
+      if (!expiryTime) {
+        localStorage.setItem(POPUP_EXPIRY, Date.now());
+      }
+    }
+
+    function closePopup() {
+      popupOverlay.classList.remove('show');
+      setTimeout(() => {
+        popupOverlay.style.display = 'none';
+      }, 500); // Matches the CSS transition duration
+    }
+
+    closeButton.addEventListener('click', closePopup);
+    popupOverlay.addEventListener('click', function (event) {
+      if (!popupContent.contains(event.target)) {
+        closePopup();
+      }
+    });
+
+    // copyButton.addEventListener('click', function () {
+    //   navigator.clipboard
+    //     .writeText('HOLIDAYS')
+    //     .then(function () {
+    //       copyButton.textContent = 'Copied!';
+    //       setTimeout(function () {
+    //         copyButton.textContent = 'Copy Code';
+    //       }, 2000);
+    //     })
+    //     .catch(function (err) {
+    //       console.error('Failed to copy: ', err);
+    //     });
+    // });
+
+    // Check if the popup should be shown
+    function shouldShowPopup() {
+      const popupCount = parseInt(localStorage.getItem(POPUP_KEY), 10) || 0;
+      const expiryTime = parseInt(localStorage.getItem(POPUP_EXPIRY), 10);
+
+      // Reset count if 24 hours have passed
+      if (expiryTime && Date.now() - expiryTime > POPUP_EXPIRY) {
+        localStorage.setItem(POPUP_KEY, '0');
+        localStorage.setItem(POPUP_EXPIRY, Date.now());
+        return true;
+      }
+
+      // Allow popup only if count is below the maximum allowed
+      return popupCount < MAX_POPUP_COUNT;
+    }
+
+    // Detect homepage or other page behavior
+    if (shouldShowPopup()) {
+      if (window.location.pathname === '/') {
+        // Show on homepage after scrolling
+        window.addEventListener('scroll', function () {
+          if (!popupShown && window.scrollY > window.innerHeight / 2) {
+            showPopup();
+          }
+        });
+      } else {
+        // Show on other pages only after staying for a specific duration
+        setTimeout(() => {
+          if (!popupShown) {
+            showPopup();
+          }
+        }, 10000); // Adjust time (10 seconds here)
+      }
+    }
+
+    // Popup button should always work regardless of limits
+    popupButton.addEventListener('click', showPopup);
+  });
+</script>

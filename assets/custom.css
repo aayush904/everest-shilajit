@@ -1,0 +1,48 @@
+
+    .slick-list{
+        padding:0px 22px !important;
+    }
+
+
+
+    tagline{
+        color:#767676;
+    }
+
+    #shopify-section-template--21311081185417__basmil_image_text_b6z6fC,
+    #shopify-section-template--21311081185417__basmil_image_text_bWrWDa,
+    #shopify-section-template--21311081185417__basmil_image_text_aGpaBF{
+
+        .description p{
+                    color:#767676;
+
+        }
+    }
+
+
+
+    #shopify-section-template--21311081185417__blog_listing_basmil_KkBezk{
+        .section-heading p{
+                             color:#767676;
+
+    
+
+    }}
+
+
+
+    .article-content{
+        span{
+            color:inherit;
+        }
+        p{
+                    color:#767676;
+        }
+    }
+
+
+    #shopify-section-template--21409918910601__slider_with_banner_GLDwpC{
+        .slick-track{
+            gap:20px !important;
+        }
+    }

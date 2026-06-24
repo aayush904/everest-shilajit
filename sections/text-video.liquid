@@ -1,0 +1,792 @@
+{% assign sections = section.settings %}
+
+<style>
+    #shopify-section-{{ section.id }} .video-thumbnail-container {
+      position: relative;
+      cursor: pointer;
+    }
+
+
+    #shopify-section-{{ section.id }} .wrapper{
+      margin:{{sections.margin}}; padding: {{sections.padding}};
+      {% if sections.background_type == 'color' %}
+        background: {{ sections.background_color }};
+      {% elsif sections.background_type == 'image' %}
+        background: url('{{ sections.background_image  | image_url }}') no-repeat {{ sections.background_position }};
+        background-size: {{ sections.background_size }};
+      {% endif %};
+    }
+
+    #shopify-section-{{ section.id }}  .video-thumbnail {
+      position: relative;
+      display: inline-block;
+    }
+
+    #shopify-section-{{ section.id }}  .video-thumbnail-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #shopify-section-{{ section.id }}  .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* background: rgba(0, 0, 0, 0.7); */
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 1rem;
+      /* border-radius: 50%; */
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }}  .lightbox {
+      display: none;
+      position: fixed;
+          justify-content: center;
+          align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      max-height:100vh;
+      max-width:100vw;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+
+    #shopify-section-{{ section.id }}  .lightbox-content {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      margin: 5% auto;
+      background: #000;
+      {% comment %} padding: 1rem; {% endcomment %}
+    }
+
+    #shopify-section-{{ section.id }}  .close-button {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      scale: 2;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }}  .lightbox-video-container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      /* 16:9 Aspect Ratio */
+      position: relative;
+      overflow: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .lightbox-video-container iframe,
+    #shopify-section-{{ section.id }} .lightbox-video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      #shopify-section-{{ section.id }} .main-wrapper {
+        max-width: 116.6rem !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #shopify-section-{{ section.id }} .main-wrapper {
+        padding-left: 0 16px 4rem 16px !important;
+        max-width: 100% !important;
+      }
+    }
+
+    @media(max-width:768px){
+      {% if sections.padding contains '12rem' %}
+        {% assign updated_padding = sections.padding | replace: '12rem', '6.25rem' %}
+      {% elsif sections.padding contains '15rem' %}
+        {% assign updated_padding = sections.padding | replace: '15rem', '56px' %}
+      {% else %}
+        {% assign updated_padding = sections.padding %}
+      {% endif %}
+      #shopify-section-{{ section.id }} .wrapper.wrapper{
+      padding: {{ updated_padding }};
+    }
+  }
+</style>
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'video' %}
+      {% capture videoButton %}
+    {% if block.settings.video_controls == "true" and block.settings.video_type != 'youtube' %}
+      <button class="play-button" data-video-type="self_hosted" data-video-src="{{ block.settings.video.sources[1].url }}"><svg style="width:7.9rem; height:6.4rem" viewBox="0 0 79 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M39.4891 0.871094C42.7871 0.871094 46.1701 0.956967 49.4489 1.09749L53.3217 1.28485L57.0287 1.50734L60.5003 1.74544L63.6711 1.99525C67.1126 2.26025 70.3514 3.74564 72.8168 6.18977C75.2823 8.6339 76.8164 11.88 77.1489 15.3563L77.3032 17.0152L77.5925 20.5673C77.8625 24.2481 78.0631 28.2607 78.0631 32.0977C78.0631 35.9347 77.8625 39.9473 77.5925 43.6281L77.3032 47.1801L77.1489 48.839C76.8163 52.316 75.2817 55.5626 72.8154 58.0068C70.3491 60.451 67.1095 61.936 63.6673 62.2001L60.5042 62.446L57.0325 62.688L53.3217 62.9105L49.4489 63.0979C46.1309 63.2433 42.8102 63.3188 39.4891 63.3243C36.1679 63.3188 32.8473 63.2433 29.5293 63.0979L25.6564 62.9105L21.9495 62.688L18.4778 62.446L15.307 62.2001C11.8655 61.9351 8.62676 60.4497 6.16128 58.0056C3.6958 55.5615 2.16172 52.3154 1.82924 48.839L1.67495 47.1801L1.38564 43.6281C1.09183 39.7916 0.934865 35.9456 0.915039 32.0977C0.915039 28.2607 1.11562 24.2481 1.38564 20.5673L1.67495 17.0152L1.82924 15.3563C2.16159 11.8806 3.69511 8.63501 6.15981 6.19096C8.6245 3.7469 11.8623 2.26113 15.3032 1.99525L18.4701 1.74544L21.9417 1.50734L25.6526 1.28485L29.5254 1.09749C32.8447 0.951999 36.1666 0.876518 39.4891 0.871094ZM31.7743 22.6321V41.5632C31.7743 43.3666 33.703 44.4907 35.2459 43.593L51.447 34.1274C51.7995 33.9221 52.0924 33.6263 52.296 33.27C52.4996 32.9137 52.6068 32.5093 52.6068 32.0977C52.6068 31.6861 52.4996 31.2817 52.296 30.9254C52.0924 30.569 51.7995 30.2733 51.447 30.068L35.2459 20.6063C34.894 20.4007 34.4947 20.2925 34.0883 20.2925C33.6819 20.2926 33.2827 20.4009 32.9308 20.6067C32.579 20.8124 32.2868 21.1083 32.0838 21.4645C31.8807 21.8207 31.774 22.2248 31.7743 22.636V22.6321Z" fill="white"/>
+        </svg>
+      </button>
+      {% endif %}
+
+      {%  if block.settings.video_controls == "true" and block.settings.video_type == 'youtube' %}
+        {% assign video_id = block.settings.youtube_url | split: '/' | last %}
+                        
+
+                        {% if video_id contains 'v=' %}
+                            {% assign video_id = video_id | split: 'v=' | last %}
+                            {% if video_id contains '&' %}
+                              {% assign video_id = video_id | split: '&' | first %}
+                            {% endif %}
+                        {% elsif   video_id contains 'shorts/' %}
+                          {% assign video_id = video_id | split: 'shorts/' | last %}
+                        {% endif %}
+
+        <button class="play-button  top-[auto!important] left-[auto!important]  m-auto" style="position:relative; transform:none;" data-video-type="youtube" data-video-url="{{ block.settings.youtube_url }}" data-video-id="{{ video_id }}" >
+          <svg style="width:7.9rem; height:6.4rem" viewBox="0 0 79 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M39.4891 0.871094C42.7871 0.871094 46.1701 0.956967 49.4489 1.09749L53.3217 1.28485L57.0287 1.50734L60.5003 1.74544L63.6711 1.99525C67.1126 2.26025 70.3514 3.74564 72.8168 6.18977C75.2823 8.6339 76.8164 11.88 77.1489 15.3563L77.3032 17.0152L77.5925 20.5673C77.8625 24.2481 78.0631 28.2607 78.0631 32.0977C78.0631 35.9347 77.8625 39.9473 77.5925 43.6281L77.3032 47.1801L77.1489 48.839C76.8163 52.316 75.2817 55.5626 72.8154 58.0068C70.3491 60.451 67.1095 61.936 63.6673 62.2001L60.5042 62.446L57.0325 62.688L53.3217 62.9105L49.4489 63.0979C46.1309 63.2433 42.8102 63.3188 39.4891 63.3243C36.1679 63.3188 32.8473 63.2433 29.5293 63.0979L25.6564 62.9105L21.9495 62.688L18.4778 62.446L15.307 62.2001C11.8655 61.9351 8.62676 60.4497 6.16128 58.0056C3.6958 55.5615 2.16172 52.3154 1.82924 48.839L1.67495 47.1801L1.38564 43.6281C1.09183 39.7916 0.934865 35.9456 0.915039 32.0977C0.915039 28.2607 1.11562 24.2481 1.38564 20.5673L1.67495 17.0152L1.82924 15.3563C2.16159 11.8806 3.69511 8.63501 6.15981 6.19096C8.6245 3.7469 11.8623 2.26113 15.3032 1.99525L18.4701 1.74544L21.9417 1.50734L25.6526 1.28485L29.5254 1.09749C32.8447 0.951999 36.1666 0.876518 39.4891 0.871094ZM31.7743 22.6321V41.5632C31.7743 43.3666 33.703 44.4907 35.2459 43.593L51.447 34.1274C51.7995 33.9221 52.0924 33.6263 52.296 33.27C52.4996 32.9137 52.6068 32.5093 52.6068 32.0977C52.6068 31.6861 52.4996 31.2817 52.296 30.9254C52.0924 30.569 51.7995 30.2733 51.447 30.068L35.2459 20.6063C34.894 20.4007 34.4947 20.2925 34.0883 20.2925C33.6819 20.2926 33.2827 20.4009 32.9308 20.6067C32.579 20.8124 32.2868 21.1083 32.0838 21.4645C31.8807 21.8207 31.774 22.2248 31.7743 22.636V22.6321Z" fill="white"/>
+            </svg>
+    </button>
+    {% endif %}
+    {% endcapture %}
+      <!--
+        <link rel="preload" as="image" href="{{ block.settings.video_thumbnail | image_url: width:1400 }}" media="(min-width: 1024px)">
+        <link rel="preload" as="image" href="{{ block.settings.video_thumbnail | image_url: width:800 }}" media="(min-width: 768px) and (max-width: 1023px)">
+        <link rel="preload" as="image" href="{{ block.settings.video_thumbnail | image_url: width:400 }}" media="(max-width: 767px)">
+      -->
+      {%- if block.settings.video_thumbnail != blank -%}
+        {%- assign preload_image_url = block.settings.video_thumbnail | image_url: width: 800 -%}
+        <link rel="preload" as="image" href="{{ preload_image_url }}" fetchPriority="high">
+        <link rel="preload" as="video" href="{{ block.settings.video.sources[1].url }}" fetchPriority="high">
+      {%- endif -%}
+  {% endcase %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'content' %}
+      {% capture contents %}
+        {% if block.settings.title != blank %}
+          <h2 class="text-tertiary -mb-[1.7rem] {{sections.alignment}} sm:text-center">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <div class="{{sections.alignment}} sm:text-center">{{ block.settings.description }}</div>
+        {% endif %}
+        {% if block.settings.button_text != blank%}
+          <a class="{{sections.alignment}} button border-none  justify-center sm:text-center" href="{{ block.settings.button_link }}">
+            {{- block.settings.button_text -}}
+          </a>
+        {% endif %}
+        {% if videoButton and section.settings.show_play_button_on =='content' %}
+          {{ videoButton }}
+        {% endif %}
+      {% endcapture %}
+
+    {% when 'video' %}
+      {%- capture sizes -%}
+        {% if section.settings.full_width -%}
+          100vw
+        {%- else -%}
+          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 768px)
+          calc(100vw - 10rem), 100vw
+        {%- endif %}
+      {%- endcapture -%}
+
+      {% capture video %}
+        {% comment %} {% assign video_url =  %} {% endcomment %}
+        <div class="video-thumbnail-container w-full {{ sections.alignment }}" style="max-width:{{ block.settings.video_width }};">
+          {% if block.settings.video_type == 'youtube' %}
+            {% if block.settings.youtube_url %}
+                <!-- Thumbnail and Play Button -->
+                <div class="video-thumbnail w-full relative">
+                  <div class="absolute image-overlay bg-[#00000060] top-0 left-0 w-full h-full empty:block"></div>
+
+                  {% assign video_id = block.settings.youtube_url | split: '/' | last %}
+                        
+
+                        {% if video_id contains 'v=' %}
+                            {% assign video_id = video_id | split: 'v=' | last %}
+                            {% if video_id contains '&' %}
+                              {% assign video_id = video_id | split: '&' | first %}
+                            {% endif %}
+                        {% elsif   video_id contains 'shorts/' %}
+                          {% assign video_id = video_id | split: 'shorts/' | last %}
+                        {% endif %}
+                        
+                    {% if block.settings.video_thumbnail != blank %}
+                        <img 
+                          loading="lazy"                          
+                          src="{{ block.settings.video_thumbnail | image_url }}" 
+                          alt="Video Thumbnail" class="{{ block.settings.video_thumbnail.alt | default: 'video-thumbnail-img'}}" width="500" height="500">
+                    {% else %}
+                        
+                        <img 
+                          loading="lazy"
+                          src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg"
+                          alt="YouTube Thumbnail"
+                          class="video-thumbnail-img"
+                          width="500"
+                          height="500"
+                        >
+                      {% endif %}
+                      {%  if section.settings.show_play_button_on == 'image' %}
+                        <button class="play-button top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" data-video-type="youtube" data-video-url="{{ block.settings.youtube_url }}" data-video-id="{{ video_id }}" >
+                   <svg style="width:7.9rem; height:6.4rem" viewBox="0 0 79 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M39.4891 0.871094C42.7871 0.871094 46.1701 0.956967 49.4489 1.09749L53.3217 1.28485L57.0287 1.50734L60.5003 1.74544L63.6711 1.99525C67.1126 2.26025 70.3514 3.74564 72.8168 6.18977C75.2823 8.6339 76.8164 11.88 77.1489 15.3563L77.3032 17.0152L77.5925 20.5673C77.8625 24.2481 78.0631 28.2607 78.0631 32.0977C78.0631 35.9347 77.8625 39.9473 77.5925 43.6281L77.3032 47.1801L77.1489 48.839C76.8163 52.316 75.2817 55.5626 72.8154 58.0068C70.3491 60.451 67.1095 61.936 63.6673 62.2001L60.5042 62.446L57.0325 62.688L53.3217 62.9105L49.4489 63.0979C46.1309 63.2433 42.8102 63.3188 39.4891 63.3243C36.1679 63.3188 32.8473 63.2433 29.5293 63.0979L25.6564 62.9105L21.9495 62.688L18.4778 62.446L15.307 62.2001C11.8655 61.9351 8.62676 60.4497 6.16128 58.0056C3.6958 55.5615 2.16172 52.3154 1.82924 48.839L1.67495 47.1801L1.38564 43.6281C1.09183 39.7916 0.934865 35.9456 0.915039 32.0977C0.915039 28.2607 1.11562 24.2481 1.38564 20.5673L1.67495 17.0152L1.82924 15.3563C2.16159 11.8806 3.69511 8.63501 6.15981 6.19096C8.6245 3.7469 11.8623 2.26113 15.3032 1.99525L18.4701 1.74544L21.9417 1.50734L25.6526 1.28485L29.5254 1.09749C32.8447 0.951999 36.1666 0.876518 39.4891 0.871094ZM31.7743 22.6321V41.5632C31.7743 43.3666 33.703 44.4907 35.2459 43.593L51.447 34.1274C51.7995 33.9221 52.0924 33.6263 52.296 33.27C52.4996 32.9137 52.6068 32.5093 52.6068 32.0977C52.6068 31.6861 52.4996 31.2817 52.296 30.9254C52.0924 30.569 51.7995 30.2733 51.447 30.068L35.2459 20.6063C34.894 20.4007 34.4947 20.2925 34.0883 20.2925C33.6819 20.2926 33.2827 20.4009 32.9308 20.6067C32.579 20.8124 32.2868 21.1083 32.0838 21.4645C31.8807 21.8207 31.774 22.2248 31.7743 22.636V22.6321Z" fill="white"/>
+                    </svg>
+                    </button>
+                    {% endif %}
+                </div>
+            {% endif %}
+        
+          {% elsif block.settings.video_type == 'self_hosted' %}
+            {% if block.settings.video_controls == "true" %}
+              {% if block.settings.video %}
+                <!-- Thumbnail and Play Button -->
+                <div class="video-thumbnail  w-full" >
+                  <div class="absolute bg-[#00000060] top-0 left-0 w-full h-full empty:block"></div>
+
+                  <img 
+                  loading="lazy"
+                    src="{{ block.settings.video_thumbnail | image_url }}" 
+                    alt="{{ block.settings.video_thumbnail.alt | default: 'video thumbnail' }}" class="video-thumbnail-img" width="500" height="500">
+
+                    {% if videoButton and section.settings.show_play_button_on =='image' %}
+                      <button class="play-button top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" data-video-type="self_hosted" data-video-src="{{ block.settings.video.sources[1].url }}"><svg style="width:7.9rem; height:6.4rem" viewBox="0 0 79 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path fill-rule="evenodd" clip-rule="evenodd" d="M39.4891 0.871094C42.7871 0.871094 46.1701 0.956967 49.4489 1.09749L53.3217 1.28485L57.0287 1.50734L60.5003 1.74544L63.6711 1.99525C67.1126 2.26025 70.3514 3.74564 72.8168 6.18977C75.2823 8.6339 76.8164 11.88 77.1489 15.3563L77.3032 17.0152L77.5925 20.5673C77.8625 24.2481 78.0631 28.2607 78.0631 32.0977C78.0631 35.9347 77.8625 39.9473 77.5925 43.6281L77.3032 47.1801L77.1489 48.839C76.8163 52.316 75.2817 55.5626 72.8154 58.0068C70.3491 60.451 67.1095 61.936 63.6673 62.2001L60.5042 62.446L57.0325 62.688L53.3217 62.9105L49.4489 63.0979C46.1309 63.2433 42.8102 63.3188 39.4891 63.3243C36.1679 63.3188 32.8473 63.2433 29.5293 63.0979L25.6564 62.9105L21.9495 62.688L18.4778 62.446L15.307 62.2001C11.8655 61.9351 8.62676 60.4497 6.16128 58.0056C3.6958 55.5615 2.16172 52.3154 1.82924 48.839L1.67495 47.1801L1.38564 43.6281C1.09183 39.7916 0.934865 35.9456 0.915039 32.0977C0.915039 28.2607 1.11562 24.2481 1.38564 20.5673L1.67495 17.0152L1.82924 15.3563C2.16159 11.8806 3.69511 8.63501 6.15981 6.19096C8.6245 3.7469 11.8623 2.26113 15.3032 1.99525L18.4701 1.74544L21.9417 1.50734L25.6526 1.28485L29.5254 1.09749C32.8447 0.951999 36.1666 0.876518 39.4891 0.871094ZM31.7743 22.6321V41.5632C31.7743 43.3666 33.703 44.4907 35.2459 43.593L51.447 34.1274C51.7995 33.9221 52.0924 33.6263 52.296 33.27C52.4996 32.9137 52.6068 32.5093 52.6068 32.0977C52.6068 31.6861 52.4996 31.2817 52.296 30.9254C52.0924 30.569 51.7995 30.2733 51.447 30.068L35.2459 20.6063C34.894 20.4007 34.4947 20.2925 34.0883 20.2925C33.6819 20.2926 33.2827 20.4009 32.9308 20.6067C32.579 20.8124 32.2868 21.1083 32.0838 21.4645C31.8807 21.8207 31.774 22.2248 31.7743 22.636V22.6321Z" fill="white"/>
+                       </svg>
+                     </button> 
+                    {% endif %}
+                </div>
+              {% endif %}
+            {% else %}
+              {% assign videoMp = '' %}
+
+              {% assign videoId =  'video-' | append:block.id  %}
+
+              {% comment %} <video class="video " 
+                {% comment %} style="display:none;" {% endcomment %}
+                  id="video-{{ block.id }}" autoplay='false' preload="auto" muted playsinline loop width="100%" height="100%"  poster="{{ block.settings.video_thumbnail | image_url: width:800 }}">
+                
+                 <!-- <source src="{{block.settings.video.sources[0].url}}" type="video/m3u8"> -->
+              {% if block.settings.video != blank %}
+                {% for  source in block.settings.video.sources %}
+                  {% if source.url contains  '.mp4' %}
+                    <source src="{{ source.url }}" type="video/mp4">
+                    {% assign videoMp = source.url %}
+                    
+                  {% else %}
+                    <source src="{{ source.url }}" type="video/m3u8">
+                  {% endif %}
+                  Your browser does not support the video tag.
+                {% endfor %}
+              {% else %}
+                <source src="{{ 'home-video.mp4' | asset_url }}" type="video/mp4">
+                   
+              {% endif %}
+              </video> {% endcomment %}
+              {%  if block.settings.video_thumbnail != blank %}
+                {% assign poster = block.settings.video_thumbnail | image_url: width:800 %}
+              {% else %}
+                {% assign poster = block.settings.video.video_thumbnail | image_url: width:800 %}
+              {% endif %}
+               {% assign video_tag_output = block.settings.video | video_tag: image_size: '480x', class:'video', id: videoId, 
+                poster: poster,
+                 loop:true, controls: false, muted: true, autoplay:
+                true, preload: 'auto', width: 1920, height: 968, 
+                widths: '320, 480, 750, 980, 1280, 1440, 1560, 1680, 1920' %}
+                 
+
+                 {% capture video_tag_html %}
+                  
+                  {{ video_tag_output | split: '<img ' | first }}
+                  {{ "</video>" }}
+                  {% comment %} <img fetchpriority="high" loading="lazy" alt = "{{ block.settings.video_thumbnail.alt | default: 'video thumbnail' }}" 
+                  {{ video_tag_output | split: '<img ' | last}} {% endcomment %}
+                {% endcapture %}
+        
+                {{ video_tag_html | replace: '<video ', '<video fetchpriority="high" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop'}}
+
+
+              {% comment %} <video fetchpriority="high" playsinline="" class="video" id="video-video_gi3GDy" 
+              poster="{{ preload_image_url }}" loop muted autoplay preload="auto" width="1920" height="968" widths="320, 480, 750, 980, 1280, 1440, 1560, 1680, 1920">
+              <source src="{{ block.settings.video.sources[1].url }}" type="video/mp4">
+              </video> {% endcomment %}
+
+      
+              {% if template.name == 'index' %}
+                <script type="application/ld+json">
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "VideoObject",
+                    "name": "{{ block.settings.video_title | default: 'Beyond The Cliffs: The Unseen Story of Himalayan Mad Honey Hunters' }}",
+                    "description": "{{ block.settings.video_description | default: 'Get ready to embark on a thrilling journey with our brave Gurung honey hunters as they venture into the heart of the Himalayas to collect the rare and precious mad honey. This captivating video takes you behind the scenes of a world far away, where ancient traditions meet modern-day challenges.' }}",
+                    "thumbnailUrl": "{{ block.settings.video_thumbnail | image_url }}",
+                    "uploadDate": "{{ block.settings.upload_date | default: '2024-12-01T00:00:00+05:45' }}",
+                    "contentUrl": {{ 'home-video.mp4' | asset_url | json}},
+                    "embedUrl": {{ block.settings.youtube_url | json}},
+                    "duration": "{{ block.settings.video_duration | default: 'PT0M9S' }}",
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": {{ shop.name | json }},
+                      "logo": {
+                        "@type": "ImageObject",
+                        "url": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }}
+                      }
+                    },
+                    "isFamilyFriendly": "{{ block.settings.is_family_friendly | default: 'true' }}"
+                  }
+                </script>
+              {% endif %}
+              {% comment %} {% if block.settings.video_thumbnail != blank %}
+                  <img class="video relative top-0 left-0 z-0" id="image-{{ block.id }}" src="{{ block.settings.video_thumbnail | image_url: width:800 }}" width="500" height="500" alt="Hero banner" />
+                   <script defer="defer">
+                    // Wait until the window is fully loaded
+                    window.addEventListener('load', function() {
+                      const video = document.querySelector('#video-{{ block.id }}'); 
+                      const placeholder = document.querySelector('#image-{{ block.id }}'); 
+                      video.style.position = 'relative';
+                      
+                      video.setAttribute('autoplay', 'true'); 
+                      video.load(); 
+                      setTimeout(
+                        ()=>{                      
+                      placeholder.remove();
+                      video.style.display = 'block';
+                        },2000)
+                    });
+                  </script> 
+                {% endif %} {% endcomment %}
+
+            {% endif %}
+          {% endif %}
+        </div>
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="video-lightbox-{{ section.id }}">
+          <div class="lightbox-content">
+            <span class="close-button z-10 text-tertiary">&times;</span>
+            <div class="lightbox-video-container">
+              <!-- Video will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+      {% endcapture %}
+  {% endcase %}
+{% endfor %}
+
+<div
+  {% if sections.custom_id %}
+    id="{{ sections.custom_id }}"
+  {% endif %}
+  class="main-wrapper wrapper flex justify-center w-full {{ sections.custom_class }}"
+  style="max-width:{{ sections.width }};"
+>
+  <div
+    class="
+      relative
+      flex {{ sections.layout }} flex-nowrap {{sections.alignment}} justify-between w-[100%] gap-[5.3rem] sm:gap-[4rem] sm:flex-col sm:justify-center sm:text-center sm:items-center
+      {% if sections.valignment == 'center '%} items-center {% elsif sections.valignment == 'start' %} items-start {% elsif sections.valignment == 'end' %} items-end {% endif %}
+    "
+  >
+    {% if contents != blank %}
+      <div
+        class="content-side flex {{sections.alignment}} gap-[3.2rem] flex-col items-start max-w-1/2 sm:max-w-[100%!important] sm:text-center sm:items-center w-full "
+        style="max-width:{{ sections.content_width }};"
+      >
+        {{ contents }}
+      </div>
+    {% endif %}
+    {{ video }}
+  </div>
+</div>
+
+<script
+  defer="defer"
+>
+  document.addEventListener('DOMContentLoaded', function () {
+    var sectionId = document.querySelector('#shopify-section-{{ section.id }}');
+    var lightbox = document.getElementById('video-lightbox-{{ section.id }}');
+    var closeButton = lightbox.querySelector('.close-button');
+    var videoContainer = lightbox.querySelector('.lightbox-video-container');
+
+    sectionId.querySelectorAll('.play-button').forEach((button) => {
+      button.addEventListener('click', function () {
+        var videoType = this.getAttribute('data-video-type');
+        let videoEmbed = '';
+        if (videoType === 'youtube') {
+          var videoId = this.getAttribute('data-video-id');
+          videoEmbed = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        } else if (videoType === 'self_hosted') {
+          var videoSrc = this.getAttribute('data-video-src');
+          videoEmbed = ` <video class="video" controls autoplay width="100%" height="100%"><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
+        }
+
+        videoContainer.innerHTML = videoEmbed;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeButton.addEventListener('click', function () {
+      lightbox.style.display = 'none';
+      videoContainer.innerHTML = '';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Basmil Video Text",
+  "class": "basmilVideoText",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Video Layout",
+      "default": "imagelast",
+      "options": [
+        {
+          "value": "imagefirst",
+          "label": "Left"
+        },
+        {
+          "value": "imagelast",
+          "label": "Right"
+        },
+        {
+          "value": "imagetop",
+          "label": "Top"
+        },
+        {
+          "value": "imagebottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "show_play_button_on",
+      "label": "Show Play Button On",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content Alignment",
+      "default": "contentstart",
+      "options": [
+        {
+          "value": "contentstart",
+          "label": "Left"
+        },
+        {
+          "value": "contentcenter",
+          "label": "Center"
+        },
+        {
+          "value": "contentend",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "valignment",
+      "label": "Verticle Content Alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "start",
+          "label": "Start"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "End"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Content Part Width"
+    },
+    {
+      "type": "text",
+      "id": "content_width",
+      "label": "Content Width",
+      "default": "50%"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "0 16px",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin",
+      "default": "0",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "header",
+      "content": "Custom Class/id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "header",
+      "content": "Section Width"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Width",
+      "default": "85.35%",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Height"
+    },
+    {
+      "type": "text",
+      "id": "minheight",
+      "label": "Min Height",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Contents",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title Here"
+        },
+        {
+          "type": "header",
+          "content": "Paragraph"
+        },
+        {
+          "type": "liquid",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Paragraphs Here</p>"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Link Here"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Select Type",
+          "info": "Select the type of video you want to display"
+        },
+        {
+          "type": "select",
+          "id": "video_type",
+          "label": "Video Type",
+          "default": "youtube",
+          "options": [
+            {
+              "value": "youtube",
+              "label": "YouTube"
+            },
+            {
+              "value": "self_hosted",
+              "label": "Self-hosted"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "YouTube Video",
+          "info": "If you want to use a YouTube video, enter the URL here"
+        },
+        {
+          "type": "url",
+          "id": "youtube_url",
+          "label": "YouTube URL"
+        },
+        {
+          "type": "header",
+          "content": "Self-hosted Video",
+          "info": "If you want to use a self-hosted video, upload it here"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_thumbnail",
+          "label": "Video Thumbnail",
+          "info": "Upload a thumbnail image for the self-hosted video"
+        },
+        {
+          "type": "select",
+          "id": "video_controls",
+          "label": "Video Controls",
+          "options": [
+            {
+              "value": "true",
+              "label": "lightbox"
+            },
+            {
+              "value": "false",
+              "label": "autoplay"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Video Width"
+        },
+        {
+          "type": "text",
+          "id": "video_width",
+          "label": "Video Width",
+          "default": "40rem",
+          "info": "Value in rem. 1rem = 10px"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basmil Video Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,470 @@
+{% assign sections = section.settings %}
+<style>
+  #shopify-section-{{ section.id }} {
+      background:black;
+      border-top:2px dashed #E0AF7E;
+      padding:12rem 16px;
+  }
+
+  #shopify-section-{{ section.id }} .secondcontainer svg {
+      cursor: pointer;
+  }
+
+  @media (max-width:1166px){
+    {% comment %} #shopify-section-{{ section.id }}  .secondcontainer{
+        margin-left:-6rem
+      } {% endcomment %}
+  }
+</style>
+
+<script src="{{ 'selling-plans.js' | asset_url }}" defer="defer"></script>
+<script
+  src="{{ 'product-form.js' | asset_url }}"
+  defer="defer"
+  type="module"
+></script>
+
+{% capture buy_button %}
+
+        {%- assign product_form_id = 'product-form-' | append: product.variants.first.id -%}
+
+        {%- render 'buy-buttons',
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: true
+        -%}
+{% endcapture %}
+
+{% capture main_image %}
+    <img
+        src="{{ sections.whole_image | image_url }}"
+        alt="{{ sections.whole_image.alt | default: 'Bottle Image' }}"
+        class="w-full h-[auto]"
+        width="500"
+        height="500"
+      >
+
+{% endcapture %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'bottle' %}
+      {% capture cap_images_2 %}
+                  <img
+                  src="{{ block.settings.cap_image_2 | image_url }}"
+                  alt="{{ block.settings.cap_image_2 | default: 'Cap Image 2'}}"
+                  class="w-full h-[auto] scale-150"
+                  width="500"
+                  height="500"
+                  />
+              {% endcapture %}
+
+      {% capture capbody %}
+                  <img
+                  src="{{ block.settings.cap_image | image_url }}"
+                  alt="{{ block.settings.cap_image.alt | default: 'Body Image'}}"
+                  class="w-full h-[auto]"
+                  width="500"
+                  height="500"
+                  />
+                  <div class="flex flex-col gap-[16px]">
+                    <h3 class="text-center text-primary font-sans">{{ block.settings.cap_title }}</h3>
+                    <p class="text-white text-center font-sans">{{ block.settings.cap_description }}</p>
+                  </div>
+              {% endcapture %}
+    {% when 'bottlebody' %}
+      {% capture bottlebody %}
+        <img
+            src="{{ block.settings.body_image | image_url }}"
+            alt="{{ block.settings.body_image.alt | default:'Body Image'}}"
+            class="w-full h-[auto]"
+            width="500"
+            height="500"
+        >
+        <div class="flex flex-col gap-[16px]">
+            <h3 class="text-center text-primary font-sans">{{ block.settings.body_title }}</h3>
+            <p class="text-white text-center font-sans">{{ block.settings.body_description }}</p>
+            <div id="cart-btn"></div>
+        </div>
+        <img
+            src="{{ block.settings.body_image_2 | image_url }}"
+            alt="{{ block.settings.body_image_2.alt | default: 'Body Image'}}"
+            class="w-full h-[auto]"
+            width="500"
+            height="500"
+        >
+        {% endcapture %}
+    {% when 'bottlelabel' %}
+      {% capture labelimage2 %}
+              <img
+              src="{{ block.settings.label_image_2 | image_url }}"
+              alt="{{ block.settings.label_image_2.alt | default:'Label Image 2'}}"
+              class="w-full h-[auto]"
+              width="500"
+              height="500"
+              />
+          {% endcapture %}
+
+      {% capture labelbody %}
+              <img
+              src="{{ block.settings.label_image | image_url }}"
+              alt="{{ block.settings.label_image.alt | default:'Body Image'}}"
+              class="w-full h-[auto]"
+              width="500"
+              height="500"
+              />
+              <div class="flex flex-col gap-[16px]">
+                <h3 class="text-center text-primary font-sans">{{ block.settings.label_title }}</h3>
+                <p class="text-white text-center font-sans">{{ block.settings.label_description }}</p>
+                </div>
+            {% endcapture %}
+    {% else %}
+
+  {% endcase %}
+{% endfor %}
+
+<div class="{{sections.class}} justify-between text-white relative flex sm:justify-center sm:items-center sm:flex-col-reverse max-w-[69.2%] md:max-w-[116.6rem] xxl:max-w-[160rem] w-[95%] m-auto border-none">
+  <div class="flex font-sans gap-[4.8rem] flex-col max-w-[38%] md:max-w-[45%] sm:max-w-full sm:mt-[4.8rem]">
+    <h2 class="sm:order-2 text-primary font-sans mt-[4rem] text-[5rem] md:text-[3rem] sm:text-[3rem] xl:text-[7rem] xxl:text-[9rem] font-normal sm:text-center sm:justify-center relative flex after:absolute after:bottom-[-2.4rem] after:h-[1px] after:w-[44.37%] after:bg-white">
+      {{ sections.title }}
+    </h2>
+    <p class="sm:order-3 text-white font-sans sm:text-center">{{ sections.description }}</p>
+    <div class="sm:order-1 flex gap-[1rem] text-[#FFFFFF99] items-center text-[1.4rem] xl:text-[16px] xxl:text-[1.8rem] md:text-[1.3rem] sm:text-[1.4rem] leading-[1.3] sm:text-center sm:justify-center">
+      <svg
+        width="30"
+        height="43"
+        viewBox="0 0 30 43"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <rect width="30" height="43" fill="url(#pattern0_2037_14200)"/>
+        <defs>
+        <pattern id="pattern0_2037_14200" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <use xlink:href="#image0_2037_14200" transform="scale(0.0333333 0.0232558)"/>
+        </pattern>
+        <image id="image0_2037_14200" width="300" height="43" xlink:href="data:image/png;base64,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"/>
+        </defs>
+      </svg>
+      Click on Dots to know more<br>
+      about each section.
+    </div>
+    <div id="image-secondary"></div>
+  </div>
+  <div class="secondcontainer flex flex-col gap-[6.4rem]  max-w-[37.14%] sm:max-w-[90%] w-full h-max relative ">
+    <div id="content-body" class="flex gap-[4.8rem] flex-col">
+      <img
+        src="{{ sections.whole_image | image_url }}"
+        alt="{{ sections.whole_image.alt | default:'Bottle Image'}}"
+        class="w-full h-[auto]"
+        width="500"
+        height="500"
+      >
+    </div>
+    <div id="btn-cart" style="display:none;">
+      {{ buy_button }}
+    </div>
+    <div
+      id="bottle-selector"
+      class="min-w-[44px] flex flex-col justify-between w-max absolute right-[-6rem] top-0 py-8 h-full"
+    >
+      <div id="cross" class="cross absolute -top-0  w-10 h-10 cursor-pointer hidden">
+        <span
+          class="absolute top-1/2 left-1/2 block w-8 h-1 bg-primary rotate-45 transform -translate-x-1/2 -translate-y-1/2"
+        ></span>
+        <span
+          class="absolute top-1/2 left-1/2 block w-8 h-1 bg-primary -rotate-45 transform -translate-x-1/2 -translate-y-1/2"
+        ></span>
+      </div>
+
+      <svg
+        class="cap"
+
+        style="width:4rem; height:4rem;"
+        viewBox="0 0 44 44"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <prd-title>Bottle Cap</prd-title>
+        <g filter="url(#filter0_d_9983_2265)">
+        <circle cx="22" cy="22" r="17" fill="black"/>
+        <circle cx="22" cy="22" r="14.5" stroke="#E0AF7E" stroke-opacity="0.6" stroke-width="5"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_9983_2265" x="0" y="0" style="width:4rem; height:4rem;" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_9983_2265"/>
+        <feOffset/>
+        <feGaussianBlur stdDeviation="3"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9983_2265"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9983_2265" result="shape"/>
+        </filter>
+        </defs>
+      </svg>
+
+      <svg
+        class="label"
+        style="width:4rem; height:4rem;"
+        viewBox="0 0 44 44"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <prd-title>Bottle label</prd-title>
+
+        <g filter="url(#filter0_d_9983_2265)">
+        <circle cx="22" cy="22" r="17" fill="black"/>
+        <circle cx="22" cy="22" r="14.5" stroke="#E0AF7E" stroke-opacity="0.6" stroke-width="5"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_9983_2265" x="0" y="0" style="width:4rem; height:4rem;" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_9983_2265"/>
+        <feOffset/>
+        <feGaussianBlur stdDeviation="3"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9983_2265"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9983_2265" result="shape"/>
+        </filter>
+        </defs>
+      </svg>
+
+      <svg
+        class="body"
+        style="width:4rem; height:4rem;"
+        viewBox="0 0 44 44"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Bottle Body</title>
+
+        <g filter="url(#filter0_d_9983_2265)">
+        <circle cx="22" cy="22" r="17" fill="black"/>
+        <circle cx="22" cy="22" r="14.5" stroke="#E0AF7E" stroke-opacity="0.6" stroke-width="5"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_9983_2265" x="0" y="0" style="width:4rem; height:4rem;" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="effect1_dropShadow_9983_2265"/>
+        <feOffset/>
+        <feGaussianBlur stdDeviation="3"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9983_2265"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9983_2265" result="shape"/>
+        </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  const bottleSelector = document.getElementById('bottle-selector');
+  const cap = bottleSelector.querySelectorAll('svg');
+
+  const hidedisplayAll = (display) => {
+    cap.forEach((svg) => {
+      svg.style.display = display;
+    });
+  };
+
+  const image = document.getElementById('image-secondary');
+  const content = document.getElementById('content-body');
+  cap.forEach((svg) => {
+    svg.addEventListener('click', (e) => {
+      const target = e.target.closest('svg');
+      if (!target) return;
+      const type = target.getAttribute('class');
+      console.log(target);
+      if (window.innerWidth <= 768) {
+        content.parentElement.style.maxWidth = '100%';
+      } else {
+        content.parentElement.style.maxWidth = '38.56%';
+      }
+
+      document.getElementById('cross').classList.remove('hidden');
+      document.getElementById('cross').addEventListener('click', () => {
+        resetElements();
+      });
+      switch (type) {
+        case 'cap':
+          image.innerHTML = `{{ cap_images_2 }}`;
+          content.innerHTML = `{{ capbody }}`;
+          document.getElementById('btn-cart').style.display = 'block';
+          break;
+        case 'label':
+          image.innerHTML = `{{ labelimage2 }}`;
+          content.innerHTML = `{{ labelbody }}`;
+          document.getElementById('btn-cart').style.display = 'block';
+
+          break;
+        case 'body':
+          content.innerHTML = `{{ bottlebody }}`;
+          image.innerHTML = '';
+          document.getElementById('btn-cart').style.display = 'none';
+          document.getElementById('cart-btn').innerHTML = document.getElementById('btn-cart').innerHTML;
+
+          break;
+        default:
+          content.innerHTML = `{{ main_image }}`;
+          break;
+      }
+      hidedisplayAll('none');
+    });
+  });
+
+  resetElements = () => {
+    content.innerHTML = `{{ main_image }}`;
+    image.innerHTML = '';
+    document.getElementById('cross').classList.add('hidden');
+
+    document.getElementById('btn-cart').style.display = 'none';
+    hidedisplayAll('inline-block');
+    if (window.innerWidth <= 768) {
+      content.parentElement.style.maxWidth = '100%';
+    } else {
+      content.parentElement.style.maxWidth = '37.56%';
+    }
+  };
+
+  bottleSelector.addEventListener('click', (e) => {
+    const rect = bottleSelector.getBoundingClientRect();
+    if (e.clientX > rect.right) {
+      resetElements();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Everest Shilajit Bottle",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product_selected",
+      "label": "Select Product"
+    },
+    {
+      "type": "text",
+      "id": "class",
+      "label": "Custom class"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Everest Shilajit Bottle"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Everest Shilajit Bottle"
+    },
+    {
+      "type": "image_picker",
+      "id": "whole_image",
+      "label": "Bottle Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bottle",
+      "name": "Bottle Cap",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cap_image",
+          "label": "Cap Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "cap_image_2",
+          "label": "Cap Image 2"
+        },
+        {
+          "type": "text",
+          "id": "cap_title",
+          "label": "Cap Title",
+          "default": "Cap Title"
+        },
+        {
+          "type": "text",
+          "id": "cap_description",
+          "label": "Cap Description",
+          "default": "Cap Description"
+        }
+      ]
+    },
+    {
+      "type": "bottlelabel",
+      "name": "Bottle Label",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "label_image",
+          "label": "Label Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "label_image_2",
+          "label": "Label Image 2"
+        },
+        {
+          "type": "text",
+          "id": "label_title",
+          "label": "Label Title",
+          "default": "Label Title"
+        },
+        {
+          "type": "text",
+          "id": "label_description",
+          "label": "Label Description",
+          "default": "Label Description"
+        }
+      ]
+    },
+    {
+      "type": "bottlebody",
+      "name": "Bottle Body",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "body_image",
+          "label": "Body Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "body_image_2",
+          "label": "Body Image 2"
+        },
+        {
+          "type": "text",
+          "id": "body_title",
+          "label": "Body Title",
+          "default": "Body Title"
+        },
+        {
+          "type": "text",
+          "id": "body_description",
+          "label": "Body Description",
+          "default": "Body Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Everest Shilajit Bottle",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

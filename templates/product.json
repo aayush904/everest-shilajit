@@ -1,0 +1,715 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating_jhCGye": {
+          "type": "rating",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_MaY6VG": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"badges\">\n<p style=\"margin-bottom: 2.4rem!important;\">Everest Shilajit is ethically sourced from the pristine heights of the Himalayas and third-party lab tested to ensure purity, potency, and authentic natural energy.</p>\n\n<img \nstyle=\"max-width:100%;\" src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/badge.svg?v=1758621875\" alt=\"{{product.title}} badges\" width=\"455\" height=\"100\"/></div>\n\n<style>\nproduct-head{\norder:-1;\n}\n.badges{\norder:1;  \n}\n.collapsible_tabs{\norder:2;\n}\n.variant-selection{\norder:0;  \n}\n</style>"
+          }
+        },
+        "custom_liquid_CPQ9Kt": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<hr style=\"display:block; height:1px; background:#68453D;\">"
+          }
+        },
+        "text_PHQLwb": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
+          }
+        },
+        "collapsible_tab_Qz7EyW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why Everest Shilajit?",
+            "icon": "none",
+            "content": "<ul><li>The only Shilajit naturally rich in fulvic acid and essential minerals</li><li>Bioactive compounds that support energy and stamina</li><li>Micronutrients that help balance inflammation and promote recovery</li><li>3x more antioxidants than standard Shilajit products</li><li>100% pure, traceable, and sourced straight from the Himalayas</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_nXt8Qr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why Everest Shilajit?",
+            "icon": "none",
+            "content": "<ul><li>The only Shilajit naturally rich in fulvic acid and essential minerals</li><li>Bioactive compounds that support energy and stamina</li><li>Micronutrients that help balance inflammation and promote recovery</li><li>3x more antioxidants than standard Shilajit products</li><li>100% pure, traceable, and sourced straight from the Himalayas</li></ul>",
+            "page": ""
+          }
+        },
+        "share_dPkbMr": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating_jhCGye",
+        "description",
+        "variant_picker",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_MaY6VG",
+        "custom_liquid_CPQ9Kt",
+        "text_PHQLwb",
+        "collapsible_tab_Qz7EyW",
+        "collapsible_tab_nXt8Qr",
+        "share_dPkbMr"
+      ],
+      "custom_css": [
+        ".accordion ul {list-style-image: url(\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/tick.svg?v=1758452976\"); list-style-position: outside;}",
+        ".accordion * {font-family: var(--font-body-family);}"
+      ],
+      "settings": {
+        "bundle_product": "",
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "faq_UXJy3G": {
+      "type": "faq",
+      "blocks": {
+        "text_diyMQk": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/faq.webp",
+            "question": "Fulvic Acid",
+            "answer": "<p>Restore electrolyte balance, support immunity, bone strength and overall vitality.</p>"
+          }
+        },
+        "text_KE4YRG": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/faq.webp",
+            "question": "Fulvic Acid",
+            "answer": "<p>Restore electrolyte balance, support immunity, bone strength and overall vitality.</p>"
+          }
+        },
+        "text_eKBmDX": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/faq.webp",
+            "question": "Fulvic Acid",
+            "answer": "<p>Restore electrolyte balance, support immunity, bone strength and overall vitality.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_diyMQk",
+        "text_KE4YRG",
+        "text_eKBmDX"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 3.2rem;}",
+        ".content-wrapper p:first-of-type {margin-top: 0 !important;}",
+        ".content-wrapper p {margin-top: 15px !important; margin-bottom: 0 !important;}",
+        "@media (max-width: 768px) {summary span {font-size: 18px !important; } .main-section {flex-direction: column; } img {max-width: 48px; margin-right: 16px !important; } .text-neutral-600 {margin-left: 64px !important; }}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "show_schema": false,
+        "heading": "What’s in Shialjit?",
+        "description": "<p>Everest Shilajit is a high-potency powerhouse, naturally formed over centuries in the pristine heights of the Himalayas. Packed with over 85 essential minerals, trace elements, and fulvic acid, it delivers a unique blend of vitality.</p>\n<p>and nourishment that your body simply cannot find anywhere else—or in a purer, more natural form. Unlike synthetic supplements or quick fixes, Everest Shilajit works at a deep cellular level, supporting energy production, stamina, and mental clarity while strengthening immunity and aiding recovery. Each</p>",
+        "content_alignment": "Left",
+        "content_part_width": "50%",
+        "faq_width": "--webkit-fill-available;",
+        "gap_between_sections": "24px 4.8rem; flex-direction:row;",
+        "padding": "8rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "125rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_74C4C7": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_MMHTBD": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"55\" height=\"56\" viewbox=\"0 0 55 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"27.5\" cy=\"27.5547\" r=\"27\" stroke=\"#D9D9D9\"></circle>\n<path d=\"M27.2711 47.6699L27.3363 47.6935H27.3781H27.3762C27.4143 47.7117 27.456 47.7225 27.4977 47.7262C27.5376 47.7334 27.5793 47.7334 27.6192 47.7262H27.661L27.7262 47.7026C38.792 41.7928 44.0528 32.2159 43.3657 19.1933C43.3621 19.0229 43.2642 18.8669 43.11 18.7908L27.7245 10.6377H27.6828L27.5867 10.5869H27.4053C27.3727 10.5924 27.3419 10.6014 27.3128 10.6141H27.2711L11.8856 18.7909C11.7315 18.867 11.6335 19.023 11.6299 19.1934C10.9426 32.216 16.2038 41.7926 27.2711 47.6699ZM12.5856 19.5177L27.4976 11.6163L42.4096 19.5084C42.999 32.043 38.1153 40.9523 27.4976 46.676C16.8799 40.9616 11.996 32.0723 12.5856 19.5177Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M27.2712 44.0349H27.3782H27.3763C27.4181 44.0385 27.4579 44.0385 27.4978 44.0349C27.5377 44.0385 27.5776 44.0385 27.6194 44.0349H27.7263C36.6032 39.3182 40.8269 31.6345 40.2609 21.189H40.2591C40.2573 21.0276 40.1703 20.8807 40.0324 20.7991L27.7393 14.2997H27.6975L27.5996 14.2725H27.4183L27.3258 14.2997H27.2841L14.9635 20.7991C14.8112 20.8771 14.7114 21.0312 14.7078 21.2035C14.1692 31.6346 18.3945 39.3182 27.2712 44.0349ZM15.6651 21.5135L27.4977 15.2518L39.3178 21.5135C39.764 31.4766 35.8904 38.4965 27.4977 43.0465C19.1051 38.4966 15.2315 31.4766 15.6776 21.5135H15.6651Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M24.8246 35.2464C24.8192 35.3733 24.8645 35.4967 24.9534 35.5891C25.0404 35.6816 25.1619 35.7342 25.2889 35.7342H29.672C29.7989 35.7342 29.9204 35.6816 30.0093 35.5891C30.0963 35.4967 30.1435 35.3733 30.1362 35.2464V31.8244H33.5528C33.6797 31.8317 33.8048 31.7845 33.8973 31.6975C33.988 31.6086 34.0406 31.4871 34.0406 31.3602V26.9589C34.0478 26.8283 33.9989 26.6996 33.9046 26.6071C33.8121 26.5146 33.6852 26.4656 33.5528 26.4711H30.1779V23.0599C30.1779 22.9366 30.129 22.8188 30.0419 22.7317C29.9549 22.6447 29.837 22.5957 29.7137 22.5957H25.3124C25.0567 22.5957 24.8482 22.8024 24.8482 23.0599V26.4729L21.4044 26.4711C21.2775 26.4711 21.1542 26.5237 21.0671 26.6161C20.9801 26.7086 20.9329 26.8319 20.9402 26.9589V31.342C20.9402 31.4653 20.9891 31.5832 21.0762 31.6702C21.1632 31.7573 21.2811 31.8063 21.4044 31.8063H24.8264L24.8246 35.2464ZM21.8904 30.8542L21.8923 27.4413H25.3142H25.3124C25.4358 27.4413 25.5536 27.3923 25.6407 27.3053C25.7277 27.2182 25.7767 27.1004 25.7767 26.977V23.5424H29.1896V26.9589C29.1896 27.0823 29.2386 27.2001 29.3256 27.2872C29.4127 27.3742 29.5306 27.4232 29.6539 27.4232H33.0668V30.8361H29.6956C29.5687 30.8361 29.4472 30.8869 29.3583 30.9794C29.2713 31.0719 29.2241 31.1952 29.2314 31.3239V34.7405H25.7949V31.3421C25.8021 31.2152 25.7568 31.09 25.6679 30.9975C25.5809 30.9069 25.4594 30.8543 25.3306 30.8543L21.8904 30.8542Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "The higher the fulvic acid content, the greater the concentration of essential minerals and rejuvenating bioactives.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_fWWNdx": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"55\" height=\"56\" viewbox=\"0 0 55 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"27.5\" cy=\"27.5547\" r=\"27\" stroke=\"#D9D9D9\"></circle>\n<path d=\"M27.2711 47.6699L27.3363 47.6935H27.3781H27.3762C27.4143 47.7117 27.456 47.7225 27.4977 47.7262C27.5376 47.7334 27.5793 47.7334 27.6192 47.7262H27.661L27.7262 47.7026C38.792 41.7928 44.0528 32.2159 43.3657 19.1933C43.3621 19.0229 43.2642 18.8669 43.11 18.7908L27.7245 10.6377H27.6828L27.5867 10.5869H27.4053C27.3727 10.5924 27.3419 10.6014 27.3128 10.6141H27.2711L11.8856 18.7909C11.7315 18.867 11.6335 19.023 11.6299 19.1934C10.9426 32.216 16.2038 41.7926 27.2711 47.6699ZM12.5856 19.5177L27.4976 11.6163L42.4096 19.5084C42.999 32.043 38.1153 40.9523 27.4976 46.676C16.8799 40.9616 11.996 32.0723 12.5856 19.5177Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M27.2712 44.0349H27.3782H27.3763C27.4181 44.0385 27.4579 44.0385 27.4978 44.0349C27.5377 44.0385 27.5776 44.0385 27.6194 44.0349H27.7263C36.6032 39.3182 40.8269 31.6345 40.2609 21.189H40.2591C40.2573 21.0276 40.1703 20.8807 40.0324 20.7991L27.7393 14.2997H27.6975L27.5996 14.2725H27.4183L27.3258 14.2997H27.2841L14.9635 20.7991C14.8112 20.8771 14.7114 21.0312 14.7078 21.2035C14.1692 31.6346 18.3945 39.3182 27.2712 44.0349ZM15.6651 21.5135L27.4977 15.2518L39.3178 21.5135C39.764 31.4766 35.8904 38.4965 27.4977 43.0465C19.1051 38.4966 15.2315 31.4766 15.6776 21.5135H15.6651Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M24.8246 35.2464C24.8192 35.3733 24.8645 35.4967 24.9534 35.5891C25.0404 35.6816 25.1619 35.7342 25.2889 35.7342H29.672C29.7989 35.7342 29.9204 35.6816 30.0093 35.5891C30.0963 35.4967 30.1435 35.3733 30.1362 35.2464V31.8244H33.5528C33.6797 31.8317 33.8048 31.7845 33.8973 31.6975C33.988 31.6086 34.0406 31.4871 34.0406 31.3602V26.9589C34.0478 26.8283 33.9989 26.6996 33.9046 26.6071C33.8121 26.5146 33.6852 26.4656 33.5528 26.4711H30.1779V23.0599C30.1779 22.9366 30.129 22.8188 30.0419 22.7317C29.9549 22.6447 29.837 22.5957 29.7137 22.5957H25.3124C25.0567 22.5957 24.8482 22.8024 24.8482 23.0599V26.4729L21.4044 26.4711C21.2775 26.4711 21.1542 26.5237 21.0671 26.6161C20.9801 26.7086 20.9329 26.8319 20.9402 26.9589V31.342C20.9402 31.4653 20.9891 31.5832 21.0762 31.6702C21.1632 31.7573 21.2811 31.8063 21.4044 31.8063H24.8264L24.8246 35.2464ZM21.8904 30.8542L21.8923 27.4413H25.3142H25.3124C25.4358 27.4413 25.5536 27.3923 25.6407 27.3053C25.7277 27.2182 25.7767 27.1004 25.7767 26.977V23.5424H29.1896V26.9589C29.1896 27.0823 29.2386 27.2001 29.3256 27.2872C29.4127 27.3742 29.5306 27.4232 29.6539 27.4232H33.0668V30.8361H29.6956C29.5687 30.8361 29.4472 30.8869 29.3583 30.9794C29.2713 31.0719 29.2241 31.1952 29.2314 31.3239V34.7405H25.7949V31.3421C25.8021 31.2152 25.7568 31.09 25.6679 30.9975C25.5809 30.9069 25.4594 30.8543 25.3306 30.8543L21.8904 30.8542Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Daily Immunity Support",
+            "icon_description": "The higher the fulvic acid content, the greater the concentration of essential minerals and rejuvenating bioactives.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_KtWBzt": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"55\" height=\"56\" viewbox=\"0 0 55 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"27.5\" cy=\"27.5547\" r=\"27\" stroke=\"#D9D9D9\"></circle>\n<path d=\"M27.2711 47.6699L27.3363 47.6935H27.3781H27.3762C27.4143 47.7117 27.456 47.7225 27.4977 47.7262C27.5376 47.7334 27.5793 47.7334 27.6192 47.7262H27.661L27.7262 47.7026C38.792 41.7928 44.0528 32.2159 43.3657 19.1933C43.3621 19.0229 43.2642 18.8669 43.11 18.7908L27.7245 10.6377H27.6828L27.5867 10.5869H27.4053C27.3727 10.5924 27.3419 10.6014 27.3128 10.6141H27.2711L11.8856 18.7909C11.7315 18.867 11.6335 19.023 11.6299 19.1934C10.9426 32.216 16.2038 41.7926 27.2711 47.6699ZM12.5856 19.5177L27.4976 11.6163L42.4096 19.5084C42.999 32.043 38.1153 40.9523 27.4976 46.676C16.8799 40.9616 11.996 32.0723 12.5856 19.5177Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M27.2712 44.0349H27.3782H27.3763C27.4181 44.0385 27.4579 44.0385 27.4978 44.0349C27.5377 44.0385 27.5776 44.0385 27.6194 44.0349H27.7263C36.6032 39.3182 40.8269 31.6345 40.2609 21.189H40.2591C40.2573 21.0276 40.1703 20.8807 40.0324 20.7991L27.7393 14.2997H27.6975L27.5996 14.2725H27.4183L27.3258 14.2997H27.2841L14.9635 20.7991C14.8112 20.8771 14.7114 21.0312 14.7078 21.2035C14.1692 31.6346 18.3945 39.3182 27.2712 44.0349ZM15.6651 21.5135L27.4977 15.2518L39.3178 21.5135C39.764 31.4766 35.8904 38.4965 27.4977 43.0465C19.1051 38.4966 15.2315 31.4766 15.6776 21.5135H15.6651Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M24.8246 35.2464C24.8192 35.3733 24.8645 35.4967 24.9534 35.5891C25.0404 35.6816 25.1619 35.7342 25.2889 35.7342H29.672C29.7989 35.7342 29.9204 35.6816 30.0093 35.5891C30.0963 35.4967 30.1435 35.3733 30.1362 35.2464V31.8244H33.5528C33.6797 31.8317 33.8048 31.7845 33.8973 31.6975C33.988 31.6086 34.0406 31.4871 34.0406 31.3602V26.9589C34.0478 26.8283 33.9989 26.6996 33.9046 26.6071C33.8121 26.5146 33.6852 26.4656 33.5528 26.4711H30.1779V23.0599C30.1779 22.9366 30.129 22.8188 30.0419 22.7317C29.9549 22.6447 29.837 22.5957 29.7137 22.5957H25.3124C25.0567 22.5957 24.8482 22.8024 24.8482 23.0599V26.4729L21.4044 26.4711C21.2775 26.4711 21.1542 26.5237 21.0671 26.6161C20.9801 26.7086 20.9329 26.8319 20.9402 26.9589V31.342C20.9402 31.4653 20.9891 31.5832 21.0762 31.6702C21.1632 31.7573 21.2811 31.8063 21.4044 31.8063H24.8264L24.8246 35.2464ZM21.8904 30.8542L21.8923 27.4413H25.3142H25.3124C25.4358 27.4413 25.5536 27.3923 25.6407 27.3053C25.7277 27.2182 25.7767 27.1004 25.7767 26.977V23.5424H29.1896V26.9589C29.1896 27.0823 29.2386 27.2001 29.3256 27.2872C29.4127 27.3742 29.5306 27.4232 29.6539 27.4232H33.0668V30.8361H29.6956C29.5687 30.8361 29.4472 30.8869 29.3583 30.9794C29.2713 31.0719 29.2241 31.1952 29.2314 31.3239V34.7405H25.7949V31.3421C25.8021 31.2152 25.7568 31.09 25.6679 30.9975C25.5809 30.9069 25.4594 30.8543 25.3306 30.8543L21.8904 30.8542Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Daily Immunity + Digestion Support",
+            "icon_description": "The higher the fulvic acid content, the greater the concentration of essential minerals and rejuvenating bioactives.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_7MzUam": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"55\" height=\"56\" viewbox=\"0 0 55 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"27.5\" cy=\"27.5547\" r=\"27\" stroke=\"#D9D9D9\"></circle>\n<path d=\"M27.2711 47.6699L27.3363 47.6935H27.3781H27.3762C27.4143 47.7117 27.456 47.7225 27.4977 47.7262C27.5376 47.7334 27.5793 47.7334 27.6192 47.7262H27.661L27.7262 47.7026C38.792 41.7928 44.0528 32.2159 43.3657 19.1933C43.3621 19.0229 43.2642 18.8669 43.11 18.7908L27.7245 10.6377H27.6828L27.5867 10.5869H27.4053C27.3727 10.5924 27.3419 10.6014 27.3128 10.6141H27.2711L11.8856 18.7909C11.7315 18.867 11.6335 19.023 11.6299 19.1934C10.9426 32.216 16.2038 41.7926 27.2711 47.6699ZM12.5856 19.5177L27.4976 11.6163L42.4096 19.5084C42.999 32.043 38.1153 40.9523 27.4976 46.676C16.8799 40.9616 11.996 32.0723 12.5856 19.5177Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M27.2712 44.0349H27.3782H27.3763C27.4181 44.0385 27.4579 44.0385 27.4978 44.0349C27.5377 44.0385 27.5776 44.0385 27.6194 44.0349H27.7263C36.6032 39.3182 40.8269 31.6345 40.2609 21.189H40.2591C40.2573 21.0276 40.1703 20.8807 40.0324 20.7991L27.7393 14.2997H27.6975L27.5996 14.2725H27.4183L27.3258 14.2997H27.2841L14.9635 20.7991C14.8112 20.8771 14.7114 21.0312 14.7078 21.2035C14.1692 31.6346 18.3945 39.3182 27.2712 44.0349ZM15.6651 21.5135L27.4977 15.2518L39.3178 21.5135C39.764 31.4766 35.8904 38.4965 27.4977 43.0465C19.1051 38.4966 15.2315 31.4766 15.6776 21.5135H15.6651Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n<path d=\"M24.8246 35.2464C24.8192 35.3733 24.8645 35.4967 24.9534 35.5891C25.0404 35.6816 25.1619 35.7342 25.2889 35.7342H29.672C29.7989 35.7342 29.9204 35.6816 30.0093 35.5891C30.0963 35.4967 30.1435 35.3733 30.1362 35.2464V31.8244H33.5528C33.6797 31.8317 33.8048 31.7845 33.8973 31.6975C33.988 31.6086 34.0406 31.4871 34.0406 31.3602V26.9589C34.0478 26.8283 33.9989 26.6996 33.9046 26.6071C33.8121 26.5146 33.6852 26.4656 33.5528 26.4711H30.1779V23.0599C30.1779 22.9366 30.129 22.8188 30.0419 22.7317C29.9549 22.6447 29.837 22.5957 29.7137 22.5957H25.3124C25.0567 22.5957 24.8482 22.8024 24.8482 23.0599V26.4729L21.4044 26.4711C21.2775 26.4711 21.1542 26.5237 21.0671 26.6161C20.9801 26.7086 20.9329 26.8319 20.9402 26.9589V31.342C20.9402 31.4653 20.9891 31.5832 21.0762 31.6702C21.1632 31.7573 21.2811 31.8063 21.4044 31.8063H24.8264L24.8246 35.2464ZM21.8904 30.8542L21.8923 27.4413H25.3142H25.3124C25.4358 27.4413 25.5536 27.3923 25.6407 27.3053C25.7277 27.2182 25.7767 27.1004 25.7767 26.977V23.5424H29.1896V26.9589C29.1896 27.0823 29.2386 27.2001 29.3256 27.2872C29.4127 27.3742 29.5306 27.4232 29.6539 27.4232H33.0668V30.8361H29.6956C29.5687 30.8361 29.4472 30.8869 29.3583 30.9794C29.2713 31.0719 29.2241 31.1952 29.2314 31.3239V34.7405H25.7949V31.3421C25.8021 31.2152 25.7568 31.09 25.6679 30.9975C25.5809 30.9069 25.4594 30.8543 25.3306 30.8543L21.8904 30.8542Z\" fill=\"black\" fill-opacity=\"0.6\"></path>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Daily Inflammation Support",
+            "icon_description": "The higher the fulvic acid content, the greater the concentration of essential minerals and rejuvenating bioactives.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_9ghiR7": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "Learn More →",
+            "btn_link": "shopify://pages/fulvic-and-humic-acids"
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_MMHTBD",
+        "icon_box_fWWNdx",
+        "icon_box_KtWBzt",
+        "icon_box_7MzUam",
+        "icon_box_9ghiR7"
+      ],
+      "custom_css": [
+        ".wrapper {flex-direction: row;}",
+        "brown {color: #9f5601; font-weight: 700;}",
+        ".iconbox {min-width: 100%; align-items: flex-start;}",
+        "svg {height: 5.6rem; min-width: 5.6rem;}",
+        "h3 {min-width: 100%; padding-bottom: 1.3rem; line-height: 1.3; border-bottom: 2px solid var(--custom-color); color: var(--custom-color);}"
+      ],
+      "name": "Icon Box Section",
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "",
+        "section_description": "<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/shilajit_open_banner._800x.webp?v=1758261555\">\n<p>Unique to Shilajit, <brown>fulvic acid and humic compounds</brown> are known for their powerful rejuvenating properties, supporting energy, cognitive function, and overall vitality.</p>",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "16px 5.6rem",
+        "iconbox_gap": "1.6rem",
+        "image_layout": "left",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "298px",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "custom-icon-box",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>\n#custom-icon-box{\n\n .iconbox-content:has(h3) h3 {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    cursor: pointer;\n  }\n\n  .iconbox-content:has(h3) h3::after {\n    content: \"+\";\n    font-size: 2.5rem;\n    transition: transform 0.3s ease;\n    margin-left: 8px;\n  }\n\n  .iconbox-content.active:has(h3) h3::after {\n    transform: rotate(-135deg);\n  }\n\n  .iconbox-content:has(h3) .description {\n    display: none;\n    margin-top: 0.5rem;\n  }\n\n  .iconbox-content.active:has(h3) .description {\n    display: block;\n  }\n\n.iconbox:nth-child(1) {\n  background-color: #F5F2EC;\n  border-radius:8px;\n  padding:2.4rem;\n  position:relative;\n\n}\n.iconbox:nth-child(2) {\n  --custom-color: #aa8077;\n  margin-top: 8px;\n}\n.iconbox:nth-child(3) {\n  --custom-color: #a9523f;\n}\n.iconbox:nth-child(4) {\n  --custom-color: #68453d;\n  margin-bottom: 8px;\n}\n\n.iconbox-content:has(h3) {\n  width: 100%;\n}\n\n.button{\nbackground:#68453D;\ncolor:#ffffff;\nborder-radius:1rem;\n}\n\n}\n\n@media(max-width:980px){\n  #custom-icon-box.wrapper{\n    flex-direction: column!important;\n*{\ntext-align:start;}\n  }\n.iconbox-content,.button{\nwidth:100%;}\n}\n\n</style>\n\n<script defer>\n  document.addEventListener(\"DOMContentLoaded\", () => {\n    const allBoxes = document.querySelectorAll(\".iconbox-content\");\nallBoxes.forEach((box) => {\n\n    const heading = box.querySelector(\"h3\");\n    const desc = box.querySelector(\".description\");\n\n    if (heading && desc) {\n\nheading.addEventListener(\"click\", () => {\nallBoxes.forEach((other) => {\n          if (other !== box) {\n            console.log('iam inside');other.classList.remove(\"active\");\n          }\n        });\n        box.classList.toggle(\"active\");\nconsole.log('iam outside');\n      });\n    }\n  });\n  });\n</script>"
+      }
+    },
+    "slider_with_banner_GLDwpC": {
+      "type": "slider-with-banner",
+      "blocks": {
+        "slide_fFdGcG": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 1 - 2",
+            "slide_heading": "Enhanced physical performance and health.",
+            "slide_text": "placerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam quis vitae ullamcorper quis hendrerit ac non eget elit. nibh ipsum odio.\n\nplacerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam"
+          }
+        },
+        "slide_VUR3wa": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 3 - 10",
+            "slide_heading": "Enhanced physical performance and health.",
+            "slide_text": "placerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam quis vitae ullamcorper quis hendrerit ac non eget elit. nibh ipsum odio.\n\nplacerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam"
+          }
+        },
+        "slide_8E6BHW": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 3 - 10",
+            "slide_heading": "Enhanced physical performance and health.",
+            "slide_text": "placerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam quis vitae ullamcorper quis hendrerit ac non eget elit. nibh ipsum odio.\n\nplacerat. facilisis in massa tincidunt orci tortor. sollicitudin. quis odio risus ultrices malesuada quam non. Vestibulum sollicitudin. odio sed Donec diam"
+          }
+        }
+      },
+      "block_order": [
+        "slide_fFdGcG",
+        "slide_VUR3wa",
+        "slide_8E6BHW"
+      ],
+      "custom_css": [
+        "h2 strong {color: #9f5601;}"
+      ],
+      "name": "Image + Text Slider",
+      "settings": {
+        "image": "shopify://shop_images/Mask_group_63867eaa-158d-4261-a36e-c16610b725cd.webp",
+        "title": "Feel energetic in as <strong>little as 7 days</strong>"
+      }
+    },
+    "icon_box_wNhLGf": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_dpeBKr": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/SR_DNU.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Measure Your Shilajit Resin",
+            "icon_description": "Take out about 300 - 500 mg of shilajit resin",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_fp68dL": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/dissolve_in_warm_water.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Dissolve Your Shilajit Resin ",
+            "icon_description": "Dissolve it in a glass of water or milk, both at lukewarm temperature",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_NNHLRz": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/drink_your_shilajit.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Drink your bioavailable formula, shilajit ",
+            "icon_description": "Once the resin is dissolved in the liquid, drink it.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_dpeBKr",
+        "icon_box_fp68dL",
+        "icon_box_NNHLRz"
+      ],
+      "custom_css": [
+        "p {color: #252525 !important; font-size: 1.8rem;}",
+        ".wrapper {flex-direction: row; justify-content: start; align-items: center;}",
+        ".iconbox-wrapper {width: max-content; flex-wrap: nowrap; padding-bottom: 12px;}",
+        ".iconbox {border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding: 1.6rem 1.6rem 2.4rem 1.6rem;}",
+        ".iconbox img {width: 100% !important; height: auto;}",
+        "@media (max-width: 768px) {.wrapper {flex-direction: column; } .iconbox * {text-align: left; } .iconbox {width: 60vw !important; } .contentPart {max-width: 100%; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "<brown> Perfect Dosage </brown>\n guide for you",
+        "section_description": "Enjoy the bioavailable formula aka shilajit with your favorite drink with milk, hot water or with coffee to boost up energy for the day.",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "24px 6rem!important",
+        "iconbox_gap": "2.4rem!important",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "40rem!important; width:calc(100vw - 20px);",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "font-serif",
+        "custom_id": "perfect-dosage",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#ffffff",
+        "iconbox_style": "<style>\n#perfect-dosage{\nh3 {\n  font-family: \"Lora\";\n  font-weight: 900;\n  color: #382e2a;\n}\n\n.contentPart{\nmax-width:30%;\nalign-items: start;\n*{\n  text-align: start;\n}\n}\n.iconbox{\nbackground: #F5EADD;\n}\n\n.icon-box-container{\noverflow:auto;  \nscrollbar-width: thin; /* for Firefox */\n  scrollbar-color: #B4B4B4 #f5f5f5; /* thumb and track colors for Firefox */\n}\n\n/* Chrome, Edge, Safari */\n.icon-box-container::-webkit-scrollbar {\n  height: 8px; /* scrollbar thickness */\n}\n\n.icon-box-container::-webkit-scrollbar-track {\n  background: #F5F5F5; \n  border-radius: 16px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb {\n  background: #B4B4B4;\n  border-radius: 60px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb:hover {\n  background: #888;\n}\n}\n</style>"
+      }
+    },
+    "text_video_Y4KafG": {
+      "type": "text-video",
+      "blocks": {
+        "content_hth6jN": {
+          "type": "content",
+          "settings": {
+            "title": "Backed by our in house <brown>Ayurveda Master </brown>(Guru)",
+            "description": "<p>Our team of Ayurvedic experts and nutritionists are here to help you get the most from your Shilajit journey.Our team of Ayurvedic experts and nutritionists are here to help you get the most from your Shilajit journey. </p><p>Our team of Ayurvedic experts and nutritionists are here to help you get the most from your </p>",
+            "button_link": "",
+            "button_text": "Watch Now ‣"
+          }
+        },
+        "video_PH8a4N": {
+          "type": "video",
+          "settings": {
+            "video_type": "self_hosted",
+            "youtube_url": "",
+            "video": "shopify://files/videos/Hero Banner Final.mp4",
+            "video_thumbnail": "shopify://shop_images/dacktar.webp",
+            "video_controls": "true",
+            "video_width": "70.8rem; width:49%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_hth6jN",
+        "video_PH8a4N"
+      ],
+      "custom_css": [
+        ".video-thumbnail div {background: none;}",
+        ".play-button {z-index: -1;}",
+        ".contentcenter {text-align: start; justify-content: start;}",
+        ".basmilVideoText {background: #f5f2ec !important;}",
+        ".button {background: #68453d; color: #ffffff; gap: 8px; padding: 14px 5rem; justify-content: center;}",
+        "@media (max-width: 768px) {.video-thumbnail-container {width: 100% !important; } .imagefirst {flex-direction: column-reverse; gap: 16px; }}"
+      ],
+      "name": "Basmil Video Text",
+      "settings": {
+        "layout": "imagefirst",
+        "show_play_button_on": "content",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "content_width": "50%",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "guru-video",
+        "width": "147.2rem; width:100%;",
+        "minheight": "",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_position": "center",
+        "background_size": "cover"
+      }
+    },
+    "custom_liquid_GJdWER": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".custom-liquid,.custom-liquid *:not(svg) {overflow: visible; z-index: 1; height: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script>\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const guruVideo = document.querySelector(\"#guru-video\");\n  if (!guruVideo) return;\n\n  const button = guruVideo.querySelector(\".button\");\n  const playButton = guruVideo.querySelector(\".play-button\");\n\n  if (button && playButton) {\n    // Replace the \"‣\" with SVG\n    button.innerHTML = button.innerHTML.replace(\n      \"‣\",\n      `<svg style=\"width:3.2rem;\" viewBox=\"0 0 32 33\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n         <circle cx=\"16\" cy=\"16.6465\" r=\"16\" fill=\"white\"/>\n         <path d=\"M12 23.6465V9.64648L23 16.6465L12 23.6465Z\" fill=\"#1D1B20\"/>\n       </svg>`\n    );\n\n    // On click → auto click play button\nbutton.href =\"javascript:void(0)\";    button.addEventListener(\"click\", () => {\n      playButton.click();\n    });\n  }\n});\n</script>",
+        "color_scheme": "background-1",
+        "padding_top": 52,
+        "padding_bottom": 60
+      }
+    },
+    "product_grid_slider_3NWFAj": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        "h2 {padding-left: 12px;}",
+        ".bg-white,img {background: #e4e4e4; aspect-ratio: 1/1; object-fit: cover; width: 100%; min-height: 100%; object-position: center;}",
+        ".wght-tag {display: none;}",
+        ".product-card {background: none;}",
+        ".button-cart {order: -1 !important; transform: translate(0, -100%); width: 0; overflow: hidden; margin-top: -3.2rem;}",
+        ".product-card:hover .button-cart {width: 100%;}",
+        "@media (max-width: 768px) {.button-cart {margin-top: 0; order: 0 !important; transform: translate(0, 0%); width: 100%; } .slick-track {margin-bottom: 24px; }}"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "section_description": "",
+        "product_collection": "all",
+        "slider_grid": true,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 3,
+        "products_per_page": 5,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "3.2rem",
+        "iconbox_gap": "1.2rem 16px 1.2rem",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "0",
+        "padding": "11rem 1.4%",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:130rem;",
+        "min_height": "",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "bottom",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": ""
+      }
+    },
+    "faq_fFAwqm": {
+      "type": "faq",
+      "blocks": {
+        "text_XEPM9x": {
+          "type": "text",
+          "settings": {
+            "question": "What is shilajit resin? ",
+            "answer": "<p>A thick, tar-like substance rich in minerals and fulvic acid, formed from decomposed plant matter in the Himalayas.</p>"
+          }
+        },
+        "text_bJtL4k": {
+          "type": "text",
+          "settings": {
+            "question": "How to take shilajit resin? ",
+            "answer": "<p>Dissolve a small amount (pea-sized) in warm water, milk, or tea and drink, except for tap water. </p>"
+          }
+        },
+        "text_cU9Bya": {
+          "type": "text",
+          "settings": {
+            "question": "How to use shilajit resin?",
+            "answer": "<p>Take it in the morning or before meals or on empty stomach for better absorption. </p>"
+          }
+        },
+        "text_B7TK9g": {
+          "type": "text",
+          "settings": {
+            "question": "What is shilajit resin used for? ",
+            "answer": "<p>Boosting energy, improving stamina, enhancing brain function, supporting immunity, and all in all wellness. </p>"
+          }
+        },
+        "text_UzHYFV": {
+          "type": "text",
+          "settings": {
+            "question": "How much shilajit resin per day?",
+            "answer": "<p>300–500 mg (pea-sized amount) once or twice daily.</p>"
+          }
+        },
+        "text_6JXXi9": {
+          "type": "text",
+          "settings": {
+            "question": "What are the benefits of shilajit resin?",
+            "answer": "<p>Increases energy, enhances brain function, supports testosterone levels, improves digestion, boosts immunity, and promotes anti-aging.</p>"
+          }
+        },
+        "text_agHqcK": {
+          "type": "text",
+          "settings": {
+            "question": "Is shilajit resin safe?",
+            "answer": "<p>Yes, when taken in recommended doses. Avoid impure or untested products.</p>"
+          }
+        },
+        "text_wCpPA7": {
+          "type": "text",
+          "settings": {
+            "question": "How to mix shilajit resin?",
+            "answer": "<p>Dissolve in warm water, milk, or tea until fully mixed.</p>"
+          }
+        },
+        "text_zXwGBE": {
+          "type": "text",
+          "settings": {
+            "question": "Is shilajit resin better than capsules? ",
+            "answer": "<p>Yes, as it is in its purest form, whereas capsules may contain fillers or lower potency.</p>"
+          }
+        },
+        "text_3LqCPV": {
+          "type": "text",
+          "settings": {
+            "question": "What is shilajit resin good for? ",
+            "answer": "<p>Boosting stamina, mental clarity, testosterone, immunity, and overall vitality.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_XEPM9x",
+        "text_bJtL4k",
+        "text_cU9Bya",
+        "text_B7TK9g",
+        "text_UzHYFV",
+        "text_6JXXi9",
+        "text_agHqcK",
+        "text_wCpPA7",
+        "text_zXwGBE",
+        "text_3LqCPV"
+      ],
+      "custom_css": [
+        "* {font-family: var(--font-body-family) !important;}",
+        ".main-section {flex-direction: row; border-top: 1px solid grey; justify-content: space-between; align-items: flex-start;}",
+        ".content-wrapper {max-width: 580px; margin: 0;}",
+        "highlight {margin-top: 4rem; padding: 4rem 4.8rem;}",
+        ".faq-wrapper {max-width: 710px;}",
+        "@media (max-width: 768px) {.main-section {flex-wrap: wrap; border: none; padding-top: 0 !important; } .content-wrapper, .faq-wrapper {max-width: 100%; } h2 {font-size: 3.2rem !important; } highlight {padding: 20px; margin-top: 12px; }}"
+      ],
+      "settings": {
+        "show_schema": true,
+        "heading": "Frequently asked questions",
+        "description": "Our local team are here to help\n\n<highlight style=\"background: #f5f2ec; display: block; border-radius: 10px;\">\nChat with our customer support team, Monday-Friday.<br>\nOr contact us via email at:<br>\n<a href=\"contact@everestshilajit.com\"> contact@everestshilajit.com </a> \n</highlight>\n<style>\n#product-faq{\nh2 {\n  margin-bottom: 1.6rem;\n  font-size: 6.2rem;\n}\n\n@media(max-width:1600px){\nh2{\n font-size: 4.8rem;\n}\n}\n}\n</style>",
+        "content_alignment": "Left",
+        "content_part_width": "",
+        "faq_width": "100%",
+        "gap_between_sections": "8px 4rem",
+        "padding": "11.55rem 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "product-faq",
+        "width": "100%; max-width:147.2rem;",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "1739337128cf7d88b1": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_cC94HC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_cC94HC"
+      ],
+      "custom_css": [
+        ".shopify-block.shopify-app-block {display: block;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "faq_UXJy3G",
+    "icon_box_74C4C7",
+    "slider_with_banner_GLDwpC",
+    "icon_box_wNhLGf",
+    "text_video_Y4KafG",
+    "custom_liquid_GJdWER",
+    "product_grid_slider_3NWFAj",
+    "faq_fFAwqm",
+    "1739337128cf7d88b1"
+  ]
+}

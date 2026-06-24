@@ -1,0 +1,178 @@
+{% comment %}
+  <div class="blog-article">
+    {% for article in blog.articles %}
+      <div class="article-item">
+        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+        <p>{{ article.excerpt | strip_html | truncate: 150 }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    {% paginate blog.articles by 6 %}
+      {% if paginate.previous %}
+        <a href="{{ paginate.previous.url }}" class="prev">Previous</a>
+      {% endif %}
+
+      {% if paginate.next %}
+        <a href="{{ paginate.next.url }}" class="next">Next</a>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+{% endcomment %}
+<style>
+  .blog-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .blog-card {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+    width: calc(33.33% - 20px); /* Adjust for 3 columns */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .blog-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .blog-excerpt {
+    margin-bottom: 10px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .pagination a:hover {
+    background-color: #0056b3;
+  }
+</style>
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search blogs...">
+  <button id="search-button">Search</button>
+</div>
+
+<div id="blog-listing"></div>
+<div id="pagination"></div>
+
+<script>
+  const articlesPerPage = 1;
+  let currentPage = 1;
+  let searchQuery = '';
+  let currentTag = 'Everest Shilajit Tips';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Extract the tag from the URL if present
+    const url = window.location.href;
+    const tagMatch = url.match(/tagged\/([^/]+)/);
+    currentTag = tagMatch ? tagMatch[1] : '';
+
+    document.getElementById('search-button').addEventListener('click', function () {
+      searchQuery = document.getElementById('search-input').value;
+      currentPage = 1;
+      fetchBlogs();
+    });
+
+    function fetchBlogs() {
+      const searchUrl = `/search/suggest.json?q=${searchQuery}&resources[type]=article&resources[options][fields]=title,body,tag&resources[options][limit]=${articlesPerPage}&resources[options][page]=${currentPage}${
+        currentTag ? `&resources[options][tag]=${currentTag}` : ''
+      }`;
+
+      fetch(searchUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const articles = data.resources.results.articles;
+          const totalArticles = data.resources.results.total;
+          renderBlogs(articles);
+          renderPagination(totalArticles);
+        })
+        .catch((error) => console.error('Error:', error));
+    }
+
+    function renderBlogs(articles) {
+      const blogListing = document.getElementById('blog-listing');
+      blogListing.innerHTML = '';
+      articles.forEach((article) => {
+        const blogCard = `
+        <div class="blog-card">
+          <div class="blog-image">
+            <a href="${article.url}">
+              <img class="basmil-img" src="${article.image}" width="${article.image.width}" height="${article.image.height}" alt="${article.image.alt}">
+            </a>
+          </div>
+          <h2 class="blog-title"><a href="${article.url}">${article.title}</a></h2>
+          <p class="blog-excerpt">${article.body.substring(0, 150)}...</p>
+        </div>`;
+        blogListing.innerHTML += blogCard;
+      });
+    }
+
+    function renderPagination(totalArticles) {
+      const totalPages = Math.ceil(totalArticles / articlesPerPage);
+      const paginationDiv = document.getElementById('pagination');
+      paginationDiv.innerHTML = '';
+
+      if (currentPage > 1) {
+        paginationDiv.innerHTML += `<button onclick="prevPage()">Previous</button>`;
+      }
+      if (currentPage < totalPages) {
+        paginationDiv.innerHTML += `<button onclick="nextPage()">Next</button>`;
+      }
+    }
+
+    function nextPage() {
+      currentPage++;
+      fetchBlogs();
+    }
+
+    function prevPage() {
+      currentPage--;
+      fetchBlogs();
+    }
+
+    // Initial blog fetch
+    fetchBlogs();
+  });
+</script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type":"Blog",
+          "name":"{{ blog.title | escape }}",
+          "keywords": {% render 'keywords' %},
+          "url": "{{ request.origin }}{{ request.path }}"
+        }
+      </script>
+
+{% schema %}
+{
+  "name": "Basmil Blog",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Basmil Blog"
+    }
+  ]
+}
+{% endschema %}

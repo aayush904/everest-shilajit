@@ -1,0 +1,721 @@
+<style>
+  @font-face {
+      font-family: 'P22DeclarationPro';
+      src: url('https://cdn.shopify.com/s/files/1/0663/9966/6326/files/p22declarationpro.woff2?v=1736329003') format('woff2'), /* Modern Browsers */
+           url('https://cdn.shopify.com/s/files/1/0663/9966/6326/files/p22declarationpro.ttf?v=1736329061') format('truetype'), /* Safari, Android, iOS */
+      font-weight: normal;
+      font-style: normal;
+  }
+
+      .timelinecontainer {
+        position: relative;
+        padding: 12rem 5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .line-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .timelinewrapper {
+        display: flex;
+        align-items: stretch;
+        gap: 3.2rem;
+        position: relative;
+      }
+
+      .timelinewrapper:not(:first-of-type) {
+        margin-top: -130px;
+        /* padding-top:45px; */
+      }
+
+      .timelinewrapper:not(:last-of-type) {
+        padding-bottom: 220px;
+      }
+
+
+      .timelinewrapper:not(:first-of-type) {
+        && .svg-point,
+        && .timelinecontent {
+          margin-top: 6rem;
+        }
+      }
+
+      .timelinewrapper:not(:last-of-type) {
+        padding-bottom: 220px;
+      }
+
+
+      .timelinewrapper .svg-point {
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        background: #D6A873;
+        border-radius: 50%;
+        width: 7.5rem;
+        height: 7.5rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .timelinecontent {
+        flex: 1;
+        width: 40%;
+        min-height: 100%;
+      }
+
+      .timelinecontent h2 {
+        margin-top: 0;
+        margin-bottom:2.4rem;
+      }
+
+      .timelinecontainer img {
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+      }
+      .timelinecontainer img:nth-child(odd) {
+        margin-right: 24px;
+      }
+      .timelinecontainer img:nth-child(even) {
+        margin-left: 24px;
+      }
+      .timelinewrapper.finaldrop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        {% comment %} height: calc(118px + 57px); {% endcomment %}
+        /* background: green; */
+        flex-direction: column;
+        width: 100%;
+        max-width:1400px;
+        margin: 0 auto;
+        margin-top: 0;
+
+        && .svg-point {
+            opacity: 1;
+            margin-top:12rem;
+            background:transparent;
+        margin-right: 5%;
+        order:0!important;
+      }
+      }
+
+
+      .main-container {
+        background: #000;
+        padding: 12rem 18px;
+        overflow:hidden;
+      }
+
+
+      .timelinecontainer {
+        background: #fff;
+        border-radius: 52px;
+      }
+
+      .lastcontent{
+        max-width: 86.6%;
+        padding:0 16px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:2.4rem;
+        margin-right: 5%;
+          text-align:center;
+
+    }
+
+    .mobile-slider{
+      display:none;
+    }
+
+      /* Custom styling for slick slider */
+      #shopify-section-{{section.id}} .slick-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      #shopify-section-{{section.id}} .slick-dots li {
+        list-style: none;
+        margin: 0 10px;
+      }
+
+      #shopify-section-{{section.id}} .slick-dots button {
+        border: 2px solid #d2a87d; /* Light brown color */
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background: none;
+        cursor: pointer;
+      }
+
+      #shopify-section-{{section.id}} .slick-dots .slick-active button {
+        background-color: #d2a87d; /* Light brown color for active dot */
+      }
+
+      #shopify-section-{{section.id}} .slider {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      #shopify-section-{{section.id}} .slide {
+        text-align: center;
+        font-size: 24px;
+        padding: 40px;
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+      }
+
+
+      #shopify-section-{{section.id}} .slick-dots {
+          position: relative;
+          margin-top: 0;
+          display: flex;
+          z-index: 2;
+          gap: 1rem;
+        }
+        #shopify-section-{{section.id}} .slick-dots li {
+          display: inline;
+          width: 2.4rem;
+          height: 2.4rem;
+          border: 1px solid #E0AF7E;
+          border-radius: 50%;
+          /* transform: translate(0, -50px); */
+        }
+        #shopify-section-{{section.id}} .slick-dots li.slick-active {
+          border: 1px solid #E0AF7E;
+          background: #E0AF7E;
+        }
+        #shopify-section-{{section.id}} .slick-dots li button {
+          display: none;
+        }
+
+      #shopify-section-{{section.id}} .slidewrapper{
+        display:grid!important;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: max-content max-content;
+        flex-wrap:wrap;
+        gap:16px;
+
+        && .svg-point{
+          width:24px;
+          height:24px;
+          font-size:16px;
+          background:#d9d9d9;
+          border-radius:50%;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          grid-column:1/2;
+          grid-row:1/-1;
+        }
+
+        && .slidecontent{
+        grid-column:2/3;
+        max-height: max-content;
+
+        }
+
+        && img{
+          grid-column:2/3;
+          margin-right:auto;
+          width:85%;
+
+        }
+
+      }
+
+      .main-container,.title-container {
+        position: relative;
+      }
+      .title-container {
+        margin-bottom:226px;
+        max-width: 55%;
+        margin:0 auto;
+        z-index:2;
+      }
+      .heading {
+        display: inline-block;
+        position: relative;
+        margin:0;
+        font-size:8rem;
+      font-family: 'P22DeclarationPro', sans-serif;
+
+      }
+      .handwriting{
+        position:absolute;
+        max-width: 65%; /* Adjust as needed */
+        z-index:2;
+        width:100%;
+        height: auto;
+      }
+
+      .img-bg{
+        left:0px; width:100%; height: 90%; object-fit:cover; margin-top:-10%; object-position:bottom;
+      }
+
+
+      @media (max-width: 1024px) {
+        .timelinewrapper {
+          flex-wrap: wrap;
+        }
+
+        .handwriting{
+          max-width:50%;
+        }
+              .title-container {
+          max-width: 65%;
+          padding: 0 16px;
+        }
+      .timelinecontainer.timelinecontainer {
+        padding: 6rem 22px;
+        border-radius: 16px;
+      }
+
+        .timelinewrapper .timelinecontent {
+          width: calc(100% - 32px);
+        }
+
+
+      .timelinewrapper:not(:first-of-type) {
+        margin-top: -0;
+        /* padding-top:45px; */
+      }
+
+      .timelinewrapper:not(:last-of-type) {
+        padding-bottom: 0;
+      }
+
+        .timelinewrapper {
+          &&:nth-child(even) {
+            && .timelinecontent {
+              order: 2;
+            }
+
+            && .svg-point {
+              order: 1;
+            }
+          }
+
+          &&:nth-child(odd) {
+            && .timelinecontent {
+              order: 1;
+            }
+
+            && .svg-point {
+              order: 2;
+            }
+          }
+        }
+
+        .timelinewrapper img {
+          max-width:80%;
+          width:100%;
+          margin: 0 32px;
+          order: 3;
+          padding-bottom: 9rem;
+        }
+      }
+
+      @media(max-width:768px){
+
+      .main-container{
+          padding:6rem 16px;
+      }
+      .heading {
+        font-size:5.2rem;
+      }
+        .title-container {
+          max-width: 80%;
+          padding: 0 16px;
+        }
+
+             .handwriting{
+          max-width:60%;
+        }
+
+        .mobile-hidden{
+          display:none;
+        }
+
+        .mobile-slider{
+          display:block;
+          padding: 0;
+        }
+
+        .timelinewrapper {
+          && .svg-point {
+          opacity:1;
+          order:0!important;
+          }
+        }
+
+        .timelinewrapper.finaldrop {
+
+          && .svg-point{
+              margin-top:66px;
+              margin-right:0;
+          }
+
+          &&  .lastcontent{
+              margin-right:0;
+              padding: 0;
+              max-width: 100%;
+          }
+        }
+
+
+        .img-bg{
+          height: 67%;
+        }
+      }
+
+
+      @media(max-width:510px){
+      .heading {
+        font-size:4.2rem;
+      }
+        .title-container {
+          max-width: 75%;
+          padding: 0 16px;
+        }
+
+             .handwriting{
+          max-width:65%;
+        }
+      }
+</style>
+<div class="main-container screen-width ">
+  <div class="page-width">
+    <div class="text-center title-container dark">
+      <h1 class="heading">{{ section.settings.title }}</h1>
+      <img class="handwriting" src="{{ "handwithfur.webp" | asset_url }}" alt="hand with fur" width="" height="" loading="lazy">
+    </div>
+    <img
+      src="https://cdn.shopify.com/s/files/1/0663/9966/6326/files/DSC08667.webp?v=1736250576"
+      alt="Honey Hunting - Everest Shilajit"
+      class="absolute img-bg"
+      width=""
+      height=""
+      loading="lazy"
+    >
+  </div>
+  <div class="timelinecontainer ">
+    <svg class="line-svg mobile-hidden" xmlns="http://www.w3.org/2000/svg"></svg>
+
+    {% for block in section.blocks %}
+      <div
+        class="timelinewrapper mobile-hidden"
+        {% if forloop.last %}
+          style="padding-bottom:0px;"
+        {% endif %}
+      >
+        {% assign mode = forloop.index0 | modulo: 2 %}
+        {% if mode != 0 %}
+          <!-- This block is even -->
+          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+          <div class="svg-point">{{ forloop.index0 | plus: 1 }}</div>
+          <div class="timelinecontent">
+            {{ block.settings.content }}
+          </div>
+        {% else %}
+          <!-- This block is odd -->
+          <div class="svg-point">{{ forloop.index0 | plus: 1 }}</div>
+          <div class="timelinecontent">
+            {{ block.settings.content }}
+          </div>
+          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <div class="mobile-slider">
+      {% for block in section.blocks %}
+        <div class="slidewrapper">
+          <div class="svg-point">{{ forloop.index0 | plus: 1 }}</div>
+          <div class="slidecontent">
+            {{ block.settings.content }}
+          </div>
+          <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}" width="" height="" loading="lazy">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="finaldrop dark timelinewrapper">
+    <div class="svg-point">
+      <svg style="max-height:100%" viewBox="0 0 42 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.5195 57.2837C15.0774 57.2837 9.85819 55.1218 6.01003 51.2737C2.16187 47.4255 0 42.2063 0 36.7642C0 23.0845 20.5195 0 20.5195 0C20.5195 0 41.0391 23.0845 41.0391 36.7642C41.0391 42.2063 38.8772 47.4255 35.029 51.2737C31.1809 55.1218 25.9616 57.2837 20.5195 57.2837Z" fill="#E0AF7E"/>
+      </svg>
+    </div>
+    <div class="lastcontent">
+      <h2>Every Drop Counts</h2>
+      <p>
+        Even an iota of Everest Shilajit is so potent that you cannot afford to waste it. Honey is naturally a health wonder
+        for us, but with Everest Shilajit, every benefit magnifies. Clearly, Everest Shilajit comes in a small jar that highlights its
+        rarity. So savor the richness of Everest Shilajit while its time.
+      </p>
+      <a
+        class=" button border-none flex items-center sm:w-full justify-center sm:text-center"
+        href="{{ block.settings.button_link }}"
+      >
+        Try Everest Shilajit
+      </a>
+    </div>
+  </div>
+</div>
+
+<script defer="defer">
+  document.addEventListener('DOMContentLoaded', function () {
+    var topSvgposition;
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const svg = document.querySelector('.line-svg');
+    const timelinewrappers = document.querySelectorAll('.timelinewrapper');
+
+    const curveRadius = 90; // Radius for curved corners
+
+    // Function to update the SVG content
+    function updateSVG() {
+
+    const mainContainer = document.querySelector('.title-container');
+    const title = document.querySelector('.heading');
+    const handwriting = document.querySelector('.handwriting');
+
+    const textLength = title.textContent.trim().length;
+
+    // Create a range to position at the last letter
+    const range = document.createRange();
+    range.setStart(title.firstChild, textLength - 1);
+    range.setEnd(title.firstChild, textLength);
+
+    // Get the bounding box of the last letter
+    const rect = range.getBoundingClientRect();
+
+    // Log the screen coordinates
+    const titleStyles = window.getComputedStyle(title);
+    const fontSize = parseFloat(titleStyles.fontSize);
+
+    // Position the image relative to the last letter
+    const titleContainer = title.getBoundingClientRect();
+    const mainContainerRect = mainContainer.getBoundingClientRect();
+    const handwritingRect = handwriting.getBoundingClientRect();
+    mainContainer.style.marginBottom = window.innerWidth > 1024 ? `${(handwritingRect.height / 4) + 120}px` : `${(handwritingRect.height / 4) + 30 }px`;
+    handwriting.style.left = `${rect.left - mainContainerRect.left + 6}px`;
+    handwriting.style.top = `${rect.bottom - mainContainerRect.top - titleContainer.height / 6}px`;
+    topSvgposition = (handwritingRect.height / 4) + titleContainer.height;
+
+
+
+    let pathData = '';
+
+    // Clear existing SVG content before recalculating
+    svg.innerHTML = '';
+
+    // Get the current scroll offset
+    const scrollOffsetY = window.scrollY;
+    var topSvgpoint;
+
+    timelinewrappers.forEach((timelinewrapper, index) => {
+      const point = timelinewrapper.querySelector('.svg-point');
+      const rect = timelinewrapper.getBoundingClientRect();
+      const pointRect = point.getBoundingClientRect();
+
+      const x = pointRect.left + pointRect.width / 2; // Center of the point
+      const y = pointRect.top + pointRect.height / 2 + scrollOffsetY; // Add scroll offset
+
+      const radius = pointRect.width / 2;
+
+      if (index === timelinewrappers.length - 1) {
+        const secondLasttimelineWrapper = timelinewrappers[timelinewrappers.length - 2];
+        const secondLastPoint = secondLasttimelineWrapper.querySelector('.svg-point');
+        const secondLastRect = secondLastPoint.getBoundingClientRect();
+        const secondLastX = secondLastRect.left + secondLastRect.width / 2;
+
+        // Set the last point's x to be the same as the second last point's x
+        const adjustedX = secondLastX;
+
+        // Last point: Draw a water drop shape instead of a circle and number
+        {% comment %} const dropPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        const drop = `M20.5195 57.2837C15.0774 57.2837 9.85819 55.1218 6.01003 51.2737C2.16187 47.4255 0 42.2063 0 36.7642C0 23.0845 20.5195 0 20.5195 0C20.5195 0 41.0391 23.0845 41.0391 36.7642C41.0391 42.2063 38.8772 47.4255 35.029 51.2737C31.1809 55.1218 25.9616 57.2837 20.5195 57.2837Z`;
+        dropPath.setAttribute('d', drop);
+        dropPath.setAttribute('fill', '#E0AF7E');
+        dropPath.setAttribute('stroke', '#D6A873');
+        dropPath.setAttribute('stroke-width', '2');
+        dropPath.setAttribute('transform', `translate(${adjustedX - 20.5}, ${y - 40}) scale(0.93)`);
+        svg.appendChild(dropPath); {% endcomment %}
+      } else {
+        // Create circle and text for each svg-point except the last one
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x);
+        circle.setAttribute('cy', y);
+        circle.setAttribute('r', radius); // Radius of the circle
+        circle.setAttribute('fill', '#D9D9D9');
+
+        // Create text inside the circle
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', x);
+        text.setAttribute('y', y + 10); // Position the number correctly
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('font-size', '40');
+        text.setAttribute('font-weight', 'bold');
+        text.setAttribute('fill', '#31343C');
+        text.textContent = index + 1;
+        svg.appendChild(circle);
+        svg.appendChild(text);
+      }
+      if (index === 0) {
+        pathData += `M${x},${y}`; // Move to the first point
+        const firstWrapper = timelinewrapper;
+        const firstSvgpoint = firstWrapper.querySelector('.svg-point');
+        const firstSvgpointRect = firstSvgpoint.getBoundingClientRect();
+        topSvgpoint = firstSvgpointRect.top;
+        console.log('iam',firstSvgpointRect)
+      } else {
+        const prevtimelineWrapper = timelinewrappers[index - 1];
+        const prevPoint = prevtimelineWrapper.querySelector('.svg-point');
+        const prevPointRect = prevPoint.getBoundingClientRect();
+
+        const prevX = prevPointRect.left + prevPointRect.width / 2;
+        const prevY = prevPointRect.top + prevPointRect.height / 2 + scrollOffsetY;
+
+        // Define vertical and horizontal middle points to avoid content
+        const midY = prevtimelineWrapper.getBoundingClientRect().bottom + curveRadius + scrollOffsetY;
+        const nextY = timelinewrapper.getBoundingClientRect().top - curveRadius + scrollOffsetY;
+
+        if (index === timelinewrappers.length - 1 )   {
+          // For the last connection, use a straight line
+          if(window.innerWidth > 1024){
+            pathData += ` L${x},${y}`; // Straight line to the last point
+          }else{
+            pathData += ` L${prevX},${midY - 90 - curveRadius * 2} `;
+
+            // Curve horizontally towards the center of the next timelinewrapper
+            pathData += ` C${prevX},${midY - 45 + curveRadius / 2}  ${x},${midY - 45 - curveRadius * 2} ${x},${
+              midY + 45 + curveRadius / 2}`;
+          }
+        } else {
+          if(window.innerWidth > 1024){
+            
+          // Draw curved connections for other points
+          pathData += ` L${prevX},${midY - 180 - curveRadius * 2} `;
+
+          // Curve horizontally towards the center of the next timelinewrapper
+          pathData += ` C${prevX},${midY - 200 + curveRadius / 2}  ${x},${midY - 180 - curveRadius * 2} ${x},${
+            midY - 135 - curveRadius / 2
+          }`;
+          }else{
+            
+          // Draw curved connections for other points
+          pathData += ` L${prevX},${midY - curveRadius * 2} `;
+
+          // Curve horizontally towards the center of the next timelinewrapper
+          pathData += ` C${prevX},${midY + curveRadius / 2}  ${x},${midY  - curveRadius * 2} ${x},${
+            midY - curveRadius / 2
+          }`;
+          }
+        }
+      }
+    });
+
+    // Create and append the dashed path to be behind other elements
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', pathData);
+    path.setAttribute('stroke', '#D6A873');
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-dasharray', '5,5');
+    path.setAttribute('fill', 'none');
+
+    // Append the dashed path first to place it behind other SVG elements
+    svg.insertBefore(path, svg.firstChild);
+
+    // Resize the SVG to fit the container
+    const containerRect = document.querySelector('.timelinecontainer').getBoundingClientRect();
+    svg.setAttribute('width', containerRect.width);
+    svg.setAttribute('height', containerRect.height + 225);
+
+    const timelineContainer = document.querySelector('.timelinecontainer');
+    const timelineContainerRect = timelineContainer.getBoundingClientRect();
+    const adjustedValue = window.innerWidth > 1024 ? topSvgposition+400 : topSvgposition +290
+
+    // Adjust the viewBox and remove centering
+    const svgRect = svg.getBoundingClientRect();
+    const offsetX = svgRect.left; // Use the left of the svg as starting point
+    svg.setAttribute('viewBox', `${offsetX} ${adjustedValue} ${svgRect.width} ${svgRect.height}`);
+    svg.style.transform = `translateX(0)`;
+    }
+
+    // Initial rendering
+    setTimeout(() => {
+    updateSVG();
+    }, 500);
+
+    // Update the SVG on window resize
+    window.addEventListener('resize', () => {
+
+    updateSVG();
+    });
+    });
+
+
+    $('.mobile-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false, // Disable default navigation arrows
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    margin: 80,
+    customPaging: function (slider, i) {
+    return '<button></button>'; // Custom dot as a button
+    }
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Hive To Jar",
+  "class": "hiveToJar",
+  "settings": [
+    {
+      "type": "html",
+      "label": "Title",
+      "id": "title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section",
+      "name": "Section",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content Side"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Side"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hive To Jar"
+    }
+  ]
+}
+{% endschema %}

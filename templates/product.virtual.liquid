@@ -1,0 +1,48 @@
+{% comment %}
+  Template: virtual.product.liquid
+  Purpose: Custom product template for "Virtual Kit" with metafield `custom.bundle`
+{% endcomment %}
+
+{% layout 'product' %}
+
+<div class="product-template">
+  <!-- Images Section (similar to main-product.liquid) -->
+  <div class="product-images">
+    {% section 'main-product' %}
+  </div>
+
+  <!-- Variant Section -->
+  <div class="product-variants">
+    <h2>Included Products</h2>
+    {{ product.metafields.custom.bundle.value | json }}
+    {% if product.metafields.custom.bundle %}
+      {% assign bundle_products = product.metafields.custom.bundle.value %}
+      <ul>
+        {% for product_handle in bundle_products %}
+          {% assign bundled_product = product_handle %}
+          {% if bundled_product %}
+            <li>
+              <h3>{{ bundled_product.title }}</h3>
+              <ul>
+                {% for variant in bundled_product.variants %}
+                  <li>
+                    <strong>Variant Name:</strong> {{ variant.title -}}
+                    <br>
+                    <strong>Options:</strong>
+                    {% for option in variant.options %}
+                      {{ option }}
+                    {% endfor %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li>Product "{{ product_handle }}" not found.</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No bundled products found.</p>
+    {% endif %}
+  </div>
+</div>

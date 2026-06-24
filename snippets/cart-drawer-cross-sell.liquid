@@ -1,0 +1,368 @@
+{%- comment -%} Cart Drawer Cross-sell (Infinite slider) {%- endcomment -%}
+
+{%- assign xs_collection = csell_collections -%}
+{%- if xs_collection != blank and xs_collection.products_count > 0 -%}
+  {%- assign cart_ids = ',' -%}
+  {%- for item in cart.items -%}
+    {%- assign cart_ids = cart_ids | append: item.product_id | append: ',' -%}
+  {%- endfor -%}
+
+  {%- assign limit = settings.cart_cross_sell_limit | default: 8 -%}
+  {%- assign shown = 0 -%}
+  {%- assign slides_counter = 0 -%}
+  {%- capture slides -%}
+    {%- for product in xs_collection.products -%}
+      {%- if shown >= limit -%}{%- break -%}{%- endif -%}
+      {%- assign needle = ',' | append: product.id | append: ',' -%}
+      {%- unless cart_ids contains needle -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {%- assign v = product.selected_or_first_available_variant -%}
+        <div class="cart-xsell__slide" role="group" aria-label="{{ shown }} of {{ limit }}" tabindex="-1">
+
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: "square",
+            show_secondary_image: false,
+            lazy_load: false,
+            quick_add: "standard",
+            show_quick_add: true,
+            section_id: "cart-cross-sell",
+            horizontal_class: true,
+            horizontal_quick_add: false,
+            hide_quick_add: true
+          %}
+          {%- assign slides_counter = slides_counter | plus: 1 -%}
+
+        </div>
+        {% comment %} <div class="cart-xsell__slide" role="group" aria-label="{{ shown }} of {{ limit }}" tabindex="-1">
+          <div class="cart-xsell__card">
+            <a class="cart-xsell__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+              {%- if product.featured_media -%}
+                {{ product.featured_media
+                  | image_url: width: 220
+                  | image_tag:
+                      widths: '160,220,320',
+                      loading: 'lazy',
+                      class: 'cart-xsell__img',
+                      alt: product.featured_media.alt | escape
+                }}
+              {%- else -%}
+                <div class="cart-xsell__img cart-xsell__img--placeholder"></div>
+              {%- endif -%}
+            </a>
+
+            <div class="cart-xsell__info">
+              <a class="cart-xsell__title" href="{{ product.url }}">{{ product.title }}</a>
+
+              <div class="cart-xsell__price">
+                <span class="price-item price-item--regular">{{ v.price | money }}</span>
+                {%- if v.compare_at_price and v.compare_at_price > v.price -%}
+                  <span class="price-item price-item--compare">{{ v.compare_at_price | money }}</span>
+                {%- endif -%}
+              </div>
+              {% assign formid = 'csslider-' | append: v.id %}
+
+                <product-form data-section-id="{{v.id}}">
+                  {%- form 'product', product, id: formid, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                    <input type="hidden" name="id" value="{{ v.id }}">
+                    <button type="submit" name="add" 
+                    class="quick-add__submit button cart-xsell__btn button--full-width {% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                        {% unless v.available %}disabled{% endunless %}>
+                      {%- if v.available -%}Add to cart{%- else -%}Sold out{%- endif -%}
+                    </button>
+                  {%- endform -%}
+                </product-form>
+              
+            </div>
+          </div>
+        </div>  {% endcomment %}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if shown > 0 -%}
+    <div class="cart-xsell" data-cart-xsell>
+      <div class="cart-xsell__head">
+        <div class="cart-xsell__heading text-[#664E36!important]">{{ settings.cart_cross_sell_title | default: 'You may also like' }}</div>
+
+        {% comment %}
+          {%- if shown > 1 -%}
+            <div class="cart-xsell__controls">
+              <button type="button" class="cart-xsell__nav" data-xsell-prev aria-label="Previous">
+                <span class="svg-wrapper">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
+              </button>
+
+              <button type="button" class="cart-xsell__nav" data-xsell-next aria-label="Next">
+                <span class="svg-wrapper">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
+              </button>
+            </div>
+          {%- endif -%}
+        {% endcomment %}
+      </div>
+
+      {% comment %}
+        <div class="cart-xsell__viewport" data-xsell-viewport>
+          <div class="cart-xsell__track" data-xsell-track>
+            {{ slides }}
+          </div>
+        </div>
+      {% endcomment %}
+      <div class="infinite-ccslider">
+        {%- if slides_counter > 1 -%}
+          <button class="ccslider-arrow prev" aria-label="Previous">‹</button>
+        {%- endif -%}
+        <div class="ccslider-viewport">
+          <div class="ccslider-track">
+            {{ slides }}
+          </div>
+        </div>
+        {%- if slides_counter > 1 -%}
+          <button class="ccslider-arrow next" aria-label="Next">›</button>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+<style>
+  .cart-xsell {
+    position: relative;
+    padding: clamp(1rem, 0.84vw, 1.6rem) 1.25rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .cart-xsell__viewport {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 28px;
+    scrollbar-width: none;
+    position: relative;
+  }
+  .cart-xsell__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cart-xsell__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    border-radius: 8px;
+    width: 100%;
+    background:#ffffff;
+    padding: 6px;
+    box-shadow: 0 0.5px 4px rgba(0,0,0,0.2);
+    transform: scale(0.96);
+  }
+
+  {% comment %} .cart-drawer .cart__ctas .button {
+    background-color: #ffbe32!important;
+  } {% endcomment %}
+
+  .cart-drawer .cart__ctas .button::after,
+  .cart-drawer .cart__ctas .button::before {
+    box-shadow: none!important;
+  }
+
+  .cart-xsell__slide * {
+    user-select: none;
+    -webkit-user-drag: none;
+    line-height: 1.2;
+  }
+
+  .cart-xsell__card {
+    display: flex;
+  }
+
+  .cart-xsell__media {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), 0.05);
+    margin-right: 12px;
+  }
+
+  .infinite-ccslider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .ccslider-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .ccslider-track {
+    display: flex;
+    will-change: transform;
+    cursor: grab;
+  }
+
+  .ccslider-track.dragging {
+    cursor: grabbing;
+  }
+
+  .cart-xsell .card__badge,
+  .cart-xsell h3 a::after,
+  .cart-xsell .low-stock-indicator,
+  .cart-xsell .card-attribute,
+  .cart-xsell .card__inner .card__content {
+    display: none;
+  }
+
+  .cart-xsell .card__inner.card__inner{
+    max-width:67px;
+    height:67px;
+    align-self:center;
+    border: 1px solid rgba(var(--color-foreground), 0.2)
+  }
+
+  .cart-xsell .card__inner::before{
+    content: none
+  }
+
+  .cart-xsell .card__information.product_information {
+    padding: 0;
+    padding-bottom: 0.8rem;
+  }
+
+  .cart-xsell .quick-add__submit {
+    font-size: 0.875rem;
+    min-height: max-content;
+    padding: 0.5rem 1.2rem;
+    min-width: max-content;
+    width: max-content;
+  }
+
+  .cart-xsell__heading{
+    font-size: 20px;
+    font-family: var(--font-heading-family);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: clamp(12px,0.84vw,16px);
+    line-height:1.1;
+  }
+
+  .cart-xsell h3 {
+    font-size: 1.3rem;
+    font-family: var(--font-body-family);
+    font-weight: 700;
+  }
+
+  .cart-xsell .card.card--horizontal{
+    gap: 1rem;
+  }
+
+  .cart-xsell .media--hover-effect img,
+  .cart-xsell .card__inner{
+    transform:none!important;
+  }
+
+  .cart-xsell .card .card__inner .card__media,
+  .cart-xsell  .card .media{
+    height:100%;
+    width:100%;
+  }
+  
+  .cart-xsell .price__sale span:not([class]){
+    letter-spacing: 0;
+    display:inline-block;
+    line-height:0.5;
+  }
+
+  .cart-xsell .price-item.price-item{
+   font-size:1.2rem;
+  }
+  .cart-xsell button:not(.ccslider-arrow) {
+    height:max-content!important;
+  }
+  .cart-xsell button span{
+font-size:1.3rem!important;
+line-height:1.2!important;
+}
+
+  .csslide {
+    flex: 0 0 100%;
+    user-select: none;
+    display: flex;
+    background: #ffffff;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .ccslider-arrow {
+    {% comment %} position: absolute;
+    top: 50%;
+    transform: translateY(-50%); {% endcomment %}
+    z-index: 2;
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .ccslider-arrow.next {
+    margin-right: -1.2rem;
+  }
+
+  .ccslider-arrow.prev {
+    margin-left: -1.2rem;
+  }
+
+  {% comment %}
+   .ccslider-arrow.prev {
+    left: 10px;
+  }
+  .ccslider-arrow.next {
+    right: 10px;
+  }
+  {% endcomment %}
+
+  .cart-xsell .card__information{
+    padding:0!important;
+}
+
+.cart-xsell *:empty, .cart-xsell  .visually-hidden{
+    display:none;
+}
+
+.cart-xsell .card-information {
+    margin: -2px 0 4px 0;
+}
+
+.cart-xsell .price * {
+max-height:max-content;
+}
+
+.cart-xsell button *{
+background:none!important;
+color:#fff;
+line-height:1;
+}
+
+  .cart-xsell .card--standard>.card__content .card__information{
+    gap:2px;
+}
+
+.infinite-ccslider,
+.ccslider-viewport,
+.ccslider-track {
+  touch-action: none;
+}
+</style>
+<script src="{{ 'cart-xsell.js' | asset_url }}" defer="defer"></script>

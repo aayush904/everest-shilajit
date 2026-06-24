@@ -1,0 +1,579 @@
+{% comment %}
+  <section class="resources-hub section-{{ section.id }}">
+    <div class="resources-hub__inner page-width">
+      {%- assign insights_blog = blogs[section.settings.insights_blog] -%}
+      {%- assign video_blog = blogs[section.settings.video_blog] -%}
+      {%- assign publication_blog = blogs[section.settings.publication_blog] -%}
+
+      {%- comment -%} 1. OUR LATEST INSIGHTS {%- endcomment -%}
+      {%- if insights_blog != blank -%}
+        <div class="resources-hub__group resources-hub__group--insights">
+          <div class="resources-hub__group-header">
+            <h2 class="resources-hub__heading">{{ section.settings.insights_heading }}</h2>
+
+            {%- if section.settings.insights_button_label != blank -%}
+              <a class="resources-hub__outline-button" href="{{ insights_blog.url }}">
+                {{ section.settings.insights_button_label }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            {%- endif -%}
+          </div>
+
+          <div class="resources-hub__cards">
+            {%- for article in insights_blog.articles limit: section.settings.insights_limit -%}
+              <div class="resources-hub__card">
+                {%- render 'article-card',
+                  article: article,
+                  media_height: section.settings.image_height,
+                  media_aspect_ratio: article.image.aspect_ratio,
+                  show_image: section.settings.show_image,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_excerpt: true
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} 2. VISUAL DIARY {%- endcomment -%}
+      {%- if video_blog != blank and video_blog.metafields.custom.is_video == true -%}
+        {%- assign featured_video_article = video_blog.articles.first -%}
+
+        {%- if featured_video_article != blank -%}
+          <div class="resources-hub__group resources-hub__group--video">
+            <div class="resources-hub__group-header">
+              <h2 class="resources-hub__heading">{{ section.settings.video_heading }}</h2>
+
+              {%- if section.settings.video_button_label != blank -%}
+                <a class="resources-hub__outline-button" href="{{ video_blog.url }}">
+                  {{ section.settings.video_button_label }}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              {%- endif -%}
+            </div>
+
+            <div class="resources-hub__video-layout">
+              <div class="resources-hub__video-media">
+                {%- assign video_content = featured_video_article.content -%}
+                {%- assign youtube_id = blank -%}
+                {%- assign youtube_thumbnail = blank -%}
+
+                {%- if video_content contains 'youtube.com/embed/' -%}
+                  {%- assign youtube_id = video_content
+                    | split: 'youtube.com/embed/'
+                    | last
+                    | split: '"'
+                    | first
+                    | split: "'"
+                    | first
+                    | split: '?'
+                    | first
+                    | split: '&'
+                    | first
+                  -%}
+                {%- elsif video_content contains 'youtube.com/watch?v=' -%}
+                  {%- assign youtube_id = video_content
+                    | split: 'youtube.com/watch?v='
+                    | last
+                    | split: '"'
+                    | first
+                    | split: "'"
+                    | first
+                    | split: '&'
+                    | first
+                  -%}
+                {%- elsif video_content contains 'youtu.be/' -%}
+                  {%- assign youtube_id = video_content
+                    | split: 'youtu.be/'
+                    | last
+                    | split: '"'
+                    | first
+                    | split: "'"
+                    | first
+                    | split: '?'
+                    | first
+                    | split: '&'
+                    | first
+                  -%}
+                {%- endif -%}
+
+                {%- if youtube_id != blank -%}
+                  {%- assign youtube_thumbnail = 'https://img.youtube.com/vi/'
+                    | append: youtube_id
+                    | append: '/hqdefault.jpg'
+                  -%}
+                {%- endif -%}
+
+                <a
+                  href="{{ featured_video_article.url }}"
+                  class="resources-hub__video-link"
+                  aria-label="{{ featured_video_article.title | escape }}"
+                >
+                  {%- if youtube_thumbnail != blank -%}
+                    <img
+                      src="{{ youtube_thumbnail }}"
+                      alt="{{ featured_video_article.title | escape }}"
+                      class="resources-hub__video-image"
+                      loading="lazy"
+                      width="1200"
+                      height="800"
+                    >
+                  {%- elsif featured_video_article.image != blank -%}
+                    {{
+                      featured_video_article.image
+                      | image_url: width: 1600
+                      | image_tag:
+                        class: 'resources-hub__video-image',
+                        loading: 'lazy',
+                        widths: '480, 720, 960, 1200, 1600',
+                        alt: featured_video_article.image.alt
+                      | default: featured_video_article.title
+                    }}
+                  {%- endif -%}
+
+                  <span class="resources-hub__play-button" aria-hidden="true">▶</span>
+                </a>
+              </div>
+
+              <div class="resources-hub__video-content">
+                {%- if video_blog.title != blank -%}
+                  <p class="resources-hub__tag">{{ video_blog.title }}</p>
+                {%- endif -%}
+
+                <h3 class="resources-hub__video-title">
+                  <a href="{{ featured_video_article.url }}">{{ featured_video_article.title }}</a>
+                </h3>
+
+                {%- if featured_video_article.excerpt != blank -%}
+                  <div class="resources-hub__video-text rte">
+                    {{ featured_video_article.excerpt }}
+                  </div>
+                {%- elsif featured_video_article.content != blank -%}
+                  <div class="resources-hub__video-text rte">
+                    {{ featured_video_article.content | strip_html | truncate: 220 }}
+                  </div>
+                {%- endif -%}
+
+                <a class="resources-hub__text-button" href="{{ featured_video_article.url }}">
+                  {{ section.settings.video_cta_label }}
+                </a>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- comment -%} 3. PUBLICATIONS {%- endcomment -%}
+      {%- if publication_blog != blank and publication_blog.metafields.custom.is_publication == true -%}
+        <div class="resources-hub__group resources-hub__group--publications">
+          <div class="resources-hub__group-header">
+            <h2 class="resources-hub__heading">{{ section.settings.publication_heading }}</h2>
+
+            {%- if section.settings.publication_button_label != blank -%}
+              <a class="resources-hub__outline-button" href="{{ publication_blog.url }}">
+                {{ section.settings.publication_button_label }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            {%- endif -%}
+          </div>
+
+          <div class="resources-hub__publication-table">
+            {%- for article in publication_blog.articles limit: section.settings.publication_limit -%}
+              <article class="resources-hub__publication-row">
+                <div class="resources-hub__publication-title-wrap">
+                  <h3 class="resources-hub__publication-title">
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                  </h3>
+                </div>
+
+                <div class="resources-hub__publication-date">
+                  {%- if section.settings.show_date -%}
+                    {{ article.published_at | date: format: 'abbreviated_date' }}
+                  {%- endif -%}
+                </div>
+
+                <div class="resources-hub__publication-action">
+                  <a
+                    class="resources-hub__publication-link"
+                    href="{{ article.url }}"
+                    aria-label="{{ article.title | escape }}"
+                  >
+                    ↗
+                  </a>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <style>
+    .section-{{ section.id }} {
+      --section-gap: clamp(56px, 5.75vw, 110px);
+      --heading-content-gap: clamp(24px, 2.35vw, 45px);
+
+      --video-banner-content-gap: clamp(16px, 3.4vw, 65px);
+      --video-heading-tag-gap: clamp(8px, 6.3vw, 12px);
+      --video-heading-paragraph-gap: clamp(12px, 1.15vw, 22px);
+      --video-paragraph-button-gap: clamp(24px, 2.1vw, 40px);
+
+      --publication-item-padding: clamp(18px, 2.1vw, 40px);
+      --radius-card: 18px;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --text-muted: rgba(0, 0, 0, 0.55);
+    }
+
+    .section-{{ section.id }} .resources-hub__inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--section-gap);
+    }
+
+    .section-{{ section.id }} .resources-hub__group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--heading-content-gap);
+    }
+
+    .section-{{ section.id }} .resources-hub__group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-{{ section.id }} .resources-hub__heading {
+      margin: 0;
+    }
+
+    .section-{{ section.id }} .resources-hub__outline-button,
+    .section-{{ section.id }} .resources-hub__text-button,
+    .section-{{ section.id }} .resources-hub__publication-link {
+      text-decoration: none;
+    }
+
+    .section-{{ section.id }} .resources-hub__outline-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      line-height: 1;
+    }
+
+    .section-{{ section.id }} .resources-hub__cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .section-{{ section.id }} .resources-hub__card .card-wrapper,
+    .section-{{ section.id }} .resources-hub__card article {
+      height: 100%;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: var(--video-banner-content-gap);
+      align-items: center;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-media {
+      position: relative;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-link {
+      position: relative;
+      display: block;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .section-{{ section.id }} .resources-hub__play-button {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: 74px;
+      height: 74px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(233, 188, 77, 0.95);
+      color: #fff;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-{{ section.id }} .resources-hub__tag {
+      margin: 0 0 var(--video-heading-tag-gap);
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--text-muted);
+    }
+
+    .section-{{ section.id }} .resources-hub__video-title {
+      margin: 0 0 var(--video-heading-paragraph-gap);
+    }
+
+    .section-{{ section.id }} .resources-hub__video-title a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .section-{{ section.id }} .resources-hub__video-text {
+      margin-bottom: var(--video-paragraph-button-gap);
+      color: var(--text-muted);
+    }
+
+    .section-{{ section.id }} .resources-hub__text-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-table {
+      display: grid;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      align-items: center;
+      gap: 24px;
+      padding: var(--publication-item-padding);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-title {
+      margin: 0;
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-date {
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-action {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .section-{{ section.id }} .resources-hub__publication-link {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(223, 181, 71, 0.75);
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    @media screen and (max-width: 989px) {
+      .section-{{ section.id }} .resources-hub__cards,
+      .section-{{ section.id }} .resources-hub__video-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .section-{{ section.id }} .resources-hub__publication-row {
+        grid-template-columns: 1fr auto;
+      }
+
+      .section-{{ section.id }} .resources-hub__publication-date {
+        grid-column: 1 / 2;
+      }
+
+      .section-{{ section.id }} .resources-hub__publication-action {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        align-self: center;
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      .section-{{ section.id }} .resources-hub__group-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-{{ section.id }} .resources-hub__cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-{{ section.id }} .resources-hub__publication-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .section-{{ section.id }} .resources-hub__publication-action,
+      .section-{{ section.id }} .resources-hub__publication-date {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+  </style>
+
+  {% schema %}
+  {
+    "name": "Resources hub",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Our latest insights"
+      },
+      {
+        "type": "text",
+        "id": "insights_heading",
+        "label": "Heading",
+        "default": "Our latest insights"
+      },
+      {
+        "type": "blog",
+        "id": "insights_blog",
+        "label": "Blog"
+      },
+      {
+        "type": "text",
+        "id": "insights_button_label",
+        "label": "Button label",
+        "default": "Explore blogs"
+      },
+      {
+        "type": "range",
+        "id": "insights_limit",
+        "label": "Articles limit",
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "default": 2
+      },
+
+      {
+        "type": "header",
+        "content": "Visual Diary"
+      },
+      {
+        "type": "text",
+        "id": "video_heading",
+        "label": "Heading",
+        "default": "Visual Diary"
+      },
+      {
+        "type": "blog",
+        "id": "video_blog",
+        "label": "Video blog"
+      },
+      {
+        "type": "text",
+        "id": "video_button_label",
+        "label": "Button label",
+        "default": "Explore videos"
+      },
+      {
+        "type": "text",
+        "id": "video_cta_label",
+        "label": "Video CTA label",
+        "default": "Play video"
+      },
+
+      {
+        "type": "header",
+        "content": "Publications"
+      },
+      {
+        "type": "text",
+        "id": "publication_heading",
+        "label": "Heading",
+        "default": "Publications"
+      },
+      {
+        "type": "blog",
+        "id": "publication_blog",
+        "label": "Publication blog"
+      },
+      {
+        "type": "text",
+        "id": "publication_button_label",
+        "label": "Button label",
+        "default": "Explore publications"
+      },
+      {
+        "type": "range",
+        "id": "publication_limit",
+        "label": "Articles limit",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "default": 3
+      },
+
+      {
+        "type": "header",
+        "content": "Card settings"
+      },
+      {
+        "type": "select",
+        "id": "image_height",
+        "label": "Image height",
+        "default": "adapt",
+        "options": [
+          { "value": "adapt", "label": "Adapt to image" },
+          { "value": "small", "label": "Small" },
+          { "value": "medium", "label": "Medium" },
+          { "value": "large", "label": "Large" }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_image",
+        "label": "Show image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Resources hub"
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}

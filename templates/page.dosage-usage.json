@@ -1,0 +1,967 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_list_PxAdp6": {
+      "type": "basmil-image-text-list",
+      "blocks": {
+        "content_3bYXwh": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "svg",
+            "image_alt": "Everest Shilajit",
+            "svg": "<svg class=\"left\" style=\"max-width:11.87%;\" viewbox=\"0 0 163 268\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M13.813 38.4718C14.6752 50.1775 12.956 61.9664 8.69441 72.9212C4.13823 84.6474 -3.91988 95.2453 -3.5706 108.352C-3.231 120.501 0.760238 131.946 -0.0503539 144.249C-0.369908 149.125 -1.14385 153.838 -2.33409 158.412C8.2331 141.36 19.9243 125.017 32.6803 109.514C16.7429 95.2769 13.2649 70.7508 24.9874 52.6493C39.7987 29.7769 68.2147 21.9624 85.2226 1.2913C86.9984 -0.874265 90.066 1.25359 89.6832 3.65447C87.9733 14.5916 85.8973 25.9217 80.0768 35.5463C73.7841 45.959 63.5861 52.4871 54.7862 60.5397C45.8551 68.7213 41.012 77.5009 40.6582 89.7069C40.5448 93.4437 40.4926 97.1658 39.9987 100.858C50.1381 89.1495 60.8817 77.957 72.2166 67.3354C75.8391 63.947 79.5248 60.6601 83.2697 57.4302C92.2396 23.5386 127.257 7.1631 159.148 0.0943887C161.605 -0.4518 163.114 2.15506 161.65 4.10308C150.823 18.5907 139.94 34.0062 127.144 46.8082C115.872 58.0956 99.6657 64.9419 83.6958 65.272C71.2205 76.8166 59.2922 88.9364 48.118 101.737C59.8856 94.1827 72.0817 87.2774 85.3748 82.8835C93.8718 80.0725 102.6 78.5741 111.526 78.0333C121.262 77.4337 131.012 77.4598 140.428 74.6154C143.433 73.7039 145.611 78.1732 142.741 79.7527C121.883 91.2402 104.844 108.735 83.1828 118.82C68.8581 125.479 47.3648 129.656 35.72 116.571C24.1871 130.982 13.5181 146.099 3.81679 161.788C15.9795 152.154 32.0336 147.776 47.3463 144.848C58.9631 142.629 70.7443 140.823 81.8766 136.697C94.2058 132.152 105.195 124.707 116.041 117.446C118.628 115.714 121.528 118.816 120.303 121.414C107.761 148.111 77.8297 157.717 55.7454 174.435C45.2332 182.381 35.132 189.366 21.5215 189.633C11.4161 189.829 1.57585 186.757 -6.39059 180.66C-6.75869 180.936 -7.15846 181.162 -7.58353 181.31C-11.713 188.822 -15.6628 196.433 -19.3506 204.163C-23.4281 212.7 -27.2331 221.372 -30.7421 230.142C-18.8651 216.245 -5.24848 205.022 13.8275 201.908C24.3275 200.197 34.8795 199.511 45.0386 196.086C56.2044 192.314 66.624 186.141 75.1344 177.964C77.3688 175.818 81.4171 178.273 79.7506 181.217C73.4677 192.399 66.9691 203.763 57.0632 212.153C51.7125 216.69 45.6021 219.822 39.4534 223.118C32.8881 226.651 27.2691 230.909 21.5525 235.651C12.5142 243.171 2.39136 248.501 -9.41066 249.896C-18.1469 250.93 -28.5473 250.087 -34.913 243.578C-35.2366 243.663 -35.5515 243.648 -35.8707 243.588C-38.3823 250.49 -40.7185 257.447 -42.8793 264.459C-44.2364 268.878 -51.2599 267.268 -49.8859 262.839C-47.2714 254.368 -44.399 245.972 -41.2857 237.661C-47.2781 236.724 -53.549 235.114 -58.8974 232.647C-64.5733 230.032 -68.3912 225.27 -71.8408 220.232C-75.6557 214.645 -79.4766 208.711 -80.9608 201.999C-82.2849 196.034 -81.7147 189.826 -80.3562 183.903C-77.3695 170.829 -71.1599 158.776 -67.0552 146.063C-65.0579 139.881 -64.105 133.647 -62.8391 127.311C-61.6964 121.569 -59.7362 116.609 -54.7207 113.268C-52.0997 111.515 -49.0521 114.666 -50.361 117.315C-59.1723 135.222 -41.5378 154.439 -41.8212 172.711C-41.9701 182.721 -44.8224 192.28 -43.6564 202.362C-42.6686 210.841 -40.0336 219.02 -37.1512 227.068C-30.1566 209.754 -22.0904 192.877 -13.0186 176.594C-24.679 153.085 -36.0907 128.127 -33.1334 101.254C-31.756 88.6916 -26.8577 77.363 -19.0476 67.4604C-10.4141 56.5035 0.492232 47.6065 9.15318 36.6559C10.6665 34.7481 13.6523 36.2926 13.813 38.4718Z\" fill=\"white\"></path>\n<path d=\"M13.813 38.4718C14.6752 50.1775 12.956 61.9664 8.69441 72.9212C4.13823 84.6474 -3.91988 95.2453 -3.5706 108.352C-3.231 120.501 0.760238 131.946 -0.0503539 144.249C-0.369908 149.125 -1.14385 153.838 -2.33409 158.412C8.2331 141.36 19.9243 125.017 32.6803 109.514C16.7429 95.2769 13.2649 70.7508 24.9874 52.6493C39.7987 29.7769 68.2147 21.9624 85.2226 1.2913C86.9984 -0.874265 90.066 1.25359 89.6832 3.65447C87.9733 14.5916 85.8973 25.9217 80.0768 35.5463C73.7841 45.959 63.5861 52.4871 54.7862 60.5397C45.8551 68.7213 41.012 77.5009 40.6582 89.7069C40.5448 93.4437 40.4926 97.1658 39.9987 100.858C50.1381 89.1495 60.8817 77.957 72.2166 67.3354C75.8391 63.947 79.5248 60.6601 83.2697 57.4302C92.2396 23.5386 127.257 7.1631 159.148 0.0943887C161.605 -0.4518 163.114 2.15506 161.65 4.10308C150.823 18.5907 139.94 34.0062 127.144 46.8082C115.872 58.0956 99.6657 64.9419 83.6958 65.272C71.2205 76.8166 59.2922 88.9364 48.118 101.737C59.8856 94.1827 72.0817 87.2774 85.3748 82.8835C93.8718 80.0725 102.6 78.5741 111.526 78.0333C121.262 77.4337 131.012 77.4598 140.428 74.6154C143.433 73.7039 145.611 78.1732 142.741 79.7527C121.883 91.2402 104.844 108.735 83.1828 118.82C68.8581 125.479 47.3648 129.656 35.72 116.571C24.1871 130.982 13.5181 146.099 3.81679 161.788C15.9795 152.154 32.0336 147.776 47.3463 144.848C58.9631 142.629 70.7443 140.823 81.8766 136.697C94.2058 132.152 105.195 124.707 116.041 117.446C118.628 115.714 121.528 118.816 120.303 121.414C107.761 148.111 77.8297 157.717 55.7454 174.435C45.2332 182.381 35.132 189.366 21.5215 189.633C11.4161 189.829 1.57585 186.757 -6.39059 180.66C-6.75869 180.936 -7.15846 181.162 -7.58353 181.31C-11.713 188.822 -15.6628 196.433 -19.3506 204.163C-23.4281 212.7 -27.2331 221.372 -30.7421 230.142C-18.8651 216.245 -5.24848 205.022 13.8275 201.908C24.3275 200.197 34.8795 199.511 45.0386 196.086C56.2044 192.314 66.624 186.141 75.1344 177.964C77.3688 175.818 81.4171 178.273 79.7506 181.217C73.4677 192.399 66.9691 203.763 57.0632 212.153C51.7125 216.69 45.6021 219.822 39.4534 223.118C32.8881 226.651 27.2691 230.909 21.5525 235.651C12.5142 243.171 2.39136 248.501 -9.41066 249.896C-18.1469 250.93 -28.5473 250.087 -34.913 243.578C-35.2366 243.663 -35.5515 243.648 -35.8707 243.588C-38.3823 250.49 -40.7185 257.447 -42.8793 264.459C-44.2364 268.878 -51.2599 267.268 -49.8859 262.839C-47.2714 254.368 -44.399 245.972 -41.2857 237.661C-47.2781 236.724 -53.549 235.114 -58.8974 232.647C-64.5733 230.032 -68.3912 225.27 -71.8408 220.232C-75.6557 214.645 -79.4766 208.711 -80.9608 201.999C-82.2849 196.034 -81.7147 189.826 -80.3562 183.903C-77.3695 170.829 -71.1599 158.776 -67.0552 146.063C-65.0579 139.881 -64.105 133.647 -62.8391 127.311C-61.6964 121.569 -59.7362 116.609 -54.7207 113.268C-52.0997 111.515 -49.0521 114.666 -50.361 117.315C-59.1723 135.222 -41.5378 154.439 -41.8212 172.711C-41.9701 182.721 -44.8224 192.28 -43.6564 202.362C-42.6686 210.841 -40.0336 219.02 -37.1512 227.068C-30.1566 209.754 -22.0904 192.877 -13.0186 176.594C-24.679 153.085 -36.0907 128.127 -33.1334 101.254C-31.756 88.6916 -26.8577 77.363 -19.0476 67.4604C-10.4141 56.5035 0.492232 47.6065 9.15318 36.6559C10.6665 34.7481 13.6523 36.2926 13.813 38.4718Z\" fill=\"#EAB39B\"></path>\n</svg>",
+            "image_width": "100%; max-width:16rem!important;",
+            "svg_style": ""
+          }
+        },
+        "content_M7AXxQ": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "html",
+            "image_alt": "Everest Shilajit",
+            "svg": "<h1>\nHow to Take <brown>Shilajit: Complete Dosage Guide &amp; Usage Instructions\n</brown> \n</h1>\n<style>\nh1{\ntext-align:center;\n}\n</style>",
+            "image_width": "100%; max-width:71.4rem;",
+            "svg_style": ""
+          }
+        },
+        "content_99gU8d": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "description": "",
+            "did_you_know": "",
+            "absorption_bioavailability": "",
+            "dietary_sources": "",
+            "image_type": "svg",
+            "image_alt": "Everest Shilajit",
+            "svg": "<svg class=\"right\" width=\"114\" height=\"141\" viewbox=\"0 0 114 141\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M113.714 76.8094C127.162 83.3279 140.988 90.1841 150.681 101.552C153.8 105.208 156.342 110.972 153.005 114.43C150.165 117.371 145.278 116.178 141.464 114.688C125.295 108.388 109.821 100.339 95.3603 90.7207C105.213 103.479 113.218 118.623 113.019 134.74C112.98 137.204 112.106 140.344 109.662 140.503C108.55 140.583 107.537 139.947 106.643 139.311C93.6123 130.129 86.4414 114.906 79.8268 100.399C77.602 116.616 67.0345 131.441 52.4544 138.854C50.5674 139.828 48.2632 140.662 46.3761 139.649C43.8336 138.297 43.8733 134.66 44.4692 131.858C47.4091 118.126 55.2553 106.003 63.0816 94.3377C48.2831 102.525 31.4981 107.096 14.594 107.533C9.92601 107.653 4.82103 107.295 1.38458 104.115C0.709215 103.499 0.113295 102.724 0.013976 101.81C-0.164798 100.121 1.40447 98.8091 2.83467 97.8751C20.9306 85.9909 41.5095 77.8826 62.8433 74.2259C50.1503 72.4969 39.245 64.4085 29.9488 55.6047C24.1287 50.0998 18.5271 43.959 15.905 36.4071C15.4879 35.1948 15.1304 33.8832 15.3687 32.6113C15.9448 29.4515 19.7388 27.9809 22.9567 28.0007C28.9159 28.0405 34.3983 31.0413 39.5629 34.0025C51.6202 40.9183 63.7967 48.2516 72.795 58.844C60.5987 43.4621 58.4534 20.8066 67.5113 3.37777C68.0476 2.36423 68.6236 1.33082 69.577 0.675004C71.5833 -0.716123 74.5033 0.198046 76.1321 2.00651C77.761 3.83485 78.3966 6.29914 78.9925 8.66405C83.3229 25.8345 87.6532 43.0647 89.7786 60.6525C95.837 45.4296 109.364 33.764 124.838 28.4379C128.871 27.0468 134.035 26.3512 136.776 29.6105C139.577 32.9293 137.889 37.997 135.743 41.753C127.401 56.4592 115.363 63.6533 101.498 72.0796C104.1 74.365 110.238 75.1202 113.714 76.8094Z\" fill=\"#EAB39B\"></path>\n</svg>",
+            "image_width": "11.4rem; max-width: 11.4rem!important;",
+            "svg_style": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_3bYXwh",
+        "content_M7AXxQ",
+        "content_99gU8d"
+      ],
+      "custom_css": [
+        ".basmilTextImageList {overflow: hidden;}",
+        ".main-content {width: 100%; flex-direction: row; justify-content: center !important;}",
+        ".contain-wrapper {z-index: 1;}",
+        ".contain-wrapper:not(:nth-child(2)) {position: absolute; z-index: 0;}",
+        ".contain-wrapper:nth-child(3) {right: 0; bottom: 25%; width: max-content; max-width: 6.4%;}",
+        ".contain-wrapper:nth-child(1) {top: 15%; left: 0; width: max-content; max-width: 5%;}",
+        "@media (max-width: 768px) {.contain-wrapper:nth-child(3) {bottom: 0%; width: 14%; } .contain-wrapper:nth-child(1) {top: 2.5%; width: 15%; }}"
+      ],
+      "settings": {
+        "isSlider": "false",
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "0",
+        "gapsections": "0",
+        "content_width": "0",
+        "padding": "15rem 16px!important",
+        "margin": "0 auto",
+        "custom_class": "screen-width",
+        "custom_id": "breadcrumb",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "image",
+        "background_color": "#f7f6f1",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/Banner_BG.webp",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "custom_html": "<style>\n@media(max-width:768px){\n#breadcrumb svg{\n  display:none;\n}\n}\n</style>"
+      }
+    },
+    "basmil_image_text_MKmyLX": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_LHiw7R": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "description": "<p><a href=\"https://everestshilajit.com/pages/shilajit-complete-guide\" target=\"_blank\" title=\"shilajit\">Shilajit</a>, the ancient Ayurvedic gem, holds immense benefits, but there's a catch! Get the timing, dosage, and usage right, or you might miss out on its true potential. </p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_LHiw7R"
+      ],
+      "custom_css": [
+        "p {text-align: center;}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "4rem",
+        "content_width": "100%; max-width:127.6rem;",
+        "padding": "7rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_Lrx4ht": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_XWYrwy": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/measure_your_shilajit.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Measure Your Shilajit Resin",
+            "icon_description": "Take out about 350 - 500 mg of shilajit resin",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_KQBrWJ": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/dissolve_in_warm_water.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Dissolve Your Shilajit Resin ",
+            "icon_description": "Dissolve it in a glass of water or milk, both at lukewarm temperature",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_R4PWKJ": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/drink_your_shilajit.webp",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "Drink your bioavailable formula, shilajit ",
+            "icon_description": "Once the resin dissolves in the liquid, drink it.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_XWYrwy",
+        "icon_box_KQBrWJ",
+        "icon_box_R4PWKJ"
+      ],
+      "custom_css": [
+        ".wrapper {justify-content: start; align-items: center; margin-bottom: -12px !important;}",
+        ".iconbox-wrapper {width: max-content; margin: auto; flex-wrap: nowrap; padding-bottom: 12px;}",
+        ".iconbox {border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding: 1.6rem 1.6rem 2.4rem 1.6rem; gap: 2.4rem;}",
+        "@media (max-width: 768px) {.wrapper {flex-direction: column; } h3 {margin-bottom: 8px; } .iconbox {width: 60vw !important; gap: 16px; } .iconbox * {text-align: left; } .contentPart {max-width: 100%; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "How to measure and <brown>take shilajit</brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "24px 6rem!important",
+        "iconbox_gap": "2%",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "40rem; width:89vw;",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "font-serif  counter-iconbox",
+        "custom_id": "perfect-dosage",
+        "width": "100%; max-width:141.9rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#ffffff",
+        "iconbox_style": "<style>\n#perfect-dosage{\n.iconbox img {\n  width: 100% !important;\n  height: auto;\n  margin:0;\n}\n\nh3 {\n  font-family: var(--font-heading-family);\n  font-weight: 900;\n  color: #382e2a;\nmargin-bottom:1.2rem;\n}\np {\n  color: #252525 !important;\n  font-size: 1.8rem;\n}\n.contentPart{\nmax-width:59rem;\nalign-items: start;\n\n}\n.iconbox{\nbackground: #F5EADD;\n}\n\n.iconbox-content{\npadding: 0 .8rem;}\n.icon-box-container{\noverflow:auto;  \nscrollbar-width: thin; /* for Firefox */\n  scrollbar-color: #B4B4B4 #f5f5f5; /* thumb and track colors for Firefox */\n}\n\n/* Chrome, Edge, Safari */\n.icon-box-container::-webkit-scrollbar {\n  height: 8px; /* scrollbar thickness */\n}\n\n.icon-box-container::-webkit-scrollbar-track {\n  background: #F5F5F5; \n  border-radius: 16px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb {\n  background: #B4B4B4;\n  border-radius: 60px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb:hover {\n  background: #888;\n}\n}\n</style>"
+      }
+    },
+    "basmil_image_text_aGpaBF": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_GYD3g9": {
+          "type": "content",
+          "settings": {
+            "title": "How Much Should I<brown> Take Per Day?</brown>",
+            "subtitle": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_GYD3g9"
+      ],
+      "custom_css": [
+        "h2 {line-height: 1.28; text-align: center;}",
+        "@media (max-width: 768px) {h2 {text-align: left; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "0",
+        "content_width": "100%",
+        "padding": "0rem 16px 3rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_9FR6Tf": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "image_gaGq7B": {
+          "type": "image",
+          "settings": {
+            "image_type": "html",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "[shilajit-calculator]",
+            "image_width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "image_gaGq7B"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".imagepart {display: flex; justify-content: center; margin-top: 16px;}"
+      ],
+      "settings": {
+        "heading_size": "h3",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "",
+        "content_width": "58.5rem",
+        "padding": "0rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:144rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_jmyjmd": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_eLqhFN": {
+          "type": "content",
+          "settings": {
+            "title": "<div class=\"icn-container w-full flex justify-start sm:flex-col\">\n<p class=\"icn-gap font-sans flex flex-col\">\n<svg width=\"30\" height=\"42\" viewbox=\"0 0 30 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M11.4718 30.2051L11.5693 29.7261L12.2103 26.576C11.9904 26.6706 11.7486 26.7226 11.4964 26.7226C11.4233 26.7226 11.3491 26.718 11.276 26.7092C10.7946 26.6507 10.365 26.408 10.0659 26.0262C9.76707 25.6447 9.63483 25.169 9.6936 24.6879C10.3175 19.5661 11.5384 15.7469 13.3199 13.3258V13.2254C13.3298 13.2456 13.3394 13.2643 13.3493 13.2848C13.3706 13.2565 13.3906 13.2257 13.4119 13.1977C14.1208 12.2577 14.8311 11.6777 15.4235 11.317C15.3868 11.2575 15.3498 11.1991 15.3125 11.142C14.7446 10.2798 14.0802 9.72716 13.4665 9.42068C12.871 9.12076 12.3479 9.05455 12.0371 9.05196C12.0191 9.05127 12.0018 9.04919 11.9837 9.04919H5.30549C5.28959 9.04919 5.27403 9.0511 5.25847 9.05161C4.94888 9.05369 4.42199 9.11851 3.82233 9.42102C2.89268 9.88153 1.89042 10.8905 1.1886 12.6774C0.478829 14.4715 0.00224721 17.0652 0 20.9822C0 21.9947 0.032671 23.0956 0.102853 24.2943C0.145723 25.0289 0.755063 25.5963 1.48212 25.5963C1.50943 25.5963 1.53675 25.5954 1.56458 25.5938C2.3269 25.5492 2.90858 24.895 2.86416 24.1326C2.79639 22.9829 2.7658 21.9356 2.7658 20.9822C2.75992 16.796 3.3703 14.4447 3.96961 13.2176V39.148C3.96961 40.3286 4.92675 41.2851 6.10671 41.2851C7.28701 41.2851 8.24415 40.3286 8.24415 39.148V23.5435H9.04537V39.148C9.04537 40.3286 10.0025 41.2851 11.1825 41.2851C12.3628 41.2851 13.3199 40.3286 13.3199 39.148V31.0921C12.4205 30.7674 11.9377 30.4841 11.8914 30.4565L11.4718 30.2051Z\" fill=\"#866A64\"></path>\n<path d=\"M8.64526 8.06433C10.7933 8.06433 12.5347 6.32298 12.5347 4.17493C12.5347 2.02687 10.7933 0.285522 8.64526 0.285522C6.4972 0.285522 4.75586 2.02687 4.75586 4.17493C4.75586 6.32298 6.4972 8.06433 8.64526 8.06433Z\" fill=\"#866A64\"></path>\n<path d=\"M15.9917 31.5938V31.7936V39.5572C15.9917 40.5119 16.7656 41.2858 17.7203 41.2858C18.6747 41.2858 19.4489 40.5119 19.4489 39.5572V32.1091V31.9217C18.117 31.9049 16.9626 31.7739 15.9917 31.5938ZM20.0252 31.9219V32.1092V39.5574C20.0252 40.5121 20.7988 41.286 21.7539 41.286C22.7081 41.286 23.4825 40.5121 23.4825 39.5574V31.7936V31.5938C22.5113 31.7739 21.3571 31.9049 20.0252 31.9219ZM25.5117 13.6164C24.199 11.8761 22.8956 11.4868 22.5392 11.4283C22.5371 11.4278 22.5343 11.4271 22.5323 11.4266C21.8002 12.1213 20.814 12.5357 19.7404 12.5357C19.4311 12.5357 19.1201 12.4999 18.8166 12.429C18.1046 12.2634 17.4677 11.9139 16.9509 11.4242C16.9459 11.4254 16.9391 11.4271 16.9343 11.4282C16.5766 11.4873 15.2739 11.8769 13.9623 13.6163C12.5619 15.461 11.1135 18.7487 10.3795 24.7726C10.3042 25.3885 10.7427 25.9486 11.359 26.0235C11.9749 26.0985 12.5353 25.6598 12.6101 25.044V25.0433C13.165 20.4654 14.1443 17.6963 15.057 16.0507L12.2464 29.8645C12.2464 29.8645 14.8414 31.4202 19.7369 31.4202C24.6324 31.4202 27.2277 29.8645 27.2277 29.8645L24.4173 16.0521C24.5204 16.2374 24.6241 16.437 24.7283 16.6521C25.5459 18.3428 26.3714 20.9857 26.864 25.0433C26.9332 25.6136 27.4179 26.0319 27.9778 26.0319C28.0231 26.0319 28.0687 26.0292 28.1147 26.0238C28.7308 25.9488 29.1698 25.3887 29.095 24.7726C28.3601 18.7491 26.9119 15.4612 25.5117 13.6164Z\" fill=\"#866A64\"></path>\n<path d=\"M23.3559 9.31681C23.8213 7.31809 22.5784 5.3205 20.5798 4.85507C18.5811 4.38964 16.5836 5.63262 16.1182 7.63135C15.6527 9.63008 16.8956 11.6277 18.8942 12.0931C20.8929 12.5585 22.8904 11.3155 23.3559 9.31681Z\" fill=\"#866A64\"></path>\n</svg>\nFor Adults:<br> Soft Resin Shilajit → 300–500 mg (a small pinch).<br>\nLiquid Shilajit → 2-5 drops mixed with warm water or milk.\n</p>\n<p class=\"icn-gap font-sans flex flex-col\">\n<svg width=\"53\" height=\"32\" viewbox=\"0 0 53 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_32_8339)\">\n<path d=\"M30.8069 24.8815L29.3727 24.1644C29.2279 24.4609 28.9659 24.6953 28.6556 24.7919C28.3315 24.8953 27.9799 24.8677 27.6834 24.716C27.3869 24.5712 27.1662 24.3092 27.0559 23.9989C27.0283 23.9162 27.0077 23.8334 26.9939 23.7507C29.0762 23.4818 30.5173 22.3992 30.5173 21.0133C30.5173 19.4481 28.6694 18.2621 26.2078 18.2621C23.7462 18.2621 21.8983 19.4481 21.8983 21.0133C21.8983 22.3992 23.3325 23.4818 25.3873 23.7162C25.3735 23.799 25.3597 23.8886 25.3321 23.9644C25.2218 24.2747 24.9942 24.5367 24.6978 24.6815C24.4013 24.8401 24.0496 24.8677 23.7255 24.7574C23.4083 24.654 23.1532 24.4264 23.0084 24.123L21.5742 24.8401C22.0638 25.7917 23.0498 26.3916 24.1186 26.3916C24.5943 26.4122 25.0632 26.3157 25.4907 26.1089C25.7596 25.9503 26.0078 25.7503 26.2078 25.5159C26.4147 25.7503 26.656 25.9434 26.9249 26.0951C27.3317 26.3019 27.773 26.4053 28.2281 26.4122C29.2969 26.4122 30.276 25.8124 30.7724 24.8608L30.8069 24.8815Z\" fill=\"white\"></path>\n<path d=\"M44.3216 1.39419C42.7909 0.325434 40.8533 0.00135818 39.0606 0.532291C37.454 1.12528 36.0612 2.19404 35.082 3.60067C37.7919 5.55891 39.7363 8.41353 40.5706 11.6543C42.322 14.4124 45.1629 17.8255 48.5139 17.8255C48.8035 17.8255 49.0931 17.7979 49.3758 17.7428C50.8928 17.5428 52.0926 16.3775 52.3339 14.8744C53.051 11.0406 49.1069 4.36604 44.3561 1.40109L44.3216 1.39419Z\" fill=\"#866A64\"></path>\n<path d=\"M13.1143 9.49153C14.1141 7.31264 15.6517 5.43024 17.5824 4.01672C16.5688 2.42392 15.0725 1.20347 13.3073 0.541527C11.5146 0.010595 9.57702 0.327775 8.04628 1.40343C3.29547 4.36838 -0.648596 11.043 0.089193 14.8767C0.330526 16.3799 1.53719 17.552 3.04725 17.7451C3.32995 17.7934 3.61955 17.821 3.90915 17.8279C8.25314 17.8279 11.749 12.0841 13.1143 9.49153Z\" fill=\"#866A64\"></path>\n<path d=\"M39.4193 15.1514V21.5294C39.4262 24.2117 38.3574 26.7974 36.4612 28.6936C34.565 30.5898 31.9862 31.6585 29.2971 31.6585H23.1052C20.2023 31.6585 17.4442 30.4105 15.5273 28.2316C13.6104 26.0527 12.7209 23.1567 13.0864 20.2814L13.9345 13.5655C14.4861 9.22146 17.2166 5.46356 21.1745 3.59496C25.1392 1.73325 29.7797 2.02284 33.4756 4.37412C37.1714 6.72539 39.4055 10.8005 39.4055 15.172L39.4193 15.1514Z\" fill=\"#866A64\"></path>\n<path d=\"M21.8173 14.3167C22.3965 14.3856 22.955 14.096 23.2239 13.5789C23.4928 13.0618 23.4238 12.4343 23.0377 11.9999C22.6516 11.5655 22.0379 11.4069 21.4932 11.6138C20.9485 11.8206 20.5899 12.3378 20.5899 12.917C20.5623 13.2686 20.6795 13.6065 20.9071 13.8754C21.1415 14.1374 21.4656 14.296 21.8173 14.3167Z\" fill=\"white\"></path>\n<path d=\"M31.8209 12.9171C31.7589 12.4344 31.421 12.0345 30.959 11.8966C30.497 11.7587 29.9868 11.8966 29.6696 12.2621C29.3524 12.6275 29.2697 13.1446 29.4696 13.5859C29.6696 14.0272 30.1109 14.3099 30.5936 14.3168C30.9452 14.2961 31.2693 14.1376 31.5037 13.8755C31.7313 13.6135 31.8485 13.2688 31.8209 12.9171Z\" fill=\"white\"></path>\n<path d=\"M28.9195 20.9782C28.9195 20.5093 27.8439 19.8129 26.2166 19.8129C24.5893 19.8129 23.5137 20.53 23.5137 20.9782C23.5137 21.4195 24.5893 22.1435 26.2166 22.1435C27.8439 22.1435 28.9057 21.4677 28.9057 21.0057L28.9195 20.9782Z\" fill=\"white\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_32_8339\">\n<rect width=\"52.4175\" height=\"31.3802\" fill=\"white\" transform=\"translate(0 0.285522)\"></rect>\n</clippath>\n</defs>\n</svg>\nFor Pets: <br>\nPets under 60 kg (120 lbs) → 50 mg per day.<br>\nPets over 60 kg (120 lbs) → Adjust dosage based on size (consult a vet).\n</p>\n</div>\n\n<style>\n.icn-container{\ngap:24px 3.9rem;\np{\nfont-size:16px;\n}\n.icn-gap {\ngap:14px;\nfont-weight:400;\ntext-align:left;\n}\n</style>",
+            "subtitle": "",
+            "description": "<p>Supplementing in cycles is the proper way of using vitamins, minerals and herbs. You could use it non-stop, but it is always better to cycle between periods of use and disuse. Preferably, taking it only when you need a nutrient boost (except for specific health conditions.</p><p>Supplementing in cycles is the proper way of using vitamins, <a href=\"https://everestshilajit.com/pages/trace-minerals\" target=\"_blank\" title=\"trace minerals\">minerals</a> and herbs. You could use it non-stop, but it is always better to cycle between periods of use and disuse. Preferably, taking it only when you need a nutrient boost (except for specific health conditions.</p><p><strong>Note: </strong>Not recommended for anyone under 18<strong> </strong>due to limited research on safety and benefits.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_BRFGr4": {
+          "type": "image",
+          "settings": {
+            "image_type": "html",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "[shilajit-calculator]",
+            "image_width": "47.77%"
+          }
+        }
+      },
+      "block_order": [
+        "content_eLqhFN",
+        "image_BRFGr4"
+      ],
+      "custom_css": [
+        "p strong {color: #f3aa48; font-family: \"var(--font-body-family)\";}",
+        "h3 {width: 100%;}",
+        ".contentside {flex-direction: column-reverse; gap: 25px;}",
+        "@media (max-width: 768px) {p {text-align: left; }}"
+      ],
+      "settings": {
+        "heading_size": "h3",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.77%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:122rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_rqUaWM": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_bPhc3T": {
+          "type": "content",
+          "settings": {
+            "title": "Liquid <brown>Everest Shilajit \n</brown>",
+            "subtitle": "",
+            "description": "<ol><li>Use a dropper lid that comes with the bottle</li><li>The liquid shilajit can be consumed with warm beverages, except tap water </li><li>Take it once or twice a day on an empty stomach </li></ol><p>For optimal absorption, mix liquid shilajit with warm beverages but avoid it with tap water. <strong>Hot milk and ghee </strong>are ideal choices since they enhance the potency of nutrients. Milk is a rich source of calcium, protein, and essential vitamins, while ghee contains healthy fats and fat-soluble vitamins (A, D, E, and K), so they also accelerate nutrient absorption. </p><p>Take it <strong>once or twice a day</strong> on an <strong>empty stomach</strong>, either in the morning or during the day. If it makes you hyperactive then it’s better you don’t consume it in thee evening, it might interfere with your sleep cycle.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_iPN7pC": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/image_1_1.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "47.4%"
+          }
+        }
+      },
+      "block_order": [
+        "content_bPhc3T",
+        "image_iPN7pC"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } h2, p {text-align: center !important; width: 100%; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.4%",
+        "padding": "0 16px 11.5rem 16px",
+        "margin": "0 auto",
+        "custom_class": "counter-list",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_VxNKL6": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_4KGqCD": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "description": "<p>The bottle of liquid shilajit comes with a dropper. Use a dropper to measure three drops, and that amount is equal to 0.2mL of liquid shilajit as an average single serving size. Liquid shilajit may be used plain as is or mixed with any liquid like water, tea or coffee. While people ask if it is better  to take shilajit with goat's milk, it depends on what you prefer. Mixing shilajit with milk isn't any different from mixing it with honey or any other low-calorie food. The various recipes that you may hear about are merely cultural or dietary preferences. There is no relationship to the shilajit itself!.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_4KGqCD"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "0",
+        "content_width": "100%",
+        "padding": "0 16px",
+        "margin": "24px  auto 0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "custom_liquid_aVgpKE": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.counter-list .contentside {\ngap:0;\n}\n.counter-list ol {\n  counter-reset: list;\n  display: flex;\n  flex-direction: column;\n  gap: 4rem;\n  margin-bottom: 4rem;\n  margin-top: 4rem;\nmargin-left:-2em;\n\n}\n.counter-list li {\n  counter-increment: list;\n  gap: 2.5rem;\n  display: flex;\n  text-align: left;\n  align-items: center;\n  margin:0;\n}\n\n.counter-list li:before {\n  content: \"0\"counter(list);\n  margin-right: 6px;\n  font-family:var(--font-body-family);\n  font-size:24px;\n  font-weight:800;\n  color:#fff;\n  border-radius:50%;\n  width:5rem;\n  height:5rem;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  aspect-ratio:1/1;\n  background:#000;\n}\n\n@media(max-width:768px){\n.counter-list {\n  ol {\n    margin-top: 24px;\n    margin-bottom: 24px;\ngap: 16px;\n  }\n  li {\n    gap: 12px;\n  }\n}\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "basmil_image_text_9RXdkD": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_tNzmmB": {
+          "type": "content",
+          "settings": {
+            "title": "Soft Resin<brown> Everest Shilajit</brown>",
+            "subtitle": "",
+            "description": "<ol><li>Take 300-500 mg of shilajit resin with the spoon that comes with the product.</li><li>Mix the resin in warm water, milk, or herbal tea for better absorption.</li><li> Consume it on an empty stomach for optimal results.</li></ol><p>Start with a pea-sized shilajit dosage, ranging from 300 mg to 500 mg. After a few days, depending on your reaction and results, you can gradually increase the dosage to 1 gram per day. Dissolve the resin in warm water, milk, or herbal tea for better absorption. </p><p>For optimal results, it's best to take Shilajit in the morning on an empty stomach. Or, you can take it later in the day, but make sure it's at least 3-4 hours after a meal to <a href=\"https://everestshilajit.com/pages/fulvic-and-humic-acids\" target=\"_blank\" title=\"fulvic acid vs humic acid\">Fulvic Acid</a> supplement.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_gctbqq": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/DNU_SH.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "47.4%"
+          }
+        }
+      },
+      "block_order": [
+        "content_tNzmmB",
+        "image_gctbqq"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {h2, p {text-align: center !important; width: 100%; } .contain-wrapper {flex-direction: column-reverse; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagefirst",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "4.44%",
+        "content_width": "47.4%",
+        "padding": "0 16px 11.5rem 16px",
+        "margin": "0 auto",
+        "custom_class": "counter-list",
+        "custom_id": "",
+        "width": "100%; max-width:127.6rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_BiKW9P": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_RenTFn": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"100\" height=\"100\" viewbox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M50.8014 77.4988C43.1312 77.4988 35.6264 73.3144 31.265 66.1755C26.693 58.6916 25.7906 49.6479 28.5879 39.3144C29.6858 35.25 30.3776 31.8905 30.7386 28.711C31.3251 23.6118 31.8816 15.9029 31.1747 8.08904L31.0845 7.26416H68.3977L68.3525 8.05904C68.3525 8.10404 68.1269 12.1684 68.2172 17.3877C68.3225 23.8367 69.2699 30.6307 71.0296 37.5897C72.7742 44.4587 74.7594 57.5068 68.4277 67.6153C65.6003 72.1296 61.69 75.1592 56.8022 76.629C54.832 77.2139 52.8167 77.4988 50.8014 77.4988ZM32.7389 8.76394C33.3555 16.4278 32.8141 23.8967 32.2275 28.876C31.8515 32.1305 31.1597 35.565 30.0317 39.7044C27.3397 49.6329 28.1969 58.2716 32.5433 65.3956C37.6869 73.8244 47.4927 77.8438 56.366 75.1742C60.8929 73.8094 64.5174 70.9898 67.1494 66.8054C73.1802 57.1618 71.2552 44.5937 69.5707 37.9496C67.781 30.8857 66.8185 23.9717 66.7132 17.4027C66.6531 13.4882 66.7583 10.2037 66.8185 8.76394H32.7389Z\" fill=\"#68453D\"></path>\n<path d=\"M62.9984 98.9004H36.7845C36.3032 98.9004 35.8971 98.5855 35.7768 98.1355C35.6565 97.6706 35.837 97.1907 36.2581 96.9507L49.899 88.9419L63.5399 96.9507C63.961 97.1907 64.1414 97.6706 64.0211 98.1355C63.8858 98.5855 63.4797 98.9004 62.9984 98.9004ZM38.4388 97.4006H61.3441L49.8839 90.6666L38.4388 97.4006Z\" fill=\"#68453D\"></path>\n<path d=\"M50.6368 76.7485H49.1328V89.7966H50.6368V76.7485Z\" fill=\"#68453D\"></path>\n<path opacity=\"0.8\" d=\"M69.315 33.5415C69.315 33.5415 58.0504 41.7903 48.7108 37.126C39.3713 32.4617 29.9114 37.126 29.9114 37.126L28.2871 44.07L27.9863 54.3734L30.7987 63.807L35.1 69.9261L41.4618 74.5605L49.3124 76.7651L56.1404 76.0452L62.9834 72.6408L68.9541 65.1568L71.2702 58.2729L71.9921 51.5988L71.5108 43.995L69.7361 35.4762L69.315 33.5415Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Alcohol",
+            "icon_description": "Mixing Shilajit with alcohol can reduce its effectiveness and strain the liver. Alcohol may interfere with nutrient absorption, reducing the benefits of Shilajit. It’s best to take it with water.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_VhVbet": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"100\" height=\"100\" viewbox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M38.3595 74.1188H25.6651C24.7543 74.1188 24 73.3808 24 72.4583V69.8328C24 68.9245 24.74 68.1724 25.6651 68.1724H38.3595C39.2703 68.1724 40.0246 68.9103 40.0246 69.8328V72.4583C40.0246 73.3666 39.2703 74.1188 38.3595 74.1188ZM25.6651 69.6057C25.537 69.6057 25.4231 69.7051 25.4231 69.847V72.4725C25.4231 72.6002 25.5228 72.7138 25.6651 72.7138H38.3595C38.4876 72.7138 38.6015 72.6144 38.6015 72.4725V69.847C38.6015 69.7193 38.5018 69.6057 38.3595 69.6057H25.6651Z\" fill=\"#68453D\"></path>\n<path d=\"M64.3192 37.944H48.1807C47.2557 37.944 46.5156 37.1919 46.5156 36.2836V33.6297C46.5156 32.7072 47.2699 31.9692 48.1807 31.9692H64.3192C65.2442 31.9692 65.9842 32.7214 65.9842 33.6297V36.2836C65.9842 37.1919 65.2442 37.944 64.3192 37.944ZM48.1665 33.3742C48.0242 33.3742 47.9245 33.4878 47.9245 33.6155V36.2694C47.9245 36.4113 48.0384 36.5107 48.1665 36.5107H64.3049C64.4472 36.5107 64.5469 36.3971 64.5469 36.2694V33.6155C64.5469 33.4736 64.433 33.3742 64.3049 33.3742H48.1665Z\" fill=\"#68453D\"></path>\n<path d=\"M61.9828 33.3748H50.3984V30.7209C50.3984 29.5856 51.3377 28.6489 52.4762 28.6489H59.905C61.0435 28.6489 61.9828 29.5856 61.9828 30.7209V33.3748ZM51.8216 31.9556H60.5597V30.7209C60.5597 30.3661 60.2608 30.0681 59.905 30.0681H52.4762C52.1204 30.0681 51.8216 30.3661 51.8216 30.7209V31.9556Z\" fill=\"#68453D\"></path>\n<path d=\"M54.1134 28.7482H52.6902V26.0234C52.6902 25.0441 52.306 24.1358 51.6229 23.4404C50.8828 22.7024 49.8582 22.3051 48.9047 22.376C47.8373 22.447 46.2576 22.7166 44.7064 23.6391C41.0916 25.7963 38.4019 23.6249 38.288 23.5256C38.2738 23.5256 36.4948 22.4612 35.9541 20.4034C35.584 18.9984 35.8687 17.5082 36.7937 15.9471C37.548 14.684 38.5726 13.8751 39.825 13.5628C42.0451 13.0094 44.3506 14.1731 45.233 14.6982C45.4607 14.8401 45.6741 14.9395 45.8876 15.0104C47.9085 15.72 50.2282 15.4788 52.2633 14.3576C53.4303 13.719 54.6969 13.4067 56.0204 13.4067C56.0346 13.4067 56.0346 13.4067 56.0489 13.4067V14.8259H56.0346C54.953 14.8259 53.9141 15.0956 52.9606 15.6065C50.5698 16.9121 47.8373 17.1818 45.4607 16.3587C45.1191 16.2451 44.8202 16.1032 44.5071 15.9045C43.7671 15.4646 41.8886 14.4995 40.1808 14.9253C39.2984 15.1523 38.5869 15.72 38.0318 16.6567C37.306 17.863 37.0783 18.9984 37.3345 20.0202C37.7188 21.5387 39.0992 22.3476 39.1134 22.3618C39.2842 22.4896 41.2624 24.0507 43.9948 22.4186C45.788 21.3542 47.6096 21.0278 48.8335 20.9568C50.214 20.8575 51.6229 21.411 52.6475 22.4328C53.601 23.3979 54.1418 24.6609 54.1418 26.0234V28.7482H54.1134Z\" fill=\"#68453D\"></path>\n<path d=\"M59.3662 28.7476H57.943V26.0228C57.943 24.6746 58.4696 23.3973 59.4373 22.4322C60.4762 21.3962 61.8566 20.8569 63.2656 20.9563C65.016 21.0698 66.6811 21.5807 68.1043 22.418C70.8225 24.0501 72.8006 22.489 72.886 22.4322C72.9999 22.3613 74.3661 21.5381 74.7646 20.0338C75.0207 19.012 74.793 17.8908 74.0672 16.6703C73.498 15.7337 72.8006 15.166 71.9183 14.9389C70.2105 14.5131 68.3177 15.4782 67.5919 15.9181C67.2788 16.1026 66.98 16.2446 66.6811 16.3581C64.276 17.1954 61.5436 16.9258 59.1527 15.6201C58.1992 15.095 57.1603 14.8396 56.0787 14.8396H56.0645V13.4204C56.0787 13.4204 56.0787 13.4204 56.0929 13.4204C57.4164 13.4204 58.683 13.7468 59.85 14.3712C61.8994 15.4782 64.2048 15.7195 66.1972 15.0241C66.4392 14.9389 66.6527 14.8396 66.8804 14.6976C67.7627 14.1725 70.0682 13.0088 72.2883 13.5623C73.5407 13.8745 74.5653 14.6835 75.3196 15.9465C76.2446 17.5076 76.5293 18.9978 76.1592 20.4028C75.6042 22.489 73.7968 23.5534 73.7257 23.596C73.7114 23.6244 71.0217 25.7957 67.4069 23.6386C65.8557 22.7161 64.276 22.4322 63.2086 22.3755C62.2124 22.3045 61.2305 22.7019 60.4762 23.4399C59.7789 24.1353 59.4089 25.0436 59.4089 26.0228V28.7476H59.3662Z\" fill=\"#68453D\"></path>\n<path d=\"M27.2591 68.8965H25.8359V64.7383C25.8359 60.4949 27.0456 56.5921 29.3511 53.4415C31.9839 49.8368 35.6414 47.5235 40.2382 46.601L44.1376 46.3172C44.2087 46.303 47.7951 45.5792 47.7951 42.0738V37.6743H49.2182V42.0738C49.2182 45.8347 46.0161 47.41 44.3226 47.7222L40.4374 48.006C36.2961 48.8434 32.9232 50.958 30.5038 54.2789C28.3834 57.1882 27.2591 60.8071 27.2591 64.7383V68.8965Z\" fill=\"#68453D\"></path>\n<path d=\"M38.2317 68.8977H36.8086V63.519C36.8086 61.7308 37.4348 60.1129 38.5733 58.9492C39.7972 57.7003 42.06 56.4372 45.8313 57.5868C45.9736 57.6435 48.8626 58.637 50.2858 59.9568C50.3854 60.0278 54.0286 62.6391 60.1908 60.6948C61.0163 60.4393 61.8417 60.0278 62.8664 59.4033C64.3037 58.5234 67.3066 57.0475 70.8929 57.1468H78.4925V58.566H70.8787C67.6054 58.495 64.9157 59.8149 63.6206 60.6096C62.4963 61.2908 61.5429 61.7592 60.632 62.043C53.7298 64.2286 49.56 61.1773 49.3892 61.0496C48.3361 60.0845 46.1587 59.2046 45.4044 58.9492C42.9423 58.197 40.9926 58.5376 39.6122 59.9568C38.7298 60.8509 38.246 62.1282 38.246 63.5332V68.8977H38.2317Z\" fill=\"#68453D\"></path>\n<path d=\"M78.4925 47.709H69.0001C67.2496 47.709 65.613 47.042 64.5172 45.8783C63.4641 44.7713 62.9375 43.3521 62.9375 41.6633V37.2212H64.3606V41.6633C64.3606 42.9689 64.7591 44.0617 65.5561 44.899C66.3815 45.7789 67.6339 46.2756 69.0001 46.2756H78.4925V47.709Z\" fill=\"#68453D\"></path>\n<path opacity=\"0.8\" d=\"M32.0103 96.8974C27.4705 96.8974 24.6242 91.987 26.9012 88.07L32.0103 79.2427L37.1194 88.07C39.3964 91.987 36.5644 96.8974 32.0103 96.8974Z\" fill=\"#68453D\"></path>\n<path d=\"M36.0956 90.8228C36.2237 91.4188 36.1668 92.0433 36.0102 92.6393C35.8537 93.2496 35.5406 93.8172 35.0994 94.2856C34.6583 94.7397 34.089 95.1087 33.4628 95.2364C33.164 95.3358 32.8509 95.3358 32.5378 95.3642C32.2247 95.35 31.9258 95.3216 31.627 95.2648C32.2104 95.0945 32.7797 94.981 33.2778 94.7255C33.7759 94.4985 34.2171 94.1862 34.5871 93.8031C35.3271 93.0367 35.7683 91.9723 36.0956 90.8228Z\" fill=\"white\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Tap Water",
+            "icon_description": "Tap water contains chlorine and other impurities that may alter Shilajit’s composition. Use filtered or spring water to preserve its purity and ensure you get the full benefits.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_mUdV8H": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"100\" height=\"100\" viewbox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M49.1553 89.0474C43.3451 89.0474 38.6152 84.3306 38.6152 78.5366C38.6152 72.7426 43.3451 68.0259 49.1553 68.0259C54.9654 68.0259 59.6953 72.7426 59.6953 78.5366C59.6953 84.3306 54.9654 89.0474 49.1553 89.0474ZM49.1553 70.3551C44.6298 70.3551 40.951 74.0237 40.951 78.5366C40.951 83.0496 44.6298 86.7181 49.1553 86.7181C53.6808 86.7181 57.3596 83.0496 57.3596 78.5366C57.3596 74.0237 53.6808 70.3551 49.1553 70.3551Z\" fill=\"#68453D\"></path>\n<path d=\"M49.1542 69.0743C48.5119 69.0743 47.9863 68.5502 47.9863 67.9096V35.6495C47.9863 35.0089 48.5119 34.4849 49.1542 34.4849C49.7965 34.4849 50.3221 35.0089 50.3221 35.6495V67.9096C50.3221 68.5502 49.7965 69.0743 49.1542 69.0743Z\" fill=\"#68453D\"></path>\n<path d=\"M49.1542 30.5117C48.5119 30.5117 47.9863 29.9876 47.9863 29.347V20.2921C47.9863 19.6515 48.5119 19.1274 49.1542 19.1274C49.7965 19.1274 50.3221 19.6515 50.3221 20.2921V29.3616C50.3221 29.9876 49.7965 30.5117 49.1542 30.5117Z\" fill=\"#68453D\"></path>\n<path d=\"M49.1249 98.3507C48.3512 98.3507 47.5628 98.307 46.7745 98.2196C37.6943 97.2006 30.2784 89.9071 29.1543 80.8667C28.1908 73.1074 31.7966 65.5082 38.3659 61.3592L38.5995 20.1169C38.6141 17.875 39.0666 15.8514 39.9571 14.09C41.2272 11.5714 43.5483 8.22314 49.0957 8.22314C56.0883 8.22314 58.4824 13.3184 59.0518 14.8906C59.5627 16.3027 59.8255 17.9187 59.8255 19.6656V61.3592C65.694 65.0569 69.1976 71.3604 69.1976 78.3045C69.1976 83.9966 66.7597 89.4413 62.497 93.2409C58.7452 96.5746 54.0737 98.3507 49.1249 98.3507ZM49.0957 9.67893C44.4388 9.67893 42.5264 12.2265 41.271 14.7305C40.4826 16.3027 40.0739 18.1079 40.0593 20.1169L39.8111 62.1745L39.4608 62.3783C33.1689 66.1779 29.6945 73.3549 30.5996 80.6775C31.636 89.0482 38.5119 95.8176 46.9351 96.7493C52.3219 97.3607 57.5043 95.7157 61.5043 92.149C65.4605 88.626 67.7232 83.5745 67.7232 78.29C67.7232 71.7244 64.351 65.7702 58.7014 62.3783L58.351 62.1599V19.651C58.351 18.0788 58.1175 16.6376 57.6649 15.371C57.1832 14.0463 55.1394 9.67893 49.0957 9.67893Z\" fill=\"#68453D\"></path>\n<path d=\"M77.0656 28.4154C75.1532 28.4154 73.635 27.8331 72.5109 26.683C71.3868 25.5329 70.832 23.917 70.832 21.8207C70.832 19.8117 71.4014 18.1958 72.5254 17.002C73.6495 15.8083 75.1677 15.2114 77.0801 15.2114C77.5911 15.2114 78.0436 15.2405 78.4524 15.2988C78.8611 15.357 79.2407 15.4298 79.6203 15.5317C79.9122 15.619 80.2334 15.7355 80.5692 15.8811C80.9049 16.0267 81.1823 16.1577 81.4013 16.2596V19.2876H81.0801C80.9195 19.1566 80.7298 18.9819 80.4962 18.7927C80.2626 18.6034 79.9998 18.4141 79.7079 18.2395C79.4159 18.0648 79.0801 17.9046 78.7298 17.7736C78.3794 17.6426 77.9999 17.5844 77.6203 17.5844C77.1532 17.5844 76.7298 17.6571 76.3502 17.8027C75.9707 17.9483 75.6057 18.1958 75.2553 18.5597C74.9342 18.88 74.6714 19.3167 74.4671 19.8699C74.2627 20.4231 74.1605 21.0782 74.1605 21.8207C74.1605 22.6068 74.2626 23.2765 74.4816 23.8151C74.7006 24.3537 74.9634 24.7905 75.3137 25.1107C75.6495 25.431 76.0145 25.6639 76.4232 25.795C76.832 25.926 77.2407 26.0133 77.6349 26.0133C78.0582 26.0133 78.4524 25.9405 78.8466 25.8095C79.2407 25.6785 79.5473 25.5184 79.8101 25.3437C80.102 25.169 80.3502 24.9943 80.5692 24.805C80.7881 24.6158 80.9779 24.4556 81.1385 24.3246H81.4305V27.309C81.1969 27.4109 80.9195 27.5419 80.613 27.6729C80.3064 27.8039 79.9852 27.935 79.6641 28.0223C79.2699 28.1388 78.8903 28.2261 78.54 28.2989C78.1896 28.3717 77.6641 28.4154 77.0656 28.4154Z\" fill=\"#68453D\"></path>\n<path d=\"M67.9267 16.8998C69.1925 16.8998 70.2187 15.8765 70.2187 14.6142C70.2187 13.3519 69.1925 12.3286 67.9267 12.3286C66.6609 12.3286 65.6348 13.3519 65.6348 14.6142C65.6348 15.8765 66.6609 16.8998 67.9267 16.8998Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Temperature",
+            "icon_description": "Exposing Shilajit to high temperatures can degrade its nutrients and reduce its potency. Always store it in a cool place and mix it with lukewarm water for best results.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_cDPnQM": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"100\" height=\"100\" viewbox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M69.7607 77.7902C65.6106 77.7902 61.4106 76.4989 57.8415 73.8337C53.7412 70.7877 50.9855 66.3345 50.1057 61.302C49.9729 60.557 49.8899 59.7955 49.8401 59.034C49.8069 58.5705 50.1555 58.1897 50.6203 58.1566C51.1183 58.1235 51.4669 58.4712 51.5001 58.9347C51.5499 59.63 51.6329 60.3418 51.7491 61.0206C52.5626 65.6227 55.0693 69.7116 58.8376 72.5093C66.9386 78.5351 78.4427 76.8631 84.4853 68.8011C87.407 64.8943 88.6355 60.077 87.9383 55.2431C87.241 50.4092 84.6846 46.1547 80.7668 43.2246C72.6658 37.1988 61.1782 38.8708 55.119 46.9327C53.1104 49.6311 51.8654 52.8261 51.5665 56.1536C51.5167 56.6005 51.1515 56.9316 50.6701 56.8985C50.2219 56.8488 49.8733 56.4515 49.9231 56.0046C50.2717 52.3626 51.5998 48.9027 53.8076 45.956C60.398 37.1491 72.948 35.3281 81.7629 41.9002C90.5943 48.4723 92.4204 60.9709 85.83 69.7778C81.879 75.0256 75.8531 77.7902 69.7607 77.7902Z\" fill=\"#68453D\"></path>\n<path d=\"M54.905 45.7793L53.9121 47.106L84.6036 69.948L85.5965 68.6213L54.905 45.7793Z\" fill=\"#68453D\"></path>\n<path d=\"M28.6094 85.853C20.5581 85.853 14.0176 79.3306 14.0176 71.3017V39.3682C14.0176 31.3393 20.5581 24.8169 28.6094 24.8169C36.6606 24.8169 43.2012 31.3393 43.2012 39.3682V71.3017C43.2012 79.314 36.644 85.853 28.6094 85.853ZM28.6094 26.4723C21.4712 26.4723 15.6776 32.2664 15.6776 39.3682V71.3017C15.6776 78.4201 21.4878 84.1976 28.6094 84.1976C35.7476 84.1976 41.5412 78.4035 41.5412 71.3017V39.3682C41.5412 32.2498 35.731 26.4723 28.6094 26.4723Z\" fill=\"#68453D\"></path>\n<path opacity=\"0.8\" d=\"M28.6094 85.0251C21.0064 85.0251 14.8477 78.8834 14.8477 71.3015V54.9126H42.3713V71.3015C42.3713 78.8668 36.2125 85.0251 28.6094 85.0251Z\" fill=\"#68453D\"></path>\n<path d=\"M33.2234 55.7243H14.83C14.3652 55.7243 14 55.3601 14 54.8966C14 54.433 14.3652 54.0688 14.83 54.0688H33.2234C33.6882 54.0688 34.0534 54.433 34.0534 54.8966C34.0534 55.3601 33.6882 55.7243 33.2234 55.7243Z\" fill=\"#68453D\"></path>\n<path d=\"M42.2036 55.7243H36.0449C35.5801 55.7243 35.2148 55.3601 35.2148 54.8966C35.2148 54.433 35.5801 54.0688 36.0449 54.0688H42.2036C42.6685 54.0688 43.0337 54.433 43.0337 54.8966C43.0337 55.3601 42.6685 55.7243 42.2036 55.7243Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Prescriptions",
+            "icon_description": "Shilajit may interact with medications, affecting their potency. Always consult your doctor before combining it with prescriptions.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_RenTFn",
+        "icon_box_VhVbet",
+        "icon_box_mUdV8H",
+        "icon_box_cDPnQM"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 600;}",
+        "@media (max-width: 1024px) {.iconbox {min-width: 48.5%; }}",
+        "@media (max-width: 768px) {.iconbox {min-width: 100%; } .iconbox-wrapper {gap: 24px !important; } .wrapper {gap: 32px !important; } h3 {margin-bottom: 12px; } svg {width: 80px; height: 80px; } p {text-align: center; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "Things to Avoid When <brown> Using Shilajit </brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "7.14rem",
+        "iconbox_gap": "32px 1.44%",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "31.6rem; width:23.9%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100% ; max-width: 145.5rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "icon_box_a8TDXR": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_MVqh8Y": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"125\" height=\"125\" viewbox=\"0 0 125 125\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M56.5555 14.9338C60.1007 12.3554 64.9351 12.3554 68.3729 14.9338L75.3559 19.983C75.8931 20.4127 76.5376 20.6276 77.1822 20.6276L85.7767 21.0573C89.7516 21.2722 93.2968 23.7431 94.6934 27.5031L97.7015 35.453C97.9163 36.0976 98.3461 36.6347 98.8832 36.957L105.866 42.0063C109.411 44.5846 110.915 49.0967 109.519 53.2865L106.833 61.5587C106.618 62.2032 106.618 62.8478 106.833 63.4924L109.089 71.7646C110.163 75.6321 108.767 79.7144 105.651 82.2928L98.9906 87.6643C98.4535 88.094 98.1312 88.6312 97.9163 89.2758L95.2306 97.4405C93.834 101.63 89.9665 104.424 85.6692 104.424H77.0748C76.4302 104.424 75.7856 104.638 75.2485 104.961L68.0506 109.688C64.7203 111.836 60.423 111.836 56.9853 109.688L49.7874 104.961C49.2502 104.638 48.6057 104.424 47.9611 104.424H39.3666C34.962 104.424 31.0945 101.63 29.8053 97.4405L27.1195 89.2758C26.9047 88.6312 26.5824 88.094 26.0452 87.6643L19.3845 82.2928C16.269 79.8219 14.9799 75.6321 15.9467 71.7646L18.2028 63.4924C18.4176 62.8478 18.3102 62.2032 18.2028 61.5587L15.517 53.3939C14.1204 49.2041 15.6244 44.692 19.1697 42.1137L26.1526 37.0645C26.6898 36.6347 27.1195 36.0976 27.3344 35.5604L30.3424 27.6106C31.739 23.8505 35.2843 21.3796 39.2592 21.1647L47.8536 20.735C48.4982 20.735 49.1428 20.5201 49.68 20.0904L56.5555 14.9338ZM60.5305 20.4127L53.5475 25.462C51.936 26.6437 50.1097 27.2883 48.0685 27.3957L39.474 27.8254C38.1849 27.9329 37.0031 28.7923 36.466 29.974L33.5654 37.9239C32.9208 39.7502 31.6316 41.3617 30.0201 42.5434L23.0372 47.5927C21.8554 48.4521 21.3183 49.9562 21.8554 51.3528L24.5412 59.5175C25.1858 61.3438 25.1858 63.385 24.6486 65.3187L22.3926 73.5909C22.0703 74.8801 22.5 76.2767 23.5743 77.1361L30.235 82.5076C31.739 83.6894 32.9208 85.4083 33.4579 87.2346L36.1437 95.3993C36.5734 96.7959 37.8626 97.7628 39.3666 97.7628H47.9611C49.8948 97.7628 51.8286 98.2999 53.44 99.3743L60.6379 104.101C61.7122 104.853 63.2162 104.853 64.2905 104.101L71.4884 99.3743C73.0999 98.2999 75.0336 97.7628 76.9674 97.7628H85.5618C87.0658 97.7628 88.355 96.7959 88.7847 95.3993L91.4705 87.2346C92.1151 85.4083 93.1894 83.6894 94.6934 82.5076L101.354 77.1361C102.428 76.2767 102.858 74.8801 102.536 73.5909L100.28 65.3187C99.7427 63.385 99.8501 61.4512 100.387 59.5175L103.073 51.3528C103.503 49.9562 103.073 48.4521 101.891 47.5927L94.9083 42.5434C93.2968 41.3617 92.1151 39.7502 91.3631 37.9239L88.355 29.974C87.9253 28.6849 86.7436 27.9329 85.347 27.8254L76.7525 27.3957C74.8187 27.2883 72.885 26.6437 71.2735 25.462L64.2905 20.4127C63.2162 19.5533 61.7122 19.5533 60.5305 20.4127ZM62.5716 82.7225C62.5716 82.7225 48.8205 83.1522 40.5484 74.8801C32.2762 66.6079 32.7059 52.8568 32.7059 52.8568C32.8133 51.1379 34.2099 49.6339 35.9288 49.6339C35.9288 49.6339 49.68 49.2041 57.9521 57.4763C59.9933 59.5175 61.4973 61.7735 62.5716 64.137C63.646 61.7735 65.15 59.4101 67.1912 57.4763C75.4633 49.2041 89.2145 49.6339 89.2145 49.6339C90.9333 49.7413 92.4374 51.1379 92.4374 52.8568C92.4374 52.8568 92.8671 66.6079 84.5949 74.8801C76.4302 83.0448 62.5716 82.7225 62.5716 82.7225ZM39.5815 56.402C39.9038 60.1621 41.1929 66.0708 45.2753 70.1531C49.3577 74.2355 55.2664 75.5247 58.919 75.8469C58.4893 72.1943 57.3075 66.2856 53.2252 62.2032C49.1428 58.1209 43.2341 56.8317 39.5815 56.402ZM85.5618 56.402C81.9092 56.8317 76.0005 58.0135 71.9181 62.0958C67.8357 66.1782 66.5466 72.0869 66.2243 75.7395C69.8769 75.3098 75.7856 74.1281 79.868 70.0457C83.9503 66.0708 85.2395 60.1621 85.5618 56.402Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Raw",
+            "icon_description": "The most natural way to consume shilajit is straight, raw, and pure, just as it has been done for centuries. There's no need to mix it with anything, simply consume it on its own. This way you can feel an immediate gust of energy.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_fxaTtJ": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"125\" height=\"125\" viewbox=\"0 0 125 125\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M74.4233 122.393H51.5043C44.4509 122.393 38.7772 117.954 38.5875 112.305L36.0007 31.9971C35.9835 31.2025 36.2766 30.4424 36.8457 29.8551C37.4666 29.1987 38.3806 28.8359 39.3118 28.8359H86.3054C87.2539 28.8359 88.1506 29.1987 88.7714 29.8551C89.3405 30.4424 89.6337 31.2025 89.6165 31.9971L87.3228 112.27C87.1849 117.954 81.5112 122.393 74.4233 122.393ZM39.3118 30.667C38.8634 30.667 38.4323 30.8397 38.1564 31.1334C38.0012 31.2889 37.8115 31.5653 37.8287 31.9453L40.4155 112.236C40.5535 116.831 45.5374 120.562 51.5043 120.562H74.4233C80.4075 120.562 85.3914 116.813 85.5121 112.219L87.8057 31.9453C87.823 31.5653 87.6333 31.2889 87.478 31.1334C87.1849 30.8397 86.771 30.667 86.3226 30.667H39.3118Z\" fill=\"#68453D\"></path>\n<path d=\"M68.8869 57.0791C64.4548 57.0791 59.9538 56.4745 56.1771 54.6952C46.261 50.0658 36.9658 50.3076 36.8795 50.3249L36.8105 48.4938C37.2072 48.4765 46.6404 48.2174 56.9359 53.0369C68.3005 58.3574 87.5808 52.3114 87.7705 52.2596L88.3224 54.0043C87.7705 54.177 78.527 57.0791 68.8869 57.0791Z\" fill=\"#68453D\"></path>\n<path d=\"M53.4556 112.425C43.0222 112.425 38.6936 105.844 38.5039 105.55L40.0387 104.566C40.1939 104.808 44.0569 110.594 53.4556 110.594H75.1502C75.1847 110.594 83.6005 110.024 85.9286 104.082L87.6186 104.756C84.8421 111.804 75.5814 112.408 75.1847 112.425H53.4556Z\" fill=\"#68453D\"></path>\n<path d=\"M55.2985 75.2863C54.3155 81.7123 56.5057 94.0288 61.4034 94.7716C66.301 95.5144 72.061 84.4243 73.044 77.9983C73.9235 72.1942 71.4056 66.891 67.3013 65.3709L77.8382 6.77677C78.0279 5.51575 76.8724 4.30656 75.2341 4.04744C73.5958 3.78833 72.13 4.61749 71.9403 5.87851L64.542 64.9563C60.1789 65.1809 56.1953 69.4821 55.2985 75.2863Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Mixed with Liquid",
+            "icon_description": "The beauty of Shilajit lies in its ability to seamlessly blend with any liquid((except alcohol, of course!). Whether it's plain water, herbal tea, milk, or a smoothie, you can enjoy the powerful benefits of Shilajit. Soak in the early sun rays with your shilajit drink or unwind at the end of the day with a warm mug.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_HjY6ph": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"125\" height=\"125\" viewbox=\"0 0 125 125\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M71.6534 119.817H54.313C51.5792 119.817 49.3643 117.598 49.3643 114.86V94.832H51.3597V114.88C51.3597 116.519 52.6767 117.838 54.313 117.838H71.6534C73.2897 117.838 74.6067 116.519 74.6067 114.88V94.832H76.6022V114.88C76.6022 117.598 74.3673 119.817 71.6534 119.817Z\" fill=\"#68453D\"></path>\n<path d=\"M76.3232 95.831H49.6241C46.3515 95.831 43.6377 93.3725 43.2985 90.1144L36.0151 19.9768C35.9353 19.2373 36.1747 18.4977 36.6736 17.9381C37.1725 17.3784 37.8908 17.0586 38.6291 17.0586H87.3181C88.0565 17.0586 88.7748 17.3784 89.2737 17.9381C89.7726 18.4977 90.012 19.2373 89.9322 19.9768L82.6488 90.1144C82.3096 93.3725 79.5958 95.831 76.3232 95.831ZM38.6291 19.0574C38.3897 19.0574 38.23 19.1973 38.1502 19.2773C38.0704 19.3572 37.9706 19.5171 37.9906 19.777L45.274 89.9146C45.5134 92.1532 47.3692 93.8322 49.6041 93.8322H76.3033C78.5382 93.8322 80.4139 92.1532 80.6334 89.9146L87.9168 19.777C87.9367 19.5371 87.837 19.3572 87.7571 19.2773C87.6773 19.1973 87.5377 19.0574 87.2783 19.0574H38.6291Z\" fill=\"#68453D\"></path>\n<path d=\"M88.0167 23.8555H37.8311V25.8543H88.0167V23.8555Z\" fill=\"#68453D\"></path>\n<path d=\"M75.6057 111.143H50.3633V113.141H75.6057V111.143Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Cream &amp; Tonics",
+            "icon_description": "Shilajit nourishes skin with essential minerals, enhancing absorption in water-based creams. Mix with organic creams like turmeric-ginger or green coffee for vitality. Always use fresh, natural ingredients for best results.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_g3caNL": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"125\" height=\"125\" viewbox=\"0 0 125 125\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M71.7949 81.7799L68.766 80.2629C68.4603 80.8901 67.9069 81.3861 67.2516 81.5903C66.5672 81.8091 65.8246 81.7507 65.1985 81.4298C64.5723 81.1235 64.1064 80.5693 63.8734 79.9129C63.8151 79.7378 63.7714 79.5628 63.7423 79.3878C68.1399 78.8189 71.1833 76.5289 71.1833 73.5972C71.1833 70.2861 67.2808 67.7773 62.0823 67.7773C56.8838 67.7773 52.9813 70.2861 52.9813 73.5972C52.9813 76.5289 56.0101 78.8189 60.3494 79.3149C60.3203 79.4899 60.2912 79.6795 60.2329 79.84C60 80.4963 59.5194 81.0506 58.8933 81.3569C58.2671 81.6924 57.5245 81.7507 56.8401 81.5173C56.1703 81.2986 55.6315 80.8172 55.3257 80.1754L52.2969 81.6924C53.3307 83.7052 55.4131 84.9742 57.6701 84.9742C58.6749 85.018 59.6651 84.8138 60.5679 84.3762C61.1358 84.0407 61.66 83.6177 62.0823 83.1218C62.5191 83.6177 63.0288 84.0261 63.5967 84.347C64.4558 84.7846 65.3878 85.0034 66.3488 85.018C68.6059 85.018 70.6736 83.749 71.7221 81.7361L71.7949 81.7799Z\" fill=\"#68453D\"></path>\n<path d=\"M109.204 67.5887C101.836 67.5887 95.676 60.3103 91.8026 54.1988L91.7152 53.9946C89.9969 47.3142 85.9779 41.4069 80.4008 37.3666L79.8184 36.9436L80.2261 36.3601C82.3958 33.2387 85.4246 30.905 88.9776 29.6068C92.9821 28.4254 97.1904 29.0817 100.598 31.4009H100.656L100.802 31.4884C111.038 37.8771 119.542 52.3756 117.984 60.7479C117.431 64.2048 114.606 66.9615 111.111 67.4137C110.5 67.5304 109.844 67.5887 109.204 67.5887ZM93.084 53.5133C96.7681 59.2893 102.534 66.1301 109.189 66.1301C109.757 66.1301 110.325 66.0718 110.893 65.9697C113.791 65.5905 116.091 63.3442 116.543 60.5C118.013 52.6089 109.844 38.8544 100.03 32.7282L100.35 32.2177L99.9425 32.7137C96.87 30.5549 93.0403 29.9277 89.4436 30.9925C86.4294 32.101 83.8082 34.041 81.857 36.6227C87.3467 40.8089 91.3221 46.7891 93.084 53.5133Z\" fill=\"#68453D\"></path>\n<path d=\"M14.9903 67.5881C14.335 67.5881 13.6798 67.5151 13.039 67.3984C9.58794 66.9463 6.76297 64.2041 6.19507 60.7181C4.59329 52.3749 13.0827 37.891 23.3341 31.4732C26.7415 29.0811 31.0226 28.3809 35.0416 29.5624C38.9296 31.0356 42.2642 33.7486 44.4776 37.22L44.8416 37.8035L44.2882 38.2119C40.3129 41.1145 37.1385 45.0235 35.0853 49.5014L34.8523 49.9244C31.2556 56.7215 24.0331 67.5881 14.9903 67.5881ZM31.1682 30.4667C28.6928 30.4667 26.2464 31.2252 24.1495 32.6984C14.2913 38.8537 6.12227 52.6083 7.63668 60.4701C8.10265 63.3435 10.4179 65.5898 13.272 65.9544C13.869 66.0565 14.4369 66.1149 15.0048 66.1149C23.7709 66.1149 31.0518 54.0523 33.7893 48.8597L33.8767 48.6992C35.9299 44.2797 39.0461 40.4144 42.9049 37.4534C40.8663 34.507 37.9394 32.217 34.6048 30.9481C33.469 30.6418 32.304 30.4667 31.1682 30.4667Z\" fill=\"#68453D\"></path>\n<path d=\"M67.803 73.5236C67.803 72.5318 65.5314 71.0586 62.0949 71.0586C58.6583 71.0586 56.3867 72.5755 56.3867 73.5236C56.3867 74.4571 58.6583 75.9887 62.0949 75.9887C65.5314 75.9887 67.7739 74.5592 67.7739 73.582L67.803 73.5236Z\" fill=\"white\"></path>\n<path d=\"M68.6356 96.862C68.6356 96.862 68.6211 96.862 68.6065 96.862H55.5302C49.1959 96.862 43.1674 94.1344 38.9736 89.3648C34.7799 84.6097 32.8432 78.2648 33.6441 71.9783L35.4351 57.7715C36.6292 48.276 42.5121 40.1808 51.1471 36.1113C59.7967 32.0418 69.7568 32.669 77.824 37.8033C85.1776 42.4854 89.8227 50.1868 90.5654 58.7634L90.6819 58.5737L90.711 61.1992V74.6913C90.7256 80.5257 88.3666 86.2434 84.2456 90.3712C80.081 94.5574 74.5331 96.862 68.6356 96.862ZM36.935 57.5673L36.8913 57.9611L35.1002 72.1533C34.3576 78.0314 36.1632 83.9534 40.0803 88.4021C43.9974 92.8508 49.6327 95.4034 55.5447 95.4034H68.621H68.6356C74.1544 95.4034 79.3384 93.2592 83.2263 89.3502C87.0706 85.4995 89.2694 80.161 89.2548 74.7058V63.8976L89.2257 63.956V61.2576C89.2257 52.1997 84.6825 43.8857 77.0376 39.0285C69.3928 34.1714 59.9569 33.5734 51.7733 37.4387C43.7061 41.231 38.1873 48.7428 36.935 57.5673Z\" fill=\"#68453D\"></path>\n<path d=\"M52.8074 59.4334C54.0306 59.5793 55.21 58.9666 55.7779 57.8727C56.3458 56.7787 56.2002 55.4514 55.3848 54.5325C54.5693 53.6136 53.2734 53.2781 52.123 53.7157C50.9726 54.1533 50.2154 55.2472 50.2154 56.4724C50.1572 57.2163 50.4047 57.931 50.8852 58.4999C51.3803 59.0542 52.0647 59.3896 52.8074 59.4334Z\" fill=\"#68453D\"></path>\n<path d=\"M73.9365 56.4729C73.8054 55.4519 73.0919 54.6059 72.1163 54.3142C71.1406 54.0225 70.063 54.3142 69.3932 55.0872C68.7234 55.8603 68.5487 56.9542 68.9709 57.8877C69.3932 58.8212 70.3252 59.4193 71.3445 59.4338C72.0871 59.3901 72.7715 59.0546 73.2666 58.5003C73.7471 57.9461 73.9947 57.2168 73.9365 56.4729Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Pets &amp; Animals",
+            "icon_description": "If you've ever noticed your dog or cat eating dirt, it's because they instinctively crave Fulvic Acid and minerals. To give your pet the right amount, use 1 mg of Shilajit for every pound of their body weight. Just mix it into their food or water twice a week for a healthy boost.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_MVqh8Y",
+        "icon_box_fxaTtJ",
+        "icon_box_HjY6ph",
+        "icon_box_g3caNL"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 600;}",
+        "@media (max-width: 1024px) {.iconbox {min-width: 48.5%; }}",
+        "@media (max-width: 768px) {.iconbox {min-width: 100%; } h3 {margin-bottom: 12px; } .iconbox-wrapper {gap: 24px !important; } .wrapper {gap: 32px !important; } svg {width: 80px; height: 80px; } p {text-align: center; } .iconbox:nth-child(1) svg, .iconbox:nth-child(4) svg {margin-bottom: -18px; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "How to <brown>take Shilajit </brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "7.14rem",
+        "iconbox_gap": "2.1rem",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "48.07%",
+        "padding": "11rem 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/Dosage-and-Usage-background.webp",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "basmil_image_text_RRa88V": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_Qzjr3z": {
+          "type": "content",
+          "settings": {
+            "title": "When Should I <brown>Take Shilajit?</brown>",
+            "subtitle": "",
+            "description": "<p>Shilajit is ideally taken in the morning on an empty stomach, but there's no generic timing, everyone's routine is different. The yardstick is to consume it on an empty stomach or wait for 3-4 hours after your every meal. Morning is great, but consuming it at any other time works too<strong>. </strong>The only downside of taking it in the evening makes you feel more energetic, potentially affecting your sleep, so better listen to your body.  </p>",
+            "button_text": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_MtqrTC": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Dosage-and-Usage-image2.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "46.5%"
+          }
+        }
+      },
+      "block_order": [
+        "content_Qzjr3z",
+        "image_MtqrTC"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } p {text-align: center; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "6.1%",
+        "content_width": "47.24%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_PAqndF": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_gKfeWK": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"131\" viewbox=\"0 0 130 131\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M17 83.6131L17.3432 81.1942C17.4086 80.802 23.4883 41.3979 65.017 41.3979C106.546 41.3979 112.348 79.707 112.397 80.0992L112.658 81.946L111.122 80.8837C110.942 80.7693 93.5691 68.9857 81.7691 80.7857L81.2788 81.276L80.7394 80.8674C80.5924 80.7693 65.5891 70.522 49.2456 80.8837L48.8043 81.1616L48.3631 80.8837C48.1833 80.7693 30.7612 69.8519 18.7324 81.8807L17 83.6131ZM32.5099 74.6078C40.224 74.6078 47.0229 78.2197 48.788 79.2494C64.0528 69.8682 78.1245 77.3699 81.099 79.1677C91.6242 69.2472 105.761 75.8826 110.468 78.5466C108.883 71.0777 100.531 43.016 65.017 43.016C30.2872 43.016 21.331 70.6527 19.4188 79.0696C23.5864 75.7355 28.1953 74.6078 32.5099 74.6078Z\" fill=\"#68453D\"></path>\n<path d=\"M47.9867 80.4239C47.9377 79.2962 47.0225 52.7708 64.5917 41.7063L65.0166 41.4448L65.4415 41.7063C66.1116 42.1149 82.0301 51.8393 82.0301 80.4076H80.3958C80.3958 55.3694 67.5008 45.1384 65.0166 43.3897C48.7058 54.1273 49.6047 80.0971 49.6211 80.3749L47.9867 80.4239Z\" fill=\"#68453D\"></path>\n<path d=\"M67.8289 109.55H62.4355V75.9644H64.0699V107.916H66.1945V75.9644H67.8289V109.55Z\" fill=\"#68453D\"></path>\n<path d=\"M59.657 130.142H63.2853C65.6714 130.142 67.5999 128.409 67.5999 126.285V120.581V109.99C67.5999 109.304 67.0443 108.732 66.3415 108.732H64.0044C63.318 108.732 62.7459 109.288 62.7459 109.99V121.333V123.719C62.7459 124.585 61.9614 125.304 60.9808 125.304H58.3005C57.3526 125.304 56.5845 124.618 56.5845 123.768V119.796C56.5845 118.522 55.4241 117.476 54.0022 117.476C52.5803 117.476 51.4199 118.505 51.4199 119.796V125.631C51.4199 128.132 53.6753 130.142 56.47 130.142H59.657Z\" fill=\"#68453D\"></path>\n<path d=\"M66.1938 42.492L65.7525 38.2427C65.7199 37.8668 65.4093 37.5889 65.0334 37.5889C64.6412 37.5889 64.3307 37.8831 64.3143 38.2754L64.0855 42.4593L62.4512 42.3612L62.68 38.1773C62.7454 36.9352 63.7913 35.9546 65.0334 35.9546C66.2592 35.9546 67.2561 36.8698 67.3869 38.0792L67.8282 42.3285L66.1938 42.492Z\" fill=\"#68453D\"></path>\n<path d=\"M50.0812 26.5897C49.8524 26.5897 49.6562 26.3936 49.6562 26.1648V11.4557C49.6562 11.2269 49.8524 11.0308 50.0812 11.0308C50.31 11.0308 50.5061 11.2269 50.5061 11.4557V26.1648C50.5061 26.4099 50.31 26.5897 50.0812 26.5897Z\" fill=\"#68453D\"></path>\n<path d=\"M59.5089 31.5754C59.2801 31.5754 59.084 31.3793 59.084 31.1505V18.8112C59.084 18.5824 59.2801 18.3862 59.5089 18.3862C59.7377 18.3862 59.9338 18.5824 59.9338 18.8112V31.1505C59.9338 31.3793 59.7541 31.5754 59.5089 31.5754Z\" fill=\"#68453D\"></path>\n<path d=\"M67.0109 23.0272C66.7821 23.0272 66.5859 22.8311 66.5859 22.6023V6.47132C66.5859 6.24251 66.7821 6.04639 67.0109 6.04639C67.2397 6.04639 67.4358 6.24251 67.4358 6.47132V22.6186C67.4358 22.8475 67.2397 23.0272 67.0109 23.0272Z\" fill=\"#68453D\"></path>\n<path d=\"M76.423 41.7899C76.1942 41.7899 75.998 41.5937 75.998 41.3649V32.5885C75.998 32.3597 76.1942 32.1636 76.423 32.1636C76.6518 32.1636 76.8479 32.3597 76.8479 32.5885V41.3649C76.8479 41.5937 76.6518 41.7899 76.423 41.7899Z\" fill=\"#68453D\"></path>\n<path d=\"M81.1964 28.4866C80.9676 28.4866 80.7715 28.2905 80.7715 28.0617V9.78968C80.7715 9.56087 80.9676 9.36475 81.1964 9.36475C81.4252 9.36475 81.6213 9.56087 81.6213 9.78968V28.0617C81.6213 28.3068 81.4416 28.4866 81.1964 28.4866Z\" fill=\"#68453D\"></path>\n<path d=\"M90.4796 37.3936C90.2508 37.3936 90.0547 37.1974 90.0547 36.9686V26.4108C90.0547 26.182 90.2508 25.9858 90.4796 25.9858C90.7084 25.9858 90.9045 26.182 90.9045 26.4108V36.9686C90.9045 37.1974 90.7248 37.3936 90.4796 37.3936Z\" fill=\"#68453D\"></path>\n<path d=\"M42.0226 37.1804C41.7938 37.1804 41.5977 36.9843 41.5977 36.7555V29.5807C41.5977 29.3519 41.7938 29.1558 42.0226 29.1558C42.2514 29.1558 42.4475 29.3519 42.4475 29.5807V36.7555C42.4475 37.0006 42.2677 37.1804 42.0226 37.1804Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Cool &amp; Dry Place",
+            "icon_description": "Keep Shilajit in a cool, dry place, away from direct sunlight and humidity. Excessive heat or moisture can alter its texture and diminish its benefits.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_iqNcYi": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"131\" viewbox=\"0 0 130 131\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M101.555 70.2714H27.5003C25.0486 70.2714 23.0781 68.278 23.0781 65.8492V52.4222C23.0781 49.9705 25.0715 48 27.5003 48H101.555C104.007 48 106 49.9934 106 52.4222V65.8492C105.977 68.278 104.007 70.2714 101.555 70.2714ZM27.4774 50.2684C26.2859 50.2684 25.3465 51.2307 25.3465 52.3993V65.8263C25.3465 67.0178 26.3089 67.9572 27.4774 67.9572H101.532C102.724 67.9572 103.686 66.9949 103.686 65.8263V52.3993C103.686 51.2078 102.724 50.2684 101.532 50.2684H27.4774Z\" fill=\"#866A64\"></path>\n<path d=\"M101.874 129.188H27.155C25.2327 129.188 23.6641 127.619 23.6641 125.697V78.3816C23.6641 76.4593 25.2327 74.8906 27.155 74.8906H101.874C103.797 74.8906 105.365 76.4592 105.365 78.3816V125.697C105.365 127.619 103.797 129.188 101.874 129.188Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<path d=\"M73.9649 63.9015H24.1978C23.877 63.9015 23.625 63.6495 23.625 63.3287C23.625 63.0079 23.877 62.7559 24.1978 62.7559H73.9649C74.2856 62.7559 74.5377 63.0079 74.5377 63.3287C74.5377 63.6495 74.2856 63.9015 73.9649 63.9015Z\" fill=\"#866A64\"></path>\n<path d=\"M104.579 63.9015H90.0064C89.6856 63.9015 89.4336 63.6495 89.4336 63.3287C89.4336 63.0079 89.6856 62.7559 90.0064 62.7559H104.579C104.9 62.7559 105.152 63.0079 105.152 63.3287C105.152 63.6495 104.877 63.9015 104.579 63.9015Z\" fill=\"#866A64\"></path>\n<path d=\"M85.0791 63.9015H78.8697C78.5489 63.9015 78.2969 63.6495 78.2969 63.3287C78.2969 63.0079 78.5489 62.7559 78.8697 62.7559H85.0791C85.3999 62.7559 85.652 63.0079 85.652 63.3287C85.652 63.6495 85.3999 63.9015 85.0791 63.9015Z\" fill=\"#866A64\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Air-tight Containers",
+            "icon_description": "Store in an airtight container to block dust, moisture, and odors. This helps keep the resin fresh, pure, and protected from any external contaminants that might change its quality.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_AxjdQx": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"131\" viewbox=\"0 0 130 131\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M49.4962 72.2389H47.9609V31.5226C47.9609 28.389 50.5057 25.8442 53.6394 25.8442C56.773 25.8442 59.3177 28.389 59.3177 31.5226V70.5565H57.7825V31.5226C57.7825 29.2513 55.9317 27.4005 53.6604 27.4005C51.389 27.4005 49.5383 29.2513 49.5383 31.5226V72.2389H49.4962Z\" fill=\"#68453D\"></path>\n<path d=\"M59.3184 62.944H57.7832V22.2277C57.7832 19.0941 60.3279 16.5493 63.4616 16.5493C66.5952 16.5493 69.14 19.0941 69.14 22.2277V60.4413H67.6047V22.2277C67.6047 19.9564 65.754 18.1056 63.4826 18.1056C61.2113 18.1056 59.3605 19.9564 59.3605 22.2277V62.944H59.3184Z\" fill=\"#68453D\"></path>\n<path d=\"M69.2052 60.4405H67.6699V31.5226C67.6699 28.389 70.2147 25.8442 73.3484 25.8442C76.482 25.8442 79.0268 28.389 79.0268 31.5226V58.5056H77.4915V31.5226C77.4915 29.2513 75.6408 27.4005 73.3694 27.4005C71.098 27.4005 69.2473 29.2513 69.2473 31.5226V60.4405H69.2052Z\" fill=\"#68453D\"></path>\n<path d=\"M88.8712 94.0923H87.3359V117.332H88.8712V94.0923Z\" fill=\"#68453D\"></path>\n<path d=\"M88.8889 62.208H87.3537V41.5344C87.3537 39.263 85.503 37.4123 83.2316 37.4123C80.9602 37.4123 79.1095 39.263 79.1095 41.5344V58.5065H77.5742V41.5344C77.5742 38.4007 80.1189 35.856 83.2526 35.856C86.3862 35.856 88.931 38.4007 88.931 41.5344V62.208H88.8889Z\" fill=\"#68453D\"></path>\n<path d=\"M91.9801 129.948H90.4449V118.675C90.4449 118.36 90.1924 118.108 89.877 118.108H48.2984C47.983 118.108 47.7306 118.36 47.7306 118.675V129.948H46.1953V118.675C46.1953 117.498 47.1417 116.551 48.3195 116.551H89.898C91.0758 116.551 92.0222 117.498 92.0222 118.675V129.948H91.9801Z\" fill=\"#68453D\"></path>\n<path d=\"M50.1288 117.331H48.5936V100.633L48.4253 100.464C40.9172 93.6081 35.2388 84.8802 32.0421 75.2059L32 74.9535V51.3986C32 49.8844 33.2408 48.6646 34.7341 48.6646C39.6343 48.6646 43.5882 52.6394 43.5882 57.4976V70.2635C43.5882 70.6421 43.9036 70.9576 44.2822 70.9576C49.1614 70.9576 53.8935 72.7031 57.5949 75.8789L56.5854 77.0566C53.1573 74.1333 48.7828 72.5139 44.2822 72.5139C43.0413 72.5139 42.0318 71.5044 42.0318 70.2635V57.4976C42.0318 53.4807 38.751 50.1998 34.7341 50.1998C34.04 50.1998 33.5142 50.7466 33.5142 51.3986V74.8483C36.6479 84.2072 42.137 92.6827 49.4348 99.3286L50.1288 99.9385V117.331Z\" fill=\"#68453D\"></path>\n<path d=\"M76.5868 98.5921C65.3141 98.5921 56.1445 89.4225 56.1445 78.1498C56.1445 66.8771 65.3141 57.7075 76.5868 57.7075C87.8595 57.7075 97.0291 66.8771 97.0291 78.1498C97.0291 89.4225 87.8595 98.5921 76.5868 98.5921ZM76.5868 59.2638C66.1554 59.2638 57.6798 67.7394 57.6798 78.1708C57.6798 88.6023 66.1554 97.0778 76.5868 97.0778C87.0183 97.0778 95.4938 88.6023 95.4938 78.1708C95.4728 67.7394 86.9972 59.2638 76.5868 59.2638Z\" fill=\"#68453D\"></path>\n<path d=\"M84.2427 67.6537C83.3805 68.516 81.8663 66.9176 82.7075 66.0554C83.2123 65.5296 83.065 64.6252 82.3499 64.3308C81.6349 64.0153 80.8568 64.5621 80.8568 65.2982C80.8357 66.5391 78.6274 66.4339 78.6484 65.2982C78.6695 64.5621 77.8914 63.9943 77.1763 64.2887C76.4402 64.5832 76.2929 65.5085 76.7977 66.0343C77.5969 66.8335 76.0827 68.4319 75.1994 67.5696C74.6946 67.0649 73.7692 67.191 73.4748 67.9271C73.1593 68.6422 73.7062 69.3993 74.4212 69.4203C75.641 69.4624 75.5359 71.6286 74.4212 71.6286C73.6851 71.6286 73.1383 72.3857 73.4328 73.1008C73.7272 73.8369 74.6525 73.9841 75.1783 73.4583C75.9985 72.6591 77.5128 74.2365 76.7136 75.0567C76.2089 75.5825 76.3771 76.4868 77.0711 76.7812C77.7862 77.0967 78.5644 76.5499 78.5644 75.8138C78.5854 74.594 80.7516 74.7412 80.7726 75.8559C80.7936 76.592 81.5298 77.0967 82.2448 76.8233C82.9809 76.5289 83.1281 75.5825 82.6023 75.0777C81.74 74.2154 83.4015 72.7643 84.2007 73.5424C84.7265 74.0472 85.6308 73.8789 85.9253 73.1849C86.2407 72.4488 85.6729 71.6917 84.9368 71.6917C83.696 71.6917 83.8432 69.4834 84.9788 69.4834C85.7149 69.4834 86.2407 68.7263 85.9673 68.0113C85.6939 67.2752 84.7685 67.1279 84.2427 67.6537Z\" fill=\"#68453D\"></path>\n<path d=\"M85.608 84.522C85.1453 84.9847 84.3462 84.1434 84.7878 83.6807C85.0612 83.4073 84.9771 82.9236 84.5986 82.7554C84.22 82.5871 83.7994 82.8816 83.7994 83.2601C83.7783 83.9121 82.6006 83.87 82.6216 83.2601C82.6216 82.8605 82.2221 82.5661 81.8435 82.7343C81.4439 82.8816 81.3808 83.3863 81.6542 83.6597C82.0748 84.0803 81.2756 84.9426 80.8129 84.4799C80.5395 84.2065 80.0558 84.2906 79.8875 84.6692C79.7193 85.0478 80.0138 85.4474 80.3923 85.4684C81.0443 85.4894 80.9812 86.6461 80.3923 86.6461C79.9927 86.6461 79.7193 87.0457 79.8666 87.4243C80.0138 87.8239 80.5185 87.887 80.7919 87.6136C81.2336 87.1929 82.0327 88.0342 81.6121 88.4548C81.3387 88.7282 81.4228 89.2119 81.8014 89.3802C82.18 89.5484 82.6006 89.254 82.6006 88.8754C82.6006 88.2235 83.7573 88.3076 83.7783 88.8965C83.7783 89.275 84.1779 89.5695 84.5565 89.4012C84.9561 89.254 85.0191 88.7492 84.7457 88.4758C84.2831 88.0132 85.1664 87.235 85.608 87.6556C85.8814 87.929 86.3651 87.8449 86.5334 87.4663C86.7016 87.0878 86.4072 86.6672 86.0076 86.6672C85.3557 86.6672 85.4188 85.4894 86.0287 85.4894C86.4283 85.4894 86.7017 85.0898 86.5544 84.7113C86.3862 84.3327 85.8814 84.2486 85.608 84.522Z\" fill=\"#68453D\"></path>\n<path d=\"M71.1802 81.1364C70.5072 81.8094 69.3504 80.5686 70.0024 79.9166C70.402 79.517 70.2758 78.823 69.729 78.5916C69.1822 78.3603 68.5933 78.7809 68.5723 79.3277C68.5513 80.2741 66.8477 80.211 66.8687 79.3277C66.8687 78.7599 66.3009 78.3182 65.7331 78.5496C65.1653 78.7809 65.0601 79.496 65.4386 79.8956C66.0485 80.5055 64.8918 81.7463 64.2188 81.0733C63.8193 80.6948 63.1252 80.7789 62.8728 81.3467C62.6415 81.8935 63.0411 82.4824 63.6089 82.5034C64.5553 82.5455 64.4712 84.207 63.6089 84.207C63.0411 84.207 62.6205 84.7958 62.8518 85.3426C63.0832 85.9105 63.7982 86.0156 64.1978 85.616C64.8287 85.0061 65.9854 86.2259 65.3755 86.8569C64.9759 87.2565 65.1232 87.9505 65.649 88.1818C66.1958 88.4132 66.7846 87.9926 66.8056 87.4458C66.8267 86.4993 68.4882 86.6255 68.5092 87.4878C68.5303 88.0557 69.098 88.4552 69.6449 88.2239C70.2127 87.9926 70.3179 87.2775 69.9183 86.8779C69.2453 86.2049 70.5282 85.0903 71.1591 85.7002C71.5587 86.0998 72.2527 85.9525 72.4841 85.4268C72.7154 84.8589 72.2948 84.2701 71.727 84.2701C70.7595 84.2701 70.8857 82.5665 71.748 82.5665C72.3158 82.5665 72.7365 81.9777 72.5051 81.4308C72.2948 80.863 71.5797 80.7368 71.1802 81.1364Z\" fill=\"#68453D\"></path>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Avoid Contamination",
+            "icon_description": "Always use a clean, dry spoon to take Shilajit. Moisture or unclean utensils can introduce bacteria, affecting their purity and potency over time.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_YAhQRg": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"130\" height=\"131\" viewbox=\"0 0 130 131\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M2 126.483V106.112H42.9098V126.483V126.496L42.9102 126.51C42.9502 127.95 41.7366 129.185 40.2638 129.185H4.70204C3.23504 129.185 2 127.95 2 126.483Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<path d=\"M43.0128 101.647H2.04688V45.5463C2.04688 44.0793 3.28192 42.8442 4.74892 42.8442H40.3107C41.7777 42.8442 43.0128 44.0793 43.0128 45.5463V101.647Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<path d=\"M90.4495 97.8296H52.4757C52.0745 97.8296 51.793 97.5482 51.793 97.1469V90.2477C51.793 89.8464 52.0745 89.5649 52.4757 89.5649H90.4495C90.8507 89.5649 91.1322 89.8464 91.1322 90.2477V97.1469C91.1322 97.5267 90.8164 97.8296 90.4495 97.8296Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<path d=\"M90.6257 129.186H52.3154C51.5776 129.186 51.0156 128.624 51.0156 127.886V103.599C51.0156 102.861 51.5776 102.299 52.3154 102.299H90.6257C91.3635 102.299 91.9254 102.861 91.9254 103.599V127.886C91.9254 128.568 91.3074 129.186 90.6257 129.186Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<g clip-path=\"url(#clip0_36_111)\">\n<path d=\"M121.698 78.1219V79.1219H122.698H124.217C124.32 79.1219 124.389 79.1588 124.432 79.2019C124.475 79.245 124.512 79.3137 124.512 79.4166V82.794C124.512 82.8968 124.475 82.9655 124.432 83.0086C124.389 83.0517 124.32 83.0886 124.217 83.0886H103.052C102.95 83.0886 102.881 83.0517 102.838 83.0086C102.795 82.9655 102.758 82.8968 102.758 82.794V79.4166C102.758 79.3137 102.795 79.245 102.838 79.2019C102.881 79.1588 102.95 79.1219 103.052 79.1219H104.572H105.572V78.1219V71.2413H109.864H110.864V70.2413V59.7714C110.864 58.241 112.105 57 113.635 57C115.165 57 116.406 58.241 116.406 59.7714V70.2413V71.2413H117.406H121.698V78.1219Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n<path d=\"M120.347 87.3533V88.0497L121 88.2912C124.723 89.6683 127.327 93.239 127.327 97.4292V126.193C127.327 127.836 126.03 129.134 124.387 129.134H102.94C101.297 129.134 100 127.836 100 126.193V97.4292C100 93.2534 102.648 89.7222 106.342 88.2853L106.98 88.0374V87.3533V85.0322H120.347V87.3533Z\" stroke=\"#866A64\" stroke-width=\"2\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_36_111\">\n<rect width=\"29.2707\" height=\"74.19\" fill=\"white\" transform=\"translate(99 56)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Original Packaging",
+            "icon_description": "Store Shilajit in its original container to preserve its quality. This prevents exposure to air, light, and contaminants that could reduce its potential results.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_gKfeWK",
+        "icon_box_iqNcYi",
+        "icon_box_AxjdQx",
+        "icon_box_YAhQRg"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 600;}",
+        "@media (max-width: 768px) {h3 {margin-bottom: 12px; } .iconbox-wrapper {gap: 24px !important; } .wrapper {gap: 32px !important; } svg {width: 80px; height: 80px; } p {text-align: center; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "How to Store Shilajit &amp; Does<brown> Shilajit Expire? </brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "7.14rem",
+        "iconbox_gap": "32px 4.5%",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "47.7%",
+        "padding": "0 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width: 128.5rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_image": "shopify://shop_images/Dosage-and-Usage-background.webp",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "basmil_image_text_jmyjme": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_eLqhFN": {
+          "type": "content",
+          "settings": {
+            "title": "Shilajit <brown>Overdose</brown>",
+            "subtitle": "",
+            "description": "<p>While it's hard to overdose on Shilajit, it's still possible to overdo it. There are no records of people being hospitalized for taking too much, but studies in the former USSR showed no side effects even with doses up to 2500 mg a day.</p><p>Still, we don’t recommend going that high. If you take too much, your body will likely flush it out through urine, and it could make your stools turn dark.</p><p>However, taking Shilajit every day without breaks for a long time could lead to a mineral overload, causing symptoms like migraines or fatigue. You can avoid this by cycling your intake, meaning you take it for a while, then take a break.</p><p>There are also a few things to watch out for: Shilajit can sometimes cause digestive issues, allergic reactions, or interact with medications, especially those affecting blood sugar or the liver. Always consult your doctor if you’re unsure!</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_BRFGr4": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Dosage-and-Usage-image3.webp",
+            "image_alt": "Everest Shilajit + Shilajit Fusion",
+            "svg": "",
+            "image_width": "40.08%"
+          }
+        }
+      },
+      "block_order": [
+        "content_eLqhFN",
+        "image_BRFGr4"
+      ],
+      "custom_css": [
+        ".contentside {padding: 0 16px;}",
+        "@media (max-width: 768px) {.main-wrapper {padding: 0 !important; } .contentside {padding: 0 16px; } p {text-align: center; } img {}}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "11.24%",
+        "content_width": "48.6%",
+        "padding": "0 16px 11.5rem 16px",
+        "margin": "0 0 0 auto",
+        "custom_class": "screen-width",
+        "custom_id": "",
+        "width": "100%; max-width: calc(147.2rem + (100vw - 147.2rem) / 2);",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_list_PxAdp6",
+    "basmil_image_text_MKmyLX",
+    "icon_box_Lrx4ht",
+    "basmil_image_text_aGpaBF",
+    "basmil_image_text_9FR6Tf",
+    "basmil_image_text_jmyjmd",
+    "basmil_image_text_rqUaWM",
+    "basmil_image_text_VxNKL6",
+    "custom_liquid_aVgpKE",
+    "basmil_image_text_9RXdkD",
+    "icon_box_BiKW9P",
+    "icon_box_a8TDXR",
+    "basmil_image_text_RRa88V",
+    "icon_box_PAqndF",
+    "basmil_image_text_jmyjme"
+  ]
+}

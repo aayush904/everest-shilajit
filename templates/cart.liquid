@@ -1,0 +1,118 @@
+
+{% if canonical_url contains '/cart' %}
+    <script>
+        window.location.href = '/';
+    </script>
+{% endif %}
+
+
+<style>
+    table.cart-items th,
+    table.cart-items td:not(.cart-item__media) {
+      display: table-cell;
+      min-width: unset !important;
+      max-width: max-content !important;
+      vertical-align: middle;
+      width: unset !important;
+      padding: 1rem !important;
+    }
+
+    td.cart-item__media {
+      min-width: unset !important;
+      max-width: max-content !important;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 1rem !important;
+      width: 14rem !important;
+      min-height: 14rem !important;
+    }
+    table.cart-items tr {
+      display: table-row;
+      border: 1px solid !important;
+      margin-top: 2rem;
+    }
+
+    table {
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border-color: grey;
+
+    }
+
+    {% comment %} table.cart-items * {
+      width: auto !important;
+      display: inline-masonry;
+    }
+
+
+  {% endcomment %}
+  table.cart-items thead {
+    {% comment %} display: table-header-group;
+  {% endcomment %}
+  display: none;
+  }
+  table.cart-items tbody {
+    display: table-row-group
+  }
+
+  img.cart-item__image {
+    width: 12rem !important;
+    {% comment %} height: 12rem !important; {% endcomment %}
+    background: #D9D9D9;
+    {% comment %} border: 1px solid #d9d9d9; {% endcomment %}
+    padding: 0px;
+    object-fit: cover;
+  border-radius:6px;
+    aspect-ratio: 9 / 10 !important;
+  }
+
+  /* Custom scrollbar styling for .cart-items */
+  .js-contents::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  .js-contents::-webkit-scrollbar-track {
+    background: #d9d9d930;
+  }
+
+  .js-contents::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+  }
+
+  .js-contents::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+  /* Remove scroll arrows */
+  .js-contents::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* For Firefox */
+  .js-contents {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+
+  .is-empty .hidden-empty-cart {
+    display: none;
+  }
+
+  .main-items-container .shopify-section{
+  width:100%;}
+</style>
+<div class="title-wrapper-with-link m-auto pt-[11rem] am:pt-[56px] page-width">
+  <h1 class="text-primary  {% if cart == empty %} text-center w-full {% endif %} capitalize  title title--primary mb-[45px!important]">
+    {{ 'sections.cart.title' | t }}
+  </h1>
+</div>
+<div style="align-items:end;" class="flex page-width gap-[32px] sm:gap-0 pb-[18rem] {% if cart == empty %}  justify-center max-w-[600px] {% else %}  justify-between {% endif %} sm:flex-col md:flex-col sm:justify-end md:items-end md:justify-end">
+  <div class="main-items-container w-[70%] flex flex-col sm:w-full md:w-full ">
+    {% section 'main-cart-items' %}
+
+  </div>
+  <div class="hidden-empty-cart max-w-[371px] w-full  {% if cart == empty %} hidden{% endif %}">
+    {% section 'main-cart-footer' %}
+  </div>
+</div>

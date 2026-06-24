@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "h2",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "basmil_image_text_bhEaa4": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_HLkUAT": {
+          "type": "content",
+          "settings": {
+            "title": "Contact <brown> Us</brown>",
+            "subtitle": "",
+            "description": "<p>Don't hesitate to contact us for <a href=\"https://everestshilajit.com/pages/shilajit-complete-guide\" target=\"_blank\" title=\"shilajit\">Shilajit </a>related queries.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_HLkUAT"
+      ],
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentcenter",
+        "valignment": "top",
+        "gapimage": "5.3rem",
+        "content_width": "50%",
+        "padding": "11rem 16px 0  16px",
+        "margin": "0",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "custom_css": [
+        ".contact-us-main {margim-top: 10rem !important; margin-bottom: 15rem !important;}",
+        "@media (max-width: 768px) {.contact-us-main {margim-top: 56px !important; margin-bottom: 56px !important; }}"
+      ],
+      "settings": {
+        "connect_heading": "Connect us at",
+        "facebook_url": "https://www.facebook.com/everestshilajit/",
+        "instagram_url": "https://www.instagram.com/everestshilajit/",
+        "tiktok_url": "https://www.tiktok.com/@everest.shilajit",
+        "contact_us_image": "shopify://shop_images/Mask_group.webp",
+        "mission_heading": "Our Mission",
+        "mission_text": "Empowering Himalayan communities through sustainable sourcing of rare Nepali shilajit while honoring their culture and preserving the environment.",
+        "email_heading": "Email",
+        "email_text": "contact@everestshilajit.com",
+        "phone_heading": "Phone",
+        "phone_text": "+977 982-3875504",
+        "address_heading": "Address",
+        "address_text_1": "Bagdol Road, Lalitpur, 44700 Nepal",
+        "address_text_2": "Gould St Re R Sheridan, WY 82801, United States",
+        "form_title": "Let's",
+        "form_title_highlight": "Collaborate",
+        "heading": "sanoj"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "basmil_image_text_bhEaa4",
+    "form"
+  ]
+}

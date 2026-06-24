@@ -1,0 +1,667 @@
+<style>
+  p {
+    font-weight: 400;
+  }
+  .container {
+    background-color: #f5eadd;
+    width: 100%;
+    max-width: 584px;
+    height: auto;
+    max-height: 531px;
+    padding: 24px;
+  }
+
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #e0d7c6;
+    margin-bottom: 24px;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #382E2A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .tab.active {
+    color: #d49a5f;
+    border-bottom: 2px solid #d49a5f;
+    margin-bottom: -2px;
+    flex-direction: column;
+  }
+  .tab svg {
+    color: #866a64;
+  }
+
+  .tab.active svg {
+    color: #f3aa48;
+  }
+  .tab.active.p {
+    font-family: 'Sans Serif Collection', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .tab-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    flex: 1;
+  }
+
+  .form-group label {
+    display: block;
+    color: #382E2A;
+    margin-bottom: 6px;
+  }
+  *:focus-visible {
+    box-shadow: none;
+    outline-offset: 0;
+    outline: none;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #d9cab8;
+    border-radius: 0;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .form-group input p,
+  .form-group select p {
+    font-family: 'Sans Serif Collection', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .dosage-result {
+    margin-top: 24px;
+  }
+
+  .dosage-result h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #382E2A;
+  }
+  .label p {
+    font-family: var(--font-body-family), sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .dosage-row {
+    display: flex;
+    gap: 2rem;
+    margin-top: 16px;
+  }
+
+  .dosage-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 12px;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 8px;
+  }
+
+  .icon-container {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-container svg {
+    width: 35px;
+    height: auto;
+    fill: #d49a5f;
+    align-items: center;
+  }
+
+  .highlight {
+    color: #68453d;
+    font-weight: bold;
+  }
+  .droopdoown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin: 0 auto;
+
+    div:not(.dropss){
+      letter-spacing:0;
+      width:max-content;
+    }
+  }
+  .dropss {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+  .final-note {
+    background-color: #fff9f2;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+    color: #68453d;
+  }
+  .dosage__svg {
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 16px;
+      height: auto;
+      max-height: fit-content;
+    }
+    .form-row,
+    .dosage-row {
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .dosage-item {
+      width: 100%;
+    }
+
+  }
+</style>
+
+<div class="container">
+  <div class="tabs">
+    <div class="tab active" id="adults-tab">
+      <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.5688 32.0477L12.6726 31.5379L13.3547 28.1859C13.1207 28.2865 12.8633 28.3418 12.595 28.3418C12.5171 28.3418 12.4382 28.3369 12.3604 28.3275C11.8481 28.2653 11.391 28.0071 11.0728 27.6007C10.7547 27.1947 10.614 26.6885 10.6766 26.1766C11.3404 20.7264 12.6397 16.6623 14.5354 14.0859V13.979C14.5459 14.0005 14.5562 14.0204 14.5667 14.0423C14.5893 14.0121 14.6107 13.9794 14.6333 13.9496C15.3876 12.9493 16.1435 12.3321 16.7739 11.9482C16.7349 11.885 16.6955 11.8228 16.6558 11.7621C16.0515 10.8446 15.3444 10.2565 14.6914 9.93034C14.0577 9.61119 13.5011 9.54074 13.1703 9.53798C13.1512 9.53724 13.1328 9.53503 13.1135 9.53503H6.00705C5.99013 9.53503 5.97357 9.53706 5.95702 9.53761C5.62757 9.53982 5.06689 9.6088 4.42878 9.93071C3.43951 10.4207 2.37298 11.4944 1.62615 13.3959C0.870863 15.3051 0.363719 18.0651 0.361328 22.2333C0.361328 23.3107 0.396094 24.4823 0.470777 25.7577C0.516396 26.5395 1.16481 27.1432 1.9385 27.1432C1.96756 27.1432 1.99662 27.1423 2.02624 27.1407C2.83745 27.0932 3.45643 26.397 3.40916 25.5858C3.33705 24.3623 3.30449 23.2478 3.30449 22.2333C3.29824 17.7786 3.94776 15.2766 4.5855 13.9707V41.564C4.5855 42.8204 5.60402 43.8382 6.85965 43.8382C8.11564 43.8382 9.13416 42.8204 9.13416 41.564V24.9589H9.98676V41.564C9.98676 42.8204 11.0053 43.8382 12.2609 43.8382C13.5169 43.8382 14.5354 42.8204 14.5354 41.564V32.9915C13.5783 32.646 13.0646 32.3445 13.0153 32.3151L12.5688 32.0477Z" fill="currentColor"/>
+        <path d="M9.5607 8.487C11.8465 8.487 13.6995 6.63398 13.6995 4.34817C13.6995 2.06236 11.8465 0.209351 9.5607 0.209351C7.27489 0.209351 5.42188 2.06236 5.42188 4.34817C5.42188 6.63398 7.27489 8.487 9.5607 8.487Z" fill="currentColor"/>
+        <path d="M17.3795 33.5254V33.738V41.9995C17.3795 43.0154 18.203 43.839 19.2189 43.839C20.2345 43.839 21.0584 43.0154 21.0584 41.9995V34.0737V33.8743C19.6411 33.8565 18.4127 33.7171 17.3795 33.5254ZM21.6717 33.8745V34.0739V41.9997C21.6717 43.0156 22.4949 43.8392 23.5112 43.8392C24.5266 43.8392 25.3506 43.0156 25.3506 41.9997V33.738V33.5254C24.3172 33.7171 23.089 33.8565 21.6717 33.8745ZM27.51 14.3952C26.1131 12.5432 24.7261 12.129 24.3468 12.0668C24.3446 12.0662 24.3417 12.0655 24.3395 12.065C23.5605 12.8042 22.511 13.2452 21.3685 13.2452C21.0395 13.2452 20.7085 13.2071 20.3855 13.1317C19.6278 12.9554 18.9502 12.5835 18.4002 12.0624C18.3948 12.0637 18.3877 12.0655 18.3825 12.0666C18.0019 12.1295 16.6157 12.5441 15.2199 14.395C13.7297 16.3581 12.1884 19.8566 11.4074 26.2668C11.3272 26.9222 11.7939 27.5182 12.4497 27.5979C13.1051 27.6777 13.7014 27.2108 13.7811 26.5556V26.5549C14.3715 21.6834 15.4136 18.7367 16.3848 16.9856L13.394 31.6852C13.394 31.6852 16.1555 33.3407 21.3649 33.3407C26.5743 33.3407 29.3361 31.6852 29.3361 31.6852L26.3454 16.987C26.4551 17.1842 26.5654 17.3967 26.6764 17.6255C27.5464 19.4247 28.4248 22.2371 28.949 26.5549C29.0226 27.1617 29.5384 27.6069 30.1342 27.6069C30.1824 27.6069 30.231 27.6039 30.2799 27.5982C30.9355 27.5184 31.4027 26.9224 31.3231 26.2668C30.5411 19.857 29 16.3583 27.51 14.3952Z" fill="currentColor"/>
+        <path d="M25.2158 9.81977C25.7111 7.69287 24.3885 5.56718 22.2617 5.0719C20.1349 4.57663 18.0093 5.89932 17.514 8.02622C17.0187 10.1531 18.3413 12.2788 20.4681 12.7741C22.5949 13.2694 24.7205 11.9467 25.2158 9.81977Z" fill="currentColor"/>
+      </svg>
+
+      <p>Adults</p>
+    </div>
+    <div class="tab" id="pets-tab">
+      <svg width="57" height="35" viewBox="0 0 57 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_32_8313)">
+        <path d="M33.6588 26.8957L32.1326 26.1326C31.9785 26.4481 31.6997 26.6976 31.3695 26.8003C31.0246 26.9104 30.6504 26.881 30.3349 26.7196C30.0194 26.5655 29.7846 26.2867 29.6672 25.9565C29.6379 25.8685 29.6159 25.7804 29.6012 25.6924C31.8171 25.4062 33.3506 24.2542 33.3506 22.7794C33.3506 21.1138 31.3842 19.8518 28.7647 19.8518C26.1453 19.8518 24.1788 21.1138 24.1788 22.7794C24.1788 24.2542 25.705 25.4062 27.8916 25.6557C27.8769 25.7437 27.8622 25.8391 27.8329 25.9198C27.7155 26.25 27.4733 26.5288 27.1578 26.6829C26.8423 26.8517 26.4681 26.881 26.1233 26.7636C25.7857 26.6536 25.5142 26.4114 25.3602 26.0886L23.834 26.8517C24.3549 27.8643 25.4042 28.5026 26.5415 28.5026C27.0478 28.5246 27.5467 28.4219 28.0016 28.2018C28.2878 28.033 28.5519 27.8202 28.7647 27.5708C28.9848 27.8202 29.2417 28.0257 29.5278 28.1871C29.9607 28.4072 30.4303 28.5173 30.9146 28.5246C32.0519 28.5246 33.0938 27.8863 33.6221 26.8737L33.6588 26.8957Z" fill="white"/>
+        <path d="M48.0411 1.90219C46.4122 0.764889 44.3504 0.420031 42.4427 0.985011C40.7331 1.61603 39.2509 2.75333 38.209 4.25016C41.0926 6.33398 43.1617 9.37167 44.0496 12.8202C45.9133 15.7552 48.9363 19.3872 52.5022 19.3872C52.8104 19.3872 53.1186 19.3579 53.4194 19.2992C55.0337 19.0864 56.3104 17.8464 56.5672 16.2468C57.3303 12.1672 53.1333 5.06461 48.0778 1.90952L48.0411 1.90219Z" fill="currentColor"/>
+        <path d="M14.8322 10.5188C15.8961 8.20016 17.5324 6.19705 19.5869 4.69288C18.5083 2.99794 16.916 1.69922 15.0377 0.994828C13.1299 0.429848 11.0681 0.767368 9.43923 1.912C4.38376 5.06709 0.186764 12.1697 0.971866 16.2493C1.22868 17.8488 2.51272 19.0962 4.11961 19.3017C4.42045 19.353 4.72862 19.3824 5.03679 19.3897C9.65935 19.3897 13.3794 13.2776 14.8322 10.5188Z" fill="currentColor"/>
+        <path d="M42.824 16.5416V23.3287C42.8314 26.1829 41.6941 28.9345 39.6763 30.9522C37.6585 32.97 34.9143 34.1073 32.0527 34.1073H25.4637C22.3747 34.1073 19.4397 32.7792 17.3999 30.4606C15.3601 28.142 14.4136 25.0603 14.8025 22.0006L15.705 14.854C16.292 10.2314 19.1976 6.23252 23.4093 4.24408C27.6283 2.26298 32.5663 2.57115 36.4992 5.07321C40.432 7.57526 42.8094 11.9117 42.8094 16.5636L42.824 16.5416Z" fill="currentColor"/>
+        <path d="M24.0935 15.6534C24.7098 15.7268 25.3042 15.4186 25.5903 14.8683C25.8765 14.318 25.8031 13.6503 25.3922 13.188C24.9813 12.7258 24.3283 12.557 23.7486 12.7771C23.169 12.9973 22.7874 13.5476 22.7874 14.1639C22.7581 14.5381 22.8828 14.8976 23.1249 15.1838C23.3744 15.4626 23.7193 15.6314 24.0935 15.6534Z" fill="white"/>
+        <path d="M34.7384 14.164C34.6724 13.6504 34.3128 13.2248 33.8212 13.0781C33.3296 12.9313 32.7867 13.0781 32.4491 13.467C32.1116 13.8558 32.0236 14.4061 32.2364 14.8757C32.4491 15.3453 32.9187 15.6462 33.4324 15.6535C33.8066 15.6315 34.1514 15.4627 34.4009 15.1839C34.643 14.9051 34.7678 14.5382 34.7384 14.164Z" fill="white"/>
+        <path d="M31.651 22.742C31.651 22.243 30.5063 21.502 28.7747 21.502C27.0431 21.502 25.8984 22.265 25.8984 22.742C25.8984 23.2116 27.0431 23.982 28.7747 23.982C30.5063 23.982 31.6363 23.2629 31.6363 22.7713L31.651 22.742Z" fill="white"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_32_8313">
+        <rect width="55.7789" height="33.3925" fill="white" transform="translate(0.876953 0.722412)"/>
+        </clipPath>
+        </defs>
+      </svg>
+
+      <p>Pets</p>
+    </div>
+
+    <div class="tab" id="plant-tab">
+      <svg width="55" height="45" viewBox="0 0 55 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_3231_15907)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.0615 45.0001V39.3077C28.2058 37.5417 27.3577 35.9575 26.4188 34.5249C16.6278 34.9646 13.0158 28.4764 12.0011 19.9871C11.9481 19.5399 12.3192 19.1458 12.7735 19.1837C17.2942 19.5324 21.3151 20.8133 23.9956 23.4965C26.2295 25.7325 27.5092 28.916 27.3274 33.297C27.9332 34.1914 28.5012 35.1313 29.0539 36.1394V10.0123C25.4344 9.42865 23.9578 4.94907 26.5778 2.3265C29.425 -0.523457 34.3091 1.5079 34.3091 5.5327C34.3091 7.77628 32.681 9.65604 30.5002 10.0047V29.0069C30.8864 28.3399 31.3105 27.6881 31.7572 27.0514C31.5604 23.1858 32.6583 20.3964 34.612 18.4409C36.9064 16.1367 40.3518 15.0452 44.2136 14.742C44.668 14.7041 45.039 15.0982 44.986 15.5455C44.1303 22.7234 41.1014 28.2717 32.8552 27.9989C31.9011 29.3632 31.0833 30.8185 30.5002 32.2814V44.9925H29.0539L29.0615 45.0001ZM41.0181 31.8493C41.0711 31.4021 40.7001 31.008 40.2458 31.0459C35.4676 31.4097 32.0147 33.8049 32.3554 39.05C32.3782 39.4138 32.6659 39.7094 33.0369 39.7246C38.4133 40.0051 40.4502 36.4957 41.0106 31.8569L41.0181 31.8493ZM38.171 10.5959C38.224 10.1487 37.8529 9.75458 37.3986 9.79248C34.0819 10.0426 31.6588 11.7556 31.9011 15.4014C31.9238 15.7653 32.2116 16.0609 32.5826 16.076C36.3157 16.2731 37.7772 13.8173 38.171 10.5959ZM33.2263 25.1716C34.3545 23.8376 35.5737 22.64 36.7777 21.6698C37.5197 21.0786 38.4208 22.2004 37.6863 22.7992C36.4142 23.8225 35.1193 25.1186 33.9532 26.5663C40.3063 26.3389 42.5932 21.9427 43.4413 16.2807C37.9135 16.9174 33.6654 19.3504 33.2263 25.1716ZM25.4117 33.0924C24.0941 31.3566 22.5645 29.8331 20.6033 28.4536C19.8233 27.9079 20.6638 26.7255 21.4362 27.2712C23.1854 28.5067 24.6166 29.8407 25.8584 31.3415C25.3435 24.3379 20.2019 21.4349 13.561 20.7072C14.5757 27.726 17.438 33.0621 25.4117 33.1V33.0924ZM20.005 17.9027C21.3226 19.4869 23.3066 20.4268 26.2749 20.26C26.6459 20.2448 26.9337 19.9417 26.9564 19.5854C27.3199 14.0295 23.6625 11.5055 18.6042 11.1189C18.1498 11.081 17.7788 11.4752 17.8318 11.9224C18.112 14.2266 18.7178 16.3565 20.005 17.9027Z" fill="currentColor"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_3231_15907">
+        <rect width="33" height="44" fill="white" transform="translate(12 1)"/>
+        </clipPath>
+        </defs>
+      </svg>
+
+      <p>Plants</p>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" value="20" min="0">
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Weight (Kgs)</label>
+      <input type="number" id="weight" value="65" min="0">
+    </div>
+
+    <div class="form-group">
+      <label for="health">Health</label>
+      <select id="health">
+        <option id="general_wellness" value="general_wellness" selected>General Wellness</option>
+        <option id="chronic_fatigue" value="chronic_fatigue">Chronic Fatigue</option>
+        <option id="recovery" value="recovery">Recovery (Post-illness, surgery)</option>
+        <option id="athletic_performance" value="athletic_performance">Athletic Performance</option>
+        <option id="cognitive_function" value="cognitive_function">Cognitive Function</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="dosage-result">
+    <h3>Your Dosage</h3>
+
+    <div class="dosage-row">
+      <div class="dosage-item">
+        <div class="icon-container">
+          <svg class="dosage__svg" viewBox="0 0 39 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_32_8322)">
+            <path d="M2.9283 36.6027C2.46023 36.6027 2.03604 36.4366 1.73618 36.1334C1.37782 35.7797 1.21692 35.2816 1.27543 34.7329C1.33393 34.2131 1.58991 33.7077 1.99947 33.3035L5.68552 29.6649C5.36373 29.2245 5.2394 28.6903 5.30522 28.1128C5.38567 27.4341 5.72209 26.77 6.24867 26.243L21.5999 11.0896L27.2021 16.6196L11.8436 31.773C11.3097 32.3 10.6368 32.6321 9.94935 32.7043C9.30575 32.7764 8.71335 32.6176 8.26722 32.2494L4.60311 35.8663C4.13504 36.3356 3.52801 36.6027 2.9283 36.6027ZM21.5999 12.1075L6.76062 26.7555C6.34375 27.167 6.08046 27.6796 6.02195 28.1922C5.96344 28.6759 6.1024 29.109 6.40226 29.405L6.65823 29.6577L6.43151 29.9465L2.51142 33.816C2.21888 34.1048 2.03604 34.4585 1.99947 34.8123C1.9629 35.1372 2.05067 35.4259 2.24813 35.6209C2.46023 35.8302 2.73815 35.8735 2.9283 35.8735C3.33055 35.8735 3.75474 35.6858 4.08385 35.361L8.25991 31.2387L8.64022 31.6141C8.94007 31.9101 9.37158 32.0473 9.8689 31.9895C10.3882 31.9318 10.9074 31.6719 11.3243 31.2604L26.1636 16.6124L21.5999 12.1075Z" fill="#866B65"/>
+            <path d="M29.6516 19.5504L18.63 8.67091C17.6207 7.67465 17.6207 6.06474 18.63 5.07569C19.6393 4.07942 21.2702 4.07942 22.2722 5.07569L33.2938 15.9552C34.303 16.9515 34.303 18.5614 33.2938 19.5504C32.2918 20.5395 30.6609 20.5395 29.6516 19.5504Z" fill="#866B65"/>
+            <path d="M31.4729 20.6552C30.7196 20.6552 29.9663 20.3736 29.3958 19.8033L18.3669 8.9238C17.8111 8.37513 17.5039 7.64598 17.5039 6.87351C17.5039 6.10104 17.8111 5.37189 18.3669 4.82322C19.5151 3.68979 21.3801 3.68979 22.5283 4.82322L33.5499 15.7027C34.6982 16.8362 34.6982 18.6771 33.5499 19.8105C32.9795 20.3664 32.2262 20.6552 31.4729 20.6552ZM20.4513 4.68605C19.8881 4.68605 19.3177 4.89541 18.8862 5.32135C18.4693 5.73285 18.2353 6.28152 18.2353 6.86629C18.2353 7.45105 18.462 7.99972 18.8862 8.41122L29.9078 19.2907C30.7708 20.1426 32.175 20.1426 33.038 19.2907C33.901 18.4389 33.901 17.0528 33.038 16.2081L22.0164 5.32857C21.5849 4.90263 21.0144 4.68605 20.4513 4.68605Z" fill="#866B65"/>
+            <path d="M30.4717 13.162L25.1035 7.86298L31.1519 1.8926C32.6365 0.427076 35.0354 0.427076 36.52 1.8926C38.0047 3.35812 38.0047 5.72606 36.52 7.19158L30.4717 13.162Z" fill="#866B65"/>
+            <path d="M30.4714 13.6741L24.584 7.86252L30.8883 1.63946C31.6782 0.859778 32.7167 0.433838 33.8357 0.433838C34.9474 0.433838 35.9932 0.859778 36.7758 1.63946C38.3994 3.24215 38.3994 5.84833 36.7758 7.45102L30.4714 13.6741ZM25.6152 7.86252L30.4641 12.6489L36.2565 6.93123C37.5949 5.61009 37.5949 3.46595 36.2565 2.14482C35.6129 1.50952 34.7499 1.15577 33.8357 1.15577C32.9215 1.15577 32.0585 1.50952 31.4076 2.14482L25.6152 7.86252Z" fill="#866B65"/>
+            <path d="M13.621 19.4718H23.9478L11.5147 31.7446C10.7175 32.5316 9.43034 32.5316 8.63316 31.7446L8.45032 31.5642L4.06947 35.9752C3.83544 36.2134 3.52095 36.365 3.18453 36.4011C2.24839 36.5022 1.45121 35.7225 1.56091 34.7984V34.784C1.59748 34.4591 1.74375 34.1631 1.97047 33.9321L6.17579 29.6944C5.37861 28.9075 5.37861 27.6369 6.17579 26.8499L13.621 19.4718Z" fill="#866B65"/>
+            <path d="M3.88743 47.4209C1.86872 47.4209 0.61 45.2641 1.61935 43.541L3.88743 39.6611L6.1555 43.541C7.16486 45.2641 5.90613 47.4209 3.88743 47.4209Z" fill="#866B65"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_32_8322">
+            <rect width="38.3086" height="47.8858" fill="white" transform="translate(0.65625 0.433838)"/>
+            </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="droopdoown">
+          <div>
+            Liquid Shilajit
+            <div class="dropss">
+              <div class="highlight" id="drops">3</div>
+              <div>drops</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dosage-item">
+        <div class="icon-container">
+          <svg width="35" height="45" viewBox="0 0 35 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M32.2912 45.0001H1.8308C0.821992 45.0001 0 44.1875 0 43.1693V23.8899C0 22.8811 0.821992 22.0591 1.8308 22.0591H32.2912C33.3 22.0591 34.122 22.8811 34.122 23.8899V43.1693C34.122 44.1875 33.3 45.0001 32.2912 45.0001Z" fill="#866A64"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30.7242 21.4919H3.40234V20.7259C3.40234 20.3149 3.73861 19.9786 4.14961 19.9786H29.9676C30.3786 19.9786 30.7149 20.3149 30.7149 20.7259V21.4919H30.7242Z" fill="#866A64"/>
+            <path d="M18.6761 23.181L19.4047 22.0508H17.6019L17.3964 22.4151C15.2387 21.537 12.7166 22.3217 11.5023 24.3673C10.1573 26.6278 9.5501 31.84 11.8293 33.2037C14.1084 34.5675 18.4145 31.5504 19.7596 29.2993C20.9739 27.263 20.4695 24.6662 18.6761 23.181ZM30.8378 1.34219C30.0812 0.893831 29.2499 0.88449 28.9883 1.32351L17.9101 21.4903H19.769L31.7345 2.95815C31.9961 2.51913 31.6038 1.79055 30.8378 1.34219Z" fill="#866A64"/>
+          </svg>
+        </div>
+        <div class="droopdoown">
+          <div>
+            Shilajit Resin
+            <div class="dropss">
+              <div class="highlight" id="resin">3</div>
+              <div>mg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dosage-item">
+        <div class="icon-container">
+          <svg width="35" height="45" viewBox="0 0 35 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3231_15924)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.6458 13.1199H22.7631V9.01366C22.7631 8.7132 22.5016 8.44613 22.2073 8.44613H19.69V2.23672C19.69 1.00152 18.7093 0 17.4996 0C16.29 0 15.3093 1.00152 15.3093 2.23672V8.44613H12.7919C12.4977 8.44613 12.2362 8.7132 12.2362 9.01366V13.1199H11.3535C10.9285 13.1199 10.6016 13.4537 10.6016 13.8877V15.8907C10.6016 16.3247 10.9285 16.6586 11.3535 16.6586H23.6458C24.0708 16.6586 24.3977 16.3247 24.3977 15.8907V13.8877C24.3977 13.4537 24.0708 13.1199 23.6458 13.1199Z" fill="#866A64"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9788 18.5949V16.6252H13.0538V18.5949C10.7 19.5296 9 21.8331 9 24.5706V41.6298C9 42.9318 10.0135 43.9667 11.2885 43.9667H23.7442C25.0192 43.9667 26.0327 42.9318 26.0327 41.6298V24.5706C26.0327 21.8331 24.3654 19.4963 21.9788 18.5949Z" fill="#866A64"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_3231_15924">
+            <rect width="17" height="44" fill="white" transform="translate(9)"/>
+            </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="droopdoown">
+          <div>
+            Shialjit Fusion
+            <div class="dropss">
+              <div class="highlight" id="madhoney">3</div>
+              <div>drops</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-note"><span class="highlight">1.4 mg</span> per pound of body weight once or twice daily.</div>
+</div>
+
+<script>
+  const adultsTab = document.getElementById('adults-tab');
+  const petsTab = document.getElementById('pets-tab');
+  const plantTab = document.getElementById('plant-tab');
+
+  const ageInput = document.getElementById('age');
+  ageInput.addEventListener('input', () => {
+    const activeTab = adultsTab.classList.contains('active')
+      ? 'adult'
+      : petsTab.classList.contains('active')
+      ? 'pet'
+      : 'plant';
+    calculateDosage(activeTab);
+  });
+
+  function showAllFields() {
+    document.getElementById('weight').style.display = '';
+    document.querySelector('label[for="weight"]').style.display = '';
+    const healthLabel = document.querySelector('label[for="health"]');
+    healthLabel.textContent = 'Health';
+    const healthSelect = document.getElementById('health');
+    healthSelect.innerHTML = `
+                <option value="general_wellness">General Wellness</option>
+                <option value="chronic_fatigue">Chronic Fatigue</option>
+                <option value="recovery">Recovery</option>
+                <option value="athletic_performance">Athletic Performance</option>
+                <option value="cognitive_function">Cognitive Function</option>
+            `;
+  }
+
+  function showPetFields() {
+    const healthLabel = document.querySelector('label[for="health"]');
+    healthLabel.textContent = 'Animal';
+    const healthSelect = document.getElementById('health');
+    healthSelect.innerHTML = `
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+                <option value="horses">Horses</option>
+                <option value="cattle">Cattle</option>
+            `;
+    // Initially hide weight field
+    document.getElementById('weight').style.display = 'none';
+    document.querySelector('label[for="weight"]').style.display = 'none';
+
+    // Show weight if dogs is selected
+    if (healthSelect.value === 'dogs') {
+      document.getElementById('weight').style.display = '';
+      document.querySelector('label[for="weight"]').style.display = '';
+    }
+  }
+
+  adultsTab.addEventListener('click', () => {
+    adultsTab.classList.add('active');
+    petsTab.classList.remove('active');
+    plantTab.classList.remove('active');
+    showAllFields();
+    calculateDosage('adult');
+  });
+
+  petsTab.addEventListener('click', () => {
+    petsTab.classList.add('active');
+    adultsTab.classList.remove('active');
+    plantTab.classList.remove('active');
+    showPetFields();
+    calculateDosage('pet');
+  });
+
+  plantTab.addEventListener('click', () => {
+    plantTab.classList.add('active');
+    adultsTab.classList.remove('active');
+    petsTab.classList.remove('active');
+
+    document.getElementById('age').value = 25;
+    document.getElementById('weight').value = 62;
+    document.getElementById('weight').style.display = 'none';
+    document.querySelector('label[for="weight"]').style.display = 'none';
+
+    const healthLabel = document.querySelector('label[for="health"]');
+    healthLabel.textContent = 'Size';
+    const healthSelect = document.getElementById('health');
+    healthSelect.innerHTML = `
+                <option id="small" value="small" selected>Small</option>
+                <option id="medium" value="medium">Medium</option>
+                <option id="large" value="large">Large</option>
+            `;
+
+    calculateDosage('plant');
+  });
+
+  const weightInput = document.getElementById('weight');
+  const healthInput = document.getElementById('health');
+  const dropsElement = document.getElementById('drops');
+  const resinElement = document.getElementById('resin');
+  const madhoneyElement = document.getElementById('madhoney');
+
+  // Add event listener for animal type change
+  healthInput.addEventListener('change', function () {
+    if (petsTab.classList.contains('active')) {
+      if (this.value === 'dogs') {
+        document.getElementById('weight').style.display = '';
+        document.querySelector('label[for="weight"]').style.display = '';
+      } else {
+        document.getElementById('weight').style.display = 'none';
+        document.querySelector('label[for="weight"]').style.display = 'none';
+      }
+    }
+    const activeTab = adultsTab.classList.contains('active')
+      ? 'adult'
+      : petsTab.classList.contains('active')
+      ? 'pet'
+      : 'plant';
+    calculateDosage(activeTab);
+  });
+
+  function calculateDosage(type) {
+    const weight = parseFloat(weightInput.value);
+    const health = healthInput.value;
+    if (!isNaN(weight)) {
+      let dosage, drops, resin, madhoney;
+      if (type === 'pet') {
+        switch (health) {
+          case 'dogs':
+            if (weight <= 10) {
+              resin = '50-100';
+              drops = '1-2';
+              madhoney = '2-3';
+            } else if (weight <= 30) {
+              resin = '100-200';
+              drops = '2-3';
+              madhoney = '3-5';
+            } else {
+              resin = '200-300';
+              drops = '3-4';
+              madhoney = '4-6';
+            }
+            break;
+          case 'cats':
+            resin = '50-100';
+            drops = '1-2';
+            madhoney = '2-3';
+            break;
+          case 'horses':
+            resin = '1000-2000';
+            drops = '8-12';
+            madhoney = '5-7';
+            break;
+          case 'cattle':
+            resin = '2000-3000';
+            drops = '5-8';
+            madhoney = '5-7';
+            break;
+        }
+      } else if (type === 'plant') {
+        if (health === 'small') {
+          dosage = 1;
+          drops = 3;
+          resin = 200;
+          madhoney = 5;
+        } else if (health === 'medium') {
+          dosage = 2;
+          drops = 5;
+          resin = '300-500';
+          madhoney = 8;
+        } else if (health === 'large') {
+          dosage = 3;
+          drops = 8;
+          resin = '1000-2000';
+          madhoney = 12;
+        }
+      } else if (type === 'adult') {
+        // [Rest of the adult calculation code remains exactly the same]
+        const age = parseInt(document.getElementById('age').value);
+        let resinMin, resinMax, dropsMin, dropsMax, madhoneyMin, madhoneyMax;
+
+        if (age < 18) {
+          const finalNote = document.querySelector('.final-note');
+          finalNote.innerHTML =
+            'We do not recommend dosage for individuals under 18. Please consult a medical professional.';
+          finalNote.style.display = 'block';
+          dropsElement.textContent = '0';
+          resinElement.textContent = '0';
+          madhoneyElement.textContent = '0';
+          document.querySelector('.dosage-row').style.display = 'none';
+          weightInput.addEventListener('input', resetFinalNote);
+          healthInput.addEventListener('change', resetFinalNote);
+          return;
+        } else {
+          document.querySelector('.dosage-row').style.display = 'flex';
+          const finalNote = document.querySelector('.final-note');
+          finalNote.innerHTML = '<span class="highlight">1.4 mg</span> per pound of body weight once or twice daily.';
+          finalNote.style.display = 'block';
+        }
+
+        if (age >= 18 && age <= 30) {
+          resinMin = 300;
+          resinMax = 500;
+          dropsMin = 2;
+          dropsMax = 3;
+          madhoneyMin = 3;
+          madhoneyMax = 4;
+        } else if (age >= 31 && age <= 50) {
+          resinMin = 400;
+          resinMax = 600;
+          dropsMin = 3;
+          dropsMax = 5;
+          madhoneyMin = 4;
+          madhoneyMax = 6;
+        } else {
+          resinMin = 500;
+          resinMax = 700;
+          dropsMin = 4;
+          dropsMax = 5;
+          madhoneyMin = 5;
+          madhoneyMax = 6;
+        }
+
+        if (weight >= 40 && weight <= 60) {
+          resinMin += 250;
+          resinMax += 400;
+          dropsMin += 2;
+          dropsMax += 4;
+          madhoneyMin += 3;
+          madhoneyMax += 4;
+        } else if (weight > 60 && weight <= 80) {
+          resinMin += 400;
+          resinMax += 600;
+          dropsMin += 4;
+          dropsMax += 6;
+          madhoneyMin += 4;
+          madhoneyMax += 6;
+        } else {
+          resinMin += 500;
+          resinMax += 700;
+          dropsMin += 5;
+          dropsMax += 7;
+          madhoneyMin += 5;
+          madhoneyMax += 7;
+        }
+
+        switch (health) {
+          case 'general_wellness':
+            resinMin += 300;
+            resinMax += 500;
+            madhoneyMin += 3;
+            madhoneyMax += 4;
+            break;
+          case 'chronic_fatigue':
+            resinMin += 500;
+            resinMax += 700;
+            dropsMin += 5;
+            dropsMax += 7;
+            madhoneyMin += 4;
+            madhoneyMax += 6;
+            break;
+          case 'recovery':
+            resinMin += 600;
+            resinMax += 800;
+            dropsMin += 6;
+            dropsMax += 8;
+            madhoneyMin += 4;
+            madhoneyMax += 7;
+            break;
+          case 'athletic_performance':
+            resinMin += 500;
+            resinMax += 800;
+            dropsMin += 5;
+            dropsMax += 8;
+            madhoneyMin += 5;
+            madhoneyMax += 8;
+            break;
+          case 'cognitive_function':
+            resinMin += 400;
+            resinMax += 600;
+            dropsMin += 4;
+            dropsMax += 6;
+            madhoneyMin += 4;
+            madhoneyMax += 5;
+            break;
+          default:
+            break;
+        }
+
+        resin = Math.round((resinMin + resinMax) / (2 * 3));
+        drops = Math.round((dropsMin + dropsMax) / (2 * 3));
+        madhoney = Math.round((madhoneyMin + madhoneyMax) / (2 * 3));
+
+        if (health === 'bad' || health === 'worst') {
+          drops = Math.ceil(drops / 2);
+          resin = Math.ceil(resin / 2);
+        }
+      }
+      dropsElement.textContent = drops;
+      resinElement.textContent = resin;
+      madhoneyElement.textContent = madhoney;
+    } else {
+      dropsElement.textContent = '0';
+      resinElement.textContent = '0';
+      madhoneyElement.textContent = '0';
+    }
+  }
+
+  weightInput.addEventListener('input', () => {
+    const activeTab = adultsTab.classList.contains('active')
+      ? 'adult'
+      : petsTab.classList.contains('active')
+      ? 'pet'
+      : 'plant';
+    calculateDosage(activeTab);
+  });
+
+  calculateDosage('adult');
+</script>

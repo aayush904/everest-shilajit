@@ -1,0 +1,913 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating_jhCGye": {
+          "type": "rating",
+          "settings": {}
+        },
+        "inventory_WCmCGA": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_MaY6VG": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"badges\">\n<p style=\"margin-bottom: 2.4rem!important;\">Himalayan shilajit gummies — pure shilajit extract from Nepal's Everest region, above 18,000 ft, carried into a plant-based gummy. No artificial additives. No gelatin. No corn syrup. Two gummies a day. 639.73mg fulvic acid per serving, verified by Certified Laboratories.</p>\n\n<img \nstyle=\"max-width:100%;\" src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/badge.svg?v=1758621875\" alt=\"{{product.title}} badges\" width=\"455\" height=\"100\"/></div>\n\n<style>\nproduct-head{\norder:-1;\n}\n.badges{\norder:1;  \n}\n.collapsible_tabs{\norder:2;\n}\n.variant-selection{\norder:0;  \n}\n</style>"
+          }
+        },
+        "custom_liquid_CPQ9Kt": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<hr style=\"display:block; height:1px; background:#68453D;\">"
+          }
+        },
+        "text_PHQLwb": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
+          }
+        },
+        "collapsible_tab_Qz7EyW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Pure Shilajit Extract. Now in a Gummy.",
+            "icon": "none",
+            "content": "<p>Resin requires measuring and dissolving. Tablets require water. Gummies require nothing — two, any time of day, done.</p><ul><li>Pure shilajit extract — same source and altitude as the resin</li><li>Fulvic acid — verified by Certified Laboratories. The compound that makes shilajit worth taking in the first place, measured and on record.</li><li>85+ trace minerals naturally present in the extract</li><li>Plant-based — no gelatin, no corn syrup, no artificial anything</li><li>No preparation needed — two gummies, any time, anywhere</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_nXt8Qr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What the Extract Contains",
+            "icon": "none",
+            "content": "<p>Gummy format changes nothing about what's inside. Pure Himalayan shilajit extract carries three things worth knowing about.</p><p>Fulvic acid — 639.73mg per serving, verified by Certified Laboratories. The compound that makes shilajit worth taking in the first place, measured and on record.</p><p>85+ trace minerals, naturally carried from the raw resin into every gummy. Not added back in. Present because they were never removed.</p><p>Dibenzo-α-Pyrones — the compounds authentic shilajit carries, preserved through the extraction process into every gummy.</p><p><strong>Shilajit Extract</strong><br/>Fulvic acid, 85+ trace minerals, Dibenzo-α-Pyrones — naturally present, nothing added</p><p><strong>Natural Sweeteners</strong><br/>Monk fruit extract — low calorie, plant-based, no artificial sweeteners</p><p><strong>Natural Colors and Flavors</strong><br/>Black carrot extract, beta-carotene, juice concentrates — clean label, nothing artificial</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_krM7aT": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's in Every Gummy. What Isn't.",
+            "icon": "none",
+            "content": "<p>Each serving contains 500mg of pure Himalayan shilajit extract across two gummies. Dibenzo-α-Pyrones naturally present. 85+ trace minerals naturally occurring.</p><p><strong>Gummy base: </strong>Juice Concentrate, Citric Acid, Monk Fruit Extract, Vegetable Juice Color from Black Carrot Extract, Beta-Carotene, Natural Flavors.</p><p><strong>Free from: </strong>No preservatives. No artificial colors. No artificial flavors. No gelatin. No corn syrup. No soy.</p><p><strong>Source: </strong>Everest Region, Nepal, above 18,000 ft<br/><br/><strong>Facility:</strong> SGS GMP Certified, Nepal Government Registered<br/><br/><strong>Testing: </strong>ISO/IEC 17025, Certified Laboratories</p><p>Full lab reports for this batch are available below.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_HphhfY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Two Gummies. Any Time. Done.",
+            "icon": "none",
+            "content": "<p>Take 2 gummies once daily. No water required. No preparation. Morning works well for consistency — pick a time and keep it.</p><p>Do not exceed 2 gummies per day. Consistency matters more than quantity.</p><p>Consult a doctor before use if pregnant, nursing, or on any medication. Not intended for anyone under 18 years of age. Keep out of reach of children. Store in a cool, dry place away from direct sunlight.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_TgW7KD": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping Information",
+            "icon": "none",
+            "content": "<p>Your order ships within <strong>1–2 business days</strong>. Delivery takes approximately <strong>4–7 days</strong> depending on your location. Once dispatched you will receive a tracking number and continuous updates. Track your order directly from our Track My Order page.</p>",
+            "page": ""
+          }
+        },
+        "share_dPkbMr": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating_jhCGye",
+        "inventory_WCmCGA",
+        "description",
+        "variant_picker",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_MaY6VG",
+        "custom_liquid_CPQ9Kt",
+        "text_PHQLwb",
+        "collapsible_tab_Qz7EyW",
+        "collapsible_tab_nXt8Qr",
+        "collapsible_tab_krM7aT",
+        "collapsible_tab_HphhfY",
+        "collapsible_tab_TgW7KD",
+        "share_dPkbMr"
+      ],
+      "custom_css": [
+        ".accordion ul {list-style-image: url(\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/tick.svg?v=1758452976\"); list-style-position: outside;}",
+        ".accordion * {font-family: var(--font-body-family);}"
+      ],
+      "settings": {
+        "bundle_product": "",
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "lab_tested_quality_t3NkKm": {
+      "type": "lab-tested-quality",
+      "name": "Lab Tested Quality",
+      "settings": {
+        "heading": "Three Tests. Every Batch.",
+        "description": "<p>Every batch of Everest Shilajit gummies goes through three independent tests before it reaches you. Fulvic acid content, heavy metal screening, microbial purity — each tested separately by Certified Laboratories, accredited to ISO/IEC 17025:2017. The full lab reports are right here.</p>",
+        "card_prefix": "Tested by Certified Laboratories for",
+        "report_label": "View Report",
+        "columns_desktop": 4,
+        "background_color": "#f5f2ec",
+        "card_background": "#ffffff",
+        "padding_top": 108,
+        "padding_bottom": 108
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "faq_UXJy3G": {
+      "type": "faq",
+      "blocks": {
+        "text_diyMQk": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/Himalayan_Shilajit.svg",
+            "question": "Shilajit Extract",
+            "answer": "<p>Fulvic acid, 85+ trace minerals, Dibenzo-α-Pyrones — naturally present, nothing added</p>"
+          }
+        },
+        "text_KE4YRG": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/Natural_Sweetner.svg",
+            "question": "Natural Sweeteners",
+            "answer": "<p>Monk fruit extract — low calorie, plant-based, no artificial sweeteners</p>"
+          }
+        },
+        "text_eKBmDX": {
+          "type": "text",
+          "settings": {
+            "img_icon": "shopify://shop_images/Natural_Color_and_Flavor.svg",
+            "question": "Natural Colors and Flavors",
+            "answer": "<p>Black carrot extract, beta-carotene, juice concentrates — clean label, nothing artificial</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_diyMQk",
+        "text_KE4YRG",
+        "text_eKBmDX"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 3.2rem;}",
+        ".content-wrapper p:first-of-type {margin-top: 0 !important;}",
+        ".content-wrapper p {margin-top: 15px !important; margin-bottom: 0 !important;}",
+        "@media (max-width: 768px) {summary span {font-size: 18px !important; } .main-section {flex-direction: column; } img {max-width: 48px; margin-right: 16px !important; } .text-neutral-600 {margin-left: 64px !important; }}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "show_schema": false,
+        "heading": "What Pure Shilajit Gummies actually contain ?",
+        "description": "<p>\nPure Himalayan shilajit extract, sourced above 18,000 ft in Nepal's Everest region, carried into a plant-based gummy. The extraction preserves what the raw resin contains. The gummy format delivers it without the bitter taste, without the mess, without any preparation.\n</p>\n<p>\nThe gummy base is built entirely from natural ingredients — no artificial colors, no preservatives, no gelatin, no corn syrup.\n</p>",
+        "content_alignment": "Left",
+        "content_part_width": "50%",
+        "faq_width": "--webkit-fill-available;",
+        "gap_between_sections": "24px 4.8rem; flex-direction:row;",
+        "padding": "8rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "125rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "icon_box_74C4C7": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_MMHTBD": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "The extract in every gummy is the same shilajit that forms over centuries in Nepal's Everest region.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_fWWNdx": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"71\" height=\"70\" viewbox=\"0 0 71 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6790_8950)\">\n<path d=\"M35.584 1.92969C53.9861 1.92969 68.9043 16.8479 68.9043 35.25C68.9043 53.6521 53.9861 68.5703 35.584 68.5703C17.1819 68.5703 2.26367 53.6521 2.26367 35.25C2.26367 16.8479 17.1819 1.92969 35.584 1.92969Z\" stroke=\"#AA8077\" stroke-width=\"1.36\" stroke-miterlimit=\"10\"></path>\n<mask id=\"mask0_6790_8950\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"15\" y=\"11\" width=\"41\" height=\"49\">\n<path d=\"M55.4059 11.1597H15.7559V59.3497H55.4059V11.1597Z\" fill=\"white\"></path>\n</mask>\n<g mask=\"url(#mask0_6790_8950)\">\n<path d=\"M55.3462 22.5997C55.3462 21.5697 54.7962 20.6196 53.9062 20.1196C53.8962 20.1196 53.8862 20.1097 53.8662 20.0997L36.9462 11.5196C36.1062 11.0496 35.0962 11.0396 34.2562 11.5096L17.4162 20.0396C16.4462 20.5096 15.8262 21.5197 15.8262 22.5997V36.5496C15.8262 41.6096 17.6962 46.4796 21.2262 50.6396C24.6962 54.7197 29.5162 57.7696 34.8162 59.2296C35.0662 59.2996 35.3362 59.3396 35.5962 59.3396C35.8462 59.3396 36.0862 59.3096 36.3262 59.2396C41.6362 57.7796 46.4862 54.7296 49.9662 50.6297C53.4962 46.4796 55.3662 41.5996 55.3662 36.5396V22.5897L55.3462 22.5997ZM48.5162 49.4196C45.2762 53.2296 40.7662 56.0696 35.8162 57.4296C35.6562 57.4697 35.4962 57.4697 35.3362 57.4296C35.3362 57.4296 35.3262 57.4296 35.3162 57.4296C30.3762 56.0696 25.8862 53.2296 22.6562 49.4296C19.4162 45.6196 17.7062 41.1697 17.7062 36.5597V22.6097C17.7062 22.2397 17.9162 21.8896 18.2362 21.7396C18.2362 21.7396 18.2462 21.7396 18.2562 21.7396L35.1162 13.1996C35.1162 13.1996 35.1362 13.1896 35.1562 13.1796C35.2962 13.0996 35.4362 13.0696 35.5862 13.0696C35.7362 13.0696 35.8862 13.1096 36.0262 13.1896C36.0362 13.1896 36.0562 13.2096 36.0662 13.2096L52.9862 21.7896C53.2762 21.9596 53.4562 22.2796 53.4562 22.6296V36.5796C53.4562 41.1896 51.7462 45.6396 48.5062 49.4496L48.5162 49.4196Z\" fill=\"#AA8077\"></path>\n</g>\n<path d=\"M51.0659 22.8996L36.0059 15.2696C35.7359 15.1296 35.4259 15.1296 35.1559 15.2696L31.4059 17.1696C30.9459 17.3996 30.7559 17.9696 30.9959 18.4296C31.2259 18.8896 31.7959 19.0796 32.2559 18.8396L35.5859 17.1596L49.7059 24.3196V36.5596C49.7059 40.2596 48.3059 43.8695 45.6559 46.9895C43.0859 50.0196 39.5159 52.3495 35.5959 53.5795C31.6759 52.3495 28.1059 50.0095 25.5359 46.9895C22.8859 43.8695 21.4859 40.2596 21.4859 36.5596V24.3196L24.7159 22.6796C25.1759 22.4496 25.3659 21.8796 25.1259 21.4196C24.8859 20.9596 24.3259 20.7696 23.8559 21.0096L20.1059 22.9096C19.7859 23.0696 19.5859 23.3896 19.5859 23.7496V36.5696C19.5859 40.7296 21.1459 44.7496 24.0859 48.2196C26.9459 51.5896 30.9359 54.1695 35.3159 55.4795C35.4059 55.5095 35.4959 55.5196 35.5859 55.5196C35.6759 55.5196 35.7659 55.5095 35.8559 55.4795C40.2259 54.1695 44.2159 51.5896 47.0859 48.2196C50.0359 44.7496 51.5859 40.7296 51.5859 36.5696V23.7496C51.5859 23.3996 51.3859 23.0696 51.0659 22.9096V22.8996Z\" fill=\"#AA8077\"></path>\n<path d=\"M30.8741 38.3895H32.5241V40.0395C32.5241 41.0795 33.3641 41.9195 34.4041 41.9195H36.7541C37.7941 41.9195 38.6341 41.0795 38.6341 40.0395V38.3895H40.2841C41.3241 38.3895 42.1641 37.5495 42.1641 36.5095V34.1595C42.1641 33.1195 41.3241 32.2795 40.2841 32.2795H38.6341V30.6295C38.6341 29.5895 37.7941 28.7495 36.7541 28.7495H34.4041C33.3641 28.7495 32.5241 29.5895 32.5241 30.6295V32.2795H30.8741C29.8341 32.2795 28.9941 33.1195 28.9941 34.1595V36.5095C28.9941 37.5495 29.8341 38.3895 30.8741 38.3895ZM33.4641 34.1495C33.9841 34.1495 34.4041 33.7295 34.4041 33.2095V30.6195H36.7541V33.2095C36.7541 33.7295 37.1741 34.1495 37.6941 34.1495H40.2841V36.4995H37.6941C37.1741 36.4995 36.7541 36.9195 36.7541 37.4395V40.0295H34.4041V37.4395C34.4041 36.9195 33.9841 36.4995 33.4641 36.4995H30.8741V34.1495H33.4641Z\" fill=\"#AA8077\"></path>\n<path d=\"M24.2969 35.3298C24.2969 41.5598 29.3669 46.6198 35.5869 46.6198C41.8069 46.6198 46.8769 41.5498 46.8769 35.3298C46.8769 29.1098 41.8069 24.0398 35.5869 24.0398C29.3669 24.0398 24.2969 29.1098 24.2969 35.3298ZM35.5869 25.9198C40.7769 25.9198 44.9969 30.1398 44.9969 35.3298C44.9969 40.5198 40.7769 44.7398 35.5869 44.7398C30.3969 44.7398 26.1769 40.5198 26.1769 35.3298C26.1769 30.1398 30.3969 25.9198 35.5869 25.9198Z\" fill=\"#AA8077\"></path>\n<path d=\"M28.056 20.8598C28.236 20.8598 28.416 20.8098 28.576 20.6998C29.006 20.4098 29.126 19.8298 28.836 19.3898C28.546 18.9598 27.966 18.8398 27.526 19.1298C27.096 19.4198 26.976 19.9998 27.266 20.4298C27.446 20.6998 27.746 20.8498 28.046 20.8498L28.056 20.8598Z\" fill=\"#AA8077\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6790_8950\">\n<rect width=\"69.36\" height=\"69.36\" fill=\"white\" transform=\"translate(0.904297 0.569824)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Natural Fruit Flavor",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_KtWBzt": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"71\" height=\"70\" viewbox=\"0 0 71 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6790_8965)\">\n<path d=\"M35.5838 68.5775C54.356 68.5775 69.5739 53.396 69.5739 34.6686C69.5739 15.9413 54.356 0.759766 35.5838 0.759766C16.8116 0.759766 1.59375 15.9413 1.59375 34.6686C1.59375 53.396 16.8116 68.5775 35.5838 68.5775Z\" stroke=\"#A9523F\" stroke-width=\"1.36\" stroke-miterlimit=\"10\"></path>\n<path d=\"M52.8337 25.0095C52.6815 24.5935 52.438 24.2079 52.1234 23.9035C51.3625 23.173 50.4595 23.1425 49.668 23.1121C48.9984 23.0817 48.4201 23.0614 47.9635 22.6454C47.9432 22.6352 47.933 22.6149 47.9127 22.6048L47.6591 22.3511C47.6591 22.3511 47.6286 22.3207 47.6083 22.3004C47.1822 21.8438 47.1619 21.2655 47.1416 20.5958C47.1112 19.8044 47.0807 18.9014 46.3502 18.1404C46.0052 17.7954 45.5892 17.5316 45.1225 17.3896C44.321 17.1258 43.4484 17.1664 42.6773 17.5012C41.9061 17.836 41.2771 18.4245 40.8915 19.1753L38.6999 23.4977C38.0303 23.4368 37.3302 23.4469 36.6301 23.5281C35.6763 23.6296 34.7327 23.8528 33.8195 24.1775C33.7485 24.1876 33.6876 24.218 33.6268 24.2485C31.7599 24.9384 29.9944 26.0748 28.4826 27.5866C26.1794 29.8797 24.7386 32.7815 24.4241 35.7341C24.3531 36.4443 24.3429 37.1343 24.3937 37.8039L20.0713 39.9955C19.3205 40.3811 18.732 41.0101 18.3972 41.7813C18.0624 42.5524 18.0218 43.425 18.2856 44.2265C18.4276 44.6932 18.6914 45.1194 19.0364 45.4542C19.7974 46.1847 20.7004 46.2152 21.4918 46.2456C22.1615 46.2659 22.7398 46.2964 23.1964 46.7124L23.237 46.7529L23.4906 47.0167C23.4906 47.0167 23.5211 47.0472 23.5312 47.0675C23.9472 47.5241 23.9675 48.1024 23.9979 48.772C24.0284 49.5635 24.0588 50.4665 24.7894 51.2274C25.1039 51.542 25.4793 51.7855 25.8953 51.9377C26.2809 52.0797 26.6766 52.1508 27.0824 52.1508C28.4217 52.1508 29.6393 51.3898 30.2481 50.1925L32.4397 45.8702C32.7339 45.8905 33.018 45.9108 33.3122 45.9108C33.7079 45.9108 34.1138 45.8905 34.5095 45.8398C35.4734 45.7383 36.4373 45.5049 37.3809 45.1701C37.391 45.1701 37.4012 45.1701 37.4113 45.16C39.3188 44.47 41.1147 43.3235 42.657 41.7813C44.1789 40.2593 45.3254 38.4736 46.0154 36.5762C46.3604 35.6225 46.6039 34.6383 46.7053 33.6439C46.7764 32.9337 46.7865 32.2438 46.7358 31.5741L51.0581 29.3825C52.6713 28.5708 53.4222 26.6937 52.8032 25.0297L52.8337 25.0095ZM37.8172 24.7964C39.9073 24.7964 41.8554 25.4965 43.2962 26.9271L43.3266 26.9575C45.3356 28.9868 45.8936 32.0205 45.1022 35.034L35.1994 25.1414C36.072 24.908 36.9548 24.7964 37.807 24.7964H37.8172ZM37.3809 43.7192L26.5345 32.8728C27.0824 31.5132 27.9043 30.2043 28.9798 29.0071L41.2466 41.2739C40.0595 42.3495 38.7405 43.1713 37.3809 43.7192ZM42.1902 40.3303L29.9234 28.0635C31.1105 26.988 32.4295 26.1661 33.7891 25.6182L44.6355 36.4646C44.0876 37.8141 43.2657 39.1331 42.1902 40.3303ZM29.0711 49.5635C28.5638 50.5679 27.4071 51.0347 26.3823 50.6593C26.1591 50.5781 25.946 50.4462 25.7735 50.2838C25.4184 49.9084 25.3778 49.4417 25.3575 48.7112C25.3271 47.9401 25.2865 46.966 24.5357 46.1442C24.5357 46.1442 24.485 46.0833 24.4545 46.0528L24.2009 45.8093C24.2009 45.8093 24.1501 45.7586 24.1197 45.7282C23.2979 44.9672 22.334 44.9266 21.5527 44.8962C20.8222 44.8657 20.3554 44.8353 19.98 44.4802C19.7872 44.2874 19.6553 44.054 19.5742 43.8004C19.2495 42.7959 19.7264 41.6697 20.6903 41.1826L24.627 39.1838C24.6777 39.407 24.7386 39.6302 24.8096 39.8535C25.6214 42.5321 27.7216 44.6324 30.4003 45.4441C30.6235 45.5151 30.8467 45.5658 31.0699 45.6267L29.0711 49.5635ZM27.8535 42.4002C25.8243 40.3709 25.2662 37.327 26.0576 34.2933L35.9604 44.1961C32.9267 44.9875 29.8828 44.4294 27.8535 42.4002ZM50.4797 28.1649L46.543 30.1536C46.4923 29.9304 46.4314 29.7072 46.3604 29.484C45.9647 28.1751 45.2544 26.9981 44.321 26.0444C44.321 26.0444 44.321 26.0342 44.3108 26.0241L44.2296 25.9429C44.2296 25.9429 44.2093 25.9328 44.1992 25.9226C43.2454 24.9892 42.0786 24.2891 40.7698 23.8832C40.5465 23.8122 40.3233 23.7615 40.1001 23.7006L42.0989 19.7638C42.5859 18.7999 43.7122 18.3129 44.7167 18.6477C44.9703 18.7188 45.2037 18.8608 45.3965 19.0536C45.7516 19.429 45.7922 19.8957 45.8125 20.6263C45.8429 21.4075 45.8733 22.3714 46.6343 23.1831C46.6647 23.2136 46.685 23.244 46.7155 23.2744L46.9691 23.5281C46.9691 23.5281 47.03 23.589 47.0605 23.6093C47.8823 24.3702 48.8462 24.4007 49.6275 24.4311C50.358 24.4616 50.8247 24.492 51.2001 24.8471C51.3726 25.0196 51.5045 25.2225 51.5755 25.4457C51.951 26.4705 51.4842 27.6272 50.4797 28.1345V28.1649Z\" fill=\"#A9523F\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6790_8965\">\n<rect width=\"69.36\" height=\"69.1977\" fill=\"white\" transform=\"translate(0.904297 0.0698242)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "No Bitter Taste",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_7MzUam": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"71\" height=\"70\" viewbox=\"0 0 71 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6790_8971)\">\n<mask id=\"mask0_6790_8971\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"17\" y=\"22\" width=\"37\" height=\"32\">\n<path d=\"M53.7978 22.2021H17.3828V53.6861H53.7978V22.2021Z\" fill=\"white\"></path>\n</mask>\n<g mask=\"url(#mask0_6790_8971)\">\n<path d=\"M47.4263 22.9529C44.9303 21.9789 42.2111 22.0296 39.7557 23.1051C37.3003 24.1806 35.4131 26.1388 34.4391 28.6348C34.226 29.1827 34.0332 29.7509 33.8607 30.3496L25.835 26.8389L24.6378 23.7748C27.7628 22.7601 31.2328 23.5414 33.6172 25.8345C33.8303 26.0374 34.1651 26.0272 34.368 25.8243C34.571 25.6112 34.5608 25.2764 34.3579 25.0735C31.5474 22.3644 27.3773 21.5426 23.755 22.9631C18.6109 24.9822 16.0641 30.8061 18.0833 35.9503C20.7517 42.7585 28.2093 48.7245 32.42 51.677C32.5113 51.7379 32.6229 51.7785 32.7243 51.7785C32.8968 51.7785 33.0592 51.6973 33.1606 51.5553C33.3331 51.3118 33.2722 50.9769 33.0287 50.8146C23.4506 44.0978 20.1734 38.3854 19.0674 35.5749C17.3324 31.141 19.382 26.149 23.6434 24.1806L24.8508 27.2448L21.4823 34.9458C21.3605 35.2198 21.4823 35.5343 21.7562 35.6459C21.8272 35.6764 21.8983 35.6865 21.9693 35.6865C22.1722 35.6865 22.3751 35.5647 22.4563 35.3618L25.3987 28.6348L27.3164 33.5355L24.8407 39.2073C24.7189 39.4812 24.8407 39.7957 25.1146 39.9074C25.1857 39.9378 25.2567 39.9479 25.3277 39.9479C25.5306 39.9479 25.7336 39.8262 25.8147 39.6233L27.8643 34.9255L29.7819 39.8262L28.331 43.1339C28.2093 43.4078 28.331 43.7224 28.605 43.834C28.676 43.8644 28.747 43.8746 28.818 43.8746C29.021 43.8746 29.2239 43.7528 29.305 43.5499L30.3197 41.2162L31.3952 43.9557C31.4764 44.1688 31.6793 44.2905 31.8924 44.2905C31.9532 44.2905 32.0243 44.2804 32.0851 44.25C32.3591 44.1384 32.491 43.834 32.3895 43.56L31.314 40.8205L33.0287 41.5713C33.0998 42.5352 33.2012 43.5194 33.3331 44.5442C33.9622 49.4144 35.0681 53.1787 35.0783 53.2193C35.129 53.3816 35.2406 53.5034 35.3928 53.5643C35.4537 53.5845 35.5247 53.6048 35.5856 53.6048C35.6769 53.6048 35.7784 53.5845 35.8596 53.5338C35.89 53.5135 39.2586 51.5046 43.033 48.3592C48.1264 44.1079 51.5051 39.9276 53.0778 35.9199C55.0969 30.7757 52.5502 24.9517 47.406 22.9326L47.4263 22.9529ZM33.5969 31.3845C33.323 32.5716 33.1302 33.8399 33.0186 35.1995L28.3006 33.1398L26.3829 28.2391L33.5969 31.3845ZM30.7864 39.4508L28.8688 34.5501L32.9577 36.3359C32.8968 37.6244 32.907 38.984 32.978 40.4045L30.7864 39.4508ZM52.1037 35.5445C50.2267 40.3234 45.7826 44.7065 42.3836 47.5475C39.6035 49.871 37.0467 51.5553 35.9306 52.2655C35.5957 50.9871 34.8754 48.0244 34.4086 44.4326C33.8404 40.0393 33.5563 33.7891 35.4334 29.0001C36.306 26.7781 37.9903 25.0228 40.1819 24.0589C41.3284 23.5617 42.546 23.308 43.7635 23.308C44.697 23.308 45.6304 23.4602 46.5334 23.7545L45.326 26.8186L37.625 30.1872C37.3511 30.309 37.2293 30.6235 37.3511 30.8873C37.4424 31.0902 37.6352 31.212 37.8381 31.212C37.9091 31.212 37.9801 31.2018 38.0511 31.1714L44.7781 28.229L42.8605 33.1296L37.1887 35.6053C36.9148 35.7271 36.793 36.0416 36.9148 36.3054C37.0061 36.5084 37.1989 36.6301 37.4018 36.6301C37.4728 36.6301 37.5438 36.62 37.6149 36.5895L42.3126 34.54L40.3949 39.4406L37.0872 40.8915C36.8133 41.0133 36.6915 41.3278 36.8133 41.5916C36.9046 41.7946 37.0974 41.9163 37.3003 41.9163C37.3713 41.9163 37.4424 41.9062 37.5134 41.8757L39.847 40.8611L37.8482 45.9748C37.7366 46.2488 37.8787 46.5633 38.1526 46.6648C38.2135 46.6851 38.2845 46.7054 38.3454 46.7054C38.5585 46.7054 38.7614 46.5735 38.8426 46.3705L40.8414 41.2568L41.856 43.5905C41.9473 43.7934 42.1401 43.9151 42.343 43.9151C42.414 43.9151 42.4851 43.905 42.5561 43.8746C42.83 43.7528 42.9518 43.4383 42.83 43.1745L41.3791 39.8668L43.2968 34.9661L45.3463 39.6537C45.4376 39.8566 45.6304 39.9784 45.8333 39.9784C45.9044 39.9784 45.9754 39.9682 46.0464 39.9378C46.3204 39.816 46.4421 39.5015 46.3204 39.2377L43.8447 33.5659L45.7623 28.6653L48.7047 35.3923C48.7961 35.5952 48.9888 35.7169 49.1918 35.7169C49.2628 35.7169 49.3338 35.7068 49.4048 35.6764C49.6788 35.5546 49.8005 35.2401 49.6788 34.9763L46.3102 27.2752L47.5176 24.2111C51.7791 26.1794 53.8286 31.1714 52.0936 35.6053L52.1037 35.5445Z\" fill=\"#905745\"></path>\n</g>\n<path d=\"M35.5838 69.078C54.356 69.078 69.5739 53.8965 69.5739 35.1691C69.5739 16.4418 54.356 1.26025 35.5838 1.26025C16.8116 1.26025 1.59375 16.4418 1.59375 35.1691C1.59375 53.8965 16.8116 69.078 35.5838 69.078Z\" stroke=\"#905745\" stroke-width=\"1.36\" stroke-miterlimit=\"10\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6790_8971\">\n<rect width=\"69.36\" height=\"69.1977\" fill=\"white\" transform=\"translate(0.904297 0.570312)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Monk Fruit Sweetened",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_CKt7Vd": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"71\" height=\"70\" viewbox=\"0 0 71 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6790_8981)\">\n<path d=\"M35.5838 68.5775C54.356 68.5775 69.5739 53.396 69.5739 34.6686C69.5739 15.9413 54.356 0.759766 35.5838 0.759766C16.8116 0.759766 1.59375 15.9413 1.59375 34.6686C1.59375 53.396 16.8116 68.5775 35.5838 68.5775Z\" stroke=\"#68453D\" stroke-width=\"1.36\" stroke-miterlimit=\"10\"></path>\n<path d=\"M48.3681 50.3852L47.7289 37.1038C47.8811 36.7994 44.3705 21.3161 44.2386 20.4638C44.0864 19.7739 43.5892 19.2361 42.9094 19.0332C42.2296 18.8303 41.5194 19.0129 41.0222 19.5101C39.7032 20.8291 38.9422 22.5844 38.8813 24.4513L38.7393 28.8244L26.6449 16.5575C25.5897 15.5023 23.8547 15.5023 22.7995 16.5575C22.1603 17.1156 21.7037 17.8867 21.724 18.7593C21.724 19.4898 22.0081 20.1696 22.5255 20.6769L28.4915 26.6429C27.8016 26.7444 27.203 27.1502 26.7464 27.6677C25.9347 28.4794 25.752 29.6665 26.1782 30.6609C25.3868 30.7014 24.6968 31.1276 24.1794 31.7161C23.388 32.5075 23.1952 33.6642 23.5706 34.6281C22.7995 34.6483 22.0588 35.0846 21.5413 35.6833C20.547 36.6269 20.5064 38.2807 21.3384 39.3359C22.9009 40.9086 26.0767 44.0641 27.6291 45.6165C28.7655 46.7529 30.0845 47.6153 31.5659 48.1835C32.5805 48.5792 33.2603 49.4924 33.3618 50.5577C32.4689 50.994 31.85 51.9072 31.85 52.9624V57.5079C31.85 57.8225 32.1138 58.0863 32.4283 58.0863C32.7428 58.0863 33.0066 57.8225 33.0066 57.5079V52.9624C33.0066 52.1203 33.6966 51.4303 34.5387 51.4303H47.7492C48.5913 51.4303 49.2813 52.1203 49.2813 52.9624V57.5079C49.2813 57.8225 49.5451 58.0863 49.8596 58.0863C50.1742 58.0863 50.438 57.8225 50.438 57.5079V52.9624C50.438 51.6941 49.5552 50.6389 48.3681 50.3548V50.3852ZM42.5746 20.1392C42.8485 20.2203 43.0413 20.4233 43.1022 20.7074L43.711 23.5179C42.7978 23.6295 41.9455 22.9903 41.9455 22.0365V20.2406C42.1281 20.1087 42.3514 20.0783 42.5746 20.1392ZM27.5581 28.4997C28.177 27.7083 29.3032 27.5054 30.0439 28.2257C30.5208 28.7026 31.5151 29.697 31.992 30.1637L34.2952 32.4669C34.7214 32.8626 35.1881 33.3496 35.1576 33.9787C35.1779 34.5469 34.8228 35.0136 34.417 35.3586C33.8082 35.9674 32.8139 35.9674 32.2051 35.3586L27.7509 30.9044C26.9899 30.3463 26.8377 29.1592 27.5378 28.4896H27.5479L27.5581 28.4997ZM24.9809 32.5481C25.61 31.7465 26.7058 31.5131 27.4668 32.264C27.5987 32.3959 28.7553 33.5424 28.8365 33.6236L31.3731 36.1601C32.1239 36.9211 31.8905 38.0271 31.089 38.646C30.4802 39.2548 29.4859 39.2548 28.8771 38.646L25.194 34.9629C24.433 34.3643 24.2504 33.238 24.9606 32.5278L24.9809 32.5481ZM22.3429 36.5356C22.972 35.734 24.0576 35.5006 24.8287 36.2515L25.8941 37.3168L28.0755 39.5084C28.6843 40.0868 28.6843 41.142 28.0755 41.7203L27.8016 41.9943C27.1928 42.603 26.2188 42.603 25.61 42.0044L22.8096 39.2142C22.8096 39.2142 22.3936 38.788 22.353 38.7474C21.7443 38.1691 21.7443 37.124 22.353 36.5356H22.3429ZM31.9616 47.1283C30.0744 46.4789 28.5118 44.9874 27.1522 43.5568C28.6032 43.3031 29.8917 41.7305 29.6482 40.2491C31.434 40.5433 33.2197 38.6764 32.9559 36.9414C33.9097 37.1038 34.8634 36.637 35.5026 35.8963C36.5578 34.8411 36.5578 33.1163 35.5026 32.0509L32.1949 28.7432C32.1949 28.7432 23.3271 19.8754 23.3169 19.8652C22.5661 19.1042 22.7995 17.9983 23.5909 17.3794C24.1997 16.7706 25.194 16.7706 25.7926 17.3794L38.4248 30.184C36.2839 32.5988 35.5128 35.9674 36.4158 39.0924C36.4868 39.3461 36.7202 39.5084 36.9738 39.5084C37.3492 39.5084 37.6435 39.133 37.5319 38.7677C36.6796 35.8355 37.5319 32.7003 39.6626 30.5391C39.7539 30.4376 39.8148 30.3159 39.8148 30.184L40.0076 24.4919C40.038 23.5077 40.3018 22.554 40.7685 21.722C40.6366 23.6092 42.1079 24.8673 43.9342 24.6847C44.1067 25.6892 46.5824 36.4848 46.5418 37.1646L47.1708 50.3142C47.1708 50.3142 34.4981 50.3142 34.4576 50.3142C34.2648 48.8836 33.3212 47.666 31.9311 47.1384L31.9616 47.1283Z\" fill=\"#68453D\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6790_8981\">\n<rect width=\"69.36\" height=\"69.1977\" fill=\"white\" transform=\"translate(0.904297 0.0698242)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "",
+            "icon_title": "Fun &amp; Convenient",
+            "icon_description": "",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_9ghiR7": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "Learn More →",
+            "btn_link": "shopify://blogs/shilajit/benefits-for-males-and-females"
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_MMHTBD",
+        "icon_box_fWWNdx",
+        "icon_box_KtWBzt",
+        "icon_box_7MzUam",
+        "icon_box_CKt7Vd",
+        "icon_box_9ghiR7"
+      ],
+      "custom_css": [
+        ".wrapper {flex-direction: row;}",
+        "brown {color: #9f5601; font-weight: 700;}",
+        ".iconbox {min-width: 100%; align-items: flex-start;}",
+        "svg {height: 5.6rem; min-width: 5.6rem;}",
+        "h3 {margin-top: 5px; margin-bottom: 0; font-size: 1.6rem; font-weight: 700; min-width: 100%; padding-bottom: 1.3rem; line-height: 1.3; border-bottom: 2px solid var(--custom-color); color: var(--custom-color);}",
+        ".button {margin-top: 4px;}"
+      ],
+      "name": "Icon Box Section",
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "",
+        "section_description": "<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/everest-shilajit-gummies-container-top-view.webp?v=1782277676\" alt=\"Top view of Everest Shilajit Gummies container with gummies displayed\">\n<p>Pure shilajit extract, naturally carrying fulvic acid, 85+ trace minerals, and Dibenzo-α-Pyrones. No compounds introduced. No compounds lost. The gummy base is entirely plant-based monk fruit, black carrot extract, natural fruit concentrates. Nothing artificial from extract to finish.</p>",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "16px 5.6rem",
+        "iconbox_gap": "1.6rem",
+        "image_layout": "left",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "298px",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "custom-icon-box",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "<style>\n#custom-icon-box{\n\n\n.iconbox:nth-child(1) {\n  background-color: #fff;\n  border-radius:8px;\n  padding:2.4rem;\n  position:relative;\n\n}\n.iconbox:nth-child(2) {\n  --custom-color: #aa8077;\n  margin-top: 8px;\n}\n.iconbox:nth-child(3) {\n  --custom-color: #A9523F;\n}\n.iconbox:nth-child(4) {\n  --custom-color: #8F5644;\n}\n.iconbox:nth-child(5) {\n  --custom-color: #68453D;\n  margin-bottom: 8px;\n}\n\n.iconbox-content:has(h3) {\n  width: 100%;\n}\n\n.button{\nbackground:#68453D;\ncolor:#ffffff;\nborder-radius:1rem;\n}\n\n}\n\n@media(max-width:980px){\n\n  #custom-icon-box.wrapper{\n    flex-direction: column!important;\npadding-top:24px!important;\n\n*{\ntext-align:start;\n}\n  \n.iconbox-content,.button{\nwidth:100%;\n}\n.button {\n  margin-top: -0.8px;\n}\n\nimg{\n  aspect-ratio:4/3;\n  object-fit:cover;\n  object-position:25%;\n  border-radius:16px;\n}\n}\n}\n\n</style>\n\n{%comment%}\n\n .iconbox-content:has(h3) h3 {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    cursor: pointer;\n  }\n\n  .iconbox-content:has(h3) h3::after {\n    content: \"+\";\n    font-size: 2.5rem;\n    transition: transform 0.3s ease;\n    margin-left: 8px;\n  }\n\n  .iconbox-content.active:has(h3) h3::after {\n    transform: rotate(-135deg);\n  }\n\n  .iconbox-content:has(h3) .description {\n    display: none;\n    margin-top: 0.5rem;\n  }\n\n  .iconbox-content.active:has(h3) .description {\n    display: block;\n  }\n<script defer>\n  document.addEventListener(\"DOMContentLoaded\", () => {\n    const allBoxes = document.querySelectorAll(\".iconbox-content\");\nallBoxes.forEach((box) => {\n\n    const heading = box.querySelector(\"h3\");\n    const desc = box.querySelector(\".description\");\n\n    if (heading && desc) {\n\nheading.addEventListener(\"click\", () => {\nallBoxes.forEach((other) => {\n          if (other !== box) {\n            other.classList.remove(\"active\");\n          }\n        });\n        box.classList.toggle(\"active\");\n;\n      });\n    }\n  });\n  });\n</script>{%endcomment%}"
+      }
+    },
+    "slider_with_banner_GLDwpC": {
+      "type": "slider-with-banner",
+      "blocks": {
+        "slide_fFdGcG": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 1 - 2",
+            "slide_heading": "The Beginning",
+            "slide_text": "<div class=\"h-max flex flex-col justify-center\">\n<p>Two gummies, same time, every day. The fulvic acid and 85+ trace minerals in these pure Himalayan shilajit gummies are being introduced to the system for the first time — same dose, same time, building from day one.\n</p>\n\n<p class=\"text-grey\">\nSome people notice a shift in how their mornings feel during this window. Others don't notice anything yet. Both are normal. The compounds are present. The process has started.\n</p>\n</div>"
+          }
+        },
+        "slide_VUR3wa": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 3 - 10",
+            "slide_heading": "Where Most People Notice",
+            "slide_text": "<div class=\"h-max flex flex-col justify-center\">\n<p>By this point the daily dose has had enough time to accumulate. Fulvic acid is working at the cellular level. Dibenzo-α-Pyrones are doing what they do in authentic shilajit. The 85+ trace minerals have been part of the system consistently, same amount, every single day.\n</p>\n<p class=\"text-grey\">\nThis is the period most customers reach out to us. Reports during this stretch tend to mention recovery and focus. Two Himalayan shilajit gummies a day, consistently, has been the only variable.\n</p>\n</div>"
+          }
+        },
+        "slide_8E6BHW": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Weeks 11+",
+            "slide_heading": "When It Becomes Routine",
+            "slide_text": "<div class=\"h-max flex flex-col justify-center\">\n<p>\nAt this point, the compounds in these pure shilajit gummies have been building consistently for over two months. Fulvic acid, trace minerals, Dibenzo-α-Pyrones — all delivered in the same precise dose, every single day.\n</p>\n<p class=\"text-grey\">\nMost people at this stage stop thinking about it. Two gummies is part of the day. The routine just works.\n</p>\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_fFdGcG",
+        "slide_VUR3wa",
+        "slide_8E6BHW"
+      ],
+      "custom_css": [
+        "h2 strong {color: #9f5601;}",
+        " {padding-top: 80px; padding-bottom: 20px;}",
+        "@media (max-width: 768px) {{padding-top: 32px; padding-bottom: 32px; }}"
+      ],
+      "name": "Image + Text Slider",
+      "settings": {
+        "image": "shopify://shop_images/single-himalayan-shilajit-gummy-close-up.webp",
+        "title": "What Consistent <strong>Use Looks Like</strong>"
+      }
+    },
+    "icon_box_wNhLGf": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_dpeBKr": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/himalayan-shilajit-gummies-individually-wrapped.webp",
+            "icon_svg": "",
+            "icon_alt_text": "Individually wrapped Himalayan shilajit gummies ready for daily use",
+            "icon_title": "Any Time of Day",
+            "icon_description": "Two gummies. One complete serving — 500mg of pure shilajit extract. No water required. No preparation needed. Morning works well for consistency — pick a time and keep it.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_fp68dL": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/person-eating-himalayan-shilajit-gummy.webp",
+            "icon_svg": "",
+            "icon_alt_text": "Person chewing a Himalayan shilajit gummy supplement",
+            "icon_title": "Chew, No Dissolving",
+            "icon_description": "No mixing, no measuring, no preparation. Two gummies, done. Unlike resin or tablets, nothing else is needed.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_NNHLRz": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_image": "shopify://shop_images/everest-shilajit-gummies-bottle-and-gummies.webp",
+            "icon_svg": "",
+            "icon_alt_text": "Everest Shilajit Gummies packaging with blackberry-shaped gummies",
+            "icon_title": "Same Time, Every Day",
+            "icon_description": "Pure shilajit gummies work cumulatively. The daily dose builds over time. Same two gummies, same time, every day — that is the only instruction that matters after the first two.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_dpeBKr",
+        "icon_box_fp68dL",
+        "icon_box_NNHLRz"
+      ],
+      "custom_css": [
+        ".wrapper {flex-direction: row; justify-content: start; align-items: center;}",
+        ".iconbox-wrapper {width: max-content; flex-wrap: nowrap; padding-bottom: 12px;}",
+        ".iconbox {border-radius: 18px; display: flex; flex-direction: column; align-items: center; padding: 1.6rem 1.6rem 2.4rem 1.6rem; gap: 2.4rem;}",
+        "@media (max-width: 768px) {.wrapper {flex-direction: column; } h3 {margin-bottom: 8px; } .iconbox {width: 60vw !important; gap: 16px; } .iconbox * {text-align: left; } .contentPart {max-width: 100%; }}"
+      ],
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "<brown> Two Gummies. </brown> The Same Every Time.",
+        "section_description": "<p>Each Everest Shilajit gummy contains 250mg of pure shilajit extract. Two gummies is one complete serving — same dose, same source, same standard every batch. No measuring, no preparation, no variation. </p>\n<p>Fulvic acid confirmed by Certified Laboratories. 85+ trace minerals naturally present. Dibenzo-α-Pyrones intact. Every number verified, every batch documented. Pure Himalayan shilajit gummies that deliver the same result gummy one through gummy sixty.</p>",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "24px 6rem!important",
+        "iconbox_gap": "2.4rem!important",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "40rem!important; width:calc(100vw - 20px);",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "font-serif",
+        "custom_id": "perfect-dosage",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#ffffff",
+        "iconbox_style": "<style>\n#perfect-dosage{\n.iconbox img {\n  width: 100% !important;\n  height: auto;\n  margin:0;\n}\n\nh3 {\n  font-family: var(--font-heading-family);\n  font-weight: 900;\n  color: #382e2a;\nmargin-bottom:1.2rem;\n}\np {\n  color: #252525 !important;\n  font-size: 1.8rem;\n}\n.contentPart{\nmax-width:30%;\nalign-items: start;\n*{\n  text-align: start;\n}\n}\n.iconbox{\nbackground: #F5EADD;\n}\n\n.icon-box-container{\noverflow:auto;  \nscrollbar-width: thin; /* for Firefox */\n  scrollbar-color: #B4B4B4 #f5f5f5; /* thumb and track colors for Firefox */\n}\n\n/* Chrome, Edge, Safari */\n.icon-box-container::-webkit-scrollbar {\n  height: 8px; /* scrollbar thickness */\n}\n\n.icon-box-container::-webkit-scrollbar-track {\n  background: #F5F5F5; \n  border-radius: 16px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb {\n  background: #B4B4B4;\n  border-radius: 60px;\n}\n\n.icon-box-container::-webkit-scrollbar-thumb:hover {\n  background: #888;\n}\n}\n</style>"
+      }
+    },
+    "icon_box_VTexaM": {
+      "type": "icon-box",
+      "blocks": {
+        "icon_box_pBwcT4": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"82\" height=\"82\" viewbox=\"0 0 82 82\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6736_18584)\">\n<path d=\"M70.9596 45.506L57.7196 41.396C57.7196 41.396 57.1296 41.186 56.2296 41.006C56.4296 40.186 56.4896 39.616 56.4996 39.506L58.3096 25.736C58.3396 25.546 58.2496 25.356 58.0896 25.246C57.9296 25.136 57.7196 25.126 57.5496 25.226L46.8696 31.336L41.4096 20.306C41.2396 19.956 40.6696 19.956 40.4896 20.306L35.0496 31.276L24.4596 25.216C24.2896 25.116 24.0796 25.126 23.9196 25.236C23.7596 25.346 23.6696 25.536 23.6996 25.726L25.5096 39.496C25.5196 39.606 25.5796 40.176 25.7796 40.996C24.8796 41.176 24.3296 41.376 24.3196 41.376L11.0496 45.496C10.8596 45.556 10.7296 45.716 10.6996 45.906C10.6696 46.096 10.7496 46.286 10.9096 46.406L22.2196 54.466C22.4796 54.666 25.8096 57.166 30.3096 57.166C33.5096 57.166 37.3096 55.886 41.0096 51.626C44.7096 55.886 48.5096 57.166 51.7096 57.166C56.2096 57.166 59.5396 54.666 59.7996 54.466L71.1096 46.406C71.2696 46.296 71.3496 46.096 71.3196 45.906C71.2896 45.716 71.1496 45.556 70.9696 45.496L70.9596 45.506ZM57.1496 26.616L55.4696 39.376C55.4696 39.376 55.4696 39.396 55.4696 39.406C55.4696 39.506 55.4096 40.046 55.2296 40.836C53.5796 40.616 51.2796 40.596 48.8996 41.436C49.7396 36.876 47.7196 33.046 47.5596 32.746L47.3096 32.246L57.1496 26.616ZM35.2296 33.216L35.4796 32.706L36.0396 33.026C36.2396 33.126 38.6196 34.356 40.4196 36.916C39.0896 39.036 38.1596 41.876 38.7096 45.516C37.2696 43.716 35.6696 42.566 34.0696 41.836C32.9596 37.336 35.0796 33.486 35.2296 33.216ZM46.4296 32.756L46.6596 33.216C46.6596 33.216 46.6596 33.236 46.6696 33.246C46.8196 33.506 48.9496 37.376 47.8096 41.896C46.2496 42.626 44.6996 43.776 43.2996 45.516C43.8496 41.876 42.9196 39.036 41.5896 36.916C43.3896 34.346 45.7796 33.116 45.9896 33.006L46.4296 32.756ZM42.2396 49.336C42.3496 49.046 42.4596 48.766 42.5596 48.486C43.9596 45.906 45.6496 44.256 47.3796 43.236C46.5696 45.286 45.0096 47.406 42.2496 49.336H42.2396ZM41.6196 48.086C41.4096 48.476 41.1996 48.886 40.9996 49.326C40.7996 48.886 40.5996 48.486 40.3796 48.086C38.8696 43.616 39.6196 40.246 40.9996 37.826C42.3796 40.236 43.1296 43.616 41.6196 48.086ZM39.4496 48.496C39.5596 48.806 39.6796 49.136 39.8096 49.456C36.9096 47.466 35.3096 45.276 34.4896 43.166C36.2696 44.186 38.0096 45.846 39.4496 48.496ZM39.2496 50.306C30.8896 50.166 28.0096 44.976 27.0296 41.796C28.6596 41.576 30.9296 41.586 33.2496 42.546C33.9896 45.136 35.7196 47.876 39.2596 50.306H39.2496ZM48.6296 42.596C50.9896 41.586 53.3096 41.576 54.9696 41.796C53.9796 44.986 51.0496 50.216 42.6296 50.306C46.1496 47.896 47.8896 45.176 48.6296 42.596ZM40.9396 21.686L45.9696 31.846L45.4996 32.116C45.4496 32.146 42.9796 33.406 40.9996 36.076C39.0196 33.416 36.5596 32.156 36.5196 32.136L35.9296 31.806L40.9396 21.696V21.686ZM26.5296 39.406C26.5296 39.406 26.5296 39.386 26.5296 39.376L24.8496 26.616L34.5996 32.196L34.3296 32.736C34.2896 32.806 32.1296 36.706 32.9696 41.396C30.6296 40.596 28.3796 40.626 26.7596 40.836C26.5796 40.046 26.5296 39.506 26.5196 39.406H26.5296ZM22.8396 53.656C22.8396 53.656 22.8196 53.646 22.8196 53.636L12.3396 46.176L24.6596 42.346C24.7496 42.316 25.2696 42.126 26.0596 41.966C27.1396 45.446 30.3396 51.336 39.6096 51.336C39.7096 51.336 39.8196 51.336 39.9096 51.336C31.6096 60.486 23.2096 53.956 22.8396 53.666V53.656ZM59.1896 53.636C59.1896 53.636 59.1696 53.646 59.1696 53.656C58.8096 53.946 50.4096 60.476 42.0996 51.326C42.1996 51.326 42.3096 51.326 42.3996 51.326C51.6596 51.326 54.8696 45.436 55.9496 41.956C56.7596 42.126 57.2796 42.316 57.3796 42.346L69.6696 46.166L59.1896 53.626V53.636Z\" fill=\"#68453D\"></path>\n<path d=\"M41 81.146C63.0914 81.146 81 63.2374 81 41.146C81 19.0546 63.0914 1.146 41 1.146C18.9086 1.146 1 19.0546 1 41.146C1 63.2374 18.9086 81.146 41 81.146Z\" stroke=\"#68453D\" stroke-miterlimit=\"10\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6736_18584\">\n<rect width=\"81\" height=\"81\" fill=\"white\" transform=\"translate(0.5 0.645996)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Ayurvedic Expertise",
+            "icon_description": "Himalayan sourcing guided by Ayurveda. Handled by food scientists from source to finished gummy, every step documented.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_MQn4gr": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"82\" height=\"82\" viewbox=\"0 0 82 82\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6736_18588)\">\n<path d=\"M41 81.146C63.0914 81.146 81 63.2374 81 41.146C81 19.0546 63.0914 1.146 41 1.146C18.9086 1.146 1 19.0546 1 41.146C1 63.2374 18.9086 81.146 41 81.146Z\" stroke=\"#68453D\" stroke-miterlimit=\"10\"></path>\n<path d=\"M32.6196 33.096C33.2796 33.566 33.6196 34.226 33.6196 35.086V35.856L31.3096 35.936V35.266C31.3096 34.406 30.8396 33.966 29.9096 33.966C29.4396 33.966 29.0896 34.066 28.8596 34.256C28.6296 34.446 28.5096 34.726 28.5096 35.106V41.226C28.5096 41.986 28.9696 42.366 29.8896 42.366C30.3596 42.366 30.7096 42.266 30.9296 42.056C31.1596 41.846 31.2696 41.516 31.2696 41.076V39.156H29.9096V37.586H33.6196V41.256C33.6196 42.106 33.2896 42.776 32.6196 43.246C31.9596 43.716 31.0296 43.946 29.8296 43.946C28.6296 43.946 27.7196 43.716 27.0696 43.246C26.4196 42.776 26.0996 42.116 26.0996 41.256V35.106C26.0996 34.256 26.4196 33.586 27.0696 33.116C27.7196 32.646 28.6396 32.416 29.8296 32.416C31.0196 32.416 31.9496 32.646 32.6196 33.116V33.096Z\" fill=\"#68453D\"></path>\n<path d=\"M46.0489 43.7559H43.6489V35.9759H43.5989L41.6089 42.1559H40.1789L38.1889 35.9759H38.1389V43.7559H35.8789V32.5459H39.0289L40.9089 38.5659H40.9589L42.8189 32.5459H46.0589V43.7559H46.0489Z\" fill=\"#68453D\"></path>\n<path d=\"M55.0589 33.2862C55.7389 33.7762 56.0789 34.4762 56.0789 35.3962V36.2962C56.0789 37.2162 55.7389 37.9162 55.0589 38.3962C54.3789 38.8862 53.3889 39.1262 52.0889 39.1262H51.0289V43.7662H48.6289V32.5562H52.0889C53.3889 32.5562 54.3789 32.7962 55.0589 33.2862ZM51.0289 34.1262V37.5562H51.9989C52.5689 37.5562 52.9989 37.4462 53.2689 37.2162C53.5389 36.9962 53.6789 36.6462 53.6789 36.1762V35.5062C53.6789 35.0362 53.5389 34.6862 53.2689 34.4662C52.9989 34.2462 52.5689 34.1262 51.9989 34.1262H51.0289Z\" fill=\"#68453D\"></path>\n<path d=\"M25.7402 50.0357C25.7402 48.8857 26.6102 48.0557 27.8002 48.0557C28.4002 48.0557 28.9202 48.2657 29.2702 48.6557L28.9102 49.0057C28.6102 48.6857 28.2502 48.5457 27.8202 48.5457C26.9502 48.5457 26.3002 49.1757 26.3002 50.0357C26.3002 50.8957 26.9502 51.5257 27.8202 51.5257C28.2502 51.5257 28.6102 51.3757 28.9102 51.0657L29.2702 51.4157C28.9202 51.8157 28.3902 52.0257 27.7902 52.0257C26.6202 52.0257 25.7402 51.1857 25.7402 50.0457V50.0357Z\" fill=\"#68453D\"></path>\n<path d=\"M32.8803 51.4957V51.9757H30.0703V48.0957H32.8103V48.5757H30.6303V49.7657H32.5703V50.2357H30.6303V51.4857H32.8903L32.8803 51.4957Z\" fill=\"#68453D\"></path>\n<path d=\"M36.3693 51.9757L35.5293 50.7857C35.4493 50.7857 35.3693 50.7957 35.2893 50.7957H34.3293V51.9757H33.7793V48.0957H35.2893C36.2993 48.0957 36.9093 48.6057 36.9093 49.4457C36.9093 50.0457 36.5993 50.4757 36.0593 50.6657L36.9793 51.9657H36.3793L36.3693 51.9757ZM36.3493 49.4557C36.3493 48.9057 35.9793 48.5857 35.2693 48.5857H34.3293V50.3257H35.2693C35.9793 50.3257 36.3493 50.0057 36.3493 49.4457V49.4557Z\" fill=\"#68453D\"></path>\n<path d=\"M38.5195 48.5855H37.1895V48.1055H40.3995V48.5855H39.0695V51.9855H38.5195V48.5855Z\" fill=\"#68453D\"></path>\n<path d=\"M41 48.1055H41.55V51.9855H41V48.1055Z\" fill=\"#68453D\"></path>\n<path d=\"M43.2707 48.5855V49.9355H45.2107V50.4155H43.2707V51.9855H42.7207V48.1055H45.4607V48.5855H43.2807H43.2707Z\" fill=\"#68453D\"></path>\n<path d=\"M46.2402 48.1055H46.7902V51.9855H46.2402V48.1055Z\" fill=\"#68453D\"></path>\n<path d=\"M50.7709 51.4957V51.9757H47.9609V48.0957H50.7009V48.5757H48.5209V49.7657H50.4609V50.2357H48.5209V51.4857H50.7809L50.7709 51.4957Z\" fill=\"#68453D\"></path>\n<path d=\"M51.6699 48.1055H53.2999C54.5499 48.1055 55.3899 48.8955 55.3899 50.0455C55.3899 51.1955 54.5399 51.9855 53.2999 51.9855H51.6699V48.1055ZM53.2699 51.4955C54.2299 51.4955 54.8399 50.9055 54.8399 50.0355C54.8399 49.1655 54.2199 48.5755 53.2699 48.5755H52.2199V51.4855H53.2699V51.4955Z\" fill=\"#68453D\"></path>\n<path d=\"M41.0007 65.186C27.7507 65.186 16.9707 54.406 16.9707 41.156C16.9707 27.906 27.7507 17.126 41.0007 17.126C54.2507 17.126 65.0307 27.906 65.0307 41.156C65.0307 54.406 54.2507 65.186 41.0007 65.186ZM41.0007 18.146C28.3207 18.146 18.0007 28.466 18.0007 41.146C18.0007 53.826 28.3207 64.146 41.0007 64.146C53.6807 64.146 64.0007 53.826 64.0007 41.146C64.0007 28.466 53.6807 18.146 41.0007 18.146Z\" fill=\"#68453D\"></path>\n<path d=\"M9.90067 35.9058L9.71067 36.6758L7.96067 36.2458C7.70067 35.6958 7.67067 35.0058 7.83067 34.3858C8.17067 33.0258 9.36067 32.2558 10.6707 32.5858C11.9807 32.9158 12.6807 34.1458 12.3407 35.5258C12.1607 36.2558 11.7607 36.8158 11.1907 37.1058L10.8207 36.4658C11.2507 36.2058 11.5107 35.8458 11.6207 35.3758C11.8507 34.4458 11.3807 33.6258 10.4707 33.4058C9.58067 33.1858 8.76067 33.6858 8.53067 34.6058C8.45067 34.9158 8.44067 35.2458 8.53067 35.5658L9.90067 35.9058Z\" fill=\"#68453D\"></path>\n<path d=\"M9.49046 37.5057C10.8205 37.6057 11.7305 38.7157 11.6205 40.1157C11.5105 41.5157 10.4505 42.4757 9.11046 42.3657C7.77046 42.2657 6.87046 41.1557 6.97046 39.7557C7.08046 38.3557 8.14046 37.4057 9.48046 37.5057H9.49046ZM9.19046 41.5257C10.1105 41.5957 10.8305 40.9657 10.9005 40.0657C10.9705 39.1557 10.3605 38.4257 9.44046 38.3557C8.52046 38.2857 7.80046 38.9157 7.73046 39.8157C7.66046 40.7257 8.27046 41.4557 9.19046 41.5257Z\" fill=\"#68453D\"></path>\n<path d=\"M9.12005 43.0056C10.45 42.8756 11.53 43.8156 11.66 45.2056C11.79 46.5956 10.91 47.7256 9.58005 47.8456C8.24005 47.9756 7.17005 47.0356 7.04005 45.6456C6.91005 44.2556 7.79005 43.1256 9.12005 43.0056ZM9.50005 47.0156C10.42 46.9256 11.02 46.1856 10.93 45.2856C10.84 44.3756 10.12 43.7656 9.20005 43.8556C8.28005 43.9456 7.68005 44.6856 7.77005 45.5856C7.86005 46.4956 8.58005 47.1056 9.50005 47.0156Z\" fill=\"#68453D\"></path>\n<path d=\"M11.9813 48.2158L12.5013 50.1258C12.8913 51.5358 12.2813 52.7458 10.9713 53.1058C9.66133 53.4658 8.52133 52.7458 8.13133 51.3258L7.61133 49.4158L11.9713 48.2158H11.9813ZM8.81133 51.0958C9.08133 52.0658 9.84133 52.5358 10.7513 52.2858C11.6513 52.0358 12.0713 51.2458 11.8013 50.2758L11.5113 49.2158L8.52133 50.0358L8.81133 51.0958Z\" fill=\"#68453D\"></path>\n<path d=\"M12.0708 60.4057L14.6808 58.9357L11.7908 58.8457L11.6108 58.5157L13.0208 56.0257L10.4408 57.4657L10.0508 56.7657L14.0008 54.5557L14.3408 55.1557L12.6008 58.1857L16.0808 58.2657L16.4208 58.8657L12.4808 61.0757L12.0908 60.3857L12.0708 60.4057Z\" fill=\"#68453D\"></path>\n<path d=\"M16.111 64.0856L14.681 62.3356L13.591 62.6556L13.041 61.9856L17.831 60.7056L18.351 61.3456L16.131 65.7856L15.571 65.1056L16.091 64.0956L16.111 64.0856ZM16.451 63.4556L17.441 61.5456L15.371 62.1356L16.441 63.4556H16.451Z\" fill=\"#68453D\"></path>\n<path d=\"M22.8813 65.7757L19.8713 69.1557L19.3513 68.6957L19.5213 64.7457L17.4813 67.0357L16.8613 66.4757L19.8713 63.0957L20.3913 63.5557L20.2213 67.5057L22.2613 65.2157L22.8813 65.7657V65.7757Z\" fill=\"#68453D\"></path>\n<path d=\"M22.2009 68.4559L23.5609 66.2959L24.2709 66.7459L22.9209 68.8759C22.4209 69.6659 22.5609 70.2259 23.1809 70.6159C23.8009 71.0059 24.3609 70.8859 24.8609 70.1059L26.2009 67.9759L26.9009 68.4159L25.5409 70.5759C24.8409 71.6859 23.8309 71.8959 22.7809 71.2359C21.7309 70.5759 21.4909 69.5659 22.1909 68.4559H22.2009Z\" fill=\"#68453D\"></path>\n<path d=\"M28.2399 69.7957L27.6799 71.0557L29.6799 71.9457L29.3899 72.5957L27.3899 71.7057L26.6899 73.2857L25.9199 72.9457L27.7499 68.8057L30.7699 70.1457L30.4799 70.7857L28.2299 69.7857L28.2399 69.7957Z\" fill=\"#68453D\"></path>\n<path d=\"M32.9895 74.4258L30.8195 73.8058L30.0995 74.6858L29.2695 74.4458L32.4695 70.6558L33.2595 70.8858L33.9795 75.7958L33.1395 75.5558L32.9895 74.4258ZM32.8995 73.7158L32.6195 71.5858L31.2595 73.2558L32.8895 73.7258L32.8995 73.7158Z\" fill=\"#68453D\"></path>\n<path d=\"M34.8506 73.6458C35.0206 72.3058 36.1706 71.4658 37.5506 71.6458C38.2806 71.7358 38.8706 72.0858 39.2306 72.6258L38.6306 73.0658C38.3506 72.6758 37.9706 72.4458 37.5006 72.3858C36.5706 72.2658 35.8106 72.8358 35.6906 73.7558C35.5706 74.6758 36.1606 75.4158 37.0906 75.5358C37.5606 75.5958 37.9806 75.4758 38.3606 75.1558L38.8306 75.7358C38.3506 76.1658 37.6906 76.3558 36.9506 76.2558C35.5806 76.0758 34.6806 74.9758 34.8506 73.6358V73.6458Z\" fill=\"#68453D\"></path>\n<path d=\"M40.7109 72.6255L39.2109 72.6455V71.9355L43.0409 71.8755V72.5855L41.5509 72.6055L41.6109 76.4155H40.7709L40.7109 72.6155V72.6255Z\" fill=\"#68453D\"></path>\n<path d=\"M43.7313 74.4059L43.3613 71.8859L44.1913 71.7659L44.5513 74.2559C44.6813 75.1759 45.1613 75.5159 45.8813 75.4059C46.6013 75.2959 46.9513 74.8459 46.8213 73.9259L46.4613 71.4359L47.2813 71.3159L47.6513 73.8359C47.8413 75.1359 47.2113 75.9559 45.9913 76.1359C44.7613 76.3159 43.9313 75.7059 43.7413 74.4059H43.7313Z\" fill=\"#68453D\"></path>\n<path d=\"M52.3011 74.5259L51.0211 73.5359C50.9711 73.5559 50.9111 73.5759 50.8611 73.5959L49.8811 73.9059L50.2711 75.1659L49.4711 75.4159L48.1211 71.0959L49.9011 70.5359C51.0411 70.1759 51.9211 70.5359 52.2211 71.4959C52.4211 72.1459 52.2411 72.7359 51.7311 73.1459L53.1711 74.2559L52.3111 74.5259H52.3011ZM50.0711 71.2259L49.1311 71.5159L49.6711 73.2359L50.6111 72.9459C51.3111 72.7259 51.5811 72.2959 51.4111 71.7459C51.2411 71.2059 50.7811 71.0059 50.0711 71.2259Z\" fill=\"#68453D\"></path>\n<path d=\"M52.3906 69.6256L53.1606 69.2856L54.9706 73.4356L54.2006 73.7756L52.3906 69.6256Z\" fill=\"#68453D\"></path>\n<path d=\"M57.5698 66.8957L59.8498 70.7957L59.2498 71.1457L55.5498 69.7557L57.0898 72.3957L56.3698 72.8157L54.0898 68.9057L54.6898 68.5557L58.3898 69.9457L56.8498 67.3057L57.5698 66.8857V66.8957Z\" fill=\"#68453D\"></path>\n<path d=\"M62.1109 66.0959L62.7209 65.5859L63.8709 66.9759C63.7509 67.5759 63.3609 68.1359 62.8709 68.5459C61.7909 69.4359 60.3709 69.3459 59.5109 68.3059C58.6509 67.2659 58.8209 65.8459 59.9209 64.9459C60.5009 64.4659 61.1509 64.2559 61.7909 64.3559L61.7109 65.0959C61.2109 65.0459 60.7909 65.1859 60.4209 65.4959C59.6809 66.1059 59.5709 67.0459 60.1709 67.7659C60.7609 68.4759 61.7109 68.5559 62.4409 67.9459C62.6909 67.7359 62.8909 67.4859 63.0109 67.1759L62.1109 66.0859V66.0959Z\" fill=\"#68453D\"></path>\n<path d=\"M66.6805 60.1059C67.4605 60.7259 67.4805 61.6859 66.7405 62.6159L66.1105 63.4159L67.1305 64.2259L66.6105 64.8859L63.0605 62.0659L64.2205 60.6059C64.9605 59.6759 65.8905 59.4759 66.6805 60.0959V60.1059ZM66.1505 60.7659C65.7005 60.4159 65.2105 60.5059 64.7505 61.0859L64.1405 61.8559L65.5505 62.9759L66.1605 62.2059C66.6205 61.6259 66.6005 61.1259 66.1605 60.7659H66.1505Z\" fill=\"#68453D\"></path>\n<path d=\"M71.1109 58.3259L69.5009 58.4659C69.4809 58.5159 69.4509 58.5659 69.4209 58.6159L68.9109 59.4959L70.0509 60.1559L69.6309 60.8859L65.7109 58.6259L66.6409 57.0159C67.2309 55.9859 68.1309 55.6559 69.0009 56.1559C69.5909 56.4959 69.8609 57.0559 69.7609 57.7059L71.5709 57.5459L71.1209 58.3259H71.1109ZM67.2409 57.4059L66.7509 58.2559L68.3109 59.1559L68.8009 58.3059C69.1709 57.6659 69.0709 57.1659 68.5809 56.8859C68.0909 56.6059 67.6109 56.7659 67.2409 57.4059Z\" fill=\"#68453D\"></path>\n<path d=\"M72.1806 53.2655L71.3606 55.3755L72.1806 56.1755L71.8706 56.9855L68.3906 53.4455L68.6906 52.6755L73.6506 52.4155L73.3306 53.2355L72.1906 53.2755L72.1806 53.2655ZM71.4606 53.2855L69.3006 53.3655L70.8406 54.8755L71.4606 53.2855Z\" fill=\"#68453D\"></path>\n<path d=\"M71.5709 51.3455C70.2509 51.0555 69.5209 49.8355 69.8209 48.4755C69.9809 47.7555 70.3809 47.1955 70.9509 46.8955L71.3309 47.5355C70.9109 47.7755 70.6509 48.1355 70.5509 48.5955C70.3509 49.5055 70.8409 50.3155 71.7509 50.5155C72.6609 50.7155 73.4509 50.1955 73.6509 49.2855C73.7509 48.8255 73.6709 48.3855 73.3909 47.9855L74.0109 47.5655C74.4009 48.0855 74.5209 48.7555 74.3609 49.4855C74.0609 50.8355 72.8809 51.6355 71.5709 51.3455Z\" fill=\"#68453D\"></path>\n<path d=\"M71.08 45.3758L70.96 46.8758L70.25 46.8158L70.57 42.9858L71.28 43.0458L71.16 44.5458L74.96 44.8558L74.89 45.6958L71.09 45.3858L71.08 45.3758Z\" fill=\"#68453D\"></path>\n<path d=\"M70.5195 42.5155V41.6755L75.0295 41.6055V42.4455L70.5195 42.5155Z\" fill=\"#68453D\"></path>\n<path d=\"M72.8013 40.7057C71.4613 40.8657 70.3713 39.9457 70.2113 38.5657C70.1213 37.8357 70.3113 37.1757 70.7513 36.6957L71.3213 37.1757C71.0113 37.5457 70.8813 37.9657 70.9313 38.4357C71.0413 39.3657 71.7713 39.9657 72.7013 39.8557C73.6313 39.7457 74.2013 38.9957 74.0913 38.0657C74.0413 37.5957 73.8113 37.2157 73.4213 36.9257L73.8713 36.3257C74.4113 36.6857 74.7413 37.2857 74.8313 38.0257C74.9913 39.4057 74.1413 40.5457 72.8013 40.6957V40.7057Z\" fill=\"#68453D\"></path>\n<path d=\"M72.7503 32.0057L73.4303 31.8257L74.3003 35.1057L69.9203 36.2657L69.0703 33.0757L69.7503 32.8957L70.3803 35.2757L71.5203 34.9757L70.9603 32.8657L71.6303 32.6857L72.1903 34.7957L73.4003 34.4757L72.7503 32.0057Z\" fill=\"#68453D\"></path>\n<path d=\"M20.061 16.476C19.051 15.116 19.371 13.366 20.761 12.336C21.501 11.786 22.331 11.586 23.121 11.766L22.951 12.686C22.361 12.576 21.821 12.706 21.341 13.056C20.401 13.756 20.211 14.916 20.901 15.856C21.591 16.786 22.761 16.946 23.701 16.246C24.171 15.896 24.451 15.416 24.511 14.806L25.441 14.916C25.381 15.726 24.951 16.456 24.201 17.016C22.811 18.046 21.051 17.836 20.041 16.476H20.061Z\" fill=\"#68453D\"></path>\n<path d=\"M30.1014 12.6157L30.4814 13.4057L26.6614 15.2557L24.1914 10.1657L27.9114 8.36572L28.2914 9.15572L25.5214 10.4957L26.1614 11.8157L28.6214 10.6257L29.0014 11.4057L26.5414 12.5957L27.2214 13.9957L30.0914 12.6057L30.1014 12.6157Z\" fill=\"#68453D\"></path>\n<path d=\"M34.9516 12.136L33.4116 10.836C33.3416 10.866 33.2716 10.886 33.2016 10.896L31.9716 11.226L32.4016 12.816L31.3916 13.086L29.9316 7.62599L32.1816 7.02599C33.6216 6.64599 34.7016 7.13599 35.0316 8.34599C35.2516 9.17599 34.9916 9.89599 34.3316 10.386L36.0716 11.846L34.9816 12.136H34.9516ZM32.3416 7.89599L31.1516 8.21599L31.7316 10.396L32.9216 10.076C33.8116 9.83599 34.1616 9.30599 33.9816 8.62599C33.8016 7.93599 33.2316 7.66599 32.3416 7.90599V7.89599Z\" fill=\"#68453D\"></path>\n<path d=\"M37.5203 6.9359L35.6503 7.0959L35.5703 6.2159L40.3503 5.7959L40.4303 6.6759L38.5603 6.8459L38.9803 11.5959L37.9303 11.6859L37.5103 6.9359H37.5203Z\" fill=\"#68453D\"></path>\n<path d=\"M41.6802 5.87598L42.7302 5.91598L42.5402 11.576L41.4902 11.536L41.6802 5.87598Z\" fill=\"#68453D\"></path>\n<path d=\"M45.7104 7.0859L45.4304 8.7859L48.1204 9.2259L47.9804 10.1059L45.2904 9.6659L44.9404 11.7959L43.9004 11.6259L44.8104 6.0459L48.8804 6.7059L48.7404 7.5759L45.7004 7.0759L45.7104 7.0859Z\" fill=\"#68453D\"></path>\n<path d=\"M50.4403 7.18604L51.4503 7.48604L49.8203 12.896L48.8203 12.596L50.4503 7.18604H50.4403Z\" fill=\"#68453D\"></path>\n<path d=\"M55.3509 14.2357L54.9909 15.0357L51.1309 13.2857L53.4609 8.13574L57.2209 9.83574L56.8609 10.6357L54.0609 9.36574L53.4509 10.7057L55.9309 11.8357L55.5709 12.6257L53.0809 11.4957L52.4409 12.9157L55.3409 14.2357H55.3509Z\" fill=\"#68453D\"></path>\n<path d=\"M59.0915 10.8857L61.0915 12.3357C62.5815 13.4057 62.9315 15.0557 61.9315 16.4357C60.9415 17.8057 59.2615 17.9957 57.7715 16.9157L55.7715 15.4657L59.0815 10.8857H59.0915ZM58.2615 16.1657C59.2815 16.9057 60.3915 16.7557 61.0815 15.8157C61.7715 14.8657 61.5515 13.7657 60.5315 13.0257L59.4215 12.2257L57.1515 15.3657L58.2615 16.1657Z\" fill=\"#68453D\"></path>\n<path d=\"M13.9309 22.7861L15.4609 21.9761L15.1709 23.6861L16.4009 24.8861L14.6909 25.1361L13.9309 26.6861L13.1609 25.1361L11.4609 24.8861L12.6909 23.6861L12.4009 21.9761L13.9309 22.7861Z\" fill=\"#68453D\"></path>\n<path d=\"M66.9898 21.7761L68.5198 20.9761L68.2198 22.6761L69.4598 23.8761L67.7498 24.1261L66.9898 25.6761L66.2198 24.1261L64.5098 23.8761L65.7498 22.6761L65.4598 20.9761L66.9898 21.7761Z\" fill=\"#68453D\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6736_18588\">\n<rect width=\"81\" height=\"81\" fill=\"white\" transform=\"translate(0.5 0.645996)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "SGS GMP Certified Facility",
+            "icon_description": "Audited and certified by SGS under Codex Alimentarius and 21 CFR Part 111 standards. Not self-declared, verified.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_MP9ggk": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"82\" height=\"82\" viewbox=\"0 0 82 82\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6736_18645)\">\n<path d=\"M41 81.146C63.0914 81.146 81 63.2374 81 41.146C81 19.0546 63.0914 1.146 41 1.146C18.9086 1.146 1 19.0546 1 41.146C1 63.2374 18.9086 81.146 41 81.146Z\" stroke=\"#68453D\" stroke-miterlimit=\"10\"></path>\n<path d=\"M60.7998 43.7858C60.5898 43.5758 60.2598 43.5758 60.0598 43.7858L51.6798 52.1658L48.7298 49.2158C48.5198 49.0058 48.1898 49.0058 47.9898 49.2158C47.7898 49.4258 47.7798 49.7558 47.9898 49.9558L51.3098 53.2758C51.4098 53.3758 51.5498 53.4258 51.6798 53.4258C51.8098 53.4258 51.9498 53.3758 52.0498 53.2758L56.8198 48.5058C57.5598 50.1958 57.4498 52.2258 56.2998 53.9258C55.5298 55.0558 54.3298 55.8658 52.9998 56.1758C48.9898 57.0758 45.4698 53.6258 46.2498 49.6258C46.6598 47.5458 48.2698 45.8358 50.3298 45.3358C52.0998 44.9058 53.8698 45.3158 55.2098 46.3958C55.4198 46.5658 55.7098 46.5558 55.8898 46.3658L55.9198 46.3358C56.1198 46.1258 56.1198 45.7758 55.8898 45.5858C54.5698 44.5158 52.8998 44.0058 51.1698 44.1358L47.2698 35.3158V24.8058H47.7398C48.0298 24.8058 48.2698 24.5658 48.2698 24.2758V21.4758C48.2698 21.1858 48.0298 20.9458 47.7398 20.9458H34.5198C34.2298 20.9458 33.9898 21.1858 33.9898 21.4758V24.2758C33.9898 24.5658 34.2298 24.8058 34.5198 24.8058H34.9898V35.3158L24.6898 58.6258C24.3398 59.4058 24.5398 60.3358 25.2498 60.9158C25.5998 61.2058 26.0498 61.3358 26.5098 61.3358H55.7998C56.6498 61.3358 57.4198 60.7758 57.6698 59.8958C57.7898 59.4558 57.7298 58.9958 57.5498 58.5758L56.2398 55.6058C56.7598 55.1258 57.2098 54.5558 57.5498 53.9158C58.6298 51.8958 58.5698 49.5958 57.6098 47.7258L60.8098 44.5258C61.0198 44.3158 61.0198 43.9858 60.8098 43.7858H60.7998ZM35.0498 22.0058H47.2198V23.7558H35.0498V22.0058ZM36.0098 35.6458C36.0298 35.5758 36.0398 35.5058 36.0498 35.4358V24.8158H46.2098V35.4358C46.2298 35.5058 46.2398 35.5758 46.2598 35.6458L50.0898 44.3158C49.1698 44.5358 48.3298 44.9658 47.6098 45.5358H31.6298L35.9998 35.6458H36.0098ZM56.5998 59.0558C56.7198 59.3358 56.6998 59.6358 56.5298 59.8858C56.3598 60.1358 56.0998 60.2858 55.7898 60.2858H26.4498C26.1498 60.2858 25.8798 60.1358 25.7098 59.8858C25.5398 59.6358 25.5198 59.3258 25.6398 59.0558L31.1498 46.5958H46.5398C45.8398 47.4658 45.3398 48.4958 45.1498 49.6258C44.3998 54.1758 48.3098 58.0658 52.8598 57.2758C53.7598 57.1258 54.5998 56.7758 55.3498 56.2758L56.5798 59.0558H56.5998Z\" fill=\"#68453D\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_6736_18645\">\n<rect width=\"81\" height=\"81\" fill=\"white\" transform=\"translate(0.5 0.645996)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "Lab-Tested for Purity",
+            "icon_description": "Three independent tests per batch — fulvic acid, heavy metals, microbial purity. All by Certified Laboratories. All on record.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_QHdzBK": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "svg",
+            "icon_svg": "<svg width=\"82\" height=\"82\" viewbox=\"0 0 82 82\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_6736_18649)\">\n<path d=\"M41 80.646C63.0914 80.646 81 62.7374 81 40.646C81 18.5546 63.0914 0.645996 41 0.645996C18.9086 0.645996 1 18.5546 1 40.646C1 62.7374 18.9086 80.646 41 80.646Z\" stroke=\"#68453D\" stroke-miterlimit=\"10\"></path>\n<path d=\"M62.7995 39.8162L28.5195 18.3462V61.4662H61.9295L40.2795 39.8162H62.8095H62.7995ZM59.9595 60.6562H29.3395V19.8262L59.9595 38.9962H38.3095L59.9595 60.6562Z\" fill=\"#68453D\"></path>\n<mask id=\"mask0_6736_18649\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"28\" y=\"18\" width=\"36\" height=\"44\">\n<path d=\"M63.1595 18.3462H28.5195V61.4662H63.1595V18.3462Z\" fill=\"white\"></path>\n</mask>\n<g mask=\"url(#mask0_6736_18649)\">\n<path d=\"M36.9889 37.9061C40.3589 37.9061 43.0889 35.1761 43.0889 31.8161C42.5589 33.1661 41.5889 34.2961 40.3489 35.0361L39.8289 34.6461L40.8589 33.8761L39.6189 33.5561L40.2689 32.4561L38.9989 32.6361L39.1789 31.3661L38.0789 32.0261L37.7589 30.7861L36.9889 31.8161L36.2189 30.7861L35.8989 32.0261L34.7989 31.3661L34.9789 32.6361L33.7089 32.4561L34.3589 33.5561L33.1189 33.8761L34.1489 34.6461L33.6189 35.0361C32.3889 34.2961 31.4189 33.1661 30.8789 31.8161C30.8789 35.1861 33.6089 37.9061 36.9789 37.9061\" fill=\"#68453D\"></path>\n<path d=\"M41.0095 50.8961L43.5395 49.8261L41.0095 48.7461L42.6695 46.5461L39.9295 46.8861L40.2695 44.1561L38.0695 45.8161L36.9895 43.2661L35.9095 45.8161L33.7095 44.1561L34.0495 46.8861L31.3095 46.5461L32.9795 48.7461L30.4395 49.8261L32.9795 50.8961L31.3095 53.1061L34.0495 52.7661L33.7095 55.5061L35.9095 53.8361L36.9895 56.3761L38.0695 53.8361L40.2695 55.5061L39.9295 52.7661L42.6695 53.1061L41.0095 50.8961Z\" fill=\"#68453D\"></path>\n</g>\n</g>\n<defs>\n<clippath id=\"clip0_6736_18649\">\n<rect width=\"81\" height=\"81\" fill=\"white\" transform=\"translate(0.5 0.145996)\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_alt_text": "Icon Description",
+            "icon_title": "FDA &amp; Nepal Govt. Registered",
+            "icon_description": "Our facility meets both FDA and Nepal Government standards from sourcing from himalayan communities to production commitment to integrity.",
+            "btn_title": "",
+            "btn_link": ""
+          }
+        },
+        "icon_box_nRzpAq": {
+          "type": "icon_box",
+          "settings": {
+            "icon_type_select": "image",
+            "icon_svg": "",
+            "icon_alt_text": "",
+            "icon_title": "",
+            "icon_description": "",
+            "btn_title": "Learn More →",
+            "btn_link": "https://everestshilajit.com/pages/certification"
+          }
+        }
+      },
+      "block_order": [
+        "icon_box_pBwcT4",
+        "icon_box_MQn4gr",
+        "icon_box_MP9ggk",
+        "icon_box_QHdzBK",
+        "icon_box_nRzpAq"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.insec {background: #fff; } .iconbox-wrapper {gap: 12px !important; } .wrapper {gap: 16px !important; padding: 0 16px !important; } .iconbox:not(:last-child) {max-width: calc(50% - 6px) !important; box-shadow: -2px 1px 3.5px 0px #0000001a; padding: 8px !important; gap: 8px; } h3 {margin-bottom: 4px; } .iconbox-content, .button {width: 100%; margin-top: 2px; }}"
+      ],
+      "name": "Icon Box Section",
+      "settings": {
+        "heading_size": "h2",
+        "section_title": "Fusion of <brown>Science</brown> and <brown>Ayurveda</brown>",
+        "section_description": "",
+        "section_image_alt_text": "",
+        "box_title_tag": "h3",
+        "is_image_link": false,
+        "icon_box_slider": "false",
+        "content_iconbox_gap": "5.85rem",
+        "iconbox_gap": "12px 1%",
+        "image_layout": "top",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "24%",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%;max-width:147.2rem;",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#000000",
+        "iconbox_style": "{% style %}\n#shopify-section-{{section.id}}{\n  .icon-box-container {\n    overflow:visible!important;\n  }\n.iconbox:not(:last-of-type) {\n  background: #fff;\n  padding: 1.67%;\n  border-radius: 16px;\n}\n.iconbox:last-of-type {\n  min-width: 100%;\n}\nsvg {\n  width: 8rem;\n  height: 8rem;\n}\nh3 {\n  font-weight: 700;\nmargin-bottom:12px;\n}\n* {\n  letter-spacing: 0;\n}\na {\n  background: #68453d;\n  color: #fff;\n  border-radius: 8px;\n}\n}\n{% endstyle %}"
+      }
+    },
+    "text_video_Y4KafG": {
+      "type": "text-video",
+      "blocks": {
+        "content_hth6jN": {
+          "type": "content",
+          "settings": {
+            "title": "Backed by our in house <brown>Ayurveda Master </brown>(Guru)",
+            "description": "<p>Our team of Ayurvedic experts and nutritionists are here to help you get the most from your Shilajit journey.Our team of Ayurvedic experts and nutritionists are here to help you get the most from your Shilajit journey. </p><p>Our team of Ayurvedic experts and nutritionists are here to help you get the most from your </p>",
+            "button_link": "",
+            "button_text": "Watch Now ‣"
+          }
+        },
+        "video_PH8a4N": {
+          "type": "video",
+          "settings": {
+            "video_type": "self_hosted",
+            "youtube_url": "",
+            "video": "shopify://files/videos/Hero Banner Final.mp4",
+            "video_thumbnail": "shopify://shop_images/dacktar.webp",
+            "video_controls": "true",
+            "video_width": "70.8rem; width:49%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_hth6jN",
+        "video_PH8a4N"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".video-thumbnail div {background: none;}",
+        ".play-button {z-index: -1;}",
+        ".contentcenter {text-align: start; justify-content: start;}",
+        ".basmilVideoText {background: #f5f2ec !important;}",
+        ".button {background: #68453d; color: #ffffff; gap: 8px; padding: 14px 5rem; justify-content: center;}",
+        "@media (max-width: 768px) {.video-thumbnail-container {width: 100% !important; } .imagefirst {flex-direction: column-reverse; gap: 16px; }}"
+      ],
+      "name": "Basmil Video Text",
+      "settings": {
+        "layout": "imagefirst",
+        "show_play_button_on": "content",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "content_width": "50%",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "guru-video",
+        "width": "147.2rem; width:100%;",
+        "minheight": "",
+        "background_type": "color",
+        "background_color": "#f5f2ec",
+        "background_position": "center",
+        "background_size": "cover"
+      }
+    },
+    "custom_liquid_GJdWER": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".custom-liquid,.custom-liquid *:not(svg) {overflow: visible; z-index: 1; height: 0;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script>\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  const guruVideo = document.querySelector(\"#guru-video\");\n  if (!guruVideo) return;\n\n  const button = guruVideo.querySelector(\".button\");\n  const playButton = guruVideo.querySelector(\".play-button\");\n\n  if (button && playButton) {\n    // Replace the \"‣\" with SVG\n    button.innerHTML = button.innerHTML.replace(\n      \"‣\",\n      `<svg style=\"width:3.2rem;\" viewBox=\"0 0 32 33\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n         <circle cx=\"16\" cy=\"16.6465\" r=\"16\" fill=\"white\"/>\n         <path d=\"M12 23.6465V9.64648L23 16.6465L12 23.6465Z\" fill=\"#1D1B20\"/>\n       </svg>`\n    );\n\n    // On click → auto click play button\nbutton.href =\"javascript:void(0)\";    button.addEventListener(\"click\", () => {\n      playButton.click();\n    });\n  }\n});\n</script>",
+        "color_scheme": "background-1",
+        "padding_top": 52,
+        "padding_bottom": 60
+      }
+    },
+    "product_grid_slider_3NWFAj": {
+      "type": "product-grid-slider",
+      "disabled": true,
+      "custom_css": [
+        ".bg-white {background: #e4e4e4;}",
+        ".slick-dots {display: none;}",
+        ".button {margin-top: auto !important;}",
+        ".card-tagline {display: flex !important;}"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "section_description": "",
+        "product_collection": "frontpage",
+        "slider_grid": true,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 4,
+        "products_per_page": 5,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "3.2rem",
+        "iconbox_gap": "1.2rem 16px 1.2rem",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "0",
+        "padding": "11rem 1.4%",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "advance_slider",
+        "width": "100%; max-width:130rem;",
+        "min_height": "",
+        "background_type": "image",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "bottom",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style> \n.advance_slider{\n     .product-section-container{\n         overflow: visible;\n         &&:hover .slick-arrow{\n             opacity:1;\n        }\n    }\n     .product-info{\n         max-height: -webkit-fill-available;\nheight:100%;\njustify-content:start;\n    }\n\n     .card-tagline{\n         order:3;\n    }\n     .button-cart {\n         order:5;\nmargin-top: auto;\n    }\n     .prd-title{\n         order:2 \n    }\n     .prd-rating{\n         order:1;\n    }\n     .prd-price{\n         order:4;\n         *{\n             font-size:2.4rem;\n             font-weight:500;\n             letter-spacing: 0;\n             text-transform: lowercase;\n             color:#252525;\n        }\n         .original-price{\n             font-weight:300;\n             color:#25252580;\n        }\n    }\n.product-price{\ndisplay:flex;\ngap:1rem;\n}\n\n     .slick-arrow{\n         background:#68453D;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         border-radius:50%;\n         width: 4.8rem;\n         height:4.8rem;\n         z-index:1;\n         opacity:0.5;\n    }\n     .slick-prev{\n         left:0;\n         transform: translateX(-100%);\n         &&:before{\n             content:\"‹\";\nmargin-left: 4px;\n        }\n    }\n     .slick-next{\n         right:0;\n         transform: translateX(100%);\n         &&:before{\n             content:\"›\";\n             margin-left:8px;\n        }\n    }\n     .slick-prev:before, .slick-next:before{\n         font-family: sans-serif;\n         opacity:1;\n         width:20px;\n         height:20px;\nmargin-bottom:2px;\n    }\n.button span{\ncolor:#fff!important;}\n\n @media(max-width:1600px){\n     .slick-prev{\ntransform:translateX(-16px);\n}\n\n     .slick-next{\ntransform:translateX(16px);\n}\n}\n\n}\n @media(max-width:600px){\n     #shopify-section-template--19218853625993__product_grid_slider_67XwP3 {\n         && .product-slider {\n             grid-template-columns:1fr 1fr;\n        }\n         && .product-card.product-card.product-card{\n             margin:0!important;\n             *{\n                 text-align:start;\n                 letter-spacing:0;\n            }\n        }\n        tagline,.card-attr{\n         font-size:10px;\n        }\n        h3{\n         font-size:18px;\n         font-weight:600;\n        }\n        .product-price *{\n                 font-size: 14px;\n        }\n.rating-count span{\nfont-size:10px;\n}\n.button span{\nfont-size:12px;\ntext-transform: capitalize;\ntext-align: center!important;\n}\n      }\n\n    }\n</style> \n<script defer> document.addEventListener(\"DOMContentLoaded\", function() {\n         if (window.innerWidth <= 600) {\n             $('#shopify-section-template--19218853625993__product_grid_slider_67XwP3 .product-slider').slick('unslick');\n        }\n  });\n     </script>"
+      }
+    },
+    "product_grid_slider_fcyTGz": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        ".bg-white {background: #e4e4e4;}",
+        ".slick-dots {display: none;}",
+        ".button {margin-top: auto !important;}",
+        ".card-tagline {display: flex !important;}"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "section_description": "",
+        "product_collection": "frontpage",
+        "slider_grid": true,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 4,
+        "products_per_page": 99,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "4rem",
+        "iconbox_gap": "12px 1.2rem!important",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "left",
+        "content_part_width": "32.22%",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "advance_slider",
+        "custom_id": "",
+        "width": "100%; max-width:149.6rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style> \n.advance_slider{\n     .product-section-container{\n         overflow: visible;\n         &&:hover .slick-arrow{\n             opacity:1;\n        }\n    }\n     .product-info{\n         max-height: -webkit-fill-available;\nheight:100%;\njustify-content:start;\n    }\n\n     .card-tagline{\n         order:3;\n    }\n     .button-cart {\n         order:5;\nmargin-top: auto;\n    }\n     .prd-title{\n         order:2 \n    }\n     .prd-rating{\n         order:1;\n    }\n     .prd-price{\n         order:4;\n         *{\n             font-size:2.4rem;\n             font-weight:500;\n             letter-spacing: 0;\n             text-transform: lowercase;\n             color:#252525;\n        }\n         .original-price{\n             font-weight:300;\n             color:#25252580;\n        }\n    }\n.product-price{\ndisplay:flex;\ngap:1rem;\n}\n\n     .slick-arrow{\n         background:#68453D;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         border-radius:50%;\n         width: 4.8rem;\n         height:4.8rem;\n         z-index:1;\n         opacity:0.5;\n    }\n     .slick-prev{\n         left:0;\n         transform: translateX(-100%);\n         &&:before{\n             content:\"‹\";\nmargin-left: 4px;\n        }\n    }\n     .slick-next{\n         right:0;\n         transform: translateX(100%);\n         &&:before{\n             content:\"›\";\n             margin-left:8px;\n        }\n    }\n     .slick-prev:before, .slick-next:before{\n         font-family: sans-serif;\n         opacity:1;\n         width:20px;\n         height:20px;\nmargin-bottom:2px;\n    }\n.button span{\ncolor:#fff!important;}\n\n @media(max-width:1600px){\n     .slick-prev{\ntransform:translateX(-16px);\n}\n\n     .slick-next{\ntransform:translateX(16px);\n}\n}\n\n}\n @media(max-width:600px){\n     #shopify-section-template--19218853625993__product_grid_slider_67XwP3 {\n         && .product-slider {\n             grid-template-columns:1fr 1fr;\n        }\n         && .product-card.product-card.product-card{\n             margin:0!important;\n             *{\n                 text-align:start;\n                 letter-spacing:0;\n            }\n        }\n        tagline,.card-attr{\n         font-size:10px;\n        }\n        h3{\n         font-size:18px;\n         font-weight:600;\n        }\n        .product-price *{\n                 font-size: 14px;\n        }\n.rating-count span{\nfont-size:10px;\n}\n.button span{\nfont-size:12px;\ntext-transform: capitalize;\ntext-align: center!important;\n}\n      }\n\n    }\n</style> \n<script defer> document.addEventListener(\"DOMContentLoaded\", function() {\n         if (window.innerWidth <= 600) {\n             $('#shopify-section-template--19218853625993__product_grid_slider_67XwP3 .product-slider').slick('unslick');\n        }\n  });\n     </script>"
+      }
+    },
+    "faq_fFAwqm": {
+      "type": "faq",
+      "blocks": {
+        "text_XEPM9x": {
+          "type": "text",
+          "settings": {
+            "question": "What are Pure Himalayan shilajit gummies?",
+            "answer": "<p>Pure shilajit extract from Nepal's Everest region, carried into a plant-based gummy. Two gummies per day, 500mg of shilajit extract per serving, no artificial additives, no gelatin, no corn syrup. No preparation needed.</p>"
+          }
+        },
+        "text_gkjBkw": {
+          "type": "text",
+          "settings": {
+            "question": "Are these genuine pure shilajit gummies?",
+            "answer": "<p><br/>Yes. The shilajit extract comes from Nepal's Everest region, above 18,000 ft, hand-collected by Skilled Sherpa collectors. Every batch independently tested by Certified Laboratories, accredited to ISO/IEC 17025:2017. <br/><br/></p>"
+          }
+        },
+        "text_gDQ9Fy": {
+          "type": "text",
+          "settings": {
+            "question": "What makes these the best shilajit gummies to buy?",
+            "answer": "<p>Source, ingredients, and proof. The extract comes from a specific place — Everest region, Nepal, 18,000 ft. The gummy base contains no artificial additives, no gelatin, no corn syrup. Three independent lab reports per batch, all from Certified Laboratories, all on this page.</p>"
+          }
+        },
+        "text_hbTCPq": {
+          "type": "text",
+          "settings": {
+            "question": "How many shilajit gummies per day?",
+            "answer": "<p>Two. One complete serving of 500mg shilajit extract. Do not exceed the recommended dose. Consistency matters more than quantity.</p>"
+          }
+        },
+        "text_Fmdzq7": {
+          "type": "text",
+          "settings": {
+            "question": "When is the best time to take shilajit gummies?",
+            "answer": "<p>Any time of day that fits your routine. No water required. Morning works well for consistency — pick a time and keep it.</p>"
+          }
+        },
+        "text_wU3PWJ": {
+          "type": "text",
+          "settings": {
+            "question": "Are these shilajit gummies suitable for vegans?",
+            "answer": "<p>Yes. Plant-based from extract to finish. No gelatin, no animal-derived ingredients of any kind.</p>"
+          }
+        },
+        "text_tWHdpE": {
+          "type": "text",
+          "settings": {
+            "question": "How long before I notice anything?",
+            "answer": "<p>Most customers reach out somewhere between weeks three and ten. Pure Himalayan shilajit gummies work cumulatively. We recommend a minimum of 30 days before evaluating. Consistency is the only variable that matters.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_XEPM9x",
+        "text_gkjBkw",
+        "text_gDQ9Fy",
+        "text_hbTCPq",
+        "text_Fmdzq7",
+        "text_wU3PWJ",
+        "text_tWHdpE"
+      ],
+      "custom_css": [
+        "* {font-family: var(--font-body-family) !important;}",
+        ".main-section {flex-direction: row; border-top: 1px solid grey; justify-content: space-between; align-items: flex-start;}",
+        ".content-wrapper {max-width: 580px; margin: 0;}",
+        "highlight {margin-top: 4rem; padding: 4rem 4.8rem;}",
+        ".faq-wrapper {max-width: 710px;}",
+        "@media (max-width: 768px) {.main-section {flex-wrap: wrap; border: none; padding-top: 0 !important; } .content-wrapper, .faq-wrapper {max-width: 100%; } h2 {font-size: 3.2rem !important; } highlight {padding: 20px; margin-top: 12px; }}"
+      ],
+      "settings": {
+        "show_schema": true,
+        "heading": "Frequently asked questions",
+        "description": "<highlight style=\"background: #f5f2ec; display: block; border-radius: 10px;\">\nHave a question not answered below?\nOur team is available Monday to Friday.  <br>\nReach us at : \n<a href=\"contact@everestshilajit.com\"> contact@everestshilajit.com </a> \n</highlight>\n<style>\n#product-faq{\nh2 {\n  margin-bottom: 1.6rem;\n  font-size: 6.2rem;\n}\n\n@media(max-width:1600px){\nh2{\n font-size: 4.8rem;\n}\n}\n}\n</style>",
+        "content_alignment": "Left",
+        "content_part_width": "",
+        "faq_width": "100%",
+        "gap_between_sections": "8px 4rem",
+        "padding": "11.55rem 16px 11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "product-faq",
+        "width": "100%; max-width:147.2rem;",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "background_on": "main_section",
+        "background_position": "top",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "1739337128cf7d88b1": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_cC94HC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_cC94HC"
+      ],
+      "custom_css": [
+        ".shopify-block.shopify-app-block {display: block;}",
+        ".jdgm-rev-widg {padding-top: 0px; padding-left: 16px; padding-right: 16px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "lab_tested_quality_t3NkKm",
+    "related-products",
+    "faq_UXJy3G",
+    "icon_box_74C4C7",
+    "slider_with_banner_GLDwpC",
+    "icon_box_wNhLGf",
+    "icon_box_VTexaM",
+    "text_video_Y4KafG",
+    "custom_liquid_GJdWER",
+    "product_grid_slider_3NWFAj",
+    "product_grid_slider_fcyTGz",
+    "faq_fFAwqm",
+    "1739337128cf7d88b1"
+  ]
+}

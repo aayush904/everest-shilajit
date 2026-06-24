@@ -1,0 +1,247 @@
+<style>
+  .date-tour-container {
+    background-color: #fff;
+    padding: 12rem 16px;
+  }
+
+  .date-tour {
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .year-toggle {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #9d7743;
+    width: max-content;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 3.2rem !important;
+  }
+
+  .year-btn {
+    background-color: white;
+    padding: 8px 2.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 100%;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+  }
+
+  .year-btn.active {
+    background-color: #9d7743;
+    border: none;
+    color: white !important;
+  }
+
+  .year-btn:not(:last-child) {
+    border-right: none;
+  }
+
+  .months {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 16px;
+  }
+
+  .month-btn {
+    background: white;
+    padding: 16px 3rem;
+    min-width: max-content;
+    max-width: 47%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .month-btn.active {
+    background-color: #9d7743;
+    color: white;
+    border-color: #9d7743;
+
+    && .blog-text {
+      color: white !important;
+    }
+  }
+
+  .month-btn:hover {
+    background-color: #f3e7d3;
+    color: #9d7743;
+
+    && .blog-text {
+      color: #9d7743 !important;
+    }
+  }
+</style>
+
+<div class="date-tour" id="dates">
+  <h2 class="mb-[3.2rem]">Departure Date</h2>
+  <div class="year-toggle">
+    <selector id="year-1" class="year-btn active base"></selector>
+    <selector id="year-2" class="year-btn base"></selector>
+  </div>
+  <div class="months">
+    <selector class="month-btn blog-text border border-black" id="may-btn"
+      >May <span class="blog-text" id="selected-year-1"></span
+    ></selector>
+    <selector class="month-btn blog-text border border-black" id="nov-btn"
+      >November <span class="blog-text" id="selected-year-2"></span
+    ></selector>
+  </div>
+  <div class="reserve">
+    <a class="button reserve-btn w-full" id="reserve-btn" href="#">RESERVE MY SEAT</a>
+  </div>
+</div>
+
+<script>
+  const yearBtn1 = document.getElementById('year-1');
+  const yearBtn2 = document.getElementById('year-2');
+  const mayBtn = document.getElementById('may-btn');
+  const novBtn = document.getElementById('nov-btn');
+  const reserveBtn = document.getElementById('reserve-btn');
+
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+  function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      selectedDate: params.get('selected_date'),
+    };
+  }
+
+  function initializeYearsAndMonths() {
+    let displayYear1 = currentYear;
+    let displayYear2 = currentYear + 1;
+
+    if (currentMonth >= 5) {
+      mayBtn.style.display = 'none';
+    }
+
+    if (currentMonth >= 11) {
+      displayYear1 = currentYear + 1;
+      displayYear2 = currentYear + 2;
+      mayBtn.style.display = 'block';
+    }
+
+    yearBtn1.innerText = displayYear1;
+    yearBtn2.innerText = displayYear2;
+
+    updateMonthYear(displayYear1);
+
+    yearBtn1.classList.add('active');
+
+    const params = new URLSearchParams(window.location.search);
+    const urlParams = params.get('selected_date');
+    if (urlParams) {
+      const [selectedMonth, selectedYear] = urlParams.split(' ');
+      const targetYearBtn = selectedYear == displayYear1 ? yearBtn1 : yearBtn2;
+      const targetMonthBtn = selectedMonth === 'May' ? mayBtn : novBtn;
+
+
+      selectMonth(targetMonthBtn, targetYearBtn.textContent);
+    } else {
+      // Select the first available button
+      if (mayBtn.style.display !== 'none') {
+        selectMonth(mayBtn, displayYear1);
+      } else {
+        selectMonth(novBtn, displayYear1);
+      }
+    }
+  }
+
+  function updateMonthYear(year) {
+    mayBtn.querySelector('span').innerText = year;
+    novBtn.querySelector('span').innerText = year;
+  }
+
+  function selectMonth(button, year) {
+    // Deselect all month buttons
+    document.querySelectorAll('.month-btn').forEach((btn) => btn.classList.remove('active'));
+
+    // Select the clicked button
+    button.classList.add('active');
+
+    // Update reserve button link
+    const month = button.textContent.split(' ')[0];
+    const display_date = document.getElementById('display_date');
+
+    if (display_date) {
+      document.getElementById('display_date').innerHTML = month + ' ' + year;
+      document.querySelector('#other_summary .display_date').innerHTML = month + ' ' + year;
+    }
+
+    reserveBtn.href = window.location.pathname.includes('pages')
+      ? `{{section.settings.product.url}}?selected_date=${month}%20${year}`
+      : '#';
+  }
+
+  yearBtn1.addEventListener('click', () => {
+    yearBtn1.classList.add('active');
+    yearBtn2.classList.remove('active');
+    updateMonthYear(yearBtn1.innerText);
+    if (mayBtn.style.display !== 'none') {
+      selectMonth(mayBtn, yearBtn1.innerText);
+    } else {
+      selectMonth(novBtn, yearBtn1.innerText);
+    }
+  });
+
+  yearBtn2.addEventListener('click', () => {
+    yearBtn2.classList.add('active');
+    yearBtn1.classList.remove('active');
+    updateMonthYear(yearBtn2.innerText);
+    selectMonth(mayBtn, yearBtn2.innerText);
+  });
+
+  mayBtn.addEventListener('click', () => {
+    const year = document.querySelector('.year-btn.active').innerText;
+    selectMonth(mayBtn, year);
+  });
+
+  novBtn.addEventListener('click', () => {
+    const year = document.querySelector('.year-btn.active').innerText;
+    selectMonth(novBtn, year);
+  });
+
+  initializeYearsAndMonths();
+</script>
+
+{% schema %}
+{
+  "name": "Date Tour",
+  "class": "date-tour-container",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Date Tour"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Departure Date"
+    },
+    {
+      "type": "text",
+      "id": "reserve_btn",
+      "label": "Reserve Button",
+      "default": "RESERVE MY SEAT"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product Page Url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Date Tour"
+    }
+  ]
+}
+{% endschema %}

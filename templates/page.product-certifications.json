@@ -1,0 +1,69 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_certifications": {
+      "type": "product-certifications",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "product": "pure-himalayan-shilajit-resin",
+            "title": "Soft Shilajit Resin"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "product": "pure-shilajit-liquid-drops",
+            "title": "Shilajit Liquid Form"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "product": "himalayan-shilajit-gummies",
+            "title": "Shilajit Gummies"
+          }
+        },
+        "product_4": {
+          "type": "product",
+          "settings": {
+            "product": "himalayan-shilajit-tablets",
+            "title": "Shilajit Dry Drops"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3",
+        "product_4"
+      ],
+      "settings": {
+        "heading": "Product Certifications",
+        "show_breadcrumb": true,
+        "breadcrumb_home": "Home",
+        "card_prefix": "Tested by Certified Laboratories for",
+        "report_label": "View Report",
+        "report_link_target": "_blank",
+        "empty_text": "Certifications coming soon.",
+        "columns_desktop": 5,
+        "background_color": "#ffffff",
+        "card_background": "#ffffff",
+        "padding_top": 84,
+        "padding_bottom": 124
+      }
+    }
+  },
+  "order": [
+    "product_certifications"
+  ]
+}

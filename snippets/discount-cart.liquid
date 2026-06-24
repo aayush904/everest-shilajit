@@ -1,0 +1,108 @@
+<!-- Discount Code CSS -->
+<style>
+  .discount-code-container {
+    margin-bottom: 20px;
+  }
+
+  .cart-discount.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input#discount_code {
+    min-width: 100%;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    color: #333;
+  }
+
+  input#discount_code:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  button.apply-discount-code {
+    padding: 7px 22px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    color: #fff;
+    background-color: #000;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .success-sticker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px dotted green;
+    padding: 8px 10px;
+    background-color: #f9fdf9;
+    color: green;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+</style>
+
+<!-- Discount Code HTML -->
+<div class="discount-code-container">
+  <div class="cart-discount input-wrapper">
+    <label for="discount_code" class="text-[#5C5F6A] font-sans text-[16px] font-medium mt-[20px]">Coupon Code</label>
+    <div class="relative">
+      <input
+        type="text"
+        id="discount_code"
+        name="discount"
+        class="w-full form-control"
+        placeholder="Enter Coupon Code"
+      >
+      <btn class="apply-discount-code absolute top-1/2 right-[15px] cursor-pointer font-sans text-[14px] text-[#0081FE] -translate-y-1/2"
+        >Apply</btn
+      >
+    </div>
+    <p class="error-message" style="display: none;"></p>
+    <div class="success-sticker" style="display: none;">
+      Coupon Applied! <span class="remove-coupon" style="cursor: pointer; color: red;">✖</span>
+    </div>
+  </div>
+</div>
+
+<!-- Discount Code JavaScript -->
+<script>
+  const discountSubmitBtn = document.querySelector('.apply-discount-code');
+  const discountCodeInput = document.querySelector('#discount_code');
+  const errorMessage = document.querySelector('.error-message');
+  const successSticker = document.querySelector('.success-sticker');
+  const removeCouponBtn = successSticker.querySelector('.remove-coupon');
+
+  // Apply Discount Code Handler
+  discountSubmitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const discountCode = discountCodeInput.value.trim().toUpperCase();
+
+    if (!discountCode) {
+      errorMessage.textContent = 'Please enter a discount code.';
+      errorMessage.style.display = 'block';
+      return;
+    }
+
+    errorMessage.style.display = 'none';
+    successSticker.style.display = 'flex';
+    discountCodeInput.style.border = '1px dotted green';
+    discountCodeInput.disabled = true;
+    discountSubmitBtn.style.display = 'none';
+  });
+
+  // Remove Coupon Handler
+  removeCouponBtn.addEventListener('click', () => {
+    successSticker.style.display = 'none';
+    discountCodeInput.style.border = '1px solid gainsboro';
+    discountCodeInput.disabled = false;
+    discountCodeInput.value = '';
+    discountSubmitBtn.style.display = 'block';
+  });
+</script>

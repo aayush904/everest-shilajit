@@ -1,0 +1,605 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+
+<style>
+  ul,
+  ol {
+    margin-left: 20px;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: auto;
+  }
+</style>
+<div class="author-top">
+  <div class="profile flex sm:flex-col w-[57.6%] md:w-full sm:w-full m-auto">
+    <div class="author-img  sm:mx-[auto!important]">
+      {% assign profile_pic_metafield = page.metafields.custom.author_profile_picture %}
+
+      {% if profile_pic_metafield and profile_pic_metafield.value %}
+        <img
+          src="{{ profile_pic_metafield | file_url }}"
+          alt="Profile Picture for {{ page.title }}"
+          class="max-w-[24.4rem] aspect-square object-contain"
+          width=""
+          height=""
+        >
+      {% endif %}
+    </div>
+
+    <div class="author-info w-full  px-[3.2rem] pt-[2.8rem] h-max">
+      <h1>{{ page.title }}</h1>
+
+      <!--
+        <div class="checklist-container">
+        <button class="checklist-btn">✔</button>
+        <p>Fact Checker</p>
+        </div>
+      -->
+{% if page.metafields.custom.author_expertise.value !=blank %}
+      <div class="info-line">
+        <h4 class="min-w-max">Expertise:</h4>
+        <p>{{ page.metafields.custom.author_expertise.value }}</p>
+      </div>
+    {%  endif %}
+    {%  if page.metafields.custom.author_education.value !=blank  %}
+      <div class="info-line">
+        <h4 class="min-w-max">Education:</h4>
+        <p>{{ page.metafields.custom.author_education.value }}</p>
+      </div>
+    {%  endif %}
+
+      <div class="social">
+        <div class="social-icon">
+          {% assign social_links = page.metafields.custom.author_social %}
+          {% if social_links and social_links.value.size > 0 %}
+            {% for link in social_links.value %}
+              {% if link contains 'facebook' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-facebook' -%}
+                </a>
+              {% elsif link contains 'instagram' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-instagram' -%}
+                </a>
+              {% elsif link contains 'youtube' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-youtube' -%}
+                </a>
+              {% elsif link contains 'twitter' or link contains 'x.com' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-twitter' -%}
+                </a>
+              {% elsif link contains 'snapchat' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-snapchat' -%}
+                </a>
+              {% elsif link contains 'pinterest' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-pinterest' -%}
+                </a>
+              {% elsif link contains 'tumblr' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-tumblr' -%}
+                </a>
+              {% elsif link contains 'vimeo' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-vimeo' -%}
+                </a>
+              {% elsif link contains 'medium' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-medium' -%}
+                </a>
+              {% elsif link contains 'linkedin' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-linkedin' -%}
+                </a>
+              {% elsif link contains 'quora' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-quora' -%}
+                </a>
+              {% elsif link contains 'reddit' %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                  {%- render 'icon-reddit' -%}
+                </a>
+              {% else %}
+                <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">{{ link }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+        <!-- <button class="follow">Follow</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="author-middle w-[57.61%] md:w-full sm:w-full">
+  {{ page.content }}
+</div>
+
+<div class="author-end flex flex-col gap-[8rem] ">
+  <style>
+    #shopify-section-{{section.id}} .wrapper{
+      padding: 7.2rem 16px 12rem 16px;
+      margin: 0 auto;
+      max-width: 86.23%;
+      min-height: auto;
+
+      background-color: rgba(0,0,0,0);
+
+      }
+
+      @media(max-width:768px){
+
+
+
+
+            #shopify-section-{{section.id}} .wrapper.wrapper{
+              padding: 7.2rem 16px 6.25rem 16px;
+            }
+
+      }
+  </style>
+  <h2 class="text-tertiary">Blogs by the Writer</h2>
+
+  {% comment %}
+    <div
+      class="
+             blog-grid sm:grid-cols-1
+        w-[82.61%] md:w-full sm:w-full
+
+             grid-cols-3 md:grid-cols-2 m-auto
+
+
+             grid
+
+             gap-[7rem] md:gap-[3rem]
+      "
+    >
+      <script>
+       var article = [
+      {%- for article in blogs['mad-honey'].articles limit: 99999 -%}
+        {% if article.author contains page.title %}
+           `<div class="blog-articles__article article ">
+            {%- render 'article-card',
+            article: article,
+            media_height: 'adapt',
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: true,
+            show_date: true,
+            show_author: false,
+            show_excerpt: true
+            -%}
+          </div>`
+        {% endif %}
+      {%- endfor -%}
+    ];
+      </script>
+    </div>
+  {% endcomment %}
+  <div class="search-container mb-4 px-[16px] m-auto w-full flex justify-center">
+    <input
+      type="text"
+      id="searchBox"
+      class="search-box text-base field__input max-w-[33%] sm:max-w-full m-auto p-2 border rounded"
+      placeholder="Search blogs..."
+    >
+  </div>
+  <div
+    id="blogContainer"
+    class="
+      blog-grid sm:grid-cols-1
+      w-[82.61%] md:w-full sm:w-full
+      grid-cols-3 md:grid-cols-2 m-auto
+      grid
+      gap-[7rem] md:gap-[3rem]
+    "
+  ></div>
+  <button
+    id="loadMore"
+    class="load-more-btn button mt-4 w-[28%] sm:w-full m-auto"
+  >
+    Load More
+  </button>
+
+  <script>
+    // Initialize blog data and load control
+    const blogs = [
+      {%- for article in blogs['shilajit'].articles limit: 99999 -%}
+        {% if article.author contains page.title %}
+        {
+          content: `
+            <div class="blog-articles__article article">
+            {%- render 'article-card',
+            article: article,
+            media_height: 'adapt',
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: true,
+            show_date: true,
+            show_author: false,
+            show_excerpt: true
+            -%}
+            </div>
+          `,
+          title: `{{ article.title }}`, // Add blog title for search filtering
+          excerpt: `{{ article.excerpt }}`, // Add blog excerpt for search filtering
+        },
+        {% endif %}
+      {%- endfor -%}
+    ];
+  
+    let currentIndex = 0; // Tracks the current position in the blogs array
+    const blogsPerView = 6; // Number of blogs to show per load
+    const blogContainer = document.getElementById("blogContainer");
+    const loadMoreButton = document.getElementById("loadMore");
+  
+    let filteredBlogs = blogs; // Stores blogs after filtering
+  
+    // Function to render blogs
+    const renderBlogs = (append = false) => {
+      const nextBlogs = filteredBlogs.slice(currentIndex, currentIndex + blogsPerView);
+  
+      if (!append) {
+        // Clear container if not appending
+        blogContainer.innerHTML = "";
+      }
+  
+      nextBlogs.forEach((blog) => {
+        const articleElement = document.createElement("div");
+        articleElement.innerHTML = blog.content;
+        blogContainer.appendChild(articleElement);
+      });
+  
+      currentIndex += blogsPerView;
+  
+      // Hide button if all blogs are loaded
+      if (currentIndex >= filteredBlogs.length) {
+        loadMoreButton.style.display = "none";
+      } else {
+        loadMoreButton.style.display = "block";
+      }
+    };
+  
+    // Function to filter blogs based on search input
+    const filterBlogs = (keyword) => {
+      currentIndex = 0; // Reset current index
+      filteredBlogs = blogs.filter(
+        (blog) =>
+          blog.title.toLowerCase().includes(keyword.toLowerCase()) ||
+          blog.excerpt.toLowerCase().includes(keyword.toLowerCase())
+      );
+      renderBlogs(); // Render filtered blogs
+    };
+  
+    // Load initial blogs
+    renderBlogs();
+  
+    // Add event listener to the "Load More" button
+    loadMoreButton.addEventListener("click", () => renderBlogs(true));
+  
+    // Add event listener to the search box
+    document.getElementById("searchBox").addEventListener("input", (event) => {
+      const searchKeyword = event.target.value.trim();
+      filterBlogs(searchKeyword);
+    });
+  </script>
+</div>
+
+<style>
+  .author-img {
+    aspect-ratio: 1/1;
+    mix-blend-mode: multiply;
+    margin: auto;
+    flex-shrink: 0;
+  }
+
+  .author-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    background: rgba(190, 147, 95, 0.06);
+
+    gap: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .author-top .profile {
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .author-info * {
+    max-width: max-content;
+  }
+
+  .checklist-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .checklist-container p {
+    margin: 0;
+    font-size: 16px;
+    color: rgba(56, 46, 42, 1);
+    font-weight: bold;
+  }
+  .checklist-btn {
+    width: 40px;
+    height: 20px;
+    background-color: transparent;
+    color: rgba(173, 134, 87, 1);
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid rgba(173, 134, 87, 1);
+    border-color: rgba(56, 46, 42, 1);
+    border-radius: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 8px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .checklist-btn:hover {
+    background-color: transparent;
+  }
+
+  .checklist-btn:active {
+    transform: scale(0.95);
+  }
+
+  .author-info h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(173, 134, 87, 1);
+    margin-bottom: 12px;
+    font-family: var(--font-body-family), sans-serif;
+  }
+
+  .info-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .info-line h4 {
+    margin: 0;
+    font-size: 16px;
+    width: max-content;
+    font-weight: 700;
+    color: rgba(173, 134, 87, 1);
+    margin-bottom: 12px;
+    font-family: var(--font-body-family), sans-serif;
+  }
+
+  .info-line p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(56, 46, 42, 1);
+    width: max-content;
+    margin-bottom: 12px;
+  }
+
+  .social-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .social-icon a {
+    width: max-content;
+  }
+
+  .social-icon svg {
+    width: 32px;
+    height: 32px;
+  } /* .follow{ color: rgba(255, 255, 255, 1); font-family:
+"var(--font-body-family)",sans-serif; font-weight: 500; font-size: 12px; background-color: rgba(190, 147, 95, 1); width: 100%; height:
+38px; border: none; border-radius: 10px; } */
+  .author-middle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bullet-list {
+    list-style-type: disc;
+    margin: 10px;
+    padding-left: 40px;
+    font-family: 'Crimson Text', sans-serif;
+    color: rgba(56, 46, 42, 1);
+    font-size: 20px;
+    padding-bottom: 48px;
+  }
+  .bullet-list li {
+    margin-bottom: 10px;
+  }
+  .author-middle {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+  .highlights h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(173, 134, 87, 1);
+  }
+
+  .author-end {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 14rem;
+    margin-top: 14rem;
+    padding: 0 16px;
+  }
+
+  .author-end h2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .author-end h2::before,
+  .author-end h2::after {
+    content: ''; /* Add empty pseudo-elements for the lines */
+    flex-grow: 1;
+    /* Make the lines stretch as much as possible */
+    height: 1.5px; /* Thickness of the lines */
+    background-color: rgba(190, 147, 95, 1); /* Line color */
+  }
+
+  .blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 80.45%;
+    margin: auto;
+    margin-top: 100px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1024px) {
+    .author-info h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: rgba(173, 134, 87, 1);
+    }
+
+    .info-line {
+      gap: 10px;
+    }
+
+    .info-line h4 {
+      font-size: 16px;
+    }
+
+    .info-line p {
+      font-size: 14px;
+    }
+    .blog {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      width: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .blog-box {
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .author-top {
+      margin-bottom: 40px;
+    }
+
+    .author-img {
+      max-width: 343px;
+      height: max-content;
+      margin: 0;
+    }
+
+    .author-img img {
+      width: 100%;
+      border-radius: none;
+    }
+
+    .author-info {
+      margin: auto;
+    }
+
+    .author-info h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: rgba(173, 134, 87, 1);
+    }
+
+    .author-info p {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: rgba(56, 46, 42, 0.8);
+    }
+
+    .info-line {
+      margin-bottom: 12px;
+    }
+
+    .info-line h4 {
+      font-size: 16px;
+      color: rgba(173, 134, 87, 1);
+      margin-right: 5px;
+    }
+
+    .info-line p {
+      font-size: 14px;
+    }
+
+    .blog {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 50px;
+    }
+
+    .blog-box {
+      padding: 10px;
+    }
+  }
+</style>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ page.title | escape }}",
+  "url": "{{ page.url | escape }}",
+  {% if page.metafields.custom.author_profile_picture %}
+  "image": "{{ page.metafields.custom.author_profile_picture | file_url }}",
+  {% endif %}
+  {% if page.content != blank %}
+  "description": {{ page.content | strip_html | strip_newlines | truncate: 300 | json }},
+  {% endif %}
+  {% if page.metafields.custom.author_expertise.value != blank %}
+  "knowsAbout": {{ page.metafields.custom.author_expertise.value | json }},
+  {% endif %}
+  {% if page.metafields.custom.author_education.value != blank %}
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": {{ page.metafields.custom.author_education.value | json }}
+  },
+  {% endif %}
+  {% if page.metafields.custom.author_social and page.metafields.custom.author_social.value.size > 0 %}
+  "sameAs": [
+    {% for link in page.metafields.custom.author_social.value %}
+      "{{ link }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  {% endif %}
+}
+</script>
+
+
+{% schema %}
+{
+  "name": "Author",
+  "tag": "section",
+  "class": "section author-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Author"
+    }
+  ]
+}
+{% endschema %}

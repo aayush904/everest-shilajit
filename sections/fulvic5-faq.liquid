@@ -1,0 +1,354 @@
+{% if section %}
+  {% assign sections = section.settings %}
+{% endif %}
+
+<style>
+    #shopify-section-{{ section.id }} {
+      {% if sections.background_on == 'main_section' %}
+        {% if sections.background_type == 'color' and sections.background_color != blank %}
+          background: {% if sections.background_gradient != blank%}{{sections.background_gradient}} {% else %} {{ sections.background_color }}
+      {% endif %};
+    {% elsif sections.background_type == 'image' and sections.background_image != blank %}
+      background: {% if sections.background_gradient != blank%}{{sections.background_gradient}},{% endif %}url('{{ sections.background_image | image_url }}') no-repeat{{ ' '}}{{ sections.background_position }};
+      background-size: {{ sections.background_size }};
+    {% endif %};
+  {% endif %};
+
+  && .faq-wrapper{
+    width: {{ sections.faq_width }};
+  }
+  }
+
+  #shopify-section-{{ section.id }} .main-section{
+    gap: {{ section.settings.gap_between_sections }};
+      padding: {{ section.settings.padding }};
+      margin: {{ section.settings.margin }};
+      max-width: {{ section.settings.width }};
+      width:100%;
+      min-height: {{ section.settings.min_height }};
+      {% if sections.background_on == 'content_part' %}
+        {% if sections.background_type == 'color' and sections.background_color %}
+          background: {{ sections.background_color }};
+        {% elsif sections.background_type == 'image' and sections.background_image %}
+          background: url('{{ sections.background_image  | image_url }}') no-repeat {{ sections.background_position }};
+          background-size: {{ sections.background_size }};
+        {% endif %};
+      {% endif %};
+  }
+
+
+  #shopify-section-{{ section.id }} .content-wrapper {
+    width: 100%;
+    margin: auto;
+    max-width: {{ sections.content_part_width }};
+    text-align: {{ sections.content_alignment }};
+  }
+  @media (max-width: 1167px) {
+    #shopify-section-{{ section.id }} {
+   && .faq-wrapper {
+      width: 100%;
+    }
+  }
+  }
+
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .main-section{
+        max-width:100%;
+  }
+      #shopify-section-{{ section.id }} .main-wrapper {
+        padding: {% render 'mobile_spacing'  padding: sections.padding %}!important;
+      }
+
+      #shopify-section-{{ section.id }} .content-wrapper {
+        max-width: 100%;      }
+  }
+</style>
+
+<section
+  class="main-section flex flex-col justify-center mx-auto py-8  {{ section.settings.custom_class }}"
+  id="{{ section.settings.custom_id }}"
+  style=""
+>
+  {% if section.settings.heading or section.settings.description %}
+    <div class="content-wrapper">
+      {% if section.settings.heading %}
+        <h2
+          {% if section.settings.heading_color %}
+            style="color: {{ section.settings.heading_color }};"
+          {% endif %}
+        >
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      {% if section.settings.description %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div
+    class="faq-wrapper flex items-center justify-center m-auto faqs-section w-full"
+    style="color:{{ sections.content_color }};"
+  >
+    <div class="w-full transition-all ">
+      {% for block in section.blocks %}
+        <div class="border-b  w-full  border-gray-200 transition-all ">
+          <details
+            class="group py-[3.2rem] transition-all"
+            style="{% if forloop.last %} padding-bottom:2rem;{% endif %}"
+            name="faq"
+            {% if forloop.index0 == 0 %}
+              open
+            {% endif %}
+          >
+            <summary class="flex flex-nowrap justify-between items-center font-medium cursor-pointer list-none  group-open:text-tertiary transition-all group-open:text-[2.4rem] group-open:leading-none">
+              <span class="m-0 transition-all group font-semibold   group-open:text-primary font-serif">
+                {{- block.settings.question -}}
+              </span>
+              <span class="transition group-open:rotate-180 group-open:text-primary">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      
+                      <path d="M10 13.9375L16 19.9375L22 13.9375" stroke="#020403" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+              </span>
+            </summary>
+            <div class="text-neutral-600 mt-6 group-open:animate-fadeIn pb-12" style="margin-right:2rem;">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.show_schema %}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for block in section.blocks %}
+      {
+        "@type": "Question",
+        "name": "{{ block.settings.question }}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ block.settings.answer | strip_newlines | strip_html}}"
+        }
+      }{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ]
+  }
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Will Fulvic Acid Expiry?",
+  "class": "faq-section",
+  "settings": [
+            {
+    "type": "checkbox",
+    "id": "show_schema",
+    "label": "Show Schema",
+    "default":false
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "default": "Left",
+      "options": [
+        {
+          "value": "Left",
+          "label": "Left"
+        },
+        {
+          "value": "Center",
+          "label": "Center"
+        },
+        {
+          "value": "Right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "content_part_width",
+      "label": "Content Part Width",
+      "default": "50%"
+    },
+    {
+      "type": "text",
+      "id": "faq_width",
+      "label": "FAQ Part Width",
+      "default": "51rem"
+    },
+    {
+      "type": "text",
+      "id": "gap_between_sections",
+      "label": "Gap Between Content and FAQ",
+      "default": "5.4rem"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Section Padding",
+      "default": "11rem 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Section Margin",
+      "default": "0 auto"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Section Width",
+      "default": "120rem"
+    },
+    {
+      "type": "text",
+      "id": "min_height",
+      "label": "Section Height"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "eg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Choose Background on",
+      "default": "content_part",
+      "options": [
+        {
+          "value": "content_part",
+          "label": "Content Part"
+        },
+        {
+          "value": "main_section",
+          "label": "Main Section"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "faq-question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

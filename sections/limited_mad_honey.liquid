@@ -1,0 +1,169 @@
+{% assign sections = section.settings %}
+<div
+  class="main-wrapper relative py-[7.8rem] px-[16px] overflow-visible"
+  style="
+    background-image:
+      {% if sections.background_type == 'svg' %}
+    none
+     {% else %}
+      url('{{ sections.background_image | image_url }}')
+    {% endif %};
+    background-color: {{ sections.background_color }};
+  "
+>
+  {% if sections.background_type == 'svg' %}
+    <div class="background-svg max-w-full h-full w-full absolute top-0 left-0 z-0">
+      {{ sections.background_svg | raw }}
+    </div>
+  {% endif %}
+
+  <div class="flex max-w-[84.33%] md:max-w-[116.6rem] m-auto sm:max-w-[116.6rem] z-[1] relative xxl:max-w-[160rem]">
+    <div class="flex  items-center w-full justify-between pt-[16rem] gap-[6rem_7.2%] sm:flex-wrap sm:justify-around">
+      <div class="text-center w-[20.4%] sm:order-2 sm:w-[80%]">
+        <h1 class="font-semibold">{{ section.blocks[0].settings.heading }}</h1>
+        <p>{{ section.blocks[0].settings.subheading }}</p>
+      </div>
+      <div class="flex flex-col center-container relative w-[30.9%] gap-[7rem_7.2%] group sm:order-1 sm:w-[60%]">
+        <div
+          class="absolute top-[-12rem] left-1/2 w-full flex justify-center"
+          style="transform: translateX(-50%) scale(1.8);"
+        >
+          <svg
+            class="text-curve"
+            style="float:left;  max-width:800px; max-height:600px;"
+            viewBox="0 0 300 180"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path transform="translate(10, 10)" id="SunCatcherStudio" fill="none" stroke="none" d="M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z"></path>
+            <text font-size="30" fill="#E0AF7E" letter-spacing="1.6" font-family="Lora, sans-serif" font-weight="bold">
+              <textPath xlink:href="#SunCatcherStudio" side="right" startOffset="8">{{sections.title}}</textPath>
+            </text>
+          </svg>
+        </div>
+
+        {% if sections.image_type == 'svg' %}
+          <div class="image-svg w-full group-hover:scale-[1.2] transition-all">
+            {{ sections.image_svg | raw }}
+          </div>
+        {% else %}
+          <img
+            src="{{ sections.image | image_url}}"
+            alt="{{ sections.image.alt | default: 'Limited Mad Honey'}}"
+            class="w-full group-hover:scale-[1.2] transition-all"
+            width=""
+            height=""
+          >
+        {% endif %}
+        <a href="{{ sections.button_link }}" class="button bg-black text-white  text-center">Add To Cart</a>
+      </div>
+      <div class="text-center w-[20.4%] sm:order-3 sm:w-[80%]">
+        <h2 class="font-semibold">{{ section.blocks[1].settings.heading }}</h2>
+        <p>{{ section.blocks[1].settings.subheading }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center items-center"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Limited Mad Honey Banner",
+  "class": "index-section limited-mad-honey dark",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Limited Mad Honey Banner"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Limited Mad Honey"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "#"
+    },
+    {
+      "type": "radio",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "svg", "label": "SVG" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Upload the background image to use if 'Image' is selected as the background type."
+    },
+    {
+      "type": "textarea",
+      "id": "background_svg",
+      "label": "Background SVG Code",
+      "info": "Paste the SVG code for the background if 'SVG' is selected as the background type."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "radio",
+      "id": "image_type",
+      "label": "Image Type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "svg", "label": "SVG" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Upload the main image to use if 'Image' is selected as the image type."
+    },
+    {
+      "type": "textarea",
+      "id": "image_svg",
+      "label": "Image SVG Code",
+      "info": "Paste the SVG code for the main image if 'SVG' is selected as the image type."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content Limited Mad Honey",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Limited Mad Honey"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Get it while it lasts"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Limited Mad Honey Banner",
+      "category": "Limited Mad Honey Banner"
+    }
+  ]
+}
+{% endschema %}

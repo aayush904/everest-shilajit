@@ -1,0 +1,324 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    .wrapper {
+      width: {{ section.settings.width }};
+      min-height: {{ section.settings.minheight }};
+      margin: {{ section.settings.section_margin }};
+      padding: {{ section.settings.padding }};
+      overflow: hidden;
+      position: relative;
+      {% if section.settings.background_on == 'content_part' %}
+        {% if section.settings.background_type == 'color' and section.settings.background_color %}
+          background: {{ section.settings.background_color }};
+        {% elsif section.settings.background_type == 'image' and section.settings.background_image %}
+          background: url('{{ section.settings.background_image | image_url }}') no-repeat {{ section.settings.background_position }};
+          background-size: {{ section.settings.background_size }};
+        {% endif %}
+      {% endif %}
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 16px;
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+
+    .slide {
+      flex: 0 0 calc(16.66% - 16px);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .slide video {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .slide p {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #333;
+    }
+
+    .skeleton-slide {
+      flex: 0 0 calc(16.66% - 16px);
+      background: #ddd;
+      aspect-ratio: 9/16;
+      border-radius: 8px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 35%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .nav-btn.left { left: 8px; }
+    .nav-btn.right { right: 8px; }
+
+    @keyframes pulse {
+      0%, 100% { background: #ddd; }
+      50% { background: #f5f5f5; }
+    }
+
+    @media(max-width:1024px){ .slide { flex: 0 0 calc(25% - 16px); } }
+    @media(max-width:768px){ .slide { flex: 0 0 calc(33.33% - 16px); } }
+    @media(max-width:480px){ .slide { flex: 0 0 calc(50% - 16px); } }
+  }
+</style>
+
+<div class="wrapper" id="insta-wrapper-{{ section.id }}">
+  <button class="nav-btn left" aria-label="Previous">&#10094;</button>
+  <div class="slider-track" id="reels-track">
+    {% for i in (1..6) %}
+      <div class="skeleton-slide"></div>
+    {% endfor %}
+  </div>
+  <button class="nav-btn right" aria-label="Next">&#10095;</button>
+</div>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const apiURL = '{{ section.settings.api }}';
+  const track = document.getElementById('reels-track');
+  const leftBtn = document.querySelector('#insta-wrapper-{{ section.id }} .nav-btn.left');
+  const rightBtn = document.querySelector('#insta-wrapper-{{ section.id }} .nav-btn.right');
+
+  const CACHE_KEY = 'instaReelsCache';
+  const CACHE_TIME = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  function renderReels(reels) {
+    track.innerHTML = '';
+    reels.forEach(reel => {
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+
+      const link = document.createElement('a');
+      link.href = reel.permalink;
+      link.target = '_blank';
+      link.ariaLabel=reel.caption;
+
+      const video = document.createElement('video');
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.poster = reel.thumbnail_url;
+
+      const loadVideo = () => {
+        video.src = reel.media_url;
+        video.autoplay = true;
+        video.play();
+      };
+
+      // Use Intersection Observer
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadVideo();
+            obs.unobserve(video); // stop observing once loaded
+          }
+        });
+      }, {
+        rootMargin: '200px' // start loading a bit before visible
+      });
+
+      // Start observing
+      observer.observe(video);
+
+
+
+
+      const caption = document.createElement('p');
+      caption.textContent = (reel.caption || '').split(' ').slice(0, 10).join(' ') + '...';
+
+      link.appendChild(video);
+      slide.appendChild(link);
+      slide.appendChild(caption);
+      track.appendChild(slide);
+    });
+
+    initSlider(track, leftBtn, rightBtn);
+  }
+
+  // Check cache
+  const cachedData = localStorage.getItem(CACHE_KEY);
+  if (cachedData) {
+    const parsed = JSON.parse(cachedData);
+    const now = new Date().getTime();
+    if (now - parsed.timestamp < CACHE_TIME) {
+      renderReels(parsed.reels);
+      return;
+    }
+  }
+
+  // Fetch new data if no cache or expired
+  fetch(apiURL)
+    .then(r => r.json())
+    .then(tokenData => {
+      const token = tokenData.token;
+      const fields = 'id,caption,media_url,thumbnail_url,permalink,media_type';
+      const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${token}&limit=150`;
+      return fetch(url);
+    })
+    .then(r => r.json())
+    .then(data => {
+      const reels = data.data.filter(item => item.media_type === 'VIDEO');
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ reels, timestamp: new Date().getTime() }));
+      renderReels(reels);
+    })
+    .catch(err => console.error('Error fetching Instagram Reels:', err));
+
+  function initSlider(track, leftBtn, rightBtn) {
+    let position = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let autoSlideInterval;
+
+    const slideWidth = () => track.querySelector('.slide').offsetWidth + 16;
+
+    const update = () => {
+      const width = slideWidth();
+      const visible = Math.round(track.offsetWidth / width);
+      const total = track.children.length;
+      const maxPos = -(width * (total - visible));
+      track.style.transform = `translateX(${position}px)`;
+      leftBtn.disabled = position === 0;
+      rightBtn.disabled = position <= maxPos;
+    };
+
+    const slideLeft = () => { position = Math.min(position + slideWidth() * 2, 0); update(); };
+    const slideRight = () => {
+      const width = slideWidth();
+      const visible = Math.round(track.offsetWidth / width);
+      const total = track.children.length;
+      const maxPos = -(width * (total - visible));
+      position = Math.max(position - width * 2, maxPos);
+      update();
+    };
+
+    leftBtn.onclick = slideLeft;
+    rightBtn.onclick = slideRight;
+
+    const autoSlide = () => {
+      const width = slideWidth();
+      const visible = Math.round(track.offsetWidth / width);
+      const total = track.children.length;
+      const maxPos = -(width * (total - visible));
+      position = position <= maxPos ? 0 : position - width;
+      update();
+    };
+
+    const startAutoSlide = () => { autoSlideInterval = setInterval(autoSlide, 4000); };
+    const stopAutoSlide = () => { clearInterval(autoSlideInterval); };
+
+    // Auto slide
+    startAutoSlide();
+
+    // Pause on hover
+    track.parentElement.addEventListener('mouseenter', stopAutoSlide);
+    track.parentElement.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch swipe
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      currentX = startX;
+      isDragging = true;
+      stopAutoSlide();
+      track.style.transition = 'none';
+    });
+
+    track.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${position + diff}px)`;
+    });
+
+    track.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      const diff = currentX - startX;
+      track.style.transition = 'transform 0.4s ease';
+      if (Math.abs(diff) > 50) diff < 0 ? slideRight() : slideLeft();
+      else update();
+      isDragging = false;
+      startAutoSlide();
+    });
+
+    window.addEventListener('resize', update);
+    update();
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Instagram Reels",
+  "settings": [
+    { "type": "text", "id": "api", "label": "API to Get Insta Posts" },
+    { "type": "text", "id": "width", "label": "Width" },
+    { "type": "text", "id": "minheight", "label": "Min Height" },
+    { "type": "text", "id": "padding", "label": "Padding" },
+    { "type": "text", "id": "section_margin", "label": "Section Margin" },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Background On",
+      "options": [
+        { "value": "content_part", "label": "Content Part" },
+        { "value": "full_part", "label": "Full Part" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        { "value": "color", "label": "Color" },
+        { "value": "image", "label": "Image" }
+      ]
+    },
+    { "type": "color", "id": "background_color", "label": "Background Color" },
+    { "type": "image_picker", "id": "background_image", "label": "Background Image" },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Reels"
+    }
+  ]
+}
+{% endschema %}

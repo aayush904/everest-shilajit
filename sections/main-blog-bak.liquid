@@ -1,0 +1,495 @@
+{% comment %}
+  {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+  {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <style>
+    .skeleton-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6.5%;
+      font-family: Arial, sans-serif;
+    }
+
+    .skeleton-card {
+      background: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .skeleton-image {
+      height: 200px;
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    .skeleton-content {
+      padding: 16px;
+    }
+
+    .skeleton-title {
+      height: 24px;
+      width: 80%;
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      margin-bottom: 12px;
+    }
+
+    .skeleton-date {
+      height: 16px;
+      width: 30%;
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      margin-bottom: 12px;
+    }
+
+    .skeleton-text {
+      height: 16px;
+      width: 100%;
+      background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      margin-bottom: 8px;
+    }
+
+    .skeleton-text:last-child {
+      width: 80%;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .tags {
+      scrollbar-width: none;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .tags::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tags a {
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  </style>
+
+  {%- paginate blog.articles by 6 -%}
+    <div
+      class="flex sm:flex-col gap-[3.2rem] capitalize justify-between  sm:items-center items-end w-full mx-auto page-width"
+      style=" text-align: {{ section.settings.content_alignment }};"
+    >
+      <h1 class="p-[1rem] leading-[5.2rem] inline border-b border-black text-black">
+        {% if current_tags.size > 0 %}
+          {{ current_tags -}}
+        {%- else -%}
+          Recent
+        {%- endif %}
+      </h1>
+      <!--
+        <div class="relative p-[1.1rem_2.4rem] pl-[7.4rem] border-[1.5px] border-black rounded-[28px] h-[4.8rem] w-max">
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+            class="w-[1.8rem] h-[1.8rem] absolute left-[2.4rem] top-1/2 -translate-y-1/2  text-[#666666]"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.4312 12.8724C10.0384 13.9852 8.27225 14.5226 6.49559 14.3739C4.71893 14.2253 3.06661 13.4021 1.87799 12.0732C0.689369 10.7444 0.0546749 9.0109 0.104264 7.22873C0.153853 5.44655 0.88396 3.75101 2.14463 2.49034C3.40531 1.22966 5.10085 0.499556 6.88302 0.449967C8.6652 0.400378 10.3987 1.03507 11.7275 2.22369C13.0564 3.41231 13.8796 5.06463 14.0282 6.84129C14.1769 8.61795 13.6395 10.3841 12.5266 11.7769L17.8549 17.1041C17.931 17.1751 17.9921 17.2607 18.0345 17.3557C18.0768 17.4508 18.0996 17.5534 18.1014 17.6575C18.1033 17.7616 18.0841 17.8649 18.0452 17.9614C18.0062 18.058 17.9482 18.1456 17.8746 18.2192C17.801 18.2928 17.7133 18.3508 17.6168 18.3898C17.5203 18.4288 17.4169 18.4479 17.3128 18.4461C17.2088 18.4443 17.1061 18.4215 17.0111 18.3791C16.916 18.3368 16.8304 18.2757 16.7595 18.1995L11.4312 12.8724ZM3.24048 11.2582C2.48201 10.4996 1.96542 9.53325 1.75601 8.48118C1.5466 7.42912 1.65377 6.33859 2.06396 5.34741C2.47416 4.35624 3.16898 3.50891 4.06061 2.91251C4.95223 2.31611 6.00064 1.99741 7.07335 1.99669C8.14605 1.99597 9.19489 2.31326 10.0873 2.90845C10.9797 3.50365 11.6757 4.35005 12.0872 5.34067C12.4988 6.33129 12.6074 7.42168 12.3994 8.47402C12.1914 9.52636 11.6761 10.4934 10.9187 11.253L10.9135 11.2582L10.9083 11.2623C9.89053 12.2778 8.51128 12.8477 7.07355 12.8469C5.63583 12.8461 4.25719 12.2747 3.24048 11.2582Z"
+              fill="black"
+              fill-opacity="0.6" />
+          </svg>
+
+          <input
+            type="text"
+            id="search-query"
+            placeholder="Search blogs..."
+            class="text-[2rem] leading-none focus-visible:shadow-none p-0 border-none w-full h-full bg-transparent outline-none active:outline-none box shadow-[none!important]"
+          >
+        </div>
+      -->
+    </div>
+
+    <div class=" tags overflow-x-auto flex px-[16px] capitalize text-[#666666] font-sans  mx-auto text-[1.2rem] w-full py-[16px] page-width md:max-w-[116.6rem] sm:max-w-[116.6rem] gap-[6rem]">
+      {%- for tag in blog.all_tags -%}
+        <a class="inline-block min-w-max " href="{{ blog.url | append: '/tagged/' | append: tag.handle }}">{{ tag }}</a>
+      {%- endfor -%}
+    </div>
+
+    <!--
+      <div class="relative pt-[8.8rem!important] main-blog m-auto page-width section-{{ section.id }}-padding max-w[85.35%] md:max-w-[116.6rem] sm:max-w-[116.6rem] w-full">
+        <div
+          id="blog-listing"
+          class="blog-articles px-0 pb-[12rem]   gap-[6rem_2.4rem!important] {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}"
+        >
+          {% assign sorted_articles = blog.articles | sort: 'published_at' %}
+
+          {%- for article in sorted_articles reversed -%}
+            <article class="blog-articles__article article">
+              {%- render 'article-card',
+                article: article,
+                media_height: section.settings.image_height,
+                media_aspect_ratio: article.image.aspect_ratio,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: true
+              -%}
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+                {% if blog.articles_count > 6 %}
+        <div class="relative flex  items-center justify-center pt-[8.8rem!important] pb-[12rem!important] main-blog m-auto page-width section-{{ section.id }}-padding page-width md:max-w-[116.6rem] sm:max-w-[116.6rem] w-full">
+          <div class="w-full  z-0 pb-[1px] bg-black empty:block absolute  -translate-y-1/2 left-0"></div>
+
+          <div
+            id="pagination"
+            data-page="1"
+            class="flex relative w-[34.13%] z-10 px-[2.7rem] -mt-2 bg-[#F7F6F1] sm:w-[60%] items-center justify-center gap-[2.7rem]"
+          >
+            <button
+              id="btn-prev"
+              {%- if paginate.previous -%}
+              {%- else -%}
+                disabled
+              {%- endif -%}
+              {{ ' ' }}
+              class="disabled:text-gray-400 disabled:hover:text-gray-400 flex text-[2.4rem] md:text-[2rem] sm:text-[1.8rem] hover:text-tertiary font-medium font-sans no-underline items-center gap-[8px] pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
+            >
+              <span class="-scale-x-[1] mt-2">{% render 'icon-caret' %}</span>
+
+              Prev
+            </button>
+
+            <div class="empty:block border-b border-dashed w-screen border-black max-w-[9.7%] h-1"></div>
+
+            <button
+              id="btn-next"
+              {%- if paginate.next -%}
+              {%- else -%}
+                disabled
+              {%- endif -%}
+              {{ ' ' }}
+              class="disabled:text-gray-400 disabled:hover:text-gray-400 flex text-[2.4rem] md:text-[2rem] sm:text-[1.8rem] font-medium font-sans no-underline hover:text-tertiary items-center gap-[8px] pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
+              aria-label="{{ 'general.pagination.next' | t }}"
+            >
+              Next
+              <span class="mt-2">
+                {%- render 'icon-caret' -%}
+              </span>
+            </button>
+          </div>
+        </div>
+      {% endif %}
+
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            const tags = document.querySelector('.tags');
+
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        tags.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        tags.classList.add('dragging');
+        startX = e.pageX - tags.offsetLeft;
+        scrollLeft = tags.scrollLeft;
+        });
+
+        tags.addEventListener('mouseleave', () => {
+        isDragging = false;
+        tags.classList.remove('dragging');
+        });
+
+        tags.addEventListener('mouseup', () => {
+        isDragging = false;
+        tags.classList.remove('dragging');
+        });
+
+        tags.addEventListener('mousemove', (e) => {
+        if (!isDragging) return; // Only run when dragging
+        e.preventDefault();
+        const x = e.pageX - tags.offsetLeft;
+        const walk = (x - startX) * 2; // The scroll speed multiplier
+        tags.scrollLeft = scrollLeft - walk;
+        });
+
+
+          function createSkeletonCard() {
+        const card = document.createElement('div');
+        card.className = 'skeleton-card';
+        card.innerHTML = `
+          <div class="skeleton-image empty:block"></div>
+          <div class="skeleton-content empty:block">
+            <div class="skeleton-title empty:block"></div>
+            <div class="skeleton-date empty:block"></div>
+            <div class="skeleton-text empty:block"></div>
+            <div class="skeleton-text empty:block"></div>
+            <div class="skeleton-text empty:block"></div>
+          </div>
+        `;
+        return card;
+          }
+        // Listen for the enter key on the search input
+        let currentPage = 1;
+        const totalPages = {{ paginate.pages }};
+        const searchBox = document.getElementById('search-query');
+        const nextBtn = document.getElementById('btn-next');
+        const prevBtn = document.getElementById('btn-prev');
+
+        function getSearchResult(searchQuery, page){
+
+        if(page === 1){
+          prevBtn.setAttribute('disabled', true);
+        }else{
+          prevBtn.removeAttribute('disabled');
+        }
+
+        if(page === totalPages){
+          nextBtn.setAttribute('disabled', true);
+        }else{
+          nextBtn.removeAttribute('disabled');
+        }
+
+        const blogListing = document.getElementById('blog-listing');
+        blogListing.innerHTML = '';
+        for (let i = 0; i < 6; i++) {
+          blogListing.appendChild(createSkeletonCard());
+        }
+
+
+            if (searchQuery !== "") {
+              const searchUrl = `/search?page=${page}&q={% if current_tags.size > 0 %}{{ current_tags }}+{% endif %}${encodeURIComponent(searchQuery)}`; // Construct the search URL
+
+              // Perform the fetch request
+              fetch(searchUrl)
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error(`Error fetching the search results: ${response.statusText}`);
+                  }
+                  return response.text(); // Get the response as text (HTML)
+                })
+                .then(html => {
+                  // Create a temporary DOM element to parse the HTML response
+                  const tempDiv = document.createElement('div');
+                  tempDiv.innerHTML = html;
+
+                  // Find all <article> elements in the response
+                  const articles = tempDiv.querySelectorAll('article');
+
+                  // Convert the NodeList to an array
+                  const articlesArray = Array.from(articles);
+
+                  // Build the new HTML content from the articles array
+                  let newContent = "";
+                  articlesArray.forEach(article => {
+                    newContent += article.outerHTML;
+                  });
+
+                  // Replace the content inside the #blog-listing element with the new articles
+                  blogListing.innerHTML = newContent;
+                })
+                .catch(error => {
+                  console.error("Error fetching the search results: ", error);
+                });
+            }
+        }
+
+        nextBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default behavior of the button
+          console.log(currentPage);
+
+          if (currentPage < totalPages) {
+            currentPage = currentPage + 1;
+            getSearchResult(searchBox.value.trim() || '*', currentPage);
+          }
+          });
+
+
+
+        prevBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent the default behavior of the button
+          if (currentPage > 1) {
+            currentPage = currentPage - 1;
+            getSearchResult(searchBox.value.trim() || '*',currentPage);
+          }
+        });
+
+        searchBox.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent form submission
+            const searchQuery = searchBox.value.trim() || '*'; // Get the value entered in the search box
+            getSearchResult(searchQuery, 1);
+          }
+        });
+          });
+      </script>
+    -->
+
+    {%- paginate blog.articles by 6 -%}
+      <div class="main-blog page-width section-{{ section.id }}-padding">
+        <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+          {{ blog.title | escape }}
+        </h1>
+
+        <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+          {%- for article in blog.articles -%}
+            <div
+              class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {%- render 'article-card',
+                article: article,
+                media_height: section.settings.image_height,
+                media_aspect_ratio: article.image.aspect_ratio,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: true
+              -%}
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate -%}
+        {%- endif -%}
+      </div>
+    {%- endpaginate -%}
+  {%- endpaginate -%}
+
+  {% schema %}
+  {
+    "name": "t:sections.main-blog.name",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.main-blog.settings.header.content"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "options": [
+          {
+            "value": "grid",
+            "label": "t:sections.main-blog.settings.layout.options__1.label"
+          },
+          {
+            "value": "collage",
+            "label": "t:sections.main-blog.settings.layout.options__2.label"
+          }
+        ],
+        "default": "collage",
+        "label": "t:sections.main-blog.settings.layout.label",
+        "info": "t:sections.main-blog.settings.layout.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_image",
+        "default": true,
+        "label": "t:sections.main-blog.settings.show_image.label"
+      },
+      {
+        "type": "select",
+        "id": "image_height",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "t:sections.main-blog.settings.image_height.options__1.label"
+          },
+          {
+            "value": "small",
+            "label": "t:sections.main-blog.settings.image_height.options__2.label"
+          },
+          {
+            "value": "medium",
+            "label": "t:sections.main-blog.settings.image_height.options__3.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.main-blog.settings.image_height.options__4.label"
+          }
+        ],
+        "default": "medium",
+        "label": "t:sections.main-blog.settings.image_height.label",
+        "info": "t:sections.main-blog.settings.image_height.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "default": true,
+        "label": "t:sections.main-blog.settings.show_date.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "default": false,
+        "label": "t:sections.main-blog.settings.show_author.label"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:sections.main-blog.settings.paragraph.content"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "t:sections.all.padding.padding_top",
+        "info": "Unit in rem 1rem = l0px",
+        "default": 14
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "t:sections.all.padding.padding_bottom",
+        "info": "Unit in rem 1rem = l0px",
+        "default": 14
+      }
+    ]
+  }
+  {% endschema %}
+{% endcomment %}

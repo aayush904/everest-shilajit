@@ -1,0 +1,946 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .card--standard.card--text.article-card > .card__content .card__information,
+  .card--standard.card--media .card__inner .card__information,
+  .card--standard.card--text:not(.card--horizontal) > .card__content .card__heading,
+  .card--standard:not(.card--horizontal) > .card__content .card__badge,
+  .card--standard.card--text.article-card > .card__content .card__information,
+  .card--standard > .card__content .card__caption {
+    display: flex !important;
+  }
+
+  h1.h1 {
+    font-size: clamp(25px, 2.72vw, 5.2rem);
+    line-height: 1.14;
+  }
+
+  article h2 {
+    margin-top: 4.5rem;
+    margin-bottom: 8px;
+    font-size: clamp(20px, 1.986vw, 38px);
+  }
+
+  article {
+    p,
+    body,
+    span,
+    li {
+      font-size: inherit;
+      line-height: 1.55;
+    }
+  }
+
+  article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      span {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+    }
+
+    ol {
+      list-style-type: number;
+      margin-left: 1.5em;
+      li {
+        margin-bottom: 0.4rem;
+        &&:last-child {
+          margin-bottom: 1.65rem;
+        }
+      }
+    }
+
+    h3 {
+      margin: 3rem 0 1rem 0;
+      font-weight: 600;
+    }
+  }
+
+  article ul {
+    list-style: disc;
+    margin-left: 1.6em;
+
+    li {
+      margin-bottom: 0.4rem;
+      &&:last-child {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+
+  .main-article ul,
+  .main-article ol,
+  .main-article blockquote,
+  .main-article table,
+  .main-article figure,
+  .main-article img {
+    margin-bottom: 2.4rem;
+  }
+
+  article .article-content a {
+    color: #9f5601;
+    &&:hover {
+      text-decoration: underline;
+    }
+  }
+
+  article #toc a {
+    opacity: 0.4;
+    word-break: break-word;
+    color: #000000;
+    transition: all 0.3s ease;
+
+    && svg {
+      width: 0;
+      height: auto;
+      aspect-ratio: 1/1;
+      transition: all 0.3s ease;
+    }
+    &&:hover,
+    &&.active {
+      opacity: 1;
+      font-weight: 600;
+      margin-right: 0;
+      text-decoration: none;
+    }
+
+    &&.active svg {
+      width: 25px;
+    }
+  }
+
+  article h2:last-of-type {
+    margin-top: 5.4rem;
+  }
+
+  #comments .field:after {
+    content: none;
+  }
+
+  .social {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  article ul#toc {
+    margin: 0;
+
+    && a {
+      margin-right: 33px;
+    }
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+    margin-bottom: clamp(24px, 2.35vw, 45px);
+  }
+
+  .breadcrumb * {
+    font-size: clamp(12px, 0.732vw, 14px);
+  }
+
+  .breadcrumb svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+  }
+{% endstyle %}
+{% assign slug = article.author | downcase | replace: ' ', '-' | replace: '!', '' | replace: "'", '' %}
+{% assign page = pages[slug] %}
+{% assign profile_pic_metafield = page.metafields.custom.author_profile_picture %}
+{% assign author_url = shop.url | append: '/pages/' | append: slug %}
+
+{% if article.handle contains 'press-media' %}
+  {% style %}
+    #article-block {
+      display: none !important;
+    }
+    .main-blog {
+      padding-top: 11rem;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 40px;
+    }
+  {% endstyle %}
+{% endif %}
+
+<div class="main-blog page-width section-{{ section.id }}-padding flex md:flex-col sm:flex-col justify-between">
+  <article
+    itemscope
+    itemtype="http://schema.org/BlogPosting"
+  >
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'title' -%}
+          {% comment %} {% if article.handle contains 'press-media' %} {% endcomment %}
+
+          <div
+            class="breadcrumb"
+            style="display:flex; gap:8px; margin-bottom: 2.6rem;"
+          >
+            <a href="{{ routes.root_url }}" style="font-size: clamp(12px, 0.732vw, 14px); opacity:0.5;">Home</a>
+            <span style="transform:rotate(-90deg); margin-left: 8px;">{% render 'icon-caret' %}</span>
+            <a href="{{ blogs['all'].url }}" style="font-size: clamp(12px, 0.732vw, 14px); opacity:0.5;">
+              {{- blogs.all.title -}}
+            </a>
+            <span style="transform:rotate(-90deg); margin-left: 8px;">{% render 'icon-caret' %}</span>
+            <a href="{{ blog.url }}" style="font-size: clamp(12px, 0.732vw, 14px); opacity:0.5;">{{ blog.title }}</a>
+            <span style="transform:rotate(-90deg); margin-left: 8px;">{% render 'icon-caret' %}</span>
+            <span style="font-size: clamp(12px, 0.732vw, 14px);">{{ article.title }}</span>
+          </div>
+
+          <header
+            style="margin-bottom: clamp(20px, 2.6vw, 50px); gap:13px;"
+            {{ block.shopify_attributes }}
+            class="w-full flex justify-between items-center mt-0 flex-wrap "
+          >
+            <div class="max-w-[60%] sm:max-w-full">
+              <h1 class="h1 font-bold mb-[1.2rem]">{{ article.title }}</h1>
+              <tags class="flex flex-wrap gap-[8px]">
+  {% for tag in article.tags %}
+    <tag style="background: rgba(254, 235, 178, 1); padding: 0.8rem 2rem; border-radius: 54px; font-size: clamp(12px, 0.78vw, 15px);">
+      {{ tag }}
+    </tag>
+  {% endfor %}
+</tags>
+            </div>
+
+            {% comment %} {% endif %} {% endcomment %}
+            {% comment %}
+              <h1 class="leading-none text-[3.2rem] sm:text-[18px] font-sans font-medium bolder-500" itemprop="headline">
+                {{ article.title | escape }}
+              </h1>
+            {% endcomment %}
+            <div
+              style="gap:3.8rem; justify-content: space-between;"
+              class="flex max-w-[40%-13px] sm:max-w-full flex-col sm:flex-row w-full justify-between"
+            >
+              <div class="flex justify-center flex-col items-end sm:items-start">
+                {%- if block.settings.blog_show_date -%}
+                  <p
+                    class="font-sans text-[1.6rem] text-[#382E2A] flex gap-5 m-0 justify-end items-center"
+                  >
+                    {% comment %}
+                      {% assign words_per_minute = 250 %}
+                      {% assign word_count = article.content | strip_html | size %}
+                      {% assign read_time = word_count | divided_by: words_per_minute %}
+
+                      {% if read_time < 1 %}
+                        1 min read.
+                      {% else %}
+                        {{ read_time | ceil }} min read.
+                      {% endif %}
+                    {% endcomment %}
+
+                    {{ article.published_at | date: '%b %d, %Y' }}
+                  </p>
+                {%- endif -%}
+                {%- if block.settings.blog_show_author -%}
+                  {% assign slug = article.author
+                    | downcase
+                    | replace: ' ', '-'
+                    | replace: '!', ''
+                    | replace: "'", ''
+                  %}
+                  <p
+                    class="font-sans flex justify-end m-0 w-max block mb-0 text-[#382E2A] text-[16px]"
+                    itemscope
+                    itemtype="http://schema.org/Person"
+                  >
+                    <a
+                      style="margin:0;"
+                      href="{{ author_url }}"
+                      class="font-normal w-max flex m-0 justify-center items-center gap-[12px] flex-nowrap mb-0"
+                    >
+                      {% comment %}
+                        {% if profile_pic_metafield and profile_pic_metafield.value %}
+                          <img
+                            src="{{ profile_pic_metafield | file_url }}"
+                            alt="Profile Picture for {{ page.title }}"
+                            class="rounded-full w-[32px] h-[32px] my-[0rem]"
+                            width=""
+                            height=""
+                          >
+                        {% endif %}
+                      {% endcomment %}
+                      by {{ article.author -}}
+                    </a>
+                  </p>
+                {%- endif -%}
+              </div>
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'share' -%}
+                  <div style="gap:1rem" class="flex justify-end items-center sm:flex-col">
+                    <span class="font-sans text-[1.6rem] text-[#382E2A]">{{ block.settings.share_label }}:</span>
+                    <div class="flex justify-end items-end" style="gap: 0.7rem;">
+                      <a
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}/blogs/{{ blog.handle }}/{{ article.handle }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Share on Facebook"
+                      >
+                        {% render 'icon-facebook' %}
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/shareArticle?mini=true&url={{ shop.url }}/blogs/{{ blog.handle }}/{{ article.handle }}&title={{ article.title | url_param_escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Share on LinkedIn"
+                      >
+                        {% render 'icon-linkedin' %}
+                      </a>
+                      <a
+                        href="https://twitter.com/intent/tweet?url={{ shop.url }}/blogs/{{ blog.handle }}/{{ article.handle }}&text={{ article.title | url_param_escape }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Share on Twitter"
+                      >
+                        {% render 'icon-twitter' %}
+                      </a>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </header>
+      {%- endcase -%}
+    {%- endfor -%}
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          <div class="page-width page-width--narrow">
+            {% render block %}
+          </div>
+        {%- when 'featured_image' -%}
+          {%- if article.image -%}
+            <img
+              srcset="
+                {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                {% if article.image.width >= 980 %}{{ article.image | image_url: width: 980 }} 980w,{% endif %}
+                {{ article.image | image_url }} {{ article.image.width }}w
+              "
+              sizes="(min-width: 1440px) 1440px, (min-width: 768px) calc(60vw - 10rem), 100vw"
+              src="{{ article.image | image_url: width:1440}}"
+              loading="eager"
+              fetchpriority="high"
+              width="1440"
+              height="{{ 1440 | divided_by: 1.92 | round }}"
+              alt="{{ article.image.alt | escape }}"
+              style="border-radius:clamp(8px, 0.84vw, 16px); aspect-ratio:1.92"
+              class="w-full object-cover mb-[4.8rem]"
+            >
+            {% comment %}
+              </div>
+              </div>
+            {% endcomment %}
+          {%- endif -%}
+
+        {%- when 'content' -%}
+          <div
+            class="article-content"
+            style="display:flex; justify-content: space-between; gap: 60px;"
+            {{ block.shopify_attributes }}
+          >
+            <div class="max-w-[60%] md:max-w-full sm:max-w-full">
+              {{ article.content }}
+              <hr class="block h-[1px] col-span-2 sm:col-span-1 my-[4rem]" basmil>
+
+              {% if page.title != blank and page.title == article.author %}
+                <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[0!important]">Written By:</h4>
+                <author class="relative w-full mt-[10px]  block ">
+                  <div class="w-full m-auto  flex items-center gap-[10px] justify-between md:flex-col sm:flex-col">
+                    <p class="text-[1.5rem] w-[60%] md:w-full sm:w-full">{{ page.metafields.custom.excerpt.value }}</p>
+                    <div class="flex flex-col gap-[10px] items-start  w-[35%] sm:w-full md:w-full">
+                      {% if profile_pic_metafield and profile_pic_metafield.value %}
+                        <a href="{{ author_url }}">
+                          <img
+                            src="{{ profile_pic_metafield | file_url }}"
+                            alt="Profile Picture for {{ page.title }}"
+                            style="max-width:8rem; max-height:5.1rem; "
+                            class="rounded-full aspect-square object-contain h-[10rem]"
+                            width="80"
+                            height="51"
+                          >
+                        </a>
+                      {% endif %}
+                      <div>
+                        <a href="{{ author_url }}">
+                          <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
+                            {{ page.title }}
+                          </author-name>
+                        </a>
+                        <p class=" text-[1.5rem] leading-[1] tracking-normal">
+                          {{ page.metafields.custom.author_expertise.value }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </author>
+
+                {% comment %}
+                  <h3 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Review By:</h3>
+                  <author class="relative w-full mt-[16px]  block bg-[#F5EADD]">
+                    <div class="w-full m-auto p-[1.5rem] flex items-center gap-[10px] justify-between md:flex-col sm:flex-col">
+                      <div class="flex gap-[10px] items-center w-[35%] sm:w-full md:w-full">
+                        {% if profile_pic_metafield and profile_pic_metafield.value %}
+                          <a href="{{ author_url }}">
+                            <img
+                              src="{{ profile_pic_metafield | file_url }}"
+                              alt="Profile Picture for {{ page.title }}"
+                              class="rounded-full min-w-[10rem] aspect-square w-[10rem] object-cover h-[10rem]"
+                              width="100"
+                              height="100"
+                            >
+                          </a>
+                        {% endif %}
+                        <div>
+                          <a href="{{ author_url }}">
+                            <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
+                              {{ page.title }}
+                            </author-name>
+                          </a>
+                          <p class=" text-[1.5rem] leading-[1] tracking-normal">
+                            {{ page.metafields.custom.author_expertise.value }}
+                          </p>
+                        </div>
+                      </div>
+                      <p class="text-[1.5rem] w-[60%] md:w-full sm:w-full">{{ page.metafields.custom.excerpt.value }}</p>
+                    </div>
+                  </author>
+                {% endcomment %}
+              {% endif %}
+
+              <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Disclaimer</h4>
+              <disclaimer class="relative w-full mt-[10px]  block ">
+                <p class="text-[1.5rem]  tracking-normal">{{ settings.disclaimer }}</p>
+              </disclaimer>
+            </div>
+            {% render 'blog-sidebar' %}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+    {% comment %} <div class="max-w-[60%] md:max-w-full sm:max-w-full"></div> {% endcomment %}
+  </article>
+</div>
+{% style %}
+  author * {
+    line-height: normal !important;
+    text-align: start;
+  }
+
+  author p {
+    margin-bottom: 0 !important;
+  }
+{% endstyle %}
+<div class="main-article">
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comment-wrapper ">
+      <div id="comments" class="page-width page-width--narrow font-sans ">
+        <div class="mb-[6rem]">
+          {% form 'new_comment', article %}
+            {%- liquid
+              assign post_message = 'blogs.article.success'
+              if blog.moderated? and comment.status == 'unapproved'
+                assign post_message = 'blogs.article.success_moderated'
+              endif
+            -%}
+            <h4 class="mb-[3.2rem]">{{ 'blogs.article.comment_form_title' | t }}</h4>
+            {%- if form.errors -%}
+              <div class="form__message" role="alert">
+                <h4
+                  class="form-status caption-large text-body"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-error' %}
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h4>
+              </div>
+              <ul class="form-status-list caption-large">
+                {%- for field in form.errors -%}
+                  <li>
+                    <a href="#CommentForm-{{ field }}" class="link">
+                      {%- if form.errors.translated_fields[field] contains 'author' -%}
+                        {{ 'blogs.article.name' | t }}
+                      {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                        {{ 'blogs.article.message' | t }}
+                      {%- else -%}
+                        {{ form.errors.translated_fields[field] }}
+                      {%- endif -%}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- elsif form.posted_successfully? -%}
+              <div class="form-status-list form__message" role="status">
+                <h4
+                  class="form-status"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-success' %}
+                  {{ post_message | t }}
+                </h4>
+              </div>
+            {%- endif -%}
+
+            <div
+              {% if blog.moderated? == false %}
+                class="article-template__comments-fields"
+              {% endif %}
+            >
+              <div class="article-template__comment-fields">
+                <div class="field field--with-error">
+                  <input
+                    type="text"
+                    name="comment[author]"
+                    id="CommentForm-author"
+                    class="field__input"
+                    autocomplete="name"
+                    value="{{ form.author }}"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'author' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-author-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.name' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-author">
+                    {{- 'blogs.article.name' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+                  {%- if form.errors contains 'author' -%}
+                    <small id="CommentForm-author-error">
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- 'blogs.article.name' | t }}
+                        {{ form.errors.messages.author }}.</span
+                      >
+                    </small>
+                  {%- endif -%}
+                </div>
+                <div class="field field--with-error">
+                  <input
+                    type="email"
+                    name="comment[email]"
+                    id="CommentForm-email"
+                    autocomplete="email"
+                    class="field__input"
+                    value="{{ form.email }}"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'email' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-email-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.email' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-email">
+                    {{- 'blogs.article.email' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+                  {%- if form.errors contains 'email' -%}
+                    <small id="CommentForm-email-error">
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- 'blogs.article.email' | t }}
+                        {{ form.errors.messages.email }}.</span
+                      >
+                    </small>
+                  {%- endif -%}
+                </div>
+              </div>
+              <div class="field field--with-error">
+                <textarea
+                  rows="5"
+                  name="comment[body]"
+                  id="CommentForm-body"
+                  class="text-area field__input"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'body' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-body-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.message' | t }}"
+                >{{ form.body }}</textarea>
+                <label class="form__label field__label" for="CommentForm-body">
+                  {{- 'blogs.article.message' | t }}
+                  <span aria-hidden="true">*</span>
+                </label>
+              </div>
+              {%- if form.errors contains 'body' -%}
+                <small id="CommentForm-body-error">
+                  <span class="form__message">
+                    {%- render 'icon-error' -%}
+                    {{- 'blogs.article.message' | t }}
+                    {{ form.errors.messages.body }}.</span
+                  >
+                </small>
+              {%- endif -%}
+            </div>
+            {%- if blog.moderated? -%}
+              <p class="article-template__comment-warning caption mb-[1rem!important]">
+                {{ 'blogs.article.moderated' | t }}
+              </p>
+            {%- endif -%}
+            <input
+              type="submit"
+              class="button"
+              value="{{ 'blogs.article.post' | t }}"
+            >
+          {% endform %}
+        </div>
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h4
+            class="mb-[4.8rem]"
+            as
+            id="Comments-{{ article.id }}"
+            tabindex="-1"
+          >
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h4>
+          {% paginate article.comments by 3 %}
+            <div class="article-template__comments">
+              {%- if comment.status == 'pending' and comment.content -%}
+                <article
+                  id="{{ comment.id }}"
+                  class="article-template__comments-comment border-t py-[4.8rem!important] border-[#00000033] border-dashed"
+                >
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                  </footer>
+                </article>
+              {%- endif -%}
+
+              {%- for comment in article.comments -%}
+                <article
+                  id="{{ comment.id }}"
+                  class="flex items-center px-[0!important] gap-[4rem] article-template__comments-comment border-t py-[4.8rem!important] border-[#00000033] border-dashed"
+                >
+                  <div class="bg-gray-200 aspect-square flex justify-center items-center w-full rounded-full max-w-[15rem] max-h-[15rem] font-bold text-[5rem] md:text-[4rem]   font-sans">
+                    {% assign first_letter = comment.author | slice: 0, 1 %}
+                    {{ first_letter }}
+                  </div>
+                  <div class="flex flex-col gap-[1.6rem]">
+                    <h4>{{ comment.author }}</h4>
+                    {{ comment.content }}
+                    <footer class="right">
+                      <span class="caption-with-letter-spacing items-center flex gap-[1.2rem]">
+                        <svg
+                          width="31"
+                          height="32"
+                          class="w-[3rem] h-[3rem]"
+                          viewBox="0 0 31 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M13.625 16.625H16.125V24.75M1.75 11H29.25M21.75 6V1M9.25 6V1M4.25 31H26.75C27.413 31 28.0489 30.7366 28.5178 30.2678C28.9866 29.7989 29.25 29.163 29.25 28.5V6C29.25 5.33696 28.9866 4.70107 28.5178 4.23223C28.0489 3.76339 27.413 3.5 26.75 3.5H4.25C3.58696 3.5 2.95107 3.76339 2.48223 4.23223C2.01339 4.70107 1.75 5.33696 1.75 6V28.5C1.75 29.163 2.01339 29.7989 2.48223 30.2678C2.95107 30.7366 3.58696 31 4.25 31Z" stroke="#3A2307" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                        {{- comment.created_at | date: '%m/%d/%Y' -}}
+                      </span>
+                    </footer>
+                  </div>
+                </article>
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+{% if request.page_type == 'article' %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toc = document.getElementById('toc');
+      const headings = document.querySelectorAll('article h2');
+      const tocLinks = [];
+      const sections = [];
+
+      // Create TOC links and track sections
+      headings.forEach((heading, index) => {
+        // Create TOC item
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        const headingId = heading.textContent.toLowerCase().replace(/ /g, '-');
+
+        a.textContent = heading.textContent;
+        a.insertAdjacentHTML(
+          'afterbegin',
+          `<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_519_986)">
+              <path d="M24.8901 19.1328L19.562 10.1406C19.4246 9.90636 19.228 9.71233 18.992 9.57796C18.756 9.44359 18.4888 9.37359 18.2173 9.37498C17.9458 9.37356 17.6788 9.44356 17.4429 9.57794C17.2071 9.71232 17.0107 9.90637 16.8735 10.1406L15.3462 12.7178C15.3106 12.7779 15.2918 12.8466 15.2918 12.9165C15.2918 12.9864 15.3106 13.055 15.3462 13.1152L17.9634 17.5556C18.0628 17.7206 18.0988 17.916 18.0649 18.1055C18.0309 18.295 17.9292 18.4658 17.7788 18.5859C17.6911 18.654 17.5899 18.7026 17.4819 18.7285C17.374 18.7544 17.2617 18.757 17.1527 18.7361C17.0437 18.7153 16.9403 18.6714 16.8496 18.6074C16.7588 18.5435 16.6828 18.4609 16.6264 18.3652L9.93992 7.01951C9.80193 6.785 9.6051 6.59059 9.3689 6.45552C9.13271 6.32044 8.86533 6.24939 8.59324 6.24939C8.32114 6.24939 8.05377 6.32044 7.81757 6.45552C7.58137 6.59059 7.38454 6.785 7.24656 7.01951L0.107886 19.1347C0.021752 19.2795 -0.0152763 19.4483 0.00232252 19.6158C0.0199214 19.7834 0.0912046 19.9407 0.205542 20.0644C0.282533 20.1449 0.375418 20.2086 0.478304 20.2513C0.581189 20.294 0.691828 20.3148 0.803198 20.3125H24.1958C24.3067 20.3139 24.4167 20.2926 24.519 20.2497C24.6213 20.2069 24.7137 20.1435 24.7905 20.0635C24.9054 19.9399 24.9771 19.7825 24.9951 19.6147C25.0131 19.4469 24.9762 19.2779 24.8901 19.1328ZM6.29148 11.7187L8.59324 7.81248L10.895 11.7187H6.29148Z" fill="black"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_519_986">
+                <rect width="25" height="25" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>`
+        );
+        a.href = '#' + headingId;
+        a.className = `ltoc flex gap-[8px] text-gray-700 font-semibold leading-normal p-[6px] text-[16px] hover:text-honey  block w-full rounded-[5px] ${
+          index === 0 ? 'active' : ''
+        }`;
+        li.appendChild(a);
+        toc.appendChild(li);
+
+        // Assign id to heading if not already present
+        heading.id = headingId;
+
+        // Store references for scroll tracking
+        tocLinks.push(a);
+        sections.push(heading);
+      });
+
+      // Handle smooth scrolling when clicking TOC links
+      toc.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A') {
+          event.preventDefault();
+          const targetId = event.target.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop + 40,
+              behavior: 'smooth',
+            });
+          }
+        }
+      });
+
+      // Track scroll position and update active section
+      function updateActiveSection() {
+        const scrollPosition = window.scrollY + 200; // Adding offset for better highlighting
+
+        let currentSection = sections[0];
+        sections.forEach((section) => {
+          if (section.offsetTop + 40 <= scrollPosition) {
+            currentSection = section;
+          }
+        });
+        tocLinks.forEach((link) => {
+          const href = link.getAttribute('href');
+          const sectionId = '#' + currentSection.id;
+
+          link.classList.remove('active');
+
+          if (href === sectionId) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      let isScrolling;
+      window.addEventListener(
+        'scroll',
+        function () {
+          window.clearTimeout(isScrolling);
+
+          isScrolling = setTimeout(function () {
+            updateActiveSection();
+          }, 10);
+        },
+        false
+      );
+
+      // Initial update
+      updateActiveSection();
+    });
+  </script>
+{% endif %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    (function () {
+      const handle = '{{ article.handle | split: "/" | last }}';
+      const apiUrl = 'https://api.everestshilajit.com/';
+      const sessionKey = 'viewed_articles';
+
+      const data = JSON.parse(localStorage.getItem(sessionKey)) || { posts: [], timestamp: Date.now() };
+
+      const twelveHours = 12 * 60 * 60 * 1000;
+      const isExpired = Date.now() - data.timestamp > twelveHours;
+
+      if (isExpired) {
+        localStorage.removeItem(sessionKey);
+        data.posts = [];
+        data.timestamp = Date.now();
+      }
+
+      if (!data.posts.includes(handle)) {
+        data.posts.push(handle);
+        localStorage.setItem(sessionKey, JSON.stringify(data));
+
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-KEY': 'sk_everestshilajit_8f9c2dbe-4e5a-47e0-8d14-d7a6bcd29a12',
+          },
+          body: JSON.stringify({ handle }),
+        });
+      }
+    })();
+  });
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "keywords": {%  render 'keywords' %},
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": {{ article | image_url: width: 1920 | prepend: "https:" | json }},
+    {% endif %}
+    "articleBody": {{ article.content | strip_html | json }},
+    "datePublished": {{ article.published_at | date: "%Y-%m-%dT%H:%M:%S%:z" | json }},
+    "dateCreated": {{ article.created_at | date: "%Y-%m-%dT%H:%M:%S%:z" | json }},
+    "dateModified": {{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S%:z" | json }},
+    "url": {{ request.origin | append: page.url | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }},
+      "url": {{ author_url | json }},
+      "image": {{ profile_pic_metafield | file_url | json }},
+      "description": {{ page.metafields.custom.excerpt.value | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }},
+      {% if settings.logo %}
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ settings.logo | image_url: width: 600 | prepend: "https:" | json }}
+        }
+      {% endif %}
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "main h1",
+        "article div > p[dir='ltr']:first-of-type",
+        "main h2"
+      ]
+    }
+  }
+</script>
+{% if article.metafields.custom.extra_seo_schema.value != blank %}
+  <script type="application/ld+json">
+    {{article.metafields.custom.extra_seo_schema.value | json }}
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+            }
+          ],
+          "default": "adapt",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
+          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "Share"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

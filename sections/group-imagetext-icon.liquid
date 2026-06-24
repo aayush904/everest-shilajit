@@ -1,0 +1,33 @@
+{% if section.settings.show_image_text %}
+    {% section 'basmil-image-text' %}
+  {% endif %}
+  
+  {% if section.settings.show_iconbox %}
+    {% section 'icon-box' %}
+  {% endif %}
+  
+
+  {% schema %}
+  {
+    "name": "Image Text and Icon Box",
+    "class": "group-imagetext-icon",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_image_text",
+        "label": "Show Image Text Section"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_iconbox",
+        "label": "Show Iconbox Section"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Text and Icon Box",
+        "category": "Image Text and Ico Boxn"
+      }
+    ]
+  }
+  {% endschema %}

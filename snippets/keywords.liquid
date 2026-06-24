@@ -1,0 +1,65 @@
+{%- liquid
+  # Figure out which object we’re on and fetch its keywords list
+  assign keywords_list = null
+
+  if request.page_type == 'product'
+    assign keywords_list = product.metafields.custom.keywords
+  elsif request.page_type == 'collection'
+    assign keywords_list = collection.metafields.custom.keywords
+  elsif request.page_type == 'article'
+    assign keywords_list = article.metafields.custom.keywords
+  elsif request.page_type == 'blog'
+    assign keywords_list = blog.metafields.custom.keywords
+  elsif request.page_type == 'page'
+    assign keywords_list = page.metafields.custom.keywords
+  elsif request.page_type == 'index'
+    assign keywords_list = shop.metafields.custom.keywords
+  endif
+
+  # Output the meta tag only when we actually have keywords
+  if keywords_list != blank
+    # keywords_list is an array; turn it into a comma-separated string
+    assign keywords_content = keywords_list.value | join: ', '
+  endif
+-%}
+
+{%- assign keywords_content = keywords_content | strip -%}
+{%- if meta == true and keywords_content != blank -%}
+  <meta name="keywords" content="{{- keywords_content -}}">
+{%- endif -%}
+
+{% if keywords_content != blank and schema %}
+  {%- if request.page_type == 'collection'
+    or request.page_type == 'blog'
+    or request.page_type == 'page'
+    or request.page_type == 'index'
+  -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type":
+          {%- case request.page_type -%}
+            {%- when 'collection' -%}"CollectionPage",
+            {%- when 'blog' -%}"Blog",
+            {%- when 'page' -%}"WebPage",
+            {%- when 'index' -%}"WebPage",
+            {%- else -%}"WebPage",
+          {% endcase %}
+        "name":
+          {%- case request.page_type -%}
+            {%- when 'collection' -%}"{{ collection.title | escape }}",
+            {%- when 'blog' -%}"{{ blog.title | escape }}",
+            {%- when 'page' -%}"{{ page.title | escape }}",
+            {%- when 'index' -%}"{{ shop.name | escape }}",
+            {%- else -%}"{{ shop.name | escape }}",
+          {% endcase %}
+        "keywords": "{{ keywords_content }}",
+        "url": "{{ request.origin }}{{ request.path }}"
+      }
+    </script>
+  {%- endif -%}
+{%- else -%}
+{% if keywords_content != blank  %}
+  {{- keywords_content | json -}}
+{%- endif -%}
+{%- endif -%}

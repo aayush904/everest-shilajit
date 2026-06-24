@@ -1,0 +1,335 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="customer account section-{{ section.id }}-padding">
+  {% capture order_number_label %} {{ 'customer.orders.order_number' | t }} {% endcapture %}
+  {% render 'account-navigation', active: order_number_label %}
+  <div class="hide-with-recover min-h-[50vh]">
+    {% paginate customer.orders by 20 %}
+      {%- if customer.orders.size > 0 -%}
+        <div class="border border-[#D9D9D9] rounded-[8px]">
+          <h2 class="block w-full py-[20px] px-[25px] text-[14px] uppercase font-sans">
+            {{ 'customer.orders.title' | t }}
+          </h2>
+          <table role="table" class="order-history">
+            <caption class="visually-hidden">
+              {{ 'customer.orders.title' | t }}
+            </caption>
+            <thead role="rowgroup" class="bg-[#F2F4F5]">
+              <tr role="row">
+                <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+                <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+                <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+                <th id="ColumnFulfillment" scope="col" role="columnheader">
+                  {{ 'customer.orders.fulfillment_status' | t }}
+                </th>
+                <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+                <th id="ColumnAction" scope="col" role="columnheader">{{ 'customer.orders.action' | t }}</th>
+              </tr>
+            </thead>
+            <tbody role="rowgroup">
+              {%- for order in customer.orders -%}
+                <tr role="row">
+                  <td
+                    id="RowOrder"
+                    role="cell"
+                    headers="ColumnOrder"
+                    data-label="{{ 'customer.orders.order_number' | t }}"
+                  >
+                    <a
+                      href="{{ order.customer_url }}"
+                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                    >
+                      {{ order.name }}
+                    </a>
+                  </td>
+                  <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                    {{ order.created_at | time_tag: format: 'date' }}
+                  </td>
+                  <td
+                    headers="RowOrder ColumnPayment"
+                    role="cell"
+                    data-label="{{ 'customer.orders.payment_status' | t }}"
+                  >
+                    {{ order.financial_status_label }}
+                  </td>
+                  <td
+                    headers="RowOrder ColumnFulfillment"
+                    role="cell"
+                    data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+                  >
+                    {{ order.fulfillment_status_label }}
+                  </td>
+                  <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                    {{ order.total_net_amount | money_without_trailing_zeros }} ({{ order.line_items.size }})
+                  </td>
+                  <td
+                    id="RowOrder"
+                    role="cell"
+                    headers="ColumnOrder"
+                    data-label="{{ 'customer.orders.order_number' | t }}"
+                  >
+                    <a
+                      style="display:flex;"
+                      class="gap-[1.6rem] justify-start items-center"
+                      href="{{ order.customer_url }}"
+                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                    >
+                      {{ 'customer.orders.action_btn' | t }}
+                      <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.5H11.9997" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.5 1L11.9999 5.5L7.5 10" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+      {%- else -%}
+        <div class="flex flex-col w-full justify-center items-center py-[20px]">
+          <svg width="309" height="221" viewBox="0 0 309 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M251.918 0H62.9649C54.2685 0 47.2188 7.04977 47.2188 15.7461V204.699C47.2188 213.396 54.2685 220.445 62.9649 220.445H251.918C260.614 220.445 267.664 213.396 267.664 204.699V15.7461C267.664 7.04977 260.614 0 251.918 0Z" fill="#B2C9C6"/>
+            <g filter="url(#filter0_d_49_6074)">
+            <path d="M226.727 15.7461H14.1543C9.80613 15.7461 6.28125 19.271 6.28125 23.6191V62.9844C6.28125 67.3326 9.80613 70.8575 14.1543 70.8575H226.727C231.075 70.8575 234.6 67.3326 234.6 62.9844V23.6191C234.6 19.271 231.075 15.7461 226.727 15.7461Z" fill="white"/>
+            </g>
+            <path d="M114.929 28.3428H73.9895C71.3806 28.3428 69.2656 30.4577 69.2656 33.0666C69.2656 35.6755 71.3806 37.7904 73.9895 37.7904H114.929C117.538 37.7904 119.653 35.6755 119.653 33.0666C119.653 30.4577 117.538 28.3428 114.929 28.3428Z" fill="#DEEBE9"/>
+            <path d="M143.272 48.8125H73.9895C71.3806 48.8125 69.2656 50.9274 69.2656 53.5363C69.2656 56.1452 71.3806 58.2602 73.9895 58.2602H143.272C145.881 58.2602 147.996 56.1452 147.996 53.5363C147.996 50.9274 145.881 48.8125 143.272 48.8125Z" fill="#81B3CC"/>
+            <path d="M48.7906 20.4697H18.8731C14.5249 20.4697 11 23.9946 11 28.3428V58.2604C11 62.6085 14.5249 66.1334 18.8731 66.1334H48.7906C53.1388 66.1334 56.6637 62.6085 56.6637 58.2604V28.3428C56.6637 23.9946 53.1388 20.4697 48.7906 20.4697Z" fill="#E28569"/>
+            <path d="M30.2389 48.4658H33.3881L33.4227 47.2533C33.4227 45.6598 34.4273 45.2441 35.8476 44.7938C37.2724 44.3885 38.5264 43.5304 39.4201 42.3491C40.3139 41.1679 40.7987 39.7278 40.8014 38.2466C40.8326 37.3422 40.6757 36.4412 40.3406 35.6006C40.0056 34.76 39.4997 33.9981 38.855 33.3631C38.2102 32.7281 37.4407 32.2339 36.5951 31.9118C35.7495 31.5896 34.8462 31.4465 33.9424 31.4915C32.9872 31.4707 32.0378 31.6441 31.1517 32.0012C30.2656 32.3583 29.4613 32.8917 28.7875 33.569C28.1137 34.2463 27.5845 35.0534 27.2321 35.9414C26.8796 36.8294 26.7111 37.7797 26.737 38.7347H29.9932C29.9809 38.2074 30.0739 37.6829 30.2668 37.192C30.4598 36.7011 30.7488 36.2537 31.1168 35.8759C31.4849 35.4981 31.9247 35.1976 32.4105 34.992C32.8962 34.7864 33.4181 34.6798 33.9455 34.6785C34.4212 34.6509 34.8972 34.7261 35.3412 34.8988C35.7852 35.0716 36.1869 35.3379 36.5188 35.6797C36.8507 36.0215 37.1052 36.4308 37.2649 36.8797C37.4246 37.3286 37.4858 37.8066 37.4443 38.2812C37.4233 39.0494 37.1562 39.7906 36.6822 40.3956C36.2082 41.0005 35.5525 41.4373 34.8116 41.6414L33.6684 42.0949C32.5492 42.3646 31.572 43.0447 30.9305 44.0006C30.2889 44.9566 30.0297 46.1185 30.2042 47.2565L30.2389 48.4658ZM31.7977 55.9515C32.1061 55.9624 32.4136 55.9115 32.7019 55.8015C32.9902 55.6916 33.2536 55.525 33.4764 55.3116C33.6993 55.0981 33.8771 54.8422 33.9993 54.5589C34.1215 54.2755 34.1857 53.9706 34.188 53.662C34.1853 53.3537 34.1208 53.0491 33.9984 52.7661C33.876 52.4831 33.6981 52.2276 33.4753 52.0145C33.2525 51.8013 32.9893 51.635 32.7012 51.5253C32.413 51.4156 32.1059 51.3647 31.7977 51.3757C31.4896 51.3647 31.1825 51.4156 30.8943 51.5253C30.6062 51.635 30.343 51.8013 30.1202 52.0145C29.8974 52.2276 29.7195 52.4831 29.5971 52.7661C29.4747 53.0491 29.4102 53.3537 29.4075 53.662C29.4098 53.9706 29.474 54.2755 29.5962 54.5589C29.7184 54.8422 29.8962 55.0981 30.1191 55.3116C30.3419 55.525 30.6053 55.6916 30.8936 55.8015C31.1819 55.9115 31.4894 55.9624 31.7977 55.9515Z" fill="white"/>
+            <g filter="url(#filter1_d_49_6074)">
+            <path d="M81.8652 83.4541H294.438C296.526 83.4541 298.528 84.2836 300.005 85.7601C301.481 87.2365 302.311 89.2391 302.311 91.3272V130.692C302.311 132.78 301.481 134.783 300.005 136.259C298.528 137.736 296.526 138.565 294.438 138.565H81.8652C79.7772 138.565 77.7746 137.736 76.2982 136.259C74.8217 134.783 73.9922 132.78 73.9922 130.692V91.3272C73.9922 89.2391 74.8217 87.2365 76.2982 85.7601C77.7746 84.2836 79.7772 83.4541 81.8652 83.4541V83.4541Z" fill="white"/>
+            </g>
+            <path d="M182.64 96.0513H141.7C139.091 96.0513 136.977 98.1662 136.977 100.775C136.977 103.384 139.091 105.499 141.7 105.499H182.64C185.249 105.499 187.364 103.384 187.364 100.775C187.364 98.1662 185.249 96.0513 182.64 96.0513Z" fill="#DEEBE9"/>
+            <path d="M210.983 116.521H141.7C139.091 116.521 136.977 118.636 136.977 121.245C136.977 123.854 139.091 125.969 141.7 125.969H210.983C213.592 125.969 215.707 123.854 215.707 121.245C215.707 118.636 213.592 116.521 210.983 116.521Z" fill="#81B3CC"/>
+            <path d="M116.509 88.1782H86.5918C82.2436 88.1782 78.7188 91.7031 78.7188 96.0513V125.969C78.7188 130.317 82.2436 133.842 86.5918 133.842H116.509C120.858 133.842 124.382 130.317 124.382 125.969V96.0513C124.382 91.7031 120.858 88.1782 116.509 88.1782Z" fill="#E28569"/>
+            <path d="M97.9576 116.174H101.107L101.141 114.962C101.141 113.368 102.146 112.953 103.566 112.502C104.991 112.097 106.245 111.239 107.139 110.058C108.033 108.876 108.517 107.436 108.52 105.955C108.551 105.051 108.394 104.15 108.059 103.309C107.724 102.468 107.218 101.707 106.574 101.072C105.929 100.437 105.159 99.9424 104.314 99.6203C103.468 99.2981 102.565 99.155 101.661 99.2C100.706 99.1792 99.7566 99.3526 98.8705 99.7097C97.9843 100.067 97.18 100.6 96.5062 101.278C95.8325 101.955 95.3033 102.762 94.9508 103.65C94.5983 104.538 94.4299 105.488 94.4557 106.443H97.712C97.6996 105.916 97.7926 105.391 97.9856 104.901C98.1785 104.41 98.4675 103.962 98.8356 103.584C99.2037 103.207 99.6435 102.906 100.129 102.701C100.615 102.495 101.137 102.388 101.664 102.387C102.14 102.359 102.616 102.435 103.06 102.607C103.504 102.78 103.906 103.046 104.238 103.388C104.569 103.73 104.824 104.139 104.984 104.588C105.143 105.037 105.205 105.515 105.163 105.99C105.142 106.758 104.875 107.499 104.401 108.104C103.927 108.709 103.271 109.146 102.53 109.35L101.387 109.803C100.268 110.073 99.2908 110.753 98.6492 111.709C98.0077 112.665 97.7485 113.827 97.923 114.965L97.9576 116.174ZM99.5165 123.66C99.8249 123.671 100.132 123.62 100.421 123.51C100.709 123.4 100.972 123.234 101.195 123.02C101.418 122.807 101.596 122.551 101.718 122.267C101.84 121.984 101.904 121.679 101.907 121.37C101.904 121.062 101.84 120.758 101.717 120.475C101.595 120.192 101.417 119.936 101.194 119.723C100.971 119.51 100.708 119.344 100.42 119.234C100.132 119.124 99.8246 119.073 99.5165 119.084C99.2084 119.073 98.9012 119.124 98.6131 119.234C98.3249 119.344 98.0617 119.51 97.8389 119.723C97.6161 119.936 97.4383 120.192 97.3159 120.475C97.1935 120.758 97.129 121.062 97.1262 121.37C97.1286 121.679 97.1927 121.984 97.315 122.267C97.4372 122.551 97.615 122.807 97.8378 123.02C98.0606 123.234 98.324 123.4 98.6123 123.51C98.9007 123.62 99.2081 123.671 99.5165 123.66Z" fill="white"/>
+            <g filter="url(#filter2_d_49_6074)">
+            <path d="M14.1543 151.163H226.727C228.815 151.163 230.817 151.992 232.294 153.469C233.77 154.945 234.6 156.948 234.6 159.036V198.401C234.6 200.489 233.77 202.492 232.294 203.968C230.817 205.444 228.815 206.274 226.727 206.274H14.1543C12.0662 206.274 10.0637 205.444 8.58721 203.968C7.11073 202.492 6.28125 200.489 6.28125 198.401V159.036C6.28125 156.948 7.11073 154.945 8.58721 153.469C10.0637 151.992 12.0662 151.163 14.1543 151.163V151.163Z" fill="white"/>
+            </g>
+            <path d="M114.929 163.759H73.9895C71.3806 163.759 69.2656 165.874 69.2656 168.483C69.2656 171.092 71.3806 173.207 73.9895 173.207H114.929C117.538 173.207 119.653 171.092 119.653 168.483C119.653 165.874 117.538 163.759 114.929 163.759Z" fill="#DEEBE9"/>
+            <path d="M143.272 184.229H73.9895C71.3806 184.229 69.2656 186.344 69.2656 188.953C69.2656 191.562 71.3806 193.677 73.9895 193.677H143.272C145.881 193.677 147.996 191.562 147.996 188.953C147.996 186.344 145.881 184.229 143.272 184.229Z" fill="#81B3CC"/>
+            <path d="M48.7985 155.886H18.8809C14.5327 155.886 11.0078 159.411 11.0078 163.759V193.677C11.0078 198.025 14.5327 201.55 18.8809 201.55H48.7985C53.1466 201.55 56.6715 198.025 56.6715 193.677V163.759C56.6715 159.411 53.1466 155.886 48.7985 155.886Z" fill="#E28569"/>
+            <path d="M30.2545 183.882H33.4037L33.4384 182.67C33.4384 181.076 34.443 180.661 35.8633 180.21C37.288 179.805 38.542 178.947 39.4358 177.766C40.3295 176.584 40.8143 175.144 40.817 173.663C40.8482 172.759 40.6913 171.858 40.3563 171.017C40.0212 170.176 39.5153 169.415 38.8706 168.78C38.2259 168.145 37.4563 167.65 36.6107 167.328C35.7651 167.006 34.8618 166.863 33.958 166.908C33.0029 166.887 32.0534 167.061 31.1673 167.418C30.2812 167.775 29.4769 168.308 28.8031 168.986C28.1293 169.663 27.6002 170.47 27.2477 171.358C26.8952 172.246 26.7268 173.196 26.7526 174.151H30.0089C29.9965 173.624 30.0895 173.099 30.2825 172.609C30.4754 172.118 30.7644 171.67 31.1325 171.292C31.5006 170.915 31.9404 170.614 32.4261 170.409C32.9118 170.203 33.4337 170.096 33.9611 170.095C34.4368 170.067 34.9128 170.143 35.3568 170.315C35.8009 170.488 36.2025 170.754 36.5344 171.096C36.8664 171.438 37.1208 171.847 37.2805 172.296C37.4402 172.745 37.5014 173.223 37.4599 173.698C37.439 174.466 37.1718 175.207 36.6978 175.812C36.2238 176.417 35.5681 176.854 34.8272 177.058L33.684 177.511C32.5648 177.781 31.5877 178.461 30.9461 179.417C30.3045 180.373 30.0454 181.535 30.2199 182.673L30.2545 183.882ZM31.8134 191.368C32.1217 191.379 32.4292 191.328 32.7175 191.218C33.0059 191.108 33.2692 190.942 33.4921 190.728C33.7149 190.515 33.8927 190.259 34.0149 189.975C34.1371 189.692 34.2013 189.387 34.2036 189.079C34.2009 188.77 34.1364 188.466 34.014 188.183C33.8916 187.9 33.7137 187.644 33.4909 187.431C33.2682 187.218 33.0049 187.052 32.7168 186.942C32.4287 186.832 32.1215 186.781 31.8134 186.792C31.5053 186.781 31.1981 186.832 30.9099 186.942C30.6218 187.052 30.3586 187.218 30.1358 187.431C29.913 187.644 29.7352 187.9 29.6127 188.183C29.4903 188.466 29.4259 188.77 29.4231 189.079C29.4254 189.387 29.4896 189.692 29.6118 189.975C29.7341 190.259 29.9118 190.515 30.1347 190.728C30.3575 190.942 30.6209 191.108 30.9092 191.218C31.1976 191.328 31.505 191.379 31.8134 191.368Z" fill="white"/>
+            <defs>
+            <filter id="filter0_d_49_6074" x="0.28125" y="12.7461" width="240.32" height="67.1113" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.161 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_49_6074"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_49_6074" result="shape"/>
+            </filter>
+            <filter id="filter1_d_49_6074" x="67.9922" y="80.4541" width="240.32" height="67.1113" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.161 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_49_6074"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_49_6074" result="shape"/>
+            </filter>
+            <filter id="filter2_d_49_6074" x="0.28125" y="148.163" width="240.32" height="67.1113" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.161 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_49_6074"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_49_6074" result="shape"/>
+            </filter>
+            </defs>
+          </svg>
+
+          <p class="px-[20px]">
+            {{ 'customer.orders.none' | t }}
+            <a
+              href="{{ routes.all_products_collection_url }}"
+              class="mt-[4.8rem] text-[#68453D!important] underlined-link"
+            >
+              {{- 'general.continue_shopping' | t -}}
+            </a>
+          </p>
+        </div>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        {%- if paginate.parts.size > 0 -%}
+          <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+            <ul role="list">
+              {%- if paginate.previous -%}
+                <li>
+                  <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- for part in paginate.parts -%}
+                <li>
+                  {%- if part.is_link -%}
+                    <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                      {{- part.title -}}
+                    </a>
+                  {%- else -%}
+                    {%- if part.title == paginate.current_page -%}
+                      <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                        {{- part.title -}}
+                      </span>
+                    {%- else -%}
+                      <span>{{ part.title }}</span>
+                    {%- endif -%}
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+
+              {%- if paginate.next -%}
+                <li>
+                  <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      {%- endif -%}
+    {% endpaginate %}
+
+    {% comment %}
+      <div>
+        <h2>{{ 'customer.account.details' | t }}</h2>
+        {{ customer.name }}
+        {{ customer.default_address | format_address }}
+
+        <a href="{{ routes.account_addresses_url }}">
+          {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+        </a>
+      </div>
+    {% endcomment %}
+  </div>
+</div>
+
+<div id="recover" class="customer font-sans reset-password section-{{ section.id }}-padding">
+  <h1 class="font-sans font-[500]" id="reset-password" tabindex="-1">
+    {{ 'customer.reset_password.title' | t }}
+  </h1>
+
+  <div>
+    {%- form 'recover_customer_password', id: 'RecoverPasswordForm' -%}
+      <div class="field">
+        <label for="RecoverEmail">
+          {{ 'customer.recover_password.subtext' | t }}
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="RecoverEmail"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          placeholder="{{ 'customer.login_page.email' | t }}"
+        >
+      </div>
+
+      <button type="submit" class="button font-sans w-full">
+        {{ 'customer.login_page.submit' | t }}
+      </button>
+
+      <p id="recoverSuccessMessage" class="note note--success hidden"></p>
+      <p id="recoverErrorMessage" class="note note--error hidden"></p>
+    {%- endform -%}
+  </div>
+</div>
+
+<script>
+  function toggleRecoverElements() {
+    const hash = window.location.hash;
+    const recoverElement = document.querySelector('#recover');
+    const hideWithRecoverElement = document.querySelector('.hide-with-recover');
+
+    if (hash === '#recover') {
+      recoverElement.style.display = 'block';
+      document.querySelector('.active-recover').classList.add('active');
+      document.querySelector('.recover-not-active').classList.remove('active');
+      hideWithRecoverElement.style.display = 'none';
+    } else {
+      recoverElement.style.display = 'none';
+      document.querySelector('.recover-not-active').classList.add('active');
+      document.querySelector('.active-recover').classList.remove('active');
+      hideWithRecoverElement.style.display = 'block';
+    }
+  }
+
+  // Initial check
+  toggleRecoverElements();
+
+  // Listen for hash changes
+  window.addEventListener('hashchange', toggleRecoverElements);
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .note--success {
+    color: green;
+    margin-top: 10px;
+  }
+
+  .note--error {
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

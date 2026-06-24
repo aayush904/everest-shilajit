@@ -1,0 +1,7 @@
+{% assign ids = id | split: ',' %}
+
+{% for id in ids %}
+<svg class="main__icon" style="{{ style }}">
+  <use xlink:href="{{'main.svg' | asset_url }}#{{ id | replace: ' ', ''}}"></use>
+</svg>
+{% endfor %}

@@ -1,0 +1,586 @@
+<style>
+  .damage-form-container {
+    max-width: 65.2rem;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  /* h2 {
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+          color: #382E2A;
+          font-weight: 500;
+          font-family: "var(--font-body-family)", sans-serif;
+      } */
+
+  .damage-form-group {
+    margin-bottom: 15px;
+    position: relative;
+    && div {
+      position: relative;
+      max-width: calc(50% - 8px);
+    }
+  }
+
+  label {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Sans Serif Collection', sans-serif;
+    color: #5c5f6a;
+    font-weight: 500;
+    position: relative;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='file'],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #d4cdcd;
+    box-shadow: none;
+  }
+
+  *:focus-visible {
+    outline: none;
+    outline-offset: 0rem;
+  }
+
+  textarea {
+    resize: vertical;
+    height: auto;
+    min-height: 15rem;
+  }
+
+  button {
+    width: 30%;
+    padding: 10px;
+    background-color: #68453d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #54382f;
+  }
+
+  .damage-file-info {
+    font-size: 1.2rem;
+    color: #777;
+  }
+
+  .damage-note {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #5c5f6a;
+    margin-bottom: 2rem;
+  }
+
+  .damage-note strong {
+    color: #f3aa48;
+  }
+
+  .damage-note a {
+    color: #0073e6;
+    text-decoration: none;
+  }
+
+  .damage-note a:hover {
+    text-decoration: underline;
+  }
+  .half-width {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    gap: 12px;
+    max-width: 60.4rem;
+    width: 100%;
+    position: relative;
+  }
+  .damage-first-name,
+  .damage-last-name {
+    flex: 1;
+    min-width: 30rem;
+  }
+  .damage-submit {
+    font-size: 1.8rem;
+    height: 6rem;
+    float: right;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  .custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .custom-file-upload input[type='file'] {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .upload-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid #382e2a;
+    padding: 1rem;
+  }
+  .upload-label svg {
+    width: 1.9rem;
+    height: 1.5rem;
+    color: #382e2a;
+  }
+  .upload-text {
+    font-size: 1.4rem;
+    color: #382e2a;
+    font-weight: 500;
+  }
+  .error {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
+  .uploaded-images {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .uploaded-images img {
+    width: 13rem;
+    height: 13rem;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .uploaded-images .delete-button {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: transparent;
+    color: brown;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .uploaded-image-wrapper {
+    position: relative;
+  }
+
+  .uploading {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #555;
+    font-size: 1.2rem;
+  }
+
+      .message {
+      padding: 12px 20px;
+      margin-top: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+    }
+    .message.success {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .message.error {
+      background-color: #f44336;
+      color: white;
+    }
+
+  @media (max-width: 768px) {
+    .damage-form-group.half-width {
+      && div {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    label {
+      text-align: left;
+    }
+  }
+</style>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div class="damage-form-container">
+  <h4>Contact Information</h4>
+  <form id="damage-form" method="POST">
+    <div class="damage-form-group half-width">
+      <div>
+        <label class="damage-first-name" for="firstName">First Name <span style="color: #F36719;">*</span> </label>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+      </div>
+      <div>
+        <label class="damage-last-name" for="lastName">Last Name <span style="color: #F36719;">*</span> </label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+      </div>
+    </div>
+    <div class="damage-form-group">
+      <label for="email">Email <span style="color: #F36719;">*</span> </label>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="damage-form-group">
+      <label for="order-id">Order ID <span style="color: #F36719;">*</span> </label>
+      <input type="text" id="order-id" name="orderId" placeholder="Other Id" required>
+    </div>
+
+    <!-- Damage Details -->
+    <h4>Damage Details</h4>
+    <div class="damage-form-group">
+      <label for="description">Description of Damage <span style="color: #F36719;">*</span> </label>
+      <textarea id="description" name="description" placeholder="Reason" required></textarea>
+    </div>
+    <div class="damage-form-group">
+      <label for="upload">Upload Photos of Damage <span style="color: #F36719;">*</span> </label>
+      <p class="damage-file-info" id="file-info">Accepted file types: jpg, jpeg, png, gif</p>
+      <div class="custom-file-upload">
+        <label for="upload" class="upload-label">
+          <svg viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5076 12.1176L10.1737 8.78369L6.83984 12.1176" stroke="#382E2A" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.1719 8.78369V16.2849" stroke="#382E2A" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17.1655 14.1107C17.9784 13.6675 18.6206 12.9663 18.9907 12.1176C19.3608 11.2689 19.4377 10.3211 19.2093 9.42386C18.9809 8.52659 18.4603 7.73093 17.7295 7.16245C16.9986 6.59396 16.0993 6.28504 15.1735 6.28443H14.1233C13.871 5.30863 13.4008 4.40273 12.748 3.63481C12.0952 2.8669 11.2769 2.25697 10.3544 1.85086C9.43197 1.44476 8.42947 1.25306 7.42227 1.29017C6.41508 1.32728 5.4294 1.59223 4.53935 2.06511C3.64929 2.538 2.87801 3.2065 2.28351 4.02037C1.689 4.83424 1.28673 5.77229 1.10694 6.764C0.927155 7.75572 0.974526 8.77528 1.24549 9.74605C1.51646 10.7168 2.00398 11.6135 2.67139 12.3688" stroke="#382E2A" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.5076 12.1176L10.1737 8.78369L6.83984 12.1176" stroke="#382E2A" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="upload-text">Upload</span>
+        </label>
+        <input type="file" id="upload" name="upload" accept=".jpg, .jpeg, .png, .gif" multiple required>
+      </div>
+      <div class="uploaded-images" id="uploaded-images"></div>
+    </div>
+
+    <h4>Additional Information</h4>
+    <div class="damage-form-group">
+      <label for="comments">Any other comments?</label>
+      <textarea id="comments" name="comments" placeholder="Comments"></textarea>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LefjUgrAAAAAKbK8yr8t3-g7sdHi9uaJbYXH8lJ"></div>
+    <div id="responseMessage" class="message"></div>
+
+    <hr style="border: none; border-top: 1px solid #D4CDCD; margin: 20px 0;">
+
+    <!-- Note -->
+    <p class="damage-note">
+      <strong>NOTE:</strong> If you do not receive a response within 24 hours, please contact our customer service team
+      directly at <a href="mailto:contact@everestshilajit.com">contact@everestshilajit.com</a>.
+    </p>
+
+    <!-- Submit -->
+    <button class="damage-submit" type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+    const uploadInput = document.getElementById('upload');
+    const form = document.getElementById('damage-form');
+    const submitButton = form.querySelector('button');
+    const responseMessage = document.getElementById('responseMessage');
+    const uploadedImagesContainer = document.getElementById('uploaded-images');
+
+    const showError = (input, message) => {
+      let error = input.nextElementSibling;
+    
+      // Create error element if it doesn't exist
+      if (!error || !error.classList.contains('error')) {
+        error = document.createElement('div');
+        error.className = 'error';
+        input.insertAdjacentElement('afterend', error);
+      }
+    
+      input.parentElement.style.position = 'relative';
+      error.style.fontSize = '1rem';
+      error.style.color = '#ef4444';
+      error.style.position = 'absolute';
+      error.style.top = `90%`;
+      error.style.left = '0';
+      error.textContent = message;
+      error.style.display = 'block';
+    };
+  
+    const hideError = (input) => {
+      const error = input.parentElement.querySelector('.error');
+      error?.remove();
+    };
+  
+    const validateField = (input) => {
+      if (!input.value.trim() && input.required) {
+        showError(input, `${input.name} is required`);
+      } else if (input.type === 'email' && !/\S+@\S+\.\S+/.test(input.value)) {
+        showError(input, 'A valid email is required');
+      } else if (input.type === 'url' && !/^https?:\/\/.+\..+/.test(input.value)) {
+        showError(input, 'A valid URL is required');
+      } else if (input.type === 'tel' && !/^\d{10,}$/.test(input.value)) {
+        // Phone validation
+        showError(input, 'A valid phone number is required (at least 10 digits)');
+      } else {
+        hideError(input);
+      }
+    };
+
+    const inputs = form.querySelectorAll("input,textarea");
+    inputs.forEach((input) => {
+      input.addEventListener('input', () => validateField(input));
+      input.addEventListener('blur', () => validateField(input));
+    });
+
+  let uploadedImagesCount = 0;
+
+  uploadInput.addEventListener('change', function () {
+    const files = Array.from(this.files);
+    const validExtensions = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+    const maxFileSize = 25 * 1024 * 1024;
+    const maxFiles = 3;
+
+    // Check if number of files exceeds limit
+    if (uploadedImagesCount + files.length > maxFiles) {
+      showError(uploadInput,`You can only upload up to ${maxFiles} images in total.`);
+      return;
+    }
+
+    files.forEach((file) => {
+      // Validate file type
+      if (!validExtensions.includes(file.type)) {
+        showError(uploadInput,`Invalid file type: ${file.name}`);
+        return;
+      }
+
+      // Validate file size
+      if (file.size > maxFileSize) {
+        showError(uploadInput,`File ${file.name} exceeds 25MB limit`);
+        return;
+      }
+
+      const imageWrapper = document.createElement('div');
+      imageWrapper.className = 'uploaded-image-wrapper';
+
+      // Create uploading indicator
+      const uploadingDiv = document.createElement('div');
+      uploadingDiv.className = 'uploading';
+
+      const spinner = document.createElement('div');
+      spinner.className = 'spinner';
+      spinner.style.border = '4px solid #f3f3f3';
+      spinner.style.borderTop = '4px solid #68453D';
+      spinner.style.borderRadius = '50%';
+      spinner.style.width = '65px';
+      spinner.style.height = '65px';
+      spinner.style.animation = 'spin 2s linear infinite';
+      spinner.style.position = 'relative';
+
+      const percentageText = document.createElement('div');
+      percentageText.className = 'percentage-text';
+      percentageText.textContent = '0%';
+      percentageText.style.position = 'absolute';
+
+      uploadingDiv.appendChild(spinner);
+      uploadingDiv.appendChild(percentageText);
+
+      // Add spinning animation
+      const style = document.createElement('style');
+      style.innerHTML = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            .uploaded-image-wrapper {
+                position: relative;
+                display: inline-block;
+                margin: 10px;
+            }
+            .delete-button {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: rgba(255, 255, 255, 0.8);
+                border: none;
+                border-radius: 50%;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+            .uploading {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+            }
+        `;
+      document.head.appendChild(style);
+
+      uploadedImagesContainer.appendChild(uploadingDiv);
+
+      // Simulate upload progress
+      let percentage = 0;
+      const interval = setInterval(() => {
+        if (percentage < 100) {
+          percentage += (file.size / maxFileSize) * 10; // Adjust progress based on file size
+          percentage = Math.min(percentage, 100);
+          percentageText.textContent = `${Math.round(percentage)}%`;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
+
+      // Read and display the image
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        uploadedImagesContainer.removeChild(uploadingDiv);
+
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.alt = file.name;
+        img.style.maxWidth = '250px';
+        img.style.maxHeight = '250px';
+
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-button';
+        deleteButton.innerHTML = `
+            <svg  viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15.5" cy="15.5" r="15.5" fill="#ffd9d9"/>
+            <path d="M10 11.7998H11.4H22.6" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21.1984 11.8V21.6C21.1984 21.9713 21.0509 22.3274 20.7884 22.5899C20.5258 22.8525 20.1697 23 19.7984 23H12.7984C12.4271 23 12.071 22.8525 11.8085 22.5899C11.5459 22.3274 11.3984 21.9713 11.3984 21.6V11.8M13.4984 11.8V10.4C13.4984 10.0287 13.6459 9.6726 13.9085 9.41005C14.171 9.1475 14.5271 9 14.8984 9H17.6984C18.0697 9 18.4258 9.1475 18.6884 9.41005C18.9509 9.6726 19.0984 10.0287 19.0984 10.4V11.8" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.8984 15.2998V19.4998" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17.7031 15.2998V19.4998" stroke="#68453D" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`;
+
+        deleteButton.addEventListener('click', () => {
+          imageWrapper.remove();
+          uploadedImagesCount--;
+          uploadInput.value = '';
+        });
+
+        imageWrapper.appendChild(img);
+        imageWrapper.appendChild(deleteButton);
+        uploadedImagesContainer.appendChild(imageWrapper);
+        uploadedImagesCount++;
+      };
+
+      setTimeout(() => reader.readAsDataURL(file), 1000);
+    });
+  });
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const jsonPayload = {};
+  const fileUploadArray = [];
+
+     let isValid = true;
+      inputs.forEach((input) => {
+        validateField(input);
+        if (input.parentElement.querySelector('.error')) {
+          isValid = false;
+        }
+      });
+
+      if (!isValid) return;
+
+      
+      const captchaResponse = grecaptcha.getResponse();
+      if (!captchaResponse) {
+        responseMessage.textContent = 'Please complete the reCAPTCHA challenge.';
+        responseMessage.className = 'message error';
+        responseMessage.style.display = 'block';
+        throw new Error('Please complete the reCAPTCHA challenge.');
+        return;
+      } 
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+  
+
+  for (const [key, value] of formData.entries()) {
+    if (value instanceof File) {
+      const files = formData.getAll(key); // get all files for that input
+      for (const file of files) {
+        const base64 = await fileToBase64(file);
+        fileUploadArray.push({
+          filedata: base64.split(',')[1], // remove data:[type];base64,
+          filetype: file.type,
+          filename: file.name
+        });
+      }
+    } else {
+      jsonPayload[key] = value;
+    }
+  }
+
+  jsonPayload.fileUpload = fileUploadArray;
+  jsonPayload.api = 'everest-damage';
+
+  try {
+    const response = await fetch('https://api.medicinalmadhoney.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonPayload)
+    });
+
+        if (response.ok) {
+          responseMessage.textContent = 'Form submitted successfully!';
+          responseMessage.className = 'message success';
+        } else {
+          const errorData = await response.json();
+          responseMessage.textContent = `Error: ${errorData.error || 'Failed to submit form.'}`;
+          responseMessage.className = 'message error';
+        }
+
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
+  } catch (err) {
+        console.error(err);
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit';
+        responseMessage.textContent = 'An error occurred. Please try again later.';
+        responseMessage.className = 'message error';
+  }
+      responseMessage.style.display = 'block';
+      submitButton.textContent = 'Submit';
+
+      setTimeout(() => {
+        responseMessage.style.display = 'none';
+      }, 3000);
+});
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+}
+
+      });
+</script>

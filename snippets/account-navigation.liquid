@@ -1,0 +1,61 @@
+{% capture order_number_label %} {{ 'customer.orders.order_number' | t }} {% endcapture %}
+
+{% capture addresses_label %} {{ 'customer.addresses.title' | t }} {% endcapture %}
+
+<div class="page-width px-0">
+  <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
+  <div class="hide-scrollbar scroll-container flex justify-between items-center border-b gap-[3.2rem]  border-[#D4CDCD]">
+    <div class="flex  gap-[5.2rem] mb-[-1px]">
+      <a
+        class="recover-not-active {% if order_number_label contains active %} active {% endif %} pb-[15px]  font-sans capitalize w-max text-[#000]"
+        href="{{ routes.account_url }}"
+      >
+        {{ 'customer.orders.order_number' | t }}
+      </a>
+      <a
+        class="{% if addresses_label contains active %} active {% endif %} pb-[15px] font-sans capitalize w-max text-[#000]"
+        href="{{ routes.account_addresses_url }}"
+      >
+        {{ 'customer.addresses.title' | t }}
+      </a>
+      <a
+        class="pb-[15px] font-sans capitalize w-max text-[#000]"
+        href="https://accounts.everestshilajit.com/pages/6971b1a1-27f6-4c27-b8b0-3009fd3b921d"
+      >
+        Manage Subscriptions
+      </a>
+      <a
+        class="active-recover  pb-[15px] font-sans capitalize w-max text-[#000]"
+        href="{{ routes.account_url }}#recover"
+      >
+        Change Password
+      </a>
+    </div>
+    <a style="display:flex;" class="pb-[15px] w-max logout text-border flex  " href="{{ routes.account_logout_url }}">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.00039 16H2.6668C2.22473 16 1.80078 15.8244 1.48819 15.5118C1.17561 15.1993 1 14.7754 1 14.3333V2.66667C1 2.22464 1.17561 1.80072 1.48819 1.48816C1.80078 1.17559 2.22473 1 2.6668 1H6.00039" stroke="#5E4A41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.8281 12.6667L15.9951 8.49999L11.8281 4.33333" stroke="#5E4A41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.0008 8.5H6" stroke="#5E4A41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="w-max">
+        {{ 'customer.log_out' | t }}
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }} a.active{
+    border-bottom: 2px solid #68453D;
+    padding-left:11px;
+    padding-right:11px;
+
+    &&:first-child{
+        padding-right:22px;
+        padding-left:0;
+
+    }
+
+
+  }
+</style>

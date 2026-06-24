@@ -1,0 +1,597 @@
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+      position:relative;
+
+      * {
+        font-family: var(--font-body-family);
+      }
+      .testimonials {
+        padding: 40px 16px;
+        width: 100%;
+        max-width:147.2rem;
+        margin:0 auto;
+        position:relative;
+      }
+
+      .testimonial-heading {
+        text-align: center;
+        margin-bottom: 32px;
+        padding: 0;
+      }
+
+      .testimonial-heading h2 { font-size: 29px; letter-spacing:-1px; color: #382E2A; margin-bottom: 10px; font-weight:800;}
+      .testimonial-heading p { font-size: 16px; color: var(--gradient-base-accent-1);  margin: 0 auto; }
+      .testimonial-slider-container { overflow: hidden; position: relative; padding-left: 15px; }
+      .slider-wrapper { display: flex; cursor: grab; user-select: none; }
+      .slider-wrapper.is-dragging { cursor: grabbing; }
+      .slider-wrapper.is-dragging a,
+      .slider-wrapper.is-dragging img { pointer-events: none; }
+
+      .testimonial-slide {
+        flex-shrink: 0;
+        width: clamp(215px, 70vw, 464px);
+        padding-right: 15px;
+        box-sizing: border-box;
+      }
+
+      .video-container {
+        position: relative;
+        background-color: #e0e0e0;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        width: 100%;
+      }
+
+      .video-container video,
+      .video-container iframe { width: 100%; height: 100%; object-fit: cover; }
+
+      .mute-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .product-overlay {
+        position: absolute;
+        bottom: 9%;
+        right: -1px;
+        width:43%;
+        display: flex;
+        justify-content:end;
+        z-index: 1;
+        max-width: 43%;
+      }
+
+      .product-overlay a { display: flex; justify-content: center; align-items: center;  height: 100%; }
+      .product-overlay img,
+      .product-overlay svg { max-height:230px; min-height:110px; height:100%;  object-fit: contain;}
+
+      .testimonial-content { text-align: center; padding-top: 1.6rem; display:flex; gap:1.6rem; flex-direction:column; }
+      .testimonial-content p { font-size: 16px; color: var(--gradient-base-accent-1); margin-bottom: 0; line-height: 1.5; }
+      .testimonial-content span { font-size: 16px; color: var(--gradient-base-accent-1); }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #68453D;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        color: #555;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .prev-btn { display:none; }
+      .next-btn { display:none; }
+      .slider-dots { text-align: center; margin-top: 24px; }
+
+      .slider-dots .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 2.5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .slider-dots .dot.active { background-color: #8B4513; }
+
+      .reviews-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;       /* limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+      @media(min-width:768px){
+        .testimonial-heading {
+          margin-bottom:6.4rem;
+        }
+        .testimonials {
+          padding: 11rem 16px;
+        }
+
+      .testimonial-heading h2 { font-size: 4.8rem; color: #382E2A; margin-bottom: 10px; }
+      .testimonial-content { text-align: center; padding-top: 3.2rem; gap:3.2rem;}
+      .testimonial-content p { font-size: 2rem; margin-bottom: 0; line-height: 1.5; }
+      .testimonial-content span { font-size: 2rem; }
+      }
+
+      @media (min-width: 1200px) {
+        .testimonial-slider-container {
+          max-width: calc((46.4rem * 3) + (2.4rem * 2));
+          margin: 0 auto;
+          padding-left: 0;
+        }
+        .slider-wrapper {
+          gap: 2.4rem;
+        }
+
+        .testimonial-slide {
+          width: 46.4rem;
+          flex-basis: 46.4rem;
+          padding-right: 0;
+        }
+
+        .prev-btn { left: -2.5rem; transform:translateX(-50%);}
+        .prev-btn svg{ margin-right: .5rem; }
+        .next-btn { right: -2.5rem; transform:translateX(50%);}
+        .next-btn svg{ margin-left: .5rem; }
+        .slider-dots { margin-top: 4.8rem; }
+        .slider-dots .dot { width: 2.4rem; height: 2.4rem;}
+      }
+    }
+{% endstyle %}
+
+<section class="testimonials" id="shopify-section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="testimonial-heading flex flex-col gap-[16px]">
+    {% if section.settings.subtitle != blank %}
+      <span>{{ section.settings.subtitle }}</span>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.caption != blank %}
+      <div>{{ section.settings.caption }}</div>
+    {% endif %}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="testimonial-slider-container">
+      <div class="slider-wrapper">
+        {% for block in section.blocks %}
+          <div class="testimonial-slide" {{ block.shopify_attributes }}>
+            <div class="video-container">
+              {% if block.settings.video != blank %}
+                {{
+                  block.settings.video
+                  | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '1024x'
+                }}
+                <button class="mute-btn">
+                  <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M59.1366 9.90327L63.0155 5.21577L60.4217 3.06737L56.5428 7.75097C50.6717 3.33687 43.3978 0.68457 35.5038 0.68457C16.1368 0.68457 0.382812 16.4426 0.382812 35.8056C0.382812 46.0676 4.83201 55.2826 11.8748 61.7116L7.99591 66.3952L10.5897 68.5436L14.4686 63.8639C20.3397 68.278 27.6136 70.9303 35.5076 70.9303C54.8746 70.9303 70.6286 55.1723 70.6286 35.8093C70.6286 25.5473 66.1794 16.3323 59.1366 9.90327ZM35.5036 67.5633C17.9956 67.5633 3.74961 53.3173 3.74961 35.8093C3.74961 18.3013 17.9956 4.05527 35.5036 4.05527C42.5856 4.05527 49.1056 6.41467 54.3946 10.3444L50.5079 15.0397L53.1017 17.1881L56.9845 12.4928C63.2814 18.2975 67.2545 26.5868 67.2545 35.8048C67.2545 53.3128 53.0085 67.5588 35.5005 67.5588L35.5036 67.5633Z" fill="white"/>
+                    <path d="M46.0743 12.4892C44.7227 11.8955 43.2032 12.1533 42.1016 13.1728L28.5586 25.8718H20.9414C17.9961 25.8718 15.6016 28.2702 15.6016 31.2116V40.3991C15.6016 43.3444 18 45.7389 20.9414 45.7389H25.0937L17.0703 55.4342L19.6641 57.5826L29.0703 46.2196L42.0933 58.3996C42.8042 59.0754 43.6988 59.423 44.6167 59.423C45.101 59.423 45.5932 59.3253 46.062 59.1183C47.4136 58.5402 48.2847 57.216 48.2847 55.7355L48.2808 15.8725C48.2808 14.3803 47.4331 13.0834 46.0699 12.4897L46.0743 12.4892ZM23.4723 42.3722V29.2392H29.8903L44.4063 15.6342C44.4453 15.5952 44.5703 15.5014 44.7305 15.5756C44.918 15.6577 44.918 15.8178 44.918 15.8725V21.8022L27.891 42.3722L23.4723 42.3722ZM44.9133 55.7432C44.9133 55.7979 44.9133 55.9542 44.7336 56.0323C44.5539 56.1026 44.4562 56.001 44.4055 55.9542L31.2215 43.6221L44.9125 27.0831V55.7472L44.9133 55.7432Z" fill="white"/>
+                  </svg>
+                </button>
+              {% elsif block.settings.banner != blank %}
+                {{
+                  block.settings.banner
+                  | image_url: width: 1200
+                  | image_tag: alt: 'Banner Image', class: 'banner-img'
+                }}
+
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+
+              <div class="product-overlay">
+                {%- assign product_image = block.settings.image | default: block.settings.product.featured_image -%}
+                <a href="{{ block.settings.product.url | default: '#' }}">
+                  {% if product_image != blank %}
+                    <img
+                      src="{{ product_image | image_url: width: 200 }}"
+                      alt="{{ product_image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ product_image.width }}"
+                      height="{{ product_image.height }}"
+                    >
+                  {% else %}
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  {% endif %}
+                </a>
+              </div>
+            </div>
+            <div class="testimonial-content card-wrapper">
+              <div
+                class="rating font-sans  mr-[1.2rem]"
+                role="img"
+                aria-label="{{block.settings.rating_count}} out of 5.0 stars"
+              >
+                <span
+                  aria-hidden="true"
+                  class="font-sans rating-star color-icon-text"
+                  style="--font-size:2.2; --color-icon: #FFC700; --rating: {{block.settings.rating_count}}; --rating-max: 5.0; --rating-decimal: 0.5;"
+                ></span>
+              </div>
+              {% if block.settings.review_text != blank %}
+                <p class="reviews-text" title="{{ block.settings.review_text }}">{{ block.settings.review_text }}</p>
+              {% endif %}
+              {% if block.settings.person_name != blank %}
+                <span>-{{ block.settings.person_name | escape }}</span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="slider-btn prev-btn">
+      <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.0888 19.1943L1.20312 10.3086L10.0888 1.42285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="slider-btn next-btn">
+      <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.65729 19.1943L10.543 10.3086L1.65729 1.42285" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="slider-dots"></div>
+  {% endif %}
+</section>
+
+<script>
+  (function () {
+    const sectionId = '{{ section.id }}';
+    const sliderContainer = document.querySelector(`#shopify-section-${sectionId}`);
+    if (!sliderContainer) return;
+
+    const unmuteBtnIcon = `<svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M59.1366 9.90327L63.0155 5.21577L60.4217 3.06737L56.5428 7.75097C50.6717 3.33687 43.3978 0.68457 35.5038 0.68457C16.1368 0.68457 0.382812 16.4426 0.382812 35.8056C0.382812 46.0676 4.83201 55.2826 11.8748 61.7116L7.99591 66.3952L10.5897 68.5436L14.4686 63.8639C20.3397 68.278 27.6136 70.9303 35.5076 70.9303C54.8746 70.9303 70.6286 55.1723 70.6286 35.8093C70.6286 25.5473 66.1794 16.3323 59.1366 9.90327ZM35.5036 67.5633C17.9956 67.5633 3.74961 53.3173 3.74961 35.8093C3.74961 18.3013 17.9956 4.05527 35.5036 4.05527C42.5856 4.05527 49.1056 6.41467 54.3946 10.3444L50.5079 15.0397L53.1017 17.1881L56.9845 12.4928C63.2814 18.2975 67.2545 26.5868 67.2545 35.8048C67.2545 53.3128 53.0085 67.5588 35.5005 67.5588L35.5036 67.5633Z" fill="white"/> <path d="M46.0743 12.4892C44.7227 11.8955 43.2032 12.1533 42.1016 13.1728L28.5586 25.8718H20.9414C17.9961 25.8718 15.6016 28.2702 15.6016 31.2116V40.3991C15.6016 43.3444 18 45.7389 20.9414 45.7389H25.0937L17.0703 55.4342L19.6641 57.5826L29.0703 46.2196L42.0933 58.3996C42.8042 59.0754 43.6988 59.423 44.6167 59.423C45.101 59.423 45.5932 59.3253 46.062 59.1183C47.4136 58.5402 48.2847 57.216 48.2847 55.7355L48.2808 15.8725C48.2808 14.3803 47.4331 13.0834 46.0699 12.4897L46.0743 12.4892ZM23.4723 42.3722V29.2392H29.8903L44.4063 15.6342C44.4453 15.5952 44.5703 15.5014 44.7305 15.5756C44.918 15.6577 44.918 15.8178 44.918 15.8725V21.8022L27.891 42.3722L23.4723 42.3722ZM44.9133 55.7432C44.9133 55.7979 44.9133 55.9542 44.7336 56.0323C44.5539 56.1026 44.4562 56.001 44.4055 55.9542L31.2215 43.6221L44.9125 27.0831V55.7472L44.9133 55.7432Z" fill="white"/> </svg>`;
+    const muteBtnIcon = `<svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M35.547 2.22363C17.024 2.22363 1.95703 17.2786 1.95703 35.7826C1.95703 54.2906 17.027 69.3726 35.547 69.3726C54.07 69.3726 69.106 54.3026 69.106 35.7826C69.106 17.2596 54.051 2.22363 35.547 2.22363ZM35.547 66.0046C18.883 66.0046 5.32403 52.4496 5.32403 35.7816C5.32403 19.1176 18.883 5.59063 35.547 5.59063C52.211 5.59063 65.738 19.1336 65.738 35.7816C65.738 52.4296 52.195 66.0046 35.547 66.0046Z" fill="white"/> <path d="M44.3168 13.4815C42.9887 12.9073 41.5043 13.1573 40.4262 14.1456L27.5352 26.2196H20.293C17.4336 26.2196 15.1094 28.5438 15.1094 31.4032V40.1532C15.1094 43.0126 17.4336 45.3368 20.293 45.3368H27.5352L40.4182 57.4028C41.1057 58.0551 41.9729 58.395 42.8635 58.395C43.34 58.395 43.8205 58.2973 44.2854 58.0981C45.6018 57.5317 46.4495 56.2387 46.4495 54.8051V16.7501C46.4495 15.3087 45.6293 14.0596 44.3168 13.4815ZM43.0824 54.8175L42.7308 54.962L28.8678 41.978H21.9811V29.595H28.8678L42.7308 16.611L41.5785 15.3805L43.0824 16.7516L43.0824 54.8175Z" fill="white"/> <path d="M50.5078 27.407C50.6992 27.7312 55.1133 35.4109 50.5078 43.134L53.4023 44.8606C59.0507 35.384 53.6367 26.0796 53.4023 25.6846L50.5039 27.4073L50.5078 27.407Z" fill="white"/> </svg> `;
+
+    const initSlider = () => {
+      const sliderWrapper = sliderContainer.querySelector('.slider-wrapper');
+      if (!sliderWrapper || sliderWrapper.children.length === 0) return;
+
+      const prevBtn = sliderContainer.querySelector('.prev-btn');
+      const nextBtn = sliderContainer.querySelector('.next-btn');
+      const dotsContainer = sliderContainer.querySelector('.slider-dots');
+
+      dotsContainer.innerHTML = '';
+
+      const originalSlides = Array.from(sliderWrapper.children).filter((el) =>
+        el.classList.contains('testimonial-slide')
+      );
+      if (originalSlides.length === 0) return;
+
+      sliderWrapper.querySelectorAll('.clone').forEach((clone) => clone.remove());
+
+      const slideCount = originalSlides.length;
+      const SLIDES_TO_CLONE = Math.min(slideCount, 3);
+
+      let currentIndex = SLIDES_TO_CLONE;
+      let isTransitioning = false;
+      let isDragging = false,
+        startPos = 0,
+        currentTranslate = 0,
+        prevTranslate = 0,
+        moveAmt = 0;
+
+      for (let i = 0; i < SLIDES_TO_CLONE; i++) {
+        const firstClone = originalSlides[i].cloneNode(true);
+        firstClone.classList.add('clone');
+        sliderWrapper.appendChild(firstClone);
+        const lastClone = originalSlides[slideCount - 1 - i].cloneNode(true);
+        lastClone.classList.add('clone');
+        sliderWrapper.insertBefore(lastClone, sliderWrapper.firstChild);
+      }
+
+      for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => {
+          if (!isTransitioning) {
+            currentIndex = i + SLIDES_TO_CLONE;
+            updateSlider();
+          }
+        });
+        dotsContainer.appendChild(dot);
+      }
+      const dots = Array.from(dotsContainer.children);
+
+      const getSlideWidth = () => {
+        const firstSlide = sliderWrapper.querySelector('.testimonial-slide:not(.clone)');
+        if (!firstSlide) return 0;
+        const slideGap = parseFloat(window.getComputedStyle(sliderWrapper).gap) || 0;
+        return firstSlide.getBoundingClientRect().width + slideGap;
+      };
+
+      const updateSlider = (withTransition = true) => {
+        isTransitioning = withTransition;
+        sliderWrapper.style.transition = withTransition ? 'transform 0.5s ease-out' : 'none';
+        currentTranslate = -currentIndex * getSlideWidth();
+        sliderWrapper.style.transform = `translateX(${currentTranslate}px)`;
+        const realIndex = (currentIndex - SLIDES_TO_CLONE + slideCount * 10) % slideCount;
+        dots.forEach((dot, index) => dot.classList.toggle('active', index === realIndex));
+      };
+
+      const slideForward = () => {
+        if (!isTransitioning) {
+          currentIndex++;
+          updateSlider();
+        }
+      };
+      const slideBackward = () => {
+        if (!isTransitioning) {
+          currentIndex--;
+          updateSlider();
+        }
+      };
+
+      const dragStart = (event) => {
+        isTransitioning = false; // Stop any ongoing transition
+        isDragging = true;
+        startPos = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+        moveAmt = 0;
+        sliderWrapper.classList.add('is-dragging');
+        sliderWrapper.style.transition = 'none';
+      };
+
+      const dragging = (event) => {
+        if (isDragging) {
+          const currentPosition = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+          moveAmt = currentPosition - startPos;
+          currentTranslate = prevTranslate + moveAmt;
+          sliderWrapper.style.transform = `translateX(${currentTranslate}px)`;
+        }
+      };
+
+      const dragEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        sliderWrapper.classList.remove('is-dragging');
+
+        const slideWidth = getSlideWidth();
+        const slideChangeThreshold = 50; // A significant swipe distance
+
+        if (moveAmt < -slideChangeThreshold) {
+          currentIndex++;
+        } else if (moveAmt > slideChangeThreshold) {
+          currentIndex--;
+        }
+
+        // Always snap to a valid position, but only trigger if it was a real drag.
+        // A tiny moveAmt means it was a click, so we don't want to start a transition.
+        if (Math.abs(moveAmt) > 2) {
+          updateSlider(true);
+        }
+      };
+
+      sliderWrapper.addEventListener('mousedown', dragStart);
+      sliderWrapper.addEventListener('touchstart', dragStart, { passive: true });
+      sliderWrapper.addEventListener('mouseup', dragEnd);
+      sliderWrapper.addEventListener('touchend', dragEnd);
+      sliderWrapper.addEventListener('mouseleave', dragEnd);
+      sliderWrapper.addEventListener('mousemove', dragging);
+      sliderWrapper.addEventListener('touchmove', dragging, { passive: true });
+      nextBtn.addEventListener('click', slideForward);
+      prevBtn.addEventListener('click', slideBackward);
+
+      sliderWrapper.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        if (currentIndex >= slideCount + SLIDES_TO_CLONE) {
+          currentIndex = SLIDES_TO_CLONE;
+          updateSlider(false);
+        }
+        if (currentIndex < SLIDES_TO_CLONE) {
+          currentIndex = slideCount + SLIDES_TO_CLONE - 1;
+          updateSlider(false);
+        }
+        prevTranslate = currentTranslate;
+      });
+
+      sliderWrapper.addEventListener(
+        'click',
+        function (e) {
+          if (Math.abs(moveAmt) > 10) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          const muteBtn = e.target.closest('.mute-btn');
+          if (muteBtn) {
+            const video = muteBtn.closest('.video-container').querySelector('video');
+            if (!video) return;
+            const isMuted = video.muted;
+            sliderContainer.querySelectorAll('video').forEach((v) => {
+              v.muted = true;
+              const btn = v.closest('.video-container').querySelector('.mute-btn');
+              if (btn) btn.innerHTML = unmuteBtnIcon;
+            });
+            if (isMuted) {
+              video.muted = false;
+              muteBtn.innerHTML = muteBtnIcon;
+            }
+          }
+        },
+        true
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              const video = entry.target.querySelector('video');
+              if (video && !video.muted) {
+                video.muted = true;
+                const btn = entry.target.querySelector('.mute-btn');
+                if (btn) btn.innerHTML = muteBtnIcon;
+              }
+            }
+          });
+        },
+        { root: sliderContainer, threshold: 0.5 }
+      );
+      sliderContainer.querySelectorAll('.testimonial-slide:not(.clone)').forEach((slide) => {
+        if (slide.querySelector('video')) observer.observe(slide);
+      });
+
+      const debounce = (func, wait = 50) => {
+        let timeout;
+        return (...args) => {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+      };
+      window.addEventListener(
+        'resize',
+        debounce(() => updateSlider(false))
+      );
+      updateSlider(false);
+      prevTranslate = currentTranslate;
+
+      {% comment %} auto slide feature {% endcomment %}
+
+      function autoSlide() {
+        autoSlideInterval = setInterval(() => {
+          slideForward();
+        }, 3000);
+      }
+
+      sliderWrapper.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+
+      // Resume when hover ends
+      sliderWrapper.addEventListener('mouseleave', () => {
+        autoSlide();
+      });
+
+      autoSlide();
+    };
+    document.addEventListener('DOMContentLoaded', initSlider);
+    document.addEventListener('shopify:section:load', initSlider);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Slider",
+  "tag": "div",
+  "class": "testimonial-slider-section",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "1,523+ Verified Reviews"
+    },
+    {
+      "type": "liquid",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Trusted by thousands</p>"
+    },
+    {
+      "type": "liquid",
+      "id": "caption",
+      "label": "Caption",
+      "default": "<p>non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial_slide",
+      "name": "Testimonial Slide",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Slider Video/Image",
+          "info": "Select Any Video/Image for the slider banner. video is priotized"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Background Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner",
+          "label": "Background Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product to feature"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image override",
+          "info": "If no product is selected, or you want to override its main image, upload one here."
+        },
+        {
+          "type": "range",
+          "id": "rating_count",
+          "min": 1,
+          "max": 5,
+          "step": 0.5,
+          "unit": "★",
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "liquid",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "non quam commodo leo, elit. Nunc amet, Nunc ultrices Praesent at, varius dolor vitae placerat Donec non non cursus at, convallis."
+        },
+        {
+          "type": "text",
+          "id": "person_name",
+          "label": "Person's name",
+          "default": "Nicolas Jhonson"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Slider",
+      "blocks": [
+        {
+          "type": "testimonial_slide"
+        },
+        {
+          "type": "testimonial_slide"
+        },
+        {
+          "type": "testimonial_slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

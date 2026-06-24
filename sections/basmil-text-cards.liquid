@@ -1,0 +1,613 @@
+{% assign sections = section.settings %}
+<style>
+      #shopify-section-{{ section.id }} {
+        {% if sections.background_on == 'main_section' %}
+          {% if sections.background_type == 'color'  %}
+            background: {% if sections.background_gradient != blank%}{{sections.background_gradient}} {% else %} {{ sections.background_color }}
+          {% endif %};
+        {% elsif sections.background_type == 'image' and sections.background_image != blank %}
+            background:{% if sections.background_gradient != blank%}{{sections.background_gradient}},{% endif %}url('{{ sections.background_image | image_url }}') no-repeat {{' '}}{{ sections.background_position }};
+            background-size: {{ sections.background_size }};
+      {% endif %};
+    {% endif %};
+    }
+
+    @media (max-width: 1200px) {
+      #shopify-section-{{ section.id }} .main-wrapper {
+        max-width: 116.6rem !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #shopify-section-{{ section.id }} .main-wrapper {
+        padding-left: 0 16px 4rem 16px !important;
+        max-width: 100% !important;
+      }
+    }
+
+    #shopify-section-{{ section.id }} .main-wrapper {
+      max-width:{{ sections.width }};
+        min-height:{{ sections.minheight }};
+      margin:{{sections.margin}}; 
+      padding: {{sections.padding}};
+      {% if sections.background_on == 'content_part' %}
+        {% if sections.background_type == 'color' and sections.background_color %}
+          background: {{ sections.background_color }};
+        {% elsif sections.background_type == 'image' and sections.background_image %}
+          background: url('{{ sections.background_image  | image_url }}') no-repeat {{ sections.background_position }};
+          background-size: {{ sections.background_size }};
+
+        {% else %}
+        ''
+        {% endif %};
+      {% endif %};
+       gap:{{sections.navGap}};
+    }
+
+
+  .main-content{
+
+                width:    100%;
+  }
+    @media(max-width:768px){
+          #shopify-section-{{ section.id }} .wrapper.wrapper{
+            padding: {% render 'mobile_spacing'  padding: sections.padding %};
+        }
+
+  .main-content{
+    width:100%;
+  }
+  }
+</style>
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'content' %}
+
+  {% endcase %}
+{% endfor %}
+
+<div
+  {% if sections.custom_id %}
+    id="{{ sections.custom_id }}"
+  {% endif %}
+  class="
+    main-wrapper wrapper
+    flex
+    flex-col justify-center
+    w-full {{ sections.custom_class }}
+    sm:justify-center
+  "
+  style=""
+>
+
+
+  <div
+    class="main-content flex flex-col"
+    style="    "
+  >
+    {% for block in section.blocks %}
+      <div
+        id="{{ block.id }}"
+        class="
+          contain-wrapper
+          flex {{ sections.layout }} flex-nowrap
+
+          {% if sections.valignment == "top"  %}
+            items-start
+          {% elsif sections.valignment == "center" %}
+            items-center
+          {% else %}
+            items-end
+          {% endif %}
+          {% if image %}
+          justify-between
+          {% else %}
+          justify-center
+          {% endif %}
+          w-[100%] sm:gap-[4rem!important] md:gap-[2.5rem!important]  sm:justify-center sm:items-center sm:flex-col-reverse
+        "
+        style="
+          gap: {{sections.gapimage}};
+          padding-top:{{sections.gapsections}};
+        "
+      >
+        <div
+          class="
+            contentside flex {{sections.alignment}} gap-[3.2rem] flex-col items-start   md:p-6 sm:max-w-[100%!important] w-full max-content-width
+            {% comment %} md:max-w-[50%!important] {% endcomment %}
+          "
+          style="max-width:{{ sections.content_width }}; color:{{ sections.content_color }};"
+        >
+          {% comment %} content start here {% endcomment %}
+          {% if block.settings.title != '' %}
+            <h2
+              class="text-tertiary  -mb-[1.7rem] {{sections.alignment}}"
+              {% if section.settings.heading_color %}
+                style="color: {{ section.settings.heading_color }};"
+              {% endif %}
+            >
+              {{ block.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.description != '' %}
+            <div class="{{sections.alignment}} ">{{ block.settings.description }}</div>
+          {% endif %}
+          {% if block.settings.button_text %}
+            <a
+              class=" {{sections.alignment}} button border-none  justify-center sm:text-center"
+              href="{{ block.settings.button_link }}"
+            >
+              {{- block.settings.button_text -}}
+            </a>
+          {% endif %}
+          {% comment %} content ends here {% endcomment %}
+        </div>
+
+        {% comment %} image here {% endcomment %}
+        {% if block.settings.image != blank or block.settings.svg != blank %}
+          <style>
+            @media (max-width: 767px) {
+              #shopify-section-{{ section.id }} .main-wrapper .imagepart {
+                width: 95% !important;
+              }
+            }
+          </style>
+
+          {% if block.settings.image_type == 'image' %}
+            {% if block.settings.image != blank %}
+              <img
+                class="imagepart {{ sections.alignment }} object-contain sm:max-w-[100%]"
+                style="width:{{ block.settings.image_width }};"
+                src="{{ block.settings.image | image_url}}"
+                alt="{{ block.settings.image.alt |  default: block.settings.image_alt  }}"
+                 width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              >
+            {% endif %}
+
+          {% elsif block.settings.image_type == 'svg' %}
+            {% if block.settings.svg != blank %}
+              {% if block.settings.svg contains '<svg' %}
+                {% assign svgwidth = '<svg class="imagepart h-auto  sm:max-w-[100%]" style="width: '
+                  | append: block.settings.image_width
+                  | append: ';"'
+                %}
+                {{ block.settings.svg | strip_newlines | replace: '<svg', svgwidth }}
+              {% else %}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  class="h-auto sm:max-w-[100%]"
+                  style="
+                    width: {{ block.settings.image_width }};
+                    {{block.settings.svg_style}}
+                  "
+                >
+                  <use xlink:href="{{'main.svg' | asset_url }}#{{block.settings.svg | strip_newlines | escape}}"></use>
+                </svg>
+              {% endif %}
+            {% endif %}
+          {% else %}
+            <div class="imagepart h-auto  sm:max-w-[100%]" style="width: {{ block.settings.image_width}}">
+              {{ block.settings.svg | strip_newlines }}
+            </div>
+          {% endif %}
+        {% endif %}
+        {% comment %} image end here {% endcomment %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.main-content').slick({
+      dots: false,
+      arrows: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Basmil Image Text List",
+  "class": "basmilTextImageList",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "radio",
+      "id": "isSlider",
+      "label": "Show As Slider",
+      "options": [
+        {
+          "value": "true",
+          "label": "Yes"
+        },
+        {
+          "value": "false",
+          "label": "No"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "type": "header",
+      "content": "Image Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image Layout",
+      "default": "imagelast",
+      "options": [
+        {
+          "value": "imagefirst",
+          "label": "Left"
+        },
+        {
+          "value": "imagelast",
+          "label": "Right"
+        },
+        {
+          "value": "imagetop",
+          "label": "Top"
+        },
+        {
+          "value": "imagebottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Content alignment"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content Alignment",
+      "default": "contentstart",
+      "options": [
+        {
+          "value": "contentstart",
+          "label": "Left"
+        },
+        {
+          "value": "contentcenter",
+          "label": "Center"
+        },
+        {
+          "value": "contentend",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "valignment",
+      "label": "Content Verticle Alignment",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "bottom"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "gapimage",
+      "label": "Content and Image Gap",
+      "default": "5.3rem"
+    },
+    {
+      "type": "text",
+      "id": "gapsections",
+      "label": "Gap between Sections",
+      "default": "5.3rem"
+    },
+    {
+      "type": "header",
+      "content": "Content Part Width"
+    },
+    {
+      "type": "text",
+      "id": "content_width",
+      "label": "Content Width",
+      "default": "50%"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "12rem 16px",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin",
+      "default": "0",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "header",
+      "content": "Custom Class/id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "header",
+      "content": "Section Width"
+    },
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Width",
+      "default": "116.6rem",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Height"
+    },
+    {
+      "type": "text",
+      "id": "minheight",
+      "label": "Min Height",
+      "default": "auto",
+      "info": "eg: 116.6rem"
+    },
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "default": "color",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "eg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_on",
+      "label": "Choose Background on",
+      "default": "content_part",
+      "options": [
+        {
+          "value": "content_part",
+          "label": "Content Part"
+        },
+        {
+          "value": "main_section",
+          "label": "Main Section"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Content Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Contents",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title Here"
+        },
+        {
+          "type": "header",
+          "content": "Paragraph"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Paragraphs Here</p>"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "richtext",
+          "id": "did_you_know",
+          "label": "Did You Know"
+        },
+        {
+          "type": "richtext",
+          "id": "absorption_bioavailability",
+          "label": "Absorption & Bioavailability"
+        },
+        {
+          "type": "richtext",
+          "id": "dietary_sources",
+          "label": "Dietary Sources"
+        },
+        {
+          "type": "header",
+          "content": "Select Type",
+          "info": "Select the type of image you want to display"
+        },
+        {
+          "type": "select",
+          "id": "image_type",
+          "label": "Image Type",
+          "default": "image",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "svg",
+              "label": "SVG"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Image",
+          "info": "If you want to use an image, upload it here"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image Alt Text",
+          "default": "Everest Shilajit"
+        },
+        {
+          "type": "header",
+          "content": "SVG",
+          "info": "If you want to use an svg, Paste the code here"
+        },
+        {
+          "type": "html",
+          "id": "svg",
+          "label": "SVG/HTML Code"
+        },
+        {
+          "type": "header",
+          "content": "Image/SVG Min Width"
+        },
+        {
+          "type": "text",
+          "id": "image_width",
+          "label": "Min Width",
+          "default": "40rem",
+          "info": "Value in rem. 1rem = 10px"
+        },
+        {
+          "type": "textarea",
+          "id": "svg_style",
+          "label": "Style For SVG With Id",
+          "info": "eg: fill: #382E2A; stroke: #382E2A;"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Basmil Image Text List",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+

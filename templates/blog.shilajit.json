@@ -1,0 +1,252 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_PhPraE": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_m4qjGL": {
+          "type": "content",
+          "settings": {
+            "title": "Shilajit Blogs: The Ultimate Guide to Shilajit.",
+            "subtitle": "Shilajit",
+            "description": "<p>By Pragya Mahara</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_GEJmwt": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/Mask_group_3c2b5450-3f49-401f-a720-fec603b27570.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_m4qjGL",
+        "image_GEJmwt"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".imagepart,img {aspect-ratio: 10/3; object-fit: cover; width: 100%;}",
+        ".contentside {position: absolute; top: 50%; z-index: 1; transform: translateY(-50%);}",
+        ".subtitle {color: #fff; background: #382e2a; padding: 0.5px 15px; margin-bottom: -15px; font-size: 1.4rem;}",
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } .basmilTextImage {margin: 0; } .imagepart, img {object-fit: cover; aspect-ratio: 359/300; } h1, p {transform: scale(0.8); margin-bottom: -15px; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "5.3rem",
+        "content_width": "97rem",
+        "padding": "0",
+        "margin": "0 auto!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "shilajit-blog",
+      "blocks": {
+        "recent_posts_cLUwwD": {
+          "type": "recent_posts",
+          "disabled": true,
+          "settings": {
+            "recent_posts_title": "Health Benefits of Shilajit",
+            "recent_posts_blog": "shilajit"
+          }
+        },
+        "tags_wpGKdm": {
+          "type": "tags",
+          "disabled": true,
+          "settings": {
+            "tags_title": "Popular Tags"
+          }
+        },
+        "most_read_YeNDnJ": {
+          "type": "most_read",
+          "disabled": true,
+          "settings": {
+            "most_read_title": "Most Read Articles",
+            "most_read_blog": "shilajit"
+          }
+        }
+      },
+      "block_order": [
+        "recent_posts_cLUwwD",
+        "tags_wpGKdm",
+        "most_read_YeNDnJ"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-family: var(--font-body-family);}"
+      ],
+      "settings": {
+        "categories": "shilajit,videos,press-media",
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "product_grid_slider_xbCd3x": {
+      "type": "product-grid-slider",
+      "disabled": true,
+      "custom_css": [
+        ".product-card {background: #f5eadd;}"
+      ],
+      "name": "Products Display Slider",
+      "settings": {
+        "section_title": "Browse Related products",
+        "section_description": "",
+        "product_collection": "all",
+        "slider_grid": true,
+        "slider_type": "1",
+        "product_price": false,
+        "products_per_row": 3,
+        "products_per_page": 3,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "24px",
+        "iconbox_gap": "8px",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "5.6rem 16px  5.6rem 16px",
+        "margin": "",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "custom_liquid_BiTDYj": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .video:after{\n    content:'';\n    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);\nwidth: 100%;\n    height:100%;\n  }\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "all_blog_UNKFzg": {
+      "type": "all-blog",
+      "name": "Resources hub",
+      "settings": {}
+    },
+    "resources_hub_xMiGVg": {
+      "type": "resources-hub",
+      "custom_css": [
+        "@media (max-width: 750px) {.video {position: relative; --ac-radius: 0; } .video h2, .ac-featured-video__body {position: absolute; z-index: 2; bottom: 0; padding: 42px 18px; min-height: max-content; } .video h2 {top: 0; color: #fff; bottom: auto; } .ac-featured-video__body * {color: #fff; } .resources-hub__inner {padding: 0; } .resources-hub__inner > div:not(.video) {padding: 16px; } .ac-featured-video__media img {aspect-ratio: 0.547; width: 100%; height: auto; }}"
+      ],
+      "name": "Resources hub",
+      "settings": {
+        "insights_heading": "Our latest insights",
+        "insights_blog": "shilajit",
+        "insights_button_label": "Explore blogs",
+        "insights_limit": 2,
+        "video_heading": "Visual Diary",
+        "video_blog": "videos",
+        "video_button_label": "Explore videos",
+        "video_cta_label": "Play video",
+        "publication_heading": "",
+        "publication_blog": "",
+        "publication_button_label": "",
+        "publication_limit": 3,
+        "image_height": "adapt",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "custom_liquid": "<style>\n{% assign sid = \"#shopify-section-\" | append: section.id %}\n@media (max-width: 750px) {\n\n{{sid}} .ac-featured-video::after {\ncontent:'';\nposition: absolute;\ntop:0;\nbottom:0;\nbackground: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);\nz-index:1;\nheight:100%;\nwidth:100%;\n}}\n</style>"
+      }
+    },
+    "custom_resources_list_LYnfnQ": {
+      "type": "custom-resources-list",
+      "blocks": {
+        "resource_bAgxxr": {
+          "type": "resource",
+          "settings": {
+            "title": "Our Culture",
+            "subtitle": "Oct 3,2025",
+            "link": "https://ourculturemag.com/2025/10/03/the-secret-to-boost-your-glow-naturally-with-himalayan-shilajit/"
+          }
+        },
+        "resource_peiUL7": {
+          "type": "resource",
+          "settings": {
+            "title": "Kayawell Wellness Corner",
+            "subtitle": "Sep 23, 2025",
+            "link": "https://www.kayawell.com/blog/shilajit-benefits-natural-supplement"
+          }
+        },
+        "resource_37Atqw": {
+          "type": "resource",
+          "settings": {
+            "title": "Wellbeing Magazine",
+            "subtitle": "Sep 23, 2025",
+            "link": "https://everestshilajit.com/blogs/press-media/wellbeing-magazine"
+          }
+        }
+      },
+      "block_order": [
+        "resource_bAgxxr",
+        "resource_peiUL7",
+        "resource_37Atqw"
+      ],
+      "name": "Custom Resources List",
+      "settings": {
+        "heading": "Resources",
+        "button_label": "Explore publications",
+        "button_link": "https://everestshilajit.com/blogs/press-media"
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_PhPraE",
+    "main",
+    "product_grid_slider_xbCd3x",
+    "custom_liquid_BiTDYj",
+    "all_blog_UNKFzg",
+    "resources_hub_xMiGVg",
+    "custom_resources_list_LYnfnQ"
+  ]
+}

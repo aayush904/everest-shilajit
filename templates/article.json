@@ -1,0 +1,251 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_9iqFCy": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_aDYhEg": {
+          "type": "content",
+          "settings": {
+            "title": "{%- unless request.path contains '/blogs/press-media' -%}\n{{- article.title | escape -}}\n{%- endunless -%}",
+            "subtitle": "{% if request.path contains '/blogs/press-media' %}\n<style>\n#post-banner{\ndisplay:none;\n}\n</style>\n{% else %}\n<tag>{{ article.tags | join: \", \" }}</tag>\n{{ page_description | escape }}\n\n<style>\n#shopify-section-{{section.id}} {\n padding:16px 16px clamp(24px, 8.5vw, 125px) 16px;\n}\n\n#shopify-section-{{section.id}} .main-wrapper{\n  background: #F5F2EC;\n  border-radius: 12px;\n  overflow: hidden;\n }\n\n#shopify-section-{{section.id}} .text-tertiary{\n  order: -1;\n}\n\n#shopify-section-{{section.id}} .subtitle {\n  display:flex;\n  gap: clamp(12px,1.6vw,24px);\n  flex-direction:column;\n}\n\n#shopify-section-{{section.id}} .subtitle tag{\n width:max-content;\n order:0;\n background:#9F5601;\n padding:4px 14px;\n border-radius:6px;\n color:#fff;\n}\n\n#shopify-section-{{section.id}} .contain-wrapper {\n  gap: clamp(8px,1.2vw,32px) 0 !important;\n  min-height: 310px;\n  padding-left: 16px;\n}\n\n#shopify-section-{{section.id}} h1 {\n  letter-spacing: -1px;\n  line-height: 1.28;\n}\n\n@media (max-width: 768px) {\n#shopify-section-{{section.id}} {\n padding:16px;\n}\n\n#shopify-section-{{section.id}} .contain-wrapper {\n    flex-direction: column-reverse;\n  }\n\n #shopify-section-{{section.id}} img {\n    max-width: 100%;\n    min-height: auto !important;\n    height: auto;\n  }\n\n #shopify-section-{{section.id}} .contentside {\n    padding: 16px 16px 24px 16px !important;\n  }\n\n #shopify-section-{{section.id}} .contain-wrapper {\n   padding: 0 !important;\n}\n\n #shopify-section-{{section.id}} img{\n  aspect-ratio: 16/9!important;\n}\n\n#shopify-section-{{section.id}} *{\ntext-align:start;\njustify-content:start;\nalign-items:start;\n}\n}\n@media (max-width: 480px) {\n#shopify-section-{{section.id}} {\n padding:0;\n padding-bottom:24px;\n}\n\n #shopify-section-{{section.id}} .main-wrapper{\n   border-radius:0;\n}\n}\n</style>\n{% endif %}",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_6zh8E8": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "{{ article.image }}",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "50%; object-fit: cover; object-position: center; min-height:100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_aDYhEg",
+        "image_6zh8E8"
+      ],
+      "disabled": true,
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagelast",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "0",
+        "content_width": "50%; max-width: calc(var(--page-width)/2); margin: auto; padding-right: clamp(2.4px,5vw,9rem)",
+        "padding": "0",
+        "margin": "0",
+        "custom_class": "screen-width",
+        "custom_id": "post-banner",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": ""
+      }
+    },
+    "basmil_image_text_GV6FzF": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_jP3xdB": {
+          "type": "content",
+          "settings": {
+            "title": "{{ article.title }}",
+            "subtitle": "{{ article.tags | join: \", \" }}\n<style>\n\n#shopify-section-{{section.id}} {\n.imagepart{\n  max-height:80vh;\n  min-width:100%;\nobject-position:center;\nobject-fit:cover;\naspect-ratio:1800/720;\nfilter:brightness(70%;);\n    -webkit-filter: brightness(70%);\n}\n.contain-wrapper{\nborder-radius:8px;\nover-flow:hidden;\nposition:relative;\n\n}\n.contain-wrapper:before {\n  content: none;\n  width:100%;\n  height: 100%;\n  background: #0000007a;\n  top:0;\n\n  left:0;  \nposition: absolute;\n}}\n</style>",
+            "description": "<p>By {{ article.author }}</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_dN7WkB": {
+          "type": "image",
+          "settings": {
+            "image_type": "html",
+            "image": "{{ article.metafields.custom.cover_image.value }}",
+            "image_alt": "Everest Shilajit",
+            "svg": "{% assign blog_image = article.metafields.custom.cover_image | default: article.image %}\n{{ blog_image | image_url: width: blog_image.width | image_tag: \n  widths: '320, 480, 768, 1024, 1366, 1480, 1680, 1920',\n  class: img_class,\n  alt: article.title,\n  width: blog_image.width,\n  height: blog_image.height,\n  loading: 'lazy' \n}}",
+            "image_width": "100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_jP3xdB",
+        "image_dN7WkB"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".imagepart,img {aspect-ratio: 8/3; object-fit: cover; width: 100%; background: grey;}",
+        ".contentside {position: absolute; top: 50%; z-index: 1; transform: translateY(-50%);}",
+        ".subtitle {color: #fff; background: #382e2a; padding: 0.5px 15px; margin-bottom: -15px; font-size: 1.4rem;}",
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } .basmilTextImage {margin: 0; } .imagepart, img {object-fit: cover; aspect-ratio: 359/300; } h1, p {transform: scale(0.8); margin-bottom: -15px; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "5.3rem",
+        "content_width": "97rem",
+        "padding": "20px 0 0 0",
+        "margin": "0 auto 7rem auto!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "article-block",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true
+          }
+        },
+        "share_tgbXMN": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "share_tgbXMN",
+        "featured_image",
+        "content"
+      ],
+      "custom_css": [
+        "img.aspect-\\[464\\/348\\] {aspect-ratio: 16 / 9 !important; width: 100%; object-fit: contain; height: auto;}",
+        "h2 {font-family: var(--font-body-family);}",
+        "h4,h5,h6 {margin-top: 3.2rem;}",
+        "article {padding: clamp(40px, 4.2vw, 8rem) 0 !important;}",
+        "blockquote {background: #f5eadd; padding: 16px 2.8rem; border: 0; color: inherit;}",
+        "blockquote *:not(a) {font-weight: 400; color: inherit;}",
+        "article li a:not(.ltoc) {word-break: break-all;}",
+        "#toc li {line-height: 1; margin: 0;}",
+        "article a {word-break: break-word; overflow-wrap: anywhere; white-space: normal;}"
+      ],
+      "settings": {}
+    },
+    "product_grid_slider_iReNbB": {
+      "type": "product-grid-slider",
+      "disabled": true,
+      "custom_css": [
+        ".product-card {background: #f5eadd;}",
+        "h2 {font-family: var(--font-body-family); font-size: 2.4rem;}"
+      ],
+      "name": "Products Display Slider",
+      "settings": {
+        "section_title": "Browse Related products",
+        "section_description": "",
+        "product_collection": "all",
+        "slider_grid": false,
+        "slider_type": "1",
+        "product_price": false,
+        "products_per_row": 3,
+        "products_per_page": 3,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "24px",
+        "iconbox_gap": "",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "5.6rem 16px  5.6rem 16px",
+        "margin": "",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "blog_listing_basmil_ChHxr8": {
+      "type": "blog-listing-basmil",
+      "custom_css": [
+        ".blog-post-cards-basmil {background: #fff8ed;}"
+      ],
+      "settings": {
+        "heading": "From the Everest Journal",
+        "descriprtion": "",
+        "blog": "shilajit",
+        "show_slider": false,
+        "blog_limit": 3,
+        "columns_desktop": 3,
+        "content_alignment": "left",
+        "content_width": "100%",
+        "section_padding": "clamp(40px, 6.27vw, 12rem) 16px 12rem 16px",
+        "section_margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "section_width": "100%; max-width:148.8rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_position": "center",
+        "background_size": "cover"
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_9iqFCy",
+    "basmil_image_text_GV6FzF",
+    "main",
+    "product_grid_slider_iReNbB",
+    "blog_listing_basmil_ChHxr8"
+  ]
+}

@@ -1,0 +1,487 @@
+<style>
+  @media (max-width: 720px) {
+    #shopify-section-{{ section.id }} .wrapper {
+      max-width: 100% !important;
+    }
+    #shopify-section-{{ section.id }}
+    .wrapper img {
+      width: 30% !important;
+    }
+  }
+</style>
+<div
+  class="wrapper flex flex-col justify-center items-center"
+  style="
+    gap: {{ section.settings.gap_between_sections }};
+    max-width: calc({{ section.settings.content_part_width }} + 10rem);
+    width: 100%;
+    margin: 0 auto;
+  "
+>
+  {% if section.settings.heading or section.settings.description %}
+    <div
+      style="
+        max-width: {{ section.settings.content_part_width }} sm:max-w-full;
+        width: 100%; text-align: {{ section.settings.content_alignment }};
+      "
+    >
+      {% if section.settings.heading %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.description %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div
+    class="
+          image-container
+      relative w-full h-auto flex justify-center items-center
+      {% if section.settings.custom_class %}{{ section.settings.custom_class }}{% endif %}
+      {% if section.settings.content_alignment == "left" %}
+        text-start
+      {% elsif section.settings.content_alignment == "center" %}
+        text-center
+      {% elsif section.settings.content_alignment == "right" %}
+        text-end
+      {% endif %}
+    "
+    id="{{ section.settings.custom_id }}"
+  >
+    <img
+      src="{{ section.settings.main_image | image_url }}"
+      alt="{{ section.settings.main_image.alt | default: 'Interactive Image'}}"
+      class="w-full max-w-full"
+      style="
+        width: {{ section.settings.imgwidth }};
+        height: {{ section.settings.imgheight }};
+        object-fit: {{ section.settings.object_fit }};
+      "
+      width="200"
+      height="200"
+    >
+
+    {% for block in section.blocks %}
+      <div class="point" style="left: {{ block.settings.point_x }}%; top: {{ block.settings.point_y }}%;"></div>
+      <div
+        class="label absolute p-1 text-start w-[28%]"
+        style="left: {{ block.settings.label_x }}%; top: {{ block.settings.label_y }}%;"
+      >
+        <h3 class="text-tertiary font-semibold md:text-4xl sm:text-3xl">{{ block.settings.label_text }}</h3>
+        <p class="text-base md:text-3xl sm:text-2xl">{{ block.settings.label_description }}</p>
+      </div>
+    {% endfor %}
+
+    <svg
+      class="svg-overlay"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;"
+    >
+      {% for block in section.blocks %}
+        <line
+          x1="{{ block.settings.point_x }}%"
+          y1="{{ block.settings.point_y }}%"
+          x2="{{ block.settings.label_x }}%"
+          y2="{{ block.settings.label_y }}%"
+          stroke="black"
+          stroke-width="1"
+          class="label-line" />
+      {% endfor %}
+    </svg>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }} {
+    padding: {{ section.settings.section_padding }};
+    margin: {{ section.settings.margin }};
+    width: 100%;
+    max-width: {{ section.settings.section_width }};
+    min-height: {{ section.settings.min_height }};
+    background-color: {% if section.settings.background_type == 'color' %}{{ section.settings.background_color }}
+  {% endif %};
+    background-image: {% if section.settings.background_type == 'image' %}url({{ section.settings.background_image | image_url }}){% endif %};
+    background-position: {{ section.settings.background_position }};
+    background-size: {{ section.settings.background_size }};
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.gap_between_sections }};
+  }
+
+  .label-line {
+    stroke: black;
+    stroke-width: 1;
+  }
+
+  .point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .label {
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border-radius: 0.25rem;
+  }
+
+  @media (max-width: 800px) {
+    .label {
+      width: 15rem !important;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateLabelLines() {
+      const lines = document.querySelectorAll('line.label-line');
+      const labels = document.querySelectorAll('.label');
+      const labelRects = [];
+
+      // Initial loop to calculate and store label positions
+      labels.forEach((label, index) => {
+        const rect = label.getBoundingClientRect();
+        labelRects.push({
+          index: index,
+          rect: rect,
+          element: label,
+        });
+      });
+
+      // Function to check overlap between two rectangles
+      function isOverlapping(rect1, rect2) {
+        return !(
+          rect1.right < rect2.left ||
+          rect1.left > rect2.right ||
+          rect1.bottom < rect2.top ||
+          rect1.top > rect2.bottom
+        );
+      }
+
+      // Adjust label positions with minimal spacing (5px) and recheck overlaps
+      function adjustLabelPositions() {
+        let overlapsDetected = true;
+
+        // Run the adjustment loop until no overlaps are detected
+        while (overlapsDetected) {
+          overlapsDetected = false; // Assume no overlaps to start
+
+          for (let i = 0; i < labelRects.length; i++) {
+            for (let j = i + 1; j < labelRects.length; j++) {
+              const labelA = labelRects[i];
+              const labelB = labelRects[j];
+
+              if (isOverlapping(labelA.rect, labelB.rect)) {
+                overlapsDetected = true; // Mark that an overlap was found
+
+                // Move labelB down by 5px
+                const labelBElement = labelB.element;
+                const newTop = labelBElement.offsetTop + 5; // Move down by 5px
+                labelBElement.style.top = newTop + 'px';
+
+                // Recalculate the new position of labelB after adjustment
+                const newRect = labelBElement.getBoundingClientRect();
+                labelRects[j].rect = newRect;
+
+                // Update the line position after the label has been moved
+                const line = lines[j];
+                const x1 = parseFloat(line.getAttribute('x1'));
+                const y1 = parseFloat(line.getAttribute('y1'));
+                const labelX = parseFloat(line.getAttribute('x2'));
+                const labelY = (newTop / labelBElement.parentElement.clientHeight) * 100; // New label Y position in percentage
+
+                line.setAttribute('x2', labelX + '%');
+                line.setAttribute('y2', labelY + '%');
+              }
+            }
+          }
+        }
+      }
+
+      // Run label adjustment to avoid overlap with minimal 5px spacing
+      adjustLabelPositions();
+
+      // Loop through lines and labels to update lines based on adjusted positions
+      lines.forEach((line, index) => {
+        const label = labels[index];
+        const labelRect = label.getBoundingClientRect();
+
+        // Get point (x1, y1) and center of the label (labelX, labelY)
+        const x1 = parseFloat(line.getAttribute('x1'));
+        const y1 = parseFloat(line.getAttribute('y1'));
+
+        const labelX = parseFloat(line.getAttribute('x2')); // label x position in percentage
+        const labelY = parseFloat(line.getAttribute('y2')); // label y position in percentage
+
+        // Calculate label's width and height in percentage relative to the container
+        const labelWidthPercent = (labelRect.width / label.parentElement.clientWidth) * 100;
+        const labelHeightPercent = (labelRect.height / label.parentElement.clientHeight) * 100;
+
+        // Calculate the nearest point on the label's edge based on the point (x1, y1)
+        let x2 = labelX,
+          y2 = labelY;
+
+        // Check horizontal and vertical proximity to decide which edge to snap to
+        if (x1 < labelX) {
+          x2 = labelX - labelWidthPercent / 2; // Snap to left edge of the label
+        } else {
+          x2 = labelX + labelWidthPercent / 2; // Snap to right edge of the label
+        }
+
+        if (y1 < labelY) {
+          y2 = labelY - labelHeightPercent / 5; // Snap to top edge of the label
+        } else {
+          y2 = labelY - labelHeightPercent / 10; // Snap to bottom edge of the label
+        }
+
+        // Set the new x2 and y2 attributes to the line
+        line.setAttribute('x2', x2 + '%');
+        line.setAttribute('y2', y2 + '%');
+      });
+    }
+
+    // Run on page load
+    updateLabelLines();
+
+    // Add the transitionend listener once, outside of the resize event
+    const labels = document.querySelectorAll('.label');
+
+    function reloadContent() {
+      fetch('https://{{ request.host | append: request.path }}') // Replace 'url-to-fetch' with your URL or endpoint
+        .then((response) => response.text())
+        .then((data) => {
+          // Create a temporary DOM element to parse the fetched HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data;
+          // Extract the section with the desired ID
+          const newContent = tempDiv.querySelector('#shopify-section-{{ section.id }}').innerHTML; // Replace with your section ID
+          // Check if the section exists and update the content section
+          document.getElementById('shopify-section-{{ section.id }}').innerHTML = newContent;
+          updateLabelLines();
+        })
+        .catch((error) => console.error('Error:', error));
+    }
+
+    reloadContent();
+
+    window.onresize = function () {
+      reloadContent();
+    };
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Interactive Image Labeler",
+  "class": "image-labeler",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Select Image For Labeling"
+    },
+    {
+      "type": "text",
+      "id": "imgwidth",
+      "label": "Image Width (e.g., 10rem)"
+    },
+    {
+      "type": "text",
+      "id": "imgheight",
+      "label": "Image Height (e.g., 10rem)"
+    },
+    {
+      "type": "text",
+      "id": "object_fit",
+      "label": "Object Fit",
+      "info": " (e.g., cover, contain, fill, none, scale-down)"
+    },
+    {
+      "type": "text",
+      "id": "gap_between_sections",
+      "label": "Gap Between Sections (e.g., 16px)"
+    },
+    {
+      "type": "text",
+      "id": "content_part_width",
+      "label": "Content Part Width (e.g., 100rem)"
+    },
+    {
+      "type": "text",
+      "id": "section_padding",
+      "label": "Section Padding (e.g., 16px 16px 16px 16px)"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin (e.g., 16px 16px 16px 16px)"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "text",
+      "id": "section_width",
+      "label": "Section Width (e.g., 100rem)"
+    },
+    {
+      "type": "text",
+      "id": "min_height",
+      "label": "Min Height (e.g., 100rem)"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "label_point",
+      "name": "Label & Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label_text",
+          "label": "Label Title"
+        },
+        {
+          "type": "textarea",
+          "id": "label_description",
+          "label": "Label Description"
+        },
+        {
+          "type": "number",
+          "id": "point_x",
+          "label": "Point X (%)",
+          "default": 50
+        },
+        {
+          "type": "number",
+          "id": "point_y",
+          "label": "Point Y (%)",
+          "default": 50
+        },
+        {
+          "type": "number",
+          "id": "label_x",
+          "label": "Label X (%)",
+          "default": 60
+        },
+        {
+          "type": "number",
+          "id": "label_y",
+          "label": "Label Y (%)",
+          "default": 60
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Interactive Image Labeler",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

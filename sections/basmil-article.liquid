@@ -1,0 +1,832 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+<style>
+  .card--standard.card--text.article-card > .card__content .card__information,
+  .card--standard.card--media .card__inner .card__information,
+  .card--standard.card--text:not(.card--horizontal) > .card__content .card__heading,
+  .card--standard:not(.card--horizontal) > .card__content .card__badge,
+  .card--standard.card--text.article-card > .card__content .card__information,
+  .card--standard > .card__content .card__caption {
+    display: flex !important;
+  }
+
+  article h2 {
+    font-size: clamp(20px, 1.986vw, 38px);
+
+    margin-top: 5.4rem;
+  }
+
+  .main-article ul,
+  .main-article ol,
+  .main-article blockquote,
+  .main-article table,
+  .main-article figure,
+  .main-article img {
+    margin-bottom: 2.4rem;
+  }
+
+  article p a,
+  article li a {
+    color: #000 !important; /* Resets the text color to the default */
+    text-decoration: underline !important; /* Restores default underline behavior */
+    display: inline !important; /* Ensures default display behavior */
+
+    &&:hover {
+      color: #be935f !important; /* Resets the text color to the default */
+    }
+  }
+
+  article h2:last-of-type {
+    margin-top: 5.4rem;
+  }
+
+  #comments .field:after {
+    content: none;
+  }
+</style>
+
+{% assign slug = article.author | downcase | replace: ' ', '-' | replace: '!', '' | replace: "'", '' %}
+{% assign page = pages[slug] %}
+{% assign profile_pic_metafield = page.metafields.custom.author_profile_picture %}
+
+{% if page.title != blank %}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'title' -%}
+        <header
+          {{ block.shopify_attributes }}
+          class="w-full max-w-[120rem] flex flex-col justify-center items-center m-auto mt-[8rem] mb-[5rem]"
+        >
+          <h1 class="leading-none text-[3.2rem] sm:text-[18px] font-sans font-medium bolder-500" itemprop="headline">
+            {{ article.title | escape }}
+          </h1>
+          <div class="flex justify-center items-center gap-[1.2rem] mt-[15px]">
+            {%- if block.settings.blog_show_author -%}
+              {% assign slug = article.author | downcase | replace: ' ', '-' | replace: '!', '' | replace: "'", '' %}
+              <p
+                class="font-sans w-max block mb-0 text-[#382E2A] text-[16px]"
+                itemprop="author"
+                itemscope
+                itemtype="http://schema.org/Person"
+              >
+                <a
+                  href="{{ shop.url }}/pages/{{ slug }}"
+                  class="font-normal w-max flex justify-center items-center gap-[12px] flex-nowrap mb-0"
+                  itemprop="name"
+                >
+                  {% if profile_pic_metafield and profile_pic_metafield.value %}
+                    <img
+                      src="{{ profile_pic_metafield | file_url }}"
+                      alt="Profile Picture for {{ page.title }}"
+                      class="rounded-full w-[32px] h-[32px] my-[0rem]"
+                      width=""
+                      height=""
+                    >
+                  {% endif %}
+                  {{ article.author -}}
+                </a>
+              </p>
+            {%- endif -%}
+            {%- if block.settings.blog_show_date -%}
+              |
+              <p
+                class="font-sans text-[1.6rem] text-[#382E2A] flex gap-5 justify-start items-center"
+                itemprop="dateCreated  datePublished"
+              >
+                {% comment %}
+                  {% assign words_per_minute = 250 %}
+                  {% assign word_count = article.content | strip_html | size %}
+                  {% assign read_time = word_count | divided_by: words_per_minute %}
+
+                  {% if read_time < 1 %}
+                    1 min read.
+                  {% else %}
+                    {{ read_time | ceil }} min read.
+                  {% endif %}
+                {% endcomment %}
+
+                {{ article.published_at | date: '%b %d, %Y' }}
+              </p>
+            {%- endif -%}
+          </div>
+        </header>
+    {%- endcase -%}
+  {%- endfor -%}
+  <div class="main-article flex page-width sm:max-w-[116.6rem] md:max-w-[116.6rem] xl:max-w-[1400px] gap-[3.69%] mx-auto my-0 pb-[5.4rem] sm:pb[30px] px-[16px]">
+    <aside class="max-w-[23.47%] w-full sm:hidden">
+      <div class="sticky top-[12rem] mt-[0]">
+        <toc-heading class="block text-[16px]  font-normal  border-b border-[#E2E2E2] pb-[2rem] after:bottom-0 relative after:w-[8.6%] after:absolute after:block after:h-[2px] after:bg-[#68453D] after:left-0 after: text-[#647084!important] font-sans leading-[1!important]">
+          Table of Content
+        </toc-heading>
+        <ul id="toc" class="my-[2.4rem] list-disc ml-[1.5em] pt-6  flex flex-col gap-[1.6rem] font-sans "></ul>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'share' -%}
+              <div class="my-[3.2rem] justify-start" {{ block.shopify_attributes }}>
+                <share-heading class="block text-[16px]  font-normal pb-[15px] text-[#647084!important] font-sans leading-[1!important]">
+                  Share Article
+                </share-heading>
+                {% assign share_url = request.origin | append: article.url %}
+                <div class="social-share-buttons  flex gap-[1.2rem]">
+                  <a
+                    class="hover:scale-105"
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg width="33" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M35.66 0H12C5.37258 0 0 5.37258 0 12V35.66C0 42.2874 5.37258 47.66 12 47.66H35.66C42.2874 47.66 47.66 42.2874 47.66 35.66V12C47.66 5.37258 42.2874 0 35.66 0Z" fill="#68453D"/>
+                      <path d="M26.47 39.01V25.73H30.9L31.74 20.24H26.47V16.67C26.47 15.17 27.21 13.7 29.57 13.7H31.97V9.02003C31.97 9.02003 29.79 8.65002 27.72 8.65002C23.38 8.65002 20.54 11.28 20.54 16.04V20.23H15.71V25.72H20.54V39H26.48L26.47 39.01Z" fill="white"/>
+                    </svg>
+                  </a>
+
+                  <a
+                    class="hover:scale-105"
+                    href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ article.title }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg width="33" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M36.3099 0H12.6499C6.02249 0 0.649902 5.37258 0.649902 12V35.66C0.649902 42.2874 6.02249 47.66 12.6499 47.66H36.3099C42.9373 47.66 48.3099 42.2874 48.3099 35.66V12C48.3099 5.37258 42.9373 0 36.3099 0Z" fill="#68453D"/>
+                      <path d="M26.5001 22.16L34.4001 12.97H32.5301L25.6701 20.95L20.1901 12.97H13.8701L22.1601 25.03L13.8701 34.66H15.7401L22.9901 26.24L28.7801 34.66H35.1001L26.5001 22.15V22.16ZM23.9401 25.14L23.1001 23.94L16.4201 14.38H19.3001L24.6901 22.09L25.5301 23.29L32.5401 33.32H29.6601L23.9401 25.14Z" fill="white"/>
+                    </svg>
+                  </a>
+
+                  <a
+                    class="hover:scale-105"
+                    href="https://pinterest.com/pin/create/button/?url={{ share_url | absolute_url }}&media={{ article.image | img_url: 'large' }}&description={{ article.title }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg width="33" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M35.9598 0.649902H12.2998C5.67239 0.649902 0.299805 6.02249 0.299805 12.6499V36.3099C0.299805 42.9373 5.67239 48.3099 12.2998 48.3099H35.9598C42.5872 48.3099 47.9598 42.9373 47.9598 36.3099V12.6499C47.9598 6.02249 42.5872 0.649902 35.9598 0.649902Z" fill="#68453D"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5 28.7798C22.48 28.8498 22.46 28.9198 22.44 28.9798C21.5 32.6698 21.39 33.4998 20.42 35.2098C19.96 36.0298 19.44 36.7998 18.86 37.5398C18.79 37.6198 18.73 37.7298 18.6 37.7098C18.46 37.6798 18.45 37.5498 18.43 37.4398C18.27 36.3198 18.19 35.1898 18.23 34.0598C18.28 32.5798 18.46 32.0798 20.36 24.0698C20.39 23.9498 20.36 23.8498 20.32 23.7398C19.86 22.5098 19.77 21.2598 20.17 19.9998C21.03 17.2698 24.13 17.0598 24.67 19.3098C25 20.6998 24.12 22.5298 23.44 25.2198C22.88 27.4398 25.5 29.0198 27.73 27.3998C29.79 25.8998 30.59 22.3198 30.44 19.7698C30.14 14.6998 24.58 13.6098 21.05 15.2398C17.01 17.1098 16.09 22.1198 17.91 24.4098C18.14 24.6998 18.32 24.8798 18.24 25.1698C18.12 25.6298 18.02 26.0898 17.89 26.5498C17.8 26.8898 17.51 27.0098 17.17 26.8698C16.5 26.5998 15.94 26.1698 15.48 25.6098C13.93 23.6898 13.49 19.8898 15.54 16.6798C17.81 13.1198 22.03 11.6798 25.89 12.1198C30.5 12.6398 33.41 15.7898 33.95 19.3598C34.2 20.9898 34.02 24.9998 31.74 27.8298C29.11 31.0898 24.86 31.2998 22.89 29.2998C22.74 29.1498 22.62 28.9698 22.47 28.7798H22.5Z" fill="white"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </aside>
+
+    <article
+      class=" w-full sm:max-w-full"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            <div class="page-width page-width--narrow">
+              {% render block %}
+            </div>
+          {%- when 'featured_image' -%}
+            {%- if article.image -%}
+              <img
+                srcset="
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
+                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
+                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
+                  {{ article.image | image_url }} {{ article.image.width }}w
+                "
+                sizes="(min-width: 1400px) 1300px, (min-width: 768px) calc(100vw - 10rem), 100vw"
+                src="{{ article.image | image_url}}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+                class="w-full aspect-[464/348] object-cover mb-[4.8rem]"
+              >
+              {% comment %}
+                </div>
+                </div>
+              {% endcomment %}
+            {%- endif -%}
+
+          {%- when 'content' -%}
+            <div
+              {% comment %}
+                class="article-template__content page-width page-width--narrow rte "
+              {% endcomment %}
+              itemprop="articleBody"
+              {{ block.shopify_attributes }}
+            >
+              {{ article.content }}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+
+      {% comment %}
+        <div class="article-template__back element-margin-top center">
+          <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+            <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+            {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
+          </a>
+        </div>
+      {% endcomment %}
+
+      <author class="relative w-full mt-[86.4px] sm:mt-[1.875rem]  block bg-[#F5EADD]">
+        <svg
+          class="absolute left-0 top-[6.6%] w-[11%]"
+          viewBox="0 0 131 203"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M54.6132 44.0626C55.1837 42.4757 55.7684 40.8744 56.1962 39.3018C56.5099 38.1581 56.1392 37.3003 56.0108 36.2709C55.8682 35.2273 56.0679 34.1408 56.4244 33.0256C57.879 28.5365 60.3176 23.7899 63.6975 19.7297C66.6638 16.1698 70.5285 12.9816 75.0635 10.9944C77.602 9.87926 80.226 9.05006 82.7787 7.96352C85.3314 6.87697 87.8556 5.69035 90.4083 4.57521C95.7847 2.20196 101.489 0.114672 107.136 0.0431885C107.878 0.0288918 108.235 0.715097 107.707 1.25837C104.184 4.84684 100.762 8.49248 97.0825 11.9666C95.2713 13.6679 93.4174 15.3406 91.4779 16.9276C89.5669 18.4859 87.5561 19.9442 85.6166 21.4882C83.6772 23.0179 81.8232 24.6478 80.3401 26.492C78.8569 28.3363 77.6305 30.2663 76.0903 32.082C73.4663 35.1844 70.4002 37.9865 67.0203 40.4598C63.4551 43.0475 59.5618 45.2064 55.5117 46.7933C55.2978 47.0364 54.9983 47.1793 54.7131 47.2079C50.9054 51.8829 47.0977 56.5436 43.29 61.19C39.4395 65.8793 35.7032 70.6545 31.7671 75.258C30.0415 77.2738 28.2732 79.2324 26.405 81.1339C30.8116 78.7892 35.3181 76.659 39.8816 74.7862C49.2083 70.9547 58.8773 68.1097 68.4607 66.4513C69.8012 65.1789 71.1988 63.935 72.7532 62.8913C74.5644 61.6618 76.5894 60.7612 78.6288 60.0749C80.6966 59.3744 82.8072 58.874 84.9179 58.3879C87.1996 57.8589 89.4814 57.3871 91.7774 57.1012C96.455 56.515 101.047 56.9725 105.554 57.2727C110.203 57.5873 114.752 58.0304 119.03 59.4029C121.383 60.1607 123.651 61.09 125.847 62.105C126.931 62.6054 128 63.1201 129.07 63.6348C129.869 64.0208 130.924 64.4497 130.924 65.4505C130.924 66.0224 130.539 66.5084 129.869 66.5227C125.79 66.6228 121.668 67.1947 117.633 68.2384C115.608 68.753 113.611 69.3963 111.657 70.1397C109.732 70.8689 107.864 71.7553 105.953 72.513C104.028 73.2851 102.06 73.8427 100.035 74.0428C97.8811 74.2573 95.7277 74.1714 93.6028 74.057C89.1391 73.814 84.761 73.1278 80.497 72.1556C76.3613 71.2121 72.2113 70.1397 68.2325 68.7815C67.9473 68.7958 67.6906 68.6958 67.5052 68.5242C67.3055 68.4527 67.0916 68.3813 66.892 68.3098C59.5903 69.8253 52.3172 72.0412 45.1582 74.8576C32.4374 79.8472 20.1301 86.7096 8.70708 94.9445C3.63017 98.6045 -1.26134 102.55 -5.98174 106.711C-2.0457 105.653 1.87607 105.295 5.56966 105.853C7.89421 106.196 10.1047 106.839 12.3009 107.483C14.4971 108.126 16.6932 108.784 18.8752 109.47C18.7468 106.553 19.8877 103.465 22.141 100.992C24.437 98.4615 27.5459 96.8746 30.5977 95.7451C32.3803 95.0875 34.1772 94.5728 35.9598 94.0295C37.7282 93.4863 39.4681 92.8429 41.2222 92.1995C42.9477 91.5562 44.6876 90.9414 46.4417 90.4982C48.2956 90.0264 50.121 89.8977 51.9607 89.6976C53.8146 89.4974 55.5402 88.9685 57.3371 88.368C58.1785 88.0821 59.0199 87.8248 59.8613 87.596C60.6599 87.3816 61.5156 87.0528 62.3284 87.0814C62.8989 87.0957 63.4551 87.31 63.6547 87.8104C63.9399 88.4967 63.4265 89.1544 62.8704 89.6404C61.6439 90.727 60.3319 91.7277 58.9771 92.657C56.239 94.5299 53.3012 96.1169 50.2494 97.3464C48.481 98.0469 46.6841 98.6188 44.9158 99.3336C43.3328 99.977 41.7783 100.749 40.2524 101.578C36.8298 103.422 33.5355 105.553 30.0843 107.34C28.3017 108.269 26.4763 109.084 24.6081 109.756C23.838 110.028 23.0536 110.299 22.255 110.528C25.5921 111.586 28.9007 112.701 32.1237 113.988C32.6513 114.202 33.179 114.431 33.6924 114.66C40.0955 114.56 46.6128 114.874 51.8751 117.991C54.6132 119.606 56.7809 121.951 59.7615 123.195C61.2589 123.824 62.8276 124.267 64.3535 124.825C65.8794 125.368 67.334 126.054 68.7031 126.883C71.7407 128.713 74.3505 131.144 76.9174 133.56C77.5164 134.117 77.1884 135.047 76.3327 135.047C72.4965 135.018 68.6888 135.762 64.8384 136.305C61.1305 136.819 57.1089 137.334 53.5579 136.019C50.5203 134.904 48.1245 132.759 45.5718 130.886C44.1314 129.843 42.577 128.999 41.051 128.084C39.6392 127.241 38.3414 126.211 37.2006 125.039C34.6764 122.437 32.7939 119.206 31.1824 115.946C27.6742 114.574 24.0662 113.402 20.4296 112.258C16.0515 110.885 11.6734 109.427 7.10986 108.412C4.61418 107.854 2.00444 107.597 -0.719421 107.812C-3.3577 108.012 -6.05304 108.569 -8.73412 109.198C-13.8396 113.888 -18.7168 118.849 -23.3659 124.024C-28.2574 129.485 -32.878 135.19 -37.2561 141.08C-41.62 146.97 -45.6558 153.089 -49.7202 159.194C-51.7738 162.282 -53.8559 165.341 -56.0236 168.358C-58.1342 171.289 -60.3732 174.119 -62.5551 177.022C-64.737 179.924 -66.7906 182.941 -68.3736 186.243C-69.8995 189.431 -70.9263 192.762 -71.8533 196.094C-72.3239 197.781 -72.7517 199.468 -73.2081 201.155C-73.6644 202.827 -75.661 202.513 -75.3472 200.869C-74.0495 193.906 -71.8961 186.801 -67.9458 180.567C-65.9778 177.465 -63.7102 174.591 -61.4855 171.689C-59.2038 168.73 -57.0218 165.685 -54.9112 162.596C-50.7042 156.449 -46.7112 150.158 -42.4043 144.082C-38.1403 138.063 -33.6053 132.216 -28.8279 126.612C-19.1874 115.303 -8.43462 104.924 3.28792 96.0025C3.94392 95.5021 4.59991 95.0303 5.25592 94.5442C5.9975 92.6999 6.66778 90.8556 7.16692 88.897C7.8657 86.0805 8.35056 83.2069 8.77839 80.319C9.1777 77.5597 9.50571 74.7862 9.76241 71.9983C8.56448 69.2819 7.609 66.4941 7.01004 63.5633C6.29699 60.1035 6.04029 56.5865 5.94047 53.0552C5.84064 49.3238 5.82636 45.5781 5.76932 41.8467C5.72654 38.3297 5.62672 34.7984 5.74081 31.2814C5.86916 27.3355 6.29698 23.3896 7.4236 19.5867C7.62325 18.9291 8.52171 18.8147 8.87823 19.4009C12.5861 25.5484 14.1691 32.6396 15.1816 39.6878C15.7092 43.3764 16.2084 47.0936 16.5079 50.8107C16.8216 54.7709 16.5079 58.6453 15.5951 62.5197C15.1103 64.5927 14.4828 66.6371 13.841 68.6672C13.2136 70.6545 12.6574 72.6989 11.5736 74.486C11.488 74.6433 11.3596 74.7433 11.2313 74.8005C10.7321 79.3182 10.0334 83.8503 8.93526 88.2251C8.55022 89.7405 8.12239 91.3274 7.58047 92.8429C10.9746 90.4124 14.44 88.1107 17.9767 85.9519C19.688 84.4221 21.4707 82.9782 23.1249 81.3627C25.1357 79.4183 27.0325 77.3596 28.8579 75.258C30.997 72.8133 33.0506 70.2971 35.1042 67.7809C35.9456 64.2639 34.548 60.9184 33.8207 57.816C32.9508 54.056 32.5515 50.0815 32.6656 46.007C32.7654 41.9753 33.3644 37.815 34.4625 33.6404C35.0186 31.5245 35.7032 29.4086 36.5303 27.2927C37.3147 25.2768 38.37 23.2324 38.8834 21.2023C39.1828 20.0013 39.1401 18.9291 38.8263 17.8854C38.5411 16.9132 38.2701 15.9697 38.2986 14.8831C38.3414 12.6529 39.354 10.2796 40.3665 7.99214C40.6945 7.24871 41.8354 6.91988 42.2062 7.44886C46.185 13.0246 48.6236 19.7011 49.4935 26.778C49.9356 30.3379 49.9927 34.0121 49.6932 37.7435C49.3652 41.7895 48.7092 45.9784 47.3544 50.0672C46.7412 51.9115 45.9853 53.7415 45.1439 55.5429C47.554 52.655 49.9641 49.7527 52.36 46.8362C53.1443 45.8926 53.8717 44.9776 54.6132 44.0626Z" fill="#EAB39B"/>
+        </svg>
+        <svg
+          class="absolute right-0 top-[26%] sm:top-[18%] w-[10%]"
+          viewBox="0 0 113 195"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M73.9664 42.4999C73.4179 40.9752 72.8557 39.4368 72.4443 37.9258C72.1426 36.8269 72.4991 36.0028 72.6226 35.0138C72.7597 34.0111 72.5677 32.9672 72.2249 31.8958C70.8262 27.5827 68.4814 23.0222 65.2315 19.1212C62.3793 15.7009 58.6632 12.6378 54.3027 10.7285C51.8618 9.6571 49.3387 8.86042 46.8842 7.81648C44.4297 6.77254 42.0026 5.63246 39.548 4.56105C34.3784 2.28087 28.8934 0.275434 23.4633 0.206754C22.7502 0.193018 22.4074 0.852314 22.9148 1.37428C26.3017 4.82202 29.5928 8.3247 33.1306 11.6626C34.8721 13.2971 36.6547 14.9043 38.5196 16.429C40.3571 17.9262 42.2905 19.3273 44.1554 20.8108C46.0203 22.2805 47.8029 23.8465 49.229 25.6184C50.6551 27.3903 51.8344 29.2447 53.3154 30.9891C55.8385 33.9699 58.7866 36.6621 62.0365 39.0384C65.4646 41.5247 69.2082 43.5989 73.1025 45.1236C73.3082 45.3571 73.5961 45.4944 73.8704 45.5219C77.5316 50.0136 81.1929 54.4915 84.8541 58.9557C88.5565 63.4611 92.1491 68.049 95.9338 72.472C97.593 74.4087 99.2934 76.2906 101.09 78.1174C96.8525 75.8647 92.5194 73.8181 88.1314 72.0186C79.1634 68.3374 69.8663 65.604 60.6516 64.0106C59.3626 62.7881 58.0188 61.593 56.5241 60.5903C54.7826 59.409 52.8354 58.5436 50.8745 57.8843C48.8862 57.2112 46.8568 56.7305 44.8273 56.2635C42.6333 55.7552 40.4393 55.3019 38.2316 55.0272C33.7339 54.464 29.3185 54.9036 24.9854 55.192C20.5151 55.4942 16.1408 55.92 12.027 57.2387C9.76448 57.9667 7.58419 58.8595 5.47247 59.8348C4.43032 60.3156 3.40188 60.8101 2.37344 61.3046C1.60554 61.6754 0.59082 62.0875 0.59082 63.0491C0.59082 63.5985 0.961055 64.0655 1.60554 64.0793C5.52732 64.1754 9.49023 64.7249 13.3709 65.7276C15.318 66.2221 17.2378 66.8402 19.1164 67.5544C20.9676 68.255 22.7639 69.1067 24.6014 69.8347C26.4526 70.5764 28.3449 71.1121 30.2921 71.3044C32.3627 71.5105 34.4333 71.428 36.4764 71.3181C40.7684 71.0846 44.9782 70.4253 49.0782 69.4913C53.0548 68.5847 57.0452 67.5544 60.871 66.2495C61.1452 66.2632 61.392 66.1671 61.5703 66.0023C61.7623 65.9336 61.968 65.8649 62.1599 65.7963C69.1807 67.2523 76.1741 69.3813 83.0578 72.0873C95.2893 76.8812 107.123 83.4745 118.107 91.3865C122.989 94.9029 127.692 98.694 132.231 102.691C128.446 101.675 124.675 101.331 121.124 101.867C118.889 102.197 116.763 102.815 114.651 103.433C112.54 104.051 110.428 104.683 108.33 105.342C108.453 102.54 107.356 99.5731 105.19 97.1968C102.982 94.7655 99.9927 93.2408 97.0582 92.1557C95.3442 91.5238 93.6164 91.0293 91.9023 90.5074C90.202 89.9854 88.5291 89.3672 86.8424 88.7491C85.1832 88.131 83.5103 87.5403 81.8236 87.1145C80.041 86.6612 78.2858 86.5376 76.5169 86.3453C74.7343 86.153 73.0751 85.6448 71.3473 85.0679C70.5383 84.7931 69.7292 84.5459 68.9202 84.3261C68.1523 84.1201 67.3295 83.8042 66.5479 83.8317C65.9994 83.8454 65.4646 84.0514 65.2727 84.5321C64.9984 85.1915 65.4921 85.8234 66.0268 86.2904C67.2061 87.3343 68.4677 88.2958 69.7704 89.1887C72.4032 90.9881 75.2279 92.5128 78.1624 93.6941C79.8628 94.3672 81.5905 94.9167 83.2909 95.6035C84.813 96.2216 86.3076 96.9632 87.7749 97.7599C91.0659 99.5319 94.2335 101.579 97.5519 103.296C99.2659 104.188 101.021 104.971 102.817 105.617C103.558 105.878 104.312 106.139 105.08 106.359C101.871 107.375 98.69 108.447 95.591 109.683C95.0836 109.889 94.5763 110.109 94.0826 110.328C87.9257 110.232 81.6591 110.535 76.5992 113.529C73.9664 115.081 71.8821 117.334 69.0162 118.529C67.5764 119.133 66.068 119.559 64.6008 120.095C63.1335 120.617 61.7348 121.276 60.4184 122.073C57.4977 123.831 54.9883 126.166 52.5201 128.487C51.9441 129.023 52.2595 129.916 53.0822 129.916C56.7709 129.889 60.4322 130.603 64.1345 131.125C67.6998 131.619 71.5667 132.114 74.9811 130.85C77.9019 129.779 80.2056 127.718 82.6601 125.919C84.0451 124.916 85.5397 124.106 87.007 123.227C88.3645 122.416 89.6123 121.427 90.7093 120.301C93.1365 117.801 94.9465 114.697 96.496 111.565C99.8693 110.246 103.339 109.12 106.835 108.021C111.045 106.702 115.255 105.301 119.643 104.326C122.042 103.79 124.552 103.543 127.171 103.749C129.708 103.941 132.299 104.477 134.877 105.081C139.786 109.587 144.476 114.353 148.946 119.326C153.65 124.573 158.093 130.053 162.302 135.713C166.498 141.372 170.379 147.251 174.287 153.116C176.262 156.083 178.264 159.023 180.348 161.921C182.377 164.737 184.53 167.457 186.628 170.245C188.726 173.033 190.701 175.932 192.223 179.105C193.69 182.168 194.678 185.368 195.569 188.569C196.021 190.19 196.433 191.811 196.871 193.431C197.31 195.038 199.23 194.736 198.928 193.157C197.681 186.467 195.61 179.64 191.812 173.651C189.919 170.671 187.739 167.91 185.6 165.121C183.406 162.278 181.308 159.352 179.278 156.385C175.233 150.479 171.394 144.435 167.253 138.597C163.152 132.814 158.792 127.196 154.198 121.812C144.929 110.947 134.589 100.974 123.318 92.4029C122.687 91.9222 122.056 91.4689 121.425 91.0018C120.712 89.2299 120.068 87.4579 119.588 85.5761C118.916 82.8701 118.45 80.1092 118.038 77.3345C117.654 74.6834 117.339 72.0186 117.092 69.3401C118.244 66.7303 119.163 64.0518 119.739 61.2359C120.424 57.9118 120.671 54.5327 120.767 51.1399C120.863 47.5548 120.877 43.956 120.932 40.3709C120.973 36.9918 121.069 33.599 120.959 30.2199C120.836 26.4288 120.424 22.6377 119.341 18.9839C119.149 18.352 118.285 18.2421 117.942 18.8053C114.377 24.7118 112.855 31.5249 111.881 38.2967C111.374 41.8406 110.894 45.412 110.606 48.9834C110.305 52.7883 110.606 56.5107 111.484 60.2332C111.95 62.2249 112.553 64.1892 113.17 66.1397C113.774 68.049 114.309 70.0132 115.351 71.7302C115.433 71.8813 115.556 71.9774 115.68 72.0324C116.16 76.373 116.832 80.7273 117.888 84.9305C118.258 86.3866 118.669 87.9112 119.19 89.3672C115.927 87.0321 112.594 84.8206 109.194 82.7465C107.548 81.2767 105.834 79.8894 104.244 78.3373C102.31 76.4692 100.486 74.4911 98.7312 72.472C96.6743 70.1231 94.6997 67.7056 92.7251 65.288C91.916 61.909 93.2599 58.6947 93.9592 55.714C94.7957 52.1014 95.1796 48.2828 95.0699 44.368C94.9739 40.4945 94.398 36.4973 93.3421 32.4864C92.8074 30.4535 92.1492 28.4205 91.3538 26.3876C90.5996 24.4508 89.5849 22.4866 89.0913 20.5361C88.8033 19.3822 88.8444 18.352 89.1461 17.3493C89.4204 16.4152 89.6809 15.5087 89.6535 14.4648C89.6124 12.3219 88.6387 10.0417 87.6652 7.84398C87.3498 7.12971 86.2528 6.81377 85.8963 7.322C82.0705 12.6791 79.7256 19.0938 78.8892 25.8931C78.4641 29.3134 78.4092 32.8435 78.6972 36.4286C79.0126 40.3159 79.6434 44.3406 80.9461 48.2691C81.5357 50.041 82.2625 51.7993 83.0715 53.53C80.7541 50.7553 78.4367 47.9669 76.133 45.1647C75.3788 44.2582 74.6794 43.379 73.9664 42.4999Z" fill="#EAB39B"/>
+        </svg>
+
+        <div class="w-full max-w-[74.3rem] m-auto py-[10rem] sm:py-[38px] px-[2rem] flex flex-col border-y  items-center gap-[0]">
+          {% if profile_pic_metafield and profile_pic_metafield.value %}
+            <a href="{{ shop.url }}/pages/{{ slug }}"
+              ><img
+                src="{{ profile_pic_metafield | file_url }}"
+                alt="Profile Picture for {{ page.title }}"
+                class="rounded-full w-[70px] object-cover h-[70px] mb-[20px]"
+                width=""
+                height=""
+              >
+            </a>
+          {% endif %}
+
+          <a href="{{ shop.url }}/pages/{{ slug }}">
+            <author-name class="text-h4 mt-[0!important] block bolder-500 mb-[15px] sm:mb-[9px] lg:text-[2.4rem] xl:text-[2.4rem] md:text-[2rem] sm:text-[1.8rem] leading-[1.3] font-sans font-medium text-black">
+              {{ page.title }}
+            </author-name>
+          </a>
+          {% comment %} <p>{{ page.metafields.custom.author_expertise.value }}</p> {% endcomment %}
+          <div class="flex mb-[3rem] sm:mb-[15px]">
+            {% assign social_links = page.metafields.custom.author_social %}
+            {% if social_links and social_links.value.size > 0 %}
+              <style>
+                .social-icon svg {
+                  height: 20px;
+                  border-radius: 50%;
+                  width: 20px;
+
+                  && rect {
+                    fill: #68453d;
+                    fill-opacity: 1;
+                  }
+                }
+              </style>
+              <ul class="author-social-links m-[0!important] flex gap-[10px]">
+                {% for link in social_links.value %}
+                  <li class="rounded-full">
+                    {% if link contains 'facebook' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-facebook' -%}
+                      </a>
+                    {% elsif link contains 'instagram' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-instagram' -%}
+                      </a>
+                    {% elsif link contains 'youtube' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-youtube' -%}
+                      </a>
+                    {% elsif link contains 'twitter' or link contains 'x.com' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-twitter' -%}
+                      </a>
+                    {% elsif link contains 'snapchat' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-snapchat' -%}
+                      </a>
+                    {% elsif link contains 'pinterest' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-pinterest' -%}
+                      </a>
+                    {% elsif link contains 'tumblr' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-tumblr' -%}
+                      </a>
+                    {% elsif link contains 'vimeo' %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                        {%- render 'icon-vimeo' -%}
+                      </a>
+                    {% elsif link contains 'medium' %}
+                      <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                        {%- render 'icon-medium' -%}
+                      </a>
+                    {% elsif link contains 'linkedin' %}
+                      <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                        {%- render 'icon-linkedin' -%}
+                      </a>
+                    {% elsif link contains 'quora' %}
+                      <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                        {%- render 'icon-quora' -%}
+                      </a>
+                    {% elsif link contains 'reddit' %}
+                      <a href="{{ link }}" target="_blank" class="social-icon" rel="noopener noreferrer">
+                        {%- render 'icon-reddit' -%}
+                      </a>
+                    {% else %}
+                      <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ link }}</a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <p class="text-[16px]">{{ page.metafields.custom.excerpt.value }}</p>
+        </div>
+      </author>
+    </article>
+  </div>
+  <style>
+    author * {
+      line-height: normal !important;
+      text-align: center;
+    }
+
+    author p {
+      margin-bottom: 0 !important;
+    }
+  </style>
+{% endif %}
+<div class="main-article">
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comment-wrapper ">
+      <div id="comments" class="page-width page-width--narrow font-sans ">
+        <div class="mb-[6rem]">
+          {% form 'new_comment', article %}
+            {%- liquid
+              assign post_message = 'blogs.article.success'
+              if blog.moderated? and comment.status == 'unapproved'
+                assign post_message = 'blogs.article.success_moderated'
+              endif
+            -%}
+            <h4 class="mb-[3.2rem]">{{ 'blogs.article.comment_form_title' | t }}</h4>
+            {%- if form.errors -%}
+              <div class="form__message" role="alert">
+                <h4
+                  class="form-status caption-large text-body"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-error' %}
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h4>
+              </div>
+              <ul class="form-status-list caption-large">
+                {%- for field in form.errors -%}
+                  <li>
+                    <a href="#CommentForm-{{ field }}" class="link">
+                      {%- if form.errors.translated_fields[field] contains 'author' -%}
+                        {{ 'blogs.article.name' | t }}
+                      {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                        {{ 'blogs.article.message' | t }}
+                      {%- else -%}
+                        {{ form.errors.translated_fields[field] }}
+                      {%- endif -%}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- elsif form.posted_successfully? -%}
+              <div class="form-status-list form__message" role="status">
+                <h4
+                  class="form-status"
+                  tabindex="-1"
+                  autofocus
+                >
+                  {% render 'icon-success' %}
+                  {{ post_message | t }}
+                </h4>
+              </div>
+            {%- endif -%}
+
+            <div
+              {% if blog.moderated? == false %}
+                class="article-template__comments-fields"
+              {% endif %}
+            >
+              <div class="article-template__comment-fields">
+                <div class="field field--with-error">
+                  <input
+                    type="text"
+                    name="comment[author]"
+                    id="CommentForm-author"
+                    class="field__input"
+                    autocomplete="name"
+                    value="{{ form.author }}"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'author' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-author-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.name' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-author">
+                    {{- 'blogs.article.name' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+                  {%- if form.errors contains 'author' -%}
+                    <small id="CommentForm-author-error">
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- 'blogs.article.name' | t }}
+                        {{ form.errors.messages.author }}.</span
+                      >
+                    </small>
+                  {%- endif -%}
+                </div>
+                <div class="field field--with-error">
+                  <input
+                    type="email"
+                    name="comment[email]"
+                    id="CommentForm-email"
+                    autocomplete="email"
+                    class="field__input"
+                    value="{{ form.email }}"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'email' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-email-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.email' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-email">
+                    {{- 'blogs.article.email' | t }}
+                    <span aria-hidden="true">*</span>
+                  </label>
+                  {%- if form.errors contains 'email' -%}
+                    <small id="CommentForm-email-error">
+                      <span class="form__message">
+                        {%- render 'icon-error' -%}
+                        {{- 'blogs.article.email' | t }}
+                        {{ form.errors.messages.email }}.</span
+                      >
+                    </small>
+                  {%- endif -%}
+                </div>
+              </div>
+              <div class="field field--with-error">
+                <textarea
+                  rows="5"
+                  name="comment[body]"
+                  id="CommentForm-body"
+                  class="text-area field__input"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'body' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-body-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.message' | t }}"
+                >{{ form.body }}</textarea>
+                <label class="form__label field__label" for="CommentForm-body">
+                  {{- 'blogs.article.message' | t }}
+                  <span aria-hidden="true">*</span>
+                </label>
+              </div>
+              {%- if form.errors contains 'body' -%}
+                <small id="CommentForm-body-error">
+                  <span class="form__message">
+                    {%- render 'icon-error' -%}
+                    {{- 'blogs.article.message' | t }}
+                    {{ form.errors.messages.body }}.</span
+                  >
+                </small>
+              {%- endif -%}
+            </div>
+            {%- if blog.moderated? -%}
+              <p class="article-template__comment-warning caption mb-[1rem!important]">
+                {{ 'blogs.article.moderated' | t }}
+              </p>
+            {%- endif -%}
+            <input
+              type="submit"
+              class="button"
+              value="{{ 'blogs.article.post' | t }}"
+            >
+          {% endform %}
+        </div>
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h4
+            class="mb-[4.8rem]"
+            as
+            id="Comments-{{ article.id }}"
+            tabindex="-1"
+          >
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h4>
+          {% paginate article.comments by 3 %}
+            <div class="article-template__comments">
+              {%- if comment.status == 'pending' and comment.content -%}
+                <article
+                  id="{{ comment.id }}"
+                  class="article-template__comments-comment border-t py-[4.8rem!important] border-[#00000033] border-dashed"
+                >
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                  </footer>
+                </article>
+              {%- endif -%}
+
+              {%- for comment in article.comments -%}
+                <article
+                  id="{{ comment.id }}"
+                  class="flex items-center px-[0!important] gap-[4rem] article-template__comments-comment border-t py-[4.8rem!important] border-[#00000033] border-dashed"
+                >
+                  <div class="bg-gray-200 aspect-square flex justify-center items-center w-full rounded-full max-w-[15rem] max-h-[15rem] font-bold text-[5rem] md:text-[4rem]   font-sans">
+                    {% assign first_letter = comment.author | slice: 0, 1 %}
+                    {{ first_letter }}
+                  </div>
+                  <div class="flex flex-col gap-[1.6rem]">
+                    <h4>{{ comment.author }}</h4>
+                    {{ comment.content }}
+                    <footer class="right">
+                      <span class="caption-with-letter-spacing items-center flex gap-[1.2rem]">
+                        <svg
+                          width="31"
+                          height="32"
+                          class="w-[3rem] h-[3rem]"
+                          viewBox="0 0 31 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M13.625 16.625H16.125V24.75M1.75 11H29.25M21.75 6V1M9.25 6V1M4.25 31H26.75C27.413 31 28.0489 30.7366 28.5178 30.2678C28.9866 29.7989 29.25 29.163 29.25 28.5V6C29.25 5.33696 28.9866 4.70107 28.5178 4.23223C28.0489 3.76339 27.413 3.5 26.75 3.5H4.25C3.58696 3.5 2.95107 3.76339 2.48223 4.23223C2.01339 4.70107 1.75 5.33696 1.75 6V28.5C1.75 29.163 2.01339 29.7989 2.48223 30.2678C2.95107 30.7366 3.58696 31 4.25 31Z" stroke="#3A2307" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                        {{- comment.created_at | date: '%m/%d/%Y' -}}
+                      </span>
+                    </footer>
+                  </div>
+                </article>
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('article h2');
+    const tocLinks = [];
+    const sections = [];
+
+    // Create TOC links and track sections
+    headings.forEach((heading, index) => {
+      // Create TOC item
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      const headingId = heading.textContent.toLowerCase().replace(/ /g, '-');
+
+      a.textContent = heading.textContent;
+      a.href = '#' + headingId;
+      a.className = `text-gray-700 hover:text-honey p-[6px] block w-full rounded-[5px] ${
+        index === 0 ? 'bg-[#F8F1E8]' : ''
+      }`;
+      li.appendChild(a);
+      toc.appendChild(li);
+
+      // Assign id to heading if not already present
+      heading.id = headingId;
+
+      // Store references for scroll tracking
+      tocLinks.push(a);
+      sections.push(heading);
+    });
+
+    // Handle smooth scrolling when clicking TOC links
+    toc.addEventListener('click', function (event) {
+      if (event.target.tagName === 'A') {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop + 40,
+            behavior: 'smooth',
+          });
+        }
+      }
+    });
+
+    // Track scroll position and update active section
+    function updateActiveSection() {
+      const scrollPosition = window.scrollY + 200; // Adding offset for better highlighting
+
+      // Find the current section
+      let currentSection = sections[0];
+      sections.forEach((section) => {
+        if (section.offsetTop + 40 <= scrollPosition) {
+          currentSection = section;
+        }
+      });
+
+      // Update TOC links' active state
+      tocLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+        const sectionId = '#' + currentSection.id;
+
+        // Remove existing active classes
+        link.classList.remove('bg-[#F8F1E8]');
+
+        // Add active classes to current section's link
+        if (href === sectionId) {
+          link.classList.add('bg-[#F8F1E8]');
+        }
+      });
+    }
+
+    // Add scroll event listener with debouncing for performance
+    let isScrolling;
+    window.addEventListener(
+      'scroll',
+      function () {
+        // Clear previous timeout
+        window.clearTimeout(isScrolling);
+
+        // Set new timeout
+        isScrolling = setTimeout(function () {
+          updateActiveSection();
+        }, 10);
+      },
+      false
+    );
+
+    // Initial update
+    updateActiveSection();
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    (function () {
+      const handle = '{{ article.handle | split: "/" | last }}';
+      const apiUrl = 'https://api.everestshilajit.com/';
+      const sessionKey = 'viewed_articles';
+
+      const data = JSON.parse(localStorage.getItem(sessionKey)) || { posts: [], timestamp: Date.now() };
+
+      const twelveHours = 12 * 60 * 60 * 1000;
+      const isExpired = Date.now() - data.timestamp > twelveHours;
+
+      if (isExpired) {
+        localStorage.removeItem(sessionKey);
+        data.posts = [];
+        data.timestamp = Date.now();
+      }
+
+      if (!data.posts.includes(handle)) {
+        data.posts.push(handle);
+        localStorage.setItem(sessionKey, JSON.stringify(data));
+
+        fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-KEY': 'sk_everestshilajit_8f9c2dbe-4e5a-47e0-8d14-d7a6bcd29a12',
+          },
+          body: JSON.stringify({ handle }),
+        });
+      }
+    })();
+  });
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+      {% endif %}
+      {% if article.image %}
+        "image" : [{{ article | image_url: width: 1920 | prepend: "https:" | json }}],
+        {% endif %}
+        "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+        "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+        "author": {
+          "@type": "Person",
+          "name": {{ article.author | json }}
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": {{ shop.name | json }}
+        }
+      }
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+            }
+          ],
+          "default": "adapt",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
+          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "Share"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

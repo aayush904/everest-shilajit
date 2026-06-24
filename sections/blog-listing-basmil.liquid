@@ -1,0 +1,266 @@
+
+<style>
+    #shopify-section-{{ section.id }} .wrapper{
+      padding: {{ section.settings.section_padding }};
+      margin: {{ section.settings.section_margin }};
+      max-width: {{ section.settings.section_width }};
+      min-height: {{ section.settings.min_height }};
+          {% if section.settings.background_type == 'color' %}
+      background-color: {{ section.settings.background_color }};
+      {% endif %}
+      {% if section.settings.background_type == 'image' %}
+        background-image: url({{ section.settings.background_image | img_url: 'master' }});
+        background-position: {{ section.settings.background_position }};
+        background-size: {{ section.settings.background_size }};
+      {% endif %}
+
+    h3 {
+    font-weight: 700;
+  }
+
+  {% if section.settings.content_width!= blank %}
+    .section-heading{
+      width: {{section.settings.content_width}};
+    }
+  {% endif %}
+  }
+
+  @media(max-width:768px){
+    #shopify-section-{{ section.id }} .wrapper.wrapper{
+      padding: {% render 'mobile_spacing'  padding: section.setting.padding %};
+    }
+  }
+</style>
+
+<section
+  class="wrapper {{ section.settings.custom_class }} md:max-w-[116.6rem!important] sm:max-w-[116.6rem!important] w-full"
+  id="{{ section.settings.custom_id }}"
+>
+  <div class="main-blog m-auto section-{{ section.id }}-padding max-w-full  w-full">
+    {% if section.settings.heading != blank or section.settings.descriprtion %}
+      <div class="section-heading w-full mb-[3rem]" style=" text-align: {{ section.settings.content_alignment }};">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.descriprtion %}
+          <p>{{ section.settings.descriprtion }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div
+      class="
+        blog-grid sm:grid-cols-1
+        {% if section.settings.show_slider %}
+         scroll-container flex flex-nowrap
+        {%  else %}
+          {% if section.settings.columns_desktop == 5%}
+        grid-cols-5 md:grid-cols-2
+        {% elsif section.settings.columns_desktop == 4%}
+        grid-cols-4 md:grid-cols-2
+        {% elsif section.settings.columns_desktop == 3%}
+        grid-cols-3 md:grid-cols-2
+        {% elsif section.settings.columns_desktop == 2%}
+        grid-cols-2 md:grid-cols-2
+        {% elsif section.settings.columns_desktop == 1%}
+        grid-cols-1
+        {% endif %}
+
+        grid
+        {% endif %}
+        gap-[2.4rem]
+      "
+    >
+      {% assign blog_handle = section.settings.blog %}
+      {% assign blog = blogs[blog_handle] %}
+      {% for article in blog.articles limit: section.settings.blog_limit %}
+        <div class="blog-articles__article article {% if section.settings.show_slider %}min-w-[32.9rem] w-[29%] {% endif %}">
+          {%- render 'article-card',
+            article: article,
+            media_height: 'adapt',
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: true,
+            show_date: true,
+            show_author: false,
+            show_excerpt: true
+          -%}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Blog Post Cards basmil",
+  "class": "blog-post-cards-basmil",
+  "settings": [
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "liquid",
+      "id": "descriprtion",
+      "label": "descriprtion"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_slider",
+      "label": "Make blog Slider",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "blog_limit",
+      "label": "Number of Blogs to Display",
+      "default": 3,
+      "min": 1,
+      "step": 1,
+      "max": 12
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Number of Columns (Desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "content_width",
+      "label": "Content Part Width",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "default": "16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "section_margin",
+      "label": "Section Margin",
+      "default": "16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    },
+    {
+      "type": "text",
+      "id": "section_width",
+      "label": "Section Width",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "min_height",
+      "label": "Section Min Height",
+      "default": "auto"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Post Cards basmil",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

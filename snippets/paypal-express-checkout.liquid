@@ -1,0 +1,95 @@
+<script nonce="{{ shop.nonce }}" src="https://www.paypal.com/sdk/js?components=buttons&client-id=AU7WQyFPF-PRSZY5c8gjlnsV6hEsl4WSperK8ZheZfT80zVM_NTlO6Q43ukbbjneACDJkvQbQU3OTKX5&currency=USD"></script>
+
+<div id="paypal-express-checkout-button" class="paypal-button-container">
+  <div id="paypal-button" class="paypal-button"></div>
+</div>
+
+<script nonce="{{ shop.nonce }}">
+  document.addEventListener('DOMContentLoaded', function() {
+    const cartTotal = {{ cart.total_price | money_without_currency }};
+    const currencyCode = 'USD';
+    let itemTotal = 0;
+
+    // Calculate the total of all items
+    {% for item in cart.items %}
+      itemTotal += {{ item.price | money_without_currency }} * {{ item.quantity }};
+    {% endfor %}
+
+    paypal.Buttons({
+      style: {
+        color: 'gold',
+        shape: 'rect',
+        label: 'checkout',
+        size: 'medium'
+      },
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: cartTotal,
+              currency_code: currencyCode,
+              breakdown: {
+                item_total: {
+                  value: itemTotal.toFixed(2),
+                  currency_code: currencyCode
+                }
+              }
+            },
+            description: 'Order from {{ shop.name }}',
+            custom_id: '{{ cart.token }}',
+            items: [
+              {% for item in cart.items %}
+                {
+                  name: '{{ item.product.title }}',
+                  quantity: {{ item.quantity }},
+                  unit_amount: {
+                    value: {{ item.price | money_without_currency }},
+                    currency_code: currencyCode
+                  }
+                }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          window.location.href = '/checkout';
+        });
+      },
+      onError: function(err) {
+        console.error('PayPal Error:', err);
+        alert('An error occurred during checkout. Please try again.');
+      }
+    })
+    .render('#paypal-button')
+    .catch(err => {
+      console.error('Error initializing PayPal buttons:', err);
+      document.getElementById('paypal-express-checkout-button').innerHTML = '<div class="alert alert-error">PayPal button could not be loaded. Please try again later.</div>';
+    });
+  });
+</script>
+
+<style>
+  .paypal-button-container {
+    margin: 20px 0;
+    padding:  0;
+    background: #f5f5f5;
+    position:relative;
+    z-index:1;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .paypal-button {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .alert-error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+</style>

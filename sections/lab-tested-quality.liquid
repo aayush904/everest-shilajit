@@ -1,0 +1,383 @@
+{%- liquid
+  assign certifications = product.metafields.custom.certifications.value
+-%}
+
+{%- style -%}
+  .lab-quality-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .lab-quality__inner {
+    max-width: 147.2rem;
+    margin: 0 auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  .lab-quality__intro {
+    flex: 1 1 32rem;
+    max-width: 42rem;
+  }
+
+  .lab-quality__heading {
+    font-family: 'Instrument Sans';
+    color: #382E2A;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 100%;
+    margin: 0 0 17px;
+  }
+
+  .lab-quality__description {
+    font-family: var(--font-body-family);
+    color: #3D3733;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .lab-quality__description p {
+    margin: 0;
+    font-family: 'Instrument Sans';
+  }
+
+  .lab-quality__grid {
+    flex: 1 1 60rem;
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  .lab-quality__card {
+    display: flex;
+    flex-direction: column;
+    background-color: {{ section.settings.card_background }};
+    border: 1px solid #37232033;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .lab-quality__card-body {
+    padding: 25px 22px 30px;
+    flex: 1 1 auto;
+  }
+
+  .lab-quality__icon {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .lab-quality__card-text {
+    font-family: 'Instrument Sans';
+    color: #000000;
+    font-size: 19px;
+    line-height: 130%;
+    margin: 0;
+    letter-spacing:normal;
+    font-weight:400;
+  }
+
+  .lab-quality__card-title p {
+    margin: 0;
+  }
+
+  .lab-quality__report span {
+    color: #8C817D;
+  }
+
+  .lab-quality__report {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    padding: 18px 21px;
+    border-top: 1px solid #37232033;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight:600;
+    letter-spacing: unset;
+    text-transform: uppercase;
+    color: #3D3733;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .lab-quality__report svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .lab-quality__report:hover,
+  .lab-quality__report:focus-visible {
+    background-color: #68453D;
+    color: #ffffff !important;
+  }
+
+  .lab-quality__report:hover span, .lab-quality__report:focus-visible span {
+    color:#fff !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .lab-quality__card-body {
+      padding:22px 14px 10px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .lab-quality-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .lab-quality-{{ section.id }} {
+      padding-top:32px;
+      padding-bottom:32px;
+    }
+    .lab-quality__heading {
+      font-size: 24px;
+      margin-bottom:16px;
+    }
+    .lab-quality__intro {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .lab-quality__card-text {
+      font-size:14px;
+    }
+    .lab-quality__icon {
+      width:46px;
+      height:46px;
+    }
+    .lab-quality__report {
+      padding:14px;
+    }
+    .lab-quality__report span {
+      font-size: 10.93px;
+      color: #8C817D;
+    }
+    .lab-quality__grid {
+      flex-basis: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .lab-quality__inner {
+      padding: 0 20px;
+      gap:24px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="lab-quality-{{ section.id }}">
+  <div class="lab-quality__inner">
+    <div class="lab-quality__intro">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="lab-quality__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="lab-quality__description">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if certifications != blank -%}
+      <div class="lab-quality__grid">
+        {%- for cert in certifications -%}
+          {%- liquid
+            # Metaobject fields expose their value via .value.
+            assign cert_icon = cert.icon.value | default: cert.icon
+
+            # The certificate file lives in the `image` field (a file field that may hold a
+            # PDF or an image). Fall back to a `certificate` field if named that way.
+            assign cert_file = cert.image.value | default: cert.certificate.value | default: cert.image | default: cert.certificate
+
+            # Icon may be an image file (use image_url) or an SVG/generic file (use .url).
+            assign icon_url = cert_icon | image_url: width: 192
+            if icon_url == blank
+              assign icon_url = cert_icon.url | default: cert_icon.src
+            endif
+
+            # Resolve the report URL + type. PDFs expose .url; image files go through image_url.
+            assign report_url = ''
+            assign report_type = 'pdf'
+            if cert_file != blank
+              assign raw_file_url = cert_file | file_url
+              if raw_file_url contains '.pdf' or cert_file.url contains '.pdf'
+                assign report_url = cert_file.url | default: raw_file_url
+                assign report_type = 'pdf'
+              else
+                assign report_url = cert_file | image_url: width: 1800
+                assign report_type = 'image'
+                if report_url == blank
+                  assign report_url = cert_file.url | default: raw_file_url
+                endif
+              endif
+            endif
+          -%}
+          {%- comment -%}
+            The metaobject title is an inline rich-text field — it stores JSON, not HTML, and Shopify does
+            not auto-render metaobject rich text. Build two values from it: cert_title_plain (for alt/aria)
+            and cert_title_html (the displayed title, preserving inline bold/italic/links).
+          {%- endcomment -%}
+          {%- assign cert_title_plain = '' -%}
+          {%- capture cert_title_html -%}
+            {%- if cert.title.value.children -%}
+              {%- for blk in cert.title.value.children -%}
+                {%- for child in blk.children -%}
+                  {%- if child.type == 'link' -%}
+                    {%- assign link_text = '' -%}
+                    {%- for sub in child.children -%}{%- assign link_text = link_text | append: sub.value -%}{%- endfor -%}
+                    {%- assign cert_title_plain = cert_title_plain | append: link_text -%}
+                    <a href="{{ child.url }}"{% if child.title != blank %} title="{{ child.title | escape }}"{% endif %}>{{ link_text | escape }}</a>
+                  {%- else -%}
+                    {%- assign cert_title_plain = cert_title_plain | append: child.value -%}
+                    {%- capture node -%}{{ child.value | escape }}{%- endcapture -%}
+                    {%- if child.bold -%}{%- capture node -%}<strong>{{ node }}</strong>{%- endcapture -%}{%- endif -%}
+                    {%- if child.italic -%}{%- capture node -%}<em>{{ node }}</em>{%- endcapture -%}{%- endif -%}
+                    {{ node }}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- assign cert_title_plain = cert.title -%}
+              {{ cert.title | escape }}
+            {%- endif -%}
+          {%- endcapture -%}
+          {%- assign cert_title_plain = cert_title_plain | strip -%}
+          {%- assign cert_title_html = cert_title_html | strip -%}
+          <a
+             class="lab-quality__card"
+                href="{{ report_url }}"
+                target="_blank"
+                rel="noopener"
+
+            >
+            <div class="lab-quality__card-body">
+              {%- if icon_url != blank -%}
+                <img
+                  class="lab-quality__icon"
+                  src="{{ icon_url }}"
+                  alt="{{ cert_title_plain | default: section.settings.heading | escape }}"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                >
+              {%- endif -%}
+              <p class="lab-quality__card-text">
+                <span class="lab-quality__card-title">{{ cert_title_html | default: cert_title_plain }}</span>
+              </p>
+            </div>
+            {%- if report_url != blank -%}
+              <div
+                class="lab-quality__report"
+                aria-label="{{ section.settings.report_label }}{% if cert_title_plain != blank %} — {{ cert_title_plain | escape }}{% endif %}"
+              >
+                <span>{{ section.settings.report_label }}</span>
+                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.5M10.5 3.5V9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            {%- endif -%}
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lab Tested Quality",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Science-Backed Lab-Tested Quality"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our product passed rigorous traceability and sustainability standards, from ingredients sourcing to third-party testing to independent certifications.</p>"
+    },
+    {
+      "type": "text",
+      "id": "card_prefix",
+      "label": "Card prefix text",
+      "info": "Text shown before each certification title.",
+      "default": "Tested by Certified Laboratories for"
+    },
+    {
+      "type": "text",
+      "id": "report_label",
+      "label": "Report link label",
+      "default": "View Report"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Cards per row (desktop)",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#F5F2EC"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lab Tested Quality"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,181 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_biF6gH": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_VdVUmC": {
+          "type": "content",
+          "settings": {
+            "title": "{{ article.title }}",
+            "subtitle": "{{ article.tags | join: \", \" }}\n<style>\n\n#shopify-section-{{section.id}} {\n.imagepart{\n  max-height:80vh;\n  min-width:100%;\nborder-radius:8px;\nobject-position:center;\nobject-fit:cover;\naspect-ratio:1800/720;\n}\n.contain-wrapper{\nborder-radius:8px;\nover-flow:hidden;\nposition:relative;\n\n}\n.contain-wrapper:before {\n  content: '';\nborder-radius:8px;\n  width:100%;\n  height: 100%;\n  background: #00000045;\n  top:0;\n  left:0;  \nposition: absolute;\n}}\n</style>",
+            "description": "<p>By Pragya Mahara</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_JReyCC": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "{{ article.image }}",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%;"
+          }
+        }
+      },
+      "block_order": [
+        "content_VdVUmC",
+        "image_JReyCC"
+      ],
+      "custom_css": [
+        ".button {color: #fff; border: none; background: #68453d; width: 46rem; max-width: 100%;}",
+        ".contentside {position: absolute; top: 50%; transform: translateY(-50%);}",
+        ".subtitle {color: #fff; background: #382e2a; padding: 0.5px 15px; margin-bottom: -15px; font-size: 1.4rem;}",
+        "@media (max-width: 768px) {.contain-wrapper {flex-direction: column-reverse; } .basmilTextImage {margin: 0; } .imagepart {object-fit: cover; aspect-ratio: 359/300; border-radius: 16px; } h1, p {transform: scale(0.8); margin-bottom: -15px; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentcenter",
+        "valignment": "center",
+        "gapimage": "5.3rem",
+        "content_width": "97rem",
+        "padding": "0 16px",
+        "margin": "10px auto 7rem auto!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "basmil-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true
+          }
+        },
+        "share_tgbXMN": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "share_tgbXMN",
+        "featured_image",
+        "content"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "product_grid_slider_BHGcz7": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        ".product-card {background: #f5eadd;}",
+        "h2 {font-family: var(--font-body-family); font-size: 2.4rem;}"
+      ],
+      "name": "Products Display Slider",
+      "settings": {
+        "section_title": "Browse Related products",
+        "section_description": "",
+        "product_collection": "all",
+        "slider_grid": true,
+        "slider_type": "1",
+        "product_price": false,
+        "products_per_row": 3,
+        "products_per_page": 3,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "24px",
+        "iconbox_gap": "8px",
+        "content_alignment": "left",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "5.6rem 16px  5.6rem 16px",
+        "margin": "",
+        "custom_class": "",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem",
+        "min_height": "",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "",
+        "iconbox_style": "<style>.icon-box-section{}</style>"
+      }
+    },
+    "blog_listing_basmil_4xbUGE": {
+      "type": "blog-listing-basmil",
+      "custom_css": [
+        "h2 {font-family: var(--font-body-family); font-size: 2.4rem;}"
+      ],
+      "settings": {
+        "heading": "Other Blogs",
+        "blog": "shilajit",
+        "show_slider": false,
+        "blog_limit": 3,
+        "columns_desktop": 3,
+        "content_alignment": "left",
+        "content_width": "100%",
+        "section_padding": "0 16px 12rem 16px",
+        "section_margin": "0 auto",
+        "custom_class": "",
+        "custom_id": "",
+        "section_width": "100%; max-width:148.8rem",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "rgba(0,0,0,0)",
+        "background_position": "center",
+        "background_size": "cover"
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_biF6gH",
+    "main",
+    "product_grid_slider_BHGcz7",
+    "blog_listing_basmil_4xbUGE"
+  ]
+}

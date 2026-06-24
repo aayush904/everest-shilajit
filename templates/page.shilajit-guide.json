@@ -1,0 +1,510 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "basmil_image_text_9XbbwA": {
+      "type": "basmil-image-text",
+      "blocks": {
+        "content_dKJT6t": {
+          "type": "content",
+          "settings": {
+            "title": "Shilajit: The Complete Guide  for  Benefits, Quality & Safety",
+            "subtitle": "",
+            "description": "<p>High in the Himalayas, blackish deposits, \"shilajit,\" are found naturally resting on the surface of rocks. Hardly visible to the eyes from afar, locals around these regions can easily recognize them. They are the ones to bring this rare herbomineral exudate alive from above 2000m, scraping it out a little at a time, taking days. While the globe has recently acknowledged it as a supplement with over 85+ minerals and beneficial bioactive compounds, Ayurveda revered it as a rejuvenating agent centuries ago.</p>",
+            "button_text": "",
+            "button_link": "",
+            "button_text_2": "",
+            "button_link_2": ""
+          }
+        },
+        "image_dyFBHH": {
+          "type": "image",
+          "settings": {
+            "image_type": "image",
+            "image": "shopify://shop_images/shilaju_hunt.webp",
+            "image_alt": "Everest Shilajit",
+            "svg": "",
+            "image_width": "100%; max-height:760px;     object-fit: cover;    border-radius: 16px; min-height:380px;"
+          }
+        }
+      },
+      "block_order": [
+        "content_dKJT6t",
+        "image_dyFBHH"
+      ],
+      "custom_css": [
+        ".basmilTextImage {margin: 0 2rem !important;}",
+        "brown {color: #ffff;}",
+        ".button {color: #fff; border: none; background: #68453d; width: 46rem; max-width: 100%;}",
+        ".contentside {position: absolute; top: 50%; transform: translateY(-50%);}",
+        "@media (max-width: 768px) {.basmilTextImage {margin: 0; } .contentside {position: static; transform: none; } .imagepart {object-position: 85%; aspect-ratio: 359/300; min-height: auto !important; border-radius: 16px; } h1 {font-size: 24px; } h1, p {color: #382e2a !important; } p {margin: 4px 0 8px 0; }}"
+      ],
+      "name": "Basmil Image Text",
+      "settings": {
+        "heading_size": "h1",
+        "image_clickable": false,
+        "layout": "imagebottom",
+        "alignment": "contentstart",
+        "valignment": "center",
+        "gapimage": "5.3rem; flex-direction: column-reverse",
+        "content_width": "78rem; left: calc((100dvw -  76dvw) / 2 );",
+        "padding": "0",
+        "margin": "10px auto 0 auto!important",
+        "custom_class": "dark screen-width",
+        "custom_id": "",
+        "width": "100%",
+        "minheight": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "#ffffff",
+        "content_color": "#ffffff"
+      }
+    },
+    "basmil_mixed_section_PHCmCn": {
+      "type": "basmil-mixed-section",
+      "blocks": {
+        "chapter_edLFNk": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 1",
+            "subtitle": "What is Shilajit, Origin and History?",
+            "excerpt": "Discover Everest Shilajit’s formation processes over centuries in high mountain regions."
+          }
+        },
+        "content_VkMzEQ": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<h3>Ancient discovery in the Himalayas and other mountain ranges</h3>\n<highlight>Shilajit is found at altitudes &gt;2000m, especially within the rocks embedded in the inaccessible heights of the Tibetan and Himalayan Mountains. That being said, it's not true that shilajit is exclusive only to these places; other regions also have recorded but such occurrences are considerably rarer and less documented.</highlight>",
+            "image": "shopify://shop_images/image_295_14c27d57-3c16-431f-b09d-fff2f1f393f4.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzER": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3><strong>Historical texts and references</strong></h3><p>Shilajit has journeyed as a traditional Ayurvedic medicine for over 3,000 years, backed by ancient medical scriptures like Charaka Samhita, Sushruta Samhita and the Indian Vedas. Ayurvedic practitioners have long recommended it to patients with different conditions to support the body’s early healing- a powerful Rasayana of its time (a term used in Ayurveda for rejuvenating substances). </p>",
+            "html_content": "<highlight>shila=rock, jeet=conqueror, meaning conqueror from mountains and destroyer of weakness in Sanskrit, <br><br>\nOther names of shilajit: mumie(Russian), Zhaxun(Tibetan), deli bal (Turkish)</highlight>\n     \n          <p>Ayurveda originated 5000 years ago in ancient India, which was later used as a healing system, especially in countries following Hindu culture like India and Nepal.</p><p>Ayurveda was transformed into Sowa Rigpa in Tibet in the 8th century under King Trisong Detsen and the magical nature of shilajit in balancing the body and spirit was highlighted.</p><p>In Nepal, Shilajit is valued both in Hinduism and Buddhist healing traditions. Ayurveda healing practices further spread throughout Central Asia via Buddhist monasteries, reaching Mongolia, Afghanistan, and other places, creating culturally adapted healing traditions and concepts.</p><h3><strong>Traditional remedy to modern superfood</strong></h3><p>Traditionally treated as a gift from the mountains, locals used to consume Shilajit themselves and also travel down from their remote regions to trade it and make a living. Sherpas, Tibetan monks, and Himalayan shepherds are the ones whose names mustn’t be forgotten when it comes to the discovery of Shilajit, as they first got intrigued by this unique substance and later unlocked the powerful secrets that would go on to be celebrated by the world.</p><p>Shilajit is not limited to the Himalayas anymore; the whole world is embracing this natural adaptogen now. The wellness industry has recognized its rejuvenating properties and marketed it internationally, not only in its original resin form, but also as capsules, liquids, gummies and sticks.</p>",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzES": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3><strong>Geological formation process over centuries</strong></h3><p>Its curative powers are nothing short of miraculous, the way it is formed is even more fascinating, a natural alchemy that occurs over centuries. </p><p>The whole formation process is in nature’s hands; the tiny microbes of the Himalayas decompose the plant materials in the vicinity of rock, along with <a href=\"https://everestshilajit.com/pages/trace-minerals\" target=\"_blank\" title=\"trace minerals\">soil minerals</a>, over centuries. The microbial diversity unique to the high altitudes ( a major reason why it’s not formed on rocks everywhere) is what makes Shilajit precious and geographically limited.</p>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        },
+        "chapter_VMQKxQ": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 2",
+            "subtitle": "The Science Behind Shilajit: Composition and Bioactive Compounds",
+            "excerpt": "Explore the science behind the powerful rejuvenating properties of shilajit."
+          }
+        },
+        "content_VkMzET": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<highlight>The Shilajit collected in the process of harvesting can be of different texture, varying between free flowing to solid but what remains the same is its composition-approximately 80-85% humic substances and the rest being non-humic substances.</highlight>\n\n<highlight>\n<div style=\"display:flex; gap:12px; flex-direction:row;\">\n{% render 'svgIcon' id:'humic' style:'height:49px;min-width:49px;width:49px' %}\n\n<span>\n<b>Humic substances:</b> These are the bioactive compounds that hold therapeutic value- the main ones being fulvic acid and humic acid.</span>\n</div>\n\n\n\n<div style=\"display:flex; gap:12px; flex-direction:row; margin-top:14px;\">\n{% render 'svgIcon' id:'nonhumic' style:'height:49px;min-width:49px;width:49px' %}\n\n\n<span><b>\nNon-humic substances:</b> These substances, on the other hand, are mainly plant metabolites and microbial byproducts, are a source of overall health benefits of the shilajit.</span>\n</div></highlight>",
+            "image": "shopify://shop_images/image_333.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzEU": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>Shilajit also carries over 85+ minerals, all of which come from the decomposed soil of the Himalayas, the main ones being Fe, Al, Zn, Cr, Mn, Mg, Co, Pb, K and Ca. This multicomponent mineral substance can hence be a natural alternative to multiple mineral supplements. What’s even more powerful is the fact that these minerals are present in ionic form; they get easily absorbed in the body, showing beneficial results quickly.</p><p>Scientific research into the origin suggests that shilajit is of complete vegetative origin. The significant contributors to the formation are believed to be latex-bearing cactus species [Euphorbia royleana Boiss, Trifoleum repens species], while some other studies have also claimed that certain mosses/bryophytes growing on and around the shilajit-exuding rocks also equally take part in the process.</p><p>Shilajit harvested from the rocks has only 10 to 12% of the resin, the remaining portion made up of impurities like stone, soil, and sand. Heavy metals, naturally present in the soil can also be present in just-harvested resin which needs to be nil in consumable products. So, in order to make shilajit safe, it must be purified before use, and only the products with laboratory analysis certificates are safe. <a href=\"https://everestshilajit.com/\" target=\"_blank\" title=\"buy pure himalayan shilajit\">High-quality shilajit </a>should also have high fulvic acid content, 85+ minerals, and important visual quality parameters.<br/><br/></p>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        },
+        "chapter_CLe3G4": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 3",
+            "subtitle": "Shilajit Quality Grading: How to Identify Pure, Authentic Shilajit?",
+            "excerpt": "Learn the key characteristics of pure and authentic shilajit."
+          }
+        },
+        "content_VkMzEV": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "High demand for shilajit has led to counterfeits that have flooded the market. If you are not aware of how to identify pure, authentic Shilajit, here’s a guide to help you:\n\n<highlight>Shilajit is also classified as Gold shilajit, copper shilajit, silver shilajt, iron shilajit, based on the metals abundantly present them</highlight>\n\n<h3>Grading systems and quality indicators</h3>\n\n<p>Shilajit is graded primarily based on the presence of bioactive compounds-mainly fulvic acid content. Let's get real here, only their presence offers all the Shilajit benefits!</p>\n\n<p>The indicators that further speak to whether any brand serves fake shilajit or real shilajit are:\n<img src=\"//cdn.shopify.com/s/files/1/0673/4063/2201/files/Grading_systems_and_quality_indicators.webp?v=1755499109\" alt=\"\" height=\"auto\" width=\"auto\"></p>\n\n<h3>Physical characteristics of genuine Shilajit</h3>\n<b style=\"color:#68453D;\">A high-quality Shilajit should have:</b>\n<img src=\"//cdn.shopify.com/s/files/1/0673/4063/2201/files/Physical_characteristics_of_genuine_Shilajit.webp?v=1755499319\" alt=\"\" height=\"auto\" width=\"auto\" style=\"\">\n\n<p>Once you have it, the taste from the mountains hits you-each moment is earthy, slightly bitter. The rich, mineral undertone clings to your senses for a long time. It has organic, earthy smell, the one similar to cow’s urine. It remains in the air for an even longer period.</p>\n\n<h3>Third-party testing requirements and certifications</h3>\n<p>For companies selling shilajit, once it gets purified, they must rely on third-party laboratory testing to assure their customers of its safety, purity and authenticity. Some crucial certifications that verify an authentic seller include GMP, ISO, and Purity testing</p>",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzEW": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "{% render 'svgIcon' id:'third-party-certification' style:'max-width:670px' %}\n\n\n<h3>Common adulterants and how to avoid them</h3>\n\n<p>Counterfeit Shilajit is adulterated with gypsum, soil/clay, charcoal, ash, burnt sugar, coffee, synthetic resins and artificial colors to increase the volume of the product. To avoid adulterants that are not of much health value, it’s important to find authentic sellers that provide transparency about harvesting procedures and a certificate of analysis.</p>\n\n<highlight style=\"display:grid; gap:12px;  grid-template-columns:49px 1fr; align-items:center;margin-top:12px\">\n\n{% render 'svgIcon' id:'color-test' style:\"height:49px;aspect-ratio:1/1\" %}\n<span><b>Varna/color test:</b> pale brown to black in color.</span>\n\n{% render 'svgIcon' id:'smell-test' style:\"height:49px;aspect-ratio:1/1\" %}\n<span><b>Gandha/smell test:</b> cow’s stale urine</span>\n\n{% render 'svgIcon' id:'taste-test' style:\"height:49px;aspect-ratio:1/1\" %}\n<span><b>Rasa/taste test:</b> bitter with hint of minerals</span>\n\n{% render 'svgIcon' id:'solubility-test' style:\"height:49px;aspect-ratio:1/1;\" %}\n<span><b>Solubility test:</b> must be soluble in water leaving no visible residue</span>\n\n{% render 'svgIcon' id:'fire-test' style:\"height:49px; aspect-ratio:1/1;\" %}\n<span><b>Fire test:</b> fake shilajit could catch fire but the real ones don’t burn immediately</span>\n\n</highlight>",
+            "image_caption": ""
+          }
+        },
+        "content_FjAnUr": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Everest Shilajit's quality assurance process</h3><p>We source Shilajit from high-altitude Himalayan Regions of  Nepal, a careful process with almost no harm to the fragile ecosystem there. </p><p>Here are the main principles we stick to, so our customers get a one-of-a-kind experience:</p><ul><li>The most potent compound of shialjit, fulvic acid, is verified by spectroscopic analysis.</li><li>Heavy metal and contamination screening</li><li>Processing standards that maintain natural compounds</li><li>No additives or artificial substances policy</li></ul><p>Once out of the purification facility, our products go through multi-stage laboratory testing in both Nepal and the USA. Each batch of the products is also approved by leading Ayurveda Experts, some of the best in Nepal.</p><p>When we get your order, we complete a final product verification prior to shipping to ensure it meets our quality standard</p><h3>Testing methods:</h3>",
+            "html_content": "<highlight>\nIn order to distinguish imitations/ fake shilajit that are everywhere around the market, one can consider different tests:\n<div style=\"display:grid; gap:12px;  grid-template-columns:49px 1fr; align-items:center;margin-top:12px\">\n\n{%render 'svgIcon' id:'solubility-test' style:\"height:49px;aspect-ratio:1/1\"%}\n<span><b>Solubility test:</b> In case of genuine shilajit, it dissolves completely in water with no residues. But when it is impure, it will form residues at the bottom.</span>\n\n{%render 'svgIcon' id:'fire-test' style:\"height:49px;aspect-ratio:1/1\"%}\n<span><b>Flame test:</b>Impure shilajit can easily burn on fire. However, pure shilajit does not burn at once. With the rise in temperature, you can observe some bubbles and on heating more, it turns into ashes.</span>\n\n{%render 'svgIcon' id:'purity-indicator' style:\"height:49px;aspect-ratio:1/1\"%}\n<span><b>Purity indicators:</b> The presence of heavy metals and additives indicates the lack of purity. The tests to check these impurities are entirely laboratory-based, hence, find the official certificates that accompany the authentic Shilajit products</span>\n\n\n</div>\n</highlight>\n<h3>Red flags when purchasing Shilajit</h3>\n<p>Let’s look at the signs that indicate that the product may not be safe, the ones you mustn’t ignore:<p>",
+            "image": "shopify://shop_images/image_337.webp",
+            "image_caption": ""
+          }
+        },
+        "chapter_gKpwmh": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 4",
+            "subtitle": "Shilajit Benefits for Male, Female, Plants & Animals",
+            "excerpt": "Get to know about the health benefits of shilajit- from humans to plants and animals."
+          }
+        },
+        "content_VkMzEZ": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<highlight>Shilajit, a rare product from the Himalayas, has a range of benefits. Back then, Ayurveda recognized it as a rejuvenating tonic, a healing medicine to strengthen the weakened body system.</highlight>\nToday, studies have revealed even more benefits, let’s have a closer look:\n<h3>Benefits for Men</h3>\nShilajit is a proven boon for problems related to male fertility. With its continuous use, it shows:.",
+            "image": "shopify://shop_images/image_320.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzFA": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>Shilajit benefits go beyond just these; in men consuming it regularly, the muscle mass has been found to increase by 20% and the stress hormone cortisol level to decrease by 30%. In addition to these, in aged men, Shilajit reduces the risk of prostate-related issues.</p><h3>Benefits for Women</h3><p>Females can also equally benefit from Shilajit. One key benefit of its consumption here is the proper production of female hormones important for fertility.<br/><br/></p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_321.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzFB": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>What’s even more interesting is that it has a natural energy boosting effect, valuable for women who feel drained during menstruation. Moreover, it also reduces the majority of menopausal symptoms, making daily life during this stage much easier!</p><h3>Benefits for Plant Health</h3><p>There are many bioactive compounds in Shilajit; it can be a new natural fertilizer for your plants! The pool of minerals in it definitely gets your plant to bloom in grace.<br/><br/></p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_323.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzFC": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>In conclusion, using shilajit for plants is crucial for someone whose focus is on organic gardening, it’s like giving your plants compost/ worm cast, but even richer.</p><h3>Benefits for Animal Health</h3><p>The practice of giving shilajit to pets is not uncommon, rather, it’s popular, as the results are even immediate. </p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_322.webp",
+            "image_caption": ""
+          }
+        },
+        "content_VkMzFD": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>The practice of giving shilajit to pets is not uncommon, rather, it’s popular, as the results are even immediate. </p>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        },
+        "chapter_fimUkU": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 5",
+            "subtitle": "Sustainable Sourcing and Ethical Harvesting",
+            "excerpt": "Sustainable harvesting and responsible extraction practices can only preserve shialjit for the long term."
+          }
+        },
+        "content_bjHtar": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<highlight>Shilajit is a natural product and its long-term availability can only be promised by maintaining a balance of the surrounding natural resources. Any compromise in different stages of harvesting can be damaging to its quality and the environment it comes from.</highlight>",
+            "image_caption": ""
+          }
+        },
+        "content_CXk6XE": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Environmental responsibility in Shilajit harvesting</h3><p>The highlands of the Himalayas, from which the shilajit oozes out, are ecologically sensitive. Any company or individual whose target is the sourcing of this precious natural resin should make sure they protect the fragile ecosystem of the region.</p><p>Whatever the demand is, ethical harvesting procedures should be followed to protect the precursor plants, <a href=\"https://everestshilajit.com/pages/trace-minerals\" target=\"_blank\" title=\"trace minerals\">minerals</a> and microbes of the shilajit there, to make it available for the next generations down the line and beyond.</p><h3>Everest Shilajit's commitment to sustainability</h3><p>At Everest Shilajit, sustainability isn't just a checkbox- it’s our philosophy that has taken us all the way through the sourcing to production. We work directly with the local communities in the remote areas of Nepal, the pro ones who use traditional methods for harvesting that have passed the test for generations of these harvesters.</p><p>We also hold an advocacy against destructive practices and give continuity to what these harvesters recommend-not overharvesting or returning to the same site for the next 3 to 4 years. As per them, this respectful gap supports natural regeneration. As we completely restrict third-party involvement and fair trade practices remain our priority, this further supports harvesters’ commitment to preservation.</p><h3>Community impact and fair trade practices</h3><p>The local communities are directly impacted by Shilajit harvesting. A source of income generation for these people, fair trade practices and better working conditions can dramatically improve their financial status. Just another important factor is not replacing the indigenous way of harvesting with modern or exploitative practices, which can be a key to their social progress.<br/><br/></p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_311.webp",
+            "image_caption": ""
+          }
+        },
+        "content_f3FKn6": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Conservation of high-altitude ecosystems</h3><p>Harvesting Shilajit and protecting high-altitude ecosystems go hand in hand; a breach in sustainable practices can be destructive to the formation process. Causing no harm to the source and the surrounding environment means the natural production process will continue uninterrupted, the local communities are always at benefit and most importantly-the benefits are preserved for all of us.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_308.webp",
+            "image_caption": ""
+          }
+        },
+        "content_mxXqc6": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Traditional harvesting methods vs. modern techniques<br/></h3><p>Manual extraction has been used for a long time and been passed down through generations. This method has minimal or no disruption to the environment. The hands-on approach hasn’t changed in Nepal, but the tools used in shilajit harvesting, like rock-climbing gear and portable drills to scrape out the resin- are quite advanced in modern days.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_339.webp",
+            "image_caption": ""
+          }
+        },
+        "content_E4mLek": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Transparency in the supply chain</h3><p>In order to build trust with customers, it’s important to prove that all practices followed by the seller company are ethical and sustainable. The one and only way to do this is to provide full visibility into its supply chain, from the sourcing of raw Shilajit to its production and distribution. Transparency of every stage is also verifiable evidence of environmental and social responsibility.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_310.webp",
+            "image_caption": ""
+          }
+        },
+        "chapter_DaVLV3": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 6",
+            "subtitle": "Shilajit: Dosage, Usage, and Safety Guidelines",
+            "excerpt": "Find recommended dosages, preparation methods, and possible precautions for different users."
+          }
+        },
+        "content_Qi8M4q": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<highlight>Like any other vitamins, minerals and herbs supplements, Shilajit also has its recommended dosage. To ensure effective results- following recommended timing, dosage, usage, and safe use-is a must.</highlight>\n<h3>Recommended dosage for different purposes</h3>\n<highlight style=\"display:grid; gap:12px;  grid-template-columns:49px 1fr; align-items:center;margin-top:12px\">\n\n{%render 'svgIcon' id:'under18' style:\"height:49px;aspect-ratio:1/1\"%}\n<span><b>Under 18 </b> Not recommended</span>\n\n{%render 'svgIcon' id:'elderly-age' style:\"height:49px;aspect-ratio:1/1\"%}  \n<span><b>Elderly (age-wise)</b> 300-500 mg per day (adults), up to 48 weeks for optimum benefits, Don't exceed 1000mg per day</span>\n</highlight >\n<h3>Best time to consume Shilajit</h3>\n<p>If you are looking to get the most out of the Shilajit and are consuming it to reap all its benefits, using it first thing in the morning will give the desired results. <br><br>\nBesides that, there is no hard and fast rule, and people consume it even before sleep or at any other time of the day.</p>\n<h3>Methods of consumption (resin, powder, capsules)</h3>\n\n<div class=\"overflow-auto w-full table-container\" style=\"max-width:99vw\"> \n<table>\n<thead>\n<tr>\n<th>Resin</th>\n<th>Powder</th>\n<th>Capsules</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><ol>\n<li>Take 300-500 mg(pea size) of shilajit resin with the spoon that comes with the product.</li>\n<li>Mix the resin in warm water, milk, or herbal tea for better absorption.</li>\n<li>Consume it on an empty stomach for optimal results.</li>\n</ol></td>\n<td><ol>\n<li>2-4 pinch/ ⅛-½ teaspoon</li>\n<li>mix it with any drink/honey</li>\n</ol></td>\n<td><ol>\n<li>One capsule</li>\n<li>Swallow like any other capsules, with water</li>\n<li>After meals, twice a day</li>\n</ol></td>\n</tr>\n</tbody>\n</table>\n</div>",
+            "image_caption": ""
+          }
+        },
+        "content_xayiwE": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Safety considerations and contraindications</h3><ul><li>Shilajit may interact with medications, interfering with their potency. So, for such people, taking suggestions from a healthcare professional is suggested.</li><li>As there are no guiding studies related to its safety for pregnant women and child &lt;18 years of age; these groups should totally abstain from using shiljait. </li><li>It is often called with a misleading nickname, “natural viagra”, focusing on benefits related to male sexual health. Truth: Shilajit is not exclusive to men; it provides benefits for all.</li></ul><h3>Potential side effects and interactions</h3><p>Although rare, some individuals may develop sudden reactions to this resin, showing symptoms like an upset stomach and allergic reactions, which require immediate attention. </p><p>Besides that, people with pre-existing conditions or medications should exercise caution when using Shilajit.</p><p>New users are encouraged to be careful of how their body responds. Provided any unexpected reactions occur, consult experts in the area of Shilajit.</p><p></p>",
+            "html_content": "<h3>Special considerations for different demographics</h3>\n\n<highlight style=\"display:grid; gap:12px 12px;  grid-template-columns:49px 1fr; align-items:center;margin-top:12px\">\n\n{%render 'svgIcon' id:'pregnant' style:\"height:49px;aspect-ratio:1/1\"%}\n<span>Not for pregnant and breastfeeding women</span>\n\n{%render 'svgIcon' id:'pregnant' style:\"height:49px;aspect-ratio:1/1\"%}\n<span>Not for Children</span>\n</highlight>\n\n<h3>How to start with Shilajit (beginner's guide)</h3>\n<p>The proper dose for beginners to start with is as low as <b>100-200mg</b> daily, which can be gradually increased if the body does not experience any side effects.</p>\n<p>Once you get the desired benefits, often after <b>48 weeks</b> if you are consuming <b>500g each day</b>, it’s better to cycle between periods of use and disuse, as this can be more effective than continuous use.</p>\n<h3>Shilajit overdose</h3>\n<p>There haven’t been any recorded effects of consuming excessive amounts of pure and authentic shilajit. However, we don’t recommend that our consumers go beyond the limit (1000mg per day). This way, you don't have to face unnecessary health troubles related to an overstimulated nervous system (causing issues like anxiety) and mineral overload.</p>",
+            "image_caption": ""
+          }
+        },
+        "chapter_qQ3M7M": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 7",
+            "subtitle": "FAQs and Myths About Shilajit",
+            "excerpt": "Get to know clear answers about common FAQs and related misconceptions."
+          }
+        },
+        "content_HKA3HY": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>FAQS AND MYTHS</h3><h4>What is shilajit​?</h4><p>Shilajit is a natural product, a rejuvenating medicine with thousands of years of proven use in Ayurveda. The decomposition of Himalayan native plants and soil minerals for hundreds of years is responsible for the formation of this blackish, tar-like resin.</p><h4>What does shilajit work​ ? </h4><p>The bioactive compounds like fulvic acid, humic acid and also &gt;85 minerals together deliver the benefits. All these elements from nature work in harmony to strengthen different body systems.</p><h4>What is Shilajit used for?</h4><p>Shilajit is mostly popular as a strength-boosting agent. It’s also widely known to improve reproductive health and can be used as a supplement to improve the vitality of pets. For plants, it can be a magical organic fertilizer.</p><h4>Is shilajit safe​?</h4><p>Yes, shilajit is safe. Healthy adults starting from a small size and then adjusting to moderate amounts later have no recorded effects.</p><h4>How much shilajit per day​? </h4><p>Starting with pea pea-sized dose is recommended. Later, as the body gets used to it, which is generally after a few days to a couple of weeks, 300-500/mg per day is a safe and effective amount.</p><h4>Is Shilajit Safe for Pregnant Women and Kids?</h4><p>Both the studies showing the effects and safety in pregnant women and kids are limited. So, we do not recommend its use for either group, purely for safety purposes.</p><h4>How Do I Know If My Shilajit Is Authentic?</h4><p>You can do simple home tests after the purchase: make sure the shilajit is blackish, tar-like and dissolves in water, forming continuous strands as it separates. Also, do not forget to check third-party lab test results and the origin label for the purity and authenticity.</p>",
+            "html_content": "<style>\n.text-content_HKA3HY h3{\n  margin-top:5px;\n}\n.text-content_HKA3HY h4{\ncolor:#68453D;\nfont-weight:600;\nmargin-bottom:-1.8rem!important;\nmargin-top:5px;\n}\n\n@media(max-width:768px){\n.text-content_HKA3HY h4{\nmargin-bottom:-1.2rem!important;\n\n}\n}\n\n</style>",
+            "image_caption": ""
+          }
+        },
+        "chapter_hKXypG": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 8",
+            "subtitle": "Recipes and Creative Ways to Use Shilajit",
+            "excerpt": "Try tasty ways to include shilajit in your daily routine."
+          }
+        },
+        "content_c67PeA": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>Once you unbox Shilajit, it’s completely normal to be in awe, especially if you've never seen this unique, black, resinous substance before. Its taste can be unfamiliar and quite intense for newbies, so it’s a good idea to explore various ways to mellow down its flavor.</p><p>Check out the ideas on how to use shilajit listed here and choose the one that works best for you, to enjoy shilajit in the most pleasant way possible.</p><h3>Traditional preparation methods</h3><p>Native harvesters often consume shilajit on its own, without any aid. The dose is limited to pea-size and is consumed as the first thing in the morning.</p><p>Ayurveda, however, highlights preparing a shilajit drink using milk or water. Ghee or honey is also considered a better option to improve the taste.</p><h3>Modern recipe ideas</h3><p>With its increasing popularity, people who consume it have discovered exciting, flavorful Shilajit recipes- probably the best ways to enjoy its health benefits</p><ul><li>.Energy-boosting smoothies</li></ul><p>A great way to start your morning off -Shilajit + your casual smoothie. The pea-sized addition makes you feel ready for whatever the day brings. The major benefit of this recipe is that you get to run away from the bold taste of raw shilajit.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_303.webp",
+            "image_caption": ""
+          }
+        },
+        "content_37twfX": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<ul><li>Shilajit-infused teas and drinks</li></ul><p>For those who aren’t fans of smoothies, Shilajit-infused beverages, like herbal teas or drinks, are also available in the market ( or you can simply prepare one). Though this is a convenient way to enjoy Shilajit, make sure to choose products from authorized and reputable brands.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_304.webp",
+            "image_caption": ""
+          }
+        },
+        "content_mJPR9J": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<ul><li>Healthy dessert incorporating Shilajit</li></ul><p>Ayurveda chocolate with shilajit, shilajit honey sticks and shilajit chia pudding are some other great options to enjoy its benefits with sweetness.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_305.webp",
+            "image_caption": ""
+          }
+        },
+        "content_PD6ijY": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<ul><li>Pre-workout and post-workout formulations</li></ul><p>Protein shake, shilajit honey sticks and gummies can be used as part of both pre- and post-workout routines<br/><br/></p>",
+            "html_content": "",
+            "image": "shopify://shop_images/Mask_group_7751b18d-4b39-4b23-aec3-c7f0d2025897.webp",
+            "image_caption": ""
+          }
+        },
+        "content_8MBRBL": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>DIY wellness treatments</h3><p>Facemask, Bath</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/3b7acbe6bf_1.webp",
+            "image_caption": ""
+          }
+        },
+        "content_e8NrAq": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Combination with other superfoods</h3><p>Nutrient-dense foods, turmeric golden milk, honey, Everest Everest Shilajit + shilajit</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/b5dab8d555_1.webp",
+            "image_caption": ""
+          }
+        },
+        "content_gfVa8B": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Seasonal usage recommendations</h3><p>In summer, you can add shilajit to any of your favorite cool drinks and in winter, without any restrictions, to warm milk, teas or any other warm beverages.</p>",
+            "html_content": "",
+            "image": "shopify://shop_images/Frame_1984077952.webp",
+            "image_caption": ""
+          }
+        },
+        "chapter_9k6L4n": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Chapter 9",
+            "subtitle": "Everest Shilajit: Our Commitment to Excellence",
+            "excerpt": "Know how we, at Everest Shilajit, are dedicated to serving the best quality shilajit."
+          }
+        },
+        "content_KVmdTp": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Company origin story and mission</h3>",
+            "html_content": "",
+            "image": "shopify://shop_images/image_316_75ee0cac-7317-4f9f-9814-1716e07fd377.webp",
+            "image_caption": ""
+          }
+        },
+        "content_MjRpWg": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<p>Raised in Nepal, the Himalayas were more than just a backdrop to my life, but where wonder, knowledge, and wisdom were.</p><p>I have always believed in the healing power of nature. As a child, my fondest memories were of my father bringing raw shilajit to gift his friends as a souvenir from his home. Over the years, I had had a deep passion for strength training and endurance, but as a vegetarian, finding the right supplement was essential. Once a childhood memory, shilajit later became my favorite choice for natural energy, focus, clarity, and lasting resilience.</p><p>When I visited my hometown, Darchula, I found the world's finest Shilajit from this region being exported but under a different label-Indian origin. It struck me at the moment and from that day, I traveled deep into the Himalayas, connected with local harvesters, and learned everything I could about sourcing and purifying Shilajit the right way with a mission to bring pure, authentic Himalayan Shilajit to the world.</p><p>Everest Shilajit is not only a brand to us but also a promise for quality, sustainability, and respect for the knowledge ancestors had faith in.</p><p>I hope it will give you the same strength and vitality it has given me.</p><p>Pragya Mahara<br/>Founder, Everest Shilajit</p><h3>Quality control processes and testing</h3><p>At Everest Shilajit, we take pride in quality and it starts at the collection stage, the origin site.</p><p>The collection process is carried out with great care in sealed and sterile food-grade containers to avoid any form of contamination. </p><p>Once collected, the resin is sent to our lab-certified purification facility, where all the harvest is further purified and processed using chemical-free methods. Every batch of shilajit product is standardized with particular attention to GMP (Good Manufacturing Practices), QC (Quality Control), and ISO certification. The fact that Nepal is the second richest country in water resources allows us to use high-quality water available in the region for purification purposes- part of our promise to never compromise on quality.</p><h3>Customer testimonials and reviews</h3>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        },
+        "content_c4tmBa": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "",
+            "html_content": "<h3>Certifications and third-party validations</h3>\n{% render 'svgIcon' id:'third-party-certification2' style:'max-width:515px; width:100%;margin-right:auto;' %}",
+            "image_caption": ""
+          }
+        },
+        "content_MEUxzh": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Transparency initiatives (batch tracking, COAs)</h3><p>All of our products have a unique batch number- which can be used to verify origin, processing dates, and other production-related details. Also, certificates of analysis (COAs) from third-party laboratories are available for every batch, a proof of authenticity.<br/></p><h3>Community and environmental impact</h3><p>We are committed to native harvesters we purchase from, we offer fair compensation to honor their work, cutting out third parties, making sure they receive the maximum benefit.</p><p>Only the native community of harvesters is reached out to, giving priority to the traditional practices. We completely support and respect their ancient knowledge that helps preserve the integrity of the sensitive high-altitude region, promote sustainability and operate with minimal harm to the environment.</p>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        },
+        "chapter_LyfJBK": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bonus Chapter",
+            "subtitle": "Quick Tips for Shilajit Enthusiasts",
+            "excerpt": ""
+          }
+        },
+        "content_RbCrrn": {
+          "type": "content",
+          "settings": {
+            "richtext_content": "<h3>Storage and preservation tips</h3><p>Proper storage of shilajit means you get to enjoy shilajit’s benefits till the end of its shelf life. The proper way to store shilajit is by keeping it in a cool, dry place that has less direct sunlight and humidity.</p><p>The airtight container shilajit comes in should always be kept tightly closed, as even a small gap can be a way for contaminants to get in.</p><h3>Ways to maximize absorption and effectiveness</h3><p>To get the benefits of all the bioactive compounds, always <a href=\"https://everestshilajit.com/pages/dosage-and-usage\" target=\"_blank\" title=\"how much shilajit to take\">take shilajit</a> on an empty stomach and, most importantly, stay consistent with the daily use.</p><h3>Combining with other supplements</h3><p>Shilajit can be combined with various other mineral supplements or adaptogens, doing so can help improve vitality even faster. But the case is not the same for medications; professional medical consultation is of utmost importance.</p><h3>Travel considerations</h3><p>Shialjit is safe to carry on flights. If it is in liquid form, always follow the customs rules of the respective country or airline and carry only volumes they allow.</p><h3>Seasonal adjustments</h3><p>Shilajit should not be consumed in higher doses in summer as it has body-warming properties and can easily cause dehydration in the heat.</p><h3>Advanced usage techniques</h3><p>Once you become familiar with the basic use of shilajit, now you can explore the advanced usage patterns. Some popular uses include:<br/>Cycling shilajit use, taking one to four weeks break after two to three months of continuous consumption<br/>Or, integrating it with other wellness routines- must be guided by a natural medicine/ Ayurvedic practitioner.</p><h3>Community and resources</h3><p>Connecting with forums and wellness groups established by shilajit enthusiasts gives you access to real experiences, answers to your shilajit-related queries and insight into recent research surrounding shilajit use.</p>",
+            "html_content": "",
+            "image_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "chapter_edLFNk",
+        "content_VkMzEQ",
+        "content_VkMzER",
+        "content_VkMzES",
+        "chapter_VMQKxQ",
+        "content_VkMzET",
+        "content_VkMzEU",
+        "chapter_CLe3G4",
+        "content_VkMzEV",
+        "content_VkMzEW",
+        "content_FjAnUr",
+        "chapter_gKpwmh",
+        "content_VkMzEZ",
+        "content_VkMzFA",
+        "content_VkMzFB",
+        "content_VkMzFC",
+        "content_VkMzFD",
+        "chapter_fimUkU",
+        "content_bjHtar",
+        "content_CXk6XE",
+        "content_f3FKn6",
+        "content_mxXqc6",
+        "content_E4mLek",
+        "chapter_DaVLV3",
+        "content_Qi8M4q",
+        "content_xayiwE",
+        "chapter_qQ3M7M",
+        "content_HKA3HY",
+        "chapter_hKXypG",
+        "content_c67PeA",
+        "content_37twfX",
+        "content_mJPR9J",
+        "content_PD6ijY",
+        "content_8MBRBL",
+        "content_e8NrAq",
+        "content_gfVa8B",
+        "chapter_9k6L4n",
+        "content_KVmdTp",
+        "content_MjRpWg",
+        "content_c4tmBa",
+        "content_MEUxzh",
+        "chapter_LyfJBK",
+        "content_RbCrrn"
+      ],
+      "custom_css": [
+        ".main-wrapper {margin-bottom: 0;}",
+        "h3 {color: #68453d;}",
+        "ul {list-style: disc; margin-left: 1.6em;}",
+        "ol {list-style: number; margin-left: 1.6em;}",
+        "table {border-radius: 8px; overflow: hidden;}",
+        "th {background: none; font-size: 2rem; border-bottom: 0px; padding: 16px 16px 0 16px; justify-content: center;}",
+        "td {border-top: 0px; align-items: start; padding: 16px;}",
+        "td:not(:last-child),th:not(:last-child) {border-right: 0px;}",
+        ".chapter-section p {margin-bottom: -4px;}"
+      ],
+      "name": "Basmil Mixed Section",
+      "settings": {
+        "toc_heading": "Table Of Contents",
+        "navigation_label": "Navigate through the chapters:",
+        "navigation_btn_text": "Learn More →",
+        "custom_liquid": "<highlight class=\"top-highlight\">Shilajit tastes different from anything your palate expects. An original shilajit is blackish to brownish in color, smells like cow’s urine, and is tar-like and would dissolve in water in the form of continuous strands. It has an earthy taste with a metallic tang.</highlight>\n<p>With this basic understanding of Shilajit, it is now time to proceed to its origin story in the rocks of the high altitudes, the history that surrounds it, its rich composition, its harvesting process-from rocks to your table, and the numerous health benefits that continue to be discovered today.</p>\n\n<style>\n.top-highlight{\nmargin-bottom:3.2rem;\n}\n.custom-html{\nmargin-bottom:11rem;\n}\n.main-wrapper{\nmargin-top:7rem;}\n.main__icon{\nmargin:-1.2% 0;\n}\n@media(max-width:768px){\n.main__icon{\nmargin: -20px 0;\n}\n.main-wrapper{\n  margin-top:40px;\nmargin-bottom:56px;\n}\n.custom-html{\nmargin-bottom:40px;\n}\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "basmil_image_text_9XbbwA",
+    "basmil_mixed_section_PHCmCn"
+  ]
+}

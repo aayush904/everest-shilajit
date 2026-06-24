@@ -1,0 +1,261 @@
+{% comment %} Add this at the top of your file {% endcomment %}
+{% style %}
+/* Previous styles remain same, just add these new styles */
+
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #694E44;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.price-element {
+  transition: opacity 0.3s ease;
+}
+
+.cart-errors {
+  color: #dc3545;
+  margin-top: 1rem;
+  display: none;
+}
+{% endstyle %}
+
+{% comment %} Update the cart summary section to include data attributes {% endcomment %}
+<div class="cart-summary">
+  <h2>Order Summary</h2>
+  
+  <div class="summary-row">
+    <span>Subtotal:</span>
+    <span data-subtotal>{{ cart.total_price | money }}</span>
+  </div>
+  
+  <div class="summary-row">
+    <span>Shipping:</span>
+    <span data-shipping>{% if cart.total_price >= 10000 %}Free{% else %}{{ 1000 | money }}{% endif %}</span>
+  </div>
+
+  <form class="coupon-form" action="/discount" method="POST" id="discount-form">
+    <h3>Coupon Code</h3>
+    <div class="coupon-input">
+      <input 
+        type="text" 
+        name="discount"
+        placeholder="Enter Coupon Code"
+        aria-label="Coupon code"
+      >
+      <button type="submit" class="apply-button">Apply</button>
+    </div>
+    <div class="cart-errors" id="coupon-error"></div>
+  </form>
+
+  <div class="summary-row">
+    <strong>Total:</strong>
+    <strong data-total>{{ cart.total_price | plus: 1000 | money }}</strong>
+  </div>
+
+  <!-- Rest of the summary section remains same -->
+</div>
+
+{% comment %} Replace the previous JavaScript with this updated version {% endcomment %}
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function() {
+  const cartForm = document.querySelector('.cart-items');
+  const cartErrors = document.querySelector('.cart-errors');
+  let updateTimeout;
+
+  // Format money consistently
+  const formatMoney = (cents) => {
+    return (cents/100).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  };
+
+  // Update cart UI elements
+  const updateCartUI = (cart) => {
+    // Update subtotal
+    const subtotalElement = document.querySelector('[data-subtotal]');
+    subtotalElement.textContent = `$${formatMoney(cart.total_price)}`;
+
+    // Update shipping (assuming free shipping over $100)
+    const shippingElement = document.querySelector('[data-shipping]');
+    const shippingCost = cart.total_price >= 10000 ? 0 : 1000;
+    shippingElement.textContent = shippingCost === 0 ? 'Free' : `$${formatMoney(shippingCost)}`;
+
+    // Update total
+    const totalElement = document.querySelector('[data-total]');
+    totalElement.textContent = `$${formatMoney(cart.total_price + shippingCost)}`;
+
+    // If cart is empty, redirect to cart page
+    if (cart.item_count === 0) {
+      window.location.href = '/cart';
+    }
+  };
+
+  // Handle quantity changes with debouncing
+  const handleQuantityChange = (itemKey, quantity, element) => {
+    clearTimeout(updateTimeout);
+    
+    // Add loading state
+    const cartItem = element.closest('.cart-item');
+    const priceElement = cartItem.querySelector('.cart-item__price');
+    const summaryElements = document.querySelectorAll('[data-subtotal], [data-shipping], [data-total]');
+    
+    cartItem.classList.add('loading');
+    summaryElements.forEach(el => el.classList.add('loading'));
+
+    updateTimeout = setTimeout(() => {
+      fetch('/cart/change.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          id: itemKey,
+          quantity: quantity
+        })
+      })
+      .then(response => response.json())
+      .then(cart => {
+        // Update item price
+        const item = cart.items.find(i => i.key === itemKey);
+        if (item) {
+          priceElement.textContent = `$${formatMoney(item.final_line_price)}`;
+        }
+
+        // Update cart totals
+        updateCartUI(cart);
+
+        // Remove loading states
+        cartItem.classList.remove('loading');
+        summaryElements.forEach(el => el.classList.remove('loading'));
+
+        // Remove item if quantity is 0
+        if (quantity === 0) {
+          cartItem.style.opacity = 0;
+          setTimeout(() => {
+            cartItem.remove();
+          }, 300);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        cartErrors.textContent = 'There was an error updating your cart. Please try again.';
+        cartErrors.style.display = 'block';
+        
+        // Remove loading states
+        cartItem.classList.remove('loading');
+        summaryElements.forEach(el => el.classList.remove('loading'));
+      });
+    }, 500); // Debounce for 500ms
+  };
+
+  // Quantity adjustment
+  document.querySelectorAll('.js-qty-minus').forEach(button => {
+    button.addEventListener('click', function() {
+      const input = this.parentNode.querySelector('.quantity-input');
+      const newQty = parseInt(input.value) - 1;
+      if (newQty >= 0) {
+        input.value = newQty;
+        handleQuantityChange(input.dataset.itemKey, newQty, input);
+      }
+    });
+  });
+
+  document.querySelectorAll('.js-qty-plus').forEach(button => {
+    button.addEventListener('click', function() {
+      const input = this.parentNode.querySelector('.quantity-input');
+      const newQty = parseInt(input.value) + 1;
+      input.value = newQty;
+      handleQuantityChange(input.dataset.itemKey, newQty, input);
+    });
+  });
+
+  // Handle direct quantity input
+  document.querySelectorAll('.quantity-input').forEach(input => {
+    input.addEventListener('change', function() {
+      const newQty = parseInt(this.value);
+      if (newQty >= 0) {
+        handleQuantityChange(this.dataset.itemKey, newQty, this);
+      }
+    });
+  });
+
+  // Remove item
+  document.querySelectorAll('.remove-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const itemKey = this.dataset.itemKey;
+      handleQuantityChange(itemKey, 0, this);
+    });
+  });
+
+  // Handle coupon form submission
+  const discountForm = document.getElementById('discount-form');
+  const couponError = document.getElementById('coupon-error');
+
+  discountForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const couponCode = formData.get('discount');
+    
+    // Add loading state to form
+    this.classList.add('loading');
+    
+    fetch('/discount/' + couponCode)
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          couponError.textContent = 'Invalid coupon code';
+          couponError.style.display = 'block';
+        } else {
+          // Refresh cart data to show updated prices
+          return fetch('/cart.js');
+        }
+      })
+      .then(response => response.json())
+      .then(cart => {
+        if (cart) {
+          updateCartUI(cart);
+          couponError.style.display = 'none';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        couponError.textContent = 'There was an error applying the coupon. Please try again.';
+        couponError.style.display = 'block';
+      })
+      .finally(() => {
+        discountForm.classList.remove('loading');
+      });
+  });
+});
+{% endjavascript %}
+
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": [],
+    "presets": [
+        {
+        "name": "Cart Page"
+        }
+    ]
+}
+{% endschema %}

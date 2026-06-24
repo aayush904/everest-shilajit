@@ -1,0 +1,310 @@
+{% assign sections = section.settings %}
+
+<style>
+  #shopify-section-{{ section.id }} .maintimeline-container {
+    max-width: 87.57%;
+    margin: 0 auto;
+    padding: {{sections.padding}};
+    overflow:hidden
+  }
+
+
+  .maintimeline-container .title{
+    margin: 0;
+    margin-bottom:calc({{ sections.gap }} + 20px);
+    max-width: 40%;
+    text-align:end;
+    text-transform: uppercase;
+    scale: 1.08;
+    margin-left: 20px;
+  }
+
+  @media(max-width:768px){
+    #shopify-section-{{ section.id }} .maintimeline-container{
+      padding: {% render 'mobile_spacing'  padding: sections.padding %}!important;
+         width:100%;
+         max-width:100%;
+        }
+      .maintimeline-container .title{
+        margin-bottom:calc({{ sections.gap  }} / 2 + 20px);
+
+    }
+  }
+  .timeline {
+    position: relative;
+    margin-right: auto;
+  }
+
+  .timeline-item {
+    position: relative;
+    transition: all 0.5s ease;
+    display: flex;
+    gap: 50px;
+  }
+
+  .year {
+    max-width: calc(40% - 50px);
+    width: 100%;
+    margin-top: -16.5px;
+    word-break: keep-all;
+    text-align: right;
+  }
+  .timeline-item .content {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:1.6rem;
+    padding-left: 8%;
+
+    && img {
+      max-width: 100%;
+    }
+  }
+  .timeline-item .content h2 {
+    position: relative;
+    margin-top: -25px;
+
+    &&:after {
+      content: '';
+      height: 28px;
+      width: 28px;
+      background: #be935f;
+      position: absolute;
+      left: calc(-15.5% + 1px);
+      top: 5%;
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  .timeline-item:not(:last-of-type) .content {
+    border-left: 2px solid #be935f;
+    padding-bottom: {{ sections.gaptimeline }};
+
+  }
+
+  .timeline-item:last-of-type {
+    && .year {
+      margin-top: -16.5px;
+    }
+    && .content h2 {
+       {% comment %} &&:before{
+          content:'';
+          height:50%;
+          border-left:2px solid #BE935F;
+          left:calc(-15.5% + 1px);
+          width:1px;
+          background:red;
+          top:0;
+          position:absolute;
+          display:block;
+        }  {% endcomment %}
+    }
+  }
+
+  .timeline-item .content * {
+    margin-top: 0;
+  }
+
+  .timeline-item .content h2 {
+  }
+  @media (min-width: 1600px) {
+    .maintimeline-container {
+      max-width: 1400px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .maintimeline-container {
+      max-width: 1166px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+      gap: 28px;
+    }
+  .maintimeline-container .title{
+  max-width: calc(100% - 40px);
+  text-align: left;
+  }
+    .year {
+      max-width: calc(25% - 14px);
+    }
+
+    .timeline-item .content {
+      max-width: 75%;
+      width: 100%;
+      padding-bottom: 52px !important;
+
+
+    }    .timeline-item:last-child .content {
+
+      padding-bottom: 0!important;
+
+
+    }
+
+    .timeline-item .content h2 {
+      &&::after {
+        height: 16px;
+        width: 16px;
+        left: -12.5% ;
+      }
+
+    }
+    .timeline-item:last-of-type {
+      && .content h2 {
+        &&:before {
+          left: calc(-12.5% + 1.5px);
+        }
+
+        &&::after {
+        left: calc(-12.5% + 2.5px);
+
+        }
+      }
+    }
+  }
+</style>
+<div
+  {% if sections.custom_id %}
+    id="{{ sections.custom_id }}"
+  {% endif %}
+  class="maintimeline-container {{ sections.custom_class }}"
+>
+  <h1 class="title">
+    {{ sections.title }}
+  </h1>
+
+  <div class="timeline">
+    {% for block in section.blocks %}
+      <div class="timeline-item">
+        <h2 class="year">{{ block.settings.year }}</h2>
+        <div class="content">
+          <h2>
+            {{ block.settings.title }}
+          </h2>
+          <div style="margin-bottom: 8px;">
+            {{ block.settings.content }}
+          </div>
+          {% if block.settings.image %}
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{block.settings.image.alt | default:'First product packaging'}}"
+              width="732"
+              height="427"
+            >
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Timeline Info",
+  "class": "timelineinfo",
+  "settings": [
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "headingtag",
+      "label": "Heading Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "gap",
+      "label": "Gap Between Title and timeline",
+      "default": "6.4rem"
+    },
+    {
+      "type": "text",
+      "id": "gaptimeline",
+      "label": "Gap between timeline items",
+      "default": "11.5rem"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "12rem 16px",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin",
+      "default": "0 auto",
+      "info": "eg: 16px 16px 16px 16px"
+    },
+    {
+      "type": "header",
+      "content": "Custom Class/id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "Custom ID"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline",
+      "name": "Timeline Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline Info"
+    }
+  ]
+}
+{% endschema %}
