@@ -364,13 +364,17 @@
       }
     </style>
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    <link rel="preload" as="style" href="{{ 'base.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'base.css' | asset_url }}"></noscript>
 
     <link rel="preload" as="style" href="{{ 'output.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'output.css' | asset_url }}"></noscript>
 
     <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'custom.css' | asset_url }}"></noscript>
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -383,13 +387,26 @@
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
 
-    {{- 'component-card.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-slider.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-loading-overlay.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-article-card-v2.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-rating.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-deferred-media.css' | asset_url | stylesheet_tag -}}
-    {{- 'component-accordion.css' | asset_url | stylesheet_tag -}}
+    <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-article-card-v2.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-rating.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-accordion.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-pickup-availability.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>
+      {{- 'component-card.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-slider.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-loading-overlay.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-article-card-v2.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-rating.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-deferred-media.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-accordion.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-list-menu.css' | asset_url | stylesheet_tag -}}
+      {{- 'component-pickup-availability.css' | asset_url | stylesheet_tag -}}
+    </noscript>
   </head>
 
   <body class="gradient">

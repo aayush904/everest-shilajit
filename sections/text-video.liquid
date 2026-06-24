@@ -217,14 +217,16 @@
                         {% endif %}
                         
                     {% if block.settings.video_thumbnail != blank %}
-                        <img 
-                          loading="lazy"                          
-                          src="{{ block.settings.video_thumbnail | image_url }}" 
+                        <img
+                          loading="eager"
+                          fetchpriority="high"
+                          src="{{ block.settings.video_thumbnail | image_url }}"
                           alt="Video Thumbnail" class="{{ block.settings.video_thumbnail.alt | default: 'video-thumbnail-img'}}" width="500" height="500">
                     {% else %}
-                        
-                        <img 
-                          loading="lazy"
+
+                        <img
+                          loading="eager"
+                          fetchpriority="high"
                           src="https://img.youtube.com/vi/{{ video_id }}/hqdefault.jpg"
                           alt="YouTube Thumbnail"
                           class="video-thumbnail-img"
@@ -249,9 +251,10 @@
                 <div class="video-thumbnail  w-full" >
                   <div class="absolute bg-[#00000060] top-0 left-0 w-full h-full empty:block"></div>
 
-                  <img 
-                  loading="lazy"
-                    src="{{ block.settings.video_thumbnail | image_url }}" 
+                  <img
+                    loading="eager"
+                    fetchpriority="high"
+                    src="{{ block.settings.video_thumbnail | image_url }}"
                     alt="{{ block.settings.video_thumbnail.alt | default: 'video thumbnail' }}" class="video-thumbnail-img" width="500" height="500">
 
                     {% if videoButton and section.settings.show_play_button_on =='image' %}
