@@ -645,5 +645,28 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+  <script>
+    (function () {
+      function demoteConsentHeading() {
+        var h2 = document.querySelector(
+          '#shopify-pc__banner h2, shopify-pc-banner h2, [id^="shopify-pc"] h2, [class*="shopify-pc"] h2'
+        );
+        if (!h2) return false;
+        var div = document.createElement('div');
+        div.className = h2.className;
+        var style = h2.getAttribute('style');
+        if (style) div.setAttribute('style', style);
+        div.innerHTML = h2.innerHTML;
+        h2.parentNode.replaceChild(div, h2);
+        return true;
+      }
+      if (!demoteConsentHeading()) {
+        var obs = new MutationObserver(function () {
+          if (demoteConsentHeading()) obs.disconnect();
+        });
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+      }
+    })();
+  </script>
   </body>
 </html>
