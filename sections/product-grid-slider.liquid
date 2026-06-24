@@ -507,11 +507,10 @@
             </style>
             <div class="product-info {% if section.settings.slider_type == '1' %} px-[14%] lg:px-[8%] sm:px-[20px] md:px-[7.4%] pb-[5rem] lg:pb-[3.2rem] md:pb-[1.7rem] sm:pb-[20px] items-center h-full text-center gap-[1.6rem] {% else %} gap-[1.2rem] items-start {% endif %} flex flex-col w-full  justify-between">
               <a href="{{ product.url }}" class="block relative prd-title">
-                <h3
+                <p
                   class="
                      {%- if section.settings.slider_type == '1' -%}
                          leading-[1.28]
-                         {% comment %} after:left-1/2 after:-translate-x-1/2 after:w-[30.88%] after:h-[.0625rem] after:bg-black after:absolute after:bottom-[-12%!important] {% endcomment %}
                           lg:text-[2.8rem] text-[3.2rem] sm:text-[2.8rem] md:text-[3.2rem] bolder-500 font-serif font-semibold
                      {%- endif -%}
                      {%- if section.settings.slider_type == '3' -%}
@@ -536,12 +535,9 @@
                     {% assign modified_title = product.title | replace: 'Mad', '' | replace: 'mad', '' %}
                   {% endif %}
 
-                  <!-- Trim any extra spaces if needed -->
                   {% assign modified_title = modified_title | strip %}
-
-                  <!-- Output the modified title -->
                   {{ modified_title }}
-                </h3>
+                </p>
               </a>
               {%- if section.settings.slider_type == '1' -%}
                 {% capture label %} 
