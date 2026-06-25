@@ -6,6 +6,16 @@
       cursor: pointer;
     }
 
+    /* Reserve the hero video's box at layout time. Without this, preload="none"
+       leaves the <video> with no intrinsic size until the poster paints, which
+       collapses then jumps the box (CLS). Ratio matches the 1920x968 video_tag. */
+    #shopify-section-{{ section.id }} .video-thumbnail-container .video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1920 / 968;
+      display: block;
+    }
+
 
     #shopify-section-{{ section.id }} .wrapper{
       margin:{{sections.margin}}; padding: {{sections.padding}};
