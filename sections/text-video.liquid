@@ -12,7 +12,7 @@
     #shopify-section-{{ section.id }} .video-thumbnail-container .video {
       width: 100%;
       height: auto;
-      {% comment %} aspect-ratio: 1920 / 968; {% endcomment %}
+      aspect-ratio: 1920 / 968;
       display: block;
     }
 
@@ -169,7 +169,11 @@
       -->
       {%- if block.settings.video_thumbnail != blank -%}
         {%- assign preload_image_url = block.settings.video_thumbnail | image_url: width: 800 -%}
-        <link rel="preload" as="image" href="{{ preload_image_url }}" fetchPriority="high">
+        <link rel="preload" as="image"
+          href="{{ preload_image_url }}"
+          imagesrcset="{{ block.settings.video_thumbnail | image_url: width: 400 }} 400w, {{ block.settings.video_thumbnail | image_url: width: 800 }} 800w, {{ block.settings.video_thumbnail | image_url: width: 1400 }} 1400w"
+          imagesizes="100vw"
+          fetchPriority="high">
         {%- comment -%}
           Do NOT preload the video file. It is a multi-MB asset and preloading it at high
           priority starves the LCP poster image of bandwidth (LCP was 15s). The poster paints

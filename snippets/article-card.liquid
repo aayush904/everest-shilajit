@@ -230,12 +230,14 @@
         <div class="ac-card__media">
           {{
             article.image
-            | image_url: width: 700
+            | image_url: width: 600
             | image_tag:
               class: 'ac-card__img',
               loading: 'lazy',
-              widths: '200,300,400,500,700',
-              sizes: '(min-width: 1920px) 700px, (min-width: 768px) calc(50vw - 16px), (min-width:1024px) calc(100vw/3 - 10px), 100vw',
+              widths: '200,300,400,500,600',
+              sizes: '(min-width: 1280px) calc(100vw / 3 - 10px), (min-width: 768px) calc(50vw - 16px), 100vw',
+              width: article.image.width,
+              height: article.image.height,
               alt: article.image.alt
           }}
         </div>
