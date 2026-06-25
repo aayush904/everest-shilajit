@@ -373,7 +373,7 @@
     <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'custom.css' | asset_url }}"></noscript>
 
-    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- comment -%} fonts.shopifycdn.com is already preconnected above (line ~28); no duplicate needed. {%- endcomment -%}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>

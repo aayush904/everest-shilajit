@@ -160,7 +160,11 @@
       {%- if block.settings.video_thumbnail != blank -%}
         {%- assign preload_image_url = block.settings.video_thumbnail | image_url: width: 800 -%}
         <link rel="preload" as="image" href="{{ preload_image_url }}" fetchPriority="high">
-        <link rel="preload" as="video" href="{{ block.settings.video.sources[1].url }}" fetchPriority="high">
+        {%- comment -%}
+          Do NOT preload the video file. It is a multi-MB asset and preloading it at high
+          priority starves the LCP poster image of bandwidth (LCP was 15s). The poster paints
+          first; the video streams in afterwards via autoplay at the browser's natural priority.
+        {%- endcomment -%}
       {%- endif -%}
   {% endcase %}
 {% endfor %}
@@ -299,7 +303,7 @@
                {% assign video_tag_output = block.settings.video | video_tag: image_size: '480x', class:'video', id: videoId, 
                 poster: poster,
                  loop:true, controls: false, muted: true, autoplay:
-                true, preload: 'auto', width: 1920, height: 968, 
+                true, preload: 'metadata', width: 1920, height: 968,
                 widths: '320, 480, 750, 980, 1280, 1440, 1560, 1680, 1920' %}
                  
 
@@ -311,7 +315,7 @@
                   {{ video_tag_output | split: '<img ' | last}} {% endcomment %}
                 {% endcapture %}
         
-                {{ video_tag_html | replace: '<video ', '<video fetchpriority="high" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop'}}
+                {{ video_tag_html | replace: '<video ', '<video fetchpriority="low" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop'}}
 
 
               {% comment %} <video fetchpriority="high" playsinline="" class="video" id="video-video_gi3GDy" 
