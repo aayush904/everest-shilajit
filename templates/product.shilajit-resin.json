@@ -180,7 +180,7 @@
       "type": "lab-tested-quality",
       "name": "Lab Tested Quality",
       "settings": {
-        "heading": "THREE TESTS. EVERY BATCH.",
+        "heading": "Three Tests. Every Batch.",
         "description": "<p>Every batch of Everest Shilajit Resin goes through three independent tests before it reaches you. Fulvic acid content, heavy metal screening, microbial purity — each tested separately by Eurofins, accredited under ILAC-MRA. The full reports are right here.</p>",
         "card_prefix": "Tested by Certified Laboratories for",
         "report_label": "View Report",
@@ -351,7 +351,7 @@
       "settings": {
         "heading_size": "h2",
         "section_title": "",
-        "section_description": "<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/shilajit_open_banner._800x.webp?v=1758261555\">\n<p>Authentic shilajit resin is recognizable by what it does. It softens when warm, firms when cool. It dissolves completely in lukewarm liquid. It does not burn when exposed to flame — it bubbles, swells, and turns to ash slowly. That is real shilajit resin.</p>",
+        "section_description": "<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/everest-shilajit-resin-jar-with-raw-shilajit-source.webp?v=1782368707\" alt=\"Open Everest Shilajit Resin jar placed beside a piece of raw Himalayan shilajit, highlighting its natural source.\">\n<p>Authentic shilajit resin is recognizable by what it does. It softens when warm, firms when cool. It dissolves completely in lukewarm liquid. It does not burn when exposed to flame — it bubbles, swells, and turns to ash slowly. That is real shilajit resin.</p>",
         "section_image_alt_text": "",
         "box_title_tag": "h3",
         "is_image_link": false,
@@ -420,7 +420,7 @@
       "name": "Image + Text Slider",
       "settings": {
         "image": "shopify://shop_images/image_365.webp",
-        "title": "WHAT CONSISTENT <strong>USE LOOKS LIKE</strong>"
+        "title": "What Consistent <strong>Use Looks Like</strong>"
       }
     },
     "icon_box_FpdeRE": {
