@@ -7,7 +7,7 @@ if (!customElements.get('product-model')) {
     loadContent() {
       super.loadContent();
 
-      Shopify.loadFeatures([
+      Shopify?.loadFeatures?.([
         {
           name: 'model-viewer-ui',
           version: '1.0',
@@ -26,7 +26,7 @@ if (!customElements.get('product-model')) {
 
 window.ProductModel = {
   loadShopifyXR() {
-    Shopify.loadFeatures([
+    Shopify?.loadFeatures?.([
       {
         name: 'shopify-xr',
         version: '1.0',

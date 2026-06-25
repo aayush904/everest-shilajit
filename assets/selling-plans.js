@@ -1,6 +1,9 @@
 
 
 
+if (!window.__sellingPlansLoaded) {
+window.__sellingPlansLoaded = true;
+
 const hiddenClass = 'selling_plan_theme_integration--hidden';
 
 class SellingPlansWidget {
@@ -307,3 +310,5 @@ document
     console.log(productSubscriptions)
     return productSubscriptions ? productSubscriptions.getCurrentSellingPlanId() : '';
   };
+
+} // end __sellingPlansLoaded guard
