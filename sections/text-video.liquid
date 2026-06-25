@@ -303,7 +303,7 @@
                {% assign video_tag_output = block.settings.video | video_tag: image_size: '480x', class:'video', id: videoId, 
                 poster: poster,
                  loop:true, controls: false, muted: true, autoplay:
-                true, preload: 'metadata', width: 1920, height: 968,
+                false, preload: 'none', width: 1920, height: 968,
                 widths: '320, 480, 750, 980, 1280, 1440, 1560, 1680, 1920' %}
                  
 
@@ -315,7 +315,46 @@
                   {{ video_tag_output | split: '<img ' | last}} {% endcomment %}
                 {% endcapture %}
         
-                {{ video_tag_html | replace: '<video ', '<video fetchpriority="low" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop'}}
+                {{ video_tag_html | replace: '<video ', '<video fetchpriority="low" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace:'loop="loop"', 'loop'}}
+
+                {%- comment -%}
+                  Mobile: do NOT autoplay — that forced a multi-MB video download on cellular.
+                  The poster shows and the video is fetched only when the visitor taps play.
+                  Desktop: JS starts autoplay once the browser is idle, so it never competes
+                  with the LCP poster image during initial load.
+                {%- endcomment -%}
+                <button type="button" class="play-button hero-play top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-label="Play video" style="display:none;">
+                  <svg style="width:7.9rem; height:6.4rem" viewBox="0 0 79 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.4891 0.871094C42.7871 0.871094 46.1701 0.956967 49.4489 1.09749L53.3217 1.28485L57.0287 1.50734L60.5003 1.74544L63.6711 1.99525C67.1126 2.26025 70.3514 3.74564 72.8168 6.18977C75.2823 8.6339 76.8164 11.88 77.1489 15.3563L77.3032 17.0152L77.5925 20.5673C77.8625 24.2481 78.0631 28.2607 78.0631 32.0977C78.0631 35.9347 77.8625 39.9473 77.5925 43.6281L77.3032 47.1801L77.1489 48.839C76.8163 52.316 75.2817 55.5626 72.8154 58.0068C70.3491 60.451 67.1095 61.936 63.6673 62.2001L60.5042 62.446L57.0325 62.688L53.3217 62.9105L49.4489 63.0979C46.1309 63.2433 42.8102 63.3188 39.4891 63.3243C36.1679 63.3188 32.8473 63.2433 29.5293 63.0979L25.6564 62.9105L21.9495 62.688L18.4778 62.446L15.307 62.2001C11.8655 61.9351 8.62676 60.4497 6.16128 58.0056C3.6958 55.5615 2.16172 52.3154 1.82924 48.839L1.67495 47.1801L1.38564 43.6281C1.09183 39.7916 0.934865 35.9456 0.915039 32.0977C0.915039 28.2607 1.11562 24.2481 1.38564 20.5673L1.67495 17.0152L1.82924 15.3563C2.16159 11.8806 3.69511 8.63501 6.15981 6.19096C8.6245 3.7469 11.8623 2.26113 15.3032 1.99525L18.4701 1.74544L21.9417 1.50734L25.6526 1.28485L29.5254 1.09749C32.8447 0.951999 36.1666 0.876518 39.4891 0.871094ZM31.7743 22.6321V41.5632C31.7743 43.3666 33.703 44.4907 35.2459 43.593L51.447 34.1274C51.7995 33.9221 52.0924 33.6263 52.296 33.27C52.4996 32.9137 52.6068 32.5093 52.6068 32.0977C52.6068 31.6861 52.4996 31.2817 52.296 30.9254C52.0924 30.569 51.7995 30.2733 51.447 30.068L35.2459 20.6063C34.894 20.4007 34.4947 20.2925 34.0883 20.2925C33.6819 20.2926 33.2827 20.4009 32.9308 20.6067C32.579 20.8124 32.2868 21.1083 32.0838 21.4645C31.8807 21.8207 31.774 22.2248 31.7743 22.636V22.6321Z" fill="white"/>
+                  </svg>
+                </button>
+
+                <script>
+                  (function () {
+                    var v = document.getElementById('{{ videoId }}');
+                    if (!v) { return; }
+                    var btn = v.parentNode.querySelector('.hero-play');
+                    function start() {
+                      v.setAttribute('preload', 'auto');
+                      v.muted = true;
+                      var p = v.play();
+                      if (p && typeof p.catch === 'function') { p.catch(function () {}); }
+                      if (btn) { btn.style.display = 'none'; }
+                    }
+                    if (window.matchMedia('(min-width: 769px)').matches) {
+                      if ('requestIdleCallback' in window) {
+                        requestIdleCallback(start, { timeout: 2500 });
+                      } else {
+                        setTimeout(start, 300);
+                      }
+                    } else if (btn) {
+                      btn.style.display = '';
+                      btn.addEventListener('click', start, { once: true });
+                    } else {
+                      v.addEventListener('click', start, { once: true });
+                    }
+                  })();
+                </script>
 
 
               {% comment %} <video fetchpriority="high" playsinline="" class="video" id="video-video_gi3GDy" 
