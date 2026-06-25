@@ -358,7 +358,7 @@
       "settings": {
         "heading_size": "h2",
         "section_title": "",
-        "section_description": "<img src=\"http://cdn.shopify.com/s/files/1/0673/4063/2201/files/shilajit_liquid_drop.webp?v=1758880217\">\n<p>Most liquid supplements are measured by the milliliter — which requires a marked dropper, good lighting, and a steady eye. Three drops requires none of that. The dropper controls the dose. You just count.</p>",
+        "section_description": "<img src=\"https://cdn.shopify.com/s/files/1/0673/4063/2201/files/everest-shilajit-liquid-bottle-on-natural-himalayan-grass.png?v=1782363664\" alt=\"Everest Shilajit Liquid Form bottle resting on natural dried Himalayan grass, showcasing its mountain-inspired origin.\">\n<p>Most liquid supplements are measured by the milliliter — which requires a marked dropper, good lighting, and a steady eye. Three drops requires none of that. The dropper controls the dose. You just count.</p>",
         "section_image_alt_text": "",
         "box_title_tag": "h3",
         "is_image_link": false,
@@ -426,7 +426,7 @@
       ],
       "name": "Image + Text Slider",
       "settings": {
-        "image": "shopify://shop_images/image_365.webp",
+        "image": "shopify://shop_images/everest-shilajit-liquid-bottle-with-dropper-open.png",
         "title": "WHAT CONSISTENT <strong> USE LOOKS LIKE</strong>"
       }
     },
@@ -437,9 +437,9 @@
           "type": "icon_box",
           "settings": {
             "icon_type_select": "image",
-            "icon_image": "shopify://shop_images/ES-Web-Dosage_and_Usage_step_1.webp",
+            "icon_image": "shopify://shop_images/everest-shilajit-liquid-dropper-mixing-in-water.png",
             "icon_svg": "",
-            "icon_alt_text": "Liquid drop Shilajit by Everest Shilajit",
+            "icon_alt_text": "Hand adding Everest Shilajit Liquid Form into a glass of water with the product packaging beside it.",
             "icon_title": "Squeeze the Dropper",
             "icon_description": "Press the bulb, release slowly into your chosen liquid or directly under the tongue. Three drops. Counted, not estimated.",
             "btn_title": "",
