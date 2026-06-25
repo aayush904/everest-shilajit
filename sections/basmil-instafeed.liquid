@@ -33,6 +33,9 @@
 
     .slide video {
       width: 100%;
+      aspect-ratio: 9/16;
+      height: auto;
+      object-fit: cover;
       border-radius: 8px;
       display: block;
     }
@@ -45,7 +48,7 @@
 
     .skeleton-slide {
       flex: 0 0 calc(16.66% - 16px);
-      background: #ddd;
+      background: #e4e4e4;
       aspect-ratio: 9/16;
       border-radius: 8px;
       animation: pulse 1.5s infinite ease-in-out;
@@ -71,9 +74,11 @@
     .nav-btn.left { left: 8px; }
     .nav-btn.right { right: 8px; }
 
+    /* Animate opacity (GPU-composited) instead of background-color, which
+       repaints every frame and is flagged as a non-composited animation. */
     @keyframes pulse {
-      0%, 100% { background: #ddd; }
-      50% { background: #f5f5f5; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
     @media(max-width:1024px){ .slide { flex: 0 0 calc(25% - 16px); } }
@@ -118,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
       video.muted = true;
       video.playsInline = true;
       video.poster = reel.thumbnail_url;
+      // Explicit dimensions (9:16) so the element reserves its box before the
+      // poster/video loads — prevents layout shift as reels replace skeletons.
+      video.width = 270;
+      video.height = 480;
 
       const loadVideo = () => {
         video.src = reel.media_url;
@@ -190,37 +199,39 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDragging = false;
     let autoSlideInterval;
 
-    const slideWidth = () => track.querySelector('.slide').offsetWidth + 16;
+    // Cached layout measurements. Reading offsetWidth inside update()/autoSlide()
+    // (which also write track.style.transform) forced synchronous layout every
+    // frame (forced reflow). Measure once here, recompute only on resize, so the
+    // hot paths do writes only.
+    let slideW = 0;
+    let visible = 1;
+    let maxPos = 0;
+
+    const measure = () => {
+      const first = track.querySelector('.slide');
+      if (!first) return;
+      slideW = first.offsetWidth + 16;
+      const total = track.children.length;
+      visible = Math.max(1, Math.round(track.offsetWidth / slideW));
+      maxPos = -(slideW * Math.max(0, total - visible));
+    };
 
     const update = () => {
-      const width = slideWidth();
-      const visible = Math.round(track.offsetWidth / width);
-      const total = track.children.length;
-      const maxPos = -(width * (total - visible));
+      if (position > 0) position = 0;
+      if (position < maxPos) position = maxPos;
       track.style.transform = `translateX(${position}px)`;
       leftBtn.disabled = position === 0;
       rightBtn.disabled = position <= maxPos;
     };
 
-    const slideLeft = () => { position = Math.min(position + slideWidth() * 2, 0); update(); };
-    const slideRight = () => {
-      const width = slideWidth();
-      const visible = Math.round(track.offsetWidth / width);
-      const total = track.children.length;
-      const maxPos = -(width * (total - visible));
-      position = Math.max(position - width * 2, maxPos);
-      update();
-    };
+    const slideLeft = () => { position = Math.min(position + slideW * 2, 0); update(); };
+    const slideRight = () => { position = Math.max(position - slideW * 2, maxPos); update(); };
 
     leftBtn.onclick = slideLeft;
     rightBtn.onclick = slideRight;
 
     const autoSlide = () => {
-      const width = slideWidth();
-      const visible = Math.round(track.offsetWidth / width);
-      const total = track.children.length;
-      const maxPos = -(width * (total - visible));
-      position = position <= maxPos ? 0 : position - width;
+      position = position <= maxPos ? 0 : position - slideW;
       update();
     };
 
@@ -260,7 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoSlide();
     });
 
-    window.addEventListener('resize', update);
+    // Debounce resize and batch the read (measure) before the write (update).
+    let resizeRAF;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(resizeRAF);
+      resizeRAF = requestAnimationFrame(() => { measure(); update(); });
+    });
+
+    measure();
     update();
   }
 });
