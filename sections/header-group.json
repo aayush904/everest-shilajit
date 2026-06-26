@@ -93,6 +93,14 @@
     "announcement_marquee_rF74UA": {
       "type": "announcement-marquee",
       "blocks": {
+        "announcement_qJE3cx": {
+          "type": "announcement",
+          "settings": {
+            "text": "|",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
         "announcement_FyRY98": {
           "type": "announcement",
           "settings": {
@@ -101,12 +109,28 @@
             "link": "shopify://collections/all"
           }
         },
+        "announcement_YDdfy8": {
+          "type": "announcement",
+          "settings": {
+            "text": "|",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
         "announcement_xiE8CE": {
           "type": "announcement",
           "settings": {
             "text": "Shop Daily Essentials Trio Bundle + Save 25%",
             "text_alignment": "center",
             "link": "shopify://collections/all"
+          }
+        },
+        "announcement_J9BRKk": {
+          "type": "announcement",
+          "settings": {
+            "text": "|",
+            "text_alignment": "center",
+            "link": ""
           }
         },
         "announcement_e3RCiY": {
@@ -137,8 +161,11 @@
         }
       },
       "block_order": [
+        "announcement_qJE3cx",
         "announcement_FyRY98",
+        "announcement_YDdfy8",
         "announcement_xiE8CE",
+        "announcement_J9BRKk",
         "announcement_e3RCiY",
         "announcement_hbiQMm",
         "popup_7LCRym"
