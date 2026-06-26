@@ -128,6 +128,20 @@
       padding: {{ updated_padding }};
     }
   }
+
+  @media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .video-thumbnail-container {
+    width: 92vw !important;
+    max-width: 92vw !important;
+  }
+
+  #shopify-section-{{ section.id }} .video-thumbnail,
+  #shopify-section-{{ section.id }} .video-thumbnail-img,
+  #shopify-section-{{ section.id }} .video-thumbnail-container .video {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
 </style>
 
 {% for block in section.blocks %}
