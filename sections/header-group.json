@@ -96,6 +96,22 @@
         "announcement_FyRY98": {
           "type": "announcement",
           "settings": {
+            "text": "Use code “WELCOME10” for free Shipping Worldwide",
+            "text_alignment": "center",
+            "link": "shopify://collections/all"
+          }
+        },
+        "announcement_xiE8CE": {
+          "type": "announcement",
+          "settings": {
+            "text": "Shop Daily Essentials Trio Bundle + Save 25%",
+            "text_alignment": "center",
+            "link": "shopify://collections/all"
+          }
+        },
+        "announcement_e3RCiY": {
+          "type": "announcement",
+          "settings": {
             "text": "A special 10% off on your first order!",
             "text_alignment": "center",
             "link": "shopify://collections/all"
@@ -103,6 +119,7 @@
         },
         "announcement_hbiQMm": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "WELCOME10 | FREE SHIPPING 🌍",
             "text_alignment": "center",
@@ -121,6 +138,8 @@
       },
       "block_order": [
         "announcement_FyRY98",
+        "announcement_xiE8CE",
+        "announcement_e3RCiY",
         "announcement_hbiQMm",
         "popup_7LCRym"
       ],
