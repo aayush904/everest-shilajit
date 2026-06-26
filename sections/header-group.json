@@ -98,7 +98,7 @@
           "settings": {
             "text": "A special 10% off on your first order!",
             "text_alignment": "center",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "announcement_hbiQMm": {
