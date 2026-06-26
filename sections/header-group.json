@@ -133,7 +133,7 @@
       ],
       "name": "Announcement Marquee",
       "settings": {
-        "link_type": "popup"
+        "link_type": "link"
       }
     },
     "header": {
