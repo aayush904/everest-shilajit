@@ -26,8 +26,8 @@
           "settings": {
             "video_type": "self_hosted",
             "youtube_url": "https://www.youtube.com/watch?v=PET-Jn4SoQg",
-            "video": "shopify://files/videos/shilajit homepage banner.mp4",
-            "video_thumbnail": "shopify://shop_images/Mask_group_872ddec1-1d5a-4143-a4ee-c650c68c2610.webp",
+            "video": "shopify://files/videos/hero banner shilajit.mp4",
+            "video_thumbnail": "shopify://shop_images/everest_shilajit_home_video_thumbnail.png",
             "video_controls": "false",
             "video_width": "100%; object-fit:cover"
           }

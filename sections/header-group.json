@@ -126,8 +126,8 @@
       ],
       "custom_css": [
         "red {color: #fe3520;}",
-        ".message {margin-bottom: 24px;}",
-        ".coupon-code {margin-bottom: 16px;}",
+        ".message {margin-bottom: 14px;}",
+        ".coupon-code {margin-bottom: 14px;}",
         "b {color: inherit;}",
         "#popupButton {cursor: pointer;}"
       ],
@@ -251,7 +251,7 @@
         "logo_position": "middle-left",
         "menu": "main-menu-2-0",
         "menu_type_desktop": "mega",
-        "sticky_header_type": "always",
+        "sticky_header_type": "on-scroll-up",
         "show_line_separator": false,
         "color_scheme": "background-1",
         "enable_country_selector": false,
