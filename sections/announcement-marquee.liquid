@@ -1,70 +1,54 @@
-{%- assign visible_count = 0 -%}
-{%- for block in section.blocks -%}
-  {%- if block.type == 'announcement' and block.settings.text != blank -%}
-    {%- assign visible_count = visible_count | plus: 1 -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- if visible_count == 0 -%}
-  {%- assign visible_count = 1 -%}
-{%- endif -%}
-
 <style>
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 1.4rem 0rem;
-    display: flex;
-    background:rgb(var(--color-foreground));
-    align-items: center;
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: rgb(var(--color-foreground));
+  padding: 1.4rem 0;
+}
 
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-item {
+  display: inline-block;
+  padding: 0 2.5rem;
+  color: #fff;
+}
+
+.marquee-item-text {
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(100vw);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
-  .marquee-track {
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .marquee-container {
+    padding: 0.5rem 0;
+    height: 50px;
     display: flex;
-    width: max-content;
-    animation: marquee-scroll 20s linear infinite;
+    align-items: center;
   }
 
   .marquee-item {
-    flex-shrink: 0;
-    padding: 0 2.5rem;
-    white-space: nowrap;
-    font-size: clamp(14px, 1.6vw, 18px);
+    padding: 0 1rem;
   }
-
-  .marquee-item-text{
-    font-size:1.4rem;
 }
-
-  .marquee-item a,
-  .marquee-item span {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .marquee-container:hover .marquee-track {
-    animation-play-state: paused;
-  }
-
-  @keyframes marquee-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .marquee-item {
-      padding: 0.25rem 0.7rem;
-    }
-    .marquee-container{
-         padding: 0.5rem; height: 50px;
-    }
-  }
 </style>
 
 <div
@@ -74,151 +58,21 @@
   {{ section.shopify_attributes }}
   id="popupButton"
 >
-  <div class=" ">
-    <div class="marquee-track">
-    
-        {%- comment -%} FIRST SET {%- endcomment -%}
-        {%- for block in section.blocks -%}
-        {%- if block.type == 'announcement' and block.settings.text != blank -%}
-            <div class="marquee-item">
-            {%- if block.settings.link != blank and section.settings.link_type == 'link' -%}
-                <a class="marquee-item-text font-sans" href="{{ block.settings.link }}">
-                {{ block.settings.text | escape }}
-                </a>
-            {%- else -%}
-                <span class="marquee-item-text font-sans">{{ block.settings.text | escape }}</span>
-            {%- endif -%}
-            </div>
-        {%- endif -%}
-        {%- endfor -%}
-
-        {%- comment -%} DUPLICATE SET (for seamless loop) {%- endcomment -%}
-        {%- for block in section.blocks -%}
-        {%- if block.type == 'announcement' and block.settings.text != blank -%}
-            <div class="marquee-item">
-            {%- if block.settings.link != blank and section.settings.link_type == 'link' -%}
-                <a class="marquee-item-text font-sans" href="{{ block.settings.link }}">
-                {{ block.settings.text | escape }}
-                </a>
-            {%- else -%}
-                <span class="marquee-item-text font-sans">{{ block.settings.text | escape }}</span>
-            {%- endif -%}
-            </div>
-        {%- endif -%}
-        {%- endfor -%}
-
-    </div>
+  <div class="marquee-track">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'announcement' and block.settings.text != blank -%}
+        <div class="marquee-item">
+          {%- if block.settings.link != blank and section.settings.link_type == 'link' -%}
+            <a class="marquee-item-text font-sans" href="{{ block.settings.link }}">
+              {{ block.settings.text | escape }}
+            </a>
+          {%- else -%}
+            <span class="marquee-item-text font-sans">
+              {{ block.settings.text | escape }}
+            </span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
   </div>
 </div>
-
-
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when 'popup' -%}
-        <div id="portal">
-          {% render 'popup_coupone',
-            title: block.settings.title,
-            message: block.settings.message,
-            code: block.settings.code,
-            image: block.settings.image
-          %}
-        </div>
-    {%- endcase -%}
-  {%- endfor -%}
-
-{% schema %}
-{
-  "name": "Announcement Marquee",
-  "max_blocks": 12,
-  "class": "announcement-bar-section",
-  "settings": [
-    {
-      "type": "select",
-      "label": "Select Link Type",
-      "id": "link_type",
-      "options": [
-        {
-          "value": "link",
-          "label": "Page Link"
-        },
-        {
-          "value": "popup",
-          "label": "Popup"
-        }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "announcement",
-      "name": "t:sections.announcement-bar.blocks.announcement.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "default": "Welcome to our store",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
-        },
-        {
-          "type": "select",
-          "id": "text_alignment",
-          "options": [
-            {
-              "value": "left",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__1.label"
-            },
-            {
-              "value": "center",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__2.label"
-            },
-            {
-              "value": "right",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.options__3.label"
-            }
-          ],
-          "default": "center",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.text_alignment.label"
-        },
-
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-        }
-      ]
-    },
-    {
-      "type": "popup",
-      "name": "Popup",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Popup Image"
-        },
-        {
-          "type": "liquid",
-          "id": "title",
-          "label": "Popup Title"
-        },
-        {
-          "type": "liquid",
-          "id": "message",
-          "label": "Popup Message"
-        },
-        {
-          "type": "liquid",
-          "id": "code",
-          "label": "Coupon Code"
-        }
-      ]
-    }
-  ],
-
-  "presets": [
-    {
-      "name": "Announcement Marquee"
-    }
-  ]
-}
-{% endschema %}
