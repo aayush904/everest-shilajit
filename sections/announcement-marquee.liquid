@@ -80,7 +80,7 @@
   role="region"
   aria-label="{{ 'sections.header.announcement' | t }}"
   {{ section.shopify_attributes }}
-  id="popupButton"
+  {% if section.settings.link_type == 'popup' %}id="popupButton"{% endif %}
 >
   <div>
     <div class="marquee-track">
