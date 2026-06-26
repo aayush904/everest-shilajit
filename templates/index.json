@@ -605,6 +605,7 @@
       "block_order": [
         "content_GYD3g9"
       ],
+      "disabled": true,
       "custom_css": [
         ".contentside {gap: 2.4rem;}",
         "@media (max-width: 1024px) {.contentside {display: flex !important; flex-direction: column; }}"
@@ -631,6 +632,50 @@
         "background_size": "cover",
         "heading_color": "",
         "content_color": "#767676"
+      }
+    },
+    "product_grid_slider_Lqnmzm": {
+      "type": "product-grid-slider",
+      "custom_css": [
+        ".product-section-container {display: none;}",
+        ".contentPart {max-width: 113.8rem; margin: auto;}",
+        ".product-card {width: 58vw !important; max-width: 46.4rem !important; margin: 0 !important;}",
+        ".wght-tag {display: none;}",
+        ".slick-arrow {display: none !important;}",
+        ".product-slider {grid-template-columns: 1fr 1fr 1fr !important; justify-content: start;}",
+        "@media (max-width: 768px) {h2 brown {display: block; }}"
+      ],
+      "settings": {
+        "section_title": "Wellness &amp; Vitality <brown>in Every Drop</brown>",
+        "section_description": "Give the gift of health supplements with pure Himalayan Shilajit. Whether for strength and vitality in men or balance and wellness in women, our Shilajit are a natural way to support a healthier lifestyle! \n<a href=\"/pages/what-is-shilajit\" class=\"button max-w-max m-auto\" style=\"padding: 1.6rem 5.2rem; margin-top:2.4rem; background:#68453D; color:#fff;\" title=\"What is Shilajit?\">Explore More</a>",
+        "product_collection": "bundle",
+        "slider_grid": false,
+        "slider_type": "3",
+        "product_price": true,
+        "products_per_row": 3,
+        "products_per_page": 3,
+        "Card_Button": "Add to Cart",
+        "box_title_tag": "h3",
+        "content_iconbox_gap": "40px",
+        "iconbox_gap": "2.4rem!important",
+        "content_alignment": "center",
+        "icon_box_content_alignment": "center",
+        "content_part_width": "",
+        "padding": "11rem 16px",
+        "margin": "0 auto",
+        "custom_class": "scroll-slider",
+        "custom_id": "",
+        "width": "100%; max-width:147.2rem;",
+        "min_height": "auto",
+        "background_type": "color",
+        "background_color": "",
+        "background_gradient": "",
+        "background_on": "content_part",
+        "background_position": "center",
+        "background_size": "cover",
+        "heading_color": "",
+        "content_color": "#767676",
+        "iconbox_style": ""
       }
     },
     "icon_box_ktp7FT": {
@@ -819,6 +864,7 @@
     "basmil_image_text_bWrWDa",
     "icon_box_YD83rJ",
     "basmil_image_text_aGpaBF",
+    "product_grid_slider_Lqnmzm",
     "icon_box_ktp7FT",
     "basmil_instafeed_LPVcAJ",
     "basmil_image_text_BA8itf",
