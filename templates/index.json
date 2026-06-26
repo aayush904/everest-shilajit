@@ -605,7 +605,6 @@
       "block_order": [
         "content_GYD3g9"
       ],
-      "disabled": true,
       "custom_css": [
         ".contentside {gap: 2.4rem;}",
         "@media (max-width: 1024px) {.contentside {display: flex !important; flex-direction: column; }}"
@@ -636,6 +635,7 @@
     },
     "product_grid_slider_Lqnmzm": {
       "type": "product-grid-slider",
+      "disabled": true,
       "custom_css": [
         ".product-section-container {display: none;}",
         ".contentPart {max-width: 113.8rem; margin: auto;}",
