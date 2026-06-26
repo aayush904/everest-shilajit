@@ -46,3 +46,18 @@
             gap:20px !important;
         }
     }
+
+
+
+@media (max-width: 768px) {
+    .advance_slider{
+        .product-info{
+                    align-items: center;
+
+        }
+        .card-tagline{
+                                align-items: center;
+
+        }
+    }
+}
