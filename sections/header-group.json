@@ -93,6 +93,38 @@
     "announcement_marquee_rF74UA": {
       "type": "announcement-marquee",
       "blocks": {
+        "announcement_3KaKPe": {
+          "type": "announcement",
+          "settings": {
+            "text": "|",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "announcement_HYUPtY": {
+          "type": "announcement",
+          "settings": {
+            "text": "WELCOME10 for Free Shipping on Your First Order.",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "announcement_JT3nXN": {
+          "type": "announcement",
+          "settings": {
+            "text": "|",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
+        "announcement_Gp3c9J": {
+          "type": "announcement",
+          "settings": {
+            "text": "Lab Tested. COA Available",
+            "text_alignment": "center",
+            "link": ""
+          }
+        },
         "announcement_qJE3cx": {
           "type": "announcement",
           "settings": {
@@ -104,7 +136,7 @@
         "announcement_FyRY98": {
           "type": "announcement",
           "settings": {
-            "text": "Use code “WELCOME10” for free Shipping Worldwide",
+            "text": "Subscribe and Save 10% on Every Order",
             "text_alignment": "center",
             "link": "shopify://collections/all"
           }
@@ -120,7 +152,7 @@
         "announcement_xiE8CE": {
           "type": "announcement",
           "settings": {
-            "text": "Shop Daily Essentials Trio Bundle + Save 25%",
+            "text": "SGS GMP Certified Facility",
             "text_alignment": "center",
             "link": "shopify://collections/all"
           }
@@ -136,7 +168,7 @@
         "announcement_e3RCiY": {
           "type": "announcement",
           "settings": {
-            "text": "A special 10% off on your first order!",
+            "text": "Fulvic Acid. Humic Acid. 85+ Minerals.",
             "text_alignment": "center",
             "link": "shopify://collections/all"
           }
@@ -145,7 +177,7 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "WELCOME10 | FREE SHIPPING 🌍",
+            "text": "WELCOME10 | FREE SHIPPING",
             "text_alignment": "center",
             "link": "shopify://collections/all"
           }
@@ -161,6 +193,10 @@
         }
       },
       "block_order": [
+        "announcement_3KaKPe",
+        "announcement_HYUPtY",
+        "announcement_JT3nXN",
+        "announcement_Gp3c9J",
         "announcement_qJE3cx",
         "announcement_FyRY98",
         "announcement_YDdfy8",
@@ -176,7 +212,7 @@
         ".coupon-code {margin-bottom: 14px;}",
         "b {color: inherit;}",
         "#popupButton {cursor: pointer;}",
-        ".marquee-container {background:#2C211B;}"
+        ".marquee-container {background: #2c211b;}"
       ],
       "name": "Announcement Marquee",
       "settings": {
