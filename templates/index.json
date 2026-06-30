@@ -51,7 +51,7 @@
         "layout": "imagetop",
         "show_play_button_on": "image",
         "alignment": "contentstart",
-        "valignment": "center",
+        "valignment": "start",
         "content_width": "588px; width:100%;",
         "padding": "0",
         "margin": "0",
