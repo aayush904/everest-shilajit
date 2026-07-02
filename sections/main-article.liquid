@@ -268,7 +268,7 @@
                           >
                         {% endif %}
                       {% endcomment %}
-                      by {{ article.author -}}
+                      by {{ article.metafields.custom.author_name.value | default: article.author -}}
                     </a>
                   </p>
                 {%- endif -%}

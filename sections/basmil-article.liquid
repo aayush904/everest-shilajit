@@ -82,7 +82,7 @@
                       height=""
                     >
                   {% endif %}
-                  {{ article.author -}}
+                  {{ article.metafields.custom.author_name.value | default: article.author -}}
                 </a>
               </p>
             {%- endif -%}

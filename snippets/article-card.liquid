@@ -267,7 +267,7 @@
 
         {%- if show_author -%}
           <div class="ac-card__footer">
-            <span>{{ article.author }}</span>
+            <span>{{ article.metafields.custom.author_name.value | default: article.author }}</span>
           </div>
         {%- endif -%}
       </div>
