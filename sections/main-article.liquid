@@ -373,7 +373,7 @@
                       <div>
                         <a href="{{ author_url }}">
                           <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
-                            {{ page.title }}
+                            {{ article.metafields.custom.author_name.value | default: page.title }}
                           </author-name>
                         </a>
                         <p class=" text-[1.5rem] leading-[1] tracking-normal">
