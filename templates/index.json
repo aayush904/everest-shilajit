@@ -52,7 +52,7 @@
         "show_play_button_on": "image",
         "alignment": "contentstart",
         "valignment": "start",
-        "content_width": "620px; width:100%;",
+        "content_width": "720px; width:100%;",
         "padding": "0",
         "margin": "0",
         "custom_class": "",
