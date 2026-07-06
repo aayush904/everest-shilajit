@@ -351,8 +351,8 @@
             <div class="max-w-[60%] md:max-w-full sm:max-w-full">
               {{ article.content }}
               <hr class="block h-[1px] col-span-2 sm:col-span-1 my-[4rem]" basmil>
-
-              {% if page.title != blank %}
+{% comment %}
+         {% if page.title != blank and page.title == article.author %}
                 
                 <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[0!important]">Written By:</h4>
                 <author class="relative w-full mt-[10px]  block ">
@@ -385,38 +385,61 @@
                   </div>
                 </author>
 
-                {% comment %}
-                  <h3 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Review By:</h3>
-                  <author class="relative w-full mt-[16px]  block bg-[#F5EADD]">
-                    <div class="w-full m-auto p-[1.5rem] flex items-center gap-[10px] justify-between md:flex-col sm:flex-col">
-                      <div class="flex gap-[10px] items-center w-[35%] sm:w-full md:w-full">
-                        {% if profile_pic_metafield and profile_pic_metafield.value %}
-                          <a href="{{ author_url }}">
-                            <img
-                              src="{{ profile_pic_metafield | file_url }}"
-                              alt="Profile Picture for {{ page.title }}"
-                              class="rounded-full min-w-[10rem] aspect-square w-[10rem] object-cover h-[10rem]"
-                              width="100"
-                              height="100"
-                            >
-                          </a>
-                        {% endif %}
-                        <div>
-                          <a href="{{ author_url }}">
-                            <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
-                              {{ page.title }}
-                            </author-name>
-                          </a>
-                          <p class=" text-[1.5rem] leading-[1] tracking-normal">
-                            {{ page.metafields.custom.author_expertise.value }}
-                          </p>
-                        </div>
-                      </div>
-                      <p class="text-[1.5rem] w-[60%] md:w-full sm:w-full">{{ page.metafields.custom.excerpt.value }}</p>
-                    </div>
-                  </author>
-                {% endcomment %}
+        
               {% endif %}
+{% endcomment %}
+       {% assign author_page = article.metafields.custom.author.value %}
+
+{% if author_page != blank %}
+  {% assign profile_pic = author_page.metafields.custom.author_profile_picture.value %}
+
+  <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[0!important]">
+    Written By:
+  </h4>
+
+  <author class="relative w-full mt-[10px] block">
+    <div class="w-full m-auto flex items-center gap-[10px] justify-between md:flex-col sm:flex-col">
+
+      <p class="text-[1.5rem] w-[60%] md:w-full sm:w-full">
+        {{ author_page.metafields.custom.author_excerpt.value }}
+      </p>
+
+      <div class="flex flex-col gap-[10px] items-start w-[35%] sm:w-full md:w-full">
+
+        {% if profile_pic != blank %}
+          <a href="{{ author_page.url }}">
+            <img
+              src="{{ profile_pic | image_url: width: 160 }}"
+              alt="Profile Picture for {{ author_page.title }}"
+              class="rounded-full aspect-square object-contain h-[10rem]"
+              width="80"
+              height="80"
+            >
+          </a>
+        {% endif %}
+
+        <div>
+          <a href="{{ author_page.url }}">
+            <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
+              {{ author_page.title }}
+            </author-name>
+          </a>
+
+          <p class="text-[1.5rem] leading-[1] tracking-normal">
+            {{ author_page.metafields.custom.author_expertise.value }}
+          </p>
+
+          {% if author_page.metafields.custom.author_education.value != blank %}
+            <p class="text-[1.5rem] leading-[1] tracking-normal">
+              {{ author_page.metafields.custom.author_education.value }}
+            </p>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </author>
+{% endif %}
 
               <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Disclaimer</h4>
               <disclaimer class="relative w-full mt-[10px]  block ">
