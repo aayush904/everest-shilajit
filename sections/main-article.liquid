@@ -237,8 +237,8 @@
                       {% endif %}
                     {% endcomment %}
 
-                    {{ article.published_at | date: '%b %d, %Y' }}
-                                    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }}
+                    <span> {{ article.published_at | date: '%b %d, %Y' }}</span> 
+                    <span>    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }} </span>             
 
                   </p>
                 {%- endif -%}
