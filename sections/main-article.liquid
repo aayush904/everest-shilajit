@@ -238,6 +238,8 @@
                     {% endcomment %}
 
                     {{ article.published_at | date: '%b %d, %Y' }}
+                                    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }}
+
                   </p>
                 {%- endif -%}
                 {%- if block.settings.blog_show_author -%}
