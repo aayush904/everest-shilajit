@@ -223,7 +223,7 @@
               <div class="flex justify-center flex-col items-end sm:items-start">
                 {%- if block.settings.blog_show_date -%}
                   <p
-                    class="font-sans text-[1.6rem] text-[#382E2A] flex gap-5 m-0 justify-end items-center flex-col"
+                    class="font-sans text-[1.6rem] text-[#382E2A] flex gap-5 m-0  items-center flex-col"
                   >
                     {% comment %}
                       {% assign words_per_minute = 250 %}
@@ -237,8 +237,8 @@
                       {% endif %}
                     {% endcomment %}
 
-                    <span> {{ article.published_at | date: '%b %d, %Y' }}</span> 
-                    <span>    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }} </span>             
+                    <span class="justify-end"> {{ article.published_at | date: '%b %d, %Y' }}</span> 
+                    <span class="justify-end">    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }} </span>             
 
                   </p>
                 {%- endif -%}
