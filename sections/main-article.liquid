@@ -237,7 +237,7 @@
                       {% endif %}
                     {% endcomment %}
 
-                    <span class="justify-end flex w-full"> {{ article.published_at | date: '%b %d, %Y' }}</span> 
+                    <span class="justify-end flex w-full">Published at: {{ article.published_at | date: '%b %d, %Y' }}</span> 
                     <span class="justify-end flex w-full">    Updated at:    {{ article.updated_at | date: '%b %d, %Y' }} </span>             
 
                   </p>
