@@ -352,50 +352,7 @@
               {{ article.content }}
               <hr class="block h-[1px] col-span-2 sm:col-span-1 my-[4rem]" basmil>
 
-
-
-
-              {% assign custom_author_name = article.metafields.custom.author_name.value %}
-
-{% if page.title != blank and page.title == custom_author_name %}
-  <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[0!important]">Written By:</h4>
-
-  <author class="relative w-full mt-[10px] block">
-    <div class="w-full m-auto flex items-center gap-[10px] justify-between md:flex-col sm:flex-col">
-      <p class="text-[1.5rem] w-[60%] md:w-full sm:w-full">
-        {{ page.metafields.custom.excerpt.value }}
-      </p>
-
-      <div class="flex flex-col gap-[10px] items-start w-[35%] sm:w-full md:w-full">
-        {% if profile_pic_metafield and profile_pic_metafield.value %}
-          <a href="{{ author_url }}">
-            <img
-              src="{{ profile_pic_metafield | file_url }}"
-              alt="Profile Picture for {{ page.title }}"
-              style="max-width:8rem; max-height:5.1rem;"
-              class="rounded-full aspect-square object-contain h-[10rem]"
-              width="80"
-              height="51"
-            >
-          </a>
-        {% endif %}
-
-        <div>
-          <a href="{{ author_url }}">
-            <author-name class="mt-[0!important] block mb-[4px] text-[1.5rem] leading-[1] tracking-normal font-bold font-sans text-black">
-              {{ page.title }}
-            </author-name>
-          </a>
-
-          <p class="text-[1.5rem] leading-[1] tracking-normal">
-            {{ page.metafields.custom.author_expertise.value }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </author>
-{% endif %}
-              /* {% if page.title != blank and page.title == article.author %}
+              {% if page.title != blank %}
                 
                 <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[0!important]">Written By:</h4>
                 <author class="relative w-full mt-[10px]  block ">
@@ -426,7 +383,7 @@
                       </div>
                     </div>
                   </div>
-                </author> */
+                </author>
 
                 {% comment %}
                   <h3 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Review By:</h3>
@@ -459,7 +416,7 @@
                     </div>
                   </author>
                 {% endcomment %}
-              /* {% endif %} */
+              {% endif %}
 
               <h4 class="text-[2.4rem] font-bold font-sans tracking-normal mt-[24px!important]">Disclaimer</h4>
               <disclaimer class="relative w-full mt-[10px]  block ">
