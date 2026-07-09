@@ -156,9 +156,9 @@
       margin-left: 0;
     }
 
-    .header__icon--cart,
+    .header__icons .header__icon--cart,
     .header__icon--account {
-      display: none;
+      display: none !important;
     }
 
     .section-header.menu-open .header__heading {
@@ -175,7 +175,7 @@
     }
 
     .section-header.menu-open .header__icons .header__icon--cart {
-      display: flex;
+      display: flex !important;
     }
 
     .menu-drawer__account-button {
@@ -642,18 +642,18 @@
                   </ul>
                 </nav>
                 <div class="menu-drawer__utility-links">
-                  {% comment %} {%- if shop.customer_accounts_enabled -%}
-                    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide">
+                  {%- if shop.customer_accounts_enabled -%}
+                    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account-button link focus-inset">
                       {% render 'icon-account' %}
-                      {%- liquid
-                        if customer
-                          echo 'customer.account_fallback' | t
-                        else
-                          echo 'customer.log_in' | t
-                        endif
-                      -%}
+                      <span>
+                        {%- if customer -%}
+                          {{ 'customer.account_fallback' | t }}
+                        {%- else -%}
+                          Sign In/Sign Up
+                        {%- endif -%}
+                      </span>
                     </a>
-                  {%- endif -%} {% endcomment %}
+                  {%- endif -%}
                   {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
                     <div class="menu-drawer__localization header__localization">
                       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
