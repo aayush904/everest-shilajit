@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "shopify-theme-dev",
+      "runtimeExecutable": "shopify",
+      "runtimeArgs": ["theme", "dev", "--store", "everestshilajit.myshopify.com", "--theme", "everest-shilajit/main-gitupdate"],
+      "port": 9292
+    }
+  ]
+}
