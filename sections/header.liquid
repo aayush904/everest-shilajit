@@ -227,6 +227,11 @@
       .section-header:not(.scrolled-past-header):not(.menu-open) .header__icon svg {
         stroke: #fff;
       }
+
+      .section-header.scrolled-past-header,
+      .section-header.menu-open {
+        background-color: rgb(var(--color-background));
+      }
     {% endif %}
 
     .search-modal {
