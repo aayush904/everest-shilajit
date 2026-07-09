@@ -132,6 +132,73 @@
       padding-top: 0.5rem;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__heading,
+    .header__heading-link {
+      order: 1;
+      justify-self: start;
+      text-align: left;
+    }
+
+    .header__icons {
+      order: 2;
+    }
+
+    header-drawer {
+      order: 3;
+      margin-left: 0;
+    }
+
+    .header__icon--cart,
+    .header__icon--account {
+      display: none;
+    }
+
+    .section-header.menu-open .header__heading {
+      display: none;
+    }
+
+    .section-header.menu-open .header__icons {
+      order: 1;
+    }
+
+    .section-header.menu-open .header__icons .header__icon--search,
+    .section-header.menu-open .header__icons .header__icon--account {
+      display: none;
+    }
+
+    .section-header.menu-open .header__icons .header__icon--cart {
+      display: flex;
+    }
+
+    .menu-drawer__account-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: #68453d;
+      color: #fff;
+      border-radius: 999px;
+      padding: 1.4rem 2rem;
+      margin: 2rem 0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu-drawer__account-button .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
 {% endstyle %}
 
 
