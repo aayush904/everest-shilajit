@@ -133,7 +133,7 @@
     }
   }
 
-  @media screen and (max-width: 1px) {
+  @media screen and (max-width: 767px) {
     .header {
       display: flex;
       align-items: center;
@@ -204,7 +204,7 @@
       stroke: #fff;
     }
 
-    {% if false and request.page_type == 'index' %}
+    {% if request.page_type == 'index' %}
       #MainContent > .shopify-section:first-child {
         margin-top: calc(-1 * var(--header-height, 8.6rem));
         position: relative;
