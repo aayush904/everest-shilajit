@@ -215,16 +215,16 @@
         z-index: 2;
       }
 
-      .section-header:not(.scrolled-past-header) {
+      .section-header:not(.scrolled-past-header):not(.menu-open) {
         background: transparent;
         border-bottom-color: transparent;
       }
 
-      .section-header:not(.scrolled-past-header) .header__icon {
+      .section-header:not(.scrolled-past-header):not(.menu-open) .header__icon {
         color: #fff;
       }
 
-      .section-header:not(.scrolled-past-header) .header__icon svg {
+      .section-header:not(.scrolled-past-header):not(.menu-open) .header__icon svg {
         stroke: #fff;
       }
     {% endif %}
