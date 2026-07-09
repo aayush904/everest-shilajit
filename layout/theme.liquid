@@ -563,7 +563,7 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
     {% comment %} mobile footer nav {% endcomment %}
-    <div
+    {% comment %} <div
       style="z-index:3;"
       class="footer-nav-mb font-sans text-[#000] hidden  bg-white justify-around px-[16px] py-[10px]  sm:flex gap-[15px] sticky bottom-0 w-full"
     >
@@ -625,7 +625,7 @@
           endif
         -%}
       </a>
-    </div>
+    </div> {% endcomment %}
     {% comment %} End of mobile footer nav {% endcomment %}
 
     <script defer="defer">
