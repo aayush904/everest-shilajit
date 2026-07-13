@@ -42,7 +42,7 @@
         ".wrapper {max-width: 100% !important;}",
         ".content-side {gap: 16px; position: absolute; z-index: 1; top: 50%; padding: 0 16px 0 16px; transform: translateY(-40%); margin-left: calc(-16px + (100% - 147.2rem) / 2);}",
         "* {color: #ffffff;}",
-        ".content-side *:not(div) {margin-top: 16px;}",
+        ".content-side *:not(div) {margin-top: 20px;}",
         ".button {max-width: 35.3rem;}",
         "@media (max-width: 1372px) {.content-side {margin-left: 0; }}",
         "@media (max-width: 768px) {/* .imagetop {flex-direction: column-reverse; } .content-side {position: relative; transform: none; top: auto; } * {color: #000; } .button {margin: 24px auto auto; } */}"
