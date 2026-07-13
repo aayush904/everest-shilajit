@@ -161,7 +161,7 @@
     width: 100vw !important;
     max-width: 100vw !important;
     height: 30vw !important;
-    min-height: 553px !important;
+    min-height: 240px !important;
     object-fit: cover !important;
     display: block !important;
   }
@@ -369,25 +369,8 @@
                   {% comment %} <img fetchpriority="high" loading="lazy" alt = "{{ block.settings.video_thumbnail.alt | default: 'video thumbnail' }}" 
                   {{ video_tag_output | split: '<img ' | last}} {% endcomment %}
                 {% endcapture %}
-
-                {% assign video_tag_html = video_tag_html | replace: '<video ', '<video fetchpriority="low" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop' %}
-
-                {% assign mobile_mp4_url = '' %}
-                {% if block.settings.mobile_video != blank %}
-                  {% for mobile_source in block.settings.mobile_video.sources %}
-                    {% if mobile_source.url contains '.mp4' %}
-                      {% assign mobile_mp4_url = mobile_source.url %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-
-                {% if mobile_mp4_url != blank %}
-                  {% assign video_tag_parts = video_tag_html | split: '<source ' %}
-                  {{ video_tag_parts[0] }}<source src="{{ mobile_mp4_url }}" type="video/mp4" media="(max-width: 767px)">{% for video_tag_part in video_tag_parts offset: 1 %}<source {{ video_tag_part }}{% endfor %}
-                {% else %}
-                  {{ video_tag_html }}
-                {% endif %}
+        
+                {{ video_tag_html | replace: '<video ', '<video fetchpriority="low" ' | replace:'muted="muted"', 'muted' | replace: 'playsinline="playsinline"', 'playsinline' | replace: 'autoplay="autoplay"', 'autoplay' | replace:'loop="loop"', 'loop'}}
 
 
               {% comment %} <video fetchpriority="high" playsinline="" class="video" id="video-video_gi3GDy" 
@@ -825,12 +808,6 @@
           "type": "video",
           "id": "video",
           "label": "Video"
-        },
-        {
-          "type": "video",
-          "id": "mobile_video",
-          "label": "Mobile Video (optional)",
-          "info": "Shown instead of the video above on screens narrower than 768px. Leave blank to use the same video on mobile. Only applies when Video Controls is set to autoplay."
         },
         {
           "type": "image_picker",
