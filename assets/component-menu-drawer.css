@@ -292,5 +292,5 @@ details[id^="Details-menu-drawer-submenu-"][open] summary {
 }
 
 .menu-drawer .list-social__link {
-  padding: 1.3rem 1.25rem;
+  /* padding: 1.3rem 1.25rem; */
 }
