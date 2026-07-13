@@ -248,7 +248,7 @@
         "h3 {font-size: 1.8rem; letter-spacing: 0.2px;}",
         ".iconbox * {max-width: 100%; margin: 0 !important;}",
         "span {display: block; margin-top: 6px; margin-bottom: 16px;}",
-        "@media (max-width: 768px) {.wrapper {gap: 8px !important; border-top: 1px solid #382e2a99; margin-top: 48px !important; } svg {width: 54px; height: 54px; } .iconbox-wrapper {gap: 8px !important; flex-wrap: nowrap; } h3 {font-size: 10px; }}"
+        "@media (max-width: 768px) {.wrapper {gap: 8px !important; border-top: 1px solid #382e2a99; /* margin-top: 48px !important; */ } svg {width: 54px; height: 54px; } .iconbox-wrapper {gap: 8px !important; flex-wrap: nowrap; } h3 {font-size: 10px; }}"
       ],
       "name": "Icon Box Section",
       "settings": {
