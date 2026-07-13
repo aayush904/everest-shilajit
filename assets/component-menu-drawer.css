@@ -99,6 +99,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__navigation {
+        border-top: 0.5px solid #24212B;
+
   padding: 24px 16px;
   overflow: auto;
 }
