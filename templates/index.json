@@ -27,7 +27,6 @@
             "video_type": "self_hosted",
             "youtube_url": "https://www.youtube.com/watch?v=PET-Jn4SoQg",
             "video": "shopify://files/videos/hero-banner-version-2 (1).mov",
-            "mobile_video": "shopify://files/videos/mobile version hero banner.mp4",
             "video_thumbnail": "shopify://shop_images/everest_shilajit_home_video_thumbnail.png",
             "video_controls": "false",
             "video_width": "100%; object-fit:cover"
