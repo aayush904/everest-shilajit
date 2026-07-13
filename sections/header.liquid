@@ -132,6 +132,137 @@
       padding-top: 0.5rem;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 86px;
+    }
+
+    .header__heading,
+    .header__heading-link {
+      order: 1;
+      justify-self: start;
+      text-align: left;
+    }
+
+    .header__icons {
+      order: 2;
+      margin-left: auto;
+      align-items: center;
+    }
+
+    header-drawer {
+      order: 3;
+      margin-left: 0;
+    }
+
+    .header__icons .header__icon--cart,
+    .header__icon--account {
+      display: none !important;
+    }
+
+    .section-header.menu-open .header__heading {
+      display: none;
+    }
+
+    .section-header.menu-open .header__icons {
+      order: 1;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .section-header.menu-open .header__icons .header__icon--search,
+    .section-header.menu-open .header__icons .header__icon--account {
+      display: none;
+    }
+
+    .section-header.menu-open .header__icons .header__icon--cart {
+      display: flex !important;
+    }
+
+    .menu-drawer__account-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: #68453d;
+      color: #fff;
+      border-radius: 999px;
+      padding: 1.4rem 2rem;
+      margin: 2rem 0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu-drawer__account-button .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: #fff;
+      stroke: #fff;
+    }
+
+    {% if request.page_type == 'index' %}
+      #MainContent > .shopify-section:first-child {
+        margin-top: calc(-1 * var(--header-height, 86px));
+        position: relative;
+        z-index: 0;
+      }
+
+      .section-header {
+        z-index: 2;
+      }
+
+      .section-header:not(.scrolled-past-header):not(.menu-open) {
+        background: transparent;
+        border-bottom-color: transparent;
+      }
+
+      .section-header:not(.scrolled-past-header):not(.menu-open) .header__icon {
+        color: #fff;
+      }
+
+      .section-header:not(.scrolled-past-header):not(.menu-open) .header__icon svg {
+        stroke: #fff;
+      }
+
+      .section-header.scrolled-past-header,
+      .section-header.menu-open {
+        background-color: rgb(var(--color-background));
+      }
+    {% endif %}
+
+    .search-modal {
+      background: #f5eadd;
+      border-bottom: none;
+    }
+
+    .search-modal__content {
+      padding: 0 5.5rem 0 1.6rem;
+    }
+
+    .search-modal .search__input.field__input {
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .menu-drawer .list-social__link {
+      background: #5e4330;
+      border-radius: 50%;
+      width: 3.6rem;
+      height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-drawer .list-social__link svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
 {% endstyle %}
 
 
@@ -575,18 +706,18 @@
                   </ul>
                 </nav>
                 <div class="menu-drawer__utility-links">
-                  {% comment %} {%- if shop.customer_accounts_enabled -%}
-                    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide">
+                  {%- if shop.customer_accounts_enabled -%}
+                    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account-button link focus-inset">
                       {% render 'icon-account' %}
-                      {%- liquid
-                        if customer
-                          echo 'customer.account_fallback' | t
-                        else
-                          echo 'customer.log_in' | t
-                        endif
-                      -%}
+                      <span>
+                        {%- if customer -%}
+                          {{ 'customer.account_fallback' | t }}
+                        {%- else -%}
+                          Sign In/Sign Up
+                        {%- endif -%}
+                      </span>
                     </a>
-                  {%- endif -%} {% endcomment %}
+                  {%- endif -%}
                   {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
                     <div class="menu-drawer__localization header__localization">
                       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -1243,7 +1374,7 @@
                         type="search"
                         name="q"
                         value="{{ search.terms | escape }}"
-                        placeholder="{{ 'general.search.search' | t }}"
+                        placeholder="Explore {{ shop.name }}...."
                         {%- if settings.predictive_search_enabled -%}
                           role="combobox"
                           aria-expanded="false"
