@@ -263,6 +263,16 @@
       height: 1.8rem;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    .header__heading-logo.logo-white {
+      display: none !important;
+    }
+
+    .header__heading-logo:not(.logo-white) {
+      display: block !important;
+    }
+  }
 {% endstyle %}
 
 
