@@ -162,9 +162,9 @@
         "content_mYWxRz": {
           "type": "content",
           "settings": {
-            "title": "All Shilajit Product",
+            "title": "All Shilajit Products",
             "subtitle": "<style>\n#shopify-section-{{section.id}} {\n.imagepart{\n  max-height:80vh;\n  min-width:100%;\nobject-position:center;\nobject-fit:cover;\naspect-ratio:1800/720;\n\n}\n.contain-wrapper{\nborder-radius:8px;\nover-flow:hidden;\nposition:relative;\n\n}\n.contain-wrapper:before {\n  content: none;\n  width:100%;\n  height: 100%;\n  background: #0000007a;\n  top:0;\n\n  left:0;  \nposition: absolute;\n}}\n</style>",
-            "description": "<p>Shop traditional resin to convenient liquid extracts and natural Everest Shilajit blends, each product is ethically sourced and rigorously tested for purity!</p>",
+            "description": "<p>Four formats. One source. Every product starts as raw shilajit collected above 18,000 ft in Nepal's Himalayas, minimally processed, and third-party lab tested per batch. No blends. No fillers. Choose the format that fits your routine. The shilajit inside stays the same.</p>",
             "button_text": "",
             "button_link": "",
             "button_text_2": "",
