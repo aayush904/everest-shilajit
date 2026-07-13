@@ -160,6 +160,7 @@
     }
 
     .header__icons .header__icon--cart,
+    .header__icons .header__icon--search,
     .header__icon--account {
       display: none !important;
     }
@@ -174,13 +175,19 @@
       margin-right: auto;
     }
 
-    .section-header.menu-open .header__icons .header__icon--search,
-    .section-header.menu-open .header__icons .header__icon--account {
-      display: none;
+    .section-header.menu-open .header__icons .header__icon--search {
+      display: flex !important;
     }
 
-    .section-header.menu-open .header__icons .header__icon--cart {
-      display: flex !important;
+    .section-header.menu-open .header__icons .header__icon--cart,
+    .section-header.menu-open .header__icons .header__icon--account {
+      display: none !important;
+    }
+
+    .menu-drawer__action-buttons {
+      display: flex;
+      gap: 1.2rem;
+      margin: 2rem 0;
     }
 
     .menu-drawer__account-button {
@@ -188,20 +195,30 @@
       align-items: center;
       justify-content: center;
       gap: 0.8rem;
-      background: #68453d;
-      color: #fff;
+      flex: 1 1 0;
+      background: transparent;
+      color: #5e4330;
+      border: 1px solid #5e4330;
       border-radius: 999px;
-      padding: 1.4rem 2rem;
-      margin: 2rem 0;
+      padding: 1.4rem 1.6rem;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 400;
+      white-space: nowrap;
     }
 
     .menu-drawer__account-button .icon {
       width: 1.8rem;
       height: 1.8rem;
-      fill: #fff;
-      stroke: #fff;
+      fill: #5e4330;
+      stroke: #5e4330;
+    }
+
+    .menu-drawer__menu-item {
+      font-weight: 400 !important;
+    }
+
+    .menu-drawer__menu .toplevel {
+      border-bottom-color: #24212b !important;
     }
 
     {% if request.page_type == 'index' %}
@@ -230,12 +247,16 @@
 
       .section-header.scrolled-past-header,
       .section-header.menu-open {
-        background-color: rgb(var(--color-background));
+        background-color: #ebe9df;
       }
     {% endif %}
 
+    .menu-drawer {
+      background: #ebe9df;
+    }
+
     .search-modal {
-      background: #f5eadd;
+      background: #ebe9df;
       border-bottom: none;
     }
 
