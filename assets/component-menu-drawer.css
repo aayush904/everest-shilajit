@@ -103,6 +103,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
   padding: 24px 16px;
   overflow: auto;
+  background: #F7F5EB;
 }
 
 .menu-drawer__inner-submenu {
