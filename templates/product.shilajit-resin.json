@@ -832,7 +832,7 @@
       "settings": {
         "show_schema": true,
         "heading": "Frequently asked questions",
-        "description": "Our local team are here to help\n\n<highlight style=\"background: #f5f2ec; display: block; border-radius: 10px;\">\nChat with our customer support team, Monday-Friday.<br>\nOr contact us via email at:<br>\n<a href=\"contact@everestshilajit.com\"> contact@everestshilajit.com </a> \n</highlight>\n<style>\n#product-faq{\nh2 {\n  margin-bottom: 1.6rem;\n  font-size: 6.2rem;\n}\n\n@media(max-width:1600px){\nh2{\n font-size: 4.8rem;\n}\n}\n}\n</style>",
+        "description": "Our local team are here to help\n\n<highlight style=\"background: #f5f2ec; display: block; border-radius: 10px;\">\nChat with our customer support team, Monday-Friday.<br>\nOr contact us via email at:<br>\n<a href=\"mailto:contact@everestshilajit.com\"> contact@everestshilajit.com </a> \n</highlight>\n<style>\n#product-faq{\nh2 {\n  margin-bottom: 1.6rem;\n  font-size: 6.2rem;\n}\n\n@media(max-width:1600px){\nh2{\n font-size: 4.8rem;\n}\n}\n}\n</style>",
         "content_alignment": "Left",
         "content_part_width": "",
         "faq_width": "100%",
