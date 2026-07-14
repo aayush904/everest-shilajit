@@ -176,7 +176,7 @@
         ".coupon-code {margin-bottom: 14px;}",
         "b {color: inherit;}",
         "#popupButton {cursor: pointer;}",
-        ".marquee-container {background: #2c211b;}"
+        ".marquee-container {background: #2A2825;}"
       ],
       "name": "Announcement Marquee",
       "settings": {
