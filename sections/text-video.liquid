@@ -209,10 +209,10 @@
         <link rel="preload" as="image" href="{{ block.settings.video_thumbnail | image_url: width:400 }}" media="(max-width: 767px)">
       -->
       {%- if block.settings.video_thumbnail != blank -%}
-        {%- assign preload_image_url = block.settings.video_thumbnail | image_url: width: 800 -%}
+        {%- assign preload_image_url = block.settings.video_thumbnail | image_url: width: 800, format: 'webp' -%}
         <link rel="preload" as="image"
           href="{{ preload_image_url }}"
-          imagesrcset="{{ block.settings.video_thumbnail | image_url: width: 400 }} 400w, {{ block.settings.video_thumbnail | image_url: width: 800 }} 800w, {{ block.settings.video_thumbnail | image_url: width: 1400 }} 1400w"
+          imagesrcset="{{ block.settings.video_thumbnail | image_url: width: 400, format: 'webp' }} 400w, {{ block.settings.video_thumbnail | image_url: width: 800, format: 'webp' }} 800w, {{ block.settings.video_thumbnail | image_url: width: 1400, format: 'webp' }} 1400w"
           imagesizes="100vw"
           fetchPriority="high">
         {%- comment -%}
@@ -351,9 +351,9 @@
               {% endif %}
               </video> {% endcomment %}
               {%  if block.settings.video_thumbnail != blank %}
-                {% assign poster = block.settings.video_thumbnail | image_url: width:800 %}
+                {% assign poster = block.settings.video_thumbnail | image_url: width:800, format: 'webp' %}
               {% else %}
-                {% assign poster = block.settings.video.video_thumbnail | image_url: width:800 %}
+                {% assign poster = block.settings.video.video_thumbnail | image_url: width:800, format: 'webp' %}
               {% endif %}
                {% assign video_tag_output = block.settings.video | video_tag: image_size: '480x', class:'video', id: videoId, 
                 poster: poster,
