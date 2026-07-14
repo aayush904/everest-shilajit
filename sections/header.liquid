@@ -246,9 +246,12 @@ border-bottom: 0.5px solid rgba(44, 33, 27, 0.55);
         stroke: #fff;
       }
 
-      .section-header.scrolled-past-header,
-      .section-header.menu-open {
+      .section-header.scrolled-past-header {
         background-color: #ebe9df;
+      }
+
+      .section-header.menu-open {
+        background-color: #f7f5eb;
       }
     {% endif %}
 
@@ -256,6 +259,10 @@ border-bottom: 0.5px solid rgba(44, 33, 27, 0.55);
     .menu-drawer__submenu,
     .menu-drawer__inner-submenu {
       background: #ebe9df;
+    }
+
+    .js .menu-drawer {
+      height: calc(100dvh - var(--header-bottom-position, 76px)) !important;
     }
 
     .search-modal {
