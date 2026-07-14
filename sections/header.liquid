@@ -251,7 +251,9 @@
       }
     {% endif %}
 
-    .menu-drawer {
+    .menu-drawer,
+    .menu-drawer__submenu,
+    .menu-drawer__inner-submenu {
       background: #ebe9df;
     }
 
@@ -754,7 +756,7 @@
                         </span>
                       </a>
                     {%- endif -%}
-                    <a href="{{ routes.cart_url }}" class="menu-drawer__account-button link focus-inset">
+                    <a href="{{ routes.cart_url }}" class="menu-drawer__account-button link focus-inset" onclick="var cartIcon = document.getElementById('cart-icon-bubble'); if (cartIcon) { cartIcon.click(); return false; }">
                       {%- liquid
                         if cart == empty
                           render 'icon-cart-empty'
