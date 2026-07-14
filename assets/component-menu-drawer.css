@@ -250,7 +250,7 @@ details[id^="Details-menu-drawer-submenu-"][open] summary {
 
 .menu-drawer__utility-links {
   padding: 2rem;
-  background-color: rgba(var(--color-foreground), 0.03);
+    background-color: #F7F5EB;
   position: relative;
 }
 
