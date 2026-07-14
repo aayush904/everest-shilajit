@@ -60,4 +60,15 @@
 
         }
     }
+
+.update_date{
+    justify-content: flex-start;
+}
+}
+
+
+
+
+.update_date{
+    justify-content: flex-end;
 }
