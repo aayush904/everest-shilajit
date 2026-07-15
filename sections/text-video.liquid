@@ -383,10 +383,27 @@
                 {% endif %}
 
                 {% if mobile_mp4_url != blank %}
-                  {% assign video_tag_parts = video_tag_html | split: '<source ' %}
-                  {{ video_tag_parts[0] }}<source src="{{ mobile_mp4_url }}" type="video/mp4" media="(max-width: 767px)">{% for video_tag_part in video_tag_parts offset: 1 %}<source {{ video_tag_part }}{% endfor %}
-                {% else %}
-                  {{ video_tag_html }}
+                  {% capture video_open_replacement %}<video data-mobile-src="{{ mobile_mp4_url }}" {% endcapture %}
+                  {% assign video_tag_html = video_tag_html | replace_first: '<video ', video_open_replacement %}
+                {% endif %}
+
+                {{ video_tag_html }}
+
+                {% if mobile_mp4_url != blank %}
+                  <script>
+                    (function () {
+                      var video = document.getElementById('{{ videoId }}');
+                      if (!video) return;
+                      var mobileSrc = video.getAttribute('data-mobile-src');
+                      if (mobileSrc && window.matchMedia('(max-width: 767px)').matches) {
+                        var source = video.querySelector('source');
+                        if (source) {
+                          source.src = mobileSrc;
+                          video.load();
+                        }
+                      }
+                    })();
+                  </script>
                 {% endif %}
 
 
