@@ -400,6 +400,10 @@
                         if (source) {
                           source.src = mobileSrc;
                           video.load();
+                          var playPromise = video.play();
+                          if (playPromise !== undefined) {
+                            playPromise.catch(function () {});
+                          }
                         }
                       }
                     })();
