@@ -176,7 +176,7 @@
         ".coupon-code {margin-bottom: 14px;}",
         "b {color: inherit;}",
         "#popupButton {cursor: pointer;}",
-        ".marquee-container {background: #2A2825;}"
+        ".marquee-container {background: #2a2825;}"
       ],
       "name": "Announcement Marquee",
       "settings": {
@@ -312,7 +312,19 @@
     "promo-popup": {
       "type": "promo-popup",
       "settings": {
-        "enabled": true
+        "enabled": true,
+        "image": "shopify://shop_images/DSC06219-v2_1.png",
+        "heading": "<p>Know what's in your <strong>Shilajit</strong></p>",
+        "description": "<p>Explore the <strong>texture, sourcing & lab-tested purity</strong> of Everest Shilajit in a one quick view.</p>",
+        "button_text": "View Lab Report",
+        "button_link": "",
+        "delay_seconds": 3,
+        "dismiss_hours": 24,
+        "overlay_color": "#00000066",
+        "card_color": "#f5f4f0",
+        "text_color": "#1f1b16",
+        "button_color": "#68453d",
+        "button_text_color": "#ffffff"
       }
     }
   },
