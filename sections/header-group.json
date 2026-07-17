@@ -317,7 +317,7 @@
         "heading": "<p>Know what's in your <strong>Shilajit</strong></p>",
         "description": "<p>Explore the <strong>texture, sourcing & lab-tested purity</strong> of Everest Shilajit in a one quick view.</p>",
         "button_text": "View Lab Report",
-        "button_link": "",
+        "button_link": "shopify://pages/certification",
         "delay_seconds": 3,
         "dismiss_hours": 24,
         "overlay_color": "#00000066",
