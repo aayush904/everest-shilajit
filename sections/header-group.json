@@ -321,7 +321,7 @@
         "delay_seconds": 3,
         "dismiss_hours": 24,
         "overlay_color": "#00000066",
-        "card_color": "#f5f4f0",
+        "card_color": "#FCFEFF",
         "text_color": "#1f1b16",
         "button_color": "#68453d",
         "button_text_color": "#ffffff"
