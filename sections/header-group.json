@@ -322,8 +322,8 @@
         "dismiss_hours": 24,
         "overlay_color": "#00000066",
         "card_color": "#FCFEFF",
-        "text_color": "#1f1b16",
-        "button_color": "#68453d",
+        "text_color": "#2B2B2B",
+        "button_color": "#5E4330",
         "button_text_color": "#ffffff"
       }
     }
