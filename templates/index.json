@@ -39,11 +39,11 @@
         "video_gi3GDy"
       ],
       "custom_css": [
-        ".content-side {gap: 16px; position: absolute; z-index: 1; bottom: 0; width: 85% !important; left: 0; margin: 0 0 32px 36px; padding: 0 16px 0 16px;}",
+        ".wrapper {max-width: 100% !important;}",
+        ".content-side {gap: 16px; position: absolute; z-index: 1; bottom: 0; width: 85% !important; left: max(1.6rem, calc((100vw - 147.2rem) / 2)); margin: 0 0 32px 0; padding: 0 16px 0 16px;}",
         "* {color: #ffffff;}",
         ".content-side *:not(div) {margin-top: 20px;}",
         ".button {max-width: 35.3rem;}",
-        "@media (max-width: 1372px) {.content-side {margin-left: 0; }}",
         "@media (max-width: 768px) {/* .imagetop {flex-direction: column-reverse; } .content-side {position: relative; transform: none; top: auto; } * {color: #000; } .button {margin: 24px auto auto; } */}"
       ],
       "name": "Basmil Video Text",
@@ -54,10 +54,10 @@
         "valignment": "start",
         "content_width": "820px; width:100%;",
         "padding": "0",
-        "margin": "0 auto",
+        "margin": "0",
         "custom_class": "",
         "custom_id": "hero-section",
-        "width": "100%; max-width:147.2rem;",
+        "width": "100vw;",
         "minheight": "",
         "background_type": "color",
         "background_color": "#ffffff",
