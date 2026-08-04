@@ -44,7 +44,7 @@
         "* {color: #ffffff;}",
         ".content-side *:not(div) {margin-top: 20px;}",
         ".button {max-width: 35.3rem;}",
-        "@media (max-width: 768px) {/* .imagetop {flex-direction: column-reverse; } .content-side {position: relative; transform: none; top: auto; } * {color: #000; } .button {margin: 24px auto auto; } */}"
+        "@media (max-width: 768px) {.content-side {padding: 0px; } /* .imagetop {flex-direction: column-reverse; } .content-side {position: relative; transform: none; top: auto; } * {color: #000; } .button {margin: 24px auto auto; } */}"
       ],
       "name": "Basmil Video Text",
       "settings": {
