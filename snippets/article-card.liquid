@@ -102,6 +102,7 @@
               class: 'ac-featured-video__img',
               loading: 'lazy',
               widths: '480,720,960,1200,1600',
+              sizes: '(min-width: 768px) 60vw, 100vw',
               alt: article.image.alt
             | default: article.title
           }}
@@ -178,7 +179,7 @@
           {{
             article.image
             | image_url: width: 900
-            | image_tag: class: 'ac-card__img', loading: 'lazy', widths: '200,300,400,500', alt: article.image.alt
+            | image_tag: class: 'ac-card__img', loading: 'lazy', widths: '200,300,400,500', sizes: '(min-width: 1280px) calc(100vw / 3 - 10px), (min-width: 768px) calc(50vw - 16px), 100vw', alt: article.image.alt
             | default: article.title
           }}
         {%- endif -%}

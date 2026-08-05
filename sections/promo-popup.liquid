@@ -168,7 +168,9 @@ font-size: 4.4rem;
       {%- if section.settings.image != blank -%}
         <div class="promo-popup__image">
           <img
-            src="{{ section.settings.image | image_url: width: 800 }}"
+            src="{{ section.settings.image | image_url: width: 500 }}"
+            srcset="{{ section.settings.image | image_url: width: 350 }} 350w, {{ section.settings.image | image_url: width: 500 }} 500w, {{ section.settings.image | image_url: width: 700 }} 700w"
+            sizes="(min-width: 750px) 49vw, 100vw"
             alt="{{ section.settings.image.alt | default: section.settings.heading | strip_html | escape }}"
             loading="lazy"
             width="{{ section.settings.image.width }}"

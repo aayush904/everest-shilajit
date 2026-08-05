@@ -667,13 +667,11 @@
         var h2 = document.querySelector(
           '#shopify-pc__banner h2, shopify-pc-banner h2, [id^="shopify-pc"] h2, [class*="shopify-pc"] h2'
         );
-        if (!h2) return false;
-        var div = document.createElement('div');
-        div.className = h2.className;
-        var style = h2.getAttribute('style');
-        if (style) div.setAttribute('style', style);
-        div.innerHTML = h2.innerHTML;
-        h2.parentNode.replaceChild(div, h2);
+        if (!h2 || h2.getAttribute('role') === 'presentation') return false;
+        // Strip heading semantics via ARIA instead of replacing the DOM node --
+        // replacing it broke Shopify's own privacy-banner script, which holds
+        // a reference to this exact element after it initializes.
+        h2.setAttribute('role', 'presentation');
         return true;
       }
       if (!demoteConsentHeading()) {
