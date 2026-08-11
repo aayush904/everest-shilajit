@@ -98,7 +98,7 @@
   #shopify-section-{{ section.id }} .icon-items-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.4rem 1.6rem;
+    gap: 3.2rem 2.4rem;
     width: 100%;
     margin: 0.8rem 0;
   }
@@ -108,7 +108,7 @@
     align-items: center;
     text-align: center;
     gap: 0.8rem;
-    width: calc(33.333% - 1.1rem);
+    width: calc((100% - 4.8rem) / 3);
     max-width: 16rem;
   }
   #shopify-section-{{ section.id }} .icon-item__icon {
@@ -129,8 +129,11 @@
     color: #1f1b16;
   }
   @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .icon-items-grid {
+      gap: 2.4rem 1.6rem;
+    }
     #shopify-section-{{ section.id }} .icon-item {
-      width: calc(33.333% - 1.1rem);
+      width: calc((100% - 3.2rem) / 3);
     }
   }
 </style>
