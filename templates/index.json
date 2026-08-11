@@ -433,6 +433,41 @@
     "basmil_image_text_bWrWDa": {
       "type": "basmil-image-text",
       "blocks": {
+        "icon_item_9KpWXM": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1984079768.svg",
+            "text": "Supports Digestion"
+          }
+        },
+        "icon_item_jaKUfn": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1984079768_1.svg",
+            "text": "ImprovesEndurance"
+          }
+        },
+        "icon_item_zn84qP": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1984079768_2.svg",
+            "text": "StressReprieve"
+          }
+        },
+        "icon_item_CDAt3F": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1984079768_3.svg",
+            "text": "Supports Resilience"
+          }
+        },
+        "icon_item_7xtXkG": {
+          "type": "icon_item",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1984079768_4.svg",
+            "text": "Boost Testosterone"
+          }
+        },
         "content_V8jCbB": {
           "type": "content",
           "settings": {
@@ -457,6 +492,11 @@
         }
       },
       "block_order": [
+        "icon_item_9KpWXM",
+        "icon_item_jaKUfn",
+        "icon_item_zn84qP",
+        "icon_item_CDAt3F",
+        "icon_item_7xtXkG",
         "content_V8jCbB",
         "image_Fr9ewB"
       ],
