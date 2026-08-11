@@ -55,6 +55,14 @@
     width:{{ sections.image_width }};
 
   }
+
+  #shopify-section-{{ section.id }} .contentside .text-tertiary {
+    font-family: var(--font-heading-family), "Instrument Sans", sans-serif;
+    font-weight: 400;
+    font-size: 5.8rem;
+    line-height: 110%;
+    letter-spacing: 0%;
+  }
 </style>
 
 {% capture icon_items %}
@@ -71,7 +79,7 @@
           <div class="icon-item" {{ block.shopify_attributes }}>
             {% if block.settings.icon != blank %}
               <span class="icon-item__icon">
-                {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', alt: block.settings.text }}
+                {{ block.settings.icon | image_url: width: 200 | image_tag: loading: 'lazy', alt: block.settings.text }}
               </span>
             {% endif %}
             {% if block.settings.text != blank %}
@@ -104,14 +112,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     border: 1px solid #68453d;
   }
   #shopify-section-{{ section.id }} .icon-item__icon img {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 20rem;
+    height: 20rem;
     object-fit: contain;
   }
   #shopify-section-{{ section.id }} .icon-item__text {
