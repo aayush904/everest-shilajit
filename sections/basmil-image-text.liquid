@@ -59,12 +59,12 @@
   #shopify-section-{{ section.id }} .contentside .text-tertiary,
   #shopify-section-{{ section.id }} #{{ sections.custom_id }} h2.text-tertiary,
   #{{ sections.custom_id }} h2.text-tertiary {
-    {% comment %} font-family: var(--font-heading-family), "Instrument Sans", sans-serif !important;
+    font-family: var(--font-heading-family), "Instrument Sans", sans-serif !important;
     font-weight: 400 !important;
-    font-size: 5.8rem !important;
+    {% comment %} font-size: 5.8rem !important; {% endcomment %}
     line-height: 110% !important;
     letter-spacing: 0% !important;
-  } {% endcomment %}
+  }
 </style>
 
 {% capture icon_items %}
