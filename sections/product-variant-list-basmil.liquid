@@ -425,14 +425,7 @@
                   type="module"
                 ></script>
 
-                {%-
-                  render 'buy-buttons'
-                  , product: product
-                  , product_form_id: product_form_id
-                  , section_id: section.id
-                  , show_pickup_availability: true
-                  , button_lable: {{ section.settings.Card_Button }}
-                -%}
+                {%- render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true, button_lable: nil -%}
               </div>
               <style>
                 #{{product_form_id}} .product-form__submit {
@@ -446,3 +439,17 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%-\r\n                  render 'buy-buttons'\r\n                  , product:
+    product\r\n                  , product_form_id: product_form_id\r\n                  ,
+    section_id: section.id\r\n                  , show_pickup_availability: true\r\n
+    \                 , button_lable: {{ section.settings.Card_Button }}\r\n                -%}"
+  to: "{%- render 'buy-buttons', product: product, product_form_id: product_form_id,
+    section_id: section.id, show_pickup_availability: true, button_lable: nil -%}"
+  position: 13299..13454
+{% endcomment %}
