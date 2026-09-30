@@ -260,13 +260,13 @@
           "settings": {
             "menu-title": "Learn",
             "image-title": "Gallery",
-            "image1": "shopify://shop_images/everest-shilajit-sherpa-team-hiking-himalayan-trail.webp",
+            "image1": "shopify://shop_images/Our_Story_Hover_Image.avif",
             "title1": "Our Story",
             "link1": "shopify://pages/about-us",
-            "image2": "shopify://shop_images/What_Is_Shilajit.webp",
+            "image2": "shopify://shop_images/What_is_Eversest_Shilajit.avif",
             "title2": "What is Everest Shilajit",
             "link2": "shopify://pages/what-is-shilajit",
-            "image3": "shopify://shop_images/Blog_Image_095308c4-2273-4bcf-a43a-bcce82201f09.webp",
+            "image3": "shopify://shop_images/Blogs.avif",
             "title3": "Blogs",
             "link3": "shopify://blogs/all"
           }
@@ -321,9 +321,9 @@
         "delay_seconds": 3,
         "dismiss_hours": 24,
         "overlay_color": "#00000066",
-        "card_color": "#FCFEFF",
-        "text_color": "#2B2B2B",
-        "button_color": "#5E4330",
+        "card_color": "#fcfeff",
+        "text_color": "#2b2b2b",
+        "button_color": "#5e4330",
         "button_text_color": "#ffffff"
       }
     }
