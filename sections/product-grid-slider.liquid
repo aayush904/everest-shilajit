@@ -707,8 +707,8 @@
                 {% endif %}
                 {% if section.settings.product_price == true %}
                   <div class="pb-[12px]  sm:pb-[0] text-border prd-price">
+                    {% assign product_price = product.price | money %}
                     {% if product.compare_at_price > product.price %}
-                      {% assign product_price = product.price | money %}
                       <p class="product-price">
                         <span class="discounted-price text-border">
                           {%- if product.price_varies -%}
