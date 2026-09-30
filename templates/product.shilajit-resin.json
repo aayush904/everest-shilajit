@@ -419,7 +419,7 @@
       ],
       "name": "Image + Text Slider",
       "settings": {
-        "image": "shopify://shop_images/everest-shilajit-resin-jar-close-up-texture.webp",
+        "image": "shopify://shop_images/What_Consistent_Use_Looks_Like.avif",
         "title": "What Consistent <strong>Use Looks Like</strong>"
       }
     },
@@ -430,7 +430,7 @@
           "type": "icon_box",
           "settings": {
             "icon_type_select": "image",
-            "icon_image": "shopify://shop_images/measuring-everest-shilajit-resin-with-spoon.webp",
+            "icon_image": "shopify://shop_images/Three_Step_Ritual._Every_Morning.avif",
             "icon_svg": "",
             "icon_alt_text": "Hand measuring Everest Shilajit Resin with a stainless steel spoon before dissolving in water.",
             "icon_title": "Scoop Cleanly",
