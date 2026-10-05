@@ -426,7 +426,7 @@
       ],
       "name": "Image + Text Slider",
       "settings": {
-        "image": "shopify://shop_images/everest-shilajit-liquid-bottle-with-dropper-open.png",
+        "image": "shopify://shop_images/What_Consistent_Use_Looks_Like_c14dcda7-e1d0-4b56-a074-a729b5b17e65.avif",
         "title": "What Consistent <strong> Use Looks Like </strong>"
       }
     },
@@ -437,7 +437,7 @@
           "type": "icon_box",
           "settings": {
             "icon_type_select": "image",
-            "icon_image": "shopify://shop_images/everest-shilajit-liquid-dropper-mixing-in-water.png",
+            "icon_image": "shopify://shop_images/Squeeze_the_dropper.avif",
             "icon_svg": "",
             "icon_alt_text": "Hand adding Everest Shilajit Liquid Form into a glass of water with the product packaging beside it.",
             "icon_title": "Squeeze the Dropper",
@@ -450,7 +450,7 @@
           "type": "icon_box",
           "settings": {
             "icon_type_select": "image",
-            "icon_image": "shopify://shop_images/Market_place-Liquid_Image-Dissolve_Your_Shilajit_Liquid.png",
+            "icon_image": "shopify://shop_images/Temprature_Matters.avif",
             "icon_svg": "",
             "icon_alt_text": "Everest Shilajit Liquid",
             "icon_title": "Temperature Matters",
