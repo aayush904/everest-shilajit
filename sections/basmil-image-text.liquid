@@ -81,7 +81,7 @@
           <div class="icon-item" {{ block.shopify_attributes }}>
             {% if block.settings.icon != blank %}
               <span class="icon-item__icon">
-                {{ block.settings.icon | image_url: width: 200 | image_tag: loading: 'lazy', alt: block.settings.text }}
+                {{ block.settings.icon | image_url: width: 128 | image_tag: loading: 'lazy', alt: block.settings.text }}
               </span>
             {% endif %}
             {% if block.settings.text != blank %}
@@ -97,12 +97,8 @@
 <style>
   #shopify-section-{{ section.id }} .contentside {
     box-sizing: border-box;
-  }
-  @media (max-width: 991px) {
-    #shopify-section-{{ section.id }} .contentside {
-      padding-left: 1.6rem;
-      padding-right: 1.6rem;
-    }
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
   #shopify-section-{{ section.id }} .icon-items-grid {
     display: flex;
@@ -115,33 +111,26 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
     width: calc((100% - 4.8rem) / 3);
     max-width: 16rem;
-    min-width: 6.5rem;
     box-sizing: border-box;
   }
-  #shopify-section-{{ section.id }} .icon-item__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: clamp(6rem, 8vw, 10rem);
-  }
+  #shopify-section-{{ section.id }} .icon-item__icon,
   #shopify-section-{{ section.id }} .icon-item__icon img {
-    width: 100%;
-    max-width: clamp(6rem, 8vw, 16rem);
-    height: auto;
+    display: block;
+    width: 64px;
+    height: 64px;
+    max-width: none;
     object-fit: contain;
   }
   #shopify-section-{{ section.id }} .icon-item__text {
     font-family: var(--font-heading-family), "Instrument Sans", sans-serif !important;
     font-weight: 400 !important;
-    font-size: clamp(1.5rem, 1.6vw, 3rem) !important;
+    font-size: 18px !important;
     line-height: 110% !important;
     letter-spacing: 0% !important;
-    width:100%;
+    width: 100%;
     color: #68453D;
     word-break: break-word;
   }
@@ -151,24 +140,6 @@
     }
     #shopify-section-{{ section.id }} .icon-item {
       width: calc((100% - 3.2rem) / 3);
-      min-width: 5.5rem;
-    }
-    #shopify-section-{{ section.id }} .icon-item__icon {
-      max-width: 6rem;
-    }
-    #shopify-section-{{ section.id }} .icon-item__text {
-      font-size: 1.4rem !important;
-    }
-  }
-  @media (max-width: 480px) {
-    #shopify-section-{{ section.id }} .icon-item__icon {
-      max-width: 5.2rem;
-    }
-    #shopify-section-{{ section.id }} .icon-item__text {
-      font-size: 1.3rem !important;
-    }
-    #shopify-section-{{ section.id }} .icon-items-grid {
-      gap: 1.6rem 1.2rem;
     }
   }
 </style>
