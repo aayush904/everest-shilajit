@@ -194,6 +194,7 @@
         "testimonial_slide_9r9aqR",
         "testimonial_slide_JnWKxz"
       ],
+      "disabled": true,
       "custom_css": [
         "p {max-width: 95.7rem;}",
         "@media (max-width: 768px) {.top-star {max-width: 35%; height: auto; } .testimonial-heading {gap: 12px; } h2 {margin: 0 auto !important; }}"
@@ -207,6 +208,7 @@
     },
     "custom_liquid_bd7V8z": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".jdgm-rev__prod-link-prefix,.jdgm-medals-wrapper,.jdgm-gallery,.jdgm-spinner {display: none !important;}",
         ".jdgm-rev__icon {font-size: 0;}",
@@ -227,8 +229,20 @@
     "1760693948331e00cf": {
       "type": "apps",
       "blocks": {
+        "junip_junip_reviews_ax3MMa": {
+          "type": "shopify://apps/junip/blocks/junip-reviews/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "layout": "list",
+            "reviewsType": "all",
+            "showSummary": true,
+            "showMediaGallery": false,
+            "reviewsCount": 10,
+            "containerClass": ""
+          }
+        },
         "judge_me_reviews_review_widget_homepage_tCNnfP": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "product": "pure-himalayan-shilajit-resin",
             "review_data": "real_data",
@@ -237,6 +251,7 @@
         }
       },
       "block_order": [
+        "junip_junip_reviews_ax3MMa",
         "judge_me_reviews_review_widget_homepage_tCNnfP"
       ],
       "custom_css": [
