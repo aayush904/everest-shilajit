@@ -194,7 +194,6 @@
         "testimonial_slide_9r9aqR",
         "testimonial_slide_JnWKxz"
       ],
-      "disabled": true,
       "custom_css": [
         "p {max-width: 95.7rem;}",
         "@media (max-width: 768px) {.top-star {max-width: 35%; height: auto; } .testimonial-heading {gap: 12px; } h2 {margin: 0 auto !important; }}"
@@ -208,7 +207,6 @@
     },
     "custom_liquid_bd7V8z": {
       "type": "custom-liquid",
-      "disabled": true,
       "custom_css": [
         ".jdgm-rev__prod-link-prefix,.jdgm-medals-wrapper,.jdgm-gallery,.jdgm-spinner {display: none !important;}",
         ".jdgm-rev__icon {font-size: 0;}",
