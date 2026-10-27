@@ -876,9 +876,30 @@
       "block_order": [
         "judge_me_reviews_review_widget_cC94HC"
       ],
+      "disabled": true,
       "custom_css": [
         ".shopify-block.shopify-app-block {display: block;}",
         ".jdgm-rev-widg {padding-top: 0px; padding-left: 16px; padding-right: 16px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1793091140cd0c9511": {
+      "type": "apps",
+      "blocks": {
+        "junip_junip_product_review_mNxgaT": {
+          "type": "shopify://apps/junip/blocks/junip-product-review/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "product": "pure-shilajit-liquid-drops",
+            "title": "",
+            "alignment": "",
+            "sortOrder": "mostRecent"
+          }
+        }
+      },
+      "block_order": [
+        "junip_junip_product_review_mNxgaT"
       ],
       "settings": {
         "include_margins": true
@@ -899,6 +920,7 @@
     "product_grid_slider_3NWFAj",
     "product_grid_slider_fcyTGz",
     "faq_N4We94",
-    "1739337128cf7d88b1"
+    "1739337128cf7d88b1",
+    "1793091140cd0c9511"
   ]
 }
