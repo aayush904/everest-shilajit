@@ -207,6 +207,7 @@
     },
     "custom_liquid_bd7V8z": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         ".jdgm-rev__prod-link-prefix,.jdgm-medals-wrapper,.jdgm-gallery,.jdgm-spinner {display: none !important;}",
         ".jdgm-rev__icon {font-size: 0;}",
