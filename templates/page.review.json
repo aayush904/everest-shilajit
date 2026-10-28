@@ -194,6 +194,7 @@
         "testimonial_slide_9r9aqR",
         "testimonial_slide_JnWKxz"
       ],
+      "disabled": true,
       "custom_css": [
         "p {max-width: 95.7rem;}",
         "@media (max-width: 768px) {.top-star {max-width: 35%; height: auto; } .testimonial-heading {gap: 12px; } h2 {margin: 0 auto !important; }}"
@@ -228,8 +229,20 @@
     "1760693948331e00cf": {
       "type": "apps",
       "blocks": {
+        "junip_junip_reviews_K4QNUp": {
+          "type": "shopify://apps/junip/blocks/junip-reviews/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "layout": "list",
+            "reviewsType": "all",
+            "showSummary": true,
+            "showMediaGallery": false,
+            "reviewsCount": 10,
+            "containerClass": ""
+          }
+        },
         "junip_junip_reviews_ax3MMa": {
           "type": "shopify://apps/junip/blocks/junip-reviews/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "disabled": true,
           "settings": {
             "layout": "list",
             "reviewsType": "all",
@@ -250,6 +263,7 @@
         }
       },
       "block_order": [
+        "junip_junip_reviews_K4QNUp",
         "junip_junip_reviews_ax3MMa",
         "judge_me_reviews_review_widget_homepage_tCNnfP"
       ],
