@@ -865,6 +865,7 @@
       "blocks": {
         "judge_me_reviews_review_widget_cC94HC": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
@@ -904,6 +905,26 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1793180075f07d9101": {
+      "type": "apps",
+      "blocks": {
+        "junip_junip_product_review_U7mjEA": {
+          "type": "shopify://apps/junip/blocks/junip-product-review/dc14f5a8-ed15-41b1-ad08-cfba23f9789b",
+          "settings": {
+            "product": "{{product}}",
+            "title": "",
+            "alignment": "",
+            "sortOrder": "mostRecent"
+          }
+        }
+      },
+      "block_order": [
+        "junip_junip_product_review_U7mjEA"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -921,6 +942,7 @@
     "product_grid_slider_fcyTGz",
     "faq_N4We94",
     "1739337128cf7d88b1",
-    "1793091140cd0c9511"
+    "1793091140cd0c9511",
+    "1793180075f07d9101"
   ]
 }
