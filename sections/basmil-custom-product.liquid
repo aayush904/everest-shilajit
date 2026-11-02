@@ -33,7 +33,9 @@
             <span
               aria-hidden="true"
               class="font-sans rating-star color-icon-{{ settings.accent_icons }}"
+              onclick="var a=this.parentElement.querySelector('a[href=&quot;#product-reviews&quot;]'); if(a){a.click();}"
               style="
+                cursor: pointer;
                 --font-size: 2.4;
                 --color-icon: #FFB21C;
                 --rating: {{ product.metafields.reviews.rating.value.rating | floor }};
