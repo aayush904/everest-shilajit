@@ -446,7 +446,7 @@
                     </span>
                   </p>
                   <p class="rating-count caption  font-sans">
-                    <a href="#judgeme_product_reviews"><span aria-hidden="true" class="text-[1.2rem] xl:text-[1.6rem] xxl:text-[1.6rem] font-sans">{{ product.metafields.reviews.rating_count }} Reviews</span></a>
+                    <a href="#product-reviews" onclick="var r=document.querySelector('[id*=&quot;junip_product_review&quot;], .junip-product-review, #judgeme_product_reviews'); if(r){event.preventDefault(); r.scrollIntoView({behavior:'smooth', block:'start'});}"><span aria-hidden="true" class="text-[1.2rem] xl:text-[1.6rem] xxl:text-[1.6rem] font-sans">{{ product.metafields.reviews.rating_count }} Reviews</span></a>
                     <span class="visually-hidden">
                       {{- product.metafields.reviews.rating_count }}
                       {{ 'accessibility.total_reviews' | t -}} 
